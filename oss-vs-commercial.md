@@ -4,7 +4,6 @@ Event Store ships in two editions and this guide outlines the differences betwee
 
 **TODO: Was made aware of this page - <https://developers.eventstore.org/tools/>, we should think how to merge and better connect the content, they are pre/post account.**
 
-
 ## Open Source
 
 ### Support
@@ -27,11 +26,7 @@ High availability Event Store allows you to run more than one node as a cluster.
 
 ### Database and backup checks
 
-The DbVerifier tool lets you verify that your database backups are complete and valid.
-
-### Events Correlation Visualizer
-
-This plugin for to the Event Store web admin UI provides a visual overview of the relations between Events and Commands using `$correlationId` and `$causationId`.
+The DbVerifier tool lets you verify that your database backups are complete and valid without needing to start a node to do so.
 
 ### GeoReplicas
 
@@ -39,13 +34,47 @@ Replicate Event Store instances, and events stored on them across network and re
 
 ### Node administration CLI
 
-A command line interface for administering nodes, allowing you to run tasks such as creating user accounts, starting and stopping nodes, and setting configuration.
+A command line interface for administering nodes, allowing you to run tasks similar to those avilable in the web admin interface and SDKs, including:
+
+-   Users
+    -   Add
+    -   Delete
+    -   Update
+    -   List
+    -   Enable and disable
+    -   Change and reset password
+-   Projections
+    -   Delete
+    -   Enable and disable
+    -   List
+    -   New
+    -   Result
+    -   State
+    -   Status
+    -   Restore checkpoint
+    -   Check if stalled
+-   competing
+    -   competing (list, create, update)
+-   Generate configuration
+-   Admin
+    -   Scavenge
+    -   Shutdown
+    -   Calculate stream size
+    -   Backup and restore
+    -   Backup and restore to S3
+    -   Backup and restore to Azure
+    -   Clear scavenge streams
+    -   Delete streams
 
 ### Monitoring Plugins and Scripts
 
 We provide cluster and node health monitoring plugins and scripts for popular platforms such as Nagios.
 
 **TODO: Any others? I'd not heard of Nagios.**
+
+### Command and Event Correlation Visualizer
+
+This plugin for to the Event Store web admin UI provides a visual overview of commands and the events related to them.
 
 ### LDAP Authentication Plugin
 
