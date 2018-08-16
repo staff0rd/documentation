@@ -9,8 +9,8 @@ commercial: true
 
 High availability Event Store allows you to run more than one node as a cluster. There are two modes available for clustering:
 
--   [With database nodes only](~/server/cluster-without-manager-nodes.md) (open source and commercial)
--   With manager nodes and database nodes (commercial only)
+- [With database nodes only](~/server/cluster-without-manager-nodes.md) (open source and commercial)
+- With manager nodes and database nodes (commercial only)
 
 This document covers setting up Event Store with manager nodes and database nodes.
 
@@ -22,10 +22,10 @@ Each physical (or virtual) machine in an Event Store cluster typically runs one 
 
 Manager nodes have a number of responsibilities:
 
--   They are responsible for starting the database nodes and supervising them to ensure they rest in case of a crash or termination owing to abnormal circumstances. Event Store calls this the _watchdog_ service.
--   They communicate with other manager nodes to find cluster state, and relay that information to the database nodes under management.
--   They provide a known endpoint for clients to connect to and discover cluster information.
--   When running on Windows, manager nodes run as Windows services.
+- They are responsible for starting the database nodes and supervising them to ensure they rest in case of a crash or termination owing to abnormal circumstances. Event Store calls this the _watchdog_ service.
+- They communicate with other manager nodes to find cluster state, and relay that information to the database nodes under management.
+- They provide a known endpoint for clients to connect to and discover cluster information.
+- When running on Windows, manager nodes run as Windows services.
 
 ## Configuring Nodes
 
@@ -33,10 +33,10 @@ Each database or manager node [can have a variety of configuration sources](~/se
 
 From lowest to highest priority, the sources of configuration are:
 
--   Default settings.
--   Settings specified in a configuration file written using YAML.
--   Settings specified in environment variables.
--   Settings specified as command line options to the node.
+- Default settings.
+- Settings specified in a configuration file written using YAML.
+- Settings specified in environment variables.
+- Settings specified as command line options to the node.
 
 You can check the configuration of a node by passing the `-WhatIf` flag to the process.
 
@@ -58,35 +58,35 @@ For database nodes to have this information available to them, the nodes gossip 
 
 Manager and database nodes need to know about one another to gossip. To start this process, you provide gossip seeds or the addresses where it can find other nodes, to each node. When running with manager nodes, it normally uses the following approach:
 
--   On each physical machine, configure the database node(s) with a gossip seed of the internal HTTP interface of the manager running on the same physical machine.
+- On each physical machine, configure the database node(s) with a gossip seed of the internal HTTP interface of the manager running on the same physical machine.
 
--   Configure the managers to discover other managers in one of two ways:
-    -   via a DNS entry and a well-known gossip port.
-    -   via a list of other managers' addresses.
+- Configure the managers to discover other managers in one of two ways:
+  - via a DNS entry and a well-known gossip port.
+  - via a list of other manager node addresses.
 
-The preferred method is via a DNS entry. To set this up, create a DNS entry for the cluster with an A record pointing to each member of the cluster. Each manager looks up other nodes in the cluster during the startup process based on the DNS name. Since DNS only provides information about addresses, you need to use a consistent TCP port across the cluster for gossip.
+The preferred method is via a DNS entry. To set this up, create a DNS entry for the cluster with an `A record` pointing to each member of the cluster. Each manager then looks up other nodes in the cluster during the startup process based on the DNS name. Since DNS only provides information about addresses, you need to use a consistent TCP port across the cluster for gossip.
 
 <!-- TODO: Should this be more practical? -->
 
 ## Example 1 - A Three-Machine Cluster
 
-This example shows the configuration for a three node cluster, running in the typical setup of one manager node and one database node per physical machine, with cluster discovery via DNS. Each machine has one network interface, therefore uses different ports for the internal and external traffic. All nodes, in this case, are running Windows, so the manager nodes run as Windows services.
+The example below shows the configuration for a three node cluster, running in the typical setup of one manager node and one database node per physical machine, with cluster discovery via DNS. Each machine has one network interface, using different ports for the internal and external traffic. All nodes, in this case, are running Windows, so the manager nodes run as Windows services.
 
 The important points for writing configuration files are:
 
--   Node IP Addresses: 192.168.1.11, 192.168.1.12 and 192.168.13
--   TCP ports: (defaults):
-    -   Manager Nodes:
-        -   Internal HTTP: 30777
-        -   External HTTP: 30778
-    -   Database Nodes:
-        -   Internal TCP: 1112
-        -   External TCP: 1113
-        -   Internal HTTP: 2112
-        -   External HTTP: 2113
--   DNS Entry Name: cluster1.eventstore.local
+- Node IP Addresses: 192.168.1.11, 192.168.1.12 and 192.168.13
+- TCP ports: (defaults):
+  - Manager Nodes:
+    - Internal HTTP: 30777
+    - External HTTP: 30778
+  - Database Nodes:
+    - Internal TCP: 1112
+    - External TCP: 1113
+    - Internal HTTP: 2112
+    - External HTTP: 2113
+- DNS Entry Name: cluster1.eventstore.local
 
-To configure the cluster correctly, there are a number of steps to follow:
+To configure the cluster correctly, follow these steps:
 
 1.  Set up a DNS entry named `cluster1.eventstore.local` with an A record for each node.
 2.  Write the database node configuration file for each machine.
@@ -125,8 +125,7 @@ The important configuration points are the:
 - The location of the database file.
 - The size of the cluster
 - The endpoints from which to seed gossip (in this case the local manager).
-
-We assume that Event Store stores data on the \_D:\_ drive.
+  We assume that Event Store stores data on the \_D:\_ drive.
 
 You write the configuration files in YAML, and is the following for the first node:
 
@@ -141,7 +140,7 @@ IntHttpPort: 2112
 ExtTcpPort: 1113
 ExtHttpPort: 2113
 DiscoverViaDns: false
-GossipSeed: ['192.168.1.11:30777']
+GossipSeed: ["192.168.1.11:30777"]
 ClusterSize: 3
 ```
 
@@ -149,11 +148,9 @@ For each following node, the IP Addresses change, as does the gossip seed, since
 
 ### Manager Configuration
 
-Again, all three nodes are similar in configuration.
+Again, all three nodes are similar in configuration. The important configuration points are:
 
-The important configuration points are the:
-
-- IP addresses for the internal and external interfaces.
+- The IP addresses for the internal and external interfaces.
 - The ports for the HTTP endpoints.
 - The log location.
 - The DNS information about other nodes.
@@ -217,7 +214,7 @@ netsh http add urlacl url=http://192.168.1.11:30778/ user="NT AUTHORITY\LOCAL SE
 
 ### Configure the Manager Node as a service (Windows-Specific)
 
-You can install manager nodes as a Windows service so they can start on boot rather than running in interactive mode. Each manager service is given an instance name, which becomes the name of the service (and part of the description for easy identification). The service is installed by default with a startup type of "Automatic (Delayed Start)".
+You can install manager nodes as a Windows service so they can start on boot rather than running in interactive mode. Each manager service is given an node name, which becomes the name of the service (and part of the description for easy identification). The service is installed by default with a startup type of "Automatic (Delayed Start)".
 
 #### Installing the service
 
@@ -231,7 +228,7 @@ The service is then visible in the services list, with a description of "Event S
 
 #### Uninstalling the service
 
-To uninstall the manager node service, use the following command (where the instance name matches the name used during installation).
+To uninstall the manager node service, use the following command (where the node name matches the name used during installation).
 
 ```powershell
 C:\EventStore-HA-v\> EventStore.WindowsManager.exe uninstall -InstanceName es-cluster1
@@ -239,5 +236,5 @@ C:\EventStore-HA-v\> EventStore.WindowsManager.exe uninstall -InstanceName es-cl
 
 #### Manually starting and stopping the service
 
--   To start the manager node use the `net start es-cluster1` command.
--   To stop the manager node use the `net stop es-cluster1` command.
+- To start the manager node use the `net start es-cluster1` command.
+- To stop the manager node use the `net stop es-cluster1` command.

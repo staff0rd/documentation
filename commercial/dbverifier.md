@@ -1,3 +1,8 @@
+---
+outputFileName: index.html
+commercial: true
+---
+
 # Verify your Event Store database with DBVerifier
 
 The DbVerifier tool lets you verify that your database backups are complete and valid without needing to start a node to do so.

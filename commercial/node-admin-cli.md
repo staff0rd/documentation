@@ -1,3 +1,8 @@
+---
+outputFileName: index.html
+commercial: true
+---
+
 # Node administration CLI
 
 This CLI tools is a command line interface for administering Event Store nodes. It allows you to run tasks similar to those available in the web admin interface and SDKs, including administrating users, projections and configuration.
