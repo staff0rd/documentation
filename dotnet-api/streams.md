@@ -2,13 +2,13 @@
 outputFileName: index.html
 ---
 
-# Writing to a Stream
+# Streams
+
+## Writing to a Stream
 
 You can use the client API to write one or more events to a stream atomically. You do this by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
 You can make an optimistic concurrency check during the write by specifying the version at which you expect the stream to be. Identical write operations are idempotent if the optimistic concurrency check is not disabled. You can find more information on optimistic concurrency and idempotence [here](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
-
-## Methods
 
 ### Appending to a stream in a single write
 
@@ -77,3 +77,26 @@ The parameters are:
 | `string stream`                 | The name of the stream to which to append.                                                                                                                                                                                                                                                                                                                                            |
 | `long expectedVersion`          | The version at which you expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](optimistic-concurrency-and-idempotence.md) for a broader discussion of this. |
 | `IEnumerable<EventData> events` | The events to append. There is also an overload of each method which takes the events as a `params` array.                                                                                                                                                                                                                                                                            |
+
+## Deleting a Stream
+
+### Soft Delete
+
+```csharp
+Task<DeleteResult> DeleteStreamAsync(string stream, long expectedVersion, UserCredentials userCredentials = null);
+```
+
+<!-- TODO: Need a better explanation -->
+
+By default when you delete a stream, Event Store soft deletes it. You can recreate the stream by appending new events to it. If you try to read a soft deleted stream you receive an error response.
+
+### Hard Delete
+
+You can hard delete a stream.
+
+> [!WARNING]
+> A hard delete is permanent and the stream is not removed during a scavenge. If you hard delete a stream, you cannot recreate the stream.
+
+```csharp
+Task<DeleteResult> DeleteStreamAsync(string stream, long expectedVersion, bool hardDelete, UserCredentials userCredentials = null);
+```
