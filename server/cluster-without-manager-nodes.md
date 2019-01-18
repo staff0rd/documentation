@@ -2,14 +2,14 @@
 outputFileName: index.html
 ---
 
-# Setting up a Cluster using only Database Nodes (OSS)
+# Setting up a Cluster using only Database Nodes
 
 <!-- TODO: Needs Linux instructions -->
 
 High availability Event Store allows you to run more than one node as a cluster. There are two modes available for clustering:
 
--   With database nodes only (open source and commercial)
--   [With manager nodes and database nodes](~/server/cluster-with-manager-nodes.md) (commercial only)
+- With database nodes only (open source and commercial)
+- [With manager nodes and database nodes](~/commercial/cluster-with-manager-nodes.md) (commercial only)
 
 This document covers setting up Event Store with only database nodes.
 
