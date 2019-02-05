@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Reliability
 
-You should look at reliability from a holistic perspective. EEvent Store treats data transactionally with full durability assurances, but this doesn't help you if the hardware on your machine does not support it.
+You should look at reliability from a holistic perspective. Event Store treats data transactionally with full durability assurances, but this doesn't help you if the hardware on your machine does not support it.
 
 Many consumer grade disks (and SSDs especially) lie about durability to appear faster. This is fine until you have a power outage and lose information.
 
