@@ -8,7 +8,7 @@ outputFileName: index.html
 
 Event Store provides two default users, `$ops` and `$admin`.
 
-`$admin` has full access to everything in Event Store. It can read and write to protected streams, which is any stream that starts with $, such as `$projections-master`. Protected streams are usually system streams, for example, `$projections-master` manages some of the projections' states. The `$admin` user can also run operational commands, such as scavenges and shutdowns on Event Store.
+`$admin` has full access to everything in Event Store. It can read and write to protected streams, which is any stream that starts with \$, such as `$projections-master`. Protected streams are usually system streams, for example, `$projections-master` manages some of the projections' states. The `$admin` user can also run operational commands, such as scavenges and shutdowns on Event Store.
 
 `$ops` can run operational commands like the `$admin` user, but cannot read protected streams.
 
@@ -24,23 +24,23 @@ Event Store keeps the ACL of a stream in the streams [metadata](~/server/metadat
 
 ```json
 {
-   "$acl" : {
-      "$w"  : "$admins",
-      "$r"  : "$all",
-      "$d"  : "$admins",
-      "$mw" : "$admins",
-      "$mr" : "$admins"
-   }
+  "$acl": {
+    "$w": "$admins",
+    "$r": "$all",
+    "$d": "$admins",
+    "$mw": "$admins",
+    "$mr": "$admins"
+  }
 }
 ```
 
 These fields represent the following:
 
--   `$w` The permission to write to this stream.
--   `$r` The permission to read from this stream.
--   `$d` The permission to delete this stream.
--   `$mw` The permission to write the metadata associated with this stream.
--   `$mr` The permission to read the metadata associated with this stream.
+- `$w` The permission to write to this stream.
+- `$r` The permission to read from this stream.
+- `$d` The permission to delete this stream.
+- `$mw` The permission to write the metadata associated with this stream.
+- `$mr` The permission to read the metadata associated with this stream.
 
 You can update these fields with either a single string or an array of strings representing users or groups (`$admins`, `$all`, or custom groups). It's possible to put an empty array into one of these fields, and this has the effect of removing all users from that permission.
 
@@ -84,59 +84,33 @@ StreamMetadata metadata = StreamMetadata.Build()
 conn.SetStreamMetadataAsync(streamName, ExpectedVersion.Any, metadata, adminCredentials);
 ```
 
-* * *
+---
 
 ## Default ACL
 
-The `$settings` stream has a special ACL used as the default ACL. This stream controls the default ACL for streams without an ACL and also controls who can create streams in the system, the default state of these is shown below:
+[!include[<Settings stream>](~/partials/_settings-acl.md)]
 
-```json
-{
-    "$userStreamAcl" : {
-        "$r"  : "$all",
-        "$w"  : "$all",
-        "$d"  : "$all",
-        "$mr" : "$all",
-        "$mw" : "$all"
-    },
-    "$systemStreamAcl" : {
-        "$r"  : "$admins",
-        "$w"  : "$admins",
-        "$d"  : "$admins",
-        "$mr" : "$admins",
-        "$mw" : "$admins"
-    }
-}
-```
-
-The `$userStreamAcl` controls the default ACL for user streams, while all system streams use the `$systemStreamAcl` as the default.
-
-> [!NOTE]
-> `$w` in the `$userStreamAcl` also applies to the ability to create a stream. Members of `$admins` always have access to everything, you cannot remove this permission.
-
-When you set a permission on a stream, it overrides the default values. However, it's not necessary to specify all permissions on a stream. It's only necessary to specify those which differ from the default.
+### Example
 
 > [!NOTE]
 > All these examples assume you have created a user named `ouro`. The examples also assume the password is `ouroboros`.
 
-### Example
-
 ```json
 {
-    "$userStreamAcl" : {
-        "$r"  : "$all",
-        "$w"  : "ouro",
-        "$d"  : "ouro",
-        "$mr" : "ouro",
-        "$mw" : "ouro"
-    },
-    "$systemStreamAcl" : {
-        "$r"  : "$admins",
-        "$w"  : "$admins",
-        "$d"  : "$admins",
-        "$mr" : "$admins",
-        "$mw" : "$admins"
-    }
+  "$userStreamAcl": {
+    "$r": "$all",
+    "$w": "ouro",
+    "$d": "ouro",
+    "$mr": "ouro",
+    "$mw": "ouro"
+  },
+  "$systemStreamAcl": {
+    "$r": "$admins",
+    "$w": "$admins",
+    "$d": "$admins",
+    "$mr": "$admins",
+    "$mw": "$admins"
+  }
 }
 ```
 
@@ -181,7 +155,7 @@ StreamMetadata metadata = StreamMetadata.Build()
 conn.SetStreamMetadataAsync("%24settings", ExpectedVersion.Any, metadata, adminCredentials);
 ```
 
-* * *
+---
 
 If you try to access the `$settings` stream as an unauthorized user, Event Store returns a 401 response.
 
@@ -207,26 +181,26 @@ Content-Length: 0
 Keep-Alive: timeout=15,max=100
 ```
 
-***
+---
 
 If you wanted to give `ouro` access by default to system streams, POST the following JSON:
 
 ```json
 {
-    "$userStreamAcl" : {
-        "$r"  : "$all",
-        "$w"  : "ouro",
-        "$d"  : "ouro",
-        "$mr" : "ouro",
-        "$mw" : "ouro"
-    },
-    "$systemStreamAcl" : {
-        "$r"  : ["$admins","ouro"],
-        "$w"  : "$admins",
-        "$d"  : "$admins",
-        "$mr" : "$admins",
-        "$mw" : "$admins"
-    }
+  "$userStreamAcl": {
+    "$r": "$all",
+    "$w": "ouro",
+    "$d": "ouro",
+    "$mr": "ouro",
+    "$mw": "ouro"
+  },
+  "$systemStreamAcl": {
+    "$r": ["$admins", "ouro"],
+    "$w": "$admins",
+    "$d": "$admins",
+    "$mr": "$admins",
+    "$mw": "$admins"
+  }
 }
 ```
 
@@ -256,15 +230,15 @@ Content-Length: 1286
 Keep-Alive: timeout=15,max=100
 ```
 
-***
+---
 
 You can also limit ACLs on particular streams which are then merged with the default ACLs.
 
 ```json
 {
-   "$acl" : {
-      "$r"  : ["reader", "also-reader"],
-   }
+  "$acl": {
+    "$r": ["reader", "also-reader"]
+  }
 }
 ```
 
@@ -272,13 +246,13 @@ If you add the above to a stream's ACL, then it overrides the read permission on
 
 ```json
 {
-   "$acl" : {
-      "$r"  : ["reader", "also-reader"],
-      "$w"  : "ouro",
-      "$d"  : "ouro",
-      "$mr" : "ouro",
-      "$mw" : "ouro"
-   }
+  "$acl": {
+    "$r": ["reader", "also-reader"],
+    "$w": "ouro",
+    "$d": "ouro",
+    "$mr": "ouro",
+    "$mw": "ouro"
+  }
 }
 ```
 

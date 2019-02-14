@@ -4,11 +4,11 @@ outputFileName: index.html
 
 # Persistent Subscriptions Management
 
-The Event Store Client API includes helper methods that use the HTTP API to allow you to manage persistent subscriptions. This document describes the methods found in the `PersistentSubscriptions` class. All methods in this class are asynchronous.
+The Client API includes helper methods that use the HTTP API to allow you to manage persistent subscriptions. This document describes the methods found in the `PersistentSubscriptions` class. All methods in this class are asynchronous.
 
 ## Methods
 
-### Get information for all persistent subscriptions from all streams 
+### Get information for all persistent subscriptions from all streams
 
 Returns information about all persistent subscriptions from all streams.
 
