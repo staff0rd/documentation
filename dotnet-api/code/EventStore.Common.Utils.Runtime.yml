@@ -5,7 +5,10 @@ items:
   id: Runtime
   parent: EventStore.Common.Utils
   children:
+  - EventStore.Common.Utils.Runtime.IsMacOS
   - EventStore.Common.Utils.Runtime.IsMono
+  - EventStore.Common.Utils.Runtime.IsUnixOrMac
+  - EventStore.Common.Utils.Runtime.IsWindows
   langs:
   - csharp
   - vb
@@ -15,22 +18,28 @@ items:
   type: Class
   source:
     remote:
-      path: src/EventStore.Common/Utils/Runtime.cs
+      path: src/EventStore.Common.Utils/Runtime.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Runtime
-    path: ../EventStore/src/EventStore.Common/Utils/Runtime.cs
-    startLine: 4
+    path: ../EventStore/src/EventStore.Common.Utils/Runtime.cs
+    startLine: 5
   assemblies:
-  - EventStore.Common
+  - EventStore.Common.Utils
   namespace: EventStore.Common.Utils
   syntax:
-    content: 'public static class Runtime : object'
-    content.vb: >-
-      Public Module Runtime
-          Inherits Object
+    content: public static class Runtime
+    content.vb: Public Module Runtime
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -51,20 +60,125 @@ items:
   type: Field
   source:
     remote:
-      path: src/EventStore.Common/Utils/Runtime.cs
+      path: src/EventStore.Common.Utils/Runtime.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsMono
-    path: ../EventStore/src/EventStore.Common/Utils/Runtime.cs
-    startLine: 6
+    path: ../EventStore/src/EventStore.Common.Utils/Runtime.cs
+    startLine: 7
   assemblies:
-  - EventStore.Common
+  - EventStore.Common.Utils
   namespace: EventStore.Common.Utils
   syntax:
     content: public static readonly bool IsMono
     return:
       type: System.Boolean
     content.vb: Public Shared ReadOnly IsMono As Boolean
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Common.Utils.Runtime.IsUnixOrMac
+  commentId: F:EventStore.Common.Utils.Runtime.IsUnixOrMac
+  id: IsUnixOrMac
+  parent: EventStore.Common.Utils.Runtime
+  langs:
+  - csharp
+  - vb
+  name: IsUnixOrMac
+  nameWithType: Runtime.IsUnixOrMac
+  fullName: EventStore.Common.Utils.Runtime.IsUnixOrMac
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Common.Utils/Runtime.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsUnixOrMac
+    path: ../EventStore/src/EventStore.Common.Utils/Runtime.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Common.Utils
+  namespace: EventStore.Common.Utils
+  syntax:
+    content: public static readonly bool IsUnixOrMac
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly IsUnixOrMac As Boolean
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Common.Utils.Runtime.IsWindows
+  commentId: F:EventStore.Common.Utils.Runtime.IsWindows
+  id: IsWindows
+  parent: EventStore.Common.Utils.Runtime
+  langs:
+  - csharp
+  - vb
+  name: IsWindows
+  nameWithType: Runtime.IsWindows
+  fullName: EventStore.Common.Utils.Runtime.IsWindows
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Common.Utils/Runtime.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsWindows
+    path: ../EventStore/src/EventStore.Common.Utils/Runtime.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Common.Utils
+  namespace: EventStore.Common.Utils
+  syntax:
+    content: public static readonly bool IsWindows
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly IsWindows As Boolean
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Common.Utils.Runtime.IsMacOS
+  commentId: F:EventStore.Common.Utils.Runtime.IsMacOS
+  id: IsMacOS
+  parent: EventStore.Common.Utils.Runtime
+  langs:
+  - csharp
+  - vb
+  name: IsMacOS
+  nameWithType: Runtime.IsMacOS
+  fullName: EventStore.Common.Utils.Runtime.IsMacOS
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Common.Utils/Runtime.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsMacOS
+    path: ../EventStore/src/EventStore.Common.Utils/Runtime.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Common.Utils
+  namespace: EventStore.Common.Utils
+  syntax:
+    content: public static readonly bool IsMacOS
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly IsMacOS As Boolean
   modifiers.csharp:
   - public
   - static
@@ -80,11 +194,300 @@ references:
   nameWithType: EventStore.Common.Utils
   fullName: EventStore.Common.Utils
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean

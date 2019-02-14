@@ -5,17 +5,21 @@ items:
   id: IndexMap
   parent: EventStore.Core.Index
   children:
-  - EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.AddPTableForManualMerge(System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
   - EventStore.Core.Index.IndexMap.CommitCheckpoint
-  - EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  - EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32,System.Int32)
   - EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
-  - EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+  - EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)
   - EventStore.Core.Index.IndexMap.GetAllFilenames
+  - EventStore.Core.Index.IndexMap.GetTableForManualMerge
   - EventStore.Core.Index.IndexMap.IndexMapVersion
   - EventStore.Core.Index.IndexMap.InOrder
   - EventStore.Core.Index.IndexMap.InReverseOrder
   - EventStore.Core.Index.IndexMap.PrepareCheckpoint
   - EventStore.Core.Index.IndexMap.SaveToFile(System.String)
+  - EventStore.Core.Index.IndexMap.Scavenge(Guid,CancellationToken,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
   - EventStore.Core.Index.IndexMap.Version
   langs:
   - csharp
@@ -28,10 +32,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexMap
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -69,10 +73,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexMapVersion
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -102,10 +106,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Version
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -135,10 +139,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -168,10 +172,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -201,10 +205,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InOrder
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 70
+    startLine: 89
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -233,10 +237,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InReverseOrder
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 84
+    startLine: 103
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -265,10 +269,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetAllFilenames
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 98
+    startLine: 117
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -282,36 +286,38 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
-  commentId: M:EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
-  id: CreateEmpty(System.Int32)
+- uid: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32,System.Int32)
+  commentId: M:EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32,System.Int32)
+  id: CreateEmpty(System.Int32,System.Int32)
   parent: EventStore.Core.Index.IndexMap
   langs:
   - csharp
   - vb
-  name: CreateEmpty(Int32)
-  nameWithType: IndexMap.CreateEmpty(Int32)
-  fullName: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32)
+  name: CreateEmpty(Int32, Int32)
+  nameWithType: IndexMap.CreateEmpty(Int32, Int32)
+  fullName: EventStore.Core.Index.IndexMap.CreateEmpty(System.Int32, System.Int32)
   type: Method
   source:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateEmpty
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 105
+    startLine: 124
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public static IndexMap CreateEmpty(int maxTablesPerLevel = 4)
+    content: public static IndexMap CreateEmpty(int maxTablesPerLevel, int maxTableLevelsForAutomaticMerge)
     parameters:
     - id: maxTablesPerLevel
       type: System.Int32
+    - id: maxTableLevelsForAutomaticMerge
+      type: System.Int32
     return:
       type: EventStore.Core.Index.IndexMap
-    content.vb: Public Shared Function CreateEmpty(maxTablesPerLevel As Integer = 4) As IndexMap
+    content.vb: Public Shared Function CreateEmpty(maxTablesPerLevel As Integer, maxTableLevelsForAutomaticMerge As Integer) As IndexMap
   overload: EventStore.Core.Index.IndexMap.CreateEmpty*
   modifiers.csharp:
   - public
@@ -319,30 +325,30 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
-  commentId: M:EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
-  id: FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)
+- uid: EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)
+  commentId: M:EventStore.Core.Index.IndexMap.FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)
+  id: FromFile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Int32,System.Int32)
   parent: EventStore.Core.Index.IndexMap
   langs:
   - csharp
   - vb
-  name: FromFile(String, Int32, Boolean, Int32, Boolean)
-  nameWithType: IndexMap.FromFile(String, Int32, Boolean, Int32, Boolean)
-  fullName: EventStore.Core.Index.IndexMap.FromFile(System.String, System.Int32, System.Boolean, System.Int32, System.Boolean)
+  name: FromFile(String, Int32, Boolean, Int32, Boolean, Int32, Int32)
+  nameWithType: IndexMap.FromFile(String, Int32, Boolean, Int32, Boolean, Int32, Int32)
+  fullName: EventStore.Core.Index.IndexMap.FromFile(System.String, System.Int32, System.Boolean, System.Int32, System.Boolean, System.Int32, System.Int32)
   type: Method
   source:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromFile
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 110
+    startLine: 129
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public static IndexMap FromFile(string filename, int maxTablesPerLevel = 4, bool loadPTables = true, int cacheDepth = 16, bool skipIndexVerify = false)
+    content: public static IndexMap FromFile(string filename, int maxTablesPerLevel, bool loadPTables, int cacheDepth, bool skipIndexVerify, int threads, int maxAutoMergeLevel)
     parameters:
     - id: filename
       type: System.String
@@ -354,9 +360,13 @@ items:
       type: System.Int32
     - id: skipIndexVerify
       type: System.Boolean
+    - id: threads
+      type: System.Int32
+    - id: maxAutoMergeLevel
+      type: System.Int32
     return:
       type: EventStore.Core.Index.IndexMap
-    content.vb: Public Shared Function FromFile(filename As String, maxTablesPerLevel As Integer = 4, loadPTables As Boolean = True, cacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As IndexMap
+    content.vb: Public Shared Function FromFile(filename As String, maxTablesPerLevel As Integer, loadPTables As Boolean, cacheDepth As Integer, skipIndexVerify As Boolean, threads As Integer, maxAutoMergeLevel As Integer) As IndexMap
   overload: EventStore.Core.Index.IndexMap.FromFile*
   modifiers.csharp:
   - public
@@ -379,10 +389,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SaveToFile
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 258
+    startLine: 345
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -397,30 +407,120 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
-  commentId: M:EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
-  id: AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+- uid: EventStore.Core.Index.IndexMap.GetTableForManualMerge
+  commentId: M:EventStore.Core.Index.IndexMap.GetTableForManualMerge
+  id: GetTableForManualMerge
   parent: EventStore.Core.Index.IndexMap
   langs:
   - csharp
   - vb
-  name: AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
-  nameWithType: IndexMap.AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
-  fullName: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  name: GetTableForManualMerge()
+  nameWithType: IndexMap.GetTableForManualMerge()
+  fullName: EventStore.Core.Index.IndexMap.GetTableForManualMerge()
   type: Method
   source:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
-    id: AddPTable
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: GetTableForManualMerge
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 325
+    startLine: 421
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public MergeResult AddPTable(PTable tableToAdd, long prepareCheckpoint, long commitCheckpoint, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int indexCacheDepth = 16, bool skipIndexVerify = false)
+    content: public Tuple<int, PTable> GetTableForManualMerge()
+    return:
+      type: Tuple{System.Int32,EventStore.Core.Index.PTable}
+    content.vb: Public Function GetTableForManualMerge As Tuple(Of Integer, PTable)
+  overload: EventStore.Core.Index.IndexMap.GetTableForManualMerge*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Int32,System.Boolean)
+  id: AddPTable(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Int32, Boolean)
+  nameWithType: IndexMap.AddPTable(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: AddPTable
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 445
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public MergeResult AddPTable(PTable tableToAdd, long prepareCheckpoint, long commitCheckpoint, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int level, int indexCacheDepth = 16, bool skipIndexVerify = false)
+    parameters:
+    - id: tableToAdd
+      type: EventStore.Core.Index.PTable
+    - id: prepareCheckpoint
+      type: System.Int64
+    - id: commitCheckpoint
+      type: System.Int64
+    - id: upgradeHash
+      type: Func{System.String,System.UInt64,System.UInt64}
+    - id: existsAt
+      type: Func{EventStore.Core.Index.IndexEntry,System.Boolean}
+    - id: recordExistsAt
+      type: Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}
+    - id: filenameProvider
+      type: EventStore.Core.Index.IIndexFilenameProvider
+    - id: version
+      type: System.Byte
+    - id: level
+      type: System.Int32
+    - id: indexCacheDepth
+      type: System.Int32
+    - id: skipIndexVerify
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Index.MergeResult
+    content.vb: Public Function AddPTable(tableToAdd As PTable, prepareCheckpoint As Long, commitCheckpoint As Long, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, level As Integer, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As MergeResult
+  overload: EventStore.Core.Index.IndexMap.AddPTable*
+  nameWithType.vb: IndexMap.AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Int32, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Int32, System.Boolean)
+  name.vb: AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Int32, Boolean)
+- uid: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  id: AddPTableForAutomaticMerge(EventStore.Core.Index.PTable,System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: AddPTableForAutomaticMerge(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  nameWithType: IndexMap.AddPTableForAutomaticMerge(PTable, Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: AddPTableForAutomaticMerge
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 483
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public MergeResult AddPTableForAutomaticMerge(PTable tableToAdd, long prepareCheckpoint, long commitCheckpoint, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int indexCacheDepth = 16, bool skipIndexVerify = false)
     parameters:
     - id: tableToAdd
       type: EventStore.Core.Index.PTable
@@ -444,15 +544,123 @@ items:
       type: System.Boolean
     return:
       type: EventStore.Core.Index.MergeResult
-    content.vb: Public Function AddPTable(tableToAdd As PTable, prepareCheckpoint As Long, commitCheckpoint As Long, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As MergeResult
-  overload: EventStore.Core.Index.IndexMap.AddPTable*
-  nameWithType.vb: IndexMap.AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+    content.vb: Public Function AddPTableForAutomaticMerge(tableToAdd As PTable, prepareCheckpoint As Long, commitCheckpoint As Long, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As MergeResult
+  overload: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge*
+  nameWithType.vb: IndexMap.AddPTableForAutomaticMerge(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Index.IndexMap.AddPTable(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
-  name.vb: AddPTable(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+  fullName.vb: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge(EventStore.Core.Index.PTable, System.Int64, System.Int64, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  name.vb: AddPTableForAutomaticMerge(PTable, Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+- uid: EventStore.Core.Index.IndexMap.AddPTableForManualMerge(System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.AddPTableForManualMerge(System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  id: AddPTableForManualMerge(System.Int64,System.Int64,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: AddPTableForManualMerge(Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  nameWithType: IndexMap.AddPTableForManualMerge(Int64, Int64, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.AddPTableForManualMerge(System.Int64, System.Int64, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: AddPTableForManualMerge
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 519
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public MergeResult AddPTableForManualMerge(long prepareCheckpoint, long commitCheckpoint, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int indexCacheDepth = 16, bool skipIndexVerify = false)
+    parameters:
+    - id: prepareCheckpoint
+      type: System.Int64
+    - id: commitCheckpoint
+      type: System.Int64
+    - id: upgradeHash
+      type: Func{System.String,System.UInt64,System.UInt64}
+    - id: existsAt
+      type: Func{EventStore.Core.Index.IndexEntry,System.Boolean}
+    - id: recordExistsAt
+      type: Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}
+    - id: filenameProvider
+      type: EventStore.Core.Index.IIndexFilenameProvider
+    - id: version
+      type: System.Byte
+    - id: indexCacheDepth
+      type: System.Int32
+    - id: skipIndexVerify
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Index.MergeResult
+    content.vb: Public Function AddPTableForManualMerge(prepareCheckpoint As Long, commitCheckpoint As Long, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As MergeResult
+  overload: EventStore.Core.Index.IndexMap.AddPTableForManualMerge*
+  nameWithType.vb: IndexMap.AddPTableForManualMerge(Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Index.IndexMap.AddPTableForManualMerge(System.Int64, System.Int64, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  name.vb: AddPTableForManualMerge(Int64, Int64, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+- uid: EventStore.Core.Index.IndexMap.Scavenge(Guid,CancellationToken,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.Index.IndexMap.Scavenge(Guid,CancellationToken,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  id: Scavenge(Guid,CancellationToken,Func{System.String,System.UInt64,System.UInt64},Func{EventStore.Core.Index.IndexEntry,System.Boolean},Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}},EventStore.Core.Index.IIndexFilenameProvider,System.Byte,System.Int32,System.Boolean)
+  parent: EventStore.Core.Index.IndexMap
+  langs:
+  - csharp
+  - vb
+  name: Scavenge(Guid, CancellationToken, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  nameWithType: IndexMap.Scavenge(Guid, CancellationToken, Func<String, UInt64, UInt64>, Func<IndexEntry, Boolean>, Func<IndexEntry, Tuple<String, Boolean>>, IIndexFilenameProvider, Byte, Int32, Boolean)
+  fullName: EventStore.Core.Index.IndexMap.Scavenge(Guid, CancellationToken, Func<System.String, System.UInt64, System.UInt64>, Func<EventStore.Core.Index.IndexEntry, System.Boolean>, Func<EventStore.Core.Index.IndexEntry, Tuple<System.String, System.Boolean>>, EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/IndexMap.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Scavenge
+    path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
+    startLine: 561
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public ScavengeResult Scavenge(Guid toScavenge, CancellationToken ct, Func<string, ulong, ulong> upgradeHash, Func<IndexEntry, bool> existsAt, Func<IndexEntry, Tuple<string, bool>> recordExistsAt, IIndexFilenameProvider filenameProvider, byte version, int indexCacheDepth = 16, bool skipIndexVerify = false)
+    parameters:
+    - id: toScavenge
+      type: Guid
+    - id: ct
+      type: CancellationToken
+    - id: upgradeHash
+      type: Func{System.String,System.UInt64,System.UInt64}
+    - id: existsAt
+      type: Func{EventStore.Core.Index.IndexEntry,System.Boolean}
+    - id: recordExistsAt
+      type: Func{EventStore.Core.Index.IndexEntry,Tuple{System.String,System.Boolean}}
+    - id: filenameProvider
+      type: EventStore.Core.Index.IIndexFilenameProvider
+    - id: version
+      type: System.Byte
+    - id: indexCacheDepth
+      type: System.Int32
+    - id: skipIndexVerify
+      type: System.Boolean
+    return:
+      type: EventStore.Core.Index.ScavengeResult
+    content.vb: Public Function Scavenge(toScavenge As Guid, ct As CancellationToken, upgradeHash As Func(Of String, ULong, ULong), existsAt As Func(Of IndexEntry, Boolean), recordExistsAt As Func(Of IndexEntry, Tuple(Of String, Boolean)), filenameProvider As IIndexFilenameProvider, version As Byte, indexCacheDepth As Integer = 16, skipIndexVerify As Boolean = False) As ScavengeResult
+  overload: EventStore.Core.Index.IndexMap.Scavenge*
+  nameWithType.vb: IndexMap.Scavenge(Guid, CancellationToken, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Core.Index.IndexMap.Scavenge(Guid, CancellationToken, Func(Of System.String, System.UInt64, System.UInt64), Func(Of EventStore.Core.Index.IndexEntry, System.Boolean), Func(Of EventStore.Core.Index.IndexEntry, Tuple(Of System.String, System.Boolean)), EventStore.Core.Index.IIndexFilenameProvider, System.Byte, System.Int32, System.Boolean)
+  name.vb: Scavenge(Guid, CancellationToken, Func(Of String, UInt64, UInt64), Func(Of IndexEntry, Boolean), Func(Of IndexEntry, Tuple(Of String, Boolean)), IIndexFilenameProvider, Byte, Int32, Boolean)
 - uid: EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
   commentId: M:EventStore.Core.Index.IndexMap.Dispose(TimeSpan)
   id: Dispose(TimeSpan)
@@ -468,10 +676,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/IndexMap.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
     path: ../EventStore/src/EventStore.Core/Index/IndexMap.cs
-    startLine: 361
+    startLine: 601
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -493,6 +701,8 @@ references:
   nameWithType: EventStore.Core.Index
   fullName: EventStore.Core.Index
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -648,6 +858,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -857,11 +1073,15 @@ references:
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
@@ -1020,11 +1240,15 @@ references:
   nameWithType: IndexMap.FromFile
   fullName: EventStore.Core.Index.IndexMap.FromFile
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -1034,6 +1258,118 @@ references:
   name: SaveToFile
   nameWithType: IndexMap.SaveToFile
   fullName: EventStore.Core.Index.IndexMap.SaveToFile
+- uid: EventStore.Core.Index.IndexMap.GetTableForManualMerge*
+  commentId: Overload:EventStore.Core.Index.IndexMap.GetTableForManualMerge
+  name: GetTableForManualMerge
+  nameWithType: IndexMap.GetTableForManualMerge
+  fullName: EventStore.Core.Index.IndexMap.GetTableForManualMerge
+- uid: Tuple{System.Int32,EventStore.Core.Index.PTable}
+  commentId: '!:Tuple{System.Int32,EventStore.Core.Index.PTable}'
+  definition: Tuple`2
+  name: Tuple<Int32, PTable>
+  nameWithType: Tuple<Int32, PTable>
+  fullName: Tuple<System.Int32, EventStore.Core.Index.PTable>
+  nameWithType.vb: Tuple(Of Int32, PTable)
+  fullName.vb: Tuple(Of System.Int32, EventStore.Core.Index.PTable)
+  name.vb: Tuple(Of Int32, PTable)
+  spec.csharp:
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Index.PTable
+    name: PTable
+    nameWithType: PTable
+    fullName: EventStore.Core.Index.PTable
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Index.PTable
+    name: PTable
+    nameWithType: PTable
+    fullName: EventStore.Core.Index.PTable
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tuple`2
+  isExternal: true
+  name: Tuple<, >
+  nameWithType: Tuple<, >
+  fullName: Tuple<, >
+  nameWithType.vb: Tuple(Of , )
+  fullName.vb: Tuple(Of , )
+  name.vb: Tuple(Of , )
+  spec.csharp:
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Tuple`2
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Index.IndexMap.AddPTable*
   commentId: Overload:EventStore.Core.Index.IndexMap.AddPTable
   name: AddPTable
@@ -1279,6 +1615,8 @@ references:
   nameWithType: IIndexFilenameProvider
   fullName: EventStore.Core.Index.IIndexFilenameProvider
 - uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
   isExternal: true
   name: Byte
   nameWithType: Byte
@@ -1401,6 +1739,37 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge*
+  commentId: Overload:EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge
+  name: AddPTableForAutomaticMerge
+  nameWithType: IndexMap.AddPTableForAutomaticMerge
+  fullName: EventStore.Core.Index.IndexMap.AddPTableForAutomaticMerge
+- uid: EventStore.Core.Index.IndexMap.AddPTableForManualMerge*
+  commentId: Overload:EventStore.Core.Index.IndexMap.AddPTableForManualMerge
+  name: AddPTableForManualMerge
+  nameWithType: IndexMap.AddPTableForManualMerge
+  fullName: EventStore.Core.Index.IndexMap.AddPTableForManualMerge
+- uid: EventStore.Core.Index.IndexMap.Scavenge*
+  commentId: Overload:EventStore.Core.Index.IndexMap.Scavenge
+  name: Scavenge
+  nameWithType: IndexMap.Scavenge
+  fullName: EventStore.Core.Index.IndexMap.Scavenge
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: CancellationToken
+- uid: EventStore.Core.Index.ScavengeResult
+  commentId: T:EventStore.Core.Index.ScavengeResult
+  parent: EventStore.Core.Index
+  name: ScavengeResult
+  nameWithType: ScavengeResult
+  fullName: EventStore.Core.Index.ScavengeResult
 - uid: EventStore.Core.Index.IndexMap.Dispose*
   commentId: Overload:EventStore.Core.Index.IndexMap.Dispose
   name: Dispose

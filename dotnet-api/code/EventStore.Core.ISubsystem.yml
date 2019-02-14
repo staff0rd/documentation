@@ -19,10 +19,10 @@ items:
     remote:
       path: src/EventStore.Core/ISubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ISubsystem
     path: ../EventStore/src/EventStore.Core/ISubsystem.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -56,10 +56,10 @@ items:
     remote:
       path: src/EventStore.Core/ISubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Register
     path: ../EventStore/src/EventStore.Core/ISubsystem.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -85,16 +85,18 @@ items:
     remote:
       path: src/EventStore.Core/ISubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Core/ISubsystem.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
   syntax:
-    content: void Start()
-    content.vb: Sub Start
+    content: IEnumerable<Task> Start()
+    return:
+      type: IEnumerable{Task}
+    content.vb: Function Start As IEnumerable(Of Task)
   overload: EventStore.Core.ISubsystem.Start*
 - uid: EventStore.Core.ISubsystem.Stop
   commentId: M:EventStore.Core.ISubsystem.Stop
@@ -111,10 +113,10 @@ items:
     remote:
       path: src/EventStore.Core/ISubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/ISubsystem.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
@@ -503,6 +505,87 @@ references:
   name: Start
   nameWithType: ISubsystem.Start
   fullName: EventStore.Core.ISubsystem.Start
+- uid: IEnumerable{Task}
+  commentId: '!:IEnumerable{Task}'
+  definition: IEnumerable`1
+  name: IEnumerable<Task>
+  nameWithType: IEnumerable<Task>
+  fullName: IEnumerable<Task>
+  nameWithType.vb: IEnumerable(Of Task)
+  fullName.vb: IEnumerable(Of Task)
+  name.vb: IEnumerable(Of Task)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.ISubsystem.Stop*
   commentId: Overload:EventStore.Core.ISubsystem.Stop
   name: Stop

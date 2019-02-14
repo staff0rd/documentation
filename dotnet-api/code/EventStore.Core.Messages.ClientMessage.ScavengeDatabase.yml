@@ -5,10 +5,12 @@ items:
   id: ClientMessage.ScavengeDatabase
   parent: EventStore.Core.Messages
   children:
-  - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal)
+  - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal,System.Int32,System.Int32)
   - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.CorrelationId
   - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.Envelope
   - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.MsgTypeId
+  - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.StartFromChunk
+  - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.Threads
   - EventStore.Core.Messages.ClientMessage.ScavengeDatabase.User
   langs:
   - csharp
@@ -21,10 +23,10 @@ items:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ScavengeDatabase
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1363
+    startLine: 1406
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
@@ -65,10 +67,10 @@ items:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MsgTypeId
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1366
+    startLine: 1409
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
@@ -103,10 +105,10 @@ items:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Envelope
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1368
+    startLine: 1411
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
@@ -136,10 +138,10 @@ items:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CorrelationId
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1369
+    startLine: 1412
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
@@ -169,10 +171,10 @@ items:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: User
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1370
+    startLine: 1413
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
@@ -187,30 +189,96 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal)
-  commentId: M:EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal)
-  id: '#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal)'
+- uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.StartFromChunk
+  commentId: F:EventStore.Core.Messages.ClientMessage.ScavengeDatabase.StartFromChunk
+  id: StartFromChunk
   parent: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
   langs:
   - csharp
   - vb
-  name: ScavengeDatabase(IEnvelope, Guid, IPrincipal)
-  nameWithType: ClientMessage.ScavengeDatabase.ScavengeDatabase(IEnvelope, Guid, IPrincipal)
-  fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.ScavengeDatabase(EventStore.Core.Messaging.IEnvelope, Guid, IPrincipal)
+  name: StartFromChunk
+  nameWithType: ClientMessage.ScavengeDatabase.StartFromChunk
+  fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.StartFromChunk
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/ClientMessage.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: StartFromChunk
+    path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
+    startLine: 1414
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: public readonly int StartFromChunk
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly StartFromChunk As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.Threads
+  commentId: F:EventStore.Core.Messages.ClientMessage.ScavengeDatabase.Threads
+  id: Threads
+  parent: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  langs:
+  - csharp
+  - vb
+  name: Threads
+  nameWithType: ClientMessage.ScavengeDatabase.Threads
+  fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.Threads
+  type: Field
+  source:
+    remote:
+      path: src/EventStore.Core/Messages/ClientMessage.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Threads
+    path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
+    startLine: 1415
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Messages
+  syntax:
+    content: public readonly int Threads
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Threads As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal,System.Int32,System.Int32)
+  commentId: M:EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal,System.Int32,System.Int32)
+  id: '#ctor(EventStore.Core.Messaging.IEnvelope,Guid,IPrincipal,System.Int32,System.Int32)'
+  parent: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+  langs:
+  - csharp
+  - vb
+  name: ScavengeDatabase(IEnvelope, Guid, IPrincipal, Int32, Int32)
+  nameWithType: ClientMessage.ScavengeDatabase.ScavengeDatabase(IEnvelope, Guid, IPrincipal, Int32, Int32)
+  fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.ScavengeDatabase(EventStore.Core.Messaging.IEnvelope, Guid, IPrincipal, System.Int32, System.Int32)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Messages/ClientMessage.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Messages/ClientMessage.cs
-    startLine: 1372
+    startLine: 1417
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public ScavengeDatabase(IEnvelope envelope, Guid correlationId, IPrincipal user)
+    content: public ScavengeDatabase(IEnvelope envelope, Guid correlationId, IPrincipal user, int startFromChunk, int threads)
     parameters:
     - id: envelope
       type: EventStore.Core.Messaging.IEnvelope
@@ -218,7 +286,11 @@ items:
       type: Guid
     - id: user
       type: IPrincipal
-    content.vb: Public Sub New(envelope As IEnvelope, correlationId As Guid, user As IPrincipal)
+    - id: startFromChunk
+      type: System.Int32
+    - id: threads
+      type: System.Int32
+    content.vb: Public Sub New(envelope As IEnvelope, correlationId As Guid, user As IPrincipal, startFromChunk As Integer, threads As Integer)
   overload: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.#ctor*
   modifiers.csharp:
   - public
@@ -231,6 +303,8 @@ references:
   nameWithType: EventStore.Core.Messages
   fullName: EventStore.Core.Messages
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -398,6 +472,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Messaging
   commentId: N:EventStore.Core.Messaging
   name: EventStore.Core.Messaging
@@ -623,6 +703,8 @@ references:
   nameWithType: ClientMessage.ScavengeDatabase.MsgTypeId
   fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase.MsgTypeId
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32

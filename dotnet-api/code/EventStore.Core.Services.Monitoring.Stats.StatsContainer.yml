@@ -7,6 +7,7 @@ items:
   children:
   - EventStore.Core.Services.Monitoring.Stats.StatsContainer.Add(IDictionary{System.String,System.Object})
   - EventStore.Core.Services.Monitoring.Stats.StatsContainer.GetStats(System.Boolean,System.Boolean)
+  - EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group(Dictionary{System.String,System.Object})
   langs:
   - csharp
   - vb
@@ -18,7 +19,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsContainer
     path: ../EventStore/src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
     startLine: 7
@@ -59,7 +60,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Add
     path: ../EventStore/src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
     startLine: 14
@@ -95,7 +96,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStats
     path: ../EventStore/src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
     startLine: 22
@@ -117,6 +118,46 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group(Dictionary{System.String,System.Object})
+  commentId: M:EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group(Dictionary{System.String,System.Object})
+  id: Group(Dictionary{System.String,System.Object})
+  parent: EventStore.Core.Services.Monitoring.Stats.StatsContainer
+  langs:
+  - csharp
+  - vb
+  name: Group(Dictionary<String, Object>)
+  nameWithType: StatsContainer.Group(Dictionary<String, Object>)
+  fullName: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group(Dictionary<System.String, System.Object>)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Group
+    path: ../EventStore/src/EventStore.Core/Services/Monitoring/Stats/StatsContainer.cs
+    startLine: 72
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Monitoring.Stats
+  syntax:
+    content: public static Dictionary<string, object> Group(Dictionary<string, object> input)
+    parameters:
+    - id: input
+      type: Dictionary{System.String,System.Object}
+    return:
+      type: Dictionary{System.String,System.Object}
+    content.vb: Public Shared Function Group(input As Dictionary(Of String, Object)) As Dictionary(Of String, Object)
+  overload: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group*
+  nameWithType.vb: StatsContainer.Group(Dictionary(Of String, Object))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group(Dictionary(Of System.String, System.Object))
+  name.vb: Group(Dictionary(Of String, Object))
 references:
 - uid: EventStore.Core.Services.Monitoring.Stats
   commentId: N:EventStore.Core.Services.Monitoring.Stats
@@ -124,6 +165,8 @@ references:
   nameWithType: EventStore.Core.Services.Monitoring.Stats
   fullName: EventStore.Core.Services.Monitoring.Stats
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -279,6 +322,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -607,6 +656,8 @@ references:
   nameWithType: StatsContainer.GetStats
   fullName: EventStore.Core.Services.Monitoring.Stats.StatsContainer.GetStats
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -720,3 +771,8 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group*
+  commentId: Overload:EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group
+  name: Group
+  nameWithType: StatsContainer.Group
+  fullName: EventStore.Core.Services.Monitoring.Stats.StatsContainer.Group

@@ -5,7 +5,7 @@ items:
   id: EventReaderCoreService
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean,System.Boolean)
   - EventStore.Projections.Core.Services.Processing.EventReaderCoreService.Handle(EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.ReaderTick)
   - EventStore.Projections.Core.Services.Processing.EventReaderCoreService.Handle(EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader)
   - EventStore.Projections.Core.Services.Processing.EventReaderCoreService.Handle(EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader)
@@ -35,7 +35,7 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventReaderCoreService
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
     startLine: 14
@@ -81,22 +81,22 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean)'
+- uid: EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.Int32,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Boolean,System.Boolean)'
   parent: EventStore.Projections.Core.Services.Processing.EventReaderCoreService
   langs:
   - csharp
   - vb
-  name: EventReaderCoreService(IPublisher, IODispatcher, Int32, ICheckpoint, Boolean)
-  nameWithType: EventReaderCoreService.EventReaderCoreService(IPublisher, IODispatcher, Int32, ICheckpoint, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.EventReaderCoreService.EventReaderCoreService(EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Boolean)
+  name: EventReaderCoreService(IPublisher, IODispatcher, Int32, ICheckpoint, Boolean, Boolean)
+  nameWithType: EventReaderCoreService.EventReaderCoreService(IPublisher, IODispatcher, Int32, ICheckpoint, Boolean, Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.EventReaderCoreService.EventReaderCoreService(EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, System.Int32, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Boolean, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
     startLine: 52
@@ -104,7 +104,7 @@ items:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public EventReaderCoreService(IPublisher publisher, IODispatcher ioDispatcher, int eventCacheSize, ICheckpoint writerCheckpoint, bool runHeadingReader)
+    content: public EventReaderCoreService(IPublisher publisher, IODispatcher ioDispatcher, int eventCacheSize, ICheckpoint writerCheckpoint, bool runHeadingReader, bool faultOutOfOrderProjections)
     parameters:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
@@ -116,7 +116,9 @@ items:
       type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
     - id: runHeadingReader
       type: System.Boolean
-    content.vb: Public Sub New(publisher As IPublisher, ioDispatcher As IODispatcher, eventCacheSize As Integer, writerCheckpoint As ICheckpoint, runHeadingReader As Boolean)
+    - id: faultOutOfOrderProjections
+      type: System.Boolean
+    content.vb: Public Sub New(publisher As IPublisher, ioDispatcher As IODispatcher, eventCacheSize As Integer, writerCheckpoint As ICheckpoint, runHeadingReader As Boolean, faultOutOfOrderProjections As Boolean)
   overload: EventStore.Projections.Core.Services.Processing.EventReaderCoreService.#ctor*
   modifiers.csharp:
   - public
@@ -137,10 +139,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -172,10 +174,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -207,10 +209,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 102
+    startLine: 103
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -242,10 +244,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 128
+    startLine: 129
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -277,10 +279,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 148
+    startLine: 149
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -312,10 +314,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 176
+    startLine: 177
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -347,10 +349,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 188
+    startLine: 189
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -382,10 +384,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 198
+    startLine: 199
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -417,10 +419,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 211
+    startLine: 212
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -452,10 +454,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 221
+    startLine: 222
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -487,10 +489,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 233
+    startLine: 234
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -522,10 +524,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 243
+    startLine: 244
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -557,10 +559,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 256
+    startLine: 257
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -592,10 +594,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 348
+    startLine: 356
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -627,10 +629,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 354
+    startLine: 362
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -662,10 +664,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 359
+    startLine: 367
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -697,10 +699,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 364
+    startLine: 372
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -732,10 +734,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventReaderCoreService.cs
-    startLine: 371
+    startLine: 379
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -759,6 +761,8 @@ references:
   nameWithType: EventStore.Projections.Core.Services.Processing
   fullName: EventStore.Projections.Core.Services.Processing
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -1634,6 +1638,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -1901,6 +1911,8 @@ references:
   nameWithType: IODispatcher
   fullName: EventStore.Core.Helpers.IODispatcher
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -1912,6 +1924,8 @@ references:
   nameWithType: ICheckpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean

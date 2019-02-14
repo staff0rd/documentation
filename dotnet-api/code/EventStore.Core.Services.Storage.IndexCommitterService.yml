@@ -5,11 +5,12 @@ items:
   id: IndexCommitterService
   parent: EventStore.Core.Services.Storage
   children:
-  - EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
+  - EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.Index.ITableIndex)
   - EventStore.Core.Services.Storage.IndexCommitterService.AddPendingCommit(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord,System.Int64)
   - EventStore.Core.Services.Storage.IndexCommitterService.AddPendingPrepare(EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord[],System.Int64)
   - EventStore.Core.Services.Storage.IndexCommitterService.GetCommitLastEventNumber(EventStore.Core.TransactionLog.LogRecords.CommitLogRecord)
   - EventStore.Core.Services.Storage.IndexCommitterService.GetStatistics
+  - EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
   - EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.StorageMessage.CommitAck)
   - EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
   - EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
@@ -17,6 +18,7 @@ items:
   - EventStore.Core.Services.Storage.IndexCommitterService.Init(System.Int64)
   - EventStore.Core.Services.Storage.IndexCommitterService.Name
   - EventStore.Core.Services.Storage.IndexCommitterService.Stop
+  - EventStore.Core.Services.Storage.IndexCommitterService.Task
   langs:
   - csharp
   - vb
@@ -28,19 +30,19 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexCommitterService
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: 'public class IndexCommitterService : object, IIndexCommitterService, IMonitoredQueue, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<StorageMessage.CommitAck>'
+    content: 'public class IndexCommitterService : object, IIndexCommitterService, IMonitoredQueue, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<StorageMessage.CommitAck>, IHandle<ClientMessage.MergeIndexes>'
     content.vb: >-
       Public Class IndexCommitterService
           Inherits Object
-          Implements IIndexCommitterService, IMonitoredQueue, IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of StorageMessage.CommitAck)
+          Implements IIndexCommitterService, IMonitoredQueue, IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of StorageMessage.CommitAck), IHandle(Of ClientMessage.MergeIndexes)
   inheritance:
   - System.Object
   implements:
@@ -49,6 +51,7 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitAck}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -76,10 +79,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 41
+    startLine: 46
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -98,30 +101,65 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
-  commentId: M:EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
-  id: '#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)'
+- uid: EventStore.Core.Services.Storage.IndexCommitterService.Task
+  commentId: P:EventStore.Core.Services.Storage.IndexCommitterService.Task
+  id: Task
   parent: EventStore.Core.Services.Storage.IndexCommitterService
   langs:
   - csharp
   - vb
-  name: IndexCommitterService(IIndexCommitter, IPublisher, ICheckpoint, ICheckpoint, Int32)
-  nameWithType: IndexCommitterService.IndexCommitterService(IIndexCommitter, IPublisher, ICheckpoint, ICheckpoint, Int32)
-  fullName: EventStore.Core.Services.Storage.IndexCommitterService.IndexCommitterService(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter, EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32)
+  name: Task
+  nameWithType: IndexCommitterService.Task
+  fullName: EventStore.Core.Services.Storage.IndexCommitterService.Task
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Task
+    path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
+    startLine: 56
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public Task Task { get; }
+    parameters: []
+    return:
+      type: Task
+    content.vb: Public ReadOnly Property Task As Task
+  overload: EventStore.Core.Services.Storage.IndexCommitterService.Task*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.Index.ITableIndex)
+  commentId: M:EventStore.Core.Services.Storage.IndexCommitterService.#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.Index.ITableIndex)
+  id: '#ctor(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32,EventStore.Core.Index.ITableIndex)'
+  parent: EventStore.Core.Services.Storage.IndexCommitterService
+  langs:
+  - csharp
+  - vb
+  name: IndexCommitterService(IIndexCommitter, IPublisher, ICheckpoint, ICheckpoint, Int32, ITableIndex)
+  nameWithType: IndexCommitterService.IndexCommitterService(IIndexCommitter, IPublisher, ICheckpoint, ICheckpoint, Int32, ITableIndex)
+  fullName: EventStore.Core.Services.Storage.IndexCommitterService.IndexCommitterService(EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter, EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32, EventStore.Core.Index.ITableIndex)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 50
+    startLine: 58
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: public IndexCommitterService(IIndexCommitter indexCommitter, IPublisher publisher, ICheckpoint replicationCheckpoint, ICheckpoint writerCheckpoint, int commitCount)
+    content: public IndexCommitterService(IIndexCommitter indexCommitter, IPublisher publisher, ICheckpoint replicationCheckpoint, ICheckpoint writerCheckpoint, int commitCount, ITableIndex tableIndex)
     parameters:
     - id: indexCommitter
       type: EventStore.Core.Services.Storage.ReaderIndex.IIndexCommitter
@@ -133,7 +171,9 @@ items:
       type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
     - id: commitCount
       type: System.Int32
-    content.vb: Public Sub New(indexCommitter As IIndexCommitter, publisher As IPublisher, replicationCheckpoint As ICheckpoint, writerCheckpoint As ICheckpoint, commitCount As Integer)
+    - id: tableIndex
+      type: EventStore.Core.Index.ITableIndex
+    content.vb: Public Sub New(indexCommitter As IIndexCommitter, publisher As IPublisher, replicationCheckpoint As ICheckpoint, writerCheckpoint As ICheckpoint, commitCount As Integer, tableIndex As ITableIndex)
   overload: EventStore.Core.Services.Storage.IndexCommitterService.#ctor*
   modifiers.csharp:
   - public
@@ -154,10 +194,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Init
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 65
+    startLine: 74
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -189,10 +229,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 74
+    startLine: 83
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -221,10 +261,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HandleReplicatedQueue
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 79
+    startLine: 88
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -251,10 +291,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetCommitLastEventNumber
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 149
+    startLine: 164
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -288,10 +328,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddPendingPrepare
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 154
+    startLine: 169
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -328,10 +368,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddPendingCommit
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 177
+    startLine: 192
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -365,10 +405,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 198
+    startLine: 213
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -400,10 +440,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 212
+    startLine: 227
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -435,10 +475,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 217
+    startLine: 232
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -470,10 +510,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
     path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
-    startLine: 250
+    startLine: 273
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -489,6 +529,41 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  commentId: M:EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  id: Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  parent: EventStore.Core.Services.Storage.IndexCommitterService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.MergeIndexes)
+  nameWithType: IndexCommitterService.Handle(ClientMessage.MergeIndexes)
+  fullName: EventStore.Core.Services.Storage.IndexCommitterService.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/IndexCommitterService.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/IndexCommitterService.cs
+    startLine: 446
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(ClientMessage.MergeIndexes message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.MergeIndexes
+    content.vb: Public Sub Handle(message As ClientMessage.MergeIndexes)
+  overload: EventStore.Core.Services.Storage.IndexCommitterService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Core.Services.Storage
   commentId: N:EventStore.Core.Services.Storage
@@ -496,6 +571,8 @@ references:
   nameWithType: EventStore.Core.Services.Storage
   fullName: EventStore.Core.Services.Storage
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -629,6 +706,46 @@ references:
     name: StorageMessage.CommitAck
     nameWithType: StorageMessage.CommitAck
     fullName: EventStore.Core.Messages.StorageMessage.CommitAck
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ClientMessage.MergeIndexes>
+  nameWithType: IHandle<ClientMessage.MergeIndexes>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.MergeIndexes>
+  nameWithType.vb: IHandle(Of ClientMessage.MergeIndexes)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  name.vb: IHandle(Of ClientMessage.MergeIndexes)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.ClientMessage.MergeIndexes
+    name: ClientMessage.MergeIndexes
+    nameWithType: ClientMessage.MergeIndexes
+    fullName: EventStore.Core.Messages.ClientMessage.MergeIndexes
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.ClientMessage.MergeIndexes
+    name: ClientMessage.MergeIndexes
+    nameWithType: ClientMessage.MergeIndexes
+    fullName: EventStore.Core.Messages.ClientMessage.MergeIndexes
   - name: )
     nameWithType: )
     fullName: )
@@ -783,6 +900,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus
   commentId: N:EventStore.Core.Bus
   name: EventStore.Core.Bus
@@ -1044,10 +1167,22 @@ references:
   nameWithType: IMonitoredQueue.Name
   fullName: EventStore.Core.Bus.IMonitoredQueue.Name
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: EventStore.Core.Services.Storage.IndexCommitterService.Task*
+  commentId: Overload:EventStore.Core.Services.Storage.IndexCommitterService.Task
+  name: Task
+  nameWithType: IndexCommitterService.Task
+  fullName: EventStore.Core.Services.Storage.IndexCommitterService.Task
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
 - uid: EventStore.Core.Services.Storage.IndexCommitterService.#ctor*
   commentId: Overload:EventStore.Core.Services.Storage.IndexCommitterService.#ctor
   name: IndexCommitterService
@@ -1072,10 +1207,18 @@ references:
   nameWithType: ICheckpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: EventStore.Core.Index.ITableIndex
+  commentId: T:EventStore.Core.Index.ITableIndex
+  parent: EventStore.Core.Index
+  name: ITableIndex
+  nameWithType: ITableIndex
+  fullName: EventStore.Core.Index.ITableIndex
 - uid: EventStore.Core.Services.Storage.ReaderIndex
   commentId: N:EventStore.Core.Services.Storage.ReaderIndex
   name: EventStore.Core.Services.Storage.ReaderIndex
@@ -1086,6 +1229,11 @@ references:
   name: EventStore.Core.TransactionLog.Checkpoint
   nameWithType: EventStore.Core.TransactionLog.Checkpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: EventStore.Core.Index
+  commentId: N:EventStore.Core.Index
+  name: EventStore.Core.Index
+  nameWithType: EventStore.Core.Index
+  fullName: EventStore.Core.Index
 - uid: EventStore.Core.Services.Storage.IndexCommitterService.Init*
   commentId: Overload:EventStore.Core.Services.Storage.IndexCommitterService.Init
   name: Init
@@ -1131,6 +1279,8 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
@@ -1598,3 +1748,48 @@ references:
   name: EventStore.Core.Services.Monitoring.Stats
   nameWithType: EventStore.Core.Services.Monitoring.Stats
   fullName: EventStore.Core.Services.Monitoring.Stats
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.MergeIndexes}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.MergeIndexes)
+  nameWithType: IHandle<ClientMessage.MergeIndexes>.Handle(ClientMessage.MergeIndexes)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.MergeIndexes>.Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  nameWithType.vb: IHandle(Of ClientMessage.MergeIndexes).Handle(ClientMessage.MergeIndexes)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.MergeIndexes).Handle(EventStore.Core.Messages.ClientMessage.MergeIndexes)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.MergeIndexes>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.MergeIndexes>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.MergeIndexes
+    name: ClientMessage.MergeIndexes
+    nameWithType: ClientMessage.MergeIndexes
+    fullName: EventStore.Core.Messages.ClientMessage.MergeIndexes
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.MergeIndexes).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.MergeIndexes).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.MergeIndexes
+    name: ClientMessage.MergeIndexes
+    nameWithType: ClientMessage.MergeIndexes
+    fullName: EventStore.Core.Messages.ClientMessage.MergeIndexes
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.MergeIndexes
+  commentId: T:EventStore.Core.Messages.ClientMessage.MergeIndexes
+  parent: EventStore.Core.Messages
+  name: ClientMessage.MergeIndexes
+  nameWithType: ClientMessage.MergeIndexes
+  fullName: EventStore.Core.Messages.ClientMessage.MergeIndexes

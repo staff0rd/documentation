@@ -21,10 +21,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IQueuedHandler
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 5
+    startLine: 6
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -65,10 +65,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -98,16 +98,18 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: void Start()
-    content.vb: Sub Start
+    content: Task Start()
+    return:
+      type: Task
+    content.vb: Function Start As Task
   overload: EventStore.Core.Bus.IQueuedHandler.Start*
 - uid: EventStore.Core.Bus.IQueuedHandler.Stop
   commentId: M:EventStore.Core.Bus.IQueuedHandler.Stop
@@ -124,10 +126,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -150,10 +152,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestStop
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -176,10 +178,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/IQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
     path: ../EventStore/src/EventStore.Core/Bus/IQueuedHandler.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -934,15 +936,28 @@ references:
   nameWithType: IQueuedHandler.Name
   fullName: EventStore.Core.Bus.IQueuedHandler.Name
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IQueuedHandler.Start*
   commentId: Overload:EventStore.Core.Bus.IQueuedHandler.Start
   name: Start
   nameWithType: IQueuedHandler.Start
   fullName: EventStore.Core.Bus.IQueuedHandler.Start
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
 - uid: EventStore.Core.Bus.IQueuedHandler.Stop*
   commentId: Overload:EventStore.Core.Bus.IQueuedHandler.Stop
   name: Stop

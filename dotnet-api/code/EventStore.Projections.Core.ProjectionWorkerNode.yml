@@ -5,7 +5,7 @@ items:
   id: ProjectionWorkerNode
   parent: EventStore.Projections.Core
   children:
-  - EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType)
+  - EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
   - EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
   - EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging(EventStore.Core.Bus.IBus)
   - EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
@@ -20,7 +20,7 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionWorkerNode.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionWorkerNode
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
     startLine: 18
@@ -46,22 +46,22 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType)
-  commentId: M:EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType)
-  id: '#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType)'
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
+  commentId: M:EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
+  id: '#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)'
   parent: EventStore.Projections.Core.ProjectionWorkerNode
   langs:
   - csharp
   - vb
-  name: ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType)
-  nameWithType: ProjectionWorkerNode.ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType)
-  fullName: EventStore.Projections.Core.ProjectionWorkerNode.ProjectionWorkerNode(Guid, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Projections.Core.Services.ISingletonTimeoutScheduler, EventStore.Common.Options.ProjectionType)
+  name: ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType, Boolean)
+  nameWithType: ProjectionWorkerNode.ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType, Boolean)
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.ProjectionWorkerNode(Guid, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Projections.Core.Services.ISingletonTimeoutScheduler, EventStore.Common.Options.ProjectionType, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Projections.Core/ProjectionWorkerNode.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
     startLine: 35
@@ -69,7 +69,7 @@ items:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
   syntax:
-    content: public ProjectionWorkerNode(Guid workerId, TFChunkDb db, IQueuedHandler inputQueue, ITimeProvider timeProvider, ISingletonTimeoutScheduler timeoutScheduler, ProjectionType runProjections)
+    content: public ProjectionWorkerNode(Guid workerId, TFChunkDb db, IQueuedHandler inputQueue, ITimeProvider timeProvider, ISingletonTimeoutScheduler timeoutScheduler, ProjectionType runProjections, bool faultOutOfOrderProjections)
     parameters:
     - id: workerId
       type: Guid
@@ -83,7 +83,9 @@ items:
       type: EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
     - id: runProjections
       type: EventStore.Common.Options.ProjectionType
-    content.vb: Public Sub New(workerId As Guid, db As TFChunkDb, inputQueue As IQueuedHandler, timeProvider As ITimeProvider, timeoutScheduler As ISingletonTimeoutScheduler, runProjections As ProjectionType)
+    - id: faultOutOfOrderProjections
+      type: System.Boolean
+    content.vb: Public Sub New(workerId As Guid, db As TFChunkDb, inputQueue As IQueuedHandler, timeProvider As ITimeProvider, timeoutScheduler As ISingletonTimeoutScheduler, runProjections As ProjectionType, faultOutOfOrderProjections As Boolean)
   overload: EventStore.Projections.Core.ProjectionWorkerNode.#ctor*
   modifiers.csharp:
   - public
@@ -104,10 +106,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionWorkerNode.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CoreOutput
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
-    startLine: 86
+    startLine: 88
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -139,10 +141,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionWorkerNode.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SlaveProjectionResponseWriter
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
-    startLine: 91
+    startLine: 93
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -174,10 +176,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionWorkerNode.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetupMessaging
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
-    startLine: 96
+    startLine: 98
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -199,6 +201,8 @@ references:
   nameWithType: EventStore.Projections.Core
   fullName: EventStore.Projections.Core
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -354,6 +358,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -602,6 +612,13 @@ references:
   name: ProjectionType
   nameWithType: ProjectionType
   fullName: EventStore.Common.Options.ProjectionType
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: EventStore.Core.TransactionLog.Chunks
   commentId: N:EventStore.Core.TransactionLog.Chunks
   name: EventStore.Core.TransactionLog.Chunks

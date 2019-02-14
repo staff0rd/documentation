@@ -19,7 +19,7 @@ items:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EmbeddedVNodeBuilder
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
     startLine: 9
@@ -47,6 +47,7 @@ items:
   - EventStore.Core.VNodeBuilder._disableHTTPCaching
   - EventStore.Core.VNodeBuilder._logHttpRequests
   - EventStore.Core.VNodeBuilder._enableHistograms
+  - EventStore.Core.VNodeBuilder._structuredLog
   - EventStore.Core.VNodeBuilder._internalTcp
   - EventStore.Core.VNodeBuilder._internalSecureTcp
   - EventStore.Core.VNodeBuilder._externalTcp
@@ -109,6 +110,7 @@ items:
   - EventStore.Core.VNodeBuilder._projectionType
   - EventStore.Core.VNodeBuilder._projectionsThreads
   - EventStore.Core.VNodeBuilder._projectionsQueryExpiry
+  - EventStore.Core.VNodeBuilder._faultOutOfOrderProjections
   - EventStore.Core.VNodeBuilder._db
   - EventStore.Core.VNodeBuilder._vNodeSettings
   - EventStore.Core.VNodeBuilder._dbConfig
@@ -117,9 +119,10 @@ items:
   - EventStore.Core.VNodeBuilder._skipIndexScanOnReads
   - EventStore.Core.VNodeBuilder.WithSingleNodeSettings
   - EventStore.Core.VNodeBuilder.WithClusterNodeSettings(System.Int32)
+  - EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
   - EventStore.Core.VNodeBuilder.StartStandardProjections
   - EventStore.Core.VNodeBuilder.DisableHTTPCaching
-  - EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32)
+  - EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32,System.Boolean)
   - EventStore.Core.VNodeBuilder.WithProjectionQueryExpirationOf(TimeSpan)
   - EventStore.Core.VNodeBuilder.AddCustomSubsystem(EventStore.Core.ISubsystem)
   - EventStore.Core.VNodeBuilder.RunInMemory
@@ -193,6 +196,8 @@ items:
   - EventStore.Core.VNodeBuilder.EnableUnbuffered
   - EventStore.Core.VNodeBuilder.EnableWriteThrough
   - EventStore.Core.VNodeBuilder.WithChunkInitialReaderCount(System.Int32)
+  - EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+  - EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
   - EventStore.Core.VNodeBuilder.WithServerCertificate(X509Certificate2)
   - EventStore.Core.VNodeBuilder.WithServerCertificateFromStore(StoreLocation,StoreName,System.String,System.String)
   - EventStore.Core.VNodeBuilder.WithServerCertificateFromStore(StoreName,System.String,System.String)
@@ -204,7 +209,6 @@ items:
   - EventStore.Core.VNodeBuilder.SkipIndexScanOnReads
   - EventStore.Core.VNodeBuilder.ReduceFileCachePressure
   - EventStore.Core.VNodeBuilder.Build(EventStore.Common.Options.IOptions,EventStore.Core.Services.PersistentSubscription.ConsumerStrategy.IPersistentSubscriptionConsumerStrategyFactory[])
-  - EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -232,7 +236,7 @@ items:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AsSingleNode
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
     startLine: 19
@@ -269,7 +273,7 @@ items:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AsClusterMember
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
     startLine: 29
@@ -309,7 +313,7 @@ items:
     remote:
       path: src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetUpProjectionsIfNeeded
     path: ../EventStore/src/EventStore.ClientAPI.Embedded/EmbeddedVNodeBuilder.cs
     startLine: 38
@@ -342,6 +346,8 @@ references:
   nameWithType: EventStore.ClientAPI.Embedded
   fullName: EventStore.ClientAPI.Embedded
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -412,6 +418,12 @@ references:
   name: _enableHistograms
   nameWithType: VNodeBuilder._enableHistograms
   fullName: EventStore.Core.VNodeBuilder._enableHistograms
+- uid: EventStore.Core.VNodeBuilder._structuredLog
+  commentId: F:EventStore.Core.VNodeBuilder._structuredLog
+  parent: EventStore.Core.VNodeBuilder
+  name: _structuredLog
+  nameWithType: VNodeBuilder._structuredLog
+  fullName: EventStore.Core.VNodeBuilder._structuredLog
 - uid: EventStore.Core.VNodeBuilder._internalTcp
   commentId: F:EventStore.Core.VNodeBuilder._internalTcp
   parent: EventStore.Core.VNodeBuilder
@@ -784,6 +796,12 @@ references:
   name: _projectionsQueryExpiry
   nameWithType: VNodeBuilder._projectionsQueryExpiry
   fullName: EventStore.Core.VNodeBuilder._projectionsQueryExpiry
+- uid: EventStore.Core.VNodeBuilder._faultOutOfOrderProjections
+  commentId: F:EventStore.Core.VNodeBuilder._faultOutOfOrderProjections
+  parent: EventStore.Core.VNodeBuilder
+  name: _faultOutOfOrderProjections
+  nameWithType: VNodeBuilder._faultOutOfOrderProjections
+  fullName: EventStore.Core.VNodeBuilder._faultOutOfOrderProjections
 - uid: EventStore.Core.VNodeBuilder._db
   commentId: F:EventStore.Core.VNodeBuilder._db
   parent: EventStore.Core.VNodeBuilder
@@ -887,6 +905,45 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
+  commentId: M:EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
+  parent: EventStore.Core.VNodeBuilder
+  isExternal: true
+  name: WithStructuredLogging(Boolean)
+  nameWithType: VNodeBuilder.WithStructuredLogging(Boolean)
+  fullName: EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
+  spec.csharp:
+  - uid: EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
+    name: WithStructuredLogging
+    nameWithType: VNodeBuilder.WithStructuredLogging
+    fullName: EventStore.Core.VNodeBuilder.WithStructuredLogging
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.VNodeBuilder.WithStructuredLogging(System.Boolean)
+    name: WithStructuredLogging
+    nameWithType: VNodeBuilder.WithStructuredLogging
+    fullName: EventStore.Core.VNodeBuilder.WithStructuredLogging
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.VNodeBuilder.StartStandardProjections
   commentId: M:EventStore.Core.VNodeBuilder.StartStandardProjections
   parent: EventStore.Core.VNodeBuilder
@@ -943,15 +1000,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32)
-  commentId: M:EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32)
+- uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32,System.Boolean)
+  commentId: M:EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32,System.Boolean)
   parent: EventStore.Core.VNodeBuilder
   isExternal: true
-  name: RunProjections(ProjectionType, Int32)
-  nameWithType: VNodeBuilder.RunProjections(ProjectionType, Int32)
-  fullName: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType, System.Int32)
+  name: RunProjections(ProjectionType, Int32, Boolean)
+  nameWithType: VNodeBuilder.RunProjections(ProjectionType, Int32, Boolean)
+  fullName: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType, System.Int32, System.Boolean)
   spec.csharp:
-  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32)
+  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32,System.Boolean)
     name: RunProjections
     nameWithType: VNodeBuilder.RunProjections
     fullName: EventStore.Core.VNodeBuilder.RunProjections
@@ -970,11 +1027,19 @@ references:
     nameWithType: Int32
     fullName: System.Int32
     isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32)
+  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.Common.Options.ProjectionType,System.Int32,System.Boolean)
     name: RunProjections
     nameWithType: VNodeBuilder.RunProjections
     fullName: EventStore.Core.VNodeBuilder.RunProjections
@@ -992,6 +1057,14 @@ references:
     name: Int32
     nameWithType: Int32
     fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
     isExternal: true
   - name: )
     nameWithType: )
@@ -3617,6 +3690,84 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+  commentId: M:EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+  parent: EventStore.Core.VNodeBuilder
+  isExternal: true
+  name: WithInitializationThreads(Int32)
+  nameWithType: VNodeBuilder.WithInitializationThreads(Int32)
+  fullName: EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+    name: WithInitializationThreads
+    nameWithType: VNodeBuilder.WithInitializationThreads
+    fullName: EventStore.Core.VNodeBuilder.WithInitializationThreads
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.VNodeBuilder.WithInitializationThreads(System.Int32)
+    name: WithInitializationThreads
+    nameWithType: VNodeBuilder.WithInitializationThreads
+    fullName: EventStore.Core.VNodeBuilder.WithInitializationThreads
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
+  commentId: M:EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
+  parent: EventStore.Core.VNodeBuilder
+  isExternal: true
+  name: WithMaxAutoMergeIndexLevel(Int32)
+  nameWithType: VNodeBuilder.WithMaxAutoMergeIndexLevel(Int32)
+  fullName: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
+  spec.csharp:
+  - uid: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
+    name: WithMaxAutoMergeIndexLevel
+    nameWithType: VNodeBuilder.WithMaxAutoMergeIndexLevel
+    fullName: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel(System.Int32)
+    name: WithMaxAutoMergeIndexLevel
+    nameWithType: VNodeBuilder.WithMaxAutoMergeIndexLevel
+    fullName: EventStore.Core.VNodeBuilder.WithMaxAutoMergeIndexLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.VNodeBuilder.WithServerCertificate(X509Certificate2)
   commentId: M:EventStore.Core.VNodeBuilder.WithServerCertificate(X509Certificate2)
   parent: EventStore.Core.VNodeBuilder
@@ -4113,59 +4264,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
-  commentId: M:EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
-  parent: EventStore.Core.VNodeBuilder
-  isExternal: true
-  name: RunProjections(ProjectionsMode, Int32)
-  nameWithType: VNodeBuilder.RunProjections(ProjectionsMode, Int32)
-  fullName: EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode, System.Int32)
-  spec.csharp:
-  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
-    name: RunProjections
-    nameWithType: VNodeBuilder.RunProjections
-    fullName: EventStore.Core.VNodeBuilder.RunProjections
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: EventStore.ClientAPI.Embedded.ProjectionsMode
-    name: ProjectionsMode
-    nameWithType: ProjectionsMode
-    fullName: EventStore.ClientAPI.Embedded.ProjectionsMode
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: EventStore.Core.VNodeBuilder.RunProjections(EventStore.ClientAPI.Embedded.ProjectionsMode,System.Int32)
-    name: RunProjections
-    nameWithType: VNodeBuilder.RunProjections
-    fullName: EventStore.Core.VNodeBuilder.RunProjections
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: EventStore.ClientAPI.Embedded.ProjectionsMode
-    name: ProjectionsMode
-    nameWithType: ProjectionsMode
-    fullName: EventStore.ClientAPI.Embedded.ProjectionsMode
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -4322,6 +4420,12 @@ references:
   name: EventStore.Core
   nameWithType: EventStore.Core
   fullName: EventStore.Core
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -4547,6 +4651,8 @@ references:
   nameWithType: EmbeddedVNodeBuilder.AsClusterMember
   fullName: EventStore.ClientAPI.Embedded.EmbeddedVNodeBuilder.AsClusterMember
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32

@@ -10,7 +10,7 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunkDb.Config
   - EventStore.Core.TransactionLog.Chunks.TFChunkDb.Dispose
   - EventStore.Core.TransactionLog.Chunks.TFChunkDb.Manager
-  - EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean)
+  - EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean,System.Int32)
   langs:
   - csharp
   - vb
@@ -22,10 +22,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TFChunkDb
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -63,10 +63,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Config
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -96,10 +96,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Manager
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -129,10 +129,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -147,36 +147,38 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean)
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean)
-  id: Open(System.Boolean,System.Boolean)
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean,System.Int32)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean,System.Boolean,System.Int32)
+  id: Open(System.Boolean,System.Boolean,System.Int32)
   parent: EventStore.Core.TransactionLog.Chunks.TFChunkDb
   langs:
   - csharp
   - vb
-  name: Open(Boolean, Boolean)
-  nameWithType: TFChunkDb.Open(Boolean, Boolean)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean, System.Boolean)
+  name: Open(Boolean, Boolean, Int32)
+  nameWithType: TFChunkDb.Open(Boolean, Boolean, Int32)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open(System.Boolean, System.Boolean, System.Int32)
   type: Method
   source:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Open
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 26
+    startLine: 53
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public void Open(bool verifyHash = true, bool readOnly = false)
+    content: public void Open(bool verifyHash = true, bool readOnly = false, int threads = 1)
     parameters:
     - id: verifyHash
       type: System.Boolean
     - id: readOnly
       type: System.Boolean
-    content.vb: Public Sub Open(verifyHash As Boolean = True, readOnly As Boolean = False)
+    - id: threads
+      type: System.Int32
+    content.vb: Public Sub Open(verifyHash As Boolean = True, readOnly As Boolean = False, threads As Integer = 1)
   overload: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open*
   modifiers.csharp:
   - public
@@ -197,10 +199,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 257
+    startLine: 312
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -227,10 +229,10 @@ items:
     remote:
       path: src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
     path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkDb.cs
-    startLine: 262
+    startLine: 317
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -249,6 +251,8 @@ references:
   nameWithType: EventStore.Core.TransactionLog.Chunks
   fullName: EventStore.Core.TransactionLog.Chunks
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -404,6 +408,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -635,10 +645,19 @@ references:
   nameWithType: TFChunkDb.Open
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Open
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb.Dispose*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunkDb.Dispose
   name: Dispose

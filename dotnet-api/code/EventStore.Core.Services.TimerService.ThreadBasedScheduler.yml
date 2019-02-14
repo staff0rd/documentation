@@ -11,6 +11,7 @@ items:
   - EventStore.Core.Services.TimerService.ThreadBasedScheduler.Name
   - EventStore.Core.Services.TimerService.ThreadBasedScheduler.Schedule(TimeSpan,Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
   - EventStore.Core.Services.TimerService.ThreadBasedScheduler.Stop
+  - EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
   langs:
   - csharp
   - vb
@@ -22,10 +23,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ThreadBasedScheduler
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -68,10 +69,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -84,6 +85,41 @@ items:
   overload: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Name*
   implements:
   - EventStore.Core.Bus.IMonitoredQueue.Name
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
+  commentId: P:EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
+  id: Task
+  parent: EventStore.Core.Services.TimerService.ThreadBasedScheduler
+  langs:
+  - csharp
+  - vb
+  name: Task
+  nameWithType: ThreadBasedScheduler.Task
+  fullName: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Task
+    path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.TimerService
+  syntax:
+    content: public Task Task { get; }
+    parameters: []
+    return:
+      type: Task
+    content.vb: Public ReadOnly Property Task As Task
+  overload: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task*
   modifiers.csharp:
   - public
   - get
@@ -105,10 +141,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -138,10 +174,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 35
+    startLine: 38
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -170,10 +206,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Schedule
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -212,10 +248,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 87
+    startLine: 97
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -242,10 +278,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
     path: ../EventStore/src/EventStore.Core/Services/TimerService/ThreadBasedScheduler.cs
-    startLine: 92
+    startLine: 102
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
@@ -268,6 +304,8 @@ references:
   nameWithType: EventStore.Core.Services.TimerService
   fullName: EventStore.Core.Services.TimerService
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -440,6 +478,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus
   commentId: N:EventStore.Core.Bus
   name: EventStore.Core.Bus
@@ -665,10 +709,22 @@ references:
   nameWithType: IMonitoredQueue.Name
   fullName: EventStore.Core.Bus.IMonitoredQueue.Name
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task*
+  commentId: Overload:EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
+  name: Task
+  nameWithType: ThreadBasedScheduler.Task
+  fullName: EventStore.Core.Services.TimerService.ThreadBasedScheduler.Task
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
 - uid: EventStore.Core.Services.TimerService.ThreadBasedScheduler.#ctor*
   commentId: Overload:EventStore.Core.Services.TimerService.ThreadBasedScheduler.#ctor
   name: ThreadBasedScheduler

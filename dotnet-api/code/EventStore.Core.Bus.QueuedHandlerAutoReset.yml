@@ -25,10 +25,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: QueuedHandlerAutoReset
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -75,10 +75,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MessageCount
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -110,10 +110,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -148,10 +148,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -194,16 +194,18 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 61
+    startLine: 63
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: public void Start()
-    content.vb: Public Sub Start
+    content: public Task Start()
+    return:
+      type: Task
+    content.vb: Public Function Start As Task
   overload: EventStore.Core.Bus.QueuedHandlerAutoReset.Start*
   implements:
   - EventStore.Core.Bus.IQueuedHandler.Start
@@ -226,10 +228,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 74
+    startLine: 77
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -258,10 +260,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestStop
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 81
+    startLine: 84
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -290,10 +292,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 150
+    startLine: 165
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -325,10 +327,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 161
+    startLine: 176
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -360,10 +362,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
     path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerAutoReset.cs
-    startLine: 166
+    startLine: 181
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -387,6 +389,8 @@ references:
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -606,6 +610,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -856,6 +866,8 @@ references:
   nameWithType: QueuedHandlerAutoReset.MessageCount
   fullName: EventStore.Core.Bus.QueuedHandlerAutoReset.MessageCount
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -878,6 +890,8 @@ references:
   nameWithType: IMonitoredQueue.Name
   fullName: EventStore.Core.Bus.IMonitoredQueue.Name
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -888,6 +902,8 @@ references:
   nameWithType: QueuedHandlerAutoReset.QueuedHandlerAutoReset
   fullName: EventStore.Core.Bus.QueuedHandlerAutoReset.QueuedHandlerAutoReset
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -936,13 +952,14 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: Nullable<>
-  nameWithType: Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
@@ -952,9 +969,9 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -967,9 +984,9 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1006,6 +1023,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
 - uid: EventStore.Core.Bus.QueuedHandlerAutoReset.Stop*
   commentId: Overload:EventStore.Core.Bus.QueuedHandlerAutoReset.Stop
   name: Stop

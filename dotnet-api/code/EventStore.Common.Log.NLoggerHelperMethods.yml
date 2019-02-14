@@ -7,6 +7,7 @@ items:
   children:
   - EventStore.Common.Log.NLoggerHelperMethods.IsDotNet
   - EventStore.Common.Log.NLoggerHelperMethods.IsMono
+  - EventStore.Common.Log.NLoggerHelperMethods.IsStructured
   langs:
   - csharp
   - vb
@@ -18,7 +19,7 @@ items:
     remote:
       path: src/EventStore.Common/Log/NLogger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NLoggerHelperMethods
     path: ../EventStore/src/EventStore.Common/Log/NLogger.cs
     startLine: 9
@@ -54,7 +55,7 @@ items:
     remote:
       path: src/EventStore.Common/Log/NLogger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsDotNet
     path: ../EventStore/src/EventStore.Common/Log/NLogger.cs
     startLine: 11
@@ -88,7 +89,7 @@ items:
     remote:
       path: src/EventStore.Common/Log/NLogger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsMono
     path: ../EventStore/src/EventStore.Common/Log/NLogger.cs
     startLine: 17
@@ -107,6 +108,40 @@ items:
   modifiers.vb:
   - Public
   - Shared
+- uid: EventStore.Common.Log.NLoggerHelperMethods.IsStructured
+  commentId: M:EventStore.Common.Log.NLoggerHelperMethods.IsStructured
+  id: IsStructured
+  parent: EventStore.Common.Log.NLoggerHelperMethods
+  langs:
+  - csharp
+  - vb
+  name: IsStructured()
+  nameWithType: NLoggerHelperMethods.IsStructured()
+  fullName: EventStore.Common.Log.NLoggerHelperMethods.IsStructured()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Common/Log/NLogger.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsStructured
+    path: ../EventStore/src/EventStore.Common/Log/NLogger.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Common
+  namespace: EventStore.Common.Log
+  syntax:
+    content: public static bool IsStructured()
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsStructured As Boolean
+  overload: EventStore.Common.Log.NLoggerHelperMethods.IsStructured*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 references:
 - uid: EventStore.Common.Log
   commentId: N:EventStore.Common.Log
@@ -114,16 +149,26 @@ references:
   nameWithType: EventStore.Common.Log
   fullName: EventStore.Common.Log
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Log.NLoggerHelperMethods.IsDotNet*
   commentId: Overload:EventStore.Common.Log.NLoggerHelperMethods.IsDotNet
   name: IsDotNet
   nameWithType: NLoggerHelperMethods.IsDotNet
   fullName: EventStore.Common.Log.NLoggerHelperMethods.IsDotNet
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -133,3 +178,8 @@ references:
   name: IsMono
   nameWithType: NLoggerHelperMethods.IsMono
   fullName: EventStore.Common.Log.NLoggerHelperMethods.IsMono
+- uid: EventStore.Common.Log.NLoggerHelperMethods.IsStructured*
+  commentId: Overload:EventStore.Common.Log.NLoggerHelperMethods.IsStructured
+  name: IsStructured
+  nameWithType: NLoggerHelperMethods.IsStructured
+  fullName: EventStore.Common.Log.NLoggerHelperMethods.IsStructured

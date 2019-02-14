@@ -22,7 +22,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HistogramService
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 11
@@ -58,7 +58,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetHistogram
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 22
@@ -66,13 +66,13 @@ items:
   - EventStore.Core
   namespace: EventStore.Core.Services.Histograms
   syntax:
-    content: public static Histogram GetHistogram(string name)
+    content: public static HistogramBase GetHistogram(string name)
     parameters:
     - id: name
       type: System.String
     return:
-      type: Histogram
-    content.vb: Public Shared Function GetHistogram(name As String) As Histogram
+      type: HistogramBase
+    content.vb: Public Shared Function GetHistogram(name As String) As HistogramBase
   overload: EventStore.Core.Services.Histograms.HistogramService.GetHistogram*
   modifiers.csharp:
   - public
@@ -95,7 +95,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Measure
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 29
@@ -132,7 +132,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetValue
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 35
@@ -169,7 +169,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateHistogram
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 49
@@ -204,7 +204,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateHistograms
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 54
@@ -236,7 +236,7 @@ items:
     remote:
       path: src/EventStore.Core/Services/Histograms/HistogramService.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartJitterMonitor
     path: ../EventStore/src/EventStore.Core/Services/Histograms/HistogramService.cs
     startLine: 67
@@ -260,25 +260,35 @@ references:
   nameWithType: EventStore.Core.Services.Histograms
   fullName: EventStore.Core.Services.Histograms
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Services.Histograms.HistogramService.GetHistogram*
   commentId: Overload:EventStore.Core.Services.Histograms.HistogramService.GetHistogram
   name: GetHistogram
   nameWithType: HistogramService.GetHistogram
   fullName: EventStore.Core.Services.Histograms.HistogramService.GetHistogram
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Histogram
+- uid: HistogramBase
   isExternal: true
-  name: Histogram
-  nameWithType: Histogram
-  fullName: Histogram
+  name: HistogramBase
+  nameWithType: HistogramBase
+  fullName: HistogramBase
 - uid: EventStore.Core.Services.Histograms.HistogramService.Measure*
   commentId: Overload:EventStore.Core.Services.Histograms.HistogramService.Measure
   name: Measure
@@ -296,6 +306,8 @@ references:
   nameWithType: HistogramService.SetValue
   fullName: EventStore.Core.Services.Histograms.HistogramService.SetValue
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64

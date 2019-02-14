@@ -5,7 +5,7 @@ items:
   id: TableIndex
   parent: EventStore.Core.Index
   children:
-  - EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)
+  - EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
   - EventStore.Core.Index.TableIndex.Add(System.Int64,System.String,System.Int64,System.Int64)
   - EventStore.Core.Index.TableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
   - EventStore.Core.Index.TableIndex.Close(System.Boolean)
@@ -14,10 +14,14 @@ items:
   - EventStore.Core.Index.TableIndex.GetRange(System.String,System.Int64,System.Int64,System.Nullable{System.Int32})
   - EventStore.Core.Index.TableIndex.IndexMapFilename
   - EventStore.Core.Index.TableIndex.Initialize(System.Int64)
+  - EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+  - EventStore.Core.Index.TableIndex.MergeIndexes
   - EventStore.Core.Index.TableIndex.PrepareCheckpoint
+  - EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
   - EventStore.Core.Index.TableIndex.TryGetLatestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.TableIndex.TryGetOldestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.TableIndex.TryGetOneValue(System.String,System.Int64,System.Int64@)
+  - EventStore.Core.Index.TableIndex.TryManualMerge
   langs:
   - csharp
   - vb
@@ -29,10 +33,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TableIndex
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -73,10 +77,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexMapFilename
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -106,10 +110,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 23
+    startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -143,10 +147,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 24
+    startLine: 28
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -180,10 +184,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ForceIndexVerifyFilename
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 52
+    startLine: 57
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -198,30 +202,30 @@ items:
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  commentId: M:EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)
-  id: '#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32)'
+- uid: EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  commentId: M:EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  id: '#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)'
   parent: EventStore.Core.Index.TableIndex
   langs:
   - csharp
   - vb
-  name: TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Boolean, Boolean, Boolean, Int32)
-  nameWithType: TableIndex.TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Boolean, Boolean, Boolean, Int32)
-  fullName: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func<EventStore.Core.Index.IMemTable>, Func<EventStore.Core.TransactionLog.TFReaderLease>, System.Byte, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32)
+  name: TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
+  nameWithType: TableIndex.TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
+  fullName: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func<EventStore.Core.Index.IMemTable>, Func<EventStore.Core.TransactionLog.TFReaderLease>, System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 54
+    startLine: 60
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public TableIndex(string directory, IHasher lowHasher, IHasher highHasher, Func<IMemTable> memTableFactory, Func<TFReaderLease> tfReaderFactory, byte ptableVersion, int maxSizeForMemory = 1000000, int maxTablesPerLevel = 4, bool additionalReclaim = false, bool inMem = false, bool skipIndexVerify = false, int indexCacheDepth = 16)
+    content: public TableIndex(string directory, IHasher lowHasher, IHasher highHasher, Func<IMemTable> memTableFactory, Func<TFReaderLease> tfReaderFactory, byte ptableVersion, int maxAutoMergeIndexLevel, int maxSizeForMemory = 1000000, int maxTablesPerLevel = 4, bool additionalReclaim = false, bool inMem = false, bool skipIndexVerify = false, int indexCacheDepth = 16, int initializationThreads = 1)
     parameters:
     - id: directory
       type: System.String
@@ -235,6 +239,8 @@ items:
       type: Func{EventStore.Core.TransactionLog.TFReaderLease}
     - id: ptableVersion
       type: System.Byte
+    - id: maxAutoMergeIndexLevel
+      type: System.Int32
     - id: maxSizeForMemory
       type: System.Int32
     - id: maxTablesPerLevel
@@ -247,15 +253,17 @@ items:
       type: System.Boolean
     - id: indexCacheDepth
       type: System.Int32
-    content.vb: Public Sub New(directory As String, lowHasher As IHasher, highHasher As IHasher, memTableFactory As Func(Of IMemTable), tfReaderFactory As Func(Of TFReaderLease), ptableVersion As Byte, maxSizeForMemory As Integer = 1000000, maxTablesPerLevel As Integer = 4, additionalReclaim As Boolean = False, inMem As Boolean = False, skipIndexVerify As Boolean = False, indexCacheDepth As Integer = 16)
+    - id: initializationThreads
+      type: System.Int32
+    content.vb: Public Sub New(directory As String, lowHasher As IHasher, highHasher As IHasher, memTableFactory As Func(Of IMemTable), tfReaderFactory As Func(Of TFReaderLease), ptableVersion As Byte, maxAutoMergeIndexLevel As Integer, maxSizeForMemory As Integer = 1000000, maxTablesPerLevel As Integer = 4, additionalReclaim As Boolean = False, inMem As Boolean = False, skipIndexVerify As Boolean = False, indexCacheDepth As Integer = 16, initializationThreads As Integer = 1)
   overload: EventStore.Core.Index.TableIndex.#ctor*
-  nameWithType.vb: TableIndex.TableIndex(String, IHasher, IHasher, Func(Of IMemTable), Func(Of TFReaderLease), Byte, Int32, Int32, Boolean, Boolean, Boolean, Int32)
+  nameWithType.vb: TableIndex.TableIndex(String, IHasher, IHasher, Func(Of IMemTable), Func(Of TFReaderLease), Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func(Of EventStore.Core.Index.IMemTable), Func(Of EventStore.Core.TransactionLog.TFReaderLease), System.Byte, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32)
-  name.vb: TableIndex(String, IHasher, IHasher, Func(Of IMemTable), Func(Of TFReaderLease), Byte, Int32, Int32, Boolean, Boolean, Boolean, Int32)
+  fullName.vb: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func(Of EventStore.Core.Index.IMemTable), Func(Of EventStore.Core.TransactionLog.TFReaderLease), System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
+  name.vb: TableIndex(String, IHasher, IHasher, Func(Of IMemTable), Func(Of TFReaderLease), Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
 - uid: EventStore.Core.Index.TableIndex.Initialize(System.Int64)
   commentId: M:EventStore.Core.Index.TableIndex.Initialize(System.Int64)
   id: Initialize(System.Int64)
@@ -271,10 +279,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialize
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 93
+    startLine: 108
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -306,10 +314,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Add
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 195
+    startLine: 207
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -347,10 +355,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddEntries
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 204
+    startLine: 216
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -372,6 +380,144 @@ items:
   - Public
   fullName.vb: EventStore.Core.Index.TableIndex.AddEntries(System.Int64, IList(Of EventStore.Core.Index.IndexKey))
   name.vb: AddEntries(Int64, IList(Of IndexKey))
+- uid: EventStore.Core.Index.TableIndex.MergeIndexes
+  commentId: M:EventStore.Core.Index.TableIndex.MergeIndexes
+  id: MergeIndexes
+  parent: EventStore.Core.Index.TableIndex
+  langs:
+  - csharp
+  - vb
+  name: MergeIndexes()
+  nameWithType: TableIndex.MergeIndexes()
+  fullName: EventStore.Core.Index.TableIndex.MergeIndexes()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/TableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: MergeIndexes
+    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    startLine: 236
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public Task MergeIndexes()
+    return:
+      type: Task
+    content.vb: Public Function MergeIndexes As Task
+  overload: EventStore.Core.Index.TableIndex.MergeIndexes*
+  implements:
+  - EventStore.Core.Index.ITableIndex.MergeIndexes
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+  commentId: P:EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+  id: IsBackgroundTaskRunning
+  parent: EventStore.Core.Index.TableIndex
+  langs:
+  - csharp
+  - vb
+  name: IsBackgroundTaskRunning
+  nameWithType: TableIndex.IsBackgroundTaskRunning
+  fullName: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Index/TableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsBackgroundTaskRunning
+    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    startLine: 242
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public bool IsBackgroundTaskRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsBackgroundTaskRunning As Boolean
+  overload: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning*
+  implements:
+  - EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Core.Index.TableIndex.TryManualMerge
+  commentId: M:EventStore.Core.Index.TableIndex.TryManualMerge
+  id: TryManualMerge
+  parent: EventStore.Core.Index.TableIndex
+  langs:
+  - csharp
+  - vb
+  name: TryManualMerge()
+  nameWithType: TableIndex.TryManualMerge()
+  fullName: EventStore.Core.Index.TableIndex.TryManualMerge()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/TableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: TryManualMerge
+    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    startLine: 267
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public void TryManualMerge()
+    content.vb: Public Sub TryManualMerge
+  overload: EventStore.Core.Index.TableIndex.TryManualMerge*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  commentId: M:EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  id: Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  parent: EventStore.Core.Index.TableIndex
+  langs:
+  - csharp
+  - vb
+  name: Scavenge(IIndexScavengerLog, CancellationToken)
+  nameWithType: TableIndex.Scavenge(IIndexScavengerLog, CancellationToken)
+  fullName: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/TableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Scavenge
+    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    startLine: 401
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: public void Scavenge(IIndexScavengerLog log, CancellationToken ct)
+    parameters:
+    - id: log
+      type: EventStore.Core.Index.IIndexScavengerLog
+    - id: ct
+      type: CancellationToken
+    content.vb: Public Sub Scavenge(log As IIndexScavengerLog, ct As CancellationToken)
+  overload: EventStore.Core.Index.TableIndex.Scavenge*
+  implements:
+  - EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.Core.Index.TableIndex.TryGetOneValue(System.String,System.Int64,System.Int64@)
   commentId: M:EventStore.Core.Index.TableIndex.TryGetOneValue(System.String,System.Int64,System.Int64@)
   id: TryGetOneValue(System.String,System.Int64,System.Int64@)
@@ -387,10 +533,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOneValue
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 359
+    startLine: 542
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -431,10 +577,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetLatestEntry
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 405
+    startLine: 588
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -473,10 +619,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOldestEntry
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 448
+    startLine: 631
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -515,10 +661,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetRange
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 491
+    startLine: 674
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -561,10 +707,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/TableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
     path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
-    startLine: 579
+    startLine: 762
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -588,6 +734,8 @@ references:
   nameWithType: EventStore.Core.Index
   fullName: EventStore.Core.Index
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -749,6 +897,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -958,6 +1112,8 @@ references:
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -974,6 +1130,8 @@ references:
   nameWithType: ITableIndex.CommitCheckpoint
   fullName: EventStore.Core.Index.ITableIndex.CommitCheckpoint
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
@@ -1083,16 +1241,22 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
   isExternal: true
   name: Byte
   nameWithType: Byte
   fullName: System.Byte
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -1438,6 +1602,129 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Index.TableIndex.MergeIndexes*
+  commentId: Overload:EventStore.Core.Index.TableIndex.MergeIndexes
+  name: MergeIndexes
+  nameWithType: TableIndex.MergeIndexes
+  fullName: EventStore.Core.Index.TableIndex.MergeIndexes
+- uid: EventStore.Core.Index.ITableIndex.MergeIndexes
+  commentId: M:EventStore.Core.Index.ITableIndex.MergeIndexes
+  parent: EventStore.Core.Index.ITableIndex
+  name: MergeIndexes()
+  nameWithType: ITableIndex.MergeIndexes()
+  fullName: EventStore.Core.Index.ITableIndex.MergeIndexes()
+  spec.csharp:
+  - uid: EventStore.Core.Index.ITableIndex.MergeIndexes
+    name: MergeIndexes
+    nameWithType: ITableIndex.MergeIndexes
+    fullName: EventStore.Core.Index.ITableIndex.MergeIndexes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Index.ITableIndex.MergeIndexes
+    name: MergeIndexes
+    nameWithType: ITableIndex.MergeIndexes
+    fullName: EventStore.Core.Index.ITableIndex.MergeIndexes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
+- uid: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning*
+  commentId: Overload:EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+  name: IsBackgroundTaskRunning
+  nameWithType: TableIndex.IsBackgroundTaskRunning
+  fullName: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
+- uid: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  commentId: P:EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  parent: EventStore.Core.Index.ITableIndex
+  name: IsBackgroundTaskRunning
+  nameWithType: ITableIndex.IsBackgroundTaskRunning
+  fullName: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+- uid: EventStore.Core.Index.TableIndex.TryManualMerge*
+  commentId: Overload:EventStore.Core.Index.TableIndex.TryManualMerge
+  name: TryManualMerge
+  nameWithType: TableIndex.TryManualMerge
+  fullName: EventStore.Core.Index.TableIndex.TryManualMerge
+- uid: EventStore.Core.Index.TableIndex.Scavenge*
+  commentId: Overload:EventStore.Core.Index.TableIndex.Scavenge
+  name: Scavenge
+  nameWithType: TableIndex.Scavenge
+  fullName: EventStore.Core.Index.TableIndex.Scavenge
+- uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  commentId: M:EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  parent: EventStore.Core.Index.ITableIndex
+  isExternal: true
+  name: Scavenge(IIndexScavengerLog, CancellationToken)
+  nameWithType: ITableIndex.Scavenge(IIndexScavengerLog, CancellationToken)
+  fullName: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, CancellationToken)
+  spec.csharp:
+  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+    name: Scavenge
+    nameWithType: ITableIndex.Scavenge
+    fullName: EventStore.Core.Index.ITableIndex.Scavenge
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Index.IIndexScavengerLog
+    name: IIndexScavengerLog
+    nameWithType: IIndexScavengerLog
+    fullName: EventStore.Core.Index.IIndexScavengerLog
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+    name: Scavenge
+    nameWithType: ITableIndex.Scavenge
+    fullName: EventStore.Core.Index.ITableIndex.Scavenge
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Index.IIndexScavengerLog
+    name: IIndexScavengerLog
+    nameWithType: IIndexScavengerLog
+    fullName: EventStore.Core.Index.IIndexScavengerLog
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Index.IIndexScavengerLog
+  commentId: T:EventStore.Core.Index.IIndexScavengerLog
+  parent: EventStore.Core.Index
+  name: IIndexScavengerLog
+  nameWithType: IIndexScavengerLog
+  fullName: EventStore.Core.Index.IIndexScavengerLog
+- uid: CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: CancellationToken
 - uid: EventStore.Core.Index.TableIndex.TryGetOneValue*
   commentId: Overload:EventStore.Core.Index.TableIndex.TryGetOneValue
   name: TryGetOneValue
@@ -1838,13 +2125,14 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: Nullable<>
-  nameWithType: Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
@@ -1854,9 +2142,9 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -1869,9 +2157,9 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

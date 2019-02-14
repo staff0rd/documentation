@@ -7,6 +7,7 @@ items:
   - EventStore.Common.Utils.Application
   - EventStore.Common.Utils.BooleanTypeConverter
   - EventStore.Common.Utils.BytesFormatter
+  - EventStore.Common.Utils.ConcurrentQueueWrapper`1
   - EventStore.Common.Utils.Empty
   - EventStore.Common.Utils.EndpointExtensions
   - EventStore.Common.Utils.Ensure
@@ -38,8 +39,13 @@ items:
   fullName: EventStore.Common.Utils
   type: Namespace
   assemblies:
-  - EventStore.Common
+  - EventStore.Common.Utils
 references:
+- uid: EventStore.Common.Utils.Runtime
+  commentId: T:EventStore.Common.Utils.Runtime
+  name: Runtime
+  nameWithType: Runtime
+  fullName: EventStore.Common.Utils.Runtime
 - uid: EventStore.Common.Utils.ExitCode
   commentId: T:EventStore.Common.Utils.ExitCode
   parent: EventStore.Common.Utils
@@ -56,21 +62,82 @@ references:
   name: BooleanTypeConverter
   nameWithType: BooleanTypeConverter
   fullName: EventStore.Common.Utils.BooleanTypeConverter
-- uid: EventStore.Common.Utils.EndpointExtensions
-  commentId: T:EventStore.Common.Utils.EndpointExtensions
-  name: EndpointExtensions
-  nameWithType: EndpointExtensions
-  fullName: EventStore.Common.Utils.EndpointExtensions
-- uid: EventStore.Common.Utils.FileStreamExtensions
-  commentId: T:EventStore.Common.Utils.FileStreamExtensions
-  name: FileStreamExtensions
-  nameWithType: FileStreamExtensions
-  fullName: EventStore.Common.Utils.FileStreamExtensions
+- uid: EventStore.Common.Utils.BytesFormatter
+  commentId: T:EventStore.Common.Utils.BytesFormatter
+  name: BytesFormatter
+  nameWithType: BytesFormatter
+  fullName: EventStore.Common.Utils.BytesFormatter
+- uid: EventStore.Common.Utils.ConcurrentQueueWrapper`1
+  commentId: T:EventStore.Common.Utils.ConcurrentQueueWrapper`1
+  name: ConcurrentQueueWrapper<T>
+  nameWithType: ConcurrentQueueWrapper<T>
+  fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>
+  nameWithType.vb: ConcurrentQueueWrapper(Of T)
+  fullName.vb: EventStore.Common.Utils.ConcurrentQueueWrapper(Of T)
+  name.vb: ConcurrentQueueWrapper(Of T)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.ConcurrentQueueWrapper`1
+    name: ConcurrentQueueWrapper
+    nameWithType: ConcurrentQueueWrapper
+    fullName: EventStore.Common.Utils.ConcurrentQueueWrapper
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Common.Utils.ConcurrentQueueWrapper`1
+    name: ConcurrentQueueWrapper
+    nameWithType: ConcurrentQueueWrapper
+    fullName: EventStore.Common.Utils.ConcurrentQueueWrapper
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Common.Utils.Empty
   commentId: T:EventStore.Common.Utils.Empty
   name: Empty
   nameWithType: Empty
   fullName: EventStore.Common.Utils.Empty
+- uid: EventStore.Common.Utils.EndpointExtensions
+  commentId: T:EventStore.Common.Utils.EndpointExtensions
+  name: EndpointExtensions
+  nameWithType: EndpointExtensions
+  fullName: EventStore.Common.Utils.EndpointExtensions
+- uid: EventStore.Common.Utils.Ensure
+  commentId: T:EventStore.Common.Utils.Ensure
+  name: Ensure
+  nameWithType: Ensure
+  fullName: EventStore.Common.Utils.Ensure
+- uid: EventStore.Common.Utils.EnumerableExtensions
+  commentId: T:EventStore.Common.Utils.EnumerableExtensions
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: EventStore.Common.Utils.EnumerableExtensions
+- uid: EventStore.Common.Utils.FileStreamExtensions
+  commentId: T:EventStore.Common.Utils.FileStreamExtensions
+  name: FileStreamExtensions
+  nameWithType: FileStreamExtensions
+  fullName: EventStore.Common.Utils.FileStreamExtensions
+- uid: EventStore.Common.Utils.Helper
+  commentId: T:EventStore.Common.Utils.Helper
+  name: Helper
+  nameWithType: Helper
+  fullName: EventStore.Common.Utils.Helper
+- uid: EventStore.Common.Utils.HostName
+  commentId: T:EventStore.Common.Utils.HostName
+  name: HostName
+  nameWithType: HostName
+  fullName: EventStore.Common.Utils.HostName
 - uid: EventStore.Common.Utils.IPAddressConverter
   commentId: T:EventStore.Common.Utils.IPAddressConverter
   name: IPAddressConverter
@@ -86,6 +153,16 @@ references:
   name: IPEndPointComparer
   nameWithType: IPEndPointComparer
   fullName: EventStore.Common.Utils.IPEndPointComparer
+- uid: EventStore.Common.Utils.IPEndPointConverter
+  commentId: T:EventStore.Common.Utils.IPEndPointConverter
+  name: IPEndPointConverter
+  nameWithType: IPEndPointConverter
+  fullName: EventStore.Common.Utils.IPEndPointConverter
+- uid: EventStore.Common.Utils.IPFinder
+  commentId: T:EventStore.Common.Utils.IPFinder
+  name: IPFinder
+  nameWithType: IPFinder
+  fullName: EventStore.Common.Utils.IPFinder
 - uid: EventStore.Common.Utils.Json
   commentId: T:EventStore.Common.Utils.Json
   parent: EventStore.Common.Utils
@@ -97,6 +174,17 @@ references:
   name: Locations
   nameWithType: Locations
   fullName: EventStore.Common.Utils.Locations
+- uid: EventStore.Common.Utils.OsFlavor
+  commentId: T:EventStore.Common.Utils.OsFlavor
+  parent: EventStore.Common.Utils
+  name: OsFlavor
+  nameWithType: OsFlavor
+  fullName: EventStore.Common.Utils.OsFlavor
+- uid: EventStore.Common.Utils.OS
+  commentId: T:EventStore.Common.Utils.OS
+  name: OS
+  nameWithType: OS
+  fullName: EventStore.Common.Utils.OS
 - uid: EventStore.Common.Utils.Platforms
   commentId: T:EventStore.Common.Utils.Platforms
   name: Platforms
@@ -118,62 +206,11 @@ references:
   name: StringExtensions
   nameWithType: StringExtensions
   fullName: EventStore.Common.Utils.StringExtensions
-- uid: EventStore.Common.Utils.Helper
-  commentId: T:EventStore.Common.Utils.Helper
-  name: Helper
-  nameWithType: Helper
-  fullName: EventStore.Common.Utils.Helper
-- uid: EventStore.Common.Utils.HostName
-  commentId: T:EventStore.Common.Utils.HostName
-  name: HostName
-  nameWithType: HostName
-  fullName: EventStore.Common.Utils.HostName
-- uid: EventStore.Common.Utils.OsFlavor
-  commentId: T:EventStore.Common.Utils.OsFlavor
-  parent: EventStore.Common.Utils
-  name: OsFlavor
-  nameWithType: OsFlavor
-  fullName: EventStore.Common.Utils.OsFlavor
-- uid: EventStore.Common.Utils.OS
-  commentId: T:EventStore.Common.Utils.OS
-  name: OS
-  nameWithType: OS
-  fullName: EventStore.Common.Utils.OS
-- uid: EventStore.Common.Utils.BytesFormatter
-  commentId: T:EventStore.Common.Utils.BytesFormatter
-  name: BytesFormatter
-  nameWithType: BytesFormatter
-  fullName: EventStore.Common.Utils.BytesFormatter
-- uid: EventStore.Common.Utils.EnumerableExtensions
-  commentId: T:EventStore.Common.Utils.EnumerableExtensions
-  name: EnumerableExtensions
-  nameWithType: EnumerableExtensions
-  fullName: EventStore.Common.Utils.EnumerableExtensions
-- uid: EventStore.Common.Utils.Ensure
-  commentId: T:EventStore.Common.Utils.Ensure
-  name: Ensure
-  nameWithType: Ensure
-  fullName: EventStore.Common.Utils.Ensure
-- uid: EventStore.Common.Utils.Runtime
-  commentId: T:EventStore.Common.Utils.Runtime
-  name: Runtime
-  nameWithType: Runtime
-  fullName: EventStore.Common.Utils.Runtime
 - uid: EventStore.Common.Utils.VersionInfo
   commentId: T:EventStore.Common.Utils.VersionInfo
   name: VersionInfo
   nameWithType: VersionInfo
   fullName: EventStore.Common.Utils.VersionInfo
-- uid: EventStore.Common.Utils.IPEndPointConverter
-  commentId: T:EventStore.Common.Utils.IPEndPointConverter
-  name: IPEndPointConverter
-  nameWithType: IPEndPointConverter
-  fullName: EventStore.Common.Utils.IPEndPointConverter
-- uid: EventStore.Common.Utils.IPFinder
-  commentId: T:EventStore.Common.Utils.IPFinder
-  name: IPFinder
-  nameWithType: IPFinder
-  fullName: EventStore.Common.Utils.IPFinder
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
   name: EventStore.Common.Utils
