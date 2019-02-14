@@ -8,10 +8,11 @@ outputFileName: index.html
 
 `$persistentSubscriptionConfig` is a special paged stream that contains all configuration events, for all persistent subscriptions. It uses the following system event types:
 
-- `PersistentConfig1`: An event that records a configuration event, the event data contains:
+- `PersistentConfig`: An event that records a configuration event, the event data contains:
   - `version`: Version of event data
   - `updated`: Updated date
   - `updatedBy`: User who updated configuration
+  - `maxCount`: The number of configuration events to save
   - `entries`: Configuration items set by event. Find more details of configuration items for [the .NET API](~/dotnet-api/competing-consumers.md) and [the HTTP API](~/http-api/competing-consumers.md).
 
 ## `$all`

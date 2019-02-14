@@ -25,7 +25,7 @@ Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc42
 
 [!code-http[getting-started-read-stream-response](~/code-examples/getting-started/read-stream.sh?range=3-)]
 
-* * *
+---
 
 ### [.NET Client API](#tab/tabid-dotnet-client)
 
@@ -42,7 +42,7 @@ To use the JVM client, use the following method passing the stream name, the sta
 
 [!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
 
-***
+---
 
 ## Read a Single Event
 
@@ -59,7 +59,7 @@ The feed has a single item inside of it, the one you posted in [part 1](~/gettin
 
 [!code-http[getting-started-read-event-response](~/code-examples/getting-started/read-event.sh?range=3-)]
 
-* * *
+---
 
 ### [.NET Client API](#tab/tabid-dotnet-read-event)
 
@@ -73,7 +73,7 @@ To use the Java client, use the following method passing the stream name, the ev
 
 [!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
 
-***
+---
 
 ## Paginating through Events
 
@@ -104,7 +104,7 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 
 [!code-java[getting-started-read](~/code-examples/jvm-client/SubscriptionExample.java?start=15&end=35)]
 
-* * *
+---
 
 <!-- TODO: The dotnet example has reading events as they are added to subscription, HTTP does not, expand? -->
 
@@ -141,4 +141,4 @@ This subscription supports the "[competing consumers](https://docs.microsoft.com
 
 In this second part of our getting started guide you learned how to read events from a stream and subscribe to changes. The next part covers projections, used to give you continuous queries of your data.
 
--   [Step 3 - Projections](~/getting-started/projections.md)
+- [Step 3 - Projections](~/getting-started/projections.md)
