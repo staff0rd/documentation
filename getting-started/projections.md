@@ -12,8 +12,7 @@ When running a projection, you can choose whether the query should run and give 
 
 You enable projections with the command line argument `--run-projections`. For example, the command below enables all projection modes (system and user-defined):
 
-> [!TIP]
-> [Read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
+> [!TIP][read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
 
 #### [Windows](#tab/tabid-1)
 
@@ -51,7 +50,22 @@ To disable them again:
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 -e EVENTSTORE_RUN_PROJECTIONS=None eventstore/eventstore
 ```
 
-* * *
+### [macOS](#tab/tabid-macos)
+
+```bash
+eventstore --run-projections=all --start-standard-projections=true
+```
+
+To disable them again, run:
+
+```bash
+eventstore --run-projections=none
+```
+
+> [!NOTE]
+> To use the default database location on macOS you need to use `sudo`, or you can change the location with the `--db` parameter.
+
+---
 
 You then see new tabs enabled in the Admin UI with the 4 system projections in a `Stopped` state:
 
@@ -71,16 +85,16 @@ The response is a list of all known projections and useful information about the
 
 [!code-json[getting-started-projections-get-all-response](~/code-examples/getting-started/list-all-projections.json)]
 
-* * *
+---
 
 ## Add Sample Data
 
 Download the following files that contain sample data used throughout this step of the getting started guide.
 
--   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json)
--   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json)
--   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json)
--   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json)
+- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json)
+- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json)
+- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json)
+- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json)
 
 Add the sample data to four different streams:
 
@@ -96,7 +110,7 @@ Add the sample data to four different streams:
 
 [!code-java[getting-started-write-multiple](~/code-examples/jvm-client/WriteMultipleEventsExample.java?start=41&end=74)]
 
-* * *
+---
 
 > [!NOTE]
 > While it's not the fastest method, you can also use the Admin UI for creating the streams, and all the tasks in this step, as we saw in [step 1](~/getting-started/index.md).
@@ -104,7 +118,7 @@ Add the sample data to four different streams:
 ## Writing your first projection
 
 > [!TIP]
-> [Read this guide](~/projections/user-defined-projections.md) to find out more about the user defined projection's API.
+> Read [this guide](~/projections/user-defined-projections.md) to find out more about the user defined projection's API.
 
 The projection counts the number of 'XBox One S's that customers added to their shopping carts.
 
@@ -126,17 +140,15 @@ And to use the HTTP or .NET API:
 
 [!code-bash[getting-started-projections-create-projection](~/code-examples/getting-started/create-projection.sh)]
 
-> [!NEXT]
-> [Read here](~/projections/api.md) for more information on creating projections with the HTTP API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
+> [!NEXT][read here](~/projections/api.md) for more information on creating projections with the HTTP API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
 
 ### [.NET API](#tab/tabid-create-proj-net)
 
 [!code-csharp[getting-started-projections-create-projection-dotnet](~/code-examples/dotnet-client/Program.cs?range=26-27,165)]
 
-> [!NEXT]
-> [Read here](~/dotnet-api/projections.md) for more information on creating projections with the .NET API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
+> [!NEXT][read here](~/dotnet-api/projections.md) for more information on creating projections with the .NET API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
 
-* * *
+---
 
 ## Querying for the state of the projection
 
@@ -154,7 +166,7 @@ Now the projection is running, you can query the state of the projection. As thi
 
 [!code-json[getting-started-projections-query-state-response](~/code-examples/getting-started/query-state.json)]
 
-* * *
+---
 
 ## Writing to Streams from Projections
 
@@ -178,7 +190,7 @@ To update the projection, edit the projection definition in the Admin UI, or iss
 
 [!code-csharp[getting-started-projections-update](~/code-examples/dotnet-client/Program.cs?range=192)]
 
-* * *
+---
 
 Then reset the projection you created above:
 
@@ -194,7 +206,7 @@ Then reset the projection you created above:
 
 [!code-json[getting-started-projections-reset-response](~/code-examples/getting-started/reset-projection.json)]
 
-* * *
+---
 
 You can now read the events in the result stream by issuing a read request.
 
@@ -210,7 +222,7 @@ You can now read the events in the result stream by issuing a read request.
 
 [!code-json[getting-started-projections-read-projection-events-response](~/code-examples/getting-started/read-projection-events.json)]
 
-* * *
+---
 
 ## Configure Projection Properties
 
@@ -228,7 +240,7 @@ Then send the update to the projection:
 
 [!code-csharp[getting-started-projections-config-update](~/code-examples/dotnet-client/Program.cs?range=218)]
 
-* * *
+---
 
 > [!TIP]
 > You can find all the options available in the [user defined projections guide](~/projections/user-defined-projections.md).
@@ -243,7 +255,7 @@ Now you can read the result as above, but use the new stream name:
 
 [!code-csharp[getting-started-projections-state](~/code-examples/dotnet-client/Program.cs?range=220-223)]
 
-* * *
+---
 
 ## The Number of items per shopping cart
 
@@ -259,7 +271,7 @@ Event Store has a built-in `$by_category` projection that lets you select events
 
 [!code-csharp[getting-started-projections-enable](~/code-examples/dotnet-client/Program.cs?range=231)]
 
-* * *
+---
 
 The projection links events from existing streams to new streams by splitting the stream name by a separator. You can configure the projection to specify the position of where to split the stream `id` and provide a separator.
 
@@ -287,7 +299,7 @@ Create the projection with the following request:
 
 [!code-csharp[getting-started-projections-count-per-stream](~/code-examples/dotnet-client/Program.cs?range=248)]
 
-* * *
+---
 
 #### Querying for the state of the projection by partition
 
@@ -305,10 +317,10 @@ Querying for the state of the projection is different due to the partitioning of
 
 [!code-json[getting-started-projections-read-state-partition-response](~/code-examples/getting-started/read-state-partition.json)]
 
-* * *
+---
 
 ## Next Step
 
 In this third part of our getting started guide you learned about projections. The next, and final part covers which API or SDK to use, and when.
 
--   [Step 4 - Which API or SDK](~/getting-started/which-api-sdk.md)
+- [Step 4 - Which API or SDK](~/getting-started/which-api-sdk.md)

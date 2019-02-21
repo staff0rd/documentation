@@ -7,8 +7,8 @@
 
 The prerequisites for Installing on Windows are:
 
--   NET Framework 4.0+
--   Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a full build)
+- NET Framework 4.0+
+- Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a full build)
 
 Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore-oss) available that you can install with the following command:
 
@@ -34,7 +34,7 @@ netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 
 The prerequisites for Installing on Linux are:
 
--   We recommend [Mono 5.16.0](https://www.mono-project.com/download/stable/), but other versions may also work.
+- We recommend [Mono 5.16.0](https://www.mono-project.com/download/stable/), but other versions may also work.
 
 Event Store has pre-built [packages available for Debian-based distributions](https://packagecloud.io/EventStore/EventStore-OSS), [manual instructions for distributions that use RPM](https://packagecloud.io/EventStore/EventStore-OSS/install#bash-rpm), or you can [build from source](https://github.com/EventStore/EventStore#linux). The final package name to install is `eventstore-oss`.
 
@@ -63,4 +63,14 @@ Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 ```
 
-* * *
+### [macOS](#tab/tabid-macos)
+
+Event Store has a macOS package [you can download](https://eventstore.org/downloads/) and install, and we maintain a Homebrew Cask formula you can install:
+
+```shell
+brew cask install eventstore
+```
+
+In each case you can run Event Store with the `eventstore` command, and stop it with `Ctrl+c`. To use the default database location you need to use `sudo`, or you can change the location with the `--db` parameter.
+
+---

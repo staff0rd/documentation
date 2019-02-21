@@ -14,7 +14,7 @@ This first step covers installation and running Event Store, and writing your fi
 
 There are three ways to interact with Event Store:
 
-1.  With the Admin UI (more details link).
+1.  [With the Admin UI](~/server/admin-ui.md).
 2.  [With the HTTP API](~/http-api/index.md).
 3.  With a Client API, which you need to install first. Our documentation covers the [.NET Core client API](~/dotnet-api/index.md) and the [JVM client](https://github.com/EventStore/EventStore.JVM) but [others](~/getting-started/which-api-sdk.md) are available.
 
@@ -50,7 +50,7 @@ And require it in your code:
 import eventstore.*;
 ```
 
-* * *
+---
 
 ## Connecting to Event Store
 
@@ -70,7 +70,7 @@ When using the .NET client, you also need to give the connection a name.
 [!code-csharp[getting-started-connection](~/code-examples/dotnet-client/Program.cs?start=32&end=33)]
 
 > [!NEXT]
-> In this example we used the [`EventStoreConnection.Create()`](#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)) overloaded method but [others are available](#EventStore.ClientAPI.EventStoreConnection).
+> In this example we used the [`EventStoreConnection.Create()`](<#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)>) overloaded method but [others are available](#EventStore.ClientAPI.EventStoreConnection).
 
 ### [JVM Client](#tab/tabid-jvm-client-connect)
 
@@ -79,7 +79,7 @@ When using the .NET client, you also need to give the connection a name.
 > [!NOTE]
 > For our JVM examples we use [akka](https://akka.io), a toolkit for building highly concurrent and distributed JVM applications.
 
-***
+---
 
 ## Writing Events to an Event Stream
 
@@ -102,7 +102,7 @@ Use the following cURL command, passing the name of the stream and the events to
 [!code-bash[getting-started-write-event-request](~/code-examples/getting-started/write-event.sh?start=1&end=1)]
 
 > [!NEXT]
-> [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
+> Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
 
 > [!NOTE]
 > You can also post events to the HTTP API as XML, by changing the `Content-Type` header to `XML`.
@@ -114,7 +114,7 @@ To use the .NET API, use the following method, passing the name of the stream, t
 [!code-csharp[getting-started-write-event-request](~/code-examples/dotnet-client/Program.cs?range=95)]
 
 > [!NEXT]
-> [Read this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
+> Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
 
 ### [JVM Client](#tab/tabid-6)
 
@@ -122,10 +122,10 @@ To use the JVM Client, use the following method, passing the name of the stream,
 
 [!code-java[getting-started-connection](~/code-examples/jvm-client/WriteEventExample.java?start=23&end=36)]
 
-* * *
+---
 
 ## Next Step
 
 In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.
 
--   [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)
+- [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)
