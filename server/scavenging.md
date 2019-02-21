@@ -27,14 +27,14 @@ You start a scavenge by issuing an empty `POST` request to the HTTP API with the
 
 [!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
 
-> [!TIP]
-> You can specify the chunk to start a scavenge from by using the `?startFromChunk=<CHUNK_ID>"` parameter.
+> [!NEXT]
+> Scavenge operations have other options you can set to improve performance, [read the API docs](#eventstore_org_HTTP_API_5_0_0_Scavenge_a_node) for more details.
 
 ### [Response](#tab/tabid-9)
 
 [!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
 
-* * *
+---
 
 > [!NEXT]
 > For better scavenge performance, you can set the number of threads to use. If you need to restart a stopped scavenge, you can specify the starting chunk ID. [Find out more in the API reference](/http-api/swagger/Admin/Scavenge%20a%20node.html).
@@ -50,8 +50,8 @@ You can also start scavenges from the _Admin_ page of the Admin UI.
 
 This depends on the following:
 
--   How often you delete streams.
--   Depending on how you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
+- How often you delete streams.
+- Depending on how you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
 
 ## Stopping a scavenge
 
@@ -70,8 +70,8 @@ You can also stop scavenges from the _Admin_ page of the Admin UI.
 
 This depends on the following:
 
--   How often you delete streams.
--   How you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
+- How often you delete streams.
+- How you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
 
 > [!TIP]
 > Read the [.NET API](~/dotnet-api/stream-metadata.md) or [HTTP API](~/http-api/stream-metadata.md) docs for more details on setting metadata.
