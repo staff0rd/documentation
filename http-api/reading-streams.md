@@ -22,7 +22,7 @@ Event Store exposes streams as a resource located at _http(s)://{yourdomain.com}
 
 The feed has one item in it, and if there are more than one, then items are sorted from newest to oldest.
 
-For each entry, there are a series of links to the actual events, [we cover embedding data into a stream later](#embedding-data-into-stream). To `GET` an event, follow the `alternate` link and set your `Accept` headers to the mime type you would like the event in.
+For each entry, there are a series of links to the actual events, [we cover embedding data into a stream later](#embedding-data-into-streams-in-json-format). To `GET` an event, follow the `alternate` link and set your `Accept` headers to the mime type you would like the event in.
 
 The accepted content types for `GET` requests are:
 
