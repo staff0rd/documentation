@@ -19,7 +19,7 @@ Many environments have already implemented the AtomPub protocol, which simplifie
 | NET (BCL)   | `System.ServiceModel.SyndicationServices`                         |
 | JVM         | <http://java-source.net/open-source/rss-rdf-tools>                |
 | PHP         | <http://simplepie.org/> or <https://github.com/fguillot/picoFeed> |
-| Ruby        | <http://simple-rss.rubyforge.org>                                 |
+| Ruby        | <https://github.com/cardmagic/simple-rss>                         |
 | Clojure     | <https://github.com/scsibug/feedparser-clj>                       |
 | Go          | <https://github.com/jteeuwen/go-pkg-rss>                          |
 | Python      | <http://code.google.com/p/feedparser/>                            |

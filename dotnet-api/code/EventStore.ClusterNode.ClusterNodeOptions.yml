@@ -47,6 +47,7 @@ items:
   - EventStore.ClusterNode.ClusterNodeOptions.ExtTcpHeartbeatTimeout
   - EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPort
   - EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPortAdvertiseAs
+  - EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
   - EventStore.ClusterNode.ClusterNodeOptions.Force
   - EventStore.ClusterNode.ClusterNodeOptions.GossipAllowedDifferenceMs
   - EventStore.ClusterNode.ClusterNodeOptions.GossipIntervalMs
@@ -58,6 +59,7 @@ items:
   - EventStore.ClusterNode.ClusterNodeOptions.Help
   - EventStore.ClusterNode.ClusterNodeOptions.Index
   - EventStore.ClusterNode.ClusterNodeOptions.IndexCacheDepth
+  - EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
   - EventStore.ClusterNode.ClusterNodeOptions.IntHttpPort
   - EventStore.ClusterNode.ClusterNodeOptions.IntHttpPortAdvertiseAs
   - EventStore.ClusterNode.ClusterNodeOptions.IntHttpPrefixes
@@ -71,6 +73,7 @@ items:
   - EventStore.ClusterNode.ClusterNodeOptions.IntTcpPortAdvertiseAs
   - EventStore.ClusterNode.ClusterNodeOptions.Log
   - EventStore.ClusterNode.ClusterNodeOptions.LogHttpRequests
+  - EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
   - EventStore.ClusterNode.ClusterNodeOptions.MaxMemTableSize
   - EventStore.ClusterNode.ClusterNodeOptions.MemDb
   - EventStore.ClusterNode.ClusterNodeOptions.MinFlushDelayMs
@@ -93,6 +96,7 @@ items:
   - EventStore.ClusterNode.ClusterNodeOptions.StartStandardProjections
   - EventStore.ClusterNode.ClusterNodeOptions.StatsOnExt
   - EventStore.ClusterNode.ClusterNodeOptions.StatsPeriodSec
+  - EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
   - EventStore.ClusterNode.ClusterNodeOptions.Unbuffered
   - EventStore.ClusterNode.ClusterNodeOptions.UnsafeDisableFlushToDisk
   - EventStore.ClusterNode.ClusterNodeOptions.UnsafeIgnoreHardDelete
@@ -112,10 +116,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterNodeOptions
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -156,10 +160,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Help
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 10
+    startLine: 8
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -170,6 +174,8 @@ items:
       type: System.Boolean
     content.vb: Public Property Help As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Help*
+  implements:
+  - EventStore.Common.Options.IOptions.Help
   modifiers.csharp:
   - public
   - get
@@ -191,10 +197,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Version
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -205,6 +211,8 @@ items:
       type: System.Boolean
     content.vb: Public Property Version As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Version*
+  implements:
+  - EventStore.Common.Options.IOptions.Version
   modifiers.csharp:
   - public
   - get
@@ -226,7 +234,7 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Log
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 14
@@ -240,6 +248,8 @@ items:
       type: System.String
     content.vb: Public Property Log As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Log*
+  implements:
+  - EventStore.Common.Options.IOptions.Log
   modifiers.csharp:
   - public
   - get
@@ -261,10 +271,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Config
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -275,6 +285,8 @@ items:
       type: System.String
     content.vb: Public Property Config As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Config*
+  implements:
+  - EventStore.Common.Options.IOptions.Config
   modifiers.csharp:
   - public
   - get
@@ -296,10 +308,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Defines
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -310,6 +322,8 @@ items:
       type: System.String[]
     content.vb: Public Property Defines As String()
   overload: EventStore.ClusterNode.ClusterNodeOptions.Defines*
+  implements:
+  - EventStore.Common.Options.IOptions.Defines
   modifiers.csharp:
   - public
   - get
@@ -331,10 +345,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WhatIf
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -345,6 +359,8 @@ items:
       type: System.Boolean
     content.vb: Public Property WhatIf As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.WhatIf*
+  implements:
+  - EventStore.Common.Options.IOptions.WhatIf
   modifiers.csharp:
   - public
   - get
@@ -366,10 +382,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartStandardProjections
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 22
+    startLine: 26
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -401,10 +417,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableHTTPCaching
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 24
+    startLine: 29
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -436,10 +452,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MonoMinThreadpoolSize
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 27
+    startLine: 32
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -471,10 +487,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntIp
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 30
+    startLine: 35
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -506,10 +522,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtIp
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -541,10 +557,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 34
+    startLine: 41
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -576,10 +592,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 36
+    startLine: 44
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -611,10 +627,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 38
+    startLine: 47
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -646,10 +662,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntSecureTcpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 40
+    startLine: 50
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -681,10 +697,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 42
+    startLine: 53
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -716,10 +732,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtSecureTcpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 44
+    startLine: 56
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -751,10 +767,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtSecureTcpPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 46
+    startLine: 59
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -786,10 +802,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtIpAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 49
+    startLine: 62
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -821,10 +837,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 51
+    startLine: 65
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -856,10 +872,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 53
+    startLine: 68
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -891,10 +907,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntIpAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 56
+    startLine: 71
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -926,10 +942,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntSecureTcpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 58
+    startLine: 74
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -961,10 +977,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 60
+    startLine: 77
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -996,10 +1012,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPortAdvertiseAs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 62
+    startLine: 80
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1031,10 +1047,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 65
+    startLine: 83
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1066,10 +1082,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpHeartbeatTimeout
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 67
+    startLine: 86
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1101,10 +1117,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 69
+    startLine: 89
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1136,10 +1152,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpHeartbeatInterval
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 71
+    startLine: 92
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1171,10 +1187,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipOnSingleNode
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 73
+    startLine: 95
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1206,10 +1222,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionPendingSendBytesThreshold
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 75
+    startLine: 98
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1241,10 +1257,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Force
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 79
+    startLine: 102
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1255,6 +1271,8 @@ items:
       type: System.Boolean
     content.vb: Public Property Force As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Force*
+  implements:
+  - EventStore.Common.Options.IOptions.Force
   modifiers.csharp:
   - public
   - get
@@ -1276,10 +1294,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterSize
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 81
+    startLine: 105
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1311,10 +1329,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NodePriority
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 83
+    startLine: 108
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1346,10 +1364,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MinFlushDelayMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 85
+    startLine: 111
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1381,10 +1399,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCount
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 88
+    startLine: 114
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1416,10 +1434,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCount
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 90
+    startLine: 117
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1451,10 +1469,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AdminOnExt
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 93
+    startLine: 120
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1486,10 +1504,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsOnExt
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 95
+    startLine: 123
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1521,10 +1539,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipOnExt
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 97
+    startLine: 126
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1556,10 +1574,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableScavengeMerging
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 99
+    startLine: 129
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1591,10 +1609,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ScavengeHistoryMaxAge
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 101
+    startLine: 132
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1626,10 +1644,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DiscoverViaDns
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 104
+    startLine: 135
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1661,10 +1679,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterDns
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 106
+    startLine: 138
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1696,10 +1714,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterGossipPort
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 108
+    startLine: 141
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1731,10 +1749,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipSeed
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 110
+    startLine: 144
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1766,10 +1784,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsPeriodSec
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 113
+    startLine: 147
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1801,10 +1819,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CachedChunks
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 115
+    startLine: 150
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1836,10 +1854,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReaderThreadsCount
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 118
+    startLine: 153
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1871,10 +1889,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunksCacheSize
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 120
+    startLine: 156
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1906,10 +1924,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxMemTableSize
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 122
+    startLine: 159
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1941,10 +1959,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HashCollisionReadLimit
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 124
+    startLine: 162
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -1976,10 +1994,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Db
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 127
+    startLine: 165
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2011,10 +2029,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Index
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 129
+    startLine: 168
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2046,10 +2064,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MemDb
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 131
+    startLine: 171
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2081,10 +2099,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipDbVerify
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 133
+    startLine: 174
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2116,10 +2134,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteThrough
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 136
+    startLine: 177
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2151,10 +2169,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Unbuffered
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 139
+    startLine: 180
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2186,10 +2204,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkInitialReaderCount
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 142
+    startLine: 183
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2221,10 +2239,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RunProjections
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 146
+    startLine: 187
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2256,10 +2274,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionThreads
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 148
+    startLine: 190
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2291,10 +2309,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WorkerThreads
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 150
+    startLine: 193
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2326,10 +2344,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionsQueryExpiry
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 152
+    startLine: 196
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2340,6 +2358,41 @@ items:
       type: System.Int32
     content.vb: Public Property ProjectionsQueryExpiry As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ProjectionsQueryExpiry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
+  commentId: P:EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
+  id: FaultOutOfOrderProjections
+  parent: EventStore.ClusterNode.ClusterNodeOptions
+  langs:
+  - csharp
+  - vb
+  name: FaultOutOfOrderProjections
+  nameWithType: ClusterNodeOptions.FaultOutOfOrderProjections
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: FaultOutOfOrderProjections
+    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    startLine: 199
+  assemblies:
+  - EventStore.ClusterNode
+  namespace: EventStore.ClusterNode
+  syntax:
+    content: public bool FaultOutOfOrderProjections { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FaultOutOfOrderProjections As Boolean
+  overload: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections*
   modifiers.csharp:
   - public
   - get
@@ -2361,10 +2414,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPrefixes
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 155
+    startLine: 202
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2396,10 +2449,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPrefixes
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 157
+    startLine: 205
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2431,10 +2484,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnableTrustedAuth
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 159
+    startLine: 208
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2466,10 +2519,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddInterfacePrefixes
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 161
+    startLine: 211
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2501,10 +2554,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateStoreLocation
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 164
+    startLine: 214
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2536,10 +2589,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateStoreName
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 166
+    startLine: 217
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2571,10 +2624,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateSubjectName
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 168
+    startLine: 220
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2606,10 +2659,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateThumbprint
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 170
+    startLine: 223
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2641,10 +2694,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateFile
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 173
+    startLine: 226
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2676,10 +2729,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificatePassword
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 175
+    startLine: 229
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2711,10 +2764,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UseInternalSsl
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 178
+    startLine: 232
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2746,10 +2799,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableInsecureTCP
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 180
+    startLine: 235
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2781,10 +2834,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SslTargetHost
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 182
+    startLine: 238
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2816,10 +2869,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SslValidateServer
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 184
+    startLine: 241
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2851,10 +2904,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AuthenticationType
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 187
+    startLine: 244
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2886,10 +2939,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AuthenticationConfig
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 189
+    startLine: 247
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2921,10 +2974,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareTimeoutMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 192
+    startLine: 250
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2956,10 +3009,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitTimeoutMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 194
+    startLine: 253
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -2991,10 +3044,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnsafeDisableFlushToDisk
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 197
+    startLine: 256
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3026,10 +3079,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BetterOrdering
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 200
+    startLine: 259
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3061,10 +3114,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnsafeIgnoreHardDelete
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 203
+    startLine: 262
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3096,10 +3149,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipIndexVerify
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 206
+    startLine: 265
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3131,10 +3184,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexCacheDepth
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 209
+    startLine: 268
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3166,10 +3219,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OptimizeIndexMerge
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 212
+    startLine: 271
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3201,10 +3254,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipIntervalMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 215
+    startLine: 274
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3236,10 +3289,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipAllowedDifferenceMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 217
+    startLine: 277
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3271,10 +3324,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipTimeoutMs
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 219
+    startLine: 280
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3306,10 +3359,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnableHistograms
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 222
+    startLine: 283
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3341,10 +3394,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogHttpRequests
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 225
+    startLine: 286
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3376,10 +3429,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AlwaysKeepScavenged
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 228
+    startLine: 289
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3411,10 +3464,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipIndexScanOnReads
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 231
+    startLine: 292
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3446,10 +3499,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReduceFileCachePressure
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 234
+    startLine: 295
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3460,6 +3513,111 @@ items:
       type: System.Boolean
     content.vb: Public Property ReduceFileCachePressure As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.ReduceFileCachePressure*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
+  commentId: P:EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
+  id: InitializationThreads
+  parent: EventStore.ClusterNode.ClusterNodeOptions
+  langs:
+  - csharp
+  - vb
+  name: InitializationThreads
+  nameWithType: ClusterNodeOptions.InitializationThreads
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: InitializationThreads
+    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    startLine: 298
+  assemblies:
+  - EventStore.ClusterNode
+  namespace: EventStore.ClusterNode
+  syntax:
+    content: public int InitializationThreads { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property InitializationThreads As Integer
+  overload: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
+  commentId: P:EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
+  id: StructuredLog
+  parent: EventStore.ClusterNode.ClusterNodeOptions
+  langs:
+  - csharp
+  - vb
+  name: StructuredLog
+  nameWithType: ClusterNodeOptions.StructuredLog
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: StructuredLog
+    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    startLine: 301
+  assemblies:
+  - EventStore.ClusterNode
+  namespace: EventStore.ClusterNode
+  syntax:
+    content: public bool StructuredLog { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property StructuredLog As Boolean
+  overload: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
+  commentId: P:EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
+  id: MaxAutoMergeIndexLevel
+  parent: EventStore.ClusterNode.ClusterNodeOptions
+  langs:
+  - csharp
+  - vb
+  name: MaxAutoMergeIndexLevel
+  nameWithType: ClusterNodeOptions.MaxAutoMergeIndexLevel
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: MaxAutoMergeIndexLevel
+    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    startLine: 304
+  assemblies:
+  - EventStore.ClusterNode
+  namespace: EventStore.ClusterNode
+  syntax:
+    content: public int MaxAutoMergeIndexLevel { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxAutoMergeIndexLevel As Integer
+  overload: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel*
   modifiers.csharp:
   - public
   - get
@@ -3481,10 +3639,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
-    startLine: 237
+    startLine: 307
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -3503,6 +3661,8 @@ references:
   nameWithType: EventStore.ClusterNode
   fullName: EventStore.ClusterNode
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -3664,6 +3824,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Options
   commentId: N:EventStore.Common.Options
   name: EventStore.Common.Options
@@ -3882,7 +4048,15 @@ references:
   name: Help
   nameWithType: ClusterNodeOptions.Help
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Help
+- uid: EventStore.Common.Options.IOptions.Help
+  commentId: P:EventStore.Common.Options.IOptions.Help
+  parent: EventStore.Common.Options.IOptions
+  name: Help
+  nameWithType: IOptions.Help
+  fullName: EventStore.Common.Options.IOptions.Help
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -3892,12 +4066,26 @@ references:
   name: Version
   nameWithType: ClusterNodeOptions.Version
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Version
+- uid: EventStore.Common.Options.IOptions.Version
+  commentId: P:EventStore.Common.Options.IOptions.Version
+  parent: EventStore.Common.Options.IOptions
+  name: Version
+  nameWithType: IOptions.Version
+  fullName: EventStore.Common.Options.IOptions.Version
 - uid: EventStore.ClusterNode.ClusterNodeOptions.Log*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.Log
   name: Log
   nameWithType: ClusterNodeOptions.Log
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Log
+- uid: EventStore.Common.Options.IOptions.Log
+  commentId: P:EventStore.Common.Options.IOptions.Log
+  parent: EventStore.Common.Options.IOptions
+  name: Log
+  nameWithType: IOptions.Log
+  fullName: EventStore.Common.Options.IOptions.Log
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -3907,11 +4095,23 @@ references:
   name: Config
   nameWithType: ClusterNodeOptions.Config
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Config
+- uid: EventStore.Common.Options.IOptions.Config
+  commentId: P:EventStore.Common.Options.IOptions.Config
+  parent: EventStore.Common.Options.IOptions
+  name: Config
+  nameWithType: IOptions.Config
+  fullName: EventStore.Common.Options.IOptions.Config
 - uid: EventStore.ClusterNode.ClusterNodeOptions.Defines*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.Defines
   name: Defines
   nameWithType: ClusterNodeOptions.Defines
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Defines
+- uid: EventStore.Common.Options.IOptions.Defines
+  commentId: P:EventStore.Common.Options.IOptions.Defines
+  parent: EventStore.Common.Options.IOptions
+  name: Defines
+  nameWithType: IOptions.Defines
+  fullName: EventStore.Common.Options.IOptions.Defines
 - uid: System.String[]
   isExternal: true
   name: String[]
@@ -3943,6 +4143,12 @@ references:
   name: WhatIf
   nameWithType: ClusterNodeOptions.WhatIf
   fullName: EventStore.ClusterNode.ClusterNodeOptions.WhatIf
+- uid: EventStore.Common.Options.IOptions.WhatIf
+  commentId: P:EventStore.Common.Options.IOptions.WhatIf
+  parent: EventStore.Common.Options.IOptions
+  name: WhatIf
+  nameWithType: IOptions.WhatIf
+  fullName: EventStore.Common.Options.IOptions.WhatIf
 - uid: EventStore.ClusterNode.ClusterNodeOptions.StartStandardProjections*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.StartStandardProjections
   name: StartStandardProjections
@@ -3959,6 +4165,8 @@ references:
   nameWithType: ClusterNodeOptions.MonoMinThreadpoolSize
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MonoMinThreadpoolSize
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -4083,6 +4291,12 @@ references:
   name: Force
   nameWithType: ClusterNodeOptions.Force
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Force
+- uid: EventStore.Common.Options.IOptions.Force
+  commentId: P:EventStore.Common.Options.IOptions.Force
+  parent: EventStore.Common.Options.IOptions
+  name: Force
+  nameWithType: IOptions.Force
+  fullName: EventStore.Common.Options.IOptions.Force
 - uid: EventStore.ClusterNode.ClusterNodeOptions.ClusterSize*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.ClusterSize
   name: ClusterSize
@@ -4099,6 +4313,8 @@ references:
   nameWithType: ClusterNodeOptions.MinFlushDelayMs
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MinFlushDelayMs
 - uid: System.Double
+  commentId: T:System.Double
+  parent: System
   isExternal: true
   name: Double
   nameWithType: Double
@@ -4205,6 +4421,8 @@ references:
   nameWithType: ClusterNodeOptions.ChunksCacheSize
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ChunksCacheSize
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
@@ -4280,6 +4498,11 @@ references:
   name: ProjectionsQueryExpiry
   nameWithType: ClusterNodeOptions.ProjectionsQueryExpiry
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ProjectionsQueryExpiry
+- uid: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections*
+  commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
+  name: FaultOutOfOrderProjections
+  nameWithType: ClusterNodeOptions.FaultOutOfOrderProjections
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
 - uid: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPrefixes*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.IntHttpPrefixes
   name: IntHttpPrefixes
@@ -4440,6 +4663,21 @@ references:
   name: ReduceFileCachePressure
   nameWithType: ClusterNodeOptions.ReduceFileCachePressure
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ReduceFileCachePressure
+- uid: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads*
+  commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
+  name: InitializationThreads
+  nameWithType: ClusterNodeOptions.InitializationThreads
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
+- uid: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog*
+  commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
+  name: StructuredLog
+  nameWithType: ClusterNodeOptions.StructuredLog
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
+- uid: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel*
+  commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
+  name: MaxAutoMergeIndexLevel
+  nameWithType: ClusterNodeOptions.MaxAutoMergeIndexLevel
+  fullName: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
 - uid: EventStore.ClusterNode.ClusterNodeOptions.#ctor*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.#ctor
   name: ClusterNodeOptions

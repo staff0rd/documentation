@@ -6,6 +6,9 @@ items:
   children:
   - EventStore.Core.TransactionLog.Chunks.ChunkFooter
   - EventStore.Core.TransactionLog.Chunks.ChunkHeader
+  - EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog
+  - EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+  - EventStore.Core.TransactionLog.Chunks.ScavengeResult
   - EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
   - EventStore.Core.TransactionLog.Chunks.TFChunkChaser
   - EventStore.Core.TransactionLog.Chunks.TFChunkDb
@@ -15,6 +18,7 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunkReader
   - EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
   - EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
+  - EventStore.Core.TransactionLog.Chunks.TFChunkScavengerLogManager
   - EventStore.Core.TransactionLog.Chunks.TFChunkWriter
   - EventStore.Core.TransactionLog.Chunks.TFConsts
   langs:
@@ -27,22 +31,6 @@ items:
   assemblies:
   - EventStore.Core
 references:
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
-  name: TFChunkDbTruncator
-  nameWithType: TFChunkDbTruncator
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
-  parent: EventStore.Core.TransactionLog.Chunks
-  name: TFChunkBulkReader
-  nameWithType: TFChunkBulkReader
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
-  name: TFChunkScavenger
-  nameWithType: TFChunkScavenger
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
 - uid: EventStore.Core.TransactionLog.Chunks.ChunkFooter
   commentId: T:EventStore.Core.TransactionLog.Chunks.ChunkFooter
   parent: EventStore.Core.TransactionLog.Chunks
@@ -55,28 +43,79 @@ references:
   name: ChunkHeader
   nameWithType: ChunkHeader
   fullName: EventStore.Core.TransactionLog.Chunks.ChunkHeader
+- uid: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog
+  commentId: T:EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: ITFChunkScavengerLog
+  nameWithType: ITFChunkScavengerLog
+  fullName: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog
+- uid: EventStore.Core.TransactionLog.Chunks.ScavengeResult
+  commentId: T:EventStore.Core.TransactionLog.Chunks.ScavengeResult
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: ScavengeResult
+  nameWithType: ScavengeResult
+  fullName: EventStore.Core.TransactionLog.Chunks.ScavengeResult
+- uid: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+  commentId: T:EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: ITFChunkScavengerLogManager
+  nameWithType: ITFChunkScavengerLogManager
+  fullName: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: TFChunkBulkReader
+  nameWithType: TFChunkBulkReader
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
   commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkChaser
   name: TFChunkChaser
   nameWithType: TFChunkChaser
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkChaser
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
-  parent: EventStore.Core.TransactionLog.Chunks
-  name: TFChunkDbConfig
-  nameWithType: TFChunkDbConfig
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
   commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
   parent: EventStore.Core.TransactionLog.Chunks
   name: TFChunkDb
   nameWithType: TFChunkDb
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: TFChunkDbConfig
+  nameWithType: TFChunkDbConfig
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbConfig
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
+  name: TFChunkDbTruncator
+  nameWithType: TFChunkDbTruncator
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDbTruncator
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkManager
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkManager
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: TFChunkManager
+  nameWithType: TFChunkManager
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkManager
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkReader
   commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkReader
   name: TFChunkReader
   nameWithType: TFChunkReader
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: TFChunkReaderExistsAtOptimizer
+  nameWithType: TFChunkReaderExistsAtOptimizer
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
+  name: TFChunkScavenger
+  nameWithType: TFChunkScavenger
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavengerLogManager
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkScavengerLogManager
+  name: TFChunkScavengerLogManager
+  nameWithType: TFChunkScavengerLogManager
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavengerLogManager
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkWriter
   commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkWriter
   parent: EventStore.Core.TransactionLog.Chunks
@@ -88,18 +127,6 @@ references:
   name: TFConsts
   nameWithType: TFConsts
   fullName: EventStore.Core.TransactionLog.Chunks.TFConsts
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkManager
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkManager
-  parent: EventStore.Core.TransactionLog.Chunks
-  name: TFChunkManager
-  nameWithType: TFChunkManager
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkManager
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
-  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
-  parent: EventStore.Core.TransactionLog.Chunks
-  name: TFChunkReaderExistsAtOptimizer
-  nameWithType: TFChunkReaderExistsAtOptimizer
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReaderExistsAtOptimizer
 - uid: EventStore.Core.TransactionLog.Chunks
   commentId: N:EventStore.Core.TransactionLog.Chunks
   name: EventStore.Core.TransactionLog.Chunks

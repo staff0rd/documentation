@@ -5,9 +5,10 @@ items:
   id: StorageScavenger
   parent: EventStore.Core.Services.Storage
   children:
-  - EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
+  - EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager,System.Boolean,System.Boolean,System.Boolean)
   - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.ScavengeDatabase)
-  - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  - EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   langs:
   - csharp
   - vb
@@ -19,24 +20,25 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StorageScavenger
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
-    startLine: 18
+    startLine: 14
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: 'public class StorageScavenger : object, IHandle<ClientMessage.ScavengeDatabase>, IHandle<UserManagementMessage.UserManagementServiceInitialized>'
+    content: 'public class StorageScavenger : object, IHandle<ClientMessage.ScavengeDatabase>, IHandle<ClientMessage.StopDatabaseScavenge>, IHandle<SystemMessage.StateChangeMessage>'
     content.vb: >-
       Public Class StorageScavenger
           Inherits Object
-          Implements IHandle(Of ClientMessage.ScavengeDatabase), IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
+          Implements IHandle(Of ClientMessage.ScavengeDatabase), IHandle(Of ClientMessage.StopDatabaseScavenge), IHandle(Of SystemMessage.StateChangeMessage)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ScavengeDatabase}
-  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -49,86 +51,82 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
-  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)
-  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Helpers.IODispatcher,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean)'
+- uid: EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager,System.Boolean,System.Boolean,System.Boolean)
+  id: '#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager,System.Boolean,System.Boolean,System.Boolean)'
   parent: EventStore.Core.Services.Storage.StorageScavenger
   langs:
   - csharp
   - vb
-  name: StorageScavenger(TFChunkDb, IODispatcher, ITableIndex, IReadIndex, Boolean, String, Boolean, Int32, Boolean)
-  nameWithType: StorageScavenger.StorageScavenger(TFChunkDb, IODispatcher, ITableIndex, IReadIndex, Boolean, String, Boolean, Int32, Boolean)
-  fullName: EventStore.Core.Services.Storage.StorageScavenger.StorageScavenger(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Helpers.IODispatcher, EventStore.Core.Index.ITableIndex, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, System.Boolean, System.String, System.Boolean, System.Int32, System.Boolean)
+  name: StorageScavenger(TFChunkDb, ITableIndex, IReadIndex, ITFChunkScavengerLogManager, Boolean, Boolean, Boolean)
+  nameWithType: StorageScavenger.StorageScavenger(TFChunkDb, ITableIndex, IReadIndex, ITFChunkScavengerLogManager, Boolean, Boolean, Boolean)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.StorageScavenger(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Index.ITableIndex, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager, System.Boolean, System.Boolean, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
-    startLine: 35
+    startLine: 30
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: public StorageScavenger(TFChunkDb db, IODispatcher ioDispatcher, ITableIndex tableIndex, IReadIndex readIndex, bool alwaysKeepScavenged, string nodeEndpoint, bool mergeChunks, int scavengeHistoryMaxAge, bool unsafeIgnoreHardDeletes)
+    content: public StorageScavenger(TFChunkDb db, ITableIndex tableIndex, IReadIndex readIndex, ITFChunkScavengerLogManager logManager, bool alwaysKeepScavenged, bool mergeChunks, bool unsafeIgnoreHardDeletes)
     parameters:
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
-    - id: ioDispatcher
-      type: EventStore.Core.Helpers.IODispatcher
     - id: tableIndex
       type: EventStore.Core.Index.ITableIndex
     - id: readIndex
       type: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+    - id: logManager
+      type: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
     - id: alwaysKeepScavenged
       type: System.Boolean
-    - id: nodeEndpoint
-      type: System.String
     - id: mergeChunks
       type: System.Boolean
-    - id: scavengeHistoryMaxAge
-      type: System.Int32
     - id: unsafeIgnoreHardDeletes
       type: System.Boolean
-    content.vb: Public Sub New(db As TFChunkDb, ioDispatcher As IODispatcher, tableIndex As ITableIndex, readIndex As IReadIndex, alwaysKeepScavenged As Boolean, nodeEndpoint As String, mergeChunks As Boolean, scavengeHistoryMaxAge As Integer, unsafeIgnoreHardDeletes As Boolean)
+    content.vb: Public Sub New(db As TFChunkDb, tableIndex As ITableIndex, readIndex As IReadIndex, logManager As ITFChunkScavengerLogManager, alwaysKeepScavenged As Boolean, mergeChunks As Boolean, unsafeIgnoreHardDeletes As Boolean)
   overload: EventStore.Core.Services.Storage.StorageScavenger.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  id: Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  id: Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   parent: EventStore.Core.Services.Storage.StorageScavenger
   langs:
   - csharp
   - vb
-  name: Handle(UserManagementMessage.UserManagementServiceInitialized)
-  nameWithType: StorageScavenger.Handle(UserManagementMessage.UserManagementServiceInitialized)
-  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: StorageScavenger.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
-    startLine: 56
+    startLine: 47
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: public void Handle(UserManagementMessage.UserManagementServiceInitialized message)
+    content: public void Handle(SystemMessage.StateChangeMessage message)
     parameters:
     - id: message
-      type: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-    content.vb: Public Sub Handle(message As UserManagementMessage.UserManagementServiceInitialized)
+      type: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    content.vb: Public Sub Handle(message As SystemMessage.StateChangeMessage)
   overload: EventStore.Core.Services.Storage.StorageScavenger.Handle*
   implements:
-  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -148,10 +146,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
-    startLine: 61
+    startLine: 53
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -168,6 +166,41 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  commentId: M:EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  id: Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  parent: EventStore.Core.Services.Storage.StorageScavenger
+  langs:
+  - csharp
+  - vb
+  name: Handle(ClientMessage.StopDatabaseScavenge)
+  nameWithType: StorageScavenger.Handle(ClientMessage.StopDatabaseScavenge)
+  fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageScavenger.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageScavenger.cs
+    startLine: 79
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(ClientMessage.StopDatabaseScavenge message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+    content.vb: Public Sub Handle(message As ClientMessage.StopDatabaseScavenge)
+  overload: EventStore.Core.Services.Storage.StorageScavenger.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Core.Services.Storage
   commentId: N:EventStore.Core.Services.Storage
@@ -175,6 +208,8 @@ references:
   nameWithType: EventStore.Core.Services.Storage
   fullName: EventStore.Core.Services.Storage
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -219,16 +254,16 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
-  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}
   parent: EventStore.Core.Bus
   definition: EventStore.Core.Bus.IHandle`1
-  name: IHandle<UserManagementMessage.UserManagementServiceInitialized>
-  nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>
-  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>
-  nameWithType.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
-  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  name.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized)
+  name: IHandle<ClientMessage.StopDatabaseScavenge>
+  nameWithType: IHandle<ClientMessage.StopDatabaseScavenge>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge>
+  nameWithType.vb: IHandle(Of ClientMessage.StopDatabaseScavenge)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  name.vb: IHandle(Of ClientMessage.StopDatabaseScavenge)
   spec.csharp:
   - uid: EventStore.Core.Bus.IHandle`1
     name: IHandle
@@ -237,10 +272,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-    name: UserManagementMessage.UserManagementServiceInitialized
-    nameWithType: UserManagementMessage.UserManagementServiceInitialized
-    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - uid: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+    name: ClientMessage.StopDatabaseScavenge
+    nameWithType: ClientMessage.StopDatabaseScavenge
+    fullName: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -252,10 +287,50 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-    name: UserManagementMessage.UserManagementServiceInitialized
-    nameWithType: UserManagementMessage.UserManagementServiceInitialized
-    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - uid: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+    name: ClientMessage.StopDatabaseScavenge
+    nameWithType: ClientMessage.StopDatabaseScavenge
+    fullName: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<SystemMessage.StateChangeMessage>
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  name.vb: IHandle(Of SystemMessage.StateChangeMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
   - name: )
     nameWithType: )
     fullName: )
@@ -410,6 +485,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -670,12 +751,6 @@ references:
   name: TFChunkDb
   nameWithType: TFChunkDb
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
-- uid: EventStore.Core.Helpers.IODispatcher
-  commentId: T:EventStore.Core.Helpers.IODispatcher
-  parent: EventStore.Core.Helpers
-  name: IODispatcher
-  nameWithType: IODispatcher
-  fullName: EventStore.Core.Helpers.IODispatcher
 - uid: EventStore.Core.Index.ITableIndex
   commentId: T:EventStore.Core.Index.ITableIndex
   parent: EventStore.Core.Index
@@ -688,31 +763,24 @@ references:
   name: IReadIndex
   nameWithType: IReadIndex
   fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
+- uid: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+  commentId: T:EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: ITFChunkScavengerLogManager
+  nameWithType: ITFChunkScavengerLogManager
+  fullName: EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLogManager
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: System.String
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: System.Int32
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: EventStore.Core.TransactionLog.Chunks
   commentId: N:EventStore.Core.TransactionLog.Chunks
   name: EventStore.Core.TransactionLog.Chunks
   nameWithType: EventStore.Core.TransactionLog.Chunks
   fullName: EventStore.Core.TransactionLog.Chunks
-- uid: EventStore.Core.Helpers
-  commentId: N:EventStore.Core.Helpers
-  name: EventStore.Core.Helpers
-  nameWithType: EventStore.Core.Helpers
-  fullName: EventStore.Core.Helpers
 - uid: EventStore.Core.Index
   commentId: N:EventStore.Core.Index
   name: EventStore.Core.Index
@@ -728,51 +796,51 @@ references:
   name: Handle
   nameWithType: StorageScavenger.Handle
   fullName: EventStore.Core.Services.Storage.StorageScavenger.Handle
-- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized}
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
-  name: Handle(UserManagementMessage.UserManagementServiceInitialized)
-  nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>.Handle(UserManagementMessage.UserManagementServiceInitialized)
-  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>.Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
-  nameWithType.vb: IHandle(Of UserManagementMessage.UserManagementServiceInitialized).Handle(UserManagementMessage.UserManagementServiceInitialized)
-  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized).Handle(EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized)
+  name: Handle(SystemMessage.StateChangeMessage)
+  nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle(SystemMessage.StateChangeMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
+  nameWithType.vb: IHandle(Of SystemMessage.StateChangeMessage).Handle(SystemMessage.StateChangeMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   spec.csharp:
   - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
     name: Handle
-    nameWithType: IHandle<UserManagementMessage.UserManagementServiceInitialized>.Handle
-    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized>.Handle
+    nameWithType: IHandle<SystemMessage.StateChangeMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.StateChangeMessage>.Handle
   - name: (
     nameWithType: (
     fullName: (
-  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-    name: UserManagementMessage.UserManagementServiceInitialized
-    nameWithType: UserManagementMessage.UserManagementServiceInitialized
-    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
   - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
     name: Handle
-    nameWithType: IHandle(Of UserManagementMessage.UserManagementServiceInitialized).Handle
-    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized).Handle
+    nameWithType: IHandle(Of SystemMessage.StateChangeMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.SystemMessage.StateChangeMessage).Handle
   - name: (
     nameWithType: (
     fullName: (
-  - uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-    name: UserManagementMessage.UserManagementServiceInitialized
-    nameWithType: UserManagementMessage.UserManagementServiceInitialized
-    fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  - uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+    name: SystemMessage.StateChangeMessage
+    nameWithType: SystemMessage.StateChangeMessage
+    fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
-  commentId: T:EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+- uid: EventStore.Core.Messages.SystemMessage.StateChangeMessage
+  commentId: T:EventStore.Core.Messages.SystemMessage.StateChangeMessage
   parent: EventStore.Core.Messages
-  name: UserManagementMessage.UserManagementServiceInitialized
-  nameWithType: UserManagementMessage.UserManagementServiceInitialized
-  fullName: EventStore.Core.Messages.UserManagementMessage.UserManagementServiceInitialized
+  name: SystemMessage.StateChangeMessage
+  nameWithType: SystemMessage.StateChangeMessage
+  fullName: EventStore.Core.Messages.SystemMessage.StateChangeMessage
 - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
   commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
   name: Handle(T)
@@ -858,3 +926,48 @@ references:
   name: ClientMessage.ScavengeDatabase
   nameWithType: ClientMessage.ScavengeDatabase
   fullName: EventStore.Core.Messages.ClientMessage.ScavengeDatabase
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ClientMessage.StopDatabaseScavenge)
+  nameWithType: IHandle<ClientMessage.StopDatabaseScavenge>.Handle(ClientMessage.StopDatabaseScavenge)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge>.Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  nameWithType.vb: IHandle(Of ClientMessage.StopDatabaseScavenge).Handle(ClientMessage.StopDatabaseScavenge)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge).Handle(EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ClientMessage.StopDatabaseScavenge>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+    name: ClientMessage.StopDatabaseScavenge
+    nameWithType: ClientMessage.StopDatabaseScavenge
+    fullName: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ClientMessage.StopDatabaseScavenge).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+    name: ClientMessage.StopDatabaseScavenge
+    nameWithType: ClientMessage.StopDatabaseScavenge
+    fullName: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+  commentId: T:EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge
+  parent: EventStore.Core.Messages
+  name: ClientMessage.StopDatabaseScavenge
+  nameWithType: ClientMessage.StopDatabaseScavenge
+  fullName: EventStore.Core.Messages.ClientMessage.StopDatabaseScavenge

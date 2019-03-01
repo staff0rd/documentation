@@ -9,10 +9,11 @@ items:
   - EventStore.Common.Log.LogManager.GetLogger(System.String)
   - EventStore.Common.Log.LogManager.GetLoggerFor(Type)
   - EventStore.Common.Log.LogManager.GetLoggerFor``1
-  - EventStore.Common.Log.LogManager.Init(System.String,System.String,System.String)
+  - EventStore.Common.Log.LogManager.Init(System.String,System.String,System.Boolean,System.String)
   - EventStore.Common.Log.LogManager.Initialized
   - EventStore.Common.Log.LogManager.LogsDirectory
   - EventStore.Common.Log.LogManager.SetLogFactory(Func{System.String,EventStore.Common.Log.ILogger})
+  - EventStore.Common.Log.LogManager.StructuredLog
   langs:
   - csharp
   - vb
@@ -24,7 +25,7 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogManager
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
     startLine: 7
@@ -60,10 +61,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogsDirectory
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -97,10 +98,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialized
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 19
+    startLine: 16
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -111,6 +112,43 @@ items:
       type: System.Boolean
     content.vb: Public Shared ReadOnly Property Initialized As Boolean
   overload: EventStore.Common.Log.LogManager.Initialized*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: EventStore.Common.Log.LogManager.StructuredLog
+  commentId: P:EventStore.Common.Log.LogManager.StructuredLog
+  id: StructuredLog
+  parent: EventStore.Common.Log.LogManager
+  langs:
+  - csharp
+  - vb
+  name: StructuredLog
+  nameWithType: LogManager.StructuredLog
+  fullName: EventStore.Common.Log.LogManager.StructuredLog
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Common/Log/LogManager.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: StructuredLog
+    path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Common
+  namespace: EventStore.Common.Log
+  syntax:
+    content: public static bool StructuredLog { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly Property StructuredLog As Boolean
+  overload: EventStore.Common.Log.LogManager.StructuredLog*
   modifiers.csharp:
   - public
   - static
@@ -134,10 +172,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetLoggerFor
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 41
+    startLine: 40
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -171,10 +209,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetLoggerFor
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 46
+    startLine: 44
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -210,10 +248,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetLogger
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 51
+    startLine: 48
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -232,38 +270,40 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Common.Log.LogManager.Init(System.String,System.String,System.String)
-  commentId: M:EventStore.Common.Log.LogManager.Init(System.String,System.String,System.String)
-  id: Init(System.String,System.String,System.String)
+- uid: EventStore.Common.Log.LogManager.Init(System.String,System.String,System.Boolean,System.String)
+  commentId: M:EventStore.Common.Log.LogManager.Init(System.String,System.String,System.Boolean,System.String)
+  id: Init(System.String,System.String,System.Boolean,System.String)
   parent: EventStore.Common.Log.LogManager
   langs:
   - csharp
   - vb
-  name: Init(String, String, String)
-  nameWithType: LogManager.Init(String, String, String)
-  fullName: EventStore.Common.Log.LogManager.Init(System.String, System.String, System.String)
+  name: Init(String, String, Boolean, String)
+  nameWithType: LogManager.Init(String, String, Boolean, String)
+  fullName: EventStore.Common.Log.LogManager.Init(System.String, System.String, System.Boolean, System.String)
   type: Method
   source:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Init
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 56
+    startLine: 52
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
   syntax:
-    content: public static void Init(string componentName, string logsDirectory, string configurationDirectory)
+    content: public static void Init(string componentName, string logsDirectory, bool isStructured, string configurationDirectory)
     parameters:
     - id: componentName
       type: System.String
     - id: logsDirectory
       type: System.String
+    - id: isStructured
+      type: System.Boolean
     - id: configurationDirectory
       type: System.String
-    content.vb: Public Shared Sub Init(componentName As String, logsDirectory As String, configurationDirectory As String)
+    content.vb: Public Shared Sub Init(componentName As String, logsDirectory As String, isStructured As Boolean, configurationDirectory As String)
   overload: EventStore.Common.Log.LogManager.Init*
   modifiers.csharp:
   - public
@@ -286,10 +326,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Finish
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 113
+    startLine: 107
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -318,10 +358,10 @@ items:
     remote:
       path: src/EventStore.Common/Log/LogManager.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetLogFactory
     path: ../EventStore/src/EventStore.Common/Log/LogManager.cs
-    startLine: 126
+    startLine: 116
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
@@ -348,16 +388,26 @@ references:
   nameWithType: EventStore.Common.Log
   fullName: EventStore.Common.Log
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Log.LogManager.LogsDirectory*
   commentId: Overload:EventStore.Common.Log.LogManager.LogsDirectory
   name: LogsDirectory
   nameWithType: LogManager.LogsDirectory
   fullName: EventStore.Common.Log.LogManager.LogsDirectory
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -368,10 +418,17 @@ references:
   nameWithType: LogManager.Initialized
   fullName: EventStore.Common.Log.LogManager.Initialized
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: EventStore.Common.Log.LogManager.StructuredLog*
+  commentId: Overload:EventStore.Common.Log.LogManager.StructuredLog
+  name: StructuredLog
+  nameWithType: LogManager.StructuredLog
+  fullName: EventStore.Common.Log.LogManager.StructuredLog
 - uid: EventStore.Common.Log.LogManager.GetLoggerFor*
   commentId: Overload:EventStore.Common.Log.LogManager.GetLoggerFor
   name: GetLoggerFor

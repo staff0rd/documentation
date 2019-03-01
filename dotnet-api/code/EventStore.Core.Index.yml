@@ -8,6 +8,7 @@ items:
   - EventStore.Core.Index.GuidFilenameProvider
   - EventStore.Core.Index.HashListMemTable
   - EventStore.Core.Index.IIndexFilenameProvider
+  - EventStore.Core.Index.IIndexScavengerLog
   - EventStore.Core.Index.IMemTable
   - EventStore.Core.Index.IndexEntry
   - EventStore.Core.Index.IndexEntryV1
@@ -21,6 +22,7 @@ items:
   - EventStore.Core.Index.PTableHeader
   - EventStore.Core.Index.PTableVersions
   - EventStore.Core.Index.ReverseComparer`1
+  - EventStore.Core.Index.ScavengeResult
   - EventStore.Core.Index.SortedListExtensions
   - EventStore.Core.Index.TableIndex
   langs:
@@ -38,53 +40,6 @@ references:
   name: GuidFilenameProvider
   nameWithType: GuidFilenameProvider
   fullName: EventStore.Core.Index.GuidFilenameProvider
-- uid: EventStore.Core.Index.IIndexFilenameProvider
-  commentId: T:EventStore.Core.Index.IIndexFilenameProvider
-  parent: EventStore.Core.Index
-  name: IIndexFilenameProvider
-  nameWithType: IIndexFilenameProvider
-  fullName: EventStore.Core.Index.IIndexFilenameProvider
-- uid: EventStore.Core.Index.IMemTable
-  commentId: T:EventStore.Core.Index.IMemTable
-  parent: EventStore.Core.Index
-  name: IMemTable
-  nameWithType: IMemTable
-  fullName: EventStore.Core.Index.IMemTable
-- uid: EventStore.Core.Index.IndexEntry
-  commentId: T:EventStore.Core.Index.IndexEntry
-  parent: EventStore.Core.Index
-  name: IndexEntry
-  nameWithType: IndexEntry
-  fullName: EventStore.Core.Index.IndexEntry
-- uid: EventStore.Core.Index.IndexEntryV1
-  commentId: T:EventStore.Core.Index.IndexEntryV1
-  parent: EventStore.Core.Index
-  name: IndexEntryV1
-  nameWithType: IndexEntryV1
-  fullName: EventStore.Core.Index.IndexEntryV1
-- uid: EventStore.Core.Index.IndexKey
-  commentId: T:EventStore.Core.Index.IndexKey
-  name: IndexKey
-  nameWithType: IndexKey
-  fullName: EventStore.Core.Index.IndexKey
-- uid: EventStore.Core.Index.IndexMap
-  commentId: T:EventStore.Core.Index.IndexMap
-  parent: EventStore.Core.Index
-  name: IndexMap
-  nameWithType: IndexMap
-  fullName: EventStore.Core.Index.IndexMap
-- uid: EventStore.Core.Index.ISearchTable
-  commentId: T:EventStore.Core.Index.ISearchTable
-  parent: EventStore.Core.Index
-  name: ISearchTable
-  nameWithType: ISearchTable
-  fullName: EventStore.Core.Index.ISearchTable
-- uid: EventStore.Core.Index.ITableIndex
-  commentId: T:EventStore.Core.Index.ITableIndex
-  parent: EventStore.Core.Index
-  name: ITableIndex
-  nameWithType: ITableIndex
-  fullName: EventStore.Core.Index.ITableIndex
 - uid: EventStore.Core.Index.HashListMemTable
   commentId: T:EventStore.Core.Index.HashListMemTable
   name: HashListMemTable
@@ -126,6 +81,59 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Index.IIndexFilenameProvider
+  commentId: T:EventStore.Core.Index.IIndexFilenameProvider
+  parent: EventStore.Core.Index
+  name: IIndexFilenameProvider
+  nameWithType: IIndexFilenameProvider
+  fullName: EventStore.Core.Index.IIndexFilenameProvider
+- uid: EventStore.Core.Index.IIndexScavengerLog
+  commentId: T:EventStore.Core.Index.IIndexScavengerLog
+  parent: EventStore.Core.Index
+  name: IIndexScavengerLog
+  nameWithType: IIndexScavengerLog
+  fullName: EventStore.Core.Index.IIndexScavengerLog
+- uid: EventStore.Core.Index.IMemTable
+  commentId: T:EventStore.Core.Index.IMemTable
+  parent: EventStore.Core.Index
+  name: IMemTable
+  nameWithType: IMemTable
+  fullName: EventStore.Core.Index.IMemTable
+- uid: EventStore.Core.Index.IndexEntry
+  commentId: T:EventStore.Core.Index.IndexEntry
+  parent: EventStore.Core.Index
+  name: IndexEntry
+  nameWithType: IndexEntry
+  fullName: EventStore.Core.Index.IndexEntry
+- uid: EventStore.Core.Index.IndexEntryV1
+  commentId: T:EventStore.Core.Index.IndexEntryV1
+  parent: EventStore.Core.Index
+  name: IndexEntryV1
+  nameWithType: IndexEntryV1
+  fullName: EventStore.Core.Index.IndexEntryV1
+- uid: EventStore.Core.Index.IndexKey
+  commentId: T:EventStore.Core.Index.IndexKey
+  name: IndexKey
+  nameWithType: IndexKey
+  fullName: EventStore.Core.Index.IndexKey
+- uid: EventStore.Core.Index.IndexMap
+  commentId: T:EventStore.Core.Index.IndexMap
+  parent: EventStore.Core.Index
+  name: IndexMap
+  nameWithType: IndexMap
+  fullName: EventStore.Core.Index.IndexMap
+- uid: EventStore.Core.Index.ISearchTable
+  commentId: T:EventStore.Core.Index.ISearchTable
+  parent: EventStore.Core.Index
+  name: ISearchTable
+  nameWithType: ISearchTable
+  fullName: EventStore.Core.Index.ISearchTable
+- uid: EventStore.Core.Index.ITableIndex
+  commentId: T:EventStore.Core.Index.ITableIndex
+  parent: EventStore.Core.Index
+  name: ITableIndex
+  nameWithType: ITableIndex
+  fullName: EventStore.Core.Index.ITableIndex
 - uid: EventStore.Core.Index.MergeResult
   commentId: T:EventStore.Core.Index.MergeResult
   parent: EventStore.Core.Index
@@ -149,18 +157,24 @@ references:
   name: PTable
   nameWithType: PTable
   fullName: EventStore.Core.Index.PTable
-- uid: EventStore.Core.Index.PTableHeader
-  commentId: T:EventStore.Core.Index.PTableHeader
-  parent: EventStore.Core.Index
-  name: PTableHeader
-  nameWithType: PTableHeader
-  fullName: EventStore.Core.Index.PTableHeader
 - uid: EventStore.Core.Index.PTableFooter
   commentId: T:EventStore.Core.Index.PTableFooter
   parent: EventStore.Core.Index
   name: PTableFooter
   nameWithType: PTableFooter
   fullName: EventStore.Core.Index.PTableFooter
+- uid: EventStore.Core.Index.PTableHeader
+  commentId: T:EventStore.Core.Index.PTableHeader
+  parent: EventStore.Core.Index
+  name: PTableHeader
+  nameWithType: PTableHeader
+  fullName: EventStore.Core.Index.PTableHeader
+- uid: EventStore.Core.Index.ScavengeResult
+  commentId: T:EventStore.Core.Index.ScavengeResult
+  parent: EventStore.Core.Index
+  name: ScavengeResult
+  nameWithType: ScavengeResult
+  fullName: EventStore.Core.Index.ScavengeResult
 - uid: EventStore.Core.Index.SortedListExtensions
   commentId: T:EventStore.Core.Index.SortedListExtensions
   name: SortedListExtensions

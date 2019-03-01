@@ -5,10 +5,10 @@ items:
   id: RagsExtensions
   parent: EventStore.Common.Options
   children:
-  - EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{OptionSource})
-  - EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{OptionSource})
-  - EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{OptionSource})
-  - EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{OptionSource})
+  - EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{EventStore.Rags.OptionSource})
+  - EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{EventStore.Rags.OptionSource})
+  - EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{EventStore.Rags.OptionSource})
+  - EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{EventStore.Rags.OptionSource})
   langs:
   - csharp
   - vb
@@ -20,10 +20,10 @@ items:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RagsExtensions
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
-    startLine: 116
+    startLine: 138
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Options
@@ -41,9 +41,9 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{OptionSource})
-  commentId: M:EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{OptionSource})
-  id: Cleanup(IEnumerable{OptionSource})
+- uid: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{EventStore.Rags.OptionSource})
+  commentId: M:EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable{EventStore.Rags.OptionSource})
+  id: Cleanup(IEnumerable{EventStore.Rags.OptionSource})
   isExtensionMethod: true
   parent: EventStore.Common.Options.RagsExtensions
   langs:
@@ -51,16 +51,16 @@ items:
   - vb
   name: Cleanup(IEnumerable<OptionSource>)
   nameWithType: RagsExtensions.Cleanup(IEnumerable<OptionSource>)
-  fullName: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable<OptionSource>)
+  fullName: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable<EventStore.Rags.OptionSource>)
   type: Method
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Cleanup
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
-    startLine: 118
+    startLine: 139
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Options
@@ -68,9 +68,9 @@ items:
     content: public static IEnumerable<OptionSource> Cleanup(this IEnumerable<OptionSource> optionSources)
     parameters:
     - id: optionSources
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     return:
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     content.vb: >-
       <ExtensionAttribute>
 
@@ -83,11 +83,11 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable(Of OptionSource))
+  fullName.vb: EventStore.Common.Options.RagsExtensions.Cleanup(IEnumerable(Of EventStore.Rags.OptionSource))
   name.vb: Cleanup(IEnumerable(Of OptionSource))
-- uid: EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{OptionSource})
-  commentId: M:EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{OptionSource})
-  id: FixNames``1(IEnumerable{OptionSource})
+- uid: EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{EventStore.Rags.OptionSource})
+  commentId: M:EventStore.Common.Options.RagsExtensions.FixNames``1(IEnumerable{EventStore.Rags.OptionSource})
+  id: FixNames``1(IEnumerable{EventStore.Rags.OptionSource})
   isExtensionMethod: true
   parent: EventStore.Common.Options.RagsExtensions
   langs:
@@ -95,16 +95,16 @@ items:
   - vb
   name: FixNames<TOptions>(IEnumerable<OptionSource>)
   nameWithType: RagsExtensions.FixNames<TOptions>(IEnumerable<OptionSource>)
-  fullName: EventStore.Common.Options.RagsExtensions.FixNames<TOptions>(IEnumerable<OptionSource>)
+  fullName: EventStore.Common.Options.RagsExtensions.FixNames<TOptions>(IEnumerable<EventStore.Rags.OptionSource>)
   type: Method
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FixNames
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
-    startLine: 122
+    startLine: 143
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Options
@@ -114,11 +114,11 @@ items:
           where TOptions : class
     parameters:
     - id: optionSources
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     typeParameters:
     - id: TOptions
     return:
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     content.vb: >-
       <ExtensionAttribute>
 
@@ -131,11 +131,11 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Options.RagsExtensions.FixNames(Of TOptions)(IEnumerable(Of OptionSource))
+  fullName.vb: EventStore.Common.Options.RagsExtensions.FixNames(Of TOptions)(IEnumerable(Of EventStore.Rags.OptionSource))
   name.vb: FixNames(Of TOptions)(IEnumerable(Of OptionSource))
-- uid: EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{OptionSource})
-  commentId: M:EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{OptionSource})
-  id: EnsureExistence``1(IEnumerable{OptionSource})
+- uid: EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{EventStore.Rags.OptionSource})
+  commentId: M:EventStore.Common.Options.RagsExtensions.EnsureExistence``1(IEnumerable{EventStore.Rags.OptionSource})
+  id: EnsureExistence``1(IEnumerable{EventStore.Rags.OptionSource})
   isExtensionMethod: true
   parent: EventStore.Common.Options.RagsExtensions
   langs:
@@ -143,16 +143,16 @@ items:
   - vb
   name: EnsureExistence<TOptions>(IEnumerable<OptionSource>)
   nameWithType: RagsExtensions.EnsureExistence<TOptions>(IEnumerable<OptionSource>)
-  fullName: EventStore.Common.Options.RagsExtensions.EnsureExistence<TOptions>(IEnumerable<OptionSource>)
+  fullName: EventStore.Common.Options.RagsExtensions.EnsureExistence<TOptions>(IEnumerable<EventStore.Rags.OptionSource>)
   type: Method
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnsureExistence
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
-    startLine: 133
+    startLine: 157
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Options
@@ -162,11 +162,11 @@ items:
           where TOptions : class
     parameters:
     - id: optionSources
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     typeParameters:
     - id: TOptions
     return:
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     content.vb: >-
       <ExtensionAttribute>
 
@@ -179,11 +179,11 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Options.RagsExtensions.EnsureExistence(Of TOptions)(IEnumerable(Of OptionSource))
+  fullName.vb: EventStore.Common.Options.RagsExtensions.EnsureExistence(Of TOptions)(IEnumerable(Of EventStore.Rags.OptionSource))
   name.vb: EnsureExistence(Of TOptions)(IEnumerable(Of OptionSource))
-- uid: EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{OptionSource})
-  commentId: M:EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{OptionSource})
-  id: EnsureCorrectType``1(IEnumerable{OptionSource})
+- uid: EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{EventStore.Rags.OptionSource})
+  commentId: M:EventStore.Common.Options.RagsExtensions.EnsureCorrectType``1(IEnumerable{EventStore.Rags.OptionSource})
+  id: EnsureCorrectType``1(IEnumerable{EventStore.Rags.OptionSource})
   isExtensionMethod: true
   parent: EventStore.Common.Options.RagsExtensions
   langs:
@@ -191,16 +191,16 @@ items:
   - vb
   name: EnsureCorrectType<TOptions>(IEnumerable<OptionSource>)
   nameWithType: RagsExtensions.EnsureCorrectType<TOptions>(IEnumerable<OptionSource>)
-  fullName: EventStore.Common.Options.RagsExtensions.EnsureCorrectType<TOptions>(IEnumerable<OptionSource>)
+  fullName: EventStore.Common.Options.RagsExtensions.EnsureCorrectType<TOptions>(IEnumerable<EventStore.Rags.OptionSource>)
   type: Method
   source:
     remote:
       path: src/EventStore.Common/Options/EventStoreOptions.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnsureCorrectType
     path: ../EventStore/src/EventStore.Common/Options/EventStoreOptions.cs
-    startLine: 145
+    startLine: 170
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Options
@@ -210,11 +210,11 @@ items:
           where TOptions : class, new()
     parameters:
     - id: optionSources
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     typeParameters:
     - id: TOptions
     return:
-      type: IEnumerable{OptionSource}
+      type: IEnumerable{EventStore.Rags.OptionSource}
     content.vb: >-
       <ExtensionAttribute>
 
@@ -227,7 +227,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Options.RagsExtensions.EnsureCorrectType(Of TOptions)(IEnumerable(Of OptionSource))
+  fullName.vb: EventStore.Common.Options.RagsExtensions.EnsureCorrectType(Of TOptions)(IEnumerable(Of EventStore.Rags.OptionSource))
   name.vb: EnsureCorrectType(Of TOptions)(IEnumerable(Of OptionSource))
 references:
 - uid: EventStore.Common.Options
@@ -236,23 +236,31 @@ references:
   nameWithType: EventStore.Common.Options
   fullName: EventStore.Common.Options
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Options.RagsExtensions.Cleanup*
   commentId: Overload:EventStore.Common.Options.RagsExtensions.Cleanup
   name: Cleanup
   nameWithType: RagsExtensions.Cleanup
   fullName: EventStore.Common.Options.RagsExtensions.Cleanup
-- uid: IEnumerable{OptionSource}
-  commentId: '!:IEnumerable{OptionSource}'
+- uid: IEnumerable{EventStore.Rags.OptionSource}
+  commentId: '!:IEnumerable{EventStore.Rags.OptionSource}'
   definition: IEnumerable`1
   name: IEnumerable<OptionSource>
   nameWithType: IEnumerable<OptionSource>
-  fullName: IEnumerable<OptionSource>
+  fullName: IEnumerable<EventStore.Rags.OptionSource>
   nameWithType.vb: IEnumerable(Of OptionSource)
-  fullName.vb: IEnumerable(Of OptionSource)
+  fullName.vb: IEnumerable(Of EventStore.Rags.OptionSource)
   name.vb: IEnumerable(Of OptionSource)
   spec.csharp:
   - uid: IEnumerable`1
@@ -263,11 +271,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: OptionSource
+  - uid: EventStore.Rags.OptionSource
     name: OptionSource
     nameWithType: OptionSource
-    fullName: OptionSource
-    isExternal: true
+    fullName: EventStore.Rags.OptionSource
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -280,11 +287,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: OptionSource
+  - uid: EventStore.Rags.OptionSource
     name: OptionSource
     nameWithType: OptionSource
-    fullName: OptionSource
-    isExternal: true
+    fullName: EventStore.Rags.OptionSource
   - name: )
     nameWithType: )
     fullName: )

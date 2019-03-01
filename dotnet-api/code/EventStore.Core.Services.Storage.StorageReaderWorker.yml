@@ -5,13 +5,14 @@ items:
   id: StorageReaderWorker
   parent: EventStore.Core.Services.Storage
   children:
-  - EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  - EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#ClientMessage#ReadAllEventsBackward}#Handle(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackward)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#ClientMessage#ReadAllEventsForward}#Handle(EventStore.Core.Messages.ClientMessage.ReadAllEventsForward)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#ClientMessage#ReadEvent}#Handle(EventStore.Core.Messages.ClientMessage.ReadEvent)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#ClientMessage#ReadStreamEventsBackward}#Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#ClientMessage#ReadStreamEventsForward}#Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward)
   - EventStore.Core.Services.Storage.StorageReaderWorker.EventStore#Core#Bus#IHandle{EventStore#Core#Messages#StorageMessage#CheckStreamAccess}#Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccess)
+  - EventStore.Core.Services.Storage.StorageReaderWorker.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
   langs:
   - csharp
   - vb
@@ -23,19 +24,19 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StorageReaderWorker
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: 'public class StorageReaderWorker : object, IHandle<ClientMessage.ReadEvent>, IHandle<ClientMessage.ReadStreamEventsBackward>, IHandle<ClientMessage.ReadStreamEventsForward>, IHandle<ClientMessage.ReadAllEventsForward>, IHandle<ClientMessage.ReadAllEventsBackward>, IHandle<StorageMessage.CheckStreamAccess>'
+    content: 'public class StorageReaderWorker : object, IHandle<ClientMessage.ReadEvent>, IHandle<ClientMessage.ReadStreamEventsBackward>, IHandle<ClientMessage.ReadStreamEventsForward>, IHandle<ClientMessage.ReadAllEventsForward>, IHandle<ClientMessage.ReadAllEventsBackward>, IHandle<StorageMessage.CheckStreamAccess>, IHandle<StorageMessage.BatchLogExpiredMessages>'
     content.vb: >-
       Public Class StorageReaderWorker
           Inherits Object
-          Implements IHandle(Of ClientMessage.ReadEvent), IHandle(Of ClientMessage.ReadStreamEventsBackward), IHandle(Of ClientMessage.ReadStreamEventsForward), IHandle(Of ClientMessage.ReadAllEventsForward), IHandle(Of ClientMessage.ReadAllEventsBackward), IHandle(Of StorageMessage.CheckStreamAccess)
+          Implements IHandle(Of ClientMessage.ReadEvent), IHandle(Of ClientMessage.ReadStreamEventsBackward), IHandle(Of ClientMessage.ReadStreamEventsForward), IHandle(Of ClientMessage.ReadAllEventsForward), IHandle(Of ClientMessage.ReadAllEventsBackward), IHandle(Of StorageMessage.CheckStreamAccess), IHandle(Of StorageMessage.BatchLogExpiredMessages)
   inheritance:
   - System.Object
   implements:
@@ -45,6 +46,7 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadAllEventsForward}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadAllEventsBackward}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccess}
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -57,30 +59,30 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
-  commentId: M:EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)'
+- uid: EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
+  commentId: M:EventStore.Core.Services.Storage.StorageReaderWorker.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.Int32)'
   parent: EventStore.Core.Services.Storage.StorageReaderWorker
   langs:
   - csharp
   - vb
-  name: StorageReaderWorker(IPublisher, IReadIndex, ICheckpoint)
-  nameWithType: StorageReaderWorker.StorageReaderWorker(IPublisher, IReadIndex, ICheckpoint)
-  fullName: EventStore.Core.Services.Storage.StorageReaderWorker.StorageReaderWorker(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint)
+  name: StorageReaderWorker(IPublisher, IReadIndex, ICheckpoint, Int32)
+  nameWithType: StorageReaderWorker.StorageReaderWorker(IPublisher, IReadIndex, ICheckpoint, Int32)
+  fullName: EventStore.Core.Services.Storage.StorageReaderWorker.StorageReaderWorker(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int32)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 35
+    startLine: 40
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: public StorageReaderWorker(IPublisher publisher, IReadIndex readIndex, ICheckpoint writerCheckpoint)
+    content: public StorageReaderWorker(IPublisher publisher, IReadIndex readIndex, ICheckpoint writerCheckpoint, int queueId)
     parameters:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
@@ -88,7 +90,9 @@ items:
       type: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
     - id: writerCheckpoint
       type: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
-    content.vb: Public Sub New(publisher As IPublisher, readIndex As IReadIndex, writerCheckpoint As ICheckpoint)
+    - id: queueId
+      type: System.Int32
+    content.vb: Public Sub New(publisher As IPublisher, readIndex As IReadIndex, writerCheckpoint As ICheckpoint, queueId As Integer)
   overload: EventStore.Core.Services.Storage.StorageReaderWorker.#ctor*
   modifiers.csharp:
   - public
@@ -110,10 +114,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadEvent>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 46
+    startLine: 52
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -144,10 +148,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadStreamEventsForward>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 55
+    startLine: 64
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -178,10 +182,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackward>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 91
+    startLine: 100
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -212,10 +216,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadAllEventsForward>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 100
+    startLine: 112
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -246,10 +250,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.ClientMessage.ReadAllEventsBackward>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 141
+    startLine: 153
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -280,10 +284,10 @@ items:
     remote:
       path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccess>.Handle
     path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
-    startLine: 150
+    startLine: 165
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -298,6 +302,41 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CheckStreamAccess}.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccess)
   nameWithType.vb: StorageReaderWorker.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccess>.Handle(StorageMessage.CheckStreamAccess)
   name.vb: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.CheckStreamAccess>.Handle(StorageMessage.CheckStreamAccess)
+- uid: EventStore.Core.Services.Storage.StorageReaderWorker.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  commentId: M:EventStore.Core.Services.Storage.StorageReaderWorker.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  id: Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  parent: EventStore.Core.Services.Storage.StorageReaderWorker
+  langs:
+  - csharp
+  - vb
+  name: Handle(StorageMessage.BatchLogExpiredMessages)
+  nameWithType: StorageReaderWorker.Handle(StorageMessage.BatchLogExpiredMessages)
+  fullName: EventStore.Core.Services.Storage.StorageReaderWorker.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Handle
+    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageReaderWorker.cs
+    startLine: 514
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage
+  syntax:
+    content: public void Handle(StorageMessage.BatchLogExpiredMessages message)
+    parameters:
+    - id: message
+      type: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+    content.vb: Public Sub Handle(message As StorageMessage.BatchLogExpiredMessages)
+  overload: EventStore.Core.Services.Storage.StorageReaderWorker.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Core.Services.Storage
   commentId: N:EventStore.Core.Services.Storage
@@ -305,6 +344,8 @@ references:
   nameWithType: EventStore.Core.Services.Storage
   fullName: EventStore.Core.Services.Storage
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -549,6 +590,46 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<StorageMessage.BatchLogExpiredMessages>
+  nameWithType: IHandle<StorageMessage.BatchLogExpiredMessages>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages>
+  nameWithType.vb: IHandle(Of StorageMessage.BatchLogExpiredMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  name.vb: IHandle(Of StorageMessage.BatchLogExpiredMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+    name: StorageMessage.BatchLogExpiredMessages
+    nameWithType: StorageMessage.BatchLogExpiredMessages
+    fullName: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+    name: StorageMessage.BatchLogExpiredMessages
+    nameWithType: StorageMessage.BatchLogExpiredMessages
+    fullName: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -700,6 +781,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -972,6 +1059,13 @@ references:
   name: ICheckpoint
   nameWithType: ICheckpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint.ICheckpoint
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: EventStore.Core.Services.Storage.ReaderIndex
   commentId: N:EventStore.Core.Services.Storage.ReaderIndex
   name: EventStore.Core.Services.Storage.ReaderIndex
@@ -1334,3 +1428,53 @@ references:
   name: StorageMessage.CheckStreamAccess
   nameWithType: StorageMessage.CheckStreamAccess
   fullName: EventStore.Core.Messages.StorageMessage.CheckStreamAccess
+- uid: EventStore.Core.Services.Storage.StorageReaderWorker.Handle*
+  commentId: Overload:EventStore.Core.Services.Storage.StorageReaderWorker.Handle
+  name: Handle
+  nameWithType: StorageReaderWorker.Handle
+  fullName: EventStore.Core.Services.Storage.StorageReaderWorker.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(StorageMessage.BatchLogExpiredMessages)
+  nameWithType: IHandle<StorageMessage.BatchLogExpiredMessages>.Handle(StorageMessage.BatchLogExpiredMessages)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages>.Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  nameWithType.vb: IHandle(Of StorageMessage.BatchLogExpiredMessages).Handle(StorageMessage.BatchLogExpiredMessages)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages).Handle(EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<StorageMessage.BatchLogExpiredMessages>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+    name: StorageMessage.BatchLogExpiredMessages
+    nameWithType: StorageMessage.BatchLogExpiredMessages
+    fullName: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of StorageMessage.BatchLogExpiredMessages).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+    name: StorageMessage.BatchLogExpiredMessages
+    nameWithType: StorageMessage.BatchLogExpiredMessages
+    fullName: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  commentId: T:EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages
+  parent: EventStore.Core.Messages
+  name: StorageMessage.BatchLogExpiredMessages
+  nameWithType: StorageMessage.BatchLogExpiredMessages
+  fullName: EventStore.Core.Messages.StorageMessage.BatchLogExpiredMessages

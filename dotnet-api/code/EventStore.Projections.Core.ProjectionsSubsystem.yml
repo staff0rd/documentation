@@ -5,7 +5,7 @@ items:
   id: ProjectionsSubsystem
   parent: EventStore.Projections.Core
   children:
-  - EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
+  - EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan,System.Boolean)
   - EventStore.Projections.Core.ProjectionsSubsystem.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
   - EventStore.Projections.Core.ProjectionsSubsystem.Register(EventStore.Core.StandardComponents)
   - EventStore.Projections.Core.ProjectionsSubsystem.Start
@@ -22,7 +22,7 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionsSubsystem
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
     startLine: 13
@@ -69,10 +69,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: VERSION
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -87,30 +87,30 @@ items:
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
-  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)
-  id: '#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan)'
+- uid: EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan,System.Boolean)
+  commentId: M:EventStore.Projections.Core.ProjectionsSubsystem.#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan,System.Boolean)
+  id: '#ctor(System.Int32,EventStore.Common.Options.ProjectionType,System.Boolean,TimeSpan,System.Boolean)'
   parent: EventStore.Projections.Core.ProjectionsSubsystem
   langs:
   - csharp
   - vb
-  name: ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan)
-  nameWithType: ProjectionsSubsystem.ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan)
-  fullName: EventStore.Projections.Core.ProjectionsSubsystem.ProjectionsSubsystem(System.Int32, EventStore.Common.Options.ProjectionType, System.Boolean, TimeSpan)
+  name: ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan, Boolean)
+  nameWithType: ProjectionsSubsystem.ProjectionsSubsystem(Int32, ProjectionType, Boolean, TimeSpan, Boolean)
+  fullName: EventStore.Projections.Core.ProjectionsSubsystem.ProjectionsSubsystem(System.Int32, EventStore.Common.Options.ProjectionType, System.Boolean, TimeSpan, System.Boolean)
   type: Constructor
   source:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
   syntax:
-    content: public ProjectionsSubsystem(int projectionWorkerThreadCount, ProjectionType runProjections, bool startStandardProjections, TimeSpan projectionQueryExpiry)
+    content: public ProjectionsSubsystem(int projectionWorkerThreadCount, ProjectionType runProjections, bool startStandardProjections, TimeSpan projectionQueryExpiry, bool faultOutOfOrderProjections)
     parameters:
     - id: projectionWorkerThreadCount
       type: System.Int32
@@ -120,7 +120,9 @@ items:
       type: System.Boolean
     - id: projectionQueryExpiry
       type: TimeSpan
-    content.vb: Public Sub New(projectionWorkerThreadCount As Integer, runProjections As ProjectionType, startStandardProjections As Boolean, projectionQueryExpiry As TimeSpan)
+    - id: faultOutOfOrderProjections
+      type: System.Boolean
+    content.vb: Public Sub New(projectionWorkerThreadCount As Integer, runProjections As ProjectionType, startStandardProjections As Boolean, projectionQueryExpiry As TimeSpan, faultOutOfOrderProjections As Boolean)
   overload: EventStore.Projections.Core.ProjectionsSubsystem.#ctor*
   modifiers.csharp:
   - public
@@ -141,10 +143,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Register
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -176,19 +178,19 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 72
+    startLine: 73
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
   syntax:
-    content: public void Start()
-    content.vb: Public Sub Start
+    content: public IEnumerable<Task> Start()
+    return:
+      type: IEnumerable{Task}
+    content.vb: Public Function Start As IEnumerable(Of Task)
   overload: EventStore.Projections.Core.ProjectionsSubsystem.Start*
-  implements:
-  - EventStore.Core.ISubsystem.Start
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -208,10 +210,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 84
+    startLine: 86
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -240,10 +242,10 @@ items:
     remote:
       path: src/EventStore.Projections.Core/ProjectionsSubsystem.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Projections.Core/ProjectionsSubsystem.cs
-    startLine: 104
+    startLine: 105
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core
@@ -267,6 +269,8 @@ references:
   nameWithType: EventStore.Projections.Core
   fullName: EventStore.Projections.Core
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -468,6 +472,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core
   commentId: N:EventStore.Core
   name: EventStore.Core
@@ -723,6 +733,8 @@ references:
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -739,6 +751,8 @@ references:
   nameWithType: ProjectionType
   fullName: EventStore.Common.Options.ProjectionType
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -805,31 +819,84 @@ references:
   name: Start
   nameWithType: ProjectionsSubsystem.Start
   fullName: EventStore.Projections.Core.ProjectionsSubsystem.Start
-- uid: EventStore.Core.ISubsystem.Start
-  commentId: M:EventStore.Core.ISubsystem.Start
-  parent: EventStore.Core.ISubsystem
-  name: Start()
-  nameWithType: ISubsystem.Start()
-  fullName: EventStore.Core.ISubsystem.Start()
+- uid: IEnumerable{Task}
+  commentId: '!:IEnumerable{Task}'
+  definition: IEnumerable`1
+  name: IEnumerable<Task>
+  nameWithType: IEnumerable<Task>
+  fullName: IEnumerable<Task>
+  nameWithType.vb: IEnumerable(Of Task)
+  fullName.vb: IEnumerable(Of Task)
+  name.vb: IEnumerable(Of Task)
   spec.csharp:
-  - uid: EventStore.Core.ISubsystem.Start
-    name: Start
-    nameWithType: ISubsystem.Start
-    fullName: EventStore.Core.ISubsystem.Start
-  - name: (
-    nameWithType: (
-    fullName: (
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
   spec.vb:
-  - uid: EventStore.Core.ISubsystem.Start
-    name: Start
-    nameWithType: ISubsystem.Start
-    fullName: EventStore.Core.ISubsystem.Start
-  - name: (
-    nameWithType: (
-    fullName: (
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )

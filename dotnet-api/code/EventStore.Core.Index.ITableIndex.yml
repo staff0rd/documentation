@@ -11,7 +11,10 @@ items:
   - EventStore.Core.Index.ITableIndex.CommitCheckpoint
   - EventStore.Core.Index.ITableIndex.GetRange(System.String,System.Int64,System.Int64,System.Nullable{System.Int32})
   - EventStore.Core.Index.ITableIndex.Initialize(System.Int64)
+  - EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  - EventStore.Core.Index.ITableIndex.MergeIndexes
   - EventStore.Core.Index.ITableIndex.PrepareCheckpoint
+  - EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
   - EventStore.Core.Index.ITableIndex.TryGetLatestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.ITableIndex.TryGetOldestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.ITableIndex.TryGetOneValue(System.String,System.Int64,System.Int64@)
@@ -26,10 +29,10 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ITableIndex
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
@@ -63,7 +66,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 6
@@ -96,7 +99,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCheckpoint
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 7
@@ -129,7 +132,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialize
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 9
@@ -158,7 +161,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 10
@@ -187,7 +190,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Add
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 12
@@ -222,7 +225,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddEntries
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 13
@@ -256,7 +259,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOneValue
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 15
@@ -294,7 +297,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetLatestEntry
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 16
@@ -330,7 +333,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOldestEntry
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 17
@@ -366,7 +369,7 @@ items:
     remote:
       path: src/EventStore.Core/Index/ITableIndex.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetRange
     path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
     startLine: 19
@@ -391,6 +394,98 @@ items:
   nameWithType.vb: ITableIndex.GetRange(String, Int64, Int64, Nullable(Of Int32))
   fullName.vb: EventStore.Core.Index.ITableIndex.GetRange(System.String, System.Int64, System.Int64, System.Nullable(Of System.Int32))
   name.vb: GetRange(String, Int64, Int64, Nullable(Of Int32))
+- uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  commentId: M:EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  id: Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  parent: EventStore.Core.Index.ITableIndex
+  langs:
+  - csharp
+  - vb
+  name: Scavenge(IIndexScavengerLog, CancellationToken)
+  nameWithType: ITableIndex.Scavenge(IIndexScavengerLog, CancellationToken)
+  fullName: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/ITableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: Scavenge
+    path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: void Scavenge(IIndexScavengerLog log, CancellationToken ct)
+    parameters:
+    - id: log
+      type: EventStore.Core.Index.IIndexScavengerLog
+    - id: ct
+      type: CancellationToken
+    content.vb: Sub Scavenge(log As IIndexScavengerLog, ct As CancellationToken)
+  overload: EventStore.Core.Index.ITableIndex.Scavenge*
+- uid: EventStore.Core.Index.ITableIndex.MergeIndexes
+  commentId: M:EventStore.Core.Index.ITableIndex.MergeIndexes
+  id: MergeIndexes
+  parent: EventStore.Core.Index.ITableIndex
+  langs:
+  - csharp
+  - vb
+  name: MergeIndexes()
+  nameWithType: ITableIndex.MergeIndexes()
+  fullName: EventStore.Core.Index.ITableIndex.MergeIndexes()
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.Core/Index/ITableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: MergeIndexes
+    path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: Task MergeIndexes()
+    return:
+      type: Task
+    content.vb: Function MergeIndexes As Task
+  overload: EventStore.Core.Index.ITableIndex.MergeIndexes*
+- uid: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  commentId: P:EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  id: IsBackgroundTaskRunning
+  parent: EventStore.Core.Index.ITableIndex
+  langs:
+  - csharp
+  - vb
+  name: IsBackgroundTaskRunning
+  nameWithType: ITableIndex.IsBackgroundTaskRunning
+  fullName: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  type: Property
+  source:
+    remote:
+      path: src/EventStore.Core/Index/ITableIndex.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: IsBackgroundTaskRunning
+    path: ../EventStore/src/EventStore.Core/Index/ITableIndex.cs
+    startLine: 23
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Index
+  syntax:
+    content: bool IsBackgroundTaskRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsBackgroundTaskRunning As Boolean
+  overload: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
 references:
 - uid: EventStore.Core.Index
   commentId: N:EventStore.Core.Index
@@ -762,10 +857,18 @@ references:
   nameWithType: ITableIndex.CommitCheckpoint
   fullName: EventStore.Core.Index.ITableIndex.CommitCheckpoint
 - uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
   fullName: System.Int64
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Index.ITableIndex.PrepareCheckpoint*
   commentId: Overload:EventStore.Core.Index.ITableIndex.PrepareCheckpoint
   name: PrepareCheckpoint
@@ -782,6 +885,8 @@ references:
   nameWithType: ITableIndex.Close
   fullName: EventStore.Core.Index.ITableIndex.Close
 - uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -792,6 +897,8 @@ references:
   nameWithType: ITableIndex.Add
   fullName: EventStore.Core.Index.ITableIndex.Add
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -991,13 +1098,14 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: Nullable<>
-  nameWithType: Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
@@ -1007,9 +1115,9 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -1022,9 +1130,9 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1066,3 +1174,34 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Index.ITableIndex.Scavenge*
+  commentId: Overload:EventStore.Core.Index.ITableIndex.Scavenge
+  name: Scavenge
+  nameWithType: ITableIndex.Scavenge
+  fullName: EventStore.Core.Index.ITableIndex.Scavenge
+- uid: EventStore.Core.Index.IIndexScavengerLog
+  commentId: T:EventStore.Core.Index.IIndexScavengerLog
+  parent: EventStore.Core.Index
+  name: IIndexScavengerLog
+  nameWithType: IIndexScavengerLog
+  fullName: EventStore.Core.Index.IIndexScavengerLog
+- uid: CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: CancellationToken
+- uid: EventStore.Core.Index.ITableIndex.MergeIndexes*
+  commentId: Overload:EventStore.Core.Index.ITableIndex.MergeIndexes
+  name: MergeIndexes
+  nameWithType: ITableIndex.MergeIndexes
+  fullName: EventStore.Core.Index.ITableIndex.MergeIndexes
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
+- uid: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning*
+  commentId: Overload:EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning
+  name: IsBackgroundTaskRunning
+  nameWithType: ITableIndex.IsBackgroundTaskRunning
+  fullName: EventStore.Core.Index.ITableIndex.IsBackgroundTaskRunning

@@ -7,6 +7,7 @@ items:
   children:
   - EventStore.ClusterNode.Program.Create(EventStore.ClusterNode.ClusterNodeOptions)
   - EventStore.ClusterNode.Program.GetComponentName(EventStore.ClusterNode.ClusterNodeOptions)
+  - EventStore.ClusterNode.Program.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
   - EventStore.ClusterNode.Program.GetLogsDirectory(EventStore.ClusterNode.ClusterNodeOptions)
   - EventStore.ClusterNode.Program.Main(System.String[])
   - EventStore.ClusterNode.Program.OnProgramExit
@@ -24,10 +25,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Program
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -71,10 +72,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Main
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 30
+    startLine: 28
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -109,10 +110,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetLogsDirectory
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 39
+    startLine: 34
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -147,10 +148,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetComponentName
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 44
+    startLine: 38
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -185,10 +186,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PreInit
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 49
+    startLine: 42
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -221,10 +222,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Create
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 83
+    startLine: 82
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -257,10 +258,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 392
+    startLine: 393
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -290,7 +291,7 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
     startLine: 397
@@ -323,10 +324,10 @@ items:
     remote:
       path: src/EventStore.ClusterNode/Program.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OnProgramExit
     path: ../EventStore/src/EventStore.ClusterNode/Program.cs
-    startLine: 402
+    startLine: 401
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
@@ -341,6 +342,44 @@ items:
   modifiers.vb:
   - Protected
   - Overrides
+- uid: EventStore.ClusterNode.Program.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  commentId: M:EventStore.ClusterNode.Program.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  id: GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  parent: EventStore.ClusterNode.Program
+  langs:
+  - csharp
+  - vb
+  name: GetIsStructuredLog(ClusterNodeOptions)
+  nameWithType: Program.GetIsStructuredLog(ClusterNodeOptions)
+  fullName: EventStore.ClusterNode.Program.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  type: Method
+  source:
+    remote:
+      path: src/EventStore.ClusterNode/Program.cs
+      branch: master
+      repo: git@github.com:ChrisChinchilla/EventStore.git
+    id: GetIsStructuredLog
+    path: ../EventStore/src/EventStore.ClusterNode/Program.cs
+    startLine: 408
+  assemblies:
+  - EventStore.ClusterNode
+  namespace: EventStore.ClusterNode
+  syntax:
+    content: protected override bool GetIsStructuredLog(ClusterNodeOptions options)
+    parameters:
+    - id: options
+      type: EventStore.ClusterNode.ClusterNodeOptions
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function GetIsStructuredLog(options As ClusterNodeOptions) As Boolean
+  overridden: EventStore.Core.ProgramBase{EventStore.ClusterNode.ClusterNodeOptions}.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  overload: EventStore.ClusterNode.Program.GetIsStructuredLog*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
 references:
 - uid: EventStore.ClusterNode
   commentId: N:EventStore.ClusterNode
@@ -348,6 +387,8 @@ references:
   nameWithType: EventStore.ClusterNode
   fullName: EventStore.ClusterNode
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -682,6 +723,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.ProgramBase`1
   commentId: T:EventStore.Core.ProgramBase`1
   name: ProgramBase<TOptions>
@@ -1147,6 +1194,8 @@ references:
   nameWithType: ClusterNodeOptions
   fullName: EventStore.ClusterNode.ClusterNodeOptions
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -1615,6 +1664,92 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.ProgramBase{EventStore.ClusterNode.ClusterNodeOptions}.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  commentId: M:EventStore.Core.ProgramBase{EventStore.ClusterNode.ClusterNodeOptions}.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  parent: EventStore.Core.ProgramBase{EventStore.ClusterNode.ClusterNodeOptions}
+  definition: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+  name: GetIsStructuredLog(ClusterNodeOptions)
+  nameWithType: ProgramBase<ClusterNodeOptions>.GetIsStructuredLog(ClusterNodeOptions)
+  fullName: EventStore.Core.ProgramBase<EventStore.ClusterNode.ClusterNodeOptions>.GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  nameWithType.vb: ProgramBase(Of ClusterNodeOptions).GetIsStructuredLog(ClusterNodeOptions)
+  fullName.vb: EventStore.Core.ProgramBase(Of EventStore.ClusterNode.ClusterNodeOptions).GetIsStructuredLog(EventStore.ClusterNode.ClusterNodeOptions)
+  spec.csharp:
+  - uid: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+    name: GetIsStructuredLog
+    nameWithType: ProgramBase<ClusterNodeOptions>.GetIsStructuredLog
+    fullName: EventStore.Core.ProgramBase<EventStore.ClusterNode.ClusterNodeOptions>.GetIsStructuredLog
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.ClusterNode.ClusterNodeOptions
+    name: ClusterNodeOptions
+    nameWithType: ClusterNodeOptions
+    fullName: EventStore.ClusterNode.ClusterNodeOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+    name: GetIsStructuredLog
+    nameWithType: ProgramBase(Of ClusterNodeOptions).GetIsStructuredLog
+    fullName: EventStore.Core.ProgramBase(Of EventStore.ClusterNode.ClusterNodeOptions).GetIsStructuredLog
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.ClusterNode.ClusterNodeOptions
+    name: ClusterNodeOptions
+    nameWithType: ClusterNodeOptions
+    fullName: EventStore.ClusterNode.ClusterNodeOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClusterNode.Program.GetIsStructuredLog*
+  commentId: Overload:EventStore.ClusterNode.Program.GetIsStructuredLog
+  name: GetIsStructuredLog
+  nameWithType: Program.GetIsStructuredLog
+  fullName: EventStore.ClusterNode.Program.GetIsStructuredLog
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+  commentId: M:EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+  name: GetIsStructuredLog(TOptions)
+  nameWithType: ProgramBase<TOptions>.GetIsStructuredLog(TOptions)
+  fullName: EventStore.Core.ProgramBase<TOptions>.GetIsStructuredLog(TOptions)
+  nameWithType.vb: ProgramBase(Of TOptions).GetIsStructuredLog(TOptions)
+  fullName.vb: EventStore.Core.ProgramBase(Of TOptions).GetIsStructuredLog(TOptions)
+  spec.csharp:
+  - uid: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+    name: GetIsStructuredLog
+    nameWithType: ProgramBase<TOptions>.GetIsStructuredLog
+    fullName: EventStore.Core.ProgramBase<TOptions>.GetIsStructuredLog
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TOptions
+    nameWithType: TOptions
+    fullName: TOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.ProgramBase`1.GetIsStructuredLog(`0)
+    name: GetIsStructuredLog
+    nameWithType: ProgramBase(Of TOptions).GetIsStructuredLog
+    fullName: EventStore.Core.ProgramBase(Of TOptions).GetIsStructuredLog
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TOptions
+    nameWithType: TOptions
+    fullName: TOptions
   - name: )
     nameWithType: )
     fullName: )

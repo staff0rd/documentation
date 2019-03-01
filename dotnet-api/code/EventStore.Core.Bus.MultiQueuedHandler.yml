@@ -25,7 +25,7 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MultiQueuedHandler
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 9
@@ -71,10 +71,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Queues
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -104,10 +104,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -144,10 +144,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 32
+    startLine: 30
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -180,10 +180,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 37
+    startLine: 34
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -218,16 +218,18 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 51
+    startLine: 46
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: public void Start()
-    content.vb: Public Sub Start
+    content: public IEnumerable<Task> Start()
+    return:
+      type: IEnumerable{Task}
+    content.vb: Public Function Start As IEnumerable(Of Task)
   overload: EventStore.Core.Bus.MultiQueuedHandler.Start*
   modifiers.csharp:
   - public
@@ -248,10 +250,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 59
+    startLine: 55
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -278,10 +280,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 70
+    startLine: 65
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -313,10 +315,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 75
+    startLine: 69
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -348,10 +350,10 @@ items:
     remote:
       path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
       branch: master
-      repo: https://github.com/EventStore/EventStore.git
+      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishToAll
     path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
-    startLine: 83
+    startLine: 76
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
@@ -373,6 +375,8 @@ references:
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -580,6 +584,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -854,6 +864,8 @@ references:
   nameWithType: MultiQueuedHandler.MultiQueuedHandler
   fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler
 - uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -1051,6 +1063,87 @@ references:
   name: Start
   nameWithType: MultiQueuedHandler.Start
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Start
+- uid: IEnumerable{Task}
+  commentId: '!:IEnumerable{Task}'
+  definition: IEnumerable`1
+  name: IEnumerable<Task>
+  nameWithType: IEnumerable<Task>
+  fullName: IEnumerable<Task>
+  nameWithType.vb: IEnumerable(Of Task)
+  fullName.vb: IEnumerable(Of Task)
+  name.vb: IEnumerable(Of Task)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Task
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Bus.MultiQueuedHandler.Stop*
   commentId: Overload:EventStore.Core.Bus.MultiQueuedHandler.Stop
   name: Stop
