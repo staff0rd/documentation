@@ -77,6 +77,10 @@ The _Query_ tab a code editor field where you can create transient and short-liv
 
 ![Web admin interface query details](~/assets/wai-query-details.png)
 
+## Visualize - Commercial Only
+
+The _Visualize_ tab shows the correlation and causation between Events and Commands
+
 ## Persistent Subscriptions
 
 The _Persistent Subscriptions_ tab shows an overview of [persistent subscriptions](~/getting-started/reading-subscribing-events.md#persistent-subscriptions) configured on streams. The button above the list do the following:
