@@ -79,7 +79,23 @@ The _Query_ tab a code editor field where you can create transient and short-liv
 
 ## Visualize - Commercial Only
 
-The _Visualize_ tab shows the correlation and causation between Events and Commands
+The _Visualize_ tab shows the correlation and causation between Events and Commands. From your event metadata, add the correlation ID to the _Correlation ID_ field and the property that tracks the causation event to the _Caused By property_ field.
+
+Click _Let's go!_ to generate an animation of the correlation and causation.
+
+![Web admin interface visualize](~/assets/admin-visualize.gif)
+
+Click _Collapse all_ to reset the visualisation.
+
+![Web admin interface visualize](~/assets/admin-vis-collapse.png)
+
+Click _Expand all_ to expand all correlated events in the visualisation.
+
+![Web admin interface visualize](~/assets/admin-vis-collapse.png)
+
+Click _Smart collapse_ to show key correlated events in the visualisation.
+
+![Web admin interface visualize](~/assets/admin-vis-collapse.png)
 
 ## Persistent Subscriptions
 
