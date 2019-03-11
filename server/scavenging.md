@@ -1,6 +1,6 @@
 ---
 outputFileName: index.html
-sinceVersion: 4.2.0
+sinceVersion: 4.0.2
 ---
 
 # Scavenging events
@@ -13,9 +13,9 @@ After processing the chunks, the operation updates the chunk indexes using a mer
 
 > [!WARNING]
 > Once a scavenge has run, you cannot recover any deleted events.
-
+>
 > [!NOTE]
-> Before version 4.2.0, a scavenge operation only worked with database chunk files. Since version 4.2.0 that reordering also happens inside the index files.
+> Before version 4.0.2, a scavenge operation only worked with database chunk files. Since version 4.0.2 that reordering also happens inside the index files.
 
 ## Starting a scavenge
 
@@ -25,16 +25,16 @@ You start a scavenge by issuing an empty `POST` request to the HTTP API with the
 
 ### [Request](#tab/tabid-8)
 
-[!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
+\[!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
 
 > [!NEXT]
 > Scavenge operations have other options you can set to improve performance, [read the API docs](#eventstore_org_HTTP_API_5_0_0_Scavenge_a_node) for more details.
 
 ### [Response](#tab/tabid-9)
 
-[!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
+\[!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
 
----
+* * *
 
 > [!NEXT]
 > For better scavenge performance, you can set the number of threads to use. If you need to restart a stopped scavenge, you can specify the starting chunk ID. [Find out more in the API reference](/http-api/swagger/Admin/Scavenge%20a%20node.html).
@@ -50,8 +50,8 @@ You can also start scavenges from the _Admin_ page of the Admin UI.
 
 This depends on the following:
 
-- How often you delete streams.
-- Depending on how you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
+-   How often you delete streams.
+-   Depending on how you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
 
 ## Stopping a scavenge
 
@@ -70,8 +70,8 @@ You can also stop scavenges from the _Admin_ page of the Admin UI.
 
 This depends on the following:
 
-- How often you delete streams.
-- How you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
+-   How often you delete streams.
+-   How you set `$maxAge`, `$maxCount` or `$tb` metadata on your streams.
 
 > [!TIP]
 > Read the [.NET API](~/dotnet-api/stream-metadata.md) or [HTTP API](~/http-api/stream-metadata.md) docs for more details on setting metadata.
