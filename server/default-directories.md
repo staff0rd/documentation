@@ -11,12 +11,12 @@ The default directories used by Event Store vary by platform to fit with the com
 
 ## Linux
 
--   **Application:** _/usr/bin_ (when installed via Debian package)
+-   **Application:** _/usr/bin_
 -   **Content:** _/usr/share/eventstore_
 -   **Configuration:** _/etc/eventstore/_
 -   **Data:** _/var/lib/eventstore_
 -   **Application Logs:** _/var/log/eventstore_
--   **Test Client Logs:** _./testclientlog_ (not included in Debian package)
+-   **Test Client Logs:** _./testclientlog_
 -   **Web Content:** _./clusternode-web_ _then_ _{Content}/clusternode-web_
 -   **Projections:** _./projections_ _then_ _{Content}/projections_
 -   **Prelude:** _./Prelude_ _then_ _{Content}/Prelude_
