@@ -6,9 +6,9 @@ outputFileName: index.html
 
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 
-1. The command line
-2. Environment variables
-3. YAML files
+1.  The command line
+2.  Environment variables
+3.  YAML files
 
 ## Command line
 
@@ -39,7 +39,6 @@ The last way you can set arguments is to put them into one or more configuration
 Log: "~/logs"
 IntHttpPort: 2111
 ---
-
 ```
 
 > [!NOTE]
@@ -106,9 +105,9 @@ Event Store supports the following parameters.
 | -ClusterDns<br/>--cluster-dns=VALUE<br/>                                 | CLUSTER_DNS                                      | ClusterDns                | DNS name from which other nodes can be discovered. (Default: fake.dns)                                  |
 | -ClusterGossipPort<br/>--cluster-gossip-port=VALUE<br/>                  | CLUSTER_GOSSIP_PORT                              | ClusterGossipPort         | The port on which cluster nodes' managers are running. (Default: 30777)                                 |
 | -GossipSeed<br/>--gossip-seed=VALUE<br/>                                 | GOSSIP_SEED                                      | GossipSeed                | Endpoints for other cluster nodes from which to seed gossip (Default: n/a)                              |
-| -GossipIntervalMs<br/>--gossip-interval-ms=VALUE<br/>                    | GOSSIP_INTERVAL_MS                               | GossipIntervalMs          | The interval, in ms, nodes should try to gossip with each other. (Default: 1000)                        |
+| -GossipIntervalMs<br/>--gossip-interval-ms=VALUE<br/>                    | GOSSIP_INTERVAL_MS                               | GossipIntervalMs          | The interval in ms that nodes should try to gossip with each other (Default: 1000)                      |
 | -GossipAllowedDifferenceMs<br/>--gossip-allowed-difference-ms=VALUE<br/> | GOSSIP_ALLOWED_DIFFERENCE_MS                     | GossipAllowedDifferenceMs | The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected. (Default: 60000) |
-| -GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>                      | GOSSIP_TIMEOUT_MS                                | GossipTimeoutMs           | The timeout, in ms, on gossip to another node. (Default: 500)                                           |
+| -GossipTimeoutMs<br/>--gossip-timeout-ms=VALUE<br/>                      | GOSSIP_TIMEOUT_MS                                | GossipTimeoutMs           | The timeout in ms of gossip to another node. (Default: 500)                                             |
 | -InitializationThreads<br/>--initialization-threads=VALUE                | INITIALIZATION_THREADS                           | InitializationThreads     | Number of threads used to load chunk and index files. (Default: 1)                                      |
 
 ### Database Options
