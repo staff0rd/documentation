@@ -16,7 +16,7 @@ Install the following utilities in your development machine.
 -   [Helm](https://github.com/helm/helm/releases)
 -   [The Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 
-## Configuration steps {#configurationsteps}
+## Configuration steps
 
 Login in your Azure Cloud account using the az cli, this triggers 2 factor authentication that launches your default browser to select account credentials.
 

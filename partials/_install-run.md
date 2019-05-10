@@ -75,6 +75,7 @@ helm install -n eventstore eventstore/eventstore
 
 > [!NOTE]
 > Read [this guide](https://github.com/EventStore/EventStore.Charts/blob/master/stable/eventstore/README.md) for more details on how to use the helm chart.
+> Read [this guide](~/server/deploy-kubernetes-aks.md) for more details on using Kubernetes with AKS.
 
 ### [macOS](#tab/tabid-macos)
 
