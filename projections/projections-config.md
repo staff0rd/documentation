@@ -58,9 +58,7 @@ The `trackemittedstreams` boolean setting enables tracking of a projection's emi
 
 Tracking emitted streams enables you to delete a projection and all the streams that it has created. You should only the setting if you intend to delete a projection and create new ones that project to the same stream.
 
-Event Store disables this setting by default, when enabled, an event written records the stream name of each event emitted by the projection. This means that write amplification is a possibility, as each event that the projection emits writes a separate event. As such, this option is not recommended for projections that emit a lot of events, and you should enable only where necessary.
-
-The stream that tracks emitted stream IDs is `$projections-{projection_name}-emittedstreams`.
+[!include[<Emit warning>](~/partials/_write-amplification.md)]
 
 > [!TIP]
 > Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI. If you have any projections created during this time frame, it's worth checking whether this option is enabled.
@@ -68,6 +66,7 @@ The stream that tracks emitted stream IDs is `$projections-{projection_name}-emi
 ### Max Allowed Writes in Flight
 
 <!-- TODO: Why is this not in the GUI for new projection? -->
+
 <!-- TODO: Is the setting name correct? Especially in HTTP -->
 
 The `AllowedInFlightMessages` setting sets the maximum number of writes to allow for a projection. Because a projection can write to multiple different streams, it's possible for the projection to send multiple writes at the same time. This option sets the number of concurrent writes that a projection can perform.
@@ -82,6 +81,7 @@ By default, this is unbounded, allowing a projection to write as fast as it can.
 ### Max Write Batch Length
 
 <!-- TODO: Why is this not in the GUI for new projection? -->
+
 <!-- TODO: Is the setting name correct? Especially in HTTP -->
 
 The `MaxWriteBatchLength` setting sets the maximum number of events the projection can write in a batch at a time.

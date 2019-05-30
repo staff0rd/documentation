@@ -25,14 +25,14 @@ You start a scavenge by issuing an empty `POST` request to the HTTP API with the
 
 ### [Request](#tab/tabid-8)
 
-\[!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
+[!code-bash[server-scavenge-request](~/code-examples/server/scavenge.sh?start=1&end=1)]
 
 > [!NEXT]
 > Scavenge operations have other options you can set to improve performance, [read the API docs](#eventstore_org_HTTP_API_5_0_0_Scavenge_a_node) for more details.
 
 ### [Response](#tab/tabid-9)
 
-\[!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
+[!code-http[server-scavenge-response](~/code-examples/server/scavenge.sh?range=3-)]
 
 * * *
 

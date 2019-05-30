@@ -1,0 +1,2 @@
+> [!WARNING]
+> By default Event Store disables the `trackemittedstreams` setting for projections. When enabled, an event written records the stream name (in `$projections-{projection_name}-emittedstreams`) of each event emitted by the projection. This means that write amplification is a possibility, as each event that the projection emits writes a separate event. As such, this option is not recommended for projections that emit a lot of events, and you should enable only where necessary.
