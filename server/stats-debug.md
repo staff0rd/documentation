@@ -28,6 +28,6 @@ This returns a lot of information that you can filter using the sub-path of the 
 
 * * *
 
-You can find more information on what each stat returns by searching for it in the [code documentation](~/dotnet-api/code/toc.yml).
+You can find more information on what each stat returns by searching for it in the reference code documentation under _.NET API -> Code Documentation_.
 
 <!-- TODO: Make this better, embed -->
