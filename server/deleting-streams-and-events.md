@@ -13,7 +13,7 @@ Meta data in Event Store defines whether an event is deleted or not. You can use
 
 ### Soft delete and `TruncateBefore`
 
-`TruncateBefore` and `$tb` considers any event with an event number equal to or lower than its value as deleted.
+`TruncateBefore` and `$tb` considers any event with an event number lower than its value as deleted.
 For example, if you had the following events in a stream :
 
 ```text
@@ -23,7 +23,7 @@ For example, if you had the following events in a stream :
 3@test-stream
 ```
 
-If you set the `TruncateBefore` or `$tb` value to 2, a read of the stream would result in only reading the last event:
+If you set the `TruncateBefore` or `$tb` value to 3, a read of the stream would result in only reading the last event:
 
 ```text
 3@test-stream
