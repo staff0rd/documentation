@@ -6,8 +6,8 @@ items:
   parent: EventStore.Projections.Core.Services.Processing
   children:
   - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(EventStore.Core.Data.ResolvedEvent,System.Byte[])
-  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
-  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.DateTime)
+  - EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
   - EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
   - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
   - EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
@@ -35,23 +35,25 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ResolvedEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 10
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class ResolvedEvent : object'
-    content.vb: >-
-      Public Class ResolvedEvent
-          Inherits Object
+    content: public class ResolvedEvent
+    content.vb: Public Class ResolvedEvent
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -76,12 +78,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 22
   assemblies:
   - EventStore.Projections.Core
@@ -89,7 +87,7 @@ items:
   syntax:
     content: public readonly Guid EventId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly EventId As Guid
   modifiers.csharp:
   - public
@@ -109,12 +107,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventType
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventType
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 23
   assemblies:
   - EventStore.Projections.Core
@@ -142,12 +136,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsJson
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsJson
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 24
   assemblies:
   - EventStore.Projections.Core
@@ -175,12 +165,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Timestamp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Timestamp
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 25
   assemblies:
   - EventStore.Projections.Core
@@ -188,8 +174,8 @@ items:
   syntax:
     content: public readonly DateTime Timestamp
     return:
-      type: DateTime
-    content.vb: Public ReadOnly Timestamp As DateTime
+      type: System.DateTime
+    content.vb: Public ReadOnly Timestamp As Date
   modifiers.csharp:
   - public
   - readonly
@@ -208,12 +194,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Data
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Data
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 27
   assemblies:
   - EventStore.Projections.Core
@@ -241,12 +223,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Metadata
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Metadata
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 28
   assemblies:
   - EventStore.Projections.Core
@@ -274,12 +252,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionMetadata
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PositionMetadata
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 29
   assemblies:
   - EventStore.Projections.Core
@@ -307,12 +281,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.StreamMetadata
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamMetadata
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 30
   assemblies:
   - EventStore.Projections.Core
@@ -340,12 +310,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsLinkToDeletedStream
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 31
   assemblies:
   - EventStore.Projections.Core
@@ -373,12 +339,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsLinkToDeletedStreamTombstone
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsLinkToDeletedStreamTombstone
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 32
   assemblies:
   - EventStore.Projections.Core
@@ -406,12 +368,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(EventStore.Core.Data.ResolvedEvent, System.Byte[])
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 34
   assemblies:
   - EventStore.Projections.Core
@@ -432,24 +390,20 @@ items:
   - Public
   fullName.vb: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(EventStore.Core.Data.ResolvedEvent, System.Byte())
   name.vb: ResolvedEvent(ResolvedEvent, Byte())
-- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)
-  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],DateTime)'
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.DateTime)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.DateTime)
+  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.DateTime)'
   parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
   langs:
   - csharp
   - vb
   name: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte[], Byte[], Byte[], Byte[], DateTime)
   nameWithType: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte[], Byte[], Byte[], Byte[], DateTime)
-  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.Byte[], System.Byte[], System.Byte[], System.Byte[], DateTime)
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, System.Guid, System.String, System.Boolean, System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.DateTime)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 114
   assemblies:
   - EventStore.Projections.Core
@@ -472,7 +426,7 @@ items:
     - id: eventOrLinkTargetPosition
       type: EventStore.Core.Data.TFPos
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventType
       type: System.String
     - id: isJson
@@ -486,34 +440,30 @@ items:
     - id: streamMetadata
       type: System.Byte[]
     - id: timestamp
-      type: DateTime
-    content.vb: Public Sub New(positionStreamId As String, positionSequenceNumber As Long, eventStreamId As String, eventSequenceNumber As Long, resolvedLinkTo As Boolean, position As TFPos, eventOrLinkTargetPosition As TFPos, eventId As Guid, eventType As String, isJson As Boolean, data As Byte(), metadata As Byte(), positionMetadata As Byte(), streamMetadata As Byte(), timestamp As DateTime)
+      type: System.DateTime
+    content.vb: Public Sub New(positionStreamId As String, positionSequenceNumber As Long, eventStreamId As String, eventSequenceNumber As Long, resolvedLinkTo As Boolean, position As TFPos, eventOrLinkTargetPosition As TFPos, eventId As Guid, eventType As String, isJson As Boolean, data As Byte(), metadata As Byte(), positionMetadata As Byte(), streamMetadata As Byte(), timestamp As Date)
   overload: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
   nameWithType.vb: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte(), Byte(), Byte(), Byte(), DateTime)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.Byte(), System.Byte(), System.Byte(), System.Byte(), DateTime)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, EventStore.Core.Data.TFPos, System.Guid, System.String, System.Boolean, System.Byte(), System.Byte(), System.Byte(), System.Byte(), System.DateTime)
   name.vb: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, TFPos, Guid, String, Boolean, Byte(), Byte(), Byte(), Byte(), DateTime)
-- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
-  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)'
+- uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.Int64,System.String,System.Int64,System.Boolean,EventStore.Core.Data.TFPos,System.Guid,System.String,System.Boolean,System.String,System.String,System.String,System.String)'
   parent: EventStore.Projections.Core.Services.Processing.ResolvedEvent
   langs:
   - csharp
   - vb
   name: ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, Guid, String, Boolean, String, String, String, String)
   nameWithType: ResolvedEvent.ResolvedEvent(String, Int64, String, Int64, Boolean, TFPos, Guid, String, Boolean, String, String, String, String)
-  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, Guid, System.String, System.Boolean, System.String, System.String, System.String, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedEvent(System.String, System.Int64, System.String, System.Int64, System.Boolean, EventStore.Core.Data.TFPos, System.Guid, System.String, System.Boolean, System.String, System.String, System.String, System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 139
   assemblies:
   - EventStore.Projections.Core
@@ -534,7 +484,7 @@ items:
     - id: position
       type: EventStore.Core.Data.TFPos
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventType
       type: System.String
     - id: isJson
@@ -565,12 +515,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventStreamId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStreamId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 166
   assemblies:
   - EventStore.Projections.Core
@@ -600,12 +546,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventSequenceNumber
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventSequenceNumber
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 170
   assemblies:
   - EventStore.Projections.Core
@@ -635,12 +577,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.ResolvedLinkTo
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ResolvedLinkTo
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 174
   assemblies:
   - EventStore.Projections.Core
@@ -670,12 +608,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionStreamId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PositionStreamId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 178
   assemblies:
   - EventStore.Projections.Core
@@ -705,12 +639,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.PositionSequenceNumber
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PositionSequenceNumber
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 182
   assemblies:
   - EventStore.Projections.Core
@@ -740,12 +670,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.Position
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Position
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 186
   assemblies:
   - EventStore.Projections.Core
@@ -775,12 +701,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.EventOrLinkTargetPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventOrLinkTargetPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 190
   assemblies:
   - EventStore.Projections.Core
@@ -810,12 +732,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.LinkOrEventPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LinkOrEventPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 194
   assemblies:
   - EventStore.Projections.Core
@@ -845,12 +763,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent.IsStreamDeletedEvent
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsStreamDeletedEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ResolvedEvent.cs
     startLine: 198
   assemblies:
   - EventStore.Projections.Core
@@ -881,6 +795,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1246,11 +1439,13 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1265,11 +1460,13 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: DateTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
   isExternal: true
   name: DateTime
   nameWithType: DateTime
-  fullName: DateTime
+  fullName: System.DateTime
 - uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.ResolvedEvent.#ctor
   name: ResolvedEvent

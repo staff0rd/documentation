@@ -5,7 +5,7 @@ items:
   id: CoreProjection
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
   - EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase
   - EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
   - EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
@@ -22,7 +22,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
   - EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped
   - EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
-  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.Exception)
   - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
   - EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
   - EventStore.Projections.Core.Services.Processing.CoreProjection.Start
@@ -36,12 +36,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CoreProjection
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 18
   assemblies:
   - EventStore.Projections.Core
@@ -50,11 +46,11 @@ items:
     content: 'public class CoreProjection : IDisposable, ICoreProjection, IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>, IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>, IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>, IHandle<CoreProjectionProcessingMessage.RestartRequested>, IHandle<CoreProjectionProcessingMessage.Failed>, ICoreProjectionForProcessingPhase, IHandle<CoreProjectionManagementMessage.GetState>, IHandle<CoreProjectionManagementMessage.GetResult>, IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>'
     content.vb: >-
       Public Class CoreProjection
-          Inherits IDisposable
-          Implements ICoreProjection, IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted), IHandle(Of CoreProjectionProcessingMessage.RestartRequested), IHandle(Of CoreProjectionProcessingMessage.Failed), ICoreProjectionForProcessingPhase, IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted)
+          Implements IDisposable, ICoreProjection, IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted), IHandle(Of CoreProjectionProcessingMessage.RestartRequested), IHandle(Of CoreProjectionProcessingMessage.Failed), ICoreProjectionForProcessingPhase, IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted)
   inheritance:
   - System.Object
   implements:
+  - System.IDisposable
   - EventStore.Projections.Core.Messages.ICoreProjection
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.CheckpointLoaded}
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
@@ -65,6 +61,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -77,24 +81,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
-  id: '#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)'
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)
+  id: '#ctor(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Core.Services.TimerService.ITimeProvider)'
   parent: EventStore.Projections.Core.Services.Processing.CoreProjection
   langs:
   - csharp
   - vb
   name: CoreProjection(ProjectionProcessingStrategy, ProjectionVersion, Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ILogger, ProjectionNamesBuilder, CoreProjectionCheckpointWriter, PartitionStateCache, String, ITimeProvider)
   nameWithType: CoreProjection.CoreProjection(ProjectionProcessingStrategy, ProjectionVersion, Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ILogger, ProjectionNamesBuilder, CoreProjectionCheckpointWriter, PartitionStateCache, String, ITimeProvider)
-  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CoreProjection(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy, EventStore.Projections.Core.Services.Processing.ProjectionVersion, Guid, EventStore.Core.Bus.IPublisher, Guid, IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Common.Log.ILogger, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.String, EventStore.Core.Services.TimerService.ITimeProvider)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CoreProjection(EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Guid, EventStore.Core.Bus.IPublisher, System.Guid, System.Security.Principal.IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Common.Log.ILogger, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.String, EventStore.Core.Services.TimerService.ITimeProvider)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 83
   assemblies:
   - EventStore.Projections.Core
@@ -107,13 +107,13 @@ items:
     - id: version
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: inputQueue
       type: EventStore.Core.Bus.IPublisher
     - id: workerId
-      type: Guid
+      type: System.Guid
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: ioDispatcher
@@ -150,12 +150,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Start()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 165
   assemblies:
   - EventStore.Projections.Core
@@ -180,12 +176,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LoadStopped()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LoadStopped
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 177
   assemblies:
   - EventStore.Projections.Core
@@ -210,12 +202,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 183
   assemblies:
   - EventStore.Projections.Core
@@ -240,12 +228,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Kill()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Kill
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 197
   assemblies:
   - EventStore.Projections.Core
@@ -270,12 +254,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.CompletePhase()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompletePhase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 223
   assemblies:
   - EventStore.Projections.Core
@@ -302,12 +282,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 233
   assemblies:
   - EventStore.Projections.Core
@@ -337,12 +313,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 250
   assemblies:
   - EventStore.Projections.Core
@@ -372,12 +344,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 267
   assemblies:
   - EventStore.Projections.Core
@@ -407,12 +375,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.CheckpointLoaded)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 271
   assemblies:
   - EventStore.Projections.Core
@@ -442,12 +406,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 304
   assemblies:
   - EventStore.Projections.Core
@@ -477,12 +437,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.RestartRequested)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 313
   assemblies:
   - EventStore.Projections.Core
@@ -512,12 +468,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(CoreProjectionProcessingMessage.Failed)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 334
   assemblies:
   - EventStore.Projections.Core
@@ -547,12 +499,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureUnsubscribed()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnsureUnsubscribed
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 338
   assemblies:
   - EventStore.Projections.Core
@@ -577,12 +525,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 589
   assemblies:
   - EventStore.Projections.Core
@@ -591,6 +535,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -607,12 +553,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnsureTickPending
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 597
   assemblies:
   - EventStore.Projections.Core
@@ -627,24 +569,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
-  id: SetFaulted(Exception)
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.Exception)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.Exception)
+  id: SetFaulted(System.Exception)
   parent: EventStore.Projections.Core.Services.Processing.CoreProjection
   langs:
   - csharp
   - vb
   name: SetFaulted(Exception)
   nameWithType: CoreProjection.SetFaulted(Exception)
-  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(Exception)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.Exception)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetFaulted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 607
   assemblies:
   - EventStore.Projections.Core
@@ -653,11 +591,11 @@ items:
     content: public void SetFaulted(Exception ex)
     parameters:
     - id: ex
-      type: Exception
+      type: System.Exception
     content.vb: Public Sub SetFaulted(ex As Exception)
   overload: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted*
   implements:
-  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  - EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -674,12 +612,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetFaulted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 611
   assemblies:
   - EventStore.Projections.Core
@@ -709,12 +643,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulting(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetFaulting
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 618
   assemblies:
   - EventStore.Projections.Core
@@ -744,12 +674,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetCurrentCheckpointSuggestedWorkItem
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 644
   assemblies:
   - EventStore.Projections.Core
@@ -779,12 +705,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.LastProcessedEventPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastProcessedEventPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 662
   assemblies:
   - EventStore.Projections.Core
@@ -816,12 +738,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Subscribed()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Subscribed
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 666
   assemblies:
   - EventStore.Projections.Core
@@ -848,12 +766,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjection.cs
     startLine: 670
   assemblies:
   - EventStore.Projections.Core
@@ -884,6 +798,13 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Projections.Core.Messages.ICoreProjection
   commentId: T:EventStore.Projections.Core.Messages.ICoreProjection
   parent: EventStore.Projections.Core.Messages
@@ -1213,6 +1134,285 @@ references:
     name: ProjectionManagementMessage.SlaveProjectionsStarted
     nameWithType: ProjectionManagementMessage.SlaveProjectionsStarted
     fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1644,22 +1844,26 @@ references:
   name: ProjectionVersion
   nameWithType: ProjectionVersion
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionVersion
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Bus.IPublisher
   commentId: T:EventStore.Core.Bus.IPublisher
   parent: EventStore.Core.Bus
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: EventStore.Core.Helpers.IODispatcher
   commentId: T:EventStore.Core.Helpers.IODispatcher
   parent: EventStore.Core.Helpers
@@ -1709,6 +1913,12 @@ references:
   name: ITimeProvider
   nameWithType: ITimeProvider
   fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Core.Helpers
   commentId: N:EventStore.Core.Helpers
   name: EventStore.Core.Helpers
@@ -2142,6 +2352,37 @@ references:
   name: Dispose
   nameWithType: CoreProjection.Dispose
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjection.EnsureTickPending
   name: EnsureTickPending
@@ -2180,50 +2421,52 @@ references:
   name: SetFaulted
   nameWithType: CoreProjection.SetFaulted
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection.SetFaulted
-- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+- uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
   parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
   isExternal: true
   name: SetFaulted(Exception)
   nameWithType: ICoreProjectionForProcessingPhase.SetFaulted(Exception)
-  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
     name: SetFaulted
     nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
     fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(Exception)
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.Exception)
     name: SetFaulted
     nameWithType: ICoreProjectionForProcessingPhase.SetFaulted
     fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Exception
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
   isExternal: true
   name: Exception
   nameWithType: Exception
-  fullName: Exception
+  fullName: System.Exception
 - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
   commentId: M:EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase.SetFaulted(System.String)
   parent: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase

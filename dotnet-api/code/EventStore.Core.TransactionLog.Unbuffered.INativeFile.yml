@@ -5,15 +5,15 @@ items:
   id: INativeFile
   parent: EventStore.Core.TransactionLog.Unbuffered
   children:
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,FileAccess,FileShare,FileMode,System.Int32)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,FileAccess,FileShare,FileMode,System.Boolean)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Int32)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Boolean)
   - EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetDriveSectorSize(System.String)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(SafeFileHandle)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)
   - EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetPageSize(System.String)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(SafeFileHandle,System.Byte*,System.Int32,System.Int32)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(SafeFileHandle,System.Int64,SeekOrigin)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(SafeFileHandle,System.Int64)
-  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.Int32,System.Int32)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64,System.IO.SeekOrigin)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)
+  - EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
   langs:
   - csharp
   - vb
@@ -22,12 +22,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: INativeFile
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 4
   assemblies:
   - EventStore.Native
@@ -59,12 +55,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetDriveSectorSize(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetDriveSectorSize
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 5
   assemblies:
   - EventStore.Native
@@ -90,12 +82,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetPageSize(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetPageSize
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 6
   assemblies:
   - EventStore.Native
@@ -109,24 +97,20 @@ items:
       type: System.Int64
     content.vb: Function GetPageSize(path As String) As Long
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetPageSize*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(SafeFileHandle,System.Int64)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(SafeFileHandle,System.Int64)
-  id: SetFileSize(SafeFileHandle,System.Int64)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)
+  id: SetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: SetFileSize(SafeFileHandle, Int64)
   nameWithType: INativeFile.SetFileSize(SafeFileHandle, Int64)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(SafeFileHandle, System.Int64)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetFileSize
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 7
   assemblies:
   - EventStore.Native
@@ -135,29 +119,25 @@ items:
     content: void SetFileSize(SafeFileHandle handle, long count)
     parameters:
     - id: handle
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     - id: count
       type: System.Int64
     content.vb: Sub SetFileSize(handle As SafeFileHandle, count As Long)
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
-  id: Write(SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
+  id: Write(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.UInt32,System.Int32@)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: Write(SafeFileHandle, Byte*, UInt32, ref Int32)
   nameWithType: INativeFile.Write(SafeFileHandle, Byte*, UInt32, ref Int32)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(SafeFileHandle, System.Byte*, System.UInt32, ref System.Int32)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(Microsoft.Win32.SafeHandles.SafeFileHandle, System.Byte*, System.UInt32, ref System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Write
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 8
   assemblies:
   - EventStore.Native
@@ -166,7 +146,7 @@ items:
     content: void Write(SafeFileHandle handle, byte *buffer, uint count, ref int written)
     parameters:
     - id: handle
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     - id: buffer
       type: System.Byte*
     - id: count
@@ -176,26 +156,22 @@ items:
     content.vb: Sub Write(handle As SafeFileHandle, buffer As Byte *, count As UInteger, ByRef written As Integer)
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write*
   nameWithType.vb: INativeFile.Write(SafeFileHandle, Byte*, UInt32, ByRef Int32)
-  fullName.vb: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(SafeFileHandle, System.Byte*, System.UInt32, ByRef System.Int32)
+  fullName.vb: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write(Microsoft.Win32.SafeHandles.SafeFileHandle, System.Byte*, System.UInt32, ByRef System.Int32)
   name.vb: Write(SafeFileHandle, Byte*, UInt32, ByRef Int32)
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(SafeFileHandle,System.Byte*,System.Int32,System.Int32)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(SafeFileHandle,System.Byte*,System.Int32,System.Int32)
-  id: Read(SafeFileHandle,System.Byte*,System.Int32,System.Int32)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.Int32,System.Int32)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.Int32,System.Int32)
+  id: Read(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Byte*,System.Int32,System.Int32)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: Read(SafeFileHandle, Byte*, Int32, Int32)
   nameWithType: INativeFile.Read(SafeFileHandle, Byte*, Int32, Int32)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(SafeFileHandle, System.Byte*, System.Int32, System.Int32)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read(Microsoft.Win32.SafeHandles.SafeFileHandle, System.Byte*, System.Int32, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Read
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 9
   assemblies:
   - EventStore.Native
@@ -204,7 +180,7 @@ items:
     content: int Read(SafeFileHandle handle, byte *buffer, int offset, int count)
     parameters:
     - id: handle
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     - id: buffer
       type: System.Byte*
     - id: offset
@@ -215,24 +191,20 @@ items:
       type: System.Int32
     content.vb: Function Read(handle As SafeFileHandle, buffer As Byte *, offset As Integer, count As Integer) As Integer
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Read*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(SafeFileHandle)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(SafeFileHandle)
-  id: GetFileSize(SafeFileHandle)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)
+  id: GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: GetFileSize(SafeFileHandle)
   nameWithType: INativeFile.GetFileSize(SafeFileHandle)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(SafeFileHandle)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetFileSize
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 10
   assemblies:
   - EventStore.Native
@@ -241,29 +213,25 @@ items:
     content: long GetFileSize(SafeFileHandle handle)
     parameters:
     - id: handle
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     return:
       type: System.Int64
     content.vb: Function GetFileSize(handle As SafeFileHandle) As Long
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.GetFileSize*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,FileAccess,FileShare,FileMode,System.Int32)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,FileAccess,FileShare,FileMode,System.Int32)
-  id: Create(System.String,FileAccess,FileShare,FileMode,System.Int32)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Int32)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Int32)
+  id: Create(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Int32)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: Create(String, FileAccess, FileShare, FileMode, Int32)
   nameWithType: INativeFile.Create(String, FileAccess, FileShare, FileMode, Int32)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String, FileAccess, FileShare, FileMode, System.Int32)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create(System.String, System.IO.FileAccess, System.IO.FileShare, System.IO.FileMode, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Create
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 11
   assemblies:
   - EventStore.Native
@@ -274,35 +242,31 @@ items:
     - id: path
       type: System.String
     - id: acc
-      type: FileAccess
+      type: System.IO.FileAccess
     - id: readWrite
-      type: FileShare
+      type: System.IO.FileShare
     - id: mode
-      type: FileMode
+      type: System.IO.FileMode
     - id: flags
       type: System.Int32
     return:
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     content.vb: Function Create(path As String, acc As FileAccess, readWrite As FileShare, mode As FileMode, flags As Integer) As SafeFileHandle
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,FileAccess,FileShare,FileMode,System.Boolean)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,FileAccess,FileShare,FileMode,System.Boolean)
-  id: CreateUnbufferedRW(System.String,FileAccess,FileShare,FileMode,System.Boolean)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Boolean)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Boolean)
+  id: CreateUnbufferedRW(System.String,System.IO.FileAccess,System.IO.FileShare,System.IO.FileMode,System.Boolean)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: CreateUnbufferedRW(String, FileAccess, FileShare, FileMode, Boolean)
   nameWithType: INativeFile.CreateUnbufferedRW(String, FileAccess, FileShare, FileMode, Boolean)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String, FileAccess, FileShare, FileMode, System.Boolean)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW(System.String, System.IO.FileAccess, System.IO.FileShare, System.IO.FileMode, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateUnbufferedRW
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 13
   assemblies:
   - EventStore.Native
@@ -313,35 +277,31 @@ items:
     - id: path
       type: System.String
     - id: acc
-      type: FileAccess
+      type: System.IO.FileAccess
     - id: share
-      type: FileShare
+      type: System.IO.FileShare
     - id: mode
-      type: FileMode
+      type: System.IO.FileMode
     - id: writeThrough
       type: System.Boolean
     return:
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     content.vb: Function CreateUnbufferedRW(path As String, acc As FileAccess, share As FileShare, mode As FileMode, writeThrough As Boolean) As SafeFileHandle
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW*
-- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(SafeFileHandle,System.Int64,SeekOrigin)
-  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(SafeFileHandle,System.Int64,SeekOrigin)
-  id: Seek(SafeFileHandle,System.Int64,SeekOrigin)
+- uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64,System.IO.SeekOrigin)
+  commentId: M:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64,System.IO.SeekOrigin)
+  id: Seek(Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64,System.IO.SeekOrigin)
   parent: EventStore.Core.TransactionLog.Unbuffered.INativeFile
   langs:
   - csharp
   - vb
   name: Seek(SafeFileHandle, Int64, SeekOrigin)
   nameWithType: INativeFile.Seek(SafeFileHandle, Int64, SeekOrigin)
-  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(SafeFileHandle, System.Int64, SeekOrigin)
+  fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek(Microsoft.Win32.SafeHandles.SafeFileHandle, System.Int64, System.IO.SeekOrigin)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Seek
-    path: ../EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Native/TransactionLog/Unbuffered/INativeFile.cs
     startLine: 16
   assemblies:
   - EventStore.Native
@@ -350,11 +310,11 @@ items:
     content: void Seek(SafeFileHandle handle, long position, SeekOrigin origin)
     parameters:
     - id: handle
-      type: SafeFileHandle
+      type: Microsoft.Win32.SafeHandles.SafeFileHandle
     - id: position
       type: System.Int64
     - id: origin
-      type: SeekOrigin
+      type: System.IO.SeekOrigin
     content.vb: Sub Seek(handle As SafeFileHandle, position As Long, origin As SeekOrigin)
   overload: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek*
 references:
@@ -735,6 +695,8 @@ references:
   nameWithType: String
   fullName: System.String
 - uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
   isExternal: true
   name: UInt32
   nameWithType: UInt32
@@ -762,11 +724,19 @@ references:
   name: SetFileSize
   nameWithType: INativeFile.SetFileSize
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.SetFileSize
-- uid: SafeFileHandle
+- uid: Microsoft.Win32.SafeHandles.SafeFileHandle
+  commentId: T:Microsoft.Win32.SafeHandles.SafeFileHandle
+  parent: Microsoft.Win32.SafeHandles
   isExternal: true
   name: SafeFileHandle
   nameWithType: SafeFileHandle
-  fullName: SafeFileHandle
+  fullName: Microsoft.Win32.SafeHandles.SafeFileHandle
+- uid: Microsoft.Win32.SafeHandles
+  commentId: N:Microsoft.Win32.SafeHandles
+  isExternal: true
+  name: Microsoft.Win32.SafeHandles
+  nameWithType: Microsoft.Win32.SafeHandles
+  fullName: Microsoft.Win32.SafeHandles
 - uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write*
   commentId: Overload:EventStore.Core.TransactionLog.Unbuffered.INativeFile.Write
   name: Write
@@ -817,21 +787,33 @@ references:
   name: Create
   nameWithType: INativeFile.Create
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Create
-- uid: FileAccess
+- uid: System.IO.FileAccess
+  commentId: T:System.IO.FileAccess
+  parent: System.IO
   isExternal: true
   name: FileAccess
   nameWithType: FileAccess
-  fullName: FileAccess
-- uid: FileShare
+  fullName: System.IO.FileAccess
+- uid: System.IO.FileShare
+  commentId: T:System.IO.FileShare
+  parent: System.IO
   isExternal: true
   name: FileShare
   nameWithType: FileShare
-  fullName: FileShare
-- uid: FileMode
+  fullName: System.IO.FileShare
+- uid: System.IO.FileMode
+  commentId: T:System.IO.FileMode
+  parent: System.IO
   isExternal: true
   name: FileMode
   nameWithType: FileMode
-  fullName: FileMode
+  fullName: System.IO.FileMode
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
 - uid: EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW*
   commentId: Overload:EventStore.Core.TransactionLog.Unbuffered.INativeFile.CreateUnbufferedRW
   name: CreateUnbufferedRW
@@ -849,8 +831,10 @@ references:
   name: Seek
   nameWithType: INativeFile.Seek
   fullName: EventStore.Core.TransactionLog.Unbuffered.INativeFile.Seek
-- uid: SeekOrigin
+- uid: System.IO.SeekOrigin
+  commentId: T:System.IO.SeekOrigin
+  parent: System.IO
   isExternal: true
   name: SeekOrigin
   nameWithType: SeekOrigin
-  fullName: SeekOrigin
+  fullName: System.IO.SeekOrigin

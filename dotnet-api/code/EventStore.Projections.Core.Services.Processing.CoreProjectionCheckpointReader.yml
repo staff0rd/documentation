@@ -5,7 +5,7 @@ items:
   id: CoreProjectionCheckpointReader
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.BeforeBeginLoadState
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.BeginLoadState
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.CheckpointLoaded(EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String)
@@ -19,26 +19,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CoreProjectionCheckpointReader
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 14
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class CoreProjectionCheckpointReader : object, ICoreProjectionCheckpointReader'
+    content: 'public class CoreProjectionCheckpointReader : ICoreProjectionCheckpointReader'
     content.vb: >-
       Public Class CoreProjectionCheckpointReader
-          Inherits Object
           Implements ICoreProjectionCheckpointReader
   inheritance:
   - System.Object
   implements:
   - EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointReader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -51,24 +54,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)'
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.Helpers.IODispatcher,System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)'
   parent: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader
   langs:
   - csharp
   - vb
   name: CoreProjectionCheckpointReader(IPublisher, Guid, IODispatcher, String, ProjectionVersion, Boolean)
   nameWithType: CoreProjectionCheckpointReader.CoreProjectionCheckpointReader(IPublisher, Guid, IODispatcher, String, ProjectionVersion, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.CoreProjectionCheckpointReader(EventStore.Core.Bus.IPublisher, Guid, EventStore.Core.Helpers.IODispatcher, System.String, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.CoreProjectionCheckpointReader(EventStore.Core.Bus.IPublisher, System.Guid, EventStore.Core.Helpers.IODispatcher, System.String, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 29
   assemblies:
   - EventStore.Projections.Core
@@ -79,7 +78,7 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: ioDispatcher
       type: EventStore.Core.Helpers.IODispatcher
     - id: projectionCheckpointStreamId
@@ -106,12 +105,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.BeginLoadState()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginLoadState
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 40
   assemblies:
   - EventStore.Projections.Core
@@ -138,12 +133,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.Initialize()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialize
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 52
   assemblies:
   - EventStore.Projections.Core
@@ -170,12 +161,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.BeforeBeginLoadState()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeforeBeginLoadState
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 58
   assemblies:
   - EventStore.Projections.Core
@@ -200,12 +187,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.RequestLoadState()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestLoadState
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 63
   assemblies:
   - EventStore.Projections.Core
@@ -230,12 +213,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader.CheckpointLoaded(EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointLoaded
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionCheckpointReader.cs
     startLine: 110
   assemblies:
   - EventStore.Projections.Core
@@ -272,6 +251,285 @@ references:
   name: ICoreProjectionCheckpointReader
   nameWithType: ICoreProjectionCheckpointReader
   fullName: EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointReader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -648,11 +906,13 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Helpers.IODispatcher
   commentId: T:EventStore.Core.Helpers.IODispatcher
   parent: EventStore.Core.Helpers

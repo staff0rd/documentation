@@ -9,8 +9,8 @@ items:
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
-  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
-  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
   - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
@@ -27,25 +27,27 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionProcessingStrategy
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 9
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public abstract class ProjectionProcessingStrategy : object'
-    content.vb: >-
-      Public MustInherit Class ProjectionProcessingStrategy
-          Inherits Object
+    content: public abstract class ProjectionProcessingStrategy
+    content.vb: Public MustInherit Class ProjectionProcessingStrategy
   inheritance:
   - System.Object
   derivedClasses:
   - EventStore.Projections.Core.Services.Processing.EventReaderBasedProjectionProcessingStrategy
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -72,12 +74,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: _name
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 10
   assemblies:
   - EventStore.Projections.Core
@@ -105,12 +103,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: _projectionVersion
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 11
   assemblies:
   - EventStore.Projections.Core
@@ -138,12 +132,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: _logger
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
@@ -171,12 +161,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.ProjectionProcessingStrategy(System.String, EventStore.Projections.Core.Services.Processing.ProjectionVersion, EventStore.Common.Log.ILogger)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 14
   assemblies:
   - EventStore.Projections.Core
@@ -196,24 +182,20 @@ items:
   - protected
   modifiers.vb:
   - Protected
-- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
-  id: Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  id: Create(System.Guid,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
   parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
   langs:
   - csharp
   - vb
   name: Create(Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ITimeProvider)
   nameWithType: ProjectionProcessingStrategy.Create(Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ITimeProvider)
-  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid, EventStore.Core.Bus.IPublisher, Guid, IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Core.Services.TimerService.ITimeProvider)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(System.Guid, EventStore.Core.Bus.IPublisher, System.Guid, System.Security.Principal.IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Core.Services.TimerService.ITimeProvider)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Create
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 20
   assemblies:
   - EventStore.Projections.Core
@@ -222,13 +204,13 @@ items:
     content: public CoreProjection Create(Guid projectionCorrelationId, IPublisher inputQueue, Guid workerId, IPrincipal runAs, IPublisher publisher, IODispatcher ioDispatcher, ReaderSubscriptionDispatcher subscriptionDispatcher, ITimeProvider timeProvider)
     parameters:
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: inputQueue
       type: EventStore.Core.Bus.IPublisher
     - id: workerId
-      type: Guid
+      type: System.Guid
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: ioDispatcher
@@ -257,12 +239,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetSourceDefinition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 64
   assemblies:
   - EventStore.Projections.Core
@@ -291,12 +269,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStopOnEof
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 66
   assemblies:
   - EventStore.Projections.Core
@@ -325,12 +299,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetUseCheckpoints
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 67
   assemblies:
   - EventStore.Projections.Core
@@ -359,12 +329,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetRequiresRootPartition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 68
   assemblies:
   - EventStore.Projections.Core
@@ -393,12 +359,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetProducesRunningResults
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 69
   assemblies:
   - EventStore.Projections.Core
@@ -427,12 +389,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetIsSlaveProjection
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 70
   assemblies:
   - EventStore.Projections.Core
@@ -461,12 +419,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnrichStatistics
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 71
   assemblies:
   - EventStore.Projections.Core
@@ -484,24 +438,20 @@ items:
   modifiers.vb:
   - Public
   - MustOverride
-- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
-  id: CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  id: CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
   parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
   langs:
   - csharp
   - vb
   name: CreateProcessingPhases(IPublisher, IPublisher, Guid, PartitionStateCache, Action, CoreProjection, ProjectionNamesBuilder, ITimeProvider, IODispatcher, CoreProjectionCheckpointWriter)
   nameWithType: ProjectionProcessingStrategy.CreateProcessingPhases(IPublisher, IPublisher, Guid, PartitionStateCache, Action, CoreProjection, ProjectionNamesBuilder, ITimeProvider, IODispatcher, CoreProjectionCheckpointWriter)
-  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, Guid, EventStore.Projections.Core.Services.Processing.PartitionStateCache, Action, EventStore.Projections.Core.Services.Processing.CoreProjection, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, System.Guid, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.Action, EventStore.Projections.Core.Services.Processing.CoreProjection, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateProcessingPhases
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 73
   assemblies:
   - EventStore.Projections.Core
@@ -514,11 +464,11 @@ items:
     - id: inputQueue
       type: EventStore.Core.Bus.IPublisher
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: partitionStateCache
       type: EventStore.Projections.Core.Services.Processing.PartitionStateCache
     - id: updateStatistics
-      type: Action
+      type: System.Action
     - id: coreProjection
       type: EventStore.Projections.Core.Services.Processing.CoreProjection
     - id: namingBuilder
@@ -551,12 +501,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetSlaveProjections
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
     startLine: 85
   assemblies:
   - EventStore.Projections.Core
@@ -586,6 +532,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -985,22 +1210,26 @@ references:
   name: Create
   nameWithType: ProjectionProcessingStrategy.Create
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Bus.IPublisher
   commentId: T:EventStore.Core.Bus.IPublisher
   parent: EventStore.Core.Bus
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: EventStore.Core.Helpers.IODispatcher
   commentId: T:EventStore.Core.Helpers.IODispatcher
   parent: EventStore.Core.Helpers
@@ -1030,6 +1259,12 @@ references:
   name: EventStore.Core.Bus
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Core.Helpers
   commentId: N:EventStore.Core.Helpers
   name: EventStore.Core.Helpers
@@ -1115,11 +1350,13 @@ references:
   name: PartitionStateCache
   nameWithType: PartitionStateCache
   fullName: EventStore.Projections.Core.Services.Processing.PartitionStateCache
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
   commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
   parent: EventStore.Projections.Core.Services.Processing

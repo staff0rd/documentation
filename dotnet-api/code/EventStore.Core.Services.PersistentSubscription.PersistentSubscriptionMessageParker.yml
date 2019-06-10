@@ -6,10 +6,10 @@ items:
   parent: EventStore.Core.Services.PersistentSubscription
   children:
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.#ctor(System.String,EventStore.Core.Helpers.IODispatcher)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginMarkParkedMessagesReprocessed(System.Int64)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
   langs:
   - csharp
   - vb
@@ -18,26 +18,29 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PersistentSubscriptionMessageParker
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: 'public class PersistentSubscriptionMessageParker : object, IPersistentSubscriptionMessageParker'
+    content: 'public class PersistentSubscriptionMessageParker : IPersistentSubscriptionMessageParker'
     content.vb: >-
       Public Class PersistentSubscriptionMessageParker
-          Inherits Object
           Implements IPersistentSubscriptionMessageParker
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -62,12 +65,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.PersistentSubscriptionMessageParker(System.String, EventStore.Core.Helpers.IODispatcher)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -85,24 +84,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
-  id: BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  id: BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker
   langs:
   - csharp
   - vb
   name: BeginParkMessage(ResolvedEvent, String, Action<ResolvedEvent, OperationResult>)
   nameWithType: PersistentSubscriptionMessageParker.BeginParkMessage(ResolvedEvent, String, Action<ResolvedEvent, OperationResult>)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, System.Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginParkMessage
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 39
   assemblies:
   - EventStore.Core
@@ -115,36 +110,32 @@ items:
     - id: reason
       type: System.String
     - id: completed
-      type: Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}
+      type: System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}
     content.vb: Public Sub BeginParkMessage(ev As ResolvedEvent, reason As String, completed As Action(Of ResolvedEvent, OperationResult))
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage*
   implements:
-  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
   nameWithType.vb: PersistentSubscriptionMessageParker.BeginParkMessage(ResolvedEvent, String, Action(Of ResolvedEvent, OperationResult))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, System.Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult))
   name.vb: BeginParkMessage(ResolvedEvent, String, Action(Of ResolvedEvent, OperationResult))
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
-  id: BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  id: BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker
   langs:
   - csharp
   - vb
   name: BeginDelete(Action<IPersistentSubscriptionMessageParker>)
   nameWithType: PersistentSubscriptionMessageParker.BeginDelete(Action<IPersistentSubscriptionMessageParker>)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(System.Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginDelete
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 62
   assemblies:
   - EventStore.Core
@@ -153,36 +144,32 @@ items:
     content: public void BeginDelete(Action<IPersistentSubscriptionMessageParker> completed)
     parameters:
     - id: completed
-      type: Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}
+      type: System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}
     content.vb: Public Sub BeginDelete(completed As Action(Of IPersistentSubscriptionMessageParker))
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete*
   implements:
-  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
   nameWithType.vb: PersistentSubscriptionMessageParker.BeginDelete(Action(Of IPersistentSubscriptionMessageParker))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete(System.Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker))
   name.vb: BeginDelete(Action(Of IPersistentSubscriptionMessageParker))
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
-  id: BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
+  id: BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker
   langs:
   - csharp
   - vb
   name: BeginReadEndSequence(Action<Nullable<Int64>>)
   nameWithType: PersistentSubscriptionMessageParker.BeginReadEndSequence(Action<Nullable<Int64>>)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(Action<System.Nullable<System.Int64>>)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action<System.Nullable<System.Int64>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginReadEndSequence
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 67
   assemblies:
   - EventStore.Core
@@ -191,17 +178,17 @@ items:
     content: public void BeginReadEndSequence(Action<long? > completed)
     parameters:
     - id: completed
-      type: Action{System.Nullable{System.Int64}}
+      type: System.Action{System.Nullable{System.Int64}}
     content.vb: Public Sub BeginReadEndSequence(completed As Action(Of Long?))
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence*
   implements:
-  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
   nameWithType.vb: PersistentSubscriptionMessageParker.BeginReadEndSequence(Action(Of Nullable(Of Int64)))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(Action(Of System.Nullable(Of System.Int64)))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action(Of System.Nullable(Of System.Int64)))
   name.vb: BeginReadEndSequence(Action(Of Nullable(Of Int64)))
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginMarkParkedMessagesReprocessed(System.Int64)
   commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginMarkParkedMessagesReprocessed(System.Int64)
@@ -215,12 +202,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginMarkParkedMessagesReprocessed(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginMarkParkedMessagesReprocessed
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionMessageParker.cs
     startLine: 90
   assemblies:
   - EventStore.Core
@@ -257,6 +240,285 @@ references:
   name: IPersistentSubscriptionMessageParker
   nameWithType: IPersistentSubscriptionMessageParker
   fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -650,18 +912,18 @@ references:
   name: BeginParkMessage
   nameWithType: PersistentSubscriptionMessageParker.BeginParkMessage
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginParkMessage
-- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
   parent: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker
   isExternal: true
   name: BeginParkMessage(ResolvedEvent, String, Action<ResolvedEvent, OperationResult>)
   nameWithType: IPersistentSubscriptionMessageParker.BeginParkMessage(ResolvedEvent, String, Action<ResolvedEvent, OperationResult>)
-  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>)
+  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, System.Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>)
   nameWithType.vb: IPersistentSubscriptionMessageParker.BeginParkMessage(ResolvedEvent, String, Action(Of ResolvedEvent, OperationResult))
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent, System.String, System.Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult))
   name.vb: BeginParkMessage(ResolvedEvent, String, Action(Of ResolvedEvent, OperationResult))
   spec.csharp:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
     name: BeginParkMessage
     nameWithType: IPersistentSubscriptionMessageParker.BeginParkMessage
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage
@@ -683,10 +945,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -709,7 +971,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage(EventStore.Core.Data.ResolvedEvent,System.String,System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult})
     name: BeginParkMessage
     nameWithType: IPersistentSubscriptionMessageParker.BeginParkMessage
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginParkMessage
@@ -731,10 +993,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -762,20 +1024,21 @@ references:
   name: ResolvedEvent
   nameWithType: ResolvedEvent
   fullName: EventStore.Core.Data.ResolvedEvent
-- uid: Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}
-  commentId: '!:Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}'
-  definition: Action`2
+- uid: System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}
+  commentId: T:System.Action{EventStore.Core.Data.ResolvedEvent,EventStore.Core.Messages.OperationResult}
+  parent: System
+  definition: System.Action`2
   name: Action<ResolvedEvent, OperationResult>
   nameWithType: Action<ResolvedEvent, OperationResult>
-  fullName: Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>
+  fullName: System.Action<EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult>
   nameWithType.vb: Action(Of ResolvedEvent, OperationResult)
-  fullName.vb: Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult)
+  fullName.vb: System.Action(Of EventStore.Core.Data.ResolvedEvent, EventStore.Core.Messages.OperationResult)
   name.vb: Action(Of ResolvedEvent, OperationResult)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -795,10 +1058,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -822,53 +1085,54 @@ references:
   name: EventStore.Core.Data
   nameWithType: EventStore.Core.Data
   fullName: EventStore.Core.Data
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
@@ -877,28 +1141,28 @@ references:
   name: BeginDelete
   nameWithType: PersistentSubscriptionMessageParker.BeginDelete
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginDelete
-- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
   parent: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker
   isExternal: true
   name: BeginDelete(Action<IPersistentSubscriptionMessageParker>)
   nameWithType: IPersistentSubscriptionMessageParker.BeginDelete(Action<IPersistentSubscriptionMessageParker>)
-  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>)
+  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>)
   nameWithType.vb: IPersistentSubscriptionMessageParker.BeginDelete(Action(Of IPersistentSubscriptionMessageParker))
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker))
   name.vb: BeginDelete(Action(Of IPersistentSubscriptionMessageParker))
   spec.csharp:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
     name: BeginDelete
     nameWithType: IPersistentSubscriptionMessageParker.BeginDelete
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -914,17 +1178,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete(System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker})
     name: BeginDelete
     nameWithType: IPersistentSubscriptionMessageParker.BeginDelete
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginDelete
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -939,20 +1203,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}
-  commentId: '!:Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}'
-  definition: Action`1
+- uid: System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}
+  commentId: T:System.Action{EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker}
+  parent: System
+  definition: System.Action`1
   name: Action<IPersistentSubscriptionMessageParker>
   nameWithType: Action<IPersistentSubscriptionMessageParker>
-  fullName: Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>
+  fullName: System.Action<EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker>
   nameWithType.vb: Action(Of IPersistentSubscriptionMessageParker)
-  fullName.vb: Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker)
+  fullName.vb: System.Action(Of EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker)
   name.vb: Action(Of IPersistentSubscriptionMessageParker)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -965,10 +1230,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -980,41 +1245,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1023,28 +1289,28 @@ references:
   name: BeginReadEndSequence
   nameWithType: PersistentSubscriptionMessageParker.BeginReadEndSequence
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionMessageParker.BeginReadEndSequence
-- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
   parent: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker
   isExternal: true
   name: BeginReadEndSequence(Action<Nullable<Int64>>)
   nameWithType: IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action<Nullable<Int64>>)
-  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action<System.Nullable<System.Int64>>)
+  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action<System.Nullable<System.Int64>>)
   nameWithType.vb: IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action(Of Nullable(Of Int64)))
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action(Of System.Nullable(Of System.Int64)))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action(Of System.Nullable(Of System.Int64)))
   name.vb: BeginReadEndSequence(Action(Of Nullable(Of Int64)))
   spec.csharp:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
     name: BeginReadEndSequence
     nameWithType: IPersistentSubscriptionMessageParker.BeginReadEndSequence
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1072,17 +1338,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(Action{System.Nullable{System.Int64}})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence(System.Action{System.Nullable{System.Int64}})
     name: BeginReadEndSequence
     nameWithType: IPersistentSubscriptionMessageParker.BeginReadEndSequence
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionMessageParker.BeginReadEndSequence
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1109,20 +1375,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{System.Nullable{System.Int64}}
-  commentId: '!:Action{System.Nullable{System.Int64}}'
-  definition: Action`1
+- uid: System.Action{System.Nullable{System.Int64}}
+  commentId: T:System.Action{System.Nullable{System.Int64}}
+  parent: System
+  definition: System.Action`1
   name: Action<Nullable<Int64>>
   nameWithType: Action<Nullable<Int64>>
-  fullName: Action<System.Nullable<System.Int64>>
+  fullName: System.Action<System.Nullable<System.Int64>>
   nameWithType.vb: Action(Of Nullable(Of Int64))
-  fullName.vb: Action(Of System.Nullable(Of System.Int64))
+  fullName.vb: System.Action(Of System.Nullable(Of System.Int64))
   name.vb: Action(Of Nullable(Of Int64))
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1147,10 +1414,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '

@@ -19,23 +19,36 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
   type: Enum
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadStreamResult
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 532
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: 'public enum ReadStreamResult : int'
-    content.vb: Public Enum ReadStreamResult As Integer
+    content: >-
+      [ProtoContract(Name = "ReadStreamResult")]
+
+      public enum ReadStreamResult
+    content.vb: >-
+      <ProtoContract(Name:="ReadStreamResult")>
+
+      Public Enum ReadStreamResult
   extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   - EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: ProtoBuf.ProtoContractAttribute
+    ctor: ProtoBuf.ProtoContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: ReadStreamResult
   modifiers.csharp:
   - public
   - enum
@@ -54,21 +67,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.Success
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Success
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 536
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: Success = null
+    content: >-
+      [ProtoEnum(Name = "Success", Value = 0)]
+
+      Success = 0
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: Success = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="Success", Value:=0)>
+
+      Success = 0
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: Success
+    - name: Value
+      type: System.Int32
+      value: 0
   modifiers.csharp:
   - public
   - const
@@ -87,21 +113,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.NoStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NoStream
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 539
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: NoStream = null
+    content: >-
+      [ProtoEnum(Name = "NoStream", Value = 1)]
+
+      NoStream = 1
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: NoStream = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="NoStream", Value:=1)>
+
+      NoStream = 1
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: NoStream
+    - name: Value
+      type: System.Int32
+      value: 1
   modifiers.csharp:
   - public
   - const
@@ -120,21 +159,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.StreamDeleted
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamDeleted
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 542
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: StreamDeleted = null
+    content: >-
+      [ProtoEnum(Name = "StreamDeleted", Value = 2)]
+
+      StreamDeleted = 2
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: StreamDeleted = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="StreamDeleted", Value:=2)>
+
+      StreamDeleted = 2
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: StreamDeleted
+    - name: Value
+      type: System.Int32
+      value: 2
   modifiers.csharp:
   - public
   - const
@@ -153,21 +205,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.NotModified
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotModified
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 545
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: NotModified = null
+    content: >-
+      [ProtoEnum(Name = "NotModified", Value = 3)]
+
+      NotModified = 3
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: NotModified = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="NotModified", Value:=3)>
+
+      NotModified = 3
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: NotModified
+    - name: Value
+      type: System.Int32
+      value: 3
   modifiers.csharp:
   - public
   - const
@@ -186,21 +251,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.Error
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Error
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 548
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: Error = null
+    content: >-
+      [ProtoEnum(Name = "Error", Value = 4)]
+
+      Error = 4
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: Error = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="Error", Value:=4)>
+
+      Error = 4
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: Error
+    - name: Value
+      type: System.Int32
+      value: 4
   modifiers.csharp:
   - public
   - const
@@ -219,21 +297,34 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.AccessDenied
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AccessDenied
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 551
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: AccessDenied = null
+    content: >-
+      [ProtoEnum(Name = "AccessDenied", Value = 5)]
+
+      AccessDenied = 5
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult
-    content.vb: AccessDenied = Nothing
+    content.vb: >-
+      <ProtoEnum(Name:="AccessDenied", Value:=5)>
+
+      AccessDenied = 5
+  attributes:
+  - type: ProtoBuf.ProtoEnumAttribute
+    ctor: ProtoBuf.ProtoEnumAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: AccessDenied
+    - name: Value
+      type: System.Int32
+      value: 5
   modifiers.csharp:
   - public
   - const
@@ -246,6 +337,93 @@ references:
   name: EventStore.Core.Messages
   nameWithType: EventStore.Core.Messages
   fullName: EventStore.Core.Messages
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Messages.TcpClientMessageDto.ReadStreamEventsCompleted.ReadStreamResult.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
   parent: EventStore.Projections.Core.Utils.EnumExtensions
@@ -339,6 +517,126 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -462,6 +760,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
 - uid: EventStore.Projections.Core.Utils
   commentId: N:EventStore.Projections.Core.Utils
   name: EventStore.Projections.Core.Utils

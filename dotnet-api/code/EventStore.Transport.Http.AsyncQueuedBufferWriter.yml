@@ -5,9 +5,9 @@ items:
   id: AsyncQueuedBufferWriter
   parent: EventStore.Transport.Http
   children:
-  - EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(Stream,Action)
-  - EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],Action{Exception})
-  - EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(Action{Exception})
+  - EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(System.IO.Stream,System.Action)
+  - EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],System.Action{System.Exception})
+  - EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(System.Action{System.Exception})
   - EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose
   langs:
   - csharp
@@ -17,12 +17,8 @@ items:
   fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AsyncQueuedBufferWriter
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Http
@@ -33,9 +29,19 @@ items:
     content: 'public class AsyncQueuedBufferWriter : IDisposable'
     content.vb: >-
       Public Class AsyncQueuedBufferWriter
-          Inherits IDisposable
+          Implements IDisposable
   inheritance:
   - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -48,24 +54,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(Stream,Action)
-  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(Stream,Action)
-  id: '#ctor(Stream,Action)'
+- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(System.IO.Stream,System.Action)
+  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor(System.IO.Stream,System.Action)
+  id: '#ctor(System.IO.Stream,System.Action)'
   parent: EventStore.Transport.Http.AsyncQueuedBufferWriter
   langs:
   - csharp
   - vb
   name: AsyncQueuedBufferWriter(Stream, Action)
   nameWithType: AsyncQueuedBufferWriter.AsyncQueuedBufferWriter(Stream, Action)
-  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.AsyncQueuedBufferWriter(Stream, Action)
+  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.AsyncQueuedBufferWriter(System.IO.Stream, System.Action)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
     startLine: 32
   assemblies:
   - EventStore.Transport.Http
@@ -75,10 +77,10 @@ items:
     content: public AsyncQueuedBufferWriter(Stream outputStream, Action onDispose)
     parameters:
     - id: outputStream
-      type: Stream
+      type: System.IO.Stream
       description: 'NOTE: outputStream is NOT auto-disposed.'
     - id: onDispose
-      type: Action
+      type: System.Action
       description: Use to dispose response streams and close connections.
     content.vb: Public Sub New(outputStream As Stream, onDispose As Action)
   overload: EventStore.Transport.Http.AsyncQueuedBufferWriter.#ctor*
@@ -86,24 +88,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],Action{Exception})
-  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],Action{Exception})
-  id: Append(System.Byte[],Action{Exception})
+- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[],System.Action{System.Exception})
+  id: Append(System.Byte[],System.Action{System.Exception})
   parent: EventStore.Transport.Http.AsyncQueuedBufferWriter
   langs:
   - csharp
   - vb
   name: Append(Byte[], Action<Exception>)
   nameWithType: AsyncQueuedBufferWriter.Append(Byte[], Action<Exception>)
-  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[], Action<Exception>)
+  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte[], System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Append
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
     startLine: 37
   assemblies:
   - EventStore.Transport.Http
@@ -114,7 +112,7 @@ items:
     - id: buffer
       type: System.Byte[]
     - id: onCompletion
-      type: Action{Exception}
+      type: System.Action{System.Exception}
     content.vb: Public Sub Append(buffer As Byte(), onCompletion As Action(Of Exception))
   overload: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append*
   nameWithType.vb: AsyncQueuedBufferWriter.Append(Byte(), Action(Of Exception))
@@ -122,26 +120,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte(), Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append(System.Byte(), System.Action(Of System.Exception))
   name.vb: Append(Byte(), Action(Of Exception))
-- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(Action{Exception})
-  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(Action{Exception})
-  id: AppendDispose(Action{Exception})
+- uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(System.Action{System.Exception})
+  id: AppendDispose(System.Action{System.Exception})
   parent: EventStore.Transport.Http.AsyncQueuedBufferWriter
   langs:
   - csharp
   - vb
   name: AppendDispose(Action<Exception>)
   nameWithType: AsyncQueuedBufferWriter.AppendDispose(Action<Exception>)
-  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(Action<Exception>)
+  fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AppendDispose
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
     startLine: 49
   assemblies:
   - EventStore.Transport.Http
@@ -152,7 +146,7 @@ items:
     content: public void AppendDispose(Action<Exception> onCompletion)
     parameters:
     - id: onCompletion
-      type: Action{Exception}
+      type: System.Action{System.Exception}
       description: onCompletion handler is called after the object has been disposed
     content.vb: Public Sub AppendDispose(onCompletion As Action(Of Exception))
   overload: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose*
@@ -161,7 +155,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.AsyncQueuedBufferWriter.AppendDispose(System.Action(Of System.Exception))
   name.vb: AppendDispose(Action(Of Exception))
 - uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose
   commentId: M:EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose
@@ -175,12 +169,8 @@ items:
   fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncQueuedBufferWriter.cs
     startLine: 114
   assemblies:
   - EventStore.Transport.Http
@@ -189,6 +179,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -206,6 +198,292 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -576,16 +854,26 @@ references:
   name: AsyncQueuedBufferWriter
   nameWithType: AsyncQueuedBufferWriter.AsyncQueuedBufferWriter
   fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.AsyncQueuedBufferWriter
-- uid: Stream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
   isExternal: true
   name: Stream
   nameWithType: Stream
-  fullName: Stream
-- uid: Action
+  fullName: System.IO.Stream
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
 - uid: EventStore.Transport.Http.AsyncQueuedBufferWriter.Append*
   commentId: Overload:EventStore.Transport.Http.AsyncQueuedBufferWriter.Append
   name: Append
@@ -617,84 +905,86 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: Action{Exception}
-  commentId: '!:Action{Exception}'
-  definition: Action`1
+- uid: System.Action{System.Exception}
+  commentId: T:System.Action{System.Exception}
+  parent: System
+  definition: System.Action`1
   name: Action<Exception>
   nameWithType: Action<Exception>
-  fullName: Action<Exception>
+  fullName: System.Action<System.Exception>
   nameWithType.vb: Action(Of Exception)
-  fullName.vb: Action(Of Exception)
+  fullName.vb: System.Action(Of System.Exception)
   name.vb: Action(Of Exception)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -708,3 +998,34 @@ references:
   name: Dispose
   nameWithType: AsyncQueuedBufferWriter.Dispose
   fullName: EventStore.Transport.Http.AsyncQueuedBufferWriter.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -16,29 +16,52 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreatePersistentSubscriptionCompleted
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 855
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: 'public class CreatePersistentSubscriptionCompleted : object'
+    content: >-
+      [Serializable]
+
+      [ProtoContract(Name = "CreatePersistentSubscriptionCompleted")]
+
+      public class CreatePersistentSubscriptionCompleted
     content.vb: >-
+      <Serializable>
+
+      <ProtoContract(Name:="CreatePersistentSubscriptionCompleted")>
+
       Public Class CreatePersistentSubscriptionCompleted
-          Inherits Object
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  - type: ProtoBuf.ProtoContractAttribute
+    ctor: ProtoBuf.ProtoContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: CreatePersistentSubscriptionCompleted
   modifiers.csharp:
   - public
   - class
@@ -57,21 +80,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.Result
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Result
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 859
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult Result
+    content: >-
+      [ProtoMember(1, IsRequired = true, Name = "result", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult Result
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult
-    content.vb: Public ReadOnly Result As TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult
+    content.vb: >-
+      <ProtoMember(1, IsRequired:=True, Name:="result", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly Result As TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: result
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -90,21 +131,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.Reason
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reason
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 862
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly string Reason
+    content: >-
+      [ProtoMember(2, IsRequired = false, Name = "reason", DataFormat = DataFormat.Default)]
+
+      public readonly string Reason
     return:
       type: System.String
-    content.vb: Public ReadOnly Reason As String
+    content.vb: >-
+      <ProtoMember(2, IsRequired:=False, Name:="reason", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly Reason As String
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 2
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: false
+    - name: Name
+      type: System.String
+      value: reason
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -123,12 +182,8 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionCompleted(EventStore.Core.Messages.TcpClientMessageDto.CreatePersistentSubscriptionCompleted.CreatePersistentSubscriptionResult, System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 883
   assemblies:
   - EventStore.Core
@@ -159,6 +214,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json

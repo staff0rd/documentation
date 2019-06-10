@@ -8,8 +8,8 @@ items:
   - EventStore.Transport.Http.Atom.PersonElement.#ctor(System.String)
   - EventStore.Transport.Http.Atom.PersonElement.GetSchema
   - EventStore.Transport.Http.Atom.PersonElement.Name
-  - EventStore.Transport.Http.Atom.PersonElement.ReadXml(XmlReader)
-  - EventStore.Transport.Http.Atom.PersonElement.WriteXml(XmlWriter)
+  - EventStore.Transport.Http.Atom.PersonElement.ReadXml(System.Xml.XmlReader)
+  - EventStore.Transport.Http.Atom.PersonElement.WriteXml(System.Xml.XmlWriter)
   langs:
   - csharp
   - vb
@@ -18,12 +18,8 @@ items:
   fullName: EventStore.Transport.Http.Atom.PersonElement
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PersonElement
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 288
   assemblies:
   - EventStore.Transport.Http
@@ -32,9 +28,19 @@ items:
     content: 'public class PersonElement : IXmlSerializable'
     content.vb: >-
       Public Class PersonElement
-          Inherits IXmlSerializable
+          Implements IXmlSerializable
   inheritance:
   - System.Object
+  implements:
+  - System.Xml.Serialization.IXmlSerializable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -59,12 +65,8 @@ items:
   fullName: EventStore.Transport.Http.Atom.PersonElement.Name
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 289
   assemblies:
   - EventStore.Transport.Http
@@ -94,12 +96,8 @@ items:
   fullName: EventStore.Transport.Http.Atom.PersonElement.PersonElement(System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 291
   assemblies:
   - EventStore.Transport.Http
@@ -127,12 +125,8 @@ items:
   fullName: EventStore.Transport.Http.Atom.PersonElement.GetSchema()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetSchema
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 295
   assemblies:
   - EventStore.Transport.Http
@@ -140,31 +134,29 @@ items:
   syntax:
     content: public XmlSchema GetSchema()
     return:
-      type: XmlSchema
+      type: System.Xml.Schema.XmlSchema
     content.vb: Public Function GetSchema As XmlSchema
   overload: EventStore.Transport.Http.Atom.PersonElement.GetSchema*
+  implements:
+  - System.Xml.Serialization.IXmlSerializable.GetSchema
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Http.Atom.PersonElement.ReadXml(XmlReader)
-  commentId: M:EventStore.Transport.Http.Atom.PersonElement.ReadXml(XmlReader)
-  id: ReadXml(XmlReader)
+- uid: EventStore.Transport.Http.Atom.PersonElement.ReadXml(System.Xml.XmlReader)
+  commentId: M:EventStore.Transport.Http.Atom.PersonElement.ReadXml(System.Xml.XmlReader)
+  id: ReadXml(System.Xml.XmlReader)
   parent: EventStore.Transport.Http.Atom.PersonElement
   langs:
   - csharp
   - vb
   name: ReadXml(XmlReader)
   nameWithType: PersonElement.ReadXml(XmlReader)
-  fullName: EventStore.Transport.Http.Atom.PersonElement.ReadXml(XmlReader)
+  fullName: EventStore.Transport.Http.Atom.PersonElement.ReadXml(System.Xml.XmlReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadXml
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 299
   assemblies:
   - EventStore.Transport.Http
@@ -173,31 +165,29 @@ items:
     content: public void ReadXml(XmlReader reader)
     parameters:
     - id: reader
-      type: XmlReader
+      type: System.Xml.XmlReader
     content.vb: Public Sub ReadXml(reader As XmlReader)
   overload: EventStore.Transport.Http.Atom.PersonElement.ReadXml*
+  implements:
+  - System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Http.Atom.PersonElement.WriteXml(XmlWriter)
-  commentId: M:EventStore.Transport.Http.Atom.PersonElement.WriteXml(XmlWriter)
-  id: WriteXml(XmlWriter)
+- uid: EventStore.Transport.Http.Atom.PersonElement.WriteXml(System.Xml.XmlWriter)
+  commentId: M:EventStore.Transport.Http.Atom.PersonElement.WriteXml(System.Xml.XmlWriter)
+  id: WriteXml(System.Xml.XmlWriter)
   parent: EventStore.Transport.Http.Atom.PersonElement
   langs:
   - csharp
   - vb
   name: WriteXml(XmlWriter)
   nameWithType: PersonElement.WriteXml(XmlWriter)
-  fullName: EventStore.Transport.Http.Atom.PersonElement.WriteXml(XmlWriter)
+  fullName: EventStore.Transport.Http.Atom.PersonElement.WriteXml(System.Xml.XmlWriter)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Atom/Feed.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteXml
-    path: ../EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Atom/Feed.cs
     startLine: 305
   assemblies:
   - EventStore.Transport.Http
@@ -206,9 +196,11 @@ items:
     content: public void WriteXml(XmlWriter writer)
     parameters:
     - id: writer
-      type: XmlWriter
+      type: System.Xml.XmlWriter
     content.vb: Public Sub WriteXml(writer As XmlWriter)
   overload: EventStore.Transport.Http.Atom.PersonElement.WriteXml*
+  implements:
+  - System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -226,6 +218,292 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Xml.Serialization.IXmlSerializable
+  commentId: T:System.Xml.Serialization.IXmlSerializable
+  parent: System.Xml.Serialization
+  isExternal: true
+  name: IXmlSerializable
+  nameWithType: IXmlSerializable
+  fullName: System.Xml.Serialization.IXmlSerializable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -383,6 +661,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Xml.Serialization
+  commentId: N:System.Xml.Serialization
+  isExternal: true
+  name: System.Xml.Serialization
+  nameWithType: System.Xml.Serialization
+  fullName: System.Xml.Serialization
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -613,28 +897,159 @@ references:
   name: GetSchema
   nameWithType: PersonElement.GetSchema
   fullName: EventStore.Transport.Http.Atom.PersonElement.GetSchema
-- uid: XmlSchema
+- uid: System.Xml.Serialization.IXmlSerializable.GetSchema
+  commentId: M:System.Xml.Serialization.IXmlSerializable.GetSchema
+  parent: System.Xml.Serialization.IXmlSerializable
+  isExternal: true
+  name: GetSchema()
+  nameWithType: IXmlSerializable.GetSchema()
+  fullName: System.Xml.Serialization.IXmlSerializable.GetSchema()
+  spec.csharp:
+  - uid: System.Xml.Serialization.IXmlSerializable.GetSchema
+    name: GetSchema
+    nameWithType: IXmlSerializable.GetSchema
+    fullName: System.Xml.Serialization.IXmlSerializable.GetSchema
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Xml.Serialization.IXmlSerializable.GetSchema
+    name: GetSchema
+    nameWithType: IXmlSerializable.GetSchema
+    fullName: System.Xml.Serialization.IXmlSerializable.GetSchema
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Xml.Schema.XmlSchema
+  commentId: T:System.Xml.Schema.XmlSchema
+  parent: System.Xml.Schema
   isExternal: true
   name: XmlSchema
   nameWithType: XmlSchema
-  fullName: XmlSchema
+  fullName: System.Xml.Schema.XmlSchema
+- uid: System.Xml.Schema
+  commentId: N:System.Xml.Schema
+  isExternal: true
+  name: System.Xml.Schema
+  nameWithType: System.Xml.Schema
+  fullName: System.Xml.Schema
 - uid: EventStore.Transport.Http.Atom.PersonElement.ReadXml*
   commentId: Overload:EventStore.Transport.Http.Atom.PersonElement.ReadXml
   name: ReadXml
   nameWithType: PersonElement.ReadXml
   fullName: EventStore.Transport.Http.Atom.PersonElement.ReadXml
-- uid: XmlReader
+- uid: System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+  commentId: M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+  parent: System.Xml.Serialization.IXmlSerializable
+  isExternal: true
+  name: ReadXml(XmlReader)
+  nameWithType: IXmlSerializable.ReadXml(XmlReader)
+  fullName: System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+    name: ReadXml
+    nameWithType: IXmlSerializable.ReadXml
+    fullName: System.Xml.Serialization.IXmlSerializable.ReadXml
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+    name: ReadXml
+    nameWithType: IXmlSerializable.ReadXml
+    fullName: System.Xml.Serialization.IXmlSerializable.ReadXml
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Xml.XmlReader
+  commentId: T:System.Xml.XmlReader
+  parent: System.Xml
   isExternal: true
   name: XmlReader
   nameWithType: XmlReader
-  fullName: XmlReader
+  fullName: System.Xml.XmlReader
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: true
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
 - uid: EventStore.Transport.Http.Atom.PersonElement.WriteXml*
   commentId: Overload:EventStore.Transport.Http.Atom.PersonElement.WriteXml
   name: WriteXml
   nameWithType: PersonElement.WriteXml
   fullName: EventStore.Transport.Http.Atom.PersonElement.WriteXml
-- uid: XmlWriter
+- uid: System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+  commentId: M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+  parent: System.Xml.Serialization.IXmlSerializable
+  isExternal: true
+  name: WriteXml(XmlWriter)
+  nameWithType: IXmlSerializable.WriteXml(XmlWriter)
+  fullName: System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: IXmlSerializable.WriteXml
+    fullName: System.Xml.Serialization.IXmlSerializable.WriteXml
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: IXmlSerializable.WriteXml
+    fullName: System.Xml.Serialization.IXmlSerializable.WriteXml
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
   isExternal: true
   name: XmlWriter
   nameWithType: XmlWriter
-  fullName: XmlWriter
+  fullName: System.Xml.XmlWriter

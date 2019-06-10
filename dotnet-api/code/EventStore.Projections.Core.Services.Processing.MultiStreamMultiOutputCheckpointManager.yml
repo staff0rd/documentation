@@ -5,13 +5,13 @@ items:
   id: MultiStreamMultiOutputCheckpointManager
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Security.Principal.IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.BeginLoadPrerecordedEvents(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.GetStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Handle(CoreProjectionProcessingMessage.EmittedStreamAwaiting)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Handle(CoreProjectionProcessingMessage.EmittedStreamWriteCompleted)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Initialize
-  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   - EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
   langs:
   - csharp
@@ -21,12 +21,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MultiStreamMultiOutputCheckpointManager
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
@@ -58,7 +54,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager._ioDispatcher
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginWriteCheckpoint(EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String)
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.PartitionCompleted(System.String)
-  - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState})
+  - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState})
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.CreateProjectionCheckpoint(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionCheckpointWriterMessage.CheckpointWritten)
   - EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionCheckpointWriterMessage.RestartRequested)
@@ -75,7 +71,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Stopped
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.StateUpdated(System.String,EventStore.Projections.Core.Services.Processing.PartitionState,EventStore.Projections.Core.Services.Processing.PartitionState)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventProcessed(EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Single)
-  - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.CheckpointSuggested(EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Single)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.Progress(System.Single)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.LastProcessedEventPosition
@@ -87,6 +83,13 @@ items:
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.SendPrerecordedEvent(EventStore.Core.Data.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Int64)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.RequestRestart(System.String)
   - EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.CheckpointWritten(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -99,24 +102,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
-  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)'
+- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Security.Principal.IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Security.Principal.IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Security.Principal.IPrincipal,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ProjectionConfig,System.String,EventStore.Projections.Core.Services.Processing.PositionTagger,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,System.Boolean,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)'
   parent: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager
   langs:
   - csharp
   - vb
   name: MultiStreamMultiOutputCheckpointManager(IPublisher, Guid, ProjectionVersion, IPrincipal, IODispatcher, ProjectionConfig, String, PositionTagger, ProjectionNamesBuilder, Boolean, Boolean, Boolean, CoreProjectionCheckpointWriter)
   nameWithType: MultiStreamMultiOutputCheckpointManager.MultiStreamMultiOutputCheckpointManager(IPublisher, Guid, ProjectionVersion, IPrincipal, IODispatcher, ProjectionConfig, String, PositionTagger, ProjectionNamesBuilder, Boolean, Boolean, Boolean, CoreProjectionCheckpointWriter)
-  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.MultiStreamMultiOutputCheckpointManager(EventStore.Core.Bus.IPublisher, Guid, EventStore.Projections.Core.Services.Processing.ProjectionVersion, IPrincipal, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ProjectionConfig, System.String, EventStore.Projections.Core.Services.Processing.PositionTagger, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, System.Boolean, System.Boolean, System.Boolean, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.MultiStreamMultiOutputCheckpointManager(EventStore.Core.Bus.IPublisher, System.Guid, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Security.Principal.IPrincipal, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ProjectionConfig, System.String, EventStore.Projections.Core.Services.Processing.PositionTagger, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, System.Boolean, System.Boolean, System.Boolean, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 22
   assemblies:
   - EventStore.Projections.Core
@@ -127,11 +126,11 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: projectionVersion
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: ioDispatcher
       type: EventStore.Core.Helpers.IODispatcher
     - id: projectionConfig
@@ -168,12 +167,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Initialize()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialize
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 35
   assemblies:
   - EventStore.Projections.Core
@@ -201,12 +196,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Start(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.PartitionState)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 42
   assemblies:
   - EventStore.Projections.Core
@@ -227,24 +218,20 @@ items:
   modifiers.vb:
   - Public
   - Overrides
-- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  id: RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+- uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  commentId: M:EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  id: RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   parent: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager
   langs:
   - csharp
   - vb
   name: RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
   nameWithType: MultiStreamMultiOutputCheckpointManager.RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
-  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action)
+  fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RecordEventOrder
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 48
   assemblies:
   - EventStore.Projections.Core
@@ -257,9 +244,9 @@ items:
     - id: orderCheckpointTag
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: committed
-      type: Action
+      type: System.Action
     content.vb: Public Overrides Sub RecordEventOrder(resolvedEvent As ResolvedEvent, orderCheckpointTag As CheckpointTag, committed As Action)
-  overridden: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  overridden: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   overload: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.RecordEventOrder*
   modifiers.csharp:
   - public
@@ -279,12 +266,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.GetStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 77
   assemblies:
   - EventStore.Projections.Core
@@ -315,12 +298,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.BeginLoadPrerecordedEvents(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginLoadPrerecordedEvents
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 87
   assemblies:
   - EventStore.Projections.Core
@@ -351,12 +330,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Handle(CoreProjectionProcessingMessage.EmittedStreamAwaiting)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 224
   assemblies:
   - EventStore.Projections.Core
@@ -386,12 +361,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager.Handle(CoreProjectionProcessingMessage.EmittedStreamWriteCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/MultiStreamMultiOutputCheckpointManager.cs
     startLine: 230
   assemblies:
   - EventStore.Projections.Core
@@ -842,18 +813,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState})
-  commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState})
+- uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState})
+  commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState})
   parent: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager
   isExternal: true
   name: BeginLoadPartitionStateAt(String, CheckpointTag, Action<PartitionState>)
   nameWithType: DefaultCheckpointManager.BeginLoadPartitionStateAt(String, CheckpointTag, Action<PartitionState>)
-  fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action<EventStore.Projections.Core.Services.Processing.PartitionState>)
+  fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action<EventStore.Projections.Core.Services.Processing.PartitionState>)
   nameWithType.vb: DefaultCheckpointManager.BeginLoadPartitionStateAt(String, CheckpointTag, Action(Of PartitionState))
-  fullName.vb: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action(Of EventStore.Projections.Core.Services.Processing.PartitionState))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action(Of EventStore.Projections.Core.Services.Processing.PartitionState))
   name.vb: BeginLoadPartitionStateAt(String, CheckpointTag, Action(Of PartitionState))
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState})
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState})
     name: BeginLoadPartitionStateAt
     nameWithType: DefaultCheckpointManager.BeginLoadPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt
@@ -875,10 +846,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -894,7 +865,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState})
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState})
     name: BeginLoadPartitionStateAt
     nameWithType: DefaultCheckpointManager.BeginLoadPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.BeginLoadPartitionStateAt
@@ -916,10 +887,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1355,18 +1326,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
   parent: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager
   isExternal: true
   name: EventsEmitted(EmittedEventEnvelope[], Guid, String)
   nameWithType: CoreProjectionCheckpointManager.EventsEmitted(EmittedEventEnvelope[], Guid, String)
-  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], Guid, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Guid, System.String)
   nameWithType.vb: CoreProjectionCheckpointManager.EventsEmitted(EmittedEventEnvelope(), Guid, String)
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), Guid, System.String)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Guid, System.String)
   name.vb: EventsEmitted(EmittedEventEnvelope(), Guid, String)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
     name: EventsEmitted
     nameWithType: CoreProjectionCheckpointManager.EventsEmitted
     fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted
@@ -1383,10 +1354,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1400,7 +1371,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
     name: EventsEmitted
     nameWithType: CoreProjectionCheckpointManager.EventsEmitted
     fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager.EventsEmitted
@@ -1417,10 +1388,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1842,6 +1813,285 @@ references:
     name: CheckpointTag
     nameWithType: CheckpointTag
     fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -2267,22 +2517,26 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionVersion
   commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionVersion
   parent: EventStore.Projections.Core.Services.Processing
   name: ProjectionVersion
   nameWithType: ProjectionVersion
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionVersion
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: EventStore.Core.Helpers.IODispatcher
   commentId: T:EventStore.Core.Helpers.IODispatcher
   parent: EventStore.Core.Helpers
@@ -2327,6 +2581,12 @@ references:
   name: CoreProjectionCheckpointWriter
   nameWithType: CoreProjectionCheckpointWriter
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Core.Helpers
   commentId: N:EventStore.Core.Helpers
   name: EventStore.Core.Helpers
@@ -2437,15 +2697,15 @@ references:
   name: PartitionState
   nameWithType: PartitionState
   fullName: EventStore.Projections.Core.Services.Processing.PartitionState
-- uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+- uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   parent: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager
   isExternal: true
   name: RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
   nameWithType: DefaultCheckpointManager.RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
-  fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action)
+  fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
     name: RecordEventOrder
     nameWithType: DefaultCheckpointManager.RecordEventOrder
     fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder
@@ -2466,16 +2726,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
     name: RecordEventOrder
     nameWithType: DefaultCheckpointManager.RecordEventOrder
     fullName: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.RecordEventOrder
@@ -2496,10 +2756,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
@@ -2515,11 +2775,13 @@ references:
   name: ResolvedEvent
   nameWithType: ResolvedEvent
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
 - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.GetStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   commentId: M:EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager.GetStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
   parent: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager

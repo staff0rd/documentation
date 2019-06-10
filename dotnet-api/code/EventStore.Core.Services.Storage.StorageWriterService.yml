@@ -5,7 +5,7 @@ items:
   id: StorageWriterService
   parent: EventStore.Core.Services.Storage
   children:
-  - EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  - EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,System.TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
   - EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
   - EventStore.Core.Services.Storage.StorageWriterService.Bus
   - EventStore.Core.Services.Storage.StorageWriterService.Db
@@ -37,21 +37,16 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StorageWriterService
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 24
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
   syntax:
-    content: 'public class StorageWriterService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.WriteEpoch>, IHandle<SystemMessage.WaitForChaserToCatchUp>, IHandle<StorageMessage.WritePrepares>, IHandle<StorageMessage.WriteDelete>, IHandle<StorageMessage.WriteTransactionStart>, IHandle<StorageMessage.WriteTransactionData>, IHandle<StorageMessage.WriteTransactionPrepare>, IHandle<StorageMessage.WriteCommit>, IHandle<MonitoringMessage.InternalStatsRequest>'
+    content: 'public class StorageWriterService : IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.WriteEpoch>, IHandle<SystemMessage.WaitForChaserToCatchUp>, IHandle<StorageMessage.WritePrepares>, IHandle<StorageMessage.WriteDelete>, IHandle<StorageMessage.WriteTransactionStart>, IHandle<StorageMessage.WriteTransactionData>, IHandle<StorageMessage.WriteTransactionPrepare>, IHandle<StorageMessage.WriteCommit>, IHandle<MonitoringMessage.InternalStatsRequest>'
     content.vb: >-
       Public Class StorageWriterService
-          Inherits Object
           Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.WriteEpoch), IHandle(Of SystemMessage.WaitForChaserToCatchUp), IHandle(Of StorageMessage.WritePrepares), IHandle(Of StorageMessage.WriteDelete), IHandle(Of StorageMessage.WriteTransactionStart), IHandle(Of StorageMessage.WriteTransactionData), IHandle(Of StorageMessage.WriteTransactionPrepare), IHandle(Of StorageMessage.WriteCommit), IHandle(Of MonitoringMessage.InternalStatsRequest)
   inheritance:
   - System.Object
@@ -69,6 +64,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.WriteCommit}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -93,12 +96,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.TicksPerMs
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TicksPerMs
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 37
   assemblies:
   - EventStore.Core
@@ -128,12 +127,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Db
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Db
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -161,12 +156,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Writer
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Writer
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 41
   assemblies:
   - EventStore.Core
@@ -194,12 +185,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EpochManager
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EpochManager
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 43
   assemblies:
   - EventStore.Core
@@ -227,12 +214,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Bus
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Bus
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -260,12 +243,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterQueue
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StorageWriterQueue
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 47
   assemblies:
   - EventStore.Core
@@ -293,12 +272,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.FlushMessagesInQueue
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FlushMessagesInQueue
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -324,12 +299,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.BlockWriter
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BlockWriter
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 57
   assemblies:
   - EventStore.Core
@@ -355,12 +326,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Tasks
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Tasks
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 72
   assemblies:
   - EventStore.Core
@@ -369,7 +336,7 @@ items:
     content: public IEnumerable<Task> Tasks { get; }
     parameters: []
     return:
-      type: IEnumerable{Task}
+      type: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
     content.vb: Public ReadOnly Property Tasks As IEnumerable(Of Task)
   overload: EventStore.Core.Services.Storage.StorageWriterService.Tasks*
   modifiers.csharp:
@@ -378,24 +345,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
-  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)'
+- uid: EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,System.TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  commentId: M:EventStore.Core.Services.Storage.StorageWriterService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,System.TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.ISubscriber,System.TimeSpan,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.TFChunkWriter,EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter,EventStore.Core.Services.Storage.EpochManager.IEpochManager)'
   parent: EventStore.Core.Services.Storage.StorageWriterService
   langs:
   - csharp
   - vb
   name: StorageWriterService(IPublisher, ISubscriber, TimeSpan, TFChunkDb, TFChunkWriter, IIndexWriter, IEpochManager)
   nameWithType: StorageWriterService.StorageWriterService(IPublisher, ISubscriber, TimeSpan, TFChunkDb, TFChunkWriter, IIndexWriter, IEpochManager)
-  fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterService(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.ISubscriber, TimeSpan, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Chunks.TFChunkWriter, EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter, EventStore.Core.Services.Storage.EpochManager.IEpochManager)
+  fullName: EventStore.Core.Services.Storage.StorageWriterService.StorageWriterService(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.ISubscriber, System.TimeSpan, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Chunks.TFChunkWriter, EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter, EventStore.Core.Services.Storage.EpochManager.IEpochManager)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 76
   assemblies:
   - EventStore.Core
@@ -408,7 +371,7 @@ items:
     - id: subscribeToBus
       type: EventStore.Core.Bus.ISubscriber
     - id: minFlushDelay
-      type: TimeSpan
+      type: System.TimeSpan
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
     - id: writer
@@ -435,12 +398,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.SubscribeToMessage<T>()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscribeToMessage
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 122
   assemblies:
   - EventStore.Core
@@ -473,12 +432,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.SystemInit>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 168
   assemblies:
   - EventStore.Core
@@ -506,12 +461,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 172
   assemblies:
   - EventStore.Core
@@ -544,12 +495,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle(EventStore.Core.Messages.SystemMessage.WriteEpoch)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WriteEpoch>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 188
   assemblies:
   - EventStore.Core
@@ -578,12 +525,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle(EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.SystemMessage.WaitForChaserToCatchUp>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 197
   assemblies:
   - EventStore.Core
@@ -612,12 +555,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle(EventStore.Core.Messages.StorageMessage.WritePrepares)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WritePrepares>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 222
   assemblies:
   - EventStore.Core
@@ -645,12 +584,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.SoftUndeleteRawMeta(System.Byte[], System.Int64, out System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SoftUndeleteRawMeta
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 316
   assemblies:
   - EventStore.Core
@@ -688,12 +623,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle(EventStore.Core.Messages.StorageMessage.WriteDelete)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteDelete>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 334
   assemblies:
   - EventStore.Core
@@ -722,12 +653,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionStart>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 378
   assemblies:
   - EventStore.Core
@@ -756,12 +683,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionData)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionData>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 401
   assemblies:
   - EventStore.Core
@@ -790,12 +713,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle(EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteTransactionPrepare>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 440
   assemblies:
   - EventStore.Core
@@ -824,12 +743,8 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle(EventStore.Core.Messages.StorageMessage.WriteCommit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<EventStore.Core.Messages.StorageMessage.WriteCommit>.Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
     startLine: 478
   assemblies:
   - EventStore.Core
@@ -857,13 +772,9 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Flush(System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Flush
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
-    startLine: 597
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 601
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -892,13 +803,9 @@ items:
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Handle(EventStore.Core.Messages.MonitoringMessage.InternalStatsRequest)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/StorageWriterService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
-    startLine: 651
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/StorageWriterService.cs
+    startLine: 655
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage
@@ -1368,6 +1275,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1833,87 +2019,95 @@ references:
   name: Tasks
   nameWithType: StorageWriterService.Tasks
   fullName: EventStore.Core.Services.Storage.StorageWriterService.Tasks
-- uid: IEnumerable{Task}
-  commentId: '!:IEnumerable{Task}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<Task>
   nameWithType: IEnumerable<Task>
-  fullName: IEnumerable<Task>
+  fullName: System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task>
   nameWithType.vb: IEnumerable(Of Task)
-  fullName.vb: IEnumerable(Of Task)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Threading.Tasks.Task)
   name.vb: IEnumerable(Of Task)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Services.Storage.StorageWriterService.#ctor*
   commentId: Overload:EventStore.Core.Services.Storage.StorageWriterService.#ctor
   name: StorageWriterService
@@ -1925,11 +2119,13 @@ references:
   name: ISubscriber
   nameWithType: ISubscriber
   fullName: EventStore.Core.Bus.ISubscriber
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
   commentId: T:EventStore.Core.Services.Storage.ReaderIndex.IIndexWriter
   parent: EventStore.Core.Services.Storage.ReaderIndex

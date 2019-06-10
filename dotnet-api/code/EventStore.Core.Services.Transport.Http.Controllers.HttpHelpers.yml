@@ -6,7 +6,7 @@ items:
   parent: EventStore.Core.Services.Transport.Http.Controllers
   children:
   - EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.RegisterRedirectAction(EventStore.Core.Services.Transport.Http.IHttpService,System.String,System.String)
-  - EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,IEnumerable{KeyValuePair{System.String,System.String}})
+  - EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
   langs:
   - csharp
   - vb
@@ -15,23 +15,25 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HttpHelpers
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
     startLine: 8
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http.Controllers
   syntax:
-    content: 'public static class HttpHelpers : object'
-    content.vb: >-
-      Public Module HttpHelpers
-          Inherits Object
+    content: public static class HttpHelpers
+    content.vb: Public Module HttpHelpers
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -51,12 +53,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.RegisterRedirectAction(EventStore.Core.Services.Transport.Http.IHttpService, System.String, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RegisterRedirectAction
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
     startLine: 9
   assemblies:
   - EventStore.Core
@@ -78,9 +76,9 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,IEnumerable{KeyValuePair{System.String,System.String}})
-  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,IEnumerable{KeyValuePair{System.String,System.String}})
-  id: Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,IEnumerable{KeyValuePair{System.String,System.String}})
+- uid: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  commentId: M:EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  id: Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager,System.String,System.Int32,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
   isExtensionMethod: true
   parent: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers
   langs:
@@ -88,15 +86,11 @@ items:
   - vb
   name: Reply(HttpEntityManager, String, Int32, String, String, IEnumerable<KeyValuePair<String, String>>)
   nameWithType: HttpHelpers.Reply(HttpEntityManager, String, Int32, String, String, IEnumerable<KeyValuePair<String, String>>)
-  fullName: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String, System.Int32, System.String, System.String, IEnumerable<KeyValuePair<System.String, System.String>>)
+  fullName: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String, System.Int32, System.String, System.String, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.String>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reply
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Controllers/HttpHelpers.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -115,7 +109,7 @@ items:
     - id: contentType
       type: System.String
     - id: headers
-      type: IEnumerable{KeyValuePair{System.String,System.String}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     content.vb: >-
       <ExtensionAttribute>
 
@@ -128,7 +122,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String, System.Int32, System.String, System.String, IEnumerable(Of KeyValuePair(Of System.String, System.String)))
+  fullName.vb: EventStore.Core.Services.Transport.Http.Controllers.HttpHelpers.Reply(EventStore.Transport.Http.EntityManagement.HttpEntityManager, System.String, System.Int32, System.String, System.String, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)))
   name.vb: Reply(HttpEntityManager, String, Int32, String, String, IEnumerable(Of KeyValuePair(Of String, String)))
 references:
 - uid: EventStore.Core.Services.Transport.Http.Controllers
@@ -143,6 +137,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -190,28 +463,29 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: IEnumerable{KeyValuePair{System.String,System.String}}
-  commentId: '!:IEnumerable{KeyValuePair{System.String,System.String}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<KeyValuePair<String, String>>
   nameWithType: IEnumerable<KeyValuePair<String, String>>
-  fullName: IEnumerable<KeyValuePair<System.String, System.String>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.String>>
   nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String))
-  fullName.vb: IEnumerable(Of KeyValuePair(Of System.String, System.String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String))
   name.vb: IEnumerable(Of KeyValuePair(Of String, String))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: <
     nameWithType: <
@@ -236,18 +510,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -276,41 +550,48 @@ references:
   name: EventStore.Transport.Http.EntityManagement
   nameWithType: EventStore.Transport.Http.EntityManagement
   fullName: EventStore.Transport.Http.EntityManagement
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

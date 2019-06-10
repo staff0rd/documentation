@@ -21,29 +21,52 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionCommitCompleted
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 369
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: 'public class TransactionCommitCompleted : object'
+    content: >-
+      [Serializable]
+
+      [ProtoContract(Name = "TransactionCommitCompleted")]
+
+      public class TransactionCommitCompleted
     content.vb: >-
+      <Serializable>
+
+      <ProtoContract(Name:="TransactionCommitCompleted")>
+
       Public Class TransactionCommitCompleted
-          Inherits Object
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  - type: ProtoBuf.ProtoContractAttribute
+    ctor: ProtoBuf.ProtoContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: TransactionCommitCompleted
   modifiers.csharp:
   - public
   - class
@@ -62,21 +85,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.TransactionId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionId
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 373
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long TransactionId
+    content: >-
+      [ProtoMember(1, IsRequired = true, Name = "transaction_id", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long TransactionId
     return:
       type: System.Int64
-    content.vb: Public ReadOnly TransactionId As Long
+    content.vb: >-
+      <ProtoMember(1, IsRequired:=True, Name:="transaction_id", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly TransactionId As Long
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: transaction_id
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -95,21 +136,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.Result
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Result
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 376
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly TcpClientMessageDto.OperationResult Result
+    content: >-
+      [ProtoMember(2, IsRequired = true, Name = "result", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly TcpClientMessageDto.OperationResult Result
     return:
       type: EventStore.Core.Messages.TcpClientMessageDto.OperationResult
-    content.vb: Public ReadOnly Result As TcpClientMessageDto.OperationResult
+    content.vb: >-
+      <ProtoMember(2, IsRequired:=True, Name:="result", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly Result As TcpClientMessageDto.OperationResult
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 2
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: result
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -128,21 +187,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.Message
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Message
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 379
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly string Message
+    content: >-
+      [ProtoMember(3, IsRequired = false, Name = "message", DataFormat = DataFormat.Default)]
+
+      public readonly string Message
     return:
       type: System.String
-    content.vb: Public ReadOnly Message As String
+    content.vb: >-
+      <ProtoMember(3, IsRequired:=False, Name:="message", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly Message As String
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 3
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: false
+    - name: Name
+      type: System.String
+      value: message
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -161,21 +238,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.FirstEventNumber
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FirstEventNumber
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 382
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long FirstEventNumber
+    content: >-
+      [ProtoMember(4, IsRequired = true, Name = "first_event_number", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long FirstEventNumber
     return:
       type: System.Int64
-    content.vb: Public ReadOnly FirstEventNumber As Long
+    content.vb: >-
+      <ProtoMember(4, IsRequired:=True, Name:="first_event_number", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly FirstEventNumber As Long
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 4
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: first_event_number
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -194,21 +289,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.LastEventNumber
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastEventNumber
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 385
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long LastEventNumber
+    content: >-
+      [ProtoMember(5, IsRequired = true, Name = "last_event_number", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long LastEventNumber
     return:
       type: System.Int64
-    content.vb: Public ReadOnly LastEventNumber As Long
+    content.vb: >-
+      <ProtoMember(5, IsRequired:=True, Name:="last_event_number", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly LastEventNumber As Long
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 5
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: last_event_number
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -227,21 +340,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.PreparePosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PreparePosition
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 388
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long? PreparePosition
+    content: >-
+      [ProtoMember(6, IsRequired = false, Name = "prepare_position", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long? PreparePosition
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public ReadOnly PreparePosition As Long?
+    content.vb: >-
+      <ProtoMember(6, IsRequired:=False, Name:="prepare_position", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly PreparePosition As Long?
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 6
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: false
+    - name: Name
+      type: System.String
+      value: prepare_position
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -260,21 +391,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.CommitPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitPosition
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 391
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long? CommitPosition
+    content: >-
+      [ProtoMember(7, IsRequired = false, Name = "commit_position", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long? CommitPosition
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public ReadOnly CommitPosition As Long?
+    content.vb: >-
+      <ProtoMember(7, IsRequired:=False, Name:="commit_position", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly CommitPosition As Long?
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 7
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: false
+    - name: Name
+      type: System.String
+      value: commit_position
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -293,12 +442,8 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.TransactionCommitCompleted.TransactionCommitCompleted(System.Int64, EventStore.Core.Messages.TcpClientMessageDto.OperationResult, System.String, System.Int64, System.Int64, System.Nullable<System.Int64>, System.Nullable<System.Int64>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 395
   assemblies:
   - EventStore.Core
@@ -342,6 +487,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -728,7 +1152,8 @@ references:
   nameWithType: String
   fullName: System.String
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>

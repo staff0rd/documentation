@@ -5,7 +5,7 @@ items:
   id: ReplicaService
   parent: EventStore.Core.Services.Replication
   children:
-  - EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,TimeSpan,TimeSpan)
+  - EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,System.TimeSpan,System.TimeSpan)
   - EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ClientMessage.TcpForwardMessage)
   - EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ReplicationMessage.AckLogPosition)
   - EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ReplicationMessage.ReconnectToMaster)
@@ -21,21 +21,16 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReplicaService
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 21
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: 'public class ReplicaService : object, IHandle<SystemMessage.StateChangeMessage>, IHandle<ReplicationMessage.ReconnectToMaster>, IHandle<ReplicationMessage.SubscribeToMaster>, IHandle<ReplicationMessage.AckLogPosition>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.CommitAck>, IHandle<ClientMessage.TcpForwardMessage>'
+    content: 'public class ReplicaService : IHandle<SystemMessage.StateChangeMessage>, IHandle<ReplicationMessage.ReconnectToMaster>, IHandle<ReplicationMessage.SubscribeToMaster>, IHandle<ReplicationMessage.AckLogPosition>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.CommitAck>, IHandle<ClientMessage.TcpForwardMessage>'
     content.vb: >-
       Public Class ReplicaService
-          Inherits Object
           Implements IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of ReplicationMessage.ReconnectToMaster), IHandle(Of ReplicationMessage.SubscribeToMaster), IHandle(Of ReplicationMessage.AckLogPosition), IHandle(Of StorageMessage.PrepareAck), IHandle(Of StorageMessage.CommitAck), IHandle(Of ClientMessage.TcpForwardMessage)
   inheritance:
   - System.Object
@@ -47,6 +42,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.PrepareAck}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.CommitAck}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.TcpForwardMessage}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -59,24 +62,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,TimeSpan,TimeSpan)
-  commentId: M:EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,TimeSpan,TimeSpan)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,TimeSpan,TimeSpan)'
+- uid: EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,System.TimeSpan,System.TimeSpan)
+  commentId: M:EventStore.Core.Services.Replication.ReplicaService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,System.TimeSpan,System.TimeSpan)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Services.Storage.EpochManager.IEpochManager,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,EventStore.Core.Data.VNodeInfo,System.Boolean,System.String,System.Boolean,System.TimeSpan,System.TimeSpan)'
   parent: EventStore.Core.Services.Replication.ReplicaService
   langs:
   - csharp
   - vb
   name: ReplicaService(IPublisher, TFChunkDb, IEpochManager, IPublisher, IAuthenticationProvider, VNodeInfo, Boolean, String, Boolean, TimeSpan, TimeSpan)
   nameWithType: ReplicaService.ReplicaService(IPublisher, TFChunkDb, IEpochManager, IPublisher, IAuthenticationProvider, VNodeInfo, Boolean, String, Boolean, TimeSpan, TimeSpan)
-  fullName: EventStore.Core.Services.Replication.ReplicaService.ReplicaService(EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Services.Storage.EpochManager.IEpochManager, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, EventStore.Core.Data.VNodeInfo, System.Boolean, System.String, System.Boolean, TimeSpan, TimeSpan)
+  fullName: EventStore.Core.Services.Replication.ReplicaService.ReplicaService(EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Services.Storage.EpochManager.IEpochManager, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, EventStore.Core.Data.VNodeInfo, System.Boolean, System.String, System.Boolean, System.TimeSpan, System.TimeSpan)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 49
   assemblies:
   - EventStore.Core
@@ -103,9 +102,9 @@ items:
     - id: sslValidateServer
       type: System.Boolean
     - id: heartbeatTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: heartbeatInterval
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Sub New(publisher As IPublisher, db As TFChunkDb, epochManager As IEpochManager, networkSendQueue As IPublisher, authProvider As IAuthenticationProvider, nodeInfo As VNodeInfo, useSsl As Boolean, sslTargetHost As String, sslValidateServer As Boolean, heartbeatTimeout As TimeSpan, heartbeatInterval As TimeSpan)
   overload: EventStore.Core.Services.Replication.ReplicaService.#ctor*
   modifiers.csharp:
@@ -124,12 +123,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 84
   assemblies:
   - EventStore.Core
@@ -159,12 +154,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ReplicationMessage.ReconnectToMaster)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 129
   assemblies:
   - EventStore.Core
@@ -194,12 +185,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ReplicationMessage.SubscribeToMaster)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 169
   assemblies:
   - EventStore.Core
@@ -229,12 +216,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ReplicationMessage.AckLogPosition)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 193
   assemblies:
   - EventStore.Core
@@ -264,12 +247,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 199
   assemblies:
   - EventStore.Core
@@ -299,12 +278,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.StorageMessage.CommitAck)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 206
   assemblies:
   - EventStore.Core
@@ -334,12 +309,8 @@ items:
   fullName: EventStore.Core.Services.Replication.ReplicaService.Handle(EventStore.Core.Messages.ClientMessage.TcpForwardMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/ReplicaService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/ReplicaService.cs
     startLine: 213
   assemblies:
   - EventStore.Core
@@ -647,6 +618,285 @@ references:
     name: ClientMessage.TcpForwardMessage
     nameWithType: ClientMessage.TcpForwardMessage
     fullName: EventStore.Core.Messages.ClientMessage.TcpForwardMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1105,11 +1355,13 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.TransactionLog.Chunks
   commentId: N:EventStore.Core.TransactionLog.Chunks
   name: EventStore.Core.TransactionLog.Chunks

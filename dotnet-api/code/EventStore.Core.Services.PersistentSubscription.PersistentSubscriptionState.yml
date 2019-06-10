@@ -18,23 +18,32 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
   type: Enum
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PersistentSubscriptionState
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 3
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: 'public enum PersistentSubscriptionState : int'
-    content.vb: Public Enum PersistentSubscriptionState As Integer
+    content: >-
+      [Flags]
+
+      public enum PersistentSubscriptionState
+    content.vb: >-
+      <Flags>
+
+      Public Enum PersistentSubscriptionState
   extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - enum
@@ -53,21 +62,16 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.NotReady
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotReady
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 5
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: NotReady = null
+    content: NotReady = 0
     return:
       type: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
-    content.vb: NotReady = Nothing
   modifiers.csharp:
   - public
   - const
@@ -86,21 +90,16 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.Behind
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Behind
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 6
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: Behind = null
+    content: Behind = 1
     return:
       type: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
-    content.vb: Behind = Nothing
   modifiers.csharp:
   - public
   - const
@@ -119,21 +118,16 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.OutstandingPageRequest
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OutstandingPageRequest
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 7
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: OutstandingPageRequest = null
+    content: OutstandingPageRequest = 2
     return:
       type: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
-    content.vb: OutstandingPageRequest = Nothing
   modifiers.csharp:
   - public
   - const
@@ -152,21 +146,16 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.ReplayingParkedMessages
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReplayingParkedMessages
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 8
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: ReplayingParkedMessages = null
+    content: ReplayingParkedMessages = 4
     return:
       type: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
-    content.vb: ReplayingParkedMessages = Nothing
   modifiers.csharp:
   - public
   - const
@@ -185,21 +174,16 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.Live
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Live
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionState.cs
     startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: Live = null
+    content: Live = 8
     return:
       type: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState
-    content.vb: Live = Nothing
   modifiers.csharp:
   - public
   - const
@@ -212,6 +196,93 @@ references:
   name: EventStore.Core.Services.PersistentSubscription
   nameWithType: EventStore.Core.Services.PersistentSubscription
   fullName: EventStore.Core.Services.PersistentSubscription
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionState.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
   parent: EventStore.Projections.Core.Utils.EnumExtensions
@@ -305,6 +376,126 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -428,6 +619,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
 - uid: EventStore.Projections.Core.Utils
   commentId: N:EventStore.Projections.Core.Utils
   name: EventStore.Projections.Core.Utils

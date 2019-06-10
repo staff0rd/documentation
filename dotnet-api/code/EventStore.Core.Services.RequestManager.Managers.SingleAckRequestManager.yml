@@ -5,7 +5,7 @@ items:
   id: SingleAckRequestManager
   parent: EventStore.Core.Services.RequestManager.Managers
   children:
-  - EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,TimeSpan,System.Boolean)
+  - EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.TimeSpan,System.Boolean)
   - EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.ClientMessage.TransactionStart)
   - EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.ClientMessage.TransactionWrite)
   - EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
@@ -22,21 +22,16 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SingleAckRequestManager
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.RequestManager.Managers
   syntax:
-    content: 'public class SingleAckRequestManager : object, IRequestManager, IHandle<ClientMessage.TransactionStart>, IHandle<ClientMessage.TransactionWrite>, IHandle<StorageMessage.CheckStreamAccessCompleted>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.WrongExpectedVersion>, IHandle<StorageMessage.InvalidTransaction>, IHandle<StorageMessage.StreamDeleted>, IHandle<StorageMessage.RequestManagerTimerTick>'
+    content: 'public class SingleAckRequestManager : IRequestManager, IHandle<ClientMessage.TransactionStart>, IHandle<ClientMessage.TransactionWrite>, IHandle<StorageMessage.CheckStreamAccessCompleted>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.WrongExpectedVersion>, IHandle<StorageMessage.InvalidTransaction>, IHandle<StorageMessage.StreamDeleted>, IHandle<StorageMessage.RequestManagerTimerTick>'
     content.vb: >-
       Public Class SingleAckRequestManager
-          Inherits Object
           Implements IRequestManager, IHandle(Of ClientMessage.TransactionStart), IHandle(Of ClientMessage.TransactionWrite), IHandle(Of StorageMessage.CheckStreamAccessCompleted), IHandle(Of StorageMessage.PrepareAck), IHandle(Of StorageMessage.WrongExpectedVersion), IHandle(Of StorageMessage.InvalidTransaction), IHandle(Of StorageMessage.StreamDeleted), IHandle(Of StorageMessage.RequestManagerTimerTick)
   inheritance:
   - System.Object
@@ -50,6 +45,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.InvalidTransaction}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -62,24 +65,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,TimeSpan,System.Boolean)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,TimeSpan,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,TimeSpan,System.Boolean)'
+- uid: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.TimeSpan,System.Boolean)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.TimeSpan,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.TimeSpan,System.Boolean)'
   parent: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager
   langs:
   - csharp
   - vb
   name: SingleAckRequestManager(IPublisher, TimeSpan, Boolean)
   nameWithType: SingleAckRequestManager.SingleAckRequestManager(IPublisher, TimeSpan, Boolean)
-  fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.SingleAckRequestManager(EventStore.Core.Bus.IPublisher, TimeSpan, System.Boolean)
+  fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.SingleAckRequestManager(EventStore.Core.Bus.IPublisher, System.TimeSpan, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 36
   assemblies:
   - EventStore.Core
@@ -90,7 +89,7 @@ items:
     - id: bus
       type: EventStore.Core.Bus.IPublisher
     - id: prepareTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: betterOrdering
       type: System.Boolean
     content.vb: Public Sub New(bus As IPublisher, prepareTimeout As TimeSpan, betterOrdering As Boolean)
@@ -111,12 +110,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.ClientMessage.TransactionStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -146,12 +141,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 65
   assemblies:
   - EventStore.Core
@@ -181,12 +172,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.ClientMessage.TransactionWrite)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 81
   assemblies:
   - EventStore.Core
@@ -216,12 +203,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 98
   assemblies:
   - EventStore.Core
@@ -251,12 +234,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 109
   assemblies:
   - EventStore.Core
@@ -286,12 +265,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.InvalidTransaction)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 113
   assemblies:
   - EventStore.Core
@@ -321,12 +296,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 117
   assemblies:
   - EventStore.Core
@@ -356,12 +327,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.SingleAckRequestManager.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/SingleAckRequestManager.cs
     startLine: 121
   assemblies:
   - EventStore.Core
@@ -715,6 +682,285 @@ references:
     name: StorageMessage.RequestManagerTimerTick
     nameWithType: StorageMessage.RequestManagerTimerTick
     fullName: EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1140,11 +1386,13 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System

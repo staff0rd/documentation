@@ -5,7 +5,7 @@ items:
   id: RequestManagementService
   parent: EventStore.Core.Services.RequestManager
   children:
-  - EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
+  - EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
   - EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.DeleteStream)
   - EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.TransactionCommit)
   - EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.TransactionStart)
@@ -29,21 +29,16 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestManagementService
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 15
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.RequestManager
   syntax:
-    content: 'public class RequestManagementService : object, IHandle<SystemMessage.SystemInit>, IHandle<ClientMessage.WriteEvents>, IHandle<ClientMessage.DeleteStream>, IHandle<ClientMessage.TransactionStart>, IHandle<ClientMessage.TransactionWrite>, IHandle<ClientMessage.TransactionCommit>, IHandle<StorageMessage.RequestCompleted>, IHandle<StorageMessage.CheckStreamAccessCompleted>, IHandle<StorageMessage.AlreadyCommitted>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.CommitReplicated>, IHandle<StorageMessage.WrongExpectedVersion>, IHandle<StorageMessage.InvalidTransaction>, IHandle<StorageMessage.StreamDeleted>, IHandle<StorageMessage.RequestManagerTimerTick>'
+    content: 'public class RequestManagementService : IHandle<SystemMessage.SystemInit>, IHandle<ClientMessage.WriteEvents>, IHandle<ClientMessage.DeleteStream>, IHandle<ClientMessage.TransactionStart>, IHandle<ClientMessage.TransactionWrite>, IHandle<ClientMessage.TransactionCommit>, IHandle<StorageMessage.RequestCompleted>, IHandle<StorageMessage.CheckStreamAccessCompleted>, IHandle<StorageMessage.AlreadyCommitted>, IHandle<StorageMessage.PrepareAck>, IHandle<StorageMessage.CommitReplicated>, IHandle<StorageMessage.WrongExpectedVersion>, IHandle<StorageMessage.InvalidTransaction>, IHandle<StorageMessage.StreamDeleted>, IHandle<StorageMessage.RequestManagerTimerTick>'
     content.vb: >-
       Public Class RequestManagementService
-          Inherits Object
           Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of ClientMessage.WriteEvents), IHandle(Of ClientMessage.DeleteStream), IHandle(Of ClientMessage.TransactionStart), IHandle(Of ClientMessage.TransactionWrite), IHandle(Of ClientMessage.TransactionCommit), IHandle(Of StorageMessage.RequestCompleted), IHandle(Of StorageMessage.CheckStreamAccessCompleted), IHandle(Of StorageMessage.AlreadyCommitted), IHandle(Of StorageMessage.PrepareAck), IHandle(Of StorageMessage.CommitReplicated), IHandle(Of StorageMessage.WrongExpectedVersion), IHandle(Of StorageMessage.InvalidTransaction), IHandle(Of StorageMessage.StreamDeleted), IHandle(Of StorageMessage.RequestManagerTimerTick)
   inheritance:
   - System.Object
@@ -63,6 +58,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.InvalidTransaction}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.StreamDeleted}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -75,24 +78,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
-  commentId: M:EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)'
+- uid: EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
+  commentId: M:EventStore.Core.Services.RequestManager.RequestManagementService.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)'
   parent: EventStore.Core.Services.RequestManager.RequestManagementService
   langs:
   - csharp
   - vb
   name: RequestManagementService(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
   nameWithType: RequestManagementService.RequestManagementService(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
-  fullName: EventStore.Core.Services.RequestManager.RequestManagementService.RequestManagementService(EventStore.Core.Bus.IPublisher, System.Int32, TimeSpan, TimeSpan, System.Boolean)
+  fullName: EventStore.Core.Services.RequestManager.RequestManagementService.RequestManagementService(EventStore.Core.Bus.IPublisher, System.Int32, System.TimeSpan, System.TimeSpan, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -105,9 +104,9 @@ items:
     - id: prepareCount
       type: System.Int32
     - id: prepareTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: commitTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: betterOrdering
       type: System.Boolean
     content.vb: Public Sub New(bus As IPublisher, prepareCount As Integer, prepareTimeout As TimeSpan, commitTimeout As TimeSpan, betterOrdering As Boolean)
@@ -128,12 +127,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 59
   assemblies:
   - EventStore.Core
@@ -163,12 +158,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.WriteEvents)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 63
   assemblies:
   - EventStore.Core
@@ -198,12 +189,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.DeleteStream)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 71
   assemblies:
   - EventStore.Core
@@ -233,12 +220,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.TransactionStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 79
   assemblies:
   - EventStore.Core
@@ -268,12 +251,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.TransactionWrite)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 86
   assemblies:
   - EventStore.Core
@@ -303,12 +282,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.ClientMessage.TransactionCommit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 93
   assemblies:
   - EventStore.Core
@@ -338,12 +313,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.RequestCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 101
   assemblies:
   - EventStore.Core
@@ -373,12 +344,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 113
   assemblies:
   - EventStore.Core
@@ -408,12 +375,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 117
   assemblies:
   - EventStore.Core
@@ -443,12 +406,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 121
   assemblies:
   - EventStore.Core
@@ -478,12 +437,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 125
   assemblies:
   - EventStore.Core
@@ -513,12 +468,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 129
   assemblies:
   - EventStore.Core
@@ -548,12 +499,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.InvalidTransaction)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 133
   assemblies:
   - EventStore.Core
@@ -583,12 +530,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 137
   assemblies:
   - EventStore.Core
@@ -618,12 +561,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.RequestManagementService.Handle(EventStore.Core.Messages.StorageMessage.RequestManagerTimerTick)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/RequestManagementService.cs
     startLine: 141
   assemblies:
   - EventStore.Core
@@ -1254,6 +1193,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1678,11 +1896,13 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System

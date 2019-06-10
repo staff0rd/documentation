@@ -6,7 +6,7 @@ items:
   parent: EventStore.Core.TransactionLog.Chunks
   children:
   - EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog,EventStore.Core.Index.ITableIndex,EventStore.Core.Services.Storage.ReaderIndex.IReadIndex,System.Nullable{System.Int64},System.Boolean,System.Int32)
-  - EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,CancellationToken)
+  - EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,System.Threading.CancellationToken)
   - EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.ScavengeId
   langs:
   - csharp
@@ -16,23 +16,25 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TFChunkScavenger
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
     startLine: 20
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: 'public class TFChunkScavenger : object'
-    content.vb: >-
-      Public Class TFChunkScavenger
-          Inherits Object
+    content: public class TFChunkScavenger
+    content.vb: Public Class TFChunkScavenger
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -57,18 +59,14 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.TFChunkScavenger(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Chunks.ITFChunkScavengerLog, EventStore.Core.Index.ITableIndex, EventStore.Core.Services.Storage.ReaderIndex.IReadIndex, System.Nullable<System.Int64>, System.Boolean, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-    startLine: 33
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
+    startLine: 34
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public TFChunkScavenger(TFChunkDb db, ITFChunkScavengerLog scavengerLog, ITableIndex tableIndex, IReadIndex readIndex, long? maxChunkDataSize = null, bool unsafeIgnoreHardDeletes = false, int threads = 1)
+    content: public TFChunkScavenger(TFChunkDb db, ITFChunkScavengerLog scavengerLog, ITableIndex tableIndex, IReadIndex readIndex, long? maxChunkDataSize = default(long? ), bool unsafeIgnoreHardDeletes = false, int threads = 1)
     parameters:
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
@@ -105,13 +103,9 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.ScavengeId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ScavengeId
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-    startLine: 58
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
+    startLine: 59
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
@@ -128,30 +122,26 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,CancellationToken)
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,CancellationToken)
-  id: Scavenge(System.Boolean,System.Boolean,System.Int32,CancellationToken)
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,System.Threading.CancellationToken)
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean,System.Boolean,System.Int32,System.Threading.CancellationToken)
+  id: Scavenge(System.Boolean,System.Boolean,System.Int32,System.Threading.CancellationToken)
   parent: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger
   langs:
   - csharp
   - vb
   name: Scavenge(Boolean, Boolean, Int32, CancellationToken)
   nameWithType: TFChunkScavenger.Scavenge(Boolean, Boolean, Int32, CancellationToken)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean, System.Boolean, System.Int32, CancellationToken)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge(System.Boolean, System.Boolean, System.Int32, System.Threading.CancellationToken)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Scavenge
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
-    startLine: 74
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkScavenger.cs
+    startLine: 75
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public Task Scavenge(bool alwaysKeepScavenged, bool mergeChunks, int startFromChunk = 0, CancellationToken ct = null)
+    content: public Task Scavenge(bool alwaysKeepScavenged, bool mergeChunks, int startFromChunk = 0, CancellationToken ct = default(CancellationToken))
     parameters:
     - id: alwaysKeepScavenged
       type: System.Boolean
@@ -160,9 +150,9 @@ items:
     - id: startFromChunk
       type: System.Int32
     - id: ct
-      type: CancellationToken
+      type: System.Threading.CancellationToken
     return:
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public Function Scavenge(alwaysKeepScavenged As Boolean, mergeChunks As Boolean, startFromChunk As Integer = 0, ct As CancellationToken = Nothing) As Task
   overload: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge*
   modifiers.csharp:
@@ -182,6 +172,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -577,7 +846,8 @@ references:
   nameWithType: IReadIndex
   fullName: EventStore.Core.Services.Storage.ReaderIndex.IReadIndex
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -699,13 +969,29 @@ references:
   name: Scavenge
   nameWithType: TFChunkScavenger.Scavenge
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkScavenger.Scavenge
-- uid: CancellationToken
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
   isExternal: true
   name: CancellationToken
   nameWithType: CancellationToken
-  fullName: CancellationToken
-- uid: Task
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

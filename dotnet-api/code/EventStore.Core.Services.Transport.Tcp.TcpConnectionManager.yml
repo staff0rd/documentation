@@ -5,8 +5,8 @@ items:
   id: TcpConnectionManager
   parent: EventStore.Core.Services.Transport.Tcp
   children:
-  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError},System.Int32)
-  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError})
+  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError},System.Int32)
+  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,System.Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError})
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ClientConnectionName
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionId
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionName
@@ -18,8 +18,8 @@ items:
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.LocalEndPoint
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ProcessPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage)
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.RemoteEndPoint
-  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(Guid,System.String)
-  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(Guid,System.String)
+  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(System.Guid,System.String)
+  - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(System.Guid,System.String)
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendMessage(EventStore.Core.Messaging.Message)
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendQueueSize
   - EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.StartReceiving
@@ -32,12 +32,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpConnectionManager
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 22
   assemblies:
   - EventStore.Core
@@ -45,16 +41,23 @@ items:
   summary: "\nManager for individual TCP connection. It handles connection lifecycle,\nheartbeats, message framing and dispatch to the memory bus.\n"
   example: []
   syntax:
-    content: 'public class TcpConnectionManager : object, IHandle<TcpMessage.Heartbeat>, IHandle<TcpMessage.HeartbeatTimeout>'
+    content: 'public class TcpConnectionManager : IHandle<TcpMessage.Heartbeat>, IHandle<TcpMessage.HeartbeatTimeout>'
     content.vb: >-
       Public Class TcpConnectionManager
-          Inherits Object
           Implements IHandle(Of TcpMessage.Heartbeat), IHandle(Of TcpMessage.HeartbeatTimeout)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.Heartbeat}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.TcpMessage.HeartbeatTimeout}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -79,21 +82,17 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionQueueSizeThreshold
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionQueueSizeThreshold
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: public const int ConnectionQueueSizeThreshold = null
+    content: public const int ConnectionQueueSizeThreshold = 50000
     return:
       type: System.Int32
-    content.vb: Public Const ConnectionQueueSizeThreshold As Integer = Nothing
+    content.vb: Public Const ConnectionQueueSizeThreshold As Integer = 50000
   modifiers.csharp:
   - public
   - const
@@ -112,12 +111,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionTimeout
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionTimeout
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -125,7 +120,7 @@ items:
   syntax:
     content: public static readonly TimeSpan ConnectionTimeout
     return:
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Shared ReadOnly ConnectionTimeout As TimeSpan
   modifiers.csharp:
   - public
@@ -147,12 +142,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionId
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 28
   assemblies:
   - EventStore.Core
@@ -160,7 +151,7 @@ items:
   syntax:
     content: public readonly Guid ConnectionId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly ConnectionId As Guid
   modifiers.csharp:
   - public
@@ -180,12 +171,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ConnectionName
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionName
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 29
   assemblies:
   - EventStore.Core
@@ -213,12 +200,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.RemoteEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoteEndPoint
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 30
   assemblies:
   - EventStore.Core
@@ -226,7 +209,7 @@ items:
   syntax:
     content: public readonly IPEndPoint RemoteEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly RemoteEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -246,12 +229,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.LocalEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LocalEndPoint
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 32
   assemblies:
   - EventStore.Core
@@ -260,7 +239,7 @@ items:
     content: public IPEndPoint LocalEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly Property LocalEndPoint As IPEndPoint
   overload: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.LocalEndPoint*
   modifiers.csharp:
@@ -281,12 +260,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.IsClosed
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsClosed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 36
   assemblies:
   - EventStore.Core
@@ -316,12 +291,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendQueueSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendQueueSize
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -351,12 +322,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ClientConnectionName
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClientConnectionName
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 44
   assemblies:
   - EventStore.Core
@@ -374,24 +341,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError},System.Int32)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError},System.Int32)
-  id: '#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError},System.Int32)'
+- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError},System.Int32)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError},System.Int32)
+  id: '#ctor(System.String,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,EventStore.Transport.Tcp.ITcpConnection,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError},System.Int32)'
   parent: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
   langs:
   - csharp
   - vb
   name: TcpConnectionManager(String, TcpServiceType, ITcpDispatcher, IPublisher, ITcpConnection, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action<TcpConnectionManager, SocketError>, Int32)
   nameWithType: TcpConnectionManager.TcpConnectionManager(String, TcpServiceType, ITcpDispatcher, IPublisher, ITcpConnection, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action<TcpConnectionManager, SocketError>, Int32)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, EventStore.Transport.Tcp.ITcpConnection, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, TimeSpan, TimeSpan, Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError>, System.Int32)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, EventStore.Transport.Tcp.ITcpConnection, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, System.TimeSpan, System.TimeSpan, System.Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError>, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 71
   assemblies:
   - EventStore.Core
@@ -414,11 +377,11 @@ items:
     - id: authProvider
       type: EventStore.Core.Authentication.IAuthenticationProvider
     - id: heartbeatInterval
-      type: TimeSpan
+      type: System.TimeSpan
     - id: heartbeatTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: onConnectionClosed
-      type: Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError}
+      type: System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError}
     - id: connectionPendingSendBytesThreshold
       type: System.Int32
     content.vb: Public Sub New(connectionName As String, serviceType As TcpServiceType, dispatcher As ITcpDispatcher, publisher As IPublisher, openedConnection As ITcpConnection, networkSendQueue As IPublisher, authProvider As IAuthenticationProvider, heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, onConnectionClosed As Action(Of TcpConnectionManager, SocketError), connectionPendingSendBytesThreshold As Integer)
@@ -428,26 +391,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, EventStore.Transport.Tcp.ITcpConnection, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, TimeSpan, TimeSpan, Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError), System.Int32)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, EventStore.Transport.Tcp.ITcpConnection, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, System.TimeSpan, System.TimeSpan, System.Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError), System.Int32)
   name.vb: TcpConnectionManager(String, TcpServiceType, ITcpDispatcher, IPublisher, ITcpConnection, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action(Of TcpConnectionManager, SocketError), Int32)
-- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError})
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError})
-  id: '#ctor(System.String,Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,TimeSpan,TimeSpan,Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError})'
+- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,System.Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError})
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor(System.String,System.Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError})
+  id: '#ctor(System.String,System.Guid,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Transport.Tcp.TcpClientConnector,System.Boolean,System.String,System.Boolean,EventStore.Core.Bus.IPublisher,EventStore.Core.Authentication.IAuthenticationProvider,System.TimeSpan,System.TimeSpan,System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager},System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError})'
   parent: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
   langs:
   - csharp
   - vb
   name: TcpConnectionManager(String, Guid, ITcpDispatcher, IPublisher, IPEndPoint, TcpClientConnector, Boolean, String, Boolean, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action<TcpConnectionManager>, Action<TcpConnectionManager, SocketError>)
   nameWithType: TcpConnectionManager.TcpConnectionManager(String, Guid, ITcpDispatcher, IPublisher, IPEndPoint, TcpClientConnector, Boolean, String, Boolean, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action<TcpConnectionManager>, Action<TcpConnectionManager, SocketError>)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, Guid, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Transport.Tcp.TcpClientConnector, System.Boolean, System.String, System.Boolean, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, TimeSpan, TimeSpan, Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager>, Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError>)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, System.Guid, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, System.Net.IPEndPoint, EventStore.Transport.Tcp.TcpClientConnector, System.Boolean, System.String, System.Boolean, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, System.TimeSpan, System.TimeSpan, System.Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager>, System.Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 118
   assemblies:
   - EventStore.Core
@@ -458,13 +417,13 @@ items:
     - id: connectionName
       type: System.String
     - id: connectionId
-      type: Guid
+      type: System.Guid
     - id: dispatcher
       type: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: remoteEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: connector
       type: EventStore.Transport.Tcp.TcpClientConnector
     - id: useSsl
@@ -478,13 +437,13 @@ items:
     - id: authProvider
       type: EventStore.Core.Authentication.IAuthenticationProvider
     - id: heartbeatInterval
-      type: TimeSpan
+      type: System.TimeSpan
     - id: heartbeatTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: onConnectionEstablished
-      type: Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}
+      type: System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}
     - id: onConnectionClosed
-      type: Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError}
+      type: System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError}
     content.vb: Public Sub New(connectionName As String, connectionId As Guid, dispatcher As ITcpDispatcher, publisher As IPublisher, remoteEndPoint As IPEndPoint, connector As TcpClientConnector, useSsl As Boolean, sslTargetHost As String, sslValidateServer As Boolean, networkSendQueue As IPublisher, authProvider As IAuthenticationProvider, heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, onConnectionEstablished As Action(Of TcpConnectionManager), onConnectionClosed As Action(Of TcpConnectionManager, SocketError))
   overload: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.#ctor*
   nameWithType.vb: TcpConnectionManager.TcpConnectionManager(String, Guid, ITcpDispatcher, IPublisher, IPEndPoint, TcpClientConnector, Boolean, String, Boolean, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action(Of TcpConnectionManager), Action(Of TcpConnectionManager, SocketError))
@@ -492,7 +451,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, Guid, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Transport.Tcp.TcpClientConnector, System.Boolean, System.String, System.Boolean, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, TimeSpan, TimeSpan, Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager), Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError))
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.TcpConnectionManager(System.String, System.Guid, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, EventStore.Core.Bus.IPublisher, System.Net.IPEndPoint, EventStore.Transport.Tcp.TcpClientConnector, System.Boolean, System.String, System.Boolean, EventStore.Core.Bus.IPublisher, EventStore.Core.Authentication.IAuthenticationProvider, System.TimeSpan, System.TimeSpan, System.Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager), System.Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError))
   name.vb: TcpConnectionManager(String, Guid, ITcpDispatcher, IPublisher, IPEndPoint, TcpClientConnector, Boolean, String, Boolean, IPublisher, IAuthenticationProvider, TimeSpan, TimeSpan, Action(Of TcpConnectionManager), Action(Of TcpConnectionManager, SocketError))
 - uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.StartReceiving
   commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.StartReceiving
@@ -506,12 +465,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.StartReceiving()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartReceiving
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 200
   assemblies:
   - EventStore.Core
@@ -536,12 +491,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.ProcessPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProcessPackage
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 239
   assemblies:
   - EventStore.Core
@@ -557,24 +508,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(Guid,System.String)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(Guid,System.String)
-  id: SendBadRequestAndClose(Guid,System.String)
+- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(System.Guid,System.String)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(System.Guid,System.String)
+  id: SendBadRequestAndClose(System.Guid,System.String)
   parent: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
   langs:
   - csharp
   - vb
   name: SendBadRequestAndClose(Guid, String)
   nameWithType: TcpConnectionManager.SendBadRequestAndClose(Guid, String)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(Guid, System.String)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequestAndClose(System.Guid, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendBadRequestAndClose
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 346
   assemblies:
   - EventStore.Core
@@ -583,7 +530,7 @@ items:
     content: public void SendBadRequestAndClose(Guid correlationId, string message)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: message
       type: System.String
     content.vb: Public Sub SendBadRequestAndClose(correlationId As Guid, message As String)
@@ -592,24 +539,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(Guid,System.String)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(Guid,System.String)
-  id: SendBadRequest(Guid,System.String)
+- uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(System.Guid,System.String)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(System.Guid,System.String)
+  id: SendBadRequest(System.Guid,System.String)
   parent: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
   langs:
   - csharp
   - vb
   name: SendBadRequest(Guid, String)
   nameWithType: TcpConnectionManager.SendBadRequest(Guid, String)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(Guid, System.String)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendBadRequest(System.Guid, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendBadRequest
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 358
   assemblies:
   - EventStore.Core
@@ -618,7 +561,7 @@ items:
     content: public void SendBadRequest(Guid correlationId, string message)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: message
       type: System.String
     content.vb: Public Sub SendBadRequest(correlationId As Guid, message As String)
@@ -639,12 +582,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.Stop(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 365
   assemblies:
   - EventStore.Core
@@ -672,12 +611,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.SendMessage(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendMessage
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 374
   assemblies:
   - EventStore.Core
@@ -705,12 +640,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.Handle(EventStore.Core.Messages.TcpMessage.Heartbeat)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 406
   assemblies:
   - EventStore.Core
@@ -740,12 +671,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.Handle(EventStore.Core.Messages.TcpMessage.HeartbeatTimeout)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpConnectionManager.cs
     startLine: 420
   assemblies:
   - EventStore.Core
@@ -853,6 +780,285 @@ references:
     name: TcpMessage.HeartbeatTimeout
     nameWithType: TcpMessage.HeartbeatTimeout
     fullName: EventStore.Core.Messages.TcpMessage.HeartbeatTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1264,16 +1470,20 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
-- uid: Guid
+  fullName: System.TimeSpan
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1281,11 +1491,19 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.LocalEndPoint*
   commentId: Overload:EventStore.Core.Services.Transport.Tcp.TcpConnectionManager.LocalEndPoint
   name: LocalEndPoint
@@ -1348,20 +1566,21 @@ references:
   name: IAuthenticationProvider
   nameWithType: IAuthenticationProvider
   fullName: EventStore.Core.Authentication.IAuthenticationProvider
-- uid: Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError}
-  commentId: '!:Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,SocketError}'
-  definition: Action`2
+- uid: System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError}
+  commentId: T:System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Net.Sockets.SocketError}
+  parent: System
+  definition: System.Action`2
   name: Action<TcpConnectionManager, SocketError>
   nameWithType: Action<TcpConnectionManager, SocketError>
-  fullName: Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError>
+  fullName: System.Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError>
   nameWithType.vb: Action(Of TcpConnectionManager, SocketError)
-  fullName.vb: Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, SocketError)
+  fullName.vb: System.Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Net.Sockets.SocketError)
   name.vb: Action(Of TcpConnectionManager, SocketError)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1373,19 +1592,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1397,10 +1616,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: )
     nameWithType: )
@@ -1415,53 +1634,54 @@ references:
   name: EventStore.Core.Authentication
   nameWithType: EventStore.Core.Authentication
   fullName: EventStore.Core.Authentication
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
@@ -1471,20 +1691,21 @@ references:
   name: TcpClientConnector
   nameWithType: TcpClientConnector
   fullName: EventStore.Transport.Tcp.TcpClientConnector
-- uid: Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}
-  commentId: '!:Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}'
-  definition: Action`1
+- uid: System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}
+  commentId: T:System.Action{EventStore.Core.Services.Transport.Tcp.TcpConnectionManager}
+  parent: System
+  definition: System.Action`1
   name: Action<TcpConnectionManager>
   nameWithType: Action<TcpConnectionManager>
-  fullName: Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager>
+  fullName: System.Action<EventStore.Core.Services.Transport.Tcp.TcpConnectionManager>
   nameWithType.vb: Action(Of TcpConnectionManager)
-  fullName.vb: Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager)
+  fullName.vb: System.Action(Of EventStore.Core.Services.Transport.Tcp.TcpConnectionManager)
   name.vb: Action(Of TcpConnectionManager)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1497,10 +1718,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1512,41 +1733,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

@@ -6,10 +6,10 @@ items:
   parent: EventStore.Projections.Core.Services.Processing
   children:
   - EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
-  - EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
-  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  - EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(System.Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(System.Guid,System.String,System.Int64)
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(System.Guid,System.Single)
   - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
   langs:
   - csharp
@@ -19,12 +19,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IResultWriter
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IResultWriter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 3
   assemblies:
   - EventStore.Projections.Core
@@ -44,24 +40,20 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  id: WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(System.Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(System.Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  id: WriteEofResult(System.Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
   parent: EventStore.Projections.Core.Services.Processing.IResultWriter
   langs:
   - csharp
   - vb
   name: WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
   nameWithType: IResultWriter.WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
-  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid, System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(System.Guid, System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Guid, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteEofResult
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 5
   assemblies:
   - EventStore.Projections.Core
@@ -70,7 +62,7 @@ items:
     content: void WriteEofResult(Guid subscriptionId, string partition, string resultBody, CheckpointTag causedBy, Guid causedByGuid, string correlationId)
     parameters:
     - id: subscriptionId
-      type: Guid
+      type: System.Guid
     - id: partition
       type: System.String
     - id: resultBody
@@ -78,29 +70,25 @@ items:
     - id: causedBy
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: causedByGuid
-      type: Guid
+      type: System.Guid
     - id: correlationId
       type: System.String
     content.vb: Sub WriteEofResult(subscriptionId As Guid, partition As String, resultBody As String, causedBy As CheckpointTag, causedByGuid As Guid, correlationId As String)
   overload: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult*
-- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
-  id: WritePartitionMeasured(Guid,System.String,System.Int64)
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(System.Guid,System.String,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(System.Guid,System.String,System.Int64)
+  id: WritePartitionMeasured(System.Guid,System.String,System.Int64)
   parent: EventStore.Projections.Core.Services.Processing.IResultWriter
   langs:
   - csharp
   - vb
   name: WritePartitionMeasured(Guid, String, Int64)
   nameWithType: IResultWriter.WritePartitionMeasured(Guid, String, Int64)
-  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid, System.String, System.Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(System.Guid, System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WritePartitionMeasured
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 9
   assemblies:
   - EventStore.Projections.Core
@@ -109,7 +97,7 @@ items:
     content: void WritePartitionMeasured(Guid subscriptionId, string partition, long size)
     parameters:
     - id: subscriptionId
-      type: Guid
+      type: System.Guid
     - id: partition
       type: System.String
     - id: size
@@ -128,12 +116,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteRunningResult
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 11
   assemblies:
   - EventStore.Projections.Core
@@ -157,12 +141,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AccountPartition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 13
   assemblies:
   - EventStore.Projections.Core
@@ -174,24 +154,20 @@ items:
       type: EventStore.Projections.Core.Services.Processing.EventProcessedResult
     content.vb: Sub AccountPartition(result As EventProcessedResult)
   overload: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition*
-- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
-  id: EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
+  id: EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],System.Guid,System.String)
   parent: EventStore.Projections.Core.Services.Processing.IResultWriter
   langs:
   - csharp
   - vb
   name: EventsEmitted(EmittedEventEnvelope[], Guid, String)
   nameWithType: IResultWriter.EventsEmitted(EmittedEventEnvelope[], Guid, String)
-  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], Guid, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Guid, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventsEmitted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 15
   assemblies:
   - EventStore.Projections.Core
@@ -202,32 +178,28 @@ items:
     - id: scheduledWrites
       type: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
     - id: causedBy
-      type: Guid
+      type: System.Guid
     - id: correlationId
       type: System.String
     content.vb: Sub EventsEmitted(scheduledWrites As EmittedEventEnvelope(), causedBy As Guid, correlationId As String)
   overload: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted*
   nameWithType.vb: IResultWriter.EventsEmitted(EmittedEventEnvelope(), Guid, String)
-  fullName.vb: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), Guid, System.String)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Guid, System.String)
   name.vb: EventsEmitted(EmittedEventEnvelope(), Guid, String)
-- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
-  id: WriteProgress(Guid,System.Single)
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(System.Guid,System.Single)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(System.Guid,System.Single)
+  id: WriteProgress(System.Guid,System.Single)
   parent: EventStore.Projections.Core.Services.Processing.IResultWriter
   langs:
   - csharp
   - vb
   name: WriteProgress(Guid, Single)
   nameWithType: IResultWriter.WriteProgress(Guid, Single)
-  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid, System.Single)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(System.Guid, System.Single)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteProgress
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IResultWriter.cs
     startLine: 17
   assemblies:
   - EventStore.Projections.Core
@@ -236,7 +208,7 @@ items:
     content: void WriteProgress(Guid subscriptionId, float progress)
     parameters:
     - id: subscriptionId
-      type: Guid
+      type: System.Guid
     - id: progress
       type: System.Single
     content.vb: Sub WriteProgress(subscriptionId As Guid, progress As Single)
@@ -611,11 +583,13 @@ references:
   name: WriteEofResult
   nameWithType: IResultWriter.WriteEofResult
   fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -698,6 +672,8 @@ references:
   nameWithType: IResultWriter.WriteProgress
   fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress
 - uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
   name: Single
   nameWithType: Single

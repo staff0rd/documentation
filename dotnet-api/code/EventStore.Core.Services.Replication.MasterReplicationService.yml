@@ -5,7 +5,7 @@ items:
   id: MasterReplicationService
   parent: EventStore.Core.Services.Replication
   children:
-  - EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
+  - EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
   - EventStore.Core.Services.Replication.MasterReplicationService.BulkSize
   - EventStore.Core.Services.Replication.MasterReplicationService.CloneThreshold
   - EventStore.Core.Services.Replication.MasterReplicationService.GetStatistics
@@ -31,21 +31,16 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MasterReplicationService
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 24
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: 'public class MasterReplicationService : object, IMonitoredQueue, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.StateChangeMessage>, IHandle<ReplicationMessage.ReplicaSubscriptionRequest>, IHandle<ReplicationMessage.ReplicaLogPositionAck>, IHandle<ReplicationMessage.GetReplicationStats>'
+    content: 'public class MasterReplicationService : IMonitoredQueue, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.StateChangeMessage>, IHandle<ReplicationMessage.ReplicaSubscriptionRequest>, IHandle<ReplicationMessage.ReplicaLogPositionAck>, IHandle<ReplicationMessage.GetReplicationStats>'
     content.vb: >-
       Public Class MasterReplicationService
-          Inherits Object
           Implements IMonitoredQueue, IHandle(Of SystemMessage.SystemStart), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of ReplicationMessage.ReplicaSubscriptionRequest), IHandle(Of ReplicationMessage.ReplicaLogPositionAck), IHandle(Of ReplicationMessage.GetReplicationStats)
   inheritance:
   - System.Object
@@ -56,6 +51,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ReplicationMessage.ReplicaSubscriptionRequest}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ReplicationMessage.ReplicaLogPositionAck}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ReplicationMessage.GetReplicationStats}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -80,21 +83,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.MaxQueueSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxQueueSize
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 30
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int MaxQueueSize = null
+    content: public const int MaxQueueSize = 100
     return:
       type: System.Int32
-    content.vb: Public Const MaxQueueSize As Integer = Nothing
+    content.vb: Public Const MaxQueueSize As Integer = 100
   modifiers.csharp:
   - public
   - const
@@ -113,21 +112,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.CloneThreshold
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CloneThreshold
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 31
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int CloneThreshold = null
+    content: public const int CloneThreshold = 1024
     return:
       type: System.Int32
-    content.vb: Public Const CloneThreshold As Integer = Nothing
+    content.vb: Public Const CloneThreshold As Integer = 1024
   modifiers.csharp:
   - public
   - const
@@ -146,21 +141,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.SlaveLagThreshold
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SlaveLagThreshold
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 32
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int SlaveLagThreshold = null
+    content: public const int SlaveLagThreshold = 262144
     return:
       type: System.Int32
-    content.vb: Public Const SlaveLagThreshold As Integer = Nothing
+    content.vb: Public Const SlaveLagThreshold As Integer = 262144
   modifiers.csharp:
   - public
   - const
@@ -179,21 +170,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.LagOccurencesThreshold
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LagOccurencesThreshold
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 33
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int LagOccurencesThreshold = null
+    content: public const int LagOccurencesThreshold = 2
     return:
       type: System.Int32
-    content.vb: Public Const LagOccurencesThreshold As Integer = Nothing
+    content.vb: Public Const LagOccurencesThreshold As Integer = 2
   modifiers.csharp:
   - public
   - const
@@ -212,21 +199,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.BulkSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BulkSize
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 34
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int BulkSize = null
+    content: public const int BulkSize = 8192
     return:
       type: System.Int32
-    content.vb: Public Const BulkSize As Integer = Nothing
+    content.vb: Public Const BulkSize As Integer = 8192
   modifiers.csharp:
   - public
   - const
@@ -245,21 +228,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.ReplicaSendWindow
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReplicaSendWindow
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 35
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int ReplicaSendWindow = null
+    content: public const int ReplicaSendWindow = 16777216
     return:
       type: System.Int32
-    content.vb: Public Const ReplicaSendWindow As Integer = Nothing
+    content.vb: Public Const ReplicaSendWindow As Integer = 16777216
   modifiers.csharp:
   - public
   - const
@@ -278,21 +257,17 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.ReplicaAckWindow
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReplicaAckWindow
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 36
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Replication
   syntax:
-    content: public const int ReplicaAckWindow = null
+    content: public const int ReplicaAckWindow = 524288
     return:
       type: System.Int32
-    content.vb: Public Const ReplicaAckWindow As Integer = Nothing
+    content.vb: Public Const ReplicaAckWindow As Integer = 524288
   modifiers.csharp:
   - public
   - const
@@ -311,12 +286,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.RoleAssignmentsInterval
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RoleAssignmentsInterval
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 37
   assemblies:
   - EventStore.Core
@@ -324,7 +295,7 @@ items:
   syntax:
     content: public static readonly TimeSpan RoleAssignmentsInterval
     return:
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Shared ReadOnly RoleAssignmentsInterval As TimeSpan
   modifiers.csharp:
   - public
@@ -346,12 +317,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.NoQuorumTimeout
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NoQuorumTimeout
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 38
   assemblies:
   - EventStore.Core
@@ -359,7 +326,7 @@ items:
   syntax:
     content: public static readonly TimeSpan NoQuorumTimeout
     return:
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Shared ReadOnly NoQuorumTimeout As TimeSpan
   modifiers.csharp:
   - public
@@ -381,12 +348,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Name
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 42
   assemblies:
   - EventStore.Core
@@ -418,12 +381,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Task
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Task
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 70
   assemblies:
   - EventStore.Core
@@ -432,7 +391,7 @@ items:
     content: public Task Task { get; }
     parameters: []
     return:
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public ReadOnly Property Task As Task
   overload: EventStore.Core.Services.Replication.MasterReplicationService.Task*
   modifiers.csharp:
@@ -441,24 +400,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
-  commentId: M:EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)'
+- uid: EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
+  commentId: M:EventStore.Core.Services.Replication.MasterReplicationService.#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Int32)'
   parent: EventStore.Core.Services.Replication.MasterReplicationService
   langs:
   - csharp
   - vb
   name: MasterReplicationService(IPublisher, Guid, TFChunkDb, IPublisher, IEpochManager, Int32)
   nameWithType: MasterReplicationService.MasterReplicationService(IPublisher, Guid, TFChunkDb, IPublisher, IEpochManager, Int32)
-  fullName: EventStore.Core.Services.Replication.MasterReplicationService.MasterReplicationService(EventStore.Core.Bus.IPublisher, Guid, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Storage.EpochManager.IEpochManager, System.Int32)
+  fullName: EventStore.Core.Services.Replication.MasterReplicationService.MasterReplicationService(EventStore.Core.Bus.IPublisher, System.Guid, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Storage.EpochManager.IEpochManager, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 74
   assemblies:
   - EventStore.Core
@@ -469,7 +424,7 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: instanceId
-      type: Guid
+      type: System.Guid
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
     - id: tcpSendPublisher
@@ -496,12 +451,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 98
   assemblies:
   - EventStore.Core
@@ -531,12 +482,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 102
   assemblies:
   - EventStore.Core
@@ -566,12 +513,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Handle(EventStore.Core.Messages.ReplicationMessage.ReplicaSubscriptionRequest)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 109
   assemblies:
   - EventStore.Core
@@ -601,12 +544,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Handle(EventStore.Core.Messages.ReplicationMessage.ReplicaLogPositionAck)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 148
   assemblies:
   - EventStore.Core
@@ -636,12 +575,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Handle(EventStore.Core.Messages.ReplicationMessage.GetReplicationStats)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 154
   assemblies:
   - EventStore.Core
@@ -671,12 +606,8 @@ items:
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.GetStatistics()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Replication/MasterReplicationService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
-    path: ../EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Replication/MasterReplicationService.cs
     startLine: 611
   assemblies:
   - EventStore.Core
@@ -909,6 +840,285 @@ references:
     name: ReplicationMessage.GetReplicationStats
     nameWithType: ReplicationMessage.GetReplicationStats
     fullName: EventStore.Core.Messages.ReplicationMessage.GetReplicationStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1325,11 +1535,13 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Services.Replication.MasterReplicationService.Name*
   commentId: Overload:EventStore.Core.Services.Replication.MasterReplicationService.Name
   name: Name
@@ -1353,11 +1565,19 @@ references:
   name: Task
   nameWithType: MasterReplicationService.Task
   fullName: EventStore.Core.Services.Replication.MasterReplicationService.Task
-- uid: Task
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: EventStore.Core.Services.Replication.MasterReplicationService.#ctor*
   commentId: Overload:EventStore.Core.Services.Replication.MasterReplicationService.#ctor
   name: MasterReplicationService
@@ -1369,11 +1589,13 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
   commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
   parent: EventStore.Core.TransactionLog.Chunks

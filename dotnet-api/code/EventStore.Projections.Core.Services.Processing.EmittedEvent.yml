@@ -5,7 +5,7 @@ items:
   id: EmittedEvent
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,System.Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{System.Int64})
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
@@ -17,7 +17,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
-  - EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(System.Guid)
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
   - EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
   langs:
@@ -28,27 +28,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EmittedEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 4
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public abstract class EmittedEvent : object'
-    content.vb: >-
-      Public MustInherit Class EmittedEvent
-          Inherits Object
+    content: public abstract class EmittedEvent
+    content.vb: Public MustInherit Class EmittedEvent
   inheritance:
   - System.Object
   derivedClasses:
   - EventStore.Projections.Core.Services.Processing.EmittedDataEvent
   - EventStore.Projections.Core.Services.Processing.EmittedLinkTo
   - EventStore.Projections.Core.Services.Processing.EmittedLinkToWithRecategorization
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -75,12 +77,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 5
   assemblies:
   - EventStore.Projections.Core
@@ -108,12 +106,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 6
   assemblies:
   - EventStore.Projections.Core
@@ -121,7 +115,7 @@ items:
   syntax:
     content: public readonly Guid EventId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly EventId As Guid
   modifiers.csharp:
   - public
@@ -141,12 +135,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventType
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventType
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
@@ -162,24 +152,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
-  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
-  id: '#ctor(System.String,Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})'
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,System.Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{System.Int64})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor(System.String,System.Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{System.Int64})
+  id: '#ctor(System.String,System.Guid,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{System.Int64})'
   parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
   langs:
   - csharp
   - vb
   name: EmittedEvent(String, Guid, String, CheckpointTag, CheckpointTag, Action<Int64>)
   nameWithType: EmittedEvent.EmittedEvent(String, Guid, String, CheckpointTag, CheckpointTag, Action<Int64>)
-  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EmittedEvent(System.String, Guid, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action<System.Int64>)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EmittedEvent(System.String, System.Guid, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action<System.Int64>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 15
   assemblies:
   - EventStore.Projections.Core
@@ -190,7 +176,7 @@ items:
     - id: streamId
       type: System.String
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventType
       type: System.String
     - id: causedByTag
@@ -198,7 +184,7 @@ items:
     - id: expectedTag
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: onCommitted
-      type: Action{System.Int64}
+      type: System.Action{System.Int64}
     content.vb: Protected Sub New(streamId As String, eventId As Guid, eventType As String, causedByTag As CheckpointTag, expectedTag As CheckpointTag, onCommitted As Action(Of Long) = Nothing)
   overload: EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor*
   nameWithType.vb: EmittedEvent.EmittedEvent(String, Guid, String, CheckpointTag, CheckpointTag, Action(Of Int64))
@@ -206,7 +192,7 @@ items:
   - protected
   modifiers.vb:
   - Protected
-  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedEvent.EmittedEvent(System.String, Guid, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action(Of System.Int64))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedEvent.EmittedEvent(System.String, System.Guid, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action(Of System.Int64))
   name.vb: EmittedEvent(String, Guid, String, CheckpointTag, CheckpointTag, Action(Of Int64))
 - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
   commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
@@ -220,12 +206,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Data
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 27
   assemblies:
   - EventStore.Projections.Core
@@ -257,12 +239,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CausedByTag
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 29
   assemblies:
   - EventStore.Projections.Core
@@ -292,12 +270,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExpectedTag
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExpectedTag
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 33
   assemblies:
   - EventStore.Projections.Core
@@ -327,12 +301,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OnCommitted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 37
   assemblies:
   - EventStore.Projections.Core
@@ -341,7 +311,7 @@ items:
     content: public Action<long> OnCommitted { get; }
     parameters: []
     return:
-      type: Action{System.Int64}
+      type: System.Action{System.Int64}
     content.vb: Public ReadOnly Property OnCommitted As Action(Of Long)
   overload: EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted*
   modifiers.csharp:
@@ -362,12 +332,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CausedBy
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 41
   assemblies:
   - EventStore.Projections.Core
@@ -376,7 +342,7 @@ items:
     content: public Guid CausedBy { get; }
     parameters: []
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly Property CausedBy As Guid
   overload: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy*
   modifiers.csharp:
@@ -397,12 +363,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CorrelationId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 45
   assemblies:
   - EventStore.Projections.Core
@@ -432,12 +394,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsJson
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 49
   assemblies:
   - EventStore.Projections.Core
@@ -469,12 +427,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsReady
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 51
   assemblies:
   - EventStore.Projections.Core
@@ -503,12 +457,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtraMetaData
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 53
   assemblies:
   - EventStore.Projections.Core
@@ -516,7 +466,7 @@ items:
   syntax:
     content: public virtual IEnumerable<KeyValuePair<string, string>> ExtraMetaData()
     return:
-      type: IEnumerable{KeyValuePair{System.String,System.String}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
     content.vb: Public Overridable Function ExtraMetaData As IEnumerable(Of KeyValuePair(Of String, String))
   overload: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData*
   modifiers.csharp:
@@ -525,24 +475,20 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
-  id: SetCausedBy(Guid)
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(System.Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(System.Guid)
+  id: SetCausedBy(System.Guid)
   parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
   langs:
   - csharp
   - vb
   name: SetCausedBy(Guid)
   nameWithType: EmittedEvent.SetCausedBy(Guid)
-  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetCausedBy
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 57
   assemblies:
   - EventStore.Projections.Core
@@ -551,7 +497,7 @@ items:
     content: public void SetCausedBy(Guid causedBy)
     parameters:
     - id: causedBy
-      type: Guid
+      type: System.Guid
     content.vb: Public Sub SetCausedBy(causedBy As Guid)
   overload: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy*
   modifiers.csharp:
@@ -570,12 +516,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetCorrelationId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedEvent.cs
     startLine: 61
   assemblies:
   - EventStore.Projections.Core
@@ -604,6 +546,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -976,11 +1197,13 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedEvent.#ctor
   name: EmittedEvent
@@ -992,20 +1215,21 @@ references:
   name: CheckpointTag
   nameWithType: CheckpointTag
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
-- uid: Action{System.Int64}
-  commentId: '!:Action{System.Int64}'
-  definition: Action`1
+- uid: System.Action{System.Int64}
+  commentId: T:System.Action{System.Int64}
+  parent: System
+  definition: System.Action`1
   name: Action<Int64>
   nameWithType: Action<Int64>
-  fullName: Action<System.Int64>
+  fullName: System.Action<System.Int64>
   nameWithType.vb: Action(Of Int64)
-  fullName.vb: Action(Of System.Int64)
+  fullName.vb: System.Action(Of System.Int64)
   name.vb: Action(Of Int64)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1019,10 +1243,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1035,41 +1259,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1125,28 +1350,29 @@ references:
   name: ExtraMetaData
   nameWithType: EmittedEvent.ExtraMetaData
   fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
-- uid: IEnumerable{KeyValuePair{System.String,System.String}}
-  commentId: '!:IEnumerable{KeyValuePair{System.String,System.String}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<KeyValuePair<String, String>>
   nameWithType: IEnumerable<KeyValuePair<String, String>>
-  fullName: IEnumerable<KeyValuePair<System.String, System.String>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.String>>
   nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String))
-  fullName.vb: IEnumerable(Of KeyValuePair(Of System.String, System.String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String))
   name.vb: IEnumerable(Of KeyValuePair(Of String, String))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: <
     nameWithType: <
@@ -1171,18 +1397,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1206,44 +1432,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy
   name: SetCausedBy

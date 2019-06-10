@@ -5,7 +5,7 @@ items:
   id: ITimer
   parent: EventStore.Core.Services.TimerService
   children:
-  - EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
+  - EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
   langs:
   - csharp
   - vb
@@ -14,12 +14,8 @@ items:
   fullName: EventStore.Core.Services.TimerService.ITimer
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/ITimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ITimer
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/ITimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/ITimer.cs
     startLine: 3
   assemblies:
   - EventStore.Core
@@ -29,6 +25,8 @@ items:
     content.vb: >-
       Public Interface ITimer
           Inherits IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -41,24 +39,20 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
-  commentId: M:EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
-  id: FireIn(System.Int32,Action)
+- uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
+  commentId: M:EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
+  id: FireIn(System.Int32,System.Action)
   parent: EventStore.Core.Services.TimerService.ITimer
   langs:
   - csharp
   - vb
   name: FireIn(Int32, Action)
   nameWithType: ITimer.FireIn(Int32, Action)
-  fullName: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32, Action)
+  fullName: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32, System.Action)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/ITimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FireIn
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/ITimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/ITimer.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -69,7 +63,7 @@ items:
     - id: milliseconds
       type: System.Int32
     - id: callback
-      type: Action
+      type: System.Action
     content.vb: Sub FireIn(milliseconds As Integer, callback As Action)
   overload: EventStore.Core.Services.TimerService.ITimer.FireIn*
 references:
@@ -78,6 +72,37 @@ references:
   name: EventStore.Core.Services.TimerService
   nameWithType: EventStore.Core.Services.TimerService
   fullName: EventStore.Core.Services.TimerService
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -229,6 +254,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -427,6 +459,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
   name: EventStore.Common.Utils
@@ -449,14 +487,10 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
+  fullName: System.Action

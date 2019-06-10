@@ -8,11 +8,11 @@ items:
   - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.#ctor
   - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Count
   - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetLowestPosition
-  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
-  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(DateTime)
-  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(Guid)
-  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(IEnumerable{Guid})
-  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,DateTime)
+  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(System.Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
+  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(System.DateTime)
+  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Collections.Generic.IEnumerable{System.Guid})
+  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Guid)
+  - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,System.DateTime)
   - EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.WaitingTimeMessages
   langs:
   - csharp
@@ -22,23 +22,25 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OutstandingMessageCache
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 11
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: 'public class OutstandingMessageCache : object'
-    content.vb: >-
-      Public Class OutstandingMessageCache
-          Inherits Object
+    content: public class OutstandingMessageCache
+    content.vb: Public Class OutstandingMessageCache
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -63,12 +65,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.OutstandingMessageCache()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 27
   assemblies:
   - EventStore.Core
@@ -93,12 +91,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Count
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Count
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 33
   assemblies:
   - EventStore.Core
@@ -116,24 +110,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(Guid)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(Guid)
-  id: Remove(Guid)
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Guid)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Guid)
+  id: Remove(System.Guid)
   parent: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   langs:
   - csharp
   - vb
   name: Remove(Guid)
   nameWithType: OutstandingMessageCache.Remove(Guid)
-  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(Guid)
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Remove
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 37
   assemblies:
   - EventStore.Core
@@ -142,31 +132,27 @@ items:
     content: public void Remove(Guid messageId)
     parameters:
     - id: messageId
-      type: Guid
+      type: System.Guid
     content.vb: Public Sub Remove(messageId As Guid)
   overload: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(IEnumerable{Guid})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(IEnumerable{Guid})
-  id: Remove(IEnumerable{Guid})
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Collections.Generic.IEnumerable{System.Guid})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Collections.Generic.IEnumerable{System.Guid})
+  id: Remove(System.Collections.Generic.IEnumerable{System.Guid})
   parent: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   langs:
   - csharp
   - vb
   name: Remove(IEnumerable<Guid>)
   nameWithType: OutstandingMessageCache.Remove(IEnumerable<Guid>)
-  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(IEnumerable<Guid>)
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Collections.Generic.IEnumerable<System.Guid>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Remove
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 47
   assemblies:
   - EventStore.Core
@@ -175,7 +161,7 @@ items:
     content: public void Remove(IEnumerable<Guid> messageIds)
     parameters:
     - id: messageIds
-      type: IEnumerable{Guid}
+      type: System.Collections.Generic.IEnumerable{System.Guid}
     content.vb: Public Sub Remove(messageIds As IEnumerable(Of Guid))
   overload: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove*
   nameWithType.vb: OutstandingMessageCache.Remove(IEnumerable(Of Guid))
@@ -183,26 +169,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(IEnumerable(Of Guid))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove(System.Collections.Generic.IEnumerable(Of System.Guid))
   name.vb: Remove(IEnumerable(Of Guid))
-- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,DateTime)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,DateTime)
-  id: StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,DateTime)
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,System.DateTime)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,System.DateTime)
+  id: StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage,System.DateTime)
   parent: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   langs:
   - csharp
   - vb
   name: StartMessage(OutstandingMessage, DateTime)
   nameWithType: OutstandingMessageCache.StartMessage(OutstandingMessage, DateTime)
-  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage, DateTime)
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage(EventStore.Core.Services.PersistentSubscription.OutstandingMessage, System.DateTime)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartMessage
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 51
   assemblies:
   - EventStore.Core
@@ -213,33 +195,29 @@ items:
     - id: message
       type: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
     - id: expires
-      type: DateTime
+      type: System.DateTime
     return:
       type: EventStore.Core.Services.PersistentSubscription.StartMessageResult
-    content.vb: Public Function StartMessage(message As OutstandingMessage, expires As DateTime) As StartMessageResult
+    content.vb: Public Function StartMessage(message As OutstandingMessage, expires As Date) As StartMessageResult
   overload: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(DateTime)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(DateTime)
-  id: GetMessagesExpiringBefore(DateTime)
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(System.DateTime)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(System.DateTime)
+  id: GetMessagesExpiringBefore(System.DateTime)
   parent: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   langs:
   - csharp
   - vb
   name: GetMessagesExpiringBefore(DateTime)
   nameWithType: OutstandingMessageCache.GetMessagesExpiringBefore(DateTime)
-  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(DateTime)
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore(System.DateTime)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetMessagesExpiringBefore
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 62
   assemblies:
   - EventStore.Core
@@ -248,10 +226,10 @@ items:
     content: public IEnumerable<OutstandingMessage> GetMessagesExpiringBefore(DateTime time)
     parameters:
     - id: time
-      type: DateTime
+      type: System.DateTime
     return:
-      type: IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}
-    content.vb: Public Function GetMessagesExpiringBefore(time As DateTime) As IEnumerable(Of OutstandingMessage)
+      type: System.Collections.Generic.IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}
+    content.vb: Public Function GetMessagesExpiringBefore(time As Date) As IEnumerable(Of OutstandingMessage)
   overload: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore*
   modifiers.csharp:
   - public
@@ -269,12 +247,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.WaitingTimeMessages()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WaitingTimeMessages
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 79
   assemblies:
   - EventStore.Core
@@ -282,8 +256,8 @@ items:
   syntax:
     content: public IEnumerable<Tuple<DateTime, RetryableMessage>> WaitingTimeMessages()
     return:
-      type: IEnumerable{Tuple{DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}
-    content.vb: Public Function WaitingTimeMessages As IEnumerable(Of Tuple(Of DateTime, RetryableMessage))
+      type: System.Collections.Generic.IEnumerable{System.Tuple{System.DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}
+    content.vb: Public Function WaitingTimeMessages As IEnumerable(Of Tuple(Of Date, RetryableMessage))
   overload: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.WaitingTimeMessages*
   modifiers.csharp:
   - public
@@ -301,12 +275,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetLowestPosition()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetLowestPosition
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
     startLine: 83
   assemblies:
   - EventStore.Core
@@ -321,25 +291,21 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
-  id: GetMessageById(Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
+- uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(System.Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(System.Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
+  id: GetMessageById(System.Guid,EventStore.Core.Services.PersistentSubscription.OutstandingMessage@)
   parent: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache
   langs:
   - csharp
   - vb
   name: GetMessageById(Guid, out OutstandingMessage)
   nameWithType: OutstandingMessageCache.GetMessageById(Guid, out OutstandingMessage)
-  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(Guid, out EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(System.Guid, out EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetMessageById
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
-    startLine: 89
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/OutstandingMessageCache.cs
+    startLine: 92
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -347,7 +313,7 @@ items:
     content: public bool GetMessageById(Guid id, out OutstandingMessage outstandingMessage)
     parameters:
     - id: id
-      type: Guid
+      type: System.Guid
     - id: outstandingMessage
       type: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
     return:
@@ -359,7 +325,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(Guid, ByRef EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessageById(System.Guid, ByRef EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
   name.vb: GetMessageById(Guid, ByRef OutstandingMessage)
 references:
 - uid: EventStore.Core.Services.PersistentSubscription
@@ -374,6 +340,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -761,92 +1006,102 @@ references:
   name: Remove
   nameWithType: OutstandingMessageCache.Remove
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.Remove
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
-- uid: IEnumerable{Guid}
-  commentId: '!:IEnumerable{Guid}'
-  definition: IEnumerable`1
+  fullName: System.Guid
+- uid: System.Collections.Generic.IEnumerable{System.Guid}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Guid}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<Guid>
   nameWithType: IEnumerable<Guid>
-  fullName: IEnumerable<Guid>
+  fullName: System.Collections.Generic.IEnumerable<System.Guid>
   nameWithType.vb: IEnumerable(Of Guid)
-  fullName.vb: IEnumerable(Of Guid)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Guid)
   name.vb: IEnumerable(Of Guid)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage*
   commentId: Overload:EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.StartMessage
   name: StartMessage
@@ -858,11 +1113,13 @@ references:
   name: OutstandingMessage
   nameWithType: OutstandingMessage
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessage
-- uid: DateTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
   isExternal: true
   name: DateTime
   nameWithType: DateTime
-  fullName: DateTime
+  fullName: System.DateTime
 - uid: EventStore.Core.Services.PersistentSubscription.StartMessageResult
   commentId: T:EventStore.Core.Services.PersistentSubscription.StartMessageResult
   parent: EventStore.Core.Services.PersistentSubscription
@@ -874,20 +1131,21 @@ references:
   name: GetMessagesExpiringBefore
   nameWithType: OutstandingMessageCache.GetMessagesExpiringBefore
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.GetMessagesExpiringBefore
-- uid: IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}
-  commentId: '!:IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}
+  commentId: T:System.Collections.Generic.IEnumerable{EventStore.Core.Services.PersistentSubscription.OutstandingMessage}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<OutstandingMessage>
   nameWithType: IEnumerable<OutstandingMessage>
-  fullName: IEnumerable<EventStore.Core.Services.PersistentSubscription.OutstandingMessage>
+  fullName: System.Collections.Generic.IEnumerable<EventStore.Core.Services.PersistentSubscription.OutstandingMessage>
   nameWithType.vb: IEnumerable(Of OutstandingMessage)
-  fullName.vb: IEnumerable(Of EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EventStore.Core.Services.PersistentSubscription.OutstandingMessage)
   name.vb: IEnumerable(Of OutstandingMessage)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -900,10 +1158,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -920,36 +1178,37 @@ references:
   name: WaitingTimeMessages
   nameWithType: OutstandingMessageCache.WaitingTimeMessages
   fullName: EventStore.Core.Services.PersistentSubscription.OutstandingMessageCache.WaitingTimeMessages
-- uid: IEnumerable{Tuple{DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}
-  commentId: '!:IEnumerable{Tuple{DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Tuple{System.DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Tuple{System.DateTime,EventStore.Core.Services.PersistentSubscription.RetryableMessage}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<Tuple<DateTime, RetryableMessage>>
   nameWithType: IEnumerable<Tuple<DateTime, RetryableMessage>>
-  fullName: IEnumerable<Tuple<DateTime, EventStore.Core.Services.PersistentSubscription.RetryableMessage>>
+  fullName: System.Collections.Generic.IEnumerable<System.Tuple<System.DateTime, EventStore.Core.Services.PersistentSubscription.RetryableMessage>>
   nameWithType.vb: IEnumerable(Of Tuple(Of DateTime, RetryableMessage))
-  fullName.vb: IEnumerable(Of Tuple(Of DateTime, EventStore.Core.Services.PersistentSubscription.RetryableMessage))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Tuple(Of System.DateTime, EventStore.Core.Services.PersistentSubscription.RetryableMessage))
   name.vb: IEnumerable(Of Tuple(Of DateTime, RetryableMessage))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -965,26 +1224,26 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: ', '
     nameWithType: ', '

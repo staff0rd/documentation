@@ -5,7 +5,7 @@ items:
   id: ITcpDispatcher
   parent: EventStore.Core.Services.Transport.Tcp
   children:
-  - EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
+  - EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,System.Security.Principal.IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
   - EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.WrapMessage(EventStore.Core.Messaging.Message,System.Byte)
   langs:
   - csharp
@@ -15,12 +15,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ITcpDispatcher
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -52,12 +48,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.WrapMessage(EventStore.Core.Messaging.Message, System.Byte)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WrapMessage
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
     startLine: 5
   assemblies:
   - EventStore.Core
@@ -73,24 +65,20 @@ items:
       type: System.Nullable{EventStore.Core.Services.Transport.Tcp.TcpPackage}
     content.vb: Function WrapMessage(message As Message, version As Byte) As TcpPackage?
   overload: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.WrapMessage*
-- uid: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
-  id: UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
+- uid: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,System.Security.Principal.IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,System.Security.Principal.IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
+  id: UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage,EventStore.Core.Messaging.IEnvelope,System.Security.Principal.IPrincipal,System.String,System.String,EventStore.Core.Services.Transport.Tcp.TcpConnectionManager,System.Byte)
   parent: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
   langs:
   - csharp
   - vb
   name: UnwrapPackage(TcpPackage, IEnvelope, IPrincipal, String, String, TcpConnectionManager, Byte)
   nameWithType: ITcpDispatcher.UnwrapPackage(TcpPackage, IEnvelope, IPrincipal, String, String, TcpConnectionManager, Byte)
-  fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage, EventStore.Core.Messaging.IEnvelope, IPrincipal, System.String, System.String, EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Byte)
+  fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher.UnwrapPackage(EventStore.Core.Services.Transport.Tcp.TcpPackage, EventStore.Core.Messaging.IEnvelope, System.Security.Principal.IPrincipal, System.String, System.String, EventStore.Core.Services.Transport.Tcp.TcpConnectionManager, System.Byte)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnwrapPackage
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/ITcpDispatcher.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -103,7 +91,7 @@ items:
     - id: envelope
       type: EventStore.Core.Messaging.IEnvelope
     - id: user
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: login
       type: System.String
     - id: pass
@@ -495,7 +483,8 @@ references:
   nameWithType: Byte
   fullName: System.Byte
 - uid: System.Nullable{EventStore.Core.Services.Transport.Tcp.TcpPackage}
-  commentId: '!:System.Nullable{EventStore.Core.Services.Transport.Tcp.TcpPackage}'
+  commentId: T:System.Nullable{EventStore.Core.Services.Transport.Tcp.TcpPackage}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TcpPackage>
   nameWithType: Nullable<TcpPackage>
@@ -602,11 +591,13 @@ references:
   name: IEnvelope
   nameWithType: IEnvelope
   fullName: EventStore.Core.Messaging.IEnvelope
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -620,3 +611,9 @@ references:
   name: TcpConnectionManager
   nameWithType: TcpConnectionManager
   fullName: EventStore.Core.Services.Transport.Tcp.TcpConnectionManager
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal

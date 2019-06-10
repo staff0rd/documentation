@@ -6,7 +6,7 @@ items:
   parent: EventStore.Core.Services.PersistentSubscription
   children:
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.#ctor(EventStore.Core.Helpers.IODispatcher)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
   langs:
   - csharp
   - vb
@@ -15,26 +15,29 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PersistentSubscriptionCheckpointReader
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
     startLine: 8
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: 'public class PersistentSubscriptionCheckpointReader : object, IPersistentSubscriptionCheckpointReader'
+    content: 'public class PersistentSubscriptionCheckpointReader : IPersistentSubscriptionCheckpointReader'
     content.vb: >-
       Public Class PersistentSubscriptionCheckpointReader
-          Inherits Object
           Implements IPersistentSubscriptionCheckpointReader
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -59,12 +62,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.PersistentSubscriptionCheckpointReader(EventStore.Core.Helpers.IODispatcher)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
     startLine: 11
   assemblies:
   - EventStore.Core
@@ -80,24 +79,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
-  id: BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
+  id: BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader
   langs:
   - csharp
   - vb
   name: BeginLoadState(String, Action<Nullable<Int64>>)
   nameWithType: PersistentSubscriptionCheckpointReader.BeginLoadState(String, Action<Nullable<Int64>>)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String, Action<System.Nullable<System.Int64>>)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String, System.Action<System.Nullable<System.Int64>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginLoadState
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscriptionCheckpointReader.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -108,17 +103,17 @@ items:
     - id: subscriptionId
       type: System.String
     - id: onStateLoaded
-      type: Action{System.Nullable{System.Int64}}
+      type: System.Action{System.Nullable{System.Int64}}
     content.vb: Public Sub BeginLoadState(subscriptionId As String, onStateLoaded As Action(Of Long?))
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState*
   implements:
-  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+  - EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
   nameWithType.vb: PersistentSubscriptionCheckpointReader.BeginLoadState(String, Action(Of Nullable(Of Int64)))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String, Action(Of System.Nullable(Of System.Int64)))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState(System.String, System.Action(Of System.Nullable(Of System.Int64)))
   name.vb: BeginLoadState(String, Action(Of Nullable(Of Int64)))
 references:
 - uid: EventStore.Core.Services.PersistentSubscription
@@ -139,6 +134,285 @@ references:
   name: IPersistentSubscriptionCheckpointReader
   nameWithType: IPersistentSubscriptionCheckpointReader
   fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -525,18 +799,18 @@ references:
   name: BeginLoadState
   nameWithType: PersistentSubscriptionCheckpointReader.BeginLoadState
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionCheckpointReader.BeginLoadState
-- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
-  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+- uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
+  commentId: M:EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
   parent: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader
   isExternal: true
   name: BeginLoadState(String, Action<Nullable<Int64>>)
   nameWithType: IPersistentSubscriptionCheckpointReader.BeginLoadState(String, Action<Nullable<Int64>>)
-  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String, Action<System.Nullable<System.Int64>>)
+  fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String, System.Action<System.Nullable<System.Int64>>)
   nameWithType.vb: IPersistentSubscriptionCheckpointReader.BeginLoadState(String, Action(Of Nullable(Of Int64)))
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String, Action(Of System.Nullable(Of System.Int64)))
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String, System.Action(Of System.Nullable(Of System.Int64)))
   name.vb: BeginLoadState(String, Action(Of Nullable(Of Int64)))
   spec.csharp:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
     name: BeginLoadState
     nameWithType: IPersistentSubscriptionCheckpointReader.BeginLoadState
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState
@@ -551,10 +825,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -582,7 +856,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,Action{System.Nullable{System.Int64}})
+  - uid: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState(System.String,System.Action{System.Nullable{System.Int64}})
     name: BeginLoadState
     nameWithType: IPersistentSubscriptionCheckpointReader.BeginLoadState
     fullName: EventStore.Core.Services.PersistentSubscription.IPersistentSubscriptionCheckpointReader.BeginLoadState
@@ -597,10 +871,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -634,20 +908,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Action{System.Nullable{System.Int64}}
-  commentId: '!:Action{System.Nullable{System.Int64}}'
-  definition: Action`1
+- uid: System.Action{System.Nullable{System.Int64}}
+  commentId: T:System.Action{System.Nullable{System.Int64}}
+  parent: System
+  definition: System.Action`1
   name: Action<Nullable<Int64>>
   nameWithType: Action<Nullable<Int64>>
-  fullName: Action<System.Nullable<System.Int64>>
+  fullName: System.Action<System.Nullable<System.Int64>>
   nameWithType.vb: Action(Of Nullable(Of Int64))
-  fullName.vb: Action(Of System.Nullable(Of System.Int64))
+  fullName.vb: System.Action(Of System.Nullable(Of System.Int64))
   name.vb: Action(Of Nullable(Of Int64))
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -672,10 +947,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -699,41 +974,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

@@ -5,11 +5,11 @@ items:
   id: ProjectionManagementMessage.RunAs
   parent: EventStore.Projections.Core.Messages
   children:
-  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(IPrincipal)
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(System.Security.Principal.IPrincipal)
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Anonymous
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Principal
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.System
-  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,System.Security.Principal.IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
   langs:
   - csharp
   - vb
@@ -18,23 +18,25 @@ items:
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RunAs
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 623
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: 'public sealed class RunAs : object'
-    content.vb: >-
-      Public NotInheritable Class RunAs
-          Inherits Object
+    content: public sealed class RunAs
+    content.vb: Public NotInheritable Class RunAs
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -49,24 +51,20 @@ items:
   - Public
   - NotInheritable
   - Class
-- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(IPrincipal)
-  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(IPrincipal)
-  id: '#ctor(IPrincipal)'
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(System.Security.Principal.IPrincipal)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor(System.Security.Principal.IPrincipal)
+  id: '#ctor(System.Security.Principal.IPrincipal)'
   parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs
   langs:
   - csharp
   - vb
   name: RunAs(IPrincipal)
   nameWithType: ProjectionManagementMessage.RunAs.RunAs(IPrincipal)
-  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.RunAs(IPrincipal)
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.RunAs(System.Security.Principal.IPrincipal)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 626
   assemblies:
   - EventStore.Projections.Core
@@ -75,7 +73,7 @@ items:
     content: public RunAs(IPrincipal runAs)
     parameters:
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     content.vb: Public Sub New(runAs As IPrincipal)
   overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.#ctor*
   modifiers.csharp:
@@ -94,12 +92,8 @@ items:
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Anonymous
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Anonymous
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 633
   assemblies:
   - EventStore.Projections.Core
@@ -131,12 +125,8 @@ items:
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.System
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: System
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 637
   assemblies:
   - EventStore.Projections.Core
@@ -168,12 +158,8 @@ items:
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Principal
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Principal
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 641
   assemblies:
   - EventStore.Projections.Core
@@ -182,7 +168,7 @@ items:
     content: public IPrincipal Principal { get; }
     parameters: []
     return:
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     content.vb: Public ReadOnly Property Principal As IPrincipal
   overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Principal*
   modifiers.csharp:
@@ -191,24 +177,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
-  id: ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,System.Security.Principal.IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,System.Security.Principal.IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
+  id: ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode,EventStore.Projections.Core.Services.ReadWrite,System.Security.Principal.IPrincipal,EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage,System.Boolean)
   parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs
   langs:
   - csharp
   - vb
   name: ValidateRunAs(ProjectionMode, ReadWrite, IPrincipal, ProjectionManagementMessage.Command.ControlMessage, Boolean)
   nameWithType: ProjectionManagementMessage.RunAs.ValidateRunAs(ProjectionMode, ReadWrite, IPrincipal, ProjectionManagementMessage.Command.ControlMessage, Boolean)
-  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode, EventStore.Projections.Core.Services.ReadWrite, IPrincipal, EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage, System.Boolean)
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.ValidateRunAs(EventStore.Projections.Core.Services.ProjectionMode, EventStore.Projections.Core.Services.ReadWrite, System.Security.Principal.IPrincipal, EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ValidateRunAs
-    path: ../EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
     startLine: 645
   assemblies:
   - EventStore.Projections.Core
@@ -221,7 +203,7 @@ items:
     - id: readWrite
       type: EventStore.Projections.Core.Services.ReadWrite
     - id: existingRunAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: message
       type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage
     - id: replace
@@ -249,6 +231,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -619,11 +880,19 @@ references:
   name: RunAs
   nameWithType: ProjectionManagementMessage.RunAs.RunAs
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.RunAs
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Anonymous*
   commentId: Overload:EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs.Anonymous
   name: Anonymous

@@ -5,13 +5,13 @@ items:
   id: Convert
   parent: EventStore.Core.Services.Transport.Http
   children:
-  - EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  - EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  - EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(Uri,System.String,System.String[])
-  - EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  - EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  - EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  - EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  - EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  - EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  - EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(System.Uri,System.String,System.String[])
+  - EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  - EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,System.Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  - EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  - EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   langs:
   - csharp
   - vb
@@ -20,23 +20,25 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.Convert
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Convert
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 18
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: 'public static class Convert : object'
-    content.vb: >-
-      Public Module Convert
-          Inherits Object
+    content: public static class Convert
+    content.vb: Public Module Convert
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -44,24 +46,20 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  id: ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  id: ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToStreamEventForwardFeed(ClientMessage.ReadStreamEventsForwardCompleted, Uri, EmbedLevel)
   nameWithType: Convert.ToStreamEventForwardFeed(ClientMessage.ReadStreamEventsForwardCompleted, Uri, EmbedLevel)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted, Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventForwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted, System.Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToStreamEventForwardFeed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 21
   assemblies:
   - EventStore.Core
@@ -72,7 +70,7 @@ items:
     - id: msg
       type: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: embedContent
       type: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
     return:
@@ -85,24 +83,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  id: ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  id: ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToStreamEventBackwardFeed(ClientMessage.ReadStreamEventsBackwardCompleted, Uri, EmbedLevel, Boolean)
   nameWithType: Convert.ToStreamEventBackwardFeed(ClientMessage.ReadStreamEventsBackwardCompleted, Uri, EmbedLevel, Boolean)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted, Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel, System.Boolean)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToStreamEventBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted, System.Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToStreamEventBackwardFeed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 64
   assemblies:
   - EventStore.Core
@@ -113,7 +107,7 @@ items:
     - id: msg
       type: EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: embedContent
       type: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
     - id: headOfStream
@@ -128,24 +122,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  id: ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  id: ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToAllEventsForwardFeed(ClientMessage.ReadAllEventsForwardCompleted, Uri, EmbedLevel)
   nameWithType: Convert.ToAllEventsForwardFeed(ClientMessage.ReadAllEventsForwardCompleted, Uri, EmbedLevel)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted, Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsForwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted, System.Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToAllEventsForwardFeed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 112
   assemblies:
   - EventStore.Core
@@ -156,7 +146,7 @@ items:
     - id: msg
       type: EventStore.Core.Messages.ClientMessage.ReadAllEventsForwardCompleted
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: embedContent
       type: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
     return:
@@ -169,24 +159,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  id: ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  id: ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToAllEventsBackwardFeed(ClientMessage.ReadAllEventsBackwardCompleted, Uri, EmbedLevel)
   nameWithType: Convert.ToAllEventsBackwardFeed(ClientMessage.ReadAllEventsBackwardCompleted, Uri, EmbedLevel)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted, Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToAllEventsBackwardFeed(EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted, System.Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToAllEventsBackwardFeed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 147
   assemblies:
   - EventStore.Core
@@ -197,7 +183,7 @@ items:
     - id: msg
       type: EventStore.Core.Messages.ClientMessage.ReadAllEventsBackwardCompleted
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: embedContent
       type: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
     return:
@@ -210,24 +196,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
-  id: ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,System.Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,System.Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  id: ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted,System.Uri,System.String,System.String,System.Int32,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToNextNPersistentMessagesFeed(ClientMessage.ReadNextNPersistentMessagesCompleted, Uri, String, String, Int32, EmbedLevel)
   nameWithType: Convert.ToNextNPersistentMessagesFeed(ClientMessage.ReadNextNPersistentMessagesCompleted, Uri, String, String, Int32, EmbedLevel)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted, Uri, System.String, System.String, System.Int32, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToNextNPersistentMessagesFeed(EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted, System.Uri, System.String, System.String, System.Int32, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToNextNPersistentMessagesFeed
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 181
   assemblies:
   - EventStore.Core
@@ -238,7 +220,7 @@ items:
     - id: msg
       type: EventStore.Core.Messages.ClientMessage.ReadNextNPersistentMessagesCompleted
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: streamId
       type: System.String
     - id: groupName
@@ -257,24 +239,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(Uri,System.String,System.String[])
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(Uri,System.String,System.String[])
-  id: ToDescriptionDocument(Uri,System.String,System.String[])
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(System.Uri,System.String,System.String[])
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(System.Uri,System.String,System.String[])
+  id: ToDescriptionDocument(System.Uri,System.String,System.String[])
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToDescriptionDocument(Uri, String, String[])
   nameWithType: Convert.ToDescriptionDocument(Uri, String, String[])
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(Uri, System.String, System.String[])
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(System.Uri, System.String, System.String[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToDescriptionDocument
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 229
   assemblies:
   - EventStore.Core
@@ -283,7 +261,7 @@ items:
     content: public static DescriptionDocument ToDescriptionDocument(Uri requestedUrl, string streamId, string[] subscriptions)
     parameters:
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: streamId
       type: System.String
     - id: subscriptions
@@ -299,26 +277,22 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(Uri, System.String, System.String())
+  fullName.vb: EventStore.Core.Services.Transport.Http.Convert.ToDescriptionDocument(System.Uri, System.String, System.String())
   name.vb: ToDescriptionDocument(Uri, String, String())
-- uid: EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
-  id: ToEntry(EventStore.Core.Data.ResolvedEvent,Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+- uid: EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  commentId: M:EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
+  id: ToEntry(EventStore.Core.Data.ResolvedEvent,System.Uri,EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel,System.Boolean)
   parent: EventStore.Core.Services.Transport.Http.Convert
   langs:
   - csharp
   - vb
   name: ToEntry(ResolvedEvent, Uri, EmbedLevel, Boolean)
   nameWithType: Convert.ToEntry(ResolvedEvent, Uri, EmbedLevel, Boolean)
-  fullName: EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent, Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel, System.Boolean)
+  fullName: EventStore.Core.Services.Transport.Http.Convert.ToEntry(EventStore.Core.Data.ResolvedEvent, System.Uri, EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToEntry
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 256
   assemblies:
   - EventStore.Core
@@ -329,7 +303,7 @@ items:
     - id: eventLinkPair
       type: EventStore.Core.Data.ResolvedEvent
     - id: requestedUrl
-      type: Uri
+      type: System.Uri
     - id: embedContent
       type: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
     - id: singleEntry
@@ -357,6 +331,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -374,11 +627,13 @@ references:
   name: ClientMessage.ReadStreamEventsForwardCompleted
   nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
   fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
-- uid: Uri
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
   isExternal: true
   name: Uri
   nameWithType: Uri
-  fullName: Uri
+  fullName: System.Uri
 - uid: EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
   commentId: T:EventStore.Core.Services.Transport.Http.Controllers.EmbedLevel
   parent: EventStore.Core.Services.Transport.Http.Controllers

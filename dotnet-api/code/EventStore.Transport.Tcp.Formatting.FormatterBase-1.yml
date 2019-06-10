@@ -5,10 +5,10 @@ items:
   id: FormatterBase`1
   parent: EventStore.Transport.Tcp.Formatting
   children:
-  - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(ArraySegment{System.Byte})
   - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(EventStore.BufferManagement.BufferPool)
-  - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(Stream)
+  - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.ArraySegment{System.Byte})
   - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.Byte[])
+  - EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.IO.Stream)
   - EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToArray(`0)
   - EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToArraySegment(`0)
   - EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToBufferPool(`0)
@@ -20,23 +20,18 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FormatterBase
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 5
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp.Formatting
   syntax:
-    content: 'public abstract class FormatterBase<T> : object, IMessageFormatter<T>'
+    content: 'public abstract class FormatterBase<T> : IMessageFormatter<T>'
     typeParameters:
     - id: T
     content.vb: >-
       Public MustInherit Class FormatterBase(Of T)
-          Inherits Object
           Implements IMessageFormatter(Of T)
   inheritance:
   - System.Object
@@ -44,6 +39,14 @@ items:
   - EventStore.Transport.Tcp.Formatting.ProtoBufMessageFormatter`1
   implements:
   - EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -73,12 +76,8 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.ToBufferPool(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToBufferPool
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Tcp
@@ -118,17 +117,13 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.ToArraySegment(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToArraySegment
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 18
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp.Formatting
-  summary: "\nconverts the message to a <see cref=\"!:ArraySegment&lt;T>\"></see>\n"
+  summary: "\nconverts the message to a <xref href=\"System.ArraySegment%601\" data-throw-if-not-resolved=\"false\"></xref>\n"
   example: []
   syntax:
     content: public virtual ArraySegment<byte> ToArraySegment(T message)
@@ -137,7 +132,7 @@ items:
       type: '{T}'
       description: The message.
     return:
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
       description: ''
     content.vb: Public Overridable Function ToArraySegment(message As T) As ArraySegment(Of Byte)
   overload: EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToArraySegment*
@@ -163,12 +158,8 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.ToArray(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToArray
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 27
   assemblies:
   - EventStore.Transport.Tcp
@@ -208,12 +199,8 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(EventStore.BufferManagement.BufferPool)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: From
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 38
   assemblies:
   - EventStore.Transport.Tcp
@@ -241,35 +228,31 @@ items:
   - Public
   - Overridable
   fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(EventStore.BufferManagement.BufferPool)
-- uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(ArraySegment{System.Byte})
-  id: From(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.ArraySegment{System.Byte})
+  id: From(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Formatting.FormatterBase`1
   langs:
   - csharp
   - vb
   name: From(ArraySegment<Byte>)
   nameWithType: FormatterBase<T>.From(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: From
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 50
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp.Formatting
-  summary: "\nGets a message from a <see cref=\"!:ArraySegment&lt;Byte>\"></see>\n"
+  summary: "\nGets a message from a <xref href=\"System.ArraySegment%601\" data-throw-if-not-resolved=\"false\"></xref>\n"
   example: []
   syntax:
     content: public virtual T From(ArraySegment<byte> segment)
     parameters:
     - id: segment
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
       description: The segment containing the raw data.
     return:
       type: '{T}'
@@ -277,7 +260,7 @@ items:
     content.vb: Public Overridable Function From(segment As ArraySegment(Of Byte)) As T
   overload: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From*
   implements:
-  - EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}.From(ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}.From(System.ArraySegment{System.Byte})
   nameWithType.vb: FormatterBase(Of T).From(ArraySegment(Of Byte))
   modifiers.csharp:
   - public
@@ -285,7 +268,7 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-  fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(System.ArraySegment(Of System.Byte))
   name.vb: From(ArraySegment(Of Byte))
 - uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.Byte[])
   commentId: M:EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.Byte[])
@@ -299,12 +282,8 @@ items:
   fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: From
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 61
   assemblies:
   - EventStore.Transport.Tcp
@@ -333,24 +312,20 @@ items:
   - Overridable
   fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(System.Byte())
   name.vb: From(Byte())
-- uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(Stream)
-  commentId: M:EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(Stream)
-  id: From(Stream)
+- uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.IO.Stream)
+  commentId: M:EventStore.Transport.Tcp.Formatting.FormatterBase`1.From(System.IO.Stream)
+  id: From(System.IO.Stream)
   parent: EventStore.Transport.Tcp.Formatting.FormatterBase`1
   langs:
   - csharp
   - vb
   name: From(Stream)
   nameWithType: FormatterBase<T>.From(Stream)
-  fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(Stream)
+  fullName: EventStore.Transport.Tcp.Formatting.FormatterBase<T>.From(System.IO.Stream)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: From
-    path: ../EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Formatting/FormatterBase.cs
     startLine: 74
   assemblies:
   - EventStore.Transport.Tcp
@@ -361,7 +336,7 @@ items:
     content: public abstract T From(Stream stream)
     parameters:
     - id: stream
-      type: Stream
+      type: System.IO.Stream
       description: The stream.
     return:
       type: '{T}'
@@ -375,7 +350,7 @@ items:
   modifiers.vb:
   - Public
   - MustOverride
-  fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(Stream)
+  fullName.vb: EventStore.Transport.Tcp.Formatting.FormatterBase(Of T).From(System.IO.Stream)
 references:
 - uid: EventStore.Transport.Tcp.Formatting
   commentId: N:EventStore.Transport.Tcp.Formatting
@@ -424,6 +399,285 @@ references:
   - name: T
     nameWithType: T
     fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -928,6 +1182,45 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
+  isExternal: true
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
+  spec.csharp:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToArraySegment*
   commentId: Overload:EventStore.Transport.Tcp.Formatting.FormatterBase`1.ToArraySegment
   name: ToArraySegment
@@ -972,20 +1265,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -999,10 +1293,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1047,44 +1341,6 @@ references:
   - name: T
     nameWithType: T
     fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: ArraySegment`1
-  isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
-  spec.csharp:
-  - uid: ArraySegment`1
-    name: ArraySegment
-    nameWithType: ArraySegment
-    fullName: ArraySegment
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: ArraySegment`1
-    name: ArraySegment
-    nameWithType: ArraySegment
-    fullName: ArraySegment
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
@@ -1276,28 +1532,28 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}.From(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter{`0}.From(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}.From(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter{`0}.From(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Formatting.IMessageFormatter{{T}}
-  definition: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  definition: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
   name: From(ArraySegment<Byte>)
   nameWithType: IMessageFormatter<T>.From(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(System.ArraySegment<System.Byte>)
   nameWithType.vb: IMessageFormatter(Of T).From(ArraySegment(Of Byte))
-  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(System.ArraySegment(Of System.Byte))
   name.vb: From(ArraySegment(Of Byte))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
     name: From
     nameWithType: IMessageFormatter<T>.From
     fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1314,17 +1570,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
     name: From
     nameWithType: IMessageFormatter(Of T).From
     fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1340,27 +1596,27 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
   isExternal: true
   name: From(ArraySegment<Byte>)
   nameWithType: IMessageFormatter<T>.From(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From(System.ArraySegment<System.Byte>)
   nameWithType.vb: IMessageFormatter(Of T).From(ArraySegment(Of Byte))
-  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From(System.ArraySegment(Of System.Byte))
   name.vb: From(ArraySegment(Of Byte))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
     name: From
     nameWithType: IMessageFormatter<T>.From
     fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>.From
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1377,17 +1633,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Formatting.IMessageFormatter`1.From(System.ArraySegment{System.Byte})
     name: From
     nameWithType: IMessageFormatter(Of T).From
     fullName: EventStore.Transport.Tcp.Formatting.IMessageFormatter(Of T).From
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1498,8 +1754,16 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Stream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
   isExternal: true
   name: Stream
   nameWithType: Stream
-  fullName: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO

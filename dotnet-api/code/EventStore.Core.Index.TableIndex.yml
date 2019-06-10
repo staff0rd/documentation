@@ -5,9 +5,9 @@ items:
   id: TableIndex
   parent: EventStore.Core.Index
   children:
-  - EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  - EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,System.Func{EventStore.Core.Index.IMemTable},System.Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
   - EventStore.Core.Index.TableIndex.Add(System.Int64,System.String,System.Int64,System.Int64)
-  - EventStore.Core.Index.TableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+  - EventStore.Core.Index.TableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
   - EventStore.Core.Index.TableIndex.Close(System.Boolean)
   - EventStore.Core.Index.TableIndex.CommitCheckpoint
   - EventStore.Core.Index.TableIndex.ForceIndexVerifyFilename
@@ -17,7 +17,7 @@ items:
   - EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
   - EventStore.Core.Index.TableIndex.MergeIndexes
   - EventStore.Core.Index.TableIndex.PrepareCheckpoint
-  - EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  - EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
   - EventStore.Core.Index.TableIndex.TryGetLatestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.TableIndex.TryGetOldestEntry(System.String,EventStore.Core.Index.IndexEntry@)
   - EventStore.Core.Index.TableIndex.TryGetOneValue(System.String,System.Int64,System.Int64@)
@@ -30,26 +30,29 @@ items:
   fullName: EventStore.Core.Index.TableIndex
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TableIndex
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 18
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: 'public class TableIndex : object, ITableIndex'
+    content: 'public class TableIndex : ITableIndex'
     content.vb: >-
       Public Class TableIndex
-          Inherits Object
           Implements ITableIndex
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Index.ITableIndex
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -74,21 +77,17 @@ items:
   fullName: EventStore.Core.Index.TableIndex.IndexMapFilename
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexMapFilename
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 19
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public const string IndexMapFilename = null
+    content: public const string IndexMapFilename = "indexmap"
     return:
       type: System.String
-    content.vb: Public Const IndexMapFilename As String = Nothing
+    content.vb: Public Const IndexMapFilename As String = "indexmap"
   modifiers.csharp:
   - public
   - const
@@ -107,12 +106,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.CommitCheckpoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCheckpoint
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 25
   assemblies:
   - EventStore.Core
@@ -144,12 +139,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.PrepareCheckpoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCheckpoint
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 29
   assemblies:
   - EventStore.Core
@@ -181,45 +172,37 @@ items:
   fullName: EventStore.Core.Index.TableIndex.ForceIndexVerifyFilename
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ForceIndexVerifyFilename
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 60
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public const string ForceIndexVerifyFilename = null
+    content: public const string ForceIndexVerifyFilename = ".forceverify"
     return:
       type: System.String
-    content.vb: Public Const ForceIndexVerifyFilename As String = Nothing
+    content.vb: Public Const ForceIndexVerifyFilename As String = ".forceverify"
   modifiers.csharp:
   - public
   - const
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
-  commentId: M:EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
-  id: '#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,Func{EventStore.Core.Index.IMemTable},Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)'
+- uid: EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,System.Func{EventStore.Core.Index.IMemTable},System.Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  commentId: M:EventStore.Core.Index.TableIndex.#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,System.Func{EventStore.Core.Index.IMemTable},System.Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  id: '#ctor(System.String,EventStore.Core.Index.Hashes.IHasher,EventStore.Core.Index.Hashes.IHasher,System.Func{EventStore.Core.Index.IMemTable},System.Func{EventStore.Core.TransactionLog.TFReaderLease},System.Byte,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)'
   parent: EventStore.Core.Index.TableIndex
   langs:
   - csharp
   - vb
   name: TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
   nameWithType: TableIndex.TableIndex(String, IHasher, IHasher, Func<IMemTable>, Func<TFReaderLease>, Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
-  fullName: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func<EventStore.Core.Index.IMemTable>, Func<EventStore.Core.TransactionLog.TFReaderLease>, System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
+  fullName: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, System.Func<EventStore.Core.Index.IMemTable>, System.Func<EventStore.Core.TransactionLog.TFReaderLease>, System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 63
   assemblies:
   - EventStore.Core
@@ -234,9 +217,9 @@ items:
     - id: highHasher
       type: EventStore.Core.Index.Hashes.IHasher
     - id: memTableFactory
-      type: Func{EventStore.Core.Index.IMemTable}
+      type: System.Func{EventStore.Core.Index.IMemTable}
     - id: tfReaderFactory
-      type: Func{EventStore.Core.TransactionLog.TFReaderLease}
+      type: System.Func{EventStore.Core.TransactionLog.TFReaderLease}
     - id: ptableVersion
       type: System.Byte
     - id: maxAutoMergeIndexLevel
@@ -262,7 +245,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, Func(Of EventStore.Core.Index.IMemTable), Func(Of EventStore.Core.TransactionLog.TFReaderLease), System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
+  fullName.vb: EventStore.Core.Index.TableIndex.TableIndex(System.String, EventStore.Core.Index.Hashes.IHasher, EventStore.Core.Index.Hashes.IHasher, System.Func(Of EventStore.Core.Index.IMemTable), System.Func(Of EventStore.Core.TransactionLog.TFReaderLease), System.Byte, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
   name.vb: TableIndex(String, IHasher, IHasher, Func(Of IMemTable), Func(Of TFReaderLease), Byte, Int32, Int32, Int32, Boolean, Boolean, Boolean, Int32, Int32)
 - uid: EventStore.Core.Index.TableIndex.Initialize(System.Int64)
   commentId: M:EventStore.Core.Index.TableIndex.Initialize(System.Int64)
@@ -276,12 +259,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.Initialize(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Initialize
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 110
   assemblies:
   - EventStore.Core
@@ -311,12 +290,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.Add(System.Int64, System.String, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Add
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 199
   assemblies:
   - EventStore.Core
@@ -340,24 +315,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Index.TableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
-  commentId: M:EventStore.Core.Index.TableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
-  id: AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+- uid: EventStore.Core.Index.TableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
+  commentId: M:EventStore.Core.Index.TableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
+  id: AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
   parent: EventStore.Core.Index.TableIndex
   langs:
   - csharp
   - vb
   name: AddEntries(Int64, IList<IndexKey>)
   nameWithType: TableIndex.AddEntries(Int64, IList<IndexKey>)
-  fullName: EventStore.Core.Index.TableIndex.AddEntries(System.Int64, IList<EventStore.Core.Index.IndexKey>)
+  fullName: EventStore.Core.Index.TableIndex.AddEntries(System.Int64, System.Collections.Generic.IList<EventStore.Core.Index.IndexKey>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddEntries
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 207
   assemblies:
   - EventStore.Core
@@ -368,17 +339,17 @@ items:
     - id: commitPos
       type: System.Int64
     - id: entries
-      type: IList{EventStore.Core.Index.IndexKey}
+      type: System.Collections.Generic.IList{EventStore.Core.Index.IndexKey}
     content.vb: Public Sub AddEntries(commitPos As Long, entries As IList(Of IndexKey))
   overload: EventStore.Core.Index.TableIndex.AddEntries*
   implements:
-  - EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+  - EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
   nameWithType.vb: TableIndex.AddEntries(Int64, IList(Of IndexKey))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Index.TableIndex.AddEntries(System.Int64, IList(Of EventStore.Core.Index.IndexKey))
+  fullName.vb: EventStore.Core.Index.TableIndex.AddEntries(System.Int64, System.Collections.Generic.IList(Of EventStore.Core.Index.IndexKey))
   name.vb: AddEntries(Int64, IList(Of IndexKey))
 - uid: EventStore.Core.Index.TableIndex.MergeIndexes
   commentId: M:EventStore.Core.Index.TableIndex.MergeIndexes
@@ -392,12 +363,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.MergeIndexes()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MergeIndexes
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 224
   assemblies:
   - EventStore.Core
@@ -405,7 +372,7 @@ items:
   syntax:
     content: public Task MergeIndexes()
     return:
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public Function MergeIndexes As Task
   overload: EventStore.Core.Index.TableIndex.MergeIndexes*
   implements:
@@ -426,12 +393,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsBackgroundTaskRunning
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 229
   assemblies:
   - EventStore.Core
@@ -463,12 +426,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.TryManualMerge()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryManualMerge
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 251
   assemblies:
   - EventStore.Core
@@ -481,24 +440,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
-  commentId: M:EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
-  id: Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+- uid: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
+  commentId: M:EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
+  id: Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
   parent: EventStore.Core.Index.TableIndex
   langs:
   - csharp
   - vb
   name: Scavenge(IIndexScavengerLog, CancellationToken)
   nameWithType: TableIndex.Scavenge(IIndexScavengerLog, CancellationToken)
-  fullName: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, CancellationToken)
+  fullName: EventStore.Core.Index.TableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, System.Threading.CancellationToken)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Scavenge
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 358
   assemblies:
   - EventStore.Core
@@ -509,11 +464,11 @@ items:
     - id: log
       type: EventStore.Core.Index.IIndexScavengerLog
     - id: ct
-      type: CancellationToken
+      type: System.Threading.CancellationToken
     content.vb: Public Sub Scavenge(log As IIndexScavengerLog, ct As CancellationToken)
   overload: EventStore.Core.Index.TableIndex.Scavenge*
   implements:
-  - EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  - EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -530,12 +485,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.TryGetOneValue(System.String, System.Int64, out System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOneValue
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 479
   assemblies:
   - EventStore.Core
@@ -574,12 +525,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.TryGetLatestEntry(System.String, out EventStore.Core.Index.IndexEntry)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetLatestEntry
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 517
   assemblies:
   - EventStore.Core
@@ -616,12 +563,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.TryGetOldestEntry(System.String, out EventStore.Core.Index.IndexEntry)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGetOldestEntry
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 552
   assemblies:
   - EventStore.Core
@@ -658,18 +601,14 @@ items:
   fullName: EventStore.Core.Index.TableIndex.GetRange(System.String, System.Int64, System.Int64, System.Nullable<System.Int32>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetRange
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 587
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Index
   syntax:
-    content: public IEnumerable<IndexEntry> GetRange(string streamId, long startVersion, long endVersion, int? limit = null)
+    content: public IEnumerable<IndexEntry> GetRange(string streamId, long startVersion, long endVersion, int? limit = default(int? ))
     parameters:
     - id: streamId
       type: System.String
@@ -680,7 +619,7 @@ items:
     - id: limit
       type: System.Nullable{System.Int32}
     return:
-      type: IEnumerable{EventStore.Core.Index.IndexEntry}
+      type: System.Collections.Generic.IEnumerable{EventStore.Core.Index.IndexEntry}
     content.vb: Public Function GetRange(streamId As String, startVersion As Long, endVersion As Long, limit As Integer? = Nothing) As IEnumerable(Of IndexEntry)
   overload: EventStore.Core.Index.TableIndex.GetRange*
   implements:
@@ -704,12 +643,8 @@ items:
   fullName: EventStore.Core.Index.TableIndex.Close(System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/TableIndex.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
-    path: ../EventStore/src/EventStore.Core/Index/TableIndex.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/TableIndex.cs
     startLine: 666
   assemblies:
   - EventStore.Core
@@ -746,6 +681,285 @@ references:
   name: ITableIndex
   nameWithType: ITableIndex
   fullName: EventStore.Core.Index.ITableIndex
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1158,20 +1372,21 @@ references:
   name: IHasher
   nameWithType: IHasher
   fullName: EventStore.Core.Index.Hashes.IHasher
-- uid: Func{EventStore.Core.Index.IMemTable}
-  commentId: '!:Func{EventStore.Core.Index.IMemTable}'
-  definition: Func`1
+- uid: System.Func{EventStore.Core.Index.IMemTable}
+  commentId: T:System.Func{EventStore.Core.Index.IMemTable}
+  parent: System
+  definition: System.Func`1
   name: Func<IMemTable>
   nameWithType: Func<IMemTable>
-  fullName: Func<EventStore.Core.Index.IMemTable>
+  fullName: System.Func<EventStore.Core.Index.IMemTable>
   nameWithType.vb: Func(Of IMemTable)
-  fullName.vb: Func(Of EventStore.Core.Index.IMemTable)
+  fullName.vb: System.Func(Of EventStore.Core.Index.IMemTable)
   name.vb: Func(Of IMemTable)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1184,10 +1399,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1199,20 +1414,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func{EventStore.Core.TransactionLog.TFReaderLease}
-  commentId: '!:Func{EventStore.Core.TransactionLog.TFReaderLease}'
-  definition: Func`1
+- uid: System.Func{EventStore.Core.TransactionLog.TFReaderLease}
+  commentId: T:System.Func{EventStore.Core.TransactionLog.TFReaderLease}
+  parent: System
+  definition: System.Func`1
   name: Func<TFReaderLease>
   nameWithType: Func<TFReaderLease>
-  fullName: Func<EventStore.Core.TransactionLog.TFReaderLease>
+  fullName: System.Func<EventStore.Core.TransactionLog.TFReaderLease>
   nameWithType.vb: Func(Of TFReaderLease)
-  fullName.vb: Func(Of EventStore.Core.TransactionLog.TFReaderLease)
+  fullName.vb: System.Func(Of EventStore.Core.TransactionLog.TFReaderLease)
   name.vb: Func(Of TFReaderLease)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1225,10 +1441,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1266,41 +1482,42 @@ references:
   name: EventStore.Core.Index.Hashes
   nameWithType: EventStore.Core.Index.Hashes
   fullName: EventStore.Core.Index.Hashes
-- uid: Func`1
+- uid: System.Func`1
+  commentId: T:System.Func`1
   isExternal: true
-  name: Func<>
-  nameWithType: Func<>
-  fullName: Func<>
-  nameWithType.vb: Func(Of )
-  fullName.vb: Func(Of )
-  name.vb: Func(Of )
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
@@ -1445,18 +1662,18 @@ references:
   name: AddEntries
   nameWithType: TableIndex.AddEntries
   fullName: EventStore.Core.Index.TableIndex.AddEntries
-- uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
-  commentId: M:EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+- uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
+  commentId: M:EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
   parent: EventStore.Core.Index.ITableIndex
   isExternal: true
   name: AddEntries(Int64, IList<IndexKey>)
   nameWithType: ITableIndex.AddEntries(Int64, IList<IndexKey>)
-  fullName: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64, IList<EventStore.Core.Index.IndexKey>)
+  fullName: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64, System.Collections.Generic.IList<EventStore.Core.Index.IndexKey>)
   nameWithType.vb: ITableIndex.AddEntries(Int64, IList(Of IndexKey))
-  fullName.vb: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64, IList(Of EventStore.Core.Index.IndexKey))
+  fullName.vb: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64, System.Collections.Generic.IList(Of EventStore.Core.Index.IndexKey))
   name.vb: AddEntries(Int64, IList(Of IndexKey))
   spec.csharp:
-  - uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+  - uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
     name: AddEntries
     nameWithType: ITableIndex.AddEntries
     fullName: EventStore.Core.Index.ITableIndex.AddEntries
@@ -1471,10 +1688,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
@@ -1490,7 +1707,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,IList{EventStore.Core.Index.IndexKey})
+  - uid: EventStore.Core.Index.ITableIndex.AddEntries(System.Int64,System.Collections.Generic.IList{EventStore.Core.Index.IndexKey})
     name: AddEntries
     nameWithType: ITableIndex.AddEntries
     fullName: EventStore.Core.Index.ITableIndex.AddEntries
@@ -1505,10 +1722,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1523,20 +1740,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IList{EventStore.Core.Index.IndexKey}
-  commentId: '!:IList{EventStore.Core.Index.IndexKey}'
-  definition: IList`1
+- uid: System.Collections.Generic.IList{EventStore.Core.Index.IndexKey}
+  commentId: T:System.Collections.Generic.IList{EventStore.Core.Index.IndexKey}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
   name: IList<IndexKey>
   nameWithType: IList<IndexKey>
-  fullName: IList<EventStore.Core.Index.IndexKey>
+  fullName: System.Collections.Generic.IList<EventStore.Core.Index.IndexKey>
   nameWithType.vb: IList(Of IndexKey)
-  fullName.vb: IList(Of EventStore.Core.Index.IndexKey)
+  fullName.vb: System.Collections.Generic.IList(Of EventStore.Core.Index.IndexKey)
   name.vb: IList(Of IndexKey)
   spec.csharp:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
@@ -1549,10 +1767,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1564,44 +1782,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IList`1
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
   isExternal: true
-  name: IList<>
-  nameWithType: IList<>
-  fullName: IList<>
-  nameWithType.vb: IList(Of )
-  fullName.vb: IList(Of )
-  name.vb: IList(Of )
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
   spec.csharp:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Index.TableIndex.MergeIndexes*
   commentId: Overload:EventStore.Core.Index.TableIndex.MergeIndexes
   name: MergeIndexes
@@ -1635,11 +1860,19 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Task
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning*
   commentId: Overload:EventStore.Core.Index.TableIndex.IsBackgroundTaskRunning
   name: IsBackgroundTaskRunning
@@ -1661,15 +1894,15 @@ references:
   name: Scavenge
   nameWithType: TableIndex.Scavenge
   fullName: EventStore.Core.Index.TableIndex.Scavenge
-- uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
-  commentId: M:EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+- uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
+  commentId: M:EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
   parent: EventStore.Core.Index.ITableIndex
   isExternal: true
   name: Scavenge(IIndexScavengerLog, CancellationToken)
   nameWithType: ITableIndex.Scavenge(IIndexScavengerLog, CancellationToken)
-  fullName: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, CancellationToken)
+  fullName: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog, System.Threading.CancellationToken)
   spec.csharp:
-  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
     name: Scavenge
     nameWithType: ITableIndex.Scavenge
     fullName: EventStore.Core.Index.ITableIndex.Scavenge
@@ -1683,16 +1916,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CancellationToken
+  - uid: System.Threading.CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: CancellationToken
+    fullName: System.Threading.CancellationToken
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,CancellationToken)
+  - uid: EventStore.Core.Index.ITableIndex.Scavenge(EventStore.Core.Index.IIndexScavengerLog,System.Threading.CancellationToken)
     name: Scavenge
     nameWithType: ITableIndex.Scavenge
     fullName: EventStore.Core.Index.ITableIndex.Scavenge
@@ -1706,10 +1939,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CancellationToken
+  - uid: System.Threading.CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: CancellationToken
+    fullName: System.Threading.CancellationToken
     isExternal: true
   - name: )
     nameWithType: )
@@ -1720,11 +1953,19 @@ references:
   name: IIndexScavengerLog
   nameWithType: IIndexScavengerLog
   fullName: EventStore.Core.Index.IIndexScavengerLog
-- uid: CancellationToken
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
   isExternal: true
   name: CancellationToken
   nameWithType: CancellationToken
-  fullName: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
 - uid: EventStore.Core.Index.TableIndex.TryGetOneValue*
   commentId: Overload:EventStore.Core.Index.TableIndex.TryGetOneValue
   name: TryGetOneValue
@@ -2041,7 +2282,8 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable{System.Int32}
-  commentId: '!:System.Nullable{System.Int32}'
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int32>
   nameWithType: Nullable<Int32>
@@ -2083,20 +2325,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable{EventStore.Core.Index.IndexEntry}
-  commentId: '!:IEnumerable{EventStore.Core.Index.IndexEntry}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{EventStore.Core.Index.IndexEntry}
+  commentId: T:System.Collections.Generic.IEnumerable{EventStore.Core.Index.IndexEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<IndexEntry>
   nameWithType: IEnumerable<IndexEntry>
-  fullName: IEnumerable<EventStore.Core.Index.IndexEntry>
+  fullName: System.Collections.Generic.IEnumerable<EventStore.Core.Index.IndexEntry>
   nameWithType.vb: IEnumerable(Of IndexEntry)
-  fullName.vb: IEnumerable(Of EventStore.Core.Index.IndexEntry)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EventStore.Core.Index.IndexEntry)
   name.vb: IEnumerable(Of IndexEntry)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -2109,10 +2352,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2163,41 +2406,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

@@ -5,7 +5,7 @@ items:
   id: DefaultV8ProjectionStateHandler
   parent: EventStore.Projections.Core.Services.v8
   children:
-  - EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,Action{System.String,System.Object[]},Action{System.Int32,Action})
+  - EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,System.Action{System.String,System.Object[]},System.Action{System.Int32,System.Action})
   - EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource(System.String)
   langs:
   - csharp
@@ -15,12 +15,8 @@ items:
   fullName: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DefaultV8ProjectionStateHandler
-    path: ../EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
     startLine: 6
   assemblies:
   - EventStore.Projections.Core
@@ -36,7 +32,7 @@ items:
   - EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler
   implements:
   - EventStore.Projections.Core.Services.IProjectionStateHandler
-  - IDisposable
+  - System.IDisposable
   - EventStore.Projections.Core.Services.ISourceDefinitionSource
   inheritedMembers:
   - EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler.Load(System.String)
@@ -51,10 +47,19 @@ items:
   - EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler.TransformStateToResult
   - EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler.Dispose
   - EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler.GetSourceDefinition
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Services.IProjectionStateHandler.EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  - EventStore.Projections.Core.Services.IProjectionStateHandler.EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
   - EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -63,24 +68,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,Action{System.String,System.Object[]},Action{System.Int32,Action})
-  commentId: M:EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,Action{System.String,System.Object[]},Action{System.Int32,Action})
-  id: '#ctor(System.String,Action{System.String,System.Object[]},Action{System.Int32,Action})'
+- uid: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,System.Action{System.String,System.Object[]},System.Action{System.Int32,System.Action})
+  commentId: M:EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor(System.String,System.Action{System.String,System.Object[]},System.Action{System.Int32,System.Action})
+  id: '#ctor(System.String,System.Action{System.String,System.Object[]},System.Action{System.Int32,System.Action})'
   parent: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler
   langs:
   - csharp
   - vb
   name: DefaultV8ProjectionStateHandler(String, Action<String, Object[]>, Action<Int32, Action>)
   nameWithType: DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(String, Action<String, Object[]>, Action<Int32, Action>)
-  fullName: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(System.String, Action<System.String, System.Object[]>, Action<System.Int32, Action>)
+  fullName: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(System.String, System.Action<System.String, System.Object[]>, System.Action<System.Int32, System.Action>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
@@ -91,9 +92,9 @@ items:
     - id: query
       type: System.String
     - id: logger
-      type: Action{System.String,System.Object[]}
+      type: System.Action{System.String,System.Object[]}
     - id: cancelCallbackFactory
-      type: Action{System.Int32,Action}
+      type: System.Action{System.Int32,System.Action}
     content.vb: Public Sub New(query As String, logger As Action(Of String, Object()), cancelCallbackFactory As Action(Of Integer, Action))
   overload: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.#ctor*
   nameWithType.vb: DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(String, Action(Of String, Object()), Action(Of Int32, Action))
@@ -101,7 +102,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(System.String, Action(Of System.String, System.Object()), Action(Of System.Int32, Action))
+  fullName.vb: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.DefaultV8ProjectionStateHandler(System.String, System.Action(Of System.String, System.Object()), System.Action(Of System.Int32, System.Action))
   name.vb: DefaultV8ProjectionStateHandler(String, Action(Of String, Object()), Action(Of Int32, Action))
 - uid: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource(System.String)
   commentId: M:EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource(System.String)
@@ -115,12 +116,8 @@ items:
   fullName: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetModuleSource
-    path: ../EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/v8/DefaultV8ProjectionStateHandler.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
@@ -131,7 +128,7 @@ items:
     - id: name
       type: System.String
     return:
-      type: Tuple{System.String,System.String}
+      type: System.Tuple{System.String,System.String}
     content.vb: Public Shared Function GetModuleSource(name As String) As Tuple(Of String, String)
   overload: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource*
   modifiers.csharp:
@@ -165,11 +162,13 @@ references:
   name: IProjectionStateHandler
   nameWithType: IProjectionStateHandler
   fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
-- uid: IDisposable
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
   isExternal: true
   name: IDisposable
   nameWithType: IDisposable
-  fullName: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Projections.Core.Services.ISourceDefinitionSource
   commentId: T:EventStore.Projections.Core.Services.ISourceDefinitionSource
   parent: EventStore.Projections.Core.Services
@@ -808,6 +807,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -892,6 +1170,462 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.IProjectionStateHandler.EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  parent: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  definition: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  name: ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope(), Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope(), Boolean)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.IProjectionStateHandler.EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  parent: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  definition: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  name: ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope(), Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope(), Boolean)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -1090,6 +1824,494 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  isExternal: true
+  name: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope(), Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, EmittedEventEnvelope(), Boolean)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+    name: IProjectionStateHandler
+    nameWithType: IProjectionStateHandler
+    fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+    name: IProjectionStateHandler
+    nameWithType: IProjectionStateHandler
+    fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  commentId: T:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+  parent: EventStore.Projections.Core.Services
+  name: ProjectionStateHandlerTestExtensions
+  nameWithType: ProjectionStateHandlerTestExtensions
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+- uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+  isExternal: true
+  name: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope[], Boolean)
+  nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope[], Boolean)
+  fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], System.Boolean)
+  nameWithType.vb: ProjectionStateHandlerTestExtensions.ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope(), Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.String, System.String, System.String, System.Guid, System.Int64, System.String, System.String, System.String, System.String, EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), System.Boolean)
+  name.vb: ProcessEvent(IProjectionStateHandler, String, CheckpointTag, String, String, String, Guid, Int64, String, String, String, String, EmittedEventEnvelope(), Boolean)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+    name: IProjectionStateHandler
+    nameWithType: IProjectionStateHandler
+    fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent(EventStore.Projections.Core.Services.IProjectionStateHandler,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.String,System.String,System.String,System.Guid,System.Int64,System.String,System.String,System.String@,System.String@,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]@,System.Boolean)
+    name: ProcessEvent
+    nameWithType: ProjectionStateHandlerTestExtensions.ProcessEvent
+    fullName: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions.ProcessEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+    name: IProjectionStateHandler
+    nameWithType: IProjectionStateHandler
+    fullName: EventStore.Projections.Core.Services.IProjectionStateHandler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   name: Serialize<T>(T)
@@ -1190,20 +2412,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Action{System.String,System.Object[]}
-  commentId: '!:Action{System.String,System.Object[]}'
-  definition: Action`2
+- uid: System.Action{System.String,System.Object[]}
+  commentId: T:System.Action{System.String,System.Object[]}
+  parent: System
+  definition: System.Action`2
   name: Action<String, Object[]>
   nameWithType: Action<String, Object[]>
-  fullName: Action<System.String, System.Object[]>
+  fullName: System.Action<System.String, System.Object[]>
   nameWithType.vb: Action(Of String, Object())
-  fullName.vb: Action(Of System.String, System.Object())
+  fullName.vb: System.Action(Of System.String, System.Object())
   name.vb: Action(Of String, Object())
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1228,10 +2451,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1255,20 +2478,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{System.Int32,Action}
-  commentId: '!:Action{System.Int32,Action}'
-  definition: Action`2
+- uid: System.Action{System.Int32,System.Action}
+  commentId: T:System.Action{System.Int32,System.Action}
+  parent: System
+  definition: System.Action`2
   name: Action<Int32, Action>
   nameWithType: Action<Int32, Action>
-  fullName: Action<System.Int32, Action>
+  fullName: System.Action<System.Int32, System.Action>
   nameWithType.vb: Action(Of Int32, Action)
-  fullName.vb: Action(Of System.Int32, Action)
+  fullName.vb: System.Action(Of System.Int32, System.Action)
   name.vb: Action(Of Int32, Action)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1281,19 +2505,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1306,61 +2530,62 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
@@ -1369,20 +2594,21 @@ references:
   name: GetModuleSource
   nameWithType: DefaultV8ProjectionStateHandler.GetModuleSource
   fullName: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler.GetModuleSource
-- uid: Tuple{System.String,System.String}
-  commentId: '!:Tuple{System.String,System.String}'
-  definition: Tuple`2
+- uid: System.Tuple{System.String,System.String}
+  commentId: T:System.Tuple{System.String,System.String}
+  parent: System
+  definition: System.Tuple`2
   name: Tuple<String, String>
   nameWithType: Tuple<String, String>
-  fullName: Tuple<System.String, System.String>
+  fullName: System.Tuple<System.String, System.String>
   nameWithType.vb: Tuple(Of String, String)
-  fullName.vb: Tuple(Of System.String, System.String)
+  fullName.vb: System.Tuple(Of System.String, System.String)
   name.vb: Tuple(Of String, String)
   spec.csharp:
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: <
     nameWithType: <
@@ -1404,10 +2630,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1428,53 +2654,54 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Tuple`2
+- uid: System.Tuple`2
+  commentId: T:System.Tuple`2
   isExternal: true
-  name: Tuple<, >
-  nameWithType: Tuple<, >
-  fullName: Tuple<, >
-  nameWithType.vb: Tuple(Of , )
-  fullName.vb: Tuple(Of , )
-  name.vb: Tuple(Of , )
+  name: Tuple<T1, T2>
+  nameWithType: Tuple<T1, T2>
+  fullName: System.Tuple<T1, T2>
+  nameWithType.vb: Tuple(Of T1, T2)
+  fullName.vb: System.Tuple(Of T1, T2)
+  name.vb: Tuple(Of T1, T2)
   spec.csharp:
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )

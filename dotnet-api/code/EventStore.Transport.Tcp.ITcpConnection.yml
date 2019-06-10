@@ -9,11 +9,11 @@ items:
   - EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
   - EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
   - EventStore.Transport.Tcp.ITcpConnection.ConnectionId
-  - EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   - EventStore.Transport.Tcp.ITcpConnection.IsClosed
   - EventStore.Transport.Tcp.ITcpConnection.LocalEndPoint
   - EventStore.Transport.Tcp.ITcpConnection.PendingSendBytes
-  - EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+  - EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}})
   - EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint
   - EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
   - EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
@@ -25,12 +25,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ITcpConnection
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 6
   assemblies:
   - EventStore.Transport.Tcp
@@ -62,12 +58,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.ConnectionClosed
   type: Event
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionClosed
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 7
   assemblies:
   - EventStore.Transport.Tcp
@@ -75,7 +67,7 @@ items:
   syntax:
     content: event Action<ITcpConnection, SocketError> ConnectionClosed
     return:
-      type: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
     content.vb: Event ConnectionClosed As Action(Of ITcpConnection, SocketError)
 - uid: EventStore.Transport.Tcp.ITcpConnection.ConnectionId
   commentId: P:EventStore.Transport.Tcp.ITcpConnection.ConnectionId
@@ -89,12 +81,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.ConnectionId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionId
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 9
   assemblies:
   - EventStore.Transport.Tcp
@@ -103,7 +91,7 @@ items:
     content: Guid ConnectionId { get; }
     parameters: []
     return:
-      type: Guid
+      type: System.Guid
     content.vb: ReadOnly Property ConnectionId As Guid
   overload: EventStore.Transport.Tcp.ITcpConnection.ConnectionId*
   modifiers.csharp:
@@ -122,12 +110,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClientConnectionName
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 10
   assemblies:
   - EventStore.Transport.Tcp
@@ -155,12 +139,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoteEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Tcp
@@ -169,7 +149,7 @@ items:
     content: IPEndPoint RemoteEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: ReadOnly Property RemoteEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint*
   modifiers.csharp:
@@ -188,12 +168,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.LocalEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LocalEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 12
   assemblies:
   - EventStore.Transport.Tcp
@@ -202,7 +178,7 @@ items:
     content: IPEndPoint LocalEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: ReadOnly Property LocalEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.ITcpConnection.LocalEndPoint*
   modifiers.csharp:
@@ -221,12 +197,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.SendQueueSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendQueueSize
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 13
   assemblies:
   - EventStore.Transport.Tcp
@@ -254,12 +226,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.PendingSendBytes
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingSendBytes
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 14
   assemblies:
   - EventStore.Transport.Tcp
@@ -287,12 +255,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.IsClosed
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsClosed
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 15
   assemblies:
   - EventStore.Transport.Tcp
@@ -308,24 +272,20 @@ items:
   - get
   modifiers.vb:
   - ReadOnly
-- uid: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
-  commentId: M:EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
-  id: ReceiveAsync(Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}})
+- uid: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}})
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}})
+  id: ReceiveAsync(System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}})
   parent: EventStore.Transport.Tcp.ITcpConnection
   langs:
   - csharp
   - vb
   name: ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
   nameWithType: ITcpConnection.ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>)
-  fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action<EventStore.Transport.Tcp.ITcpConnection, IEnumerable<ArraySegment<System.Byte>>>)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceiveAsync
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 17
   assemblies:
   - EventStore.Transport.Tcp
@@ -334,30 +294,26 @@ items:
     content: void ReceiveAsync(Action<ITcpConnection, IEnumerable<ArraySegment<byte>>> callback)
     parameters:
     - id: callback
-      type: Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}}
     content.vb: Sub ReceiveAsync(callback As Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
   overload: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync*
   nameWithType.vb: ITcpConnection.ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
-  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(Action(Of EventStore.Transport.Tcp.ITcpConnection, IEnumerable(Of ArraySegment(Of System.Byte))))
+  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync(System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))))
   name.vb: ReceiveAsync(Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte))))
-- uid: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
-  id: EnqueueSend(IEnumerable{ArraySegment{System.Byte}})
+- uid: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  id: EnqueueSend(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   parent: EventStore.Transport.Tcp.ITcpConnection
   langs:
   - csharp
   - vb
   name: EnqueueSend(IEnumerable<ArraySegment<Byte>>)
   nameWithType: ITcpConnection.EnqueueSend(IEnumerable<ArraySegment<Byte>>)
-  fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable<ArraySegment<System.Byte>>)
+  fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnqueueSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 18
   assemblies:
   - EventStore.Transport.Tcp
@@ -366,11 +322,11 @@ items:
     content: void EnqueueSend(IEnumerable<ArraySegment<byte>> data)
     parameters:
     - id: data
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
     content.vb: Sub EnqueueSend(data As IEnumerable(Of ArraySegment(Of Byte)))
   overload: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend*
   nameWithType.vb: ITcpConnection.EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
-  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend(System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: EnqueueSend(IEnumerable(Of ArraySegment(Of Byte)))
 - uid: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
   commentId: M:EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
@@ -384,12 +340,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.Close(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 19
   assemblies:
   - EventStore.Transport.Tcp
@@ -413,12 +365,8 @@ items:
   fullName: EventStore.Transport.Tcp.ITcpConnection.SetClientConnectionName(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/ITcpConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetClientConnectionName
-    path: ../EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/ITcpConnection.cs
     startLine: 20
   assemblies:
   - EventStore.Transport.Tcp
@@ -795,20 +743,21 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
-  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}'
-  definition: Action`2
+- uid: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
+  commentId: T:System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
+  parent: System
+  definition: System.Action`2
   name: Action<ITcpConnection, SocketError>
   nameWithType: Action<ITcpConnection, SocketError>
-  fullName: Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>
+  fullName: System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError>
   nameWithType.vb: Action(Of ITcpConnection, SocketError)
-  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError)
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError)
   name.vb: Action(Of ITcpConnection, SocketError)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -820,19 +769,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -844,74 +793,83 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Transport.Tcp.ITcpConnection.ConnectionId*
   commentId: Overload:EventStore.Transport.Tcp.ITcpConnection.ConnectionId
   name: ConnectionId
   nameWithType: ITcpConnection.ConnectionId
   fullName: EventStore.Transport.Tcp.ITcpConnection.ConnectionId
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName*
   commentId: Overload:EventStore.Transport.Tcp.ITcpConnection.ClientConnectionName
   name: ClientConnectionName
@@ -924,22 +882,24 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint*
   commentId: Overload:EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint
   name: RemoteEndPoint
   nameWithType: ITcpConnection.RemoteEndPoint
   fullName: EventStore.Transport.Tcp.ITcpConnection.RemoteEndPoint
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Transport.Tcp.ITcpConnection.LocalEndPoint*
   commentId: Overload:EventStore.Transport.Tcp.ITcpConnection.LocalEndPoint
   name: LocalEndPoint
@@ -979,20 +939,21 @@ references:
   name: ReceiveAsync
   nameWithType: ITcpConnection.ReceiveAsync
   fullName: EventStore.Transport.Tcp.ITcpConnection.ReceiveAsync
-- uid: Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}
-  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection,IEnumerable{ArraySegment{System.Byte}}}'
-  definition: Action`2
+- uid: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}}
+  commentId: T:System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}}
+  parent: System
+  definition: System.Action`2
   name: Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>
   nameWithType: Action<ITcpConnection, IEnumerable<ArraySegment<Byte>>>
-  fullName: Action<EventStore.Transport.Tcp.ITcpConnection, IEnumerable<ArraySegment<System.Byte>>>
+  fullName: System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>>
   nameWithType.vb: Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte)))
-  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection, IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: Action(Of ITcpConnection, IEnumerable(Of ArraySegment(Of Byte)))
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1004,18 +965,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1035,10 +996,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1050,18 +1011,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1085,28 +1046,29 @@ references:
   name: EnqueueSend
   nameWithType: ITcpConnection.EnqueueSend
   fullName: EventStore.Transport.Tcp.ITcpConnection.EnqueueSend
-- uid: IEnumerable{ArraySegment{System.Byte}}
-  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ArraySegment<Byte>>
   nameWithType: IEnumerable<ArraySegment<Byte>>
-  fullName: IEnumerable<ArraySegment<System.Byte>>
+  fullName: System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>
   nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
-  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))
   name.vb: IEnumerable(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1123,18 +1085,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1150,44 +1112,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Transport.Tcp.ITcpConnection.Close*
   commentId: Overload:EventStore.Transport.Tcp.ITcpConnection.Close
   name: Close

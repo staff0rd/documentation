@@ -21,26 +21,29 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TFChunkReader
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 7
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: 'public class TFChunkReader : object, ITransactionFileReader'
+    content: 'public class TFChunkReader : ITransactionFileReader'
     content.vb: >-
       Public Class TFChunkReader
-          Inherits Object
           Implements ITransactionFileReader
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.TransactionLog.ITransactionFileReader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -65,21 +68,17 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.MaxRetries
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxRetries
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 11
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public const int MaxRetries = null
+    content: public const int MaxRetries = 20
     return:
       type: System.Int32
-    content.vb: Public Const MaxRetries As Integer = Nothing
+    content.vb: Public Const MaxRetries As Integer = 20
   modifiers.csharp:
   - public
   - const
@@ -98,12 +97,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.CurrentPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CurrentPosition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -133,18 +128,14 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TFChunkReader(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.Int64, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks
   syntax:
-    content: public TFChunkReader(TFChunkDb db, ICheckpoint writerCheckpoint, long initialPosition = null, bool optimizeReadSideCache = false)
+    content: public TFChunkReader(TFChunkDb db, ICheckpoint writerCheckpoint, long initialPosition = 0L, bool optimizeReadSideCache = false)
     parameters:
     - id: db
       type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
@@ -154,7 +145,7 @@ items:
       type: System.Int64
     - id: optimizeReadSideCache
       type: System.Boolean
-    content.vb: Public Sub New(db As TFChunkDb, writerCheckpoint As ICheckpoint, initialPosition As Long = Nothing, optimizeReadSideCache As Boolean = False)
+    content.vb: Public Sub New(db As TFChunkDb, writerCheckpoint As ICheckpoint, initialPosition As Long = 0L, optimizeReadSideCache As Boolean = False)
   overload: EventStore.Core.TransactionLog.Chunks.TFChunkReader.#ctor*
   modifiers.csharp:
   - public
@@ -172,12 +163,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.Reposition(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reposition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 38
   assemblies:
   - EventStore.Core
@@ -207,12 +194,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TryReadNext()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadNext
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 42
   assemblies:
   - EventStore.Core
@@ -241,12 +224,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TryReadPrev()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadPrev
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 81
   assemblies:
   - EventStore.Core
@@ -275,12 +254,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.TryReadAt(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 137
   assemblies:
   - EventStore.Core
@@ -312,12 +287,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunkReader.ExistsAt(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExistsAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunkReader.cs
     startLine: 158
   assemblies:
   - EventStore.Core
@@ -356,6 +327,285 @@ references:
   name: ITransactionFileReader
   nameWithType: ITransactionFileReader
   fullName: EventStore.Core.TransactionLog.ITransactionFileReader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json

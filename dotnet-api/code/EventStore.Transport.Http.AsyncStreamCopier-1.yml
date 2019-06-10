@@ -5,7 +5,7 @@ items:
   id: AsyncStreamCopier`1
   parent: EventStore.Transport.Http
   children:
-  - EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(Stream,Stream,`0,Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
+  - EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(System.IO.Stream,System.IO.Stream,`0,System.Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
   - EventStore.Transport.Http.AsyncStreamCopier`1.AsyncState
   - EventStore.Transport.Http.AsyncStreamCopier`1.Error
   - EventStore.Transport.Http.AsyncStreamCopier`1.Start
@@ -17,25 +17,27 @@ items:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncStreamCopier.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AsyncStreamCopier
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
     startLine: 5
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http
   syntax:
-    content: 'public class AsyncStreamCopier<T> : object'
+    content: public class AsyncStreamCopier<T>
     typeParameters:
     - id: T
-    content.vb: >-
-      Public Class AsyncStreamCopier(Of T)
-          Inherits Object
+    content.vb: Public Class AsyncStreamCopier(Of T)
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -63,12 +65,8 @@ items:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.Error
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncStreamCopier.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Error
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
     startLine: 6
   assemblies:
   - EventStore.Transport.Http
@@ -77,7 +75,7 @@ items:
     content: public Exception Error { get; }
     parameters: []
     return:
-      type: Exception
+      type: System.Exception
     content.vb: Public ReadOnly Property Error As Exception
   overload: EventStore.Transport.Http.AsyncStreamCopier`1.Error*
   nameWithType.vb: AsyncStreamCopier(Of T).Error
@@ -100,12 +98,8 @@ items:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.AsyncState
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncStreamCopier.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AsyncState
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
     startLine: 7
   assemblies:
   - EventStore.Transport.Http
@@ -123,24 +117,20 @@ items:
   - Public
   - ReadOnly
   fullName.vb: EventStore.Transport.Http.AsyncStreamCopier(Of T).AsyncState
-- uid: EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(Stream,Stream,`0,Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
-  commentId: M:EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(Stream,Stream,`0,Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
-  id: '#ctor(Stream,Stream,`0,Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})'
+- uid: EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(System.IO.Stream,System.IO.Stream,`0,System.Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
+  commentId: M:EventStore.Transport.Http.AsyncStreamCopier`1.#ctor(System.IO.Stream,System.IO.Stream,`0,System.Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})
+  id: '#ctor(System.IO.Stream,System.IO.Stream,`0,System.Action{EventStore.Transport.Http.AsyncStreamCopier{`0}})'
   parent: EventStore.Transport.Http.AsyncStreamCopier`1
   langs:
   - csharp
   - vb
   name: AsyncStreamCopier(Stream, Stream, T, Action<AsyncStreamCopier<T>>)
   nameWithType: AsyncStreamCopier<T>.AsyncStreamCopier(Stream, Stream, T, Action<AsyncStreamCopier<T>>)
-  fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.AsyncStreamCopier(Stream, Stream, T, Action<EventStore.Transport.Http.AsyncStreamCopier<T>>)
+  fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.AsyncStreamCopier(System.IO.Stream, System.IO.Stream, T, System.Action<EventStore.Transport.Http.AsyncStreamCopier<T>>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncStreamCopier.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
     startLine: 14
   assemblies:
   - EventStore.Transport.Http
@@ -149,13 +139,13 @@ items:
     content: public AsyncStreamCopier(Stream input, Stream output, T state, Action<AsyncStreamCopier<T>> onCompleted)
     parameters:
     - id: input
-      type: Stream
+      type: System.IO.Stream
     - id: output
-      type: Stream
+      type: System.IO.Stream
     - id: state
       type: '{T}'
     - id: onCompleted
-      type: Action{EventStore.Transport.Http.AsyncStreamCopier`1}
+      type: System.Action{EventStore.Transport.Http.AsyncStreamCopier`1}
     content.vb: Public Sub New(input As Stream, output As Stream, state As T, onCompleted As Action(Of AsyncStreamCopier(Of T)))
   overload: EventStore.Transport.Http.AsyncStreamCopier`1.#ctor*
   nameWithType.vb: AsyncStreamCopier(Of T).AsyncStreamCopier(Stream, Stream, T, Action(Of AsyncStreamCopier(Of T)))
@@ -163,7 +153,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Http.AsyncStreamCopier(Of T).AsyncStreamCopier(Stream, Stream, T, Action(Of EventStore.Transport.Http.AsyncStreamCopier(Of T)))
+  fullName.vb: EventStore.Transport.Http.AsyncStreamCopier(Of T).AsyncStreamCopier(System.IO.Stream, System.IO.Stream, T, System.Action(Of EventStore.Transport.Http.AsyncStreamCopier(Of T)))
   name.vb: AsyncStreamCopier(Stream, Stream, T, Action(Of AsyncStreamCopier(Of T)))
 - uid: EventStore.Transport.Http.AsyncStreamCopier`1.Start
   commentId: M:EventStore.Transport.Http.AsyncStreamCopier`1.Start
@@ -177,12 +167,8 @@ items:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.Start()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/AsyncStreamCopier.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/AsyncStreamCopier.cs
     startLine: 27
   assemblies:
   - EventStore.Transport.Http
@@ -210,6 +196,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -582,11 +847,13 @@ references:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.Error
   nameWithType.vb: AsyncStreamCopier(Of T).Error
   fullName.vb: EventStore.Transport.Http.AsyncStreamCopier(Of T).Error
-- uid: Exception
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
   isExternal: true
   name: Exception
   nameWithType: Exception
-  fullName: Exception
+  fullName: System.Exception
 - uid: '{T}'
   commentId: '!:T'
   definition: T
@@ -604,25 +871,28 @@ references:
   fullName: EventStore.Transport.Http.AsyncStreamCopier<T>.AsyncStreamCopier
   nameWithType.vb: AsyncStreamCopier(Of T).AsyncStreamCopier
   fullName.vb: EventStore.Transport.Http.AsyncStreamCopier(Of T).AsyncStreamCopier
-- uid: Stream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
   isExternal: true
   name: Stream
   nameWithType: Stream
-  fullName: Stream
-- uid: Action{EventStore.Transport.Http.AsyncStreamCopier`1}
-  commentId: '!:Action{EventStore.Transport.Http.AsyncStreamCopier`1}'
-  definition: Action`1
+  fullName: System.IO.Stream
+- uid: System.Action{EventStore.Transport.Http.AsyncStreamCopier`1}
+  commentId: T:System.Action{EventStore.Transport.Http.AsyncStreamCopier`1}
+  parent: System
+  definition: System.Action`1
   name: Action<AsyncStreamCopier<T>>
   nameWithType: Action<AsyncStreamCopier<T>>
-  fullName: Action<EventStore.Transport.Http.AsyncStreamCopier<T>>
+  fullName: System.Action<EventStore.Transport.Http.AsyncStreamCopier<T>>
   nameWithType.vb: Action(Of AsyncStreamCopier(Of T))
-  fullName.vb: Action(Of EventStore.Transport.Http.AsyncStreamCopier(Of T))
+  fullName.vb: System.Action(Of EventStore.Transport.Http.AsyncStreamCopier(Of T))
   name.vb: Action(Of AsyncStreamCopier(Of T))
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -644,10 +914,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -668,41 +938,48 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.IO
+  commentId: N:System.IO
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

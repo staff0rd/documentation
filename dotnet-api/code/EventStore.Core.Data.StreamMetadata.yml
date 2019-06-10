@@ -5,13 +5,13 @@ items:
   id: StreamMetadata
   parent: EventStore.Core.Data
   children:
-  - EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{TimeSpan},EventStore.Core.Data.StreamAcl)
+  - EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{System.TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{System.TimeSpan},EventStore.Core.Data.StreamAcl)
   - EventStore.Core.Data.StreamMetadata.Acl
   - EventStore.Core.Data.StreamMetadata.CacheControl
   - EventStore.Core.Data.StreamMetadata.Empty
   - EventStore.Core.Data.StreamMetadata.FromJson(System.String)
   - EventStore.Core.Data.StreamMetadata.FromJsonBytes(System.Byte[])
-  - EventStore.Core.Data.StreamMetadata.FromJsonReader(JsonTextReader)
+  - EventStore.Core.Data.StreamMetadata.FromJsonReader(Newtonsoft.Json.JsonTextReader)
   - EventStore.Core.Data.StreamMetadata.MaxAge
   - EventStore.Core.Data.StreamMetadata.MaxCount
   - EventStore.Core.Data.StreamMetadata.TempStream
@@ -27,23 +27,24 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamMetadata
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Data
   syntax:
-    content: 'public class StreamMetadata : object'
-    content.vb: >-
-      Public Class StreamMetadata
-          Inherits Object
+    content: public class StreamMetadata
+    content.vb: Public Class StreamMetadata
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -68,12 +69,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.Empty
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Empty
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -103,12 +100,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.MaxCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxCount
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 12
   assemblies:
   - EventStore.Core
@@ -136,12 +129,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.MaxAge
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxAge
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -149,7 +138,7 @@ items:
   syntax:
     content: public readonly TimeSpan? MaxAge
     return:
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public ReadOnly MaxAge As TimeSpan?
   modifiers.csharp:
   - public
@@ -169,12 +158,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.TruncateBefore
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TruncateBefore
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -202,12 +187,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.TempStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TempStream
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 16
   assemblies:
   - EventStore.Core
@@ -235,12 +216,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.CacheControl
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CacheControl
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 18
   assemblies:
   - EventStore.Core
@@ -248,7 +225,7 @@ items:
   syntax:
     content: public readonly TimeSpan? CacheControl
     return:
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public ReadOnly CacheControl As TimeSpan?
   modifiers.csharp:
   - public
@@ -268,12 +245,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.Acl
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Acl
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 19
   assemblies:
   - EventStore.Core
@@ -289,41 +262,37 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{TimeSpan},EventStore.Core.Data.StreamAcl)
-  commentId: M:EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{TimeSpan},EventStore.Core.Data.StreamAcl)
-  id: '#ctor(System.Nullable{System.Int64},System.Nullable{TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{TimeSpan},EventStore.Core.Data.StreamAcl)'
+- uid: EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{System.TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{System.TimeSpan},EventStore.Core.Data.StreamAcl)
+  commentId: M:EventStore.Core.Data.StreamMetadata.#ctor(System.Nullable{System.Int64},System.Nullable{System.TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{System.TimeSpan},EventStore.Core.Data.StreamAcl)
+  id: '#ctor(System.Nullable{System.Int64},System.Nullable{System.TimeSpan},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{System.TimeSpan},EventStore.Core.Data.StreamAcl)'
   parent: EventStore.Core.Data.StreamMetadata
   langs:
   - csharp
   - vb
   name: StreamMetadata(Nullable<Int64>, Nullable<TimeSpan>, Nullable<Int64>, Nullable<Boolean>, Nullable<TimeSpan>, StreamAcl)
   nameWithType: StreamMetadata.StreamMetadata(Nullable<Int64>, Nullable<TimeSpan>, Nullable<Int64>, Nullable<Boolean>, Nullable<TimeSpan>, StreamAcl)
-  fullName: EventStore.Core.Data.StreamMetadata.StreamMetadata(System.Nullable<System.Int64>, System.Nullable<TimeSpan>, System.Nullable<System.Int64>, System.Nullable<System.Boolean>, System.Nullable<TimeSpan>, EventStore.Core.Data.StreamAcl)
+  fullName: EventStore.Core.Data.StreamMetadata.StreamMetadata(System.Nullable<System.Int64>, System.Nullable<System.TimeSpan>, System.Nullable<System.Int64>, System.Nullable<System.Boolean>, System.Nullable<System.TimeSpan>, EventStore.Core.Data.StreamAcl)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 21
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Data
   syntax:
-    content: public StreamMetadata(long? maxCount = null, TimeSpan? maxAge = null, long? truncateBefore = null, bool? tempStream = null, TimeSpan? cacheControl = null, StreamAcl acl = null)
+    content: public StreamMetadata(long? maxCount = default(long? ), TimeSpan? maxAge = default(TimeSpan? ), long? truncateBefore = default(long? ), bool? tempStream = default(bool? ), TimeSpan? cacheControl = default(TimeSpan? ), StreamAcl acl = null)
     parameters:
     - id: maxCount
       type: System.Nullable{System.Int64}
     - id: maxAge
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     - id: truncateBefore
       type: System.Nullable{System.Int64}
     - id: tempStream
       type: System.Nullable{System.Boolean}
     - id: cacheControl
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     - id: acl
       type: EventStore.Core.Data.StreamAcl
     content.vb: Public Sub New(maxCount As Long? = Nothing, maxAge As TimeSpan? = Nothing, truncateBefore As Long? = Nothing, tempStream As Boolean? = Nothing, cacheControl As TimeSpan? = Nothing, acl As StreamAcl = Nothing)
@@ -333,7 +302,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Data.StreamMetadata.StreamMetadata(System.Nullable(Of System.Int64), System.Nullable(Of TimeSpan), System.Nullable(Of System.Int64), System.Nullable(Of System.Boolean), System.Nullable(Of TimeSpan), EventStore.Core.Data.StreamAcl)
+  fullName.vb: EventStore.Core.Data.StreamMetadata.StreamMetadata(System.Nullable(Of System.Int64), System.Nullable(Of System.TimeSpan), System.Nullable(Of System.Int64), System.Nullable(Of System.Boolean), System.Nullable(Of System.TimeSpan), EventStore.Core.Data.StreamAcl)
   name.vb: StreamMetadata(Nullable(Of Int64), Nullable(Of TimeSpan), Nullable(Of Int64), Nullable(Of Boolean), Nullable(Of TimeSpan), StreamAcl)
 - uid: EventStore.Core.Data.StreamMetadata.ToString
   commentId: M:EventStore.Core.Data.StreamMetadata.ToString
@@ -347,12 +316,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 46
   assemblies:
   - EventStore.Core
@@ -362,6 +327,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Core.Data.StreamMetadata.ToString*
   modifiers.csharp:
   - public
@@ -381,12 +347,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.FromJsonBytes(System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromJsonBytes
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 52
   assemblies:
   - EventStore.Core
@@ -421,12 +383,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.FromJson(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromJson
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 58
   assemblies:
   - EventStore.Core
@@ -446,24 +404,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Data.StreamMetadata.FromJsonReader(JsonTextReader)
-  commentId: M:EventStore.Core.Data.StreamMetadata.FromJsonReader(JsonTextReader)
-  id: FromJsonReader(JsonTextReader)
+- uid: EventStore.Core.Data.StreamMetadata.FromJsonReader(Newtonsoft.Json.JsonTextReader)
+  commentId: M:EventStore.Core.Data.StreamMetadata.FromJsonReader(Newtonsoft.Json.JsonTextReader)
+  id: FromJsonReader(Newtonsoft.Json.JsonTextReader)
   parent: EventStore.Core.Data.StreamMetadata
   langs:
   - csharp
   - vb
   name: FromJsonReader(JsonTextReader)
   nameWithType: StreamMetadata.FromJsonReader(JsonTextReader)
-  fullName: EventStore.Core.Data.StreamMetadata.FromJsonReader(JsonTextReader)
+  fullName: EventStore.Core.Data.StreamMetadata.FromJsonReader(Newtonsoft.Json.JsonTextReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromJsonReader
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 64
   assemblies:
   - EventStore.Core
@@ -472,7 +426,7 @@ items:
     content: public static StreamMetadata FromJsonReader(JsonTextReader reader)
     parameters:
     - id: reader
-      type: JsonTextReader
+      type: Newtonsoft.Json.JsonTextReader
     return:
       type: EventStore.Core.Data.StreamMetadata
     content.vb: Public Shared Function FromJsonReader(reader As JsonTextReader) As StreamMetadata
@@ -495,12 +449,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.ToJsonBytes()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonBytes
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 200
   assemblies:
   - EventStore.Core
@@ -527,12 +477,8 @@ items:
   fullName: EventStore.Core.Data.StreamMetadata.ToJsonString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/StreamMetadata.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonString
-    path: ../EventStore/src/EventStore.Core/Data/StreamMetadata.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/StreamMetadata.cs
     startLine: 210
   assemblies:
   - EventStore.Core
@@ -560,6 +506,254 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -932,7 +1126,8 @@ references:
   nameWithType: StreamMetadata
   fullName: EventStore.Core.Data.StreamMetadata
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -1013,14 +1208,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable{TimeSpan}
-  commentId: '!:System.Nullable{TimeSpan}'
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TimeSpan>
   nameWithType: Nullable<TimeSpan>
-  fullName: System.Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
   nameWithType.vb: Nullable(Of TimeSpan)
-  fullName.vb: System.Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
   name.vb: Nullable(Of TimeSpan)
   spec.csharp:
   - uid: System.Nullable`1
@@ -1031,10 +1227,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1048,16 +1244,17 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
 - uid: System.Nullable{System.Boolean}
-  commentId: '!:System.Nullable{System.Boolean}'
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Boolean>
   nameWithType: Nullable<Boolean>
@@ -1110,6 +1307,37 @@ references:
   name: StreamMetadata
   nameWithType: StreamMetadata.StreamMetadata
   fullName: EventStore.Core.Data.StreamMetadata.StreamMetadata
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Data.StreamMetadata.ToString*
   commentId: Overload:EventStore.Core.Data.StreamMetadata.ToString
   name: ToString
@@ -1163,12 +1391,19 @@ references:
   name: FromJsonReader
   nameWithType: StreamMetadata.FromJsonReader
   fullName: EventStore.Core.Data.StreamMetadata.FromJsonReader
-- uid: JsonTextReader
-  commentId: '!:JsonTextReader'
+- uid: Newtonsoft.Json.JsonTextReader
+  commentId: T:Newtonsoft.Json.JsonTextReader
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonTextReader
   nameWithType: JsonTextReader
-  fullName: JsonTextReader
+  fullName: Newtonsoft.Json.JsonTextReader
+- uid: Newtonsoft.Json
+  commentId: N:Newtonsoft.Json
+  isExternal: true
+  name: Newtonsoft.Json
+  nameWithType: Newtonsoft.Json
+  fullName: Newtonsoft.Json
 - uid: EventStore.Core.Data.StreamMetadata.ToJsonBytes*
   commentId: Overload:EventStore.Core.Data.StreamMetadata.ToJsonBytes
   name: ToJsonBytes

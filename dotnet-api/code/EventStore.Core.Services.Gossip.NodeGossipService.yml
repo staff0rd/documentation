@@ -5,7 +5,7 @@ items:
   id: NodeGossipService
   parent: EventStore.Core.Services.Gossip
   children:
-  - EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32,TimeSpan,TimeSpan)
+  - EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Func{System.Int64},System.Int32,System.TimeSpan,System.TimeSpan)
   - EventStore.Core.Services.Gossip.NodeGossipService.GetInitialMe
   - EventStore.Core.Services.Gossip.NodeGossipService.GetUpdatedMe(EventStore.Core.Cluster.MemberInfo)
   langs:
@@ -16,12 +16,8 @@ items:
   fullName: EventStore.Core.Services.Gossip.NodeGossipService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/NodeGossipService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NodeGossipService
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -58,6 +54,13 @@ items:
   - EventStore.Core.Services.Gossip.GossipServiceBase.Handle(EventStore.Core.Messages.GossipMessage.GossipSendFailed)
   - EventStore.Core.Services.Gossip.GossipServiceBase.Handle(EventStore.Core.Messages.SystemMessage.VNodeConnectionLost)
   - EventStore.Core.Services.Gossip.GossipServiceBase.Handle(EventStore.Core.Messages.SystemMessage.VNodeConnectionEstablished)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -70,24 +73,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32,TimeSpan,TimeSpan)
-  commentId: M:EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32,TimeSpan,TimeSpan)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,Func{System.Int64},System.Int32,TimeSpan,TimeSpan)'
+- uid: EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Func{System.Int64},System.Int32,System.TimeSpan,System.TimeSpan)
+  commentId: M:EventStore.Core.Services.Gossip.NodeGossipService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Func{System.Int64},System.Int32,System.TimeSpan,System.TimeSpan)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Data.VNodeInfo,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,EventStore.Core.Services.Storage.EpochManager.IEpochManager,System.Func{System.Int64},System.Int32,System.TimeSpan,System.TimeSpan)'
   parent: EventStore.Core.Services.Gossip.NodeGossipService
   langs:
   - csharp
   - vb
   name: NodeGossipService(IPublisher, IGossipSeedSource, VNodeInfo, ICheckpoint, ICheckpoint, IEpochManager, Func<Int64>, Int32, TimeSpan, TimeSpan)
   nameWithType: NodeGossipService.NodeGossipService(IPublisher, IGossipSeedSource, VNodeInfo, ICheckpoint, ICheckpoint, IEpochManager, Func<Int64>, Int32, TimeSpan, TimeSpan)
-  fullName: EventStore.Core.Services.Gossip.NodeGossipService.NodeGossipService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Data.VNodeInfo, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, Func<System.Int64>, System.Int32, TimeSpan, TimeSpan)
+  fullName: EventStore.Core.Services.Gossip.NodeGossipService.NodeGossipService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Data.VNodeInfo, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, System.Func<System.Int64>, System.Int32, System.TimeSpan, System.TimeSpan)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/NodeGossipService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
     startLine: 17
   assemblies:
   - EventStore.Core
@@ -108,13 +107,13 @@ items:
     - id: epochManager
       type: EventStore.Core.Services.Storage.EpochManager.IEpochManager
     - id: getLastCommitPosition
-      type: Func{System.Int64}
+      type: System.Func{System.Int64}
     - id: nodePriority
       type: System.Int32
     - id: interval
-      type: TimeSpan
+      type: System.TimeSpan
     - id: allowedTimeDifference
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Sub New(bus As IPublisher, gossipSeedSource As IGossipSeedSource, nodeInfo As VNodeInfo, writerCheckpoint As ICheckpoint, chaserCheckpoint As ICheckpoint, epochManager As IEpochManager, getLastCommitPosition As Func(Of Long), nodePriority As Integer, interval As TimeSpan, allowedTimeDifference As TimeSpan)
   overload: EventStore.Core.Services.Gossip.NodeGossipService.#ctor*
   nameWithType.vb: NodeGossipService.NodeGossipService(IPublisher, IGossipSeedSource, VNodeInfo, ICheckpoint, ICheckpoint, IEpochManager, Func(Of Int64), Int32, TimeSpan, TimeSpan)
@@ -122,7 +121,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Gossip.NodeGossipService.NodeGossipService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Data.VNodeInfo, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, Func(Of System.Int64), System.Int32, TimeSpan, TimeSpan)
+  fullName.vb: EventStore.Core.Services.Gossip.NodeGossipService.NodeGossipService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Data.VNodeInfo, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, EventStore.Core.Services.Storage.EpochManager.IEpochManager, System.Func(Of System.Int64), System.Int32, System.TimeSpan, System.TimeSpan)
   name.vb: NodeGossipService(IPublisher, IGossipSeedSource, VNodeInfo, ICheckpoint, ICheckpoint, IEpochManager, Func(Of Int64), Int32, TimeSpan, TimeSpan)
 - uid: EventStore.Core.Services.Gossip.NodeGossipService.GetInitialMe
   commentId: M:EventStore.Core.Services.Gossip.NodeGossipService.GetInitialMe
@@ -136,12 +135,8 @@ items:
   fullName: EventStore.Core.Services.Gossip.NodeGossipService.GetInitialMe()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/NodeGossipService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetInitialMe
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -171,12 +166,8 @@ items:
   fullName: EventStore.Core.Services.Gossip.NodeGossipService.GetUpdatedMe(EventStore.Core.Cluster.MemberInfo)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/NodeGossipService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetUpdatedMe
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/NodeGossipService.cs
     startLine: 61
   assemblies:
   - EventStore.Core
@@ -918,6 +909,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1359,20 +1629,21 @@ references:
   name: IEpochManager
   nameWithType: IEpochManager
   fullName: EventStore.Core.Services.Storage.EpochManager.IEpochManager
-- uid: Func{System.Int64}
-  commentId: '!:Func{System.Int64}'
-  definition: Func`1
+- uid: System.Func{System.Int64}
+  commentId: T:System.Func{System.Int64}
+  parent: System
+  definition: System.Func`1
   name: Func<Int64>
   nameWithType: Func<Int64>
-  fullName: Func<System.Int64>
+  fullName: System.Func<System.Int64>
   nameWithType.vb: Func(Of Int64)
-  fullName.vb: Func(Of System.Int64)
+  fullName.vb: System.Func(Of System.Int64)
   name.vb: Func(Of Int64)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1386,10 +1657,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1409,11 +1680,13 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Data
   commentId: N:EventStore.Core.Data
   name: EventStore.Core.Data
@@ -1429,41 +1702,42 @@ references:
   name: EventStore.Core.Services.Storage.EpochManager
   nameWithType: EventStore.Core.Services.Storage.EpochManager
   fullName: EventStore.Core.Services.Storage.EpochManager
-- uid: Func`1
+- uid: System.Func`1
+  commentId: T:System.Func`1
   isExternal: true
-  name: Func<>
-  nameWithType: Func<>
-  fullName: Func<>
-  nameWithType.vb: Func(Of )
-  fullName.vb: Func(Of )
-  name.vb: Func(Of )
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )

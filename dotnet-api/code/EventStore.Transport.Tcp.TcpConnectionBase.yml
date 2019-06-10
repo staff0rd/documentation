@@ -5,8 +5,8 @@ items:
   id: TcpConnectionBase
   parent: EventStore.Transport.Tcp
   children:
-  - EventStore.Transport.Tcp.TcpConnectionBase.#ctor(IPEndPoint)
-  - EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  - EventStore.Transport.Tcp.TcpConnectionBase.#ctor(System.Net.IPEndPoint)
+  - EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(System.Net.Sockets.Socket)
   - EventStore.Transport.Tcp.TcpConnectionBase.InReceive
   - EventStore.Transport.Tcp.TcpConnectionBase.InSend
   - EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
@@ -42,21 +42,16 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpConnectionBase
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 7
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
   syntax:
-    content: 'public class TcpConnectionBase : object, IMonitoredTcpConnection'
+    content: 'public class TcpConnectionBase : IMonitoredTcpConnection'
     content.vb: >-
       Public Class TcpConnectionBase
-          Inherits Object
           Implements IMonitoredTcpConnection
   inheritance:
   - System.Object
@@ -66,6 +61,14 @@ items:
   - EventStore.Transport.Tcp.TcpConnectionSsl
   implements:
   - EventStore.Transport.Tcp.IMonitoredTcpConnection
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -90,12 +93,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoteEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 8
   assemblies:
   - EventStore.Transport.Tcp
@@ -104,7 +103,7 @@ items:
     content: public IPEndPoint RemoteEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly Property RemoteEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint*
   modifiers.csharp:
@@ -125,12 +124,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LocalEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 12
   assemblies:
   - EventStore.Transport.Tcp
@@ -139,7 +134,7 @@ items:
     content: public IPEndPoint LocalEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly Property LocalEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint*
   modifiers.csharp:
@@ -160,12 +155,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsInitialized
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsInitialized
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 16
   assemblies:
   - EventStore.Transport.Tcp
@@ -197,12 +188,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsClosed
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsClosed
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 20
   assemblies:
   - EventStore.Transport.Tcp
@@ -234,12 +221,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.InSend
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 24
   assemblies:
   - EventStore.Transport.Tcp
@@ -271,12 +254,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.InReceive
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InReceive
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 28
   assemblies:
   - EventStore.Transport.Tcp
@@ -308,12 +287,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.PendingSendBytes
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingSendBytes
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 32
   assemblies:
   - EventStore.Transport.Tcp
@@ -345,12 +320,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.InSendBytes
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InSendBytes
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 36
   assemblies:
   - EventStore.Transport.Tcp
@@ -382,12 +353,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.PendingReceivedBytes
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingReceivedBytes
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 40
   assemblies:
   - EventStore.Transport.Tcp
@@ -419,12 +386,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesSent
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TotalBytesSent
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 44
   assemblies:
   - EventStore.Transport.Tcp
@@ -456,12 +419,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.TotalBytesReceived
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TotalBytesReceived
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 48
   assemblies:
   - EventStore.Transport.Tcp
@@ -493,12 +452,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.SendCalls
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendCalls
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 52
   assemblies:
   - EventStore.Transport.Tcp
@@ -528,12 +483,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.SendCallbacks
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendCallbacks
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 56
   assemblies:
   - EventStore.Transport.Tcp
@@ -563,12 +514,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCalls
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceiveCalls
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 60
   assemblies:
   - EventStore.Transport.Tcp
@@ -598,12 +545,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.ReceiveCallbacks
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceiveCallbacks
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 64
   assemblies:
   - EventStore.Transport.Tcp
@@ -633,12 +576,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForSend
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsReadyForSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 68
   assemblies:
   - EventStore.Transport.Tcp
@@ -670,12 +609,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsReadyForReceive
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsReadyForReceive
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 79
   assemblies:
   - EventStore.Transport.Tcp
@@ -707,12 +642,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.IsFaulted
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsFaulted
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 90
   assemblies:
   - EventStore.Transport.Tcp
@@ -744,12 +675,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastSendStarted
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 101
   assemblies:
   - EventStore.Transport.Tcp
@@ -758,8 +685,8 @@ items:
     content: public DateTime? LastSendStarted { get; }
     parameters: []
     return:
-      type: System.Nullable{DateTime}
-    content.vb: Public ReadOnly Property LastSendStarted As DateTime?
+      type: System.Nullable{System.DateTime}
+    content.vb: Public ReadOnly Property LastSendStarted As Date?
   overload: EventStore.Transport.Tcp.TcpConnectionBase.LastSendStarted*
   implements:
   - EventStore.Transport.Tcp.IMonitoredTcpConnection.LastSendStarted
@@ -781,12 +708,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastReceiveStarted
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 108
   assemblies:
   - EventStore.Transport.Tcp
@@ -795,8 +718,8 @@ items:
     content: public DateTime? LastReceiveStarted { get; }
     parameters: []
     return:
-      type: System.Nullable{DateTime}
-    content.vb: Public ReadOnly Property LastReceiveStarted As DateTime?
+      type: System.Nullable{System.DateTime}
+    content.vb: Public ReadOnly Property LastReceiveStarted As Date?
   overload: EventStore.Transport.Tcp.TcpConnectionBase.LastReceiveStarted*
   implements:
   - EventStore.Transport.Tcp.IMonitoredTcpConnection.LastReceiveStarted
@@ -806,24 +729,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Transport.Tcp.TcpConnectionBase.#ctor(IPEndPoint)
-  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.#ctor(IPEndPoint)
-  id: '#ctor(IPEndPoint)'
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.#ctor(System.Net.IPEndPoint)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.#ctor(System.Net.IPEndPoint)
+  id: '#ctor(System.Net.IPEndPoint)'
   parent: EventStore.Transport.Tcp.TcpConnectionBase
   langs:
   - csharp
   - vb
   name: TcpConnectionBase(IPEndPoint)
   nameWithType: TcpConnectionBase.TcpConnectionBase(IPEndPoint)
-  fullName: EventStore.Transport.Tcp.TcpConnectionBase.TcpConnectionBase(IPEndPoint)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.TcpConnectionBase(System.Net.IPEndPoint)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 134
   assemblies:
   - EventStore.Transport.Tcp
@@ -832,31 +751,27 @@ items:
     content: public TcpConnectionBase(IPEndPoint remoteEndPoint)
     parameters:
     - id: remoteEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public Sub New(remoteEndPoint As IPEndPoint)
   overload: EventStore.Transport.Tcp.TcpConnectionBase.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
-  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
-  id: InitConnectionBase(Socket)
+- uid: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(System.Net.Sockets.Socket)
+  commentId: M:EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(System.Net.Sockets.Socket)
+  id: InitConnectionBase(System.Net.Sockets.Socket)
   parent: EventStore.Transport.Tcp.TcpConnectionBase
   langs:
   - csharp
   - vb
   name: InitConnectionBase(Socket)
   nameWithType: TcpConnectionBase.InitConnectionBase(Socket)
-  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(Socket)
+  fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase(System.Net.Sockets.Socket)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InitConnectionBase
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 141
   assemblies:
   - EventStore.Transport.Tcp
@@ -865,7 +780,7 @@ items:
     content: protected void InitConnectionBase(Socket socket)
     parameters:
     - id: socket
-      type: Socket
+      type: System.Net.Sockets.Socket
     content.vb: Protected Sub InitConnectionBase(socket As Socket)
   overload: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase*
   modifiers.csharp:
@@ -884,12 +799,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifySendScheduled
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 148
   assemblies:
   - EventStore.Transport.Tcp
@@ -917,12 +828,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendStarting(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifySendStarting
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 152
   assemblies:
   - EventStore.Transport.Tcp
@@ -950,12 +857,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendCompleted(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifySendCompleted
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 160
   assemblies:
   - EventStore.Transport.Tcp
@@ -983,12 +886,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveStarting()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyReceiveStarting
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 167
   assemblies:
   - EventStore.Transport.Tcp
@@ -1013,12 +912,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveCompleted(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyReceiveCompleted
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 174
   assemblies:
   - EventStore.Transport.Tcp
@@ -1046,12 +941,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyReceiveDispatched(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyReceiveDispatched
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 181
   assemblies:
   - EventStore.Transport.Tcp
@@ -1079,12 +970,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.NotifyClosed()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpConnectionBase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyClosed
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpConnectionBase.cs
     startLine: 185
   assemblies:
   - EventStore.Transport.Tcp
@@ -1116,6 +1003,285 @@ references:
   name: IMonitoredTcpConnection
   nameWithType: IMonitoredTcpConnection
   fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1486,11 +1652,19 @@ references:
   name: RemoteEndPoint
   nameWithType: TcpConnectionBase.RemoteEndPoint
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.RemoteEndPoint
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint*
   commentId: Overload:EventStore.Transport.Tcp.TcpConnectionBase.LocalEndPoint
   name: LocalEndPoint
@@ -1680,14 +1854,15 @@ references:
   name: LastSendStarted
   nameWithType: IMonitoredTcpConnection.LastSendStarted
   fullName: EventStore.Transport.Tcp.IMonitoredTcpConnection.LastSendStarted
-- uid: System.Nullable{DateTime}
-  commentId: '!:System.Nullable{DateTime}'
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<DateTime>
   nameWithType: Nullable<DateTime>
-  fullName: System.Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
   nameWithType.vb: Nullable(Of DateTime)
-  fullName.vb: System.Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
   name.vb: Nullable(Of DateTime)
   spec.csharp:
   - uid: System.Nullable`1
@@ -1698,10 +1873,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1715,10 +1890,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: )
     nameWithType: )
@@ -1783,11 +1958,19 @@ references:
   name: InitConnectionBase
   nameWithType: TcpConnectionBase.InitConnectionBase
   fullName: EventStore.Transport.Tcp.TcpConnectionBase.InitConnectionBase
-- uid: Socket
+- uid: System.Net.Sockets.Socket
+  commentId: T:System.Net.Sockets.Socket
+  parent: System.Net.Sockets
   isExternal: true
   name: Socket
   nameWithType: Socket
-  fullName: Socket
+  fullName: System.Net.Sockets.Socket
+- uid: System.Net.Sockets
+  commentId: N:System.Net.Sockets
+  isExternal: true
+  name: System.Net.Sockets
+  nameWithType: System.Net.Sockets
+  fullName: System.Net.Sockets
 - uid: EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled*
   commentId: Overload:EventStore.Transport.Tcp.TcpConnectionBase.NotifySendScheduled
   name: NotifySendScheduled

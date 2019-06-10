@@ -22,26 +22,35 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
   type: Enum
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareFlags
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 8
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: 'public enum PrepareFlags : ushort'
-    content.vb: Public Enum PrepareFlags As UShort
+    content: >-
+      [Flags]
+
+      public enum PrepareFlags : ushort
+    content.vb: >-
+      <Flags>
+
+      Public Enum PrepareFlags As UShort
   extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Core.TransactionLog.LogRecords.PrepareFlagsExtensions.HasAllOf(EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Core.TransactionLog.LogRecords.PrepareFlagsExtensions.HasAnyOf(EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Core.TransactionLog.LogRecords.PrepareFlagsExtensions.HasNoneOf(EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - enum
@@ -60,21 +69,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.None
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: None
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 10
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: None = null
+    content: None = 0
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: None = Nothing
   modifiers.csharp:
   - public
   - const
@@ -93,21 +97,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.Data
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Data
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 11
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: Data = null
+    content: Data = 1
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: Data = Nothing
   modifiers.csharp:
   - public
   - const
@@ -126,21 +125,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.TransactionBegin
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionBegin
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 12
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: TransactionBegin = null
+    content: TransactionBegin = 2
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: TransactionBegin = Nothing
   modifiers.csharp:
   - public
   - const
@@ -159,21 +153,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.TransactionEnd
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionEnd
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 13
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: TransactionEnd = null
+    content: TransactionEnd = 4
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: TransactionEnd = Nothing
   modifiers.csharp:
   - public
   - const
@@ -192,21 +181,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.StreamDelete
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamDelete
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 14
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: StreamDelete = null
+    content: StreamDelete = 8
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: StreamDelete = Nothing
   modifiers.csharp:
   - public
   - const
@@ -225,21 +209,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.IsCommitted
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsCommitted
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 16
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: IsCommitted = null
+    content: IsCommitted = 32
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: IsCommitted = Nothing
   modifiers.csharp:
   - public
   - const
@@ -258,21 +237,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.IsJson
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsJson
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 19
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: IsJson = null
+    content: IsJson = 256
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: IsJson = Nothing
   modifiers.csharp:
   - public
   - const
@@ -291,21 +265,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.DeleteTombstone
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DeleteTombstone
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: DeleteTombstone = null
+    content: DeleteTombstone = 14
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: DeleteTombstone = Nothing
   modifiers.csharp:
   - public
   - const
@@ -324,21 +293,16 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.SingleWrite
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SingleWrite
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/PrepareLogRecord.cs
     startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: SingleWrite = null
+    content: SingleWrite = 7
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-    content.vb: SingleWrite = Nothing
   modifiers.csharp:
   - public
   - const
@@ -351,6 +315,93 @@ references:
   name: EventStore.Core.TransactionLog.LogRecords
   nameWithType: EventStore.Core.TransactionLog.LogRecords
   fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.TransactionLog.LogRecords.PrepareFlags.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
   parent: EventStore.Projections.Core.Utils.EnumExtensions
@@ -555,6 +606,126 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -831,6 +1002,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
 - uid: EventStore.Projections.Core.Utils
   commentId: N:EventStore.Projections.Core.Utils
   name: EventStore.Projections.Core.Utils

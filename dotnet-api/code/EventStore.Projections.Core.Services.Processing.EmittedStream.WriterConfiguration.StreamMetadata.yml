@@ -5,7 +5,7 @@ items:
   id: EmittedStream.WriterConfiguration.StreamMetadata
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{TimeSpan})
+  - EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{System.TimeSpan})
   - EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxAge
   - EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxCount
   langs:
@@ -16,23 +16,25 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamMetadata
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
     startLine: 76
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class StreamMetadata : object'
-    content.vb: >-
-      Public Class StreamMetadata
-          Inherits Object
+    content: public class StreamMetadata
+    content.vb: Public Class StreamMetadata
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -45,35 +47,31 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{TimeSpan})
-  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{TimeSpan})
-  id: '#ctor(System.Nullable{System.Int32},System.Nullable{TimeSpan})'
+- uid: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{System.TimeSpan})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor(System.Nullable{System.Int32},System.Nullable{System.TimeSpan})
+  id: '#ctor(System.Nullable{System.Int32},System.Nullable{System.TimeSpan})'
   parent: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata
   langs:
   - csharp
   - vb
   name: StreamMetadata(Nullable<Int32>, Nullable<TimeSpan>)
   nameWithType: EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(Nullable<Int32>, Nullable<TimeSpan>)
-  fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(System.Nullable<System.Int32>, System.Nullable<TimeSpan>)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(System.Nullable<System.Int32>, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
     startLine: 80
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public StreamMetadata(int? maxCount = null, TimeSpan? maxAge = null)
+    content: public StreamMetadata(int? maxCount = default(int? ), TimeSpan? maxAge = default(TimeSpan? ))
     parameters:
     - id: maxCount
       type: System.Nullable{System.Int32}
     - id: maxAge
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public Sub New(maxCount As Integer? = Nothing, maxAge As TimeSpan? = Nothing)
   overload: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.#ctor*
   nameWithType.vb: EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(Nullable(Of Int32), Nullable(Of TimeSpan))
@@ -81,7 +79,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(System.Nullable(Of System.Int32), System.Nullable(Of TimeSpan))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata(System.Nullable(Of System.Int32), System.Nullable(Of System.TimeSpan))
   name.vb: StreamMetadata(Nullable(Of Int32), Nullable(Of TimeSpan))
 - uid: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxCount
   commentId: P:EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxCount
@@ -95,12 +93,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxCount
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
     startLine: 85
   assemblies:
   - EventStore.Projections.Core
@@ -130,12 +124,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxAge
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxAge
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStream.cs
     startLine: 89
   assemblies:
   - EventStore.Projections.Core
@@ -144,7 +134,7 @@ items:
     content: public TimeSpan? MaxAge { get; }
     parameters: []
     return:
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public ReadOnly Property MaxAge As TimeSpan?
   overload: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.MaxAge*
   modifiers.csharp:
@@ -166,6 +156,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -537,7 +806,8 @@ references:
   nameWithType: EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata.StreamMetadata
 - uid: System.Nullable{System.Int32}
-  commentId: '!:System.Nullable{System.Int32}'
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int32>
   nameWithType: Nullable<Int32>
@@ -579,14 +849,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable{TimeSpan}
-  commentId: '!:System.Nullable{TimeSpan}'
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TimeSpan>
   nameWithType: Nullable<TimeSpan>
-  fullName: System.Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
   nameWithType.vb: Nullable(Of TimeSpan)
-  fullName.vb: System.Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
   name.vb: Nullable(Of TimeSpan)
   spec.csharp:
   - uid: System.Nullable`1
@@ -597,10 +868,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -614,10 +885,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )

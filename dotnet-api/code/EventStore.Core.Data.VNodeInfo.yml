@@ -5,7 +5,7 @@ items:
   id: VNodeInfo
   parent: EventStore.Core.Data
   children:
-  - EventStore.Core.Data.VNodeInfo.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint)
+  - EventStore.Core.Data.VNodeInfo.#ctor(System.Guid,System.Int32,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint)
   - EventStore.Core.Data.VNodeInfo.DebugIndex
   - EventStore.Core.Data.VNodeInfo.ExternalHttp
   - EventStore.Core.Data.VNodeInfo.ExternalSecureTcp
@@ -14,7 +14,7 @@ items:
   - EventStore.Core.Data.VNodeInfo.InternalHttp
   - EventStore.Core.Data.VNodeInfo.InternalSecureTcp
   - EventStore.Core.Data.VNodeInfo.InternalTcp
-  - EventStore.Core.Data.VNodeInfo.Is(IPEndPoint)
+  - EventStore.Core.Data.VNodeInfo.Is(System.Net.IPEndPoint)
   - EventStore.Core.Data.VNodeInfo.ToString
   langs:
   - csharp
@@ -24,23 +24,24 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: VNodeInfo
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 5
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Data
   syntax:
-    content: 'public class VNodeInfo : object'
-    content.vb: >-
-      Public Class VNodeInfo
-          Inherits Object
+    content: public class VNodeInfo
+    content.vb: Public Class VNodeInfo
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -65,12 +66,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.InstanceId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InstanceId
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 6
   assemblies:
   - EventStore.Core
@@ -78,7 +75,7 @@ items:
   syntax:
     content: public readonly Guid InstanceId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly InstanceId As Guid
   modifiers.csharp:
   - public
@@ -98,12 +95,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.DebugIndex
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DebugIndex
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -131,12 +124,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.InternalTcp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalTcp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 8
   assemblies:
   - EventStore.Core
@@ -144,7 +133,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalTcp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalTcp As IPEndPoint
   modifiers.csharp:
   - public
@@ -164,12 +153,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.InternalSecureTcp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalSecureTcp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 9
   assemblies:
   - EventStore.Core
@@ -177,7 +162,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalSecureTcp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalSecureTcp As IPEndPoint
   modifiers.csharp:
   - public
@@ -197,12 +182,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.ExternalTcp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalTcp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -210,7 +191,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalTcp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalTcp As IPEndPoint
   modifiers.csharp:
   - public
@@ -230,12 +211,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.ExternalSecureTcp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalSecureTcp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 11
   assemblies:
   - EventStore.Core
@@ -243,7 +220,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalSecureTcp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalSecureTcp As IPEndPoint
   modifiers.csharp:
   - public
@@ -263,12 +240,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.InternalHttp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalHttp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 12
   assemblies:
   - EventStore.Core
@@ -276,7 +249,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalHttp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalHttp As IPEndPoint
   modifiers.csharp:
   - public
@@ -296,12 +269,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.ExternalHttp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalHttp
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -309,7 +278,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalHttp
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalHttp As IPEndPoint
   modifiers.csharp:
   - public
@@ -317,24 +286,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Data.VNodeInfo.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint)
-  commentId: M:EventStore.Core.Data.VNodeInfo.#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint)
-  id: '#ctor(Guid,System.Int32,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint)'
+- uid: EventStore.Core.Data.VNodeInfo.#ctor(System.Guid,System.Int32,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Data.VNodeInfo.#ctor(System.Guid,System.Int32,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  id: '#ctor(System.Guid,System.Int32,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint)'
   parent: EventStore.Core.Data.VNodeInfo
   langs:
   - csharp
   - vb
   name: VNodeInfo(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint)
   nameWithType: VNodeInfo.VNodeInfo(Guid, Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint)
-  fullName: EventStore.Core.Data.VNodeInfo.VNodeInfo(Guid, System.Int32, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint)
+  fullName: EventStore.Core.Data.VNodeInfo.VNodeInfo(System.Guid, System.Int32, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -343,45 +308,41 @@ items:
     content: public VNodeInfo(Guid instanceId, int debugIndex, IPEndPoint internalTcp, IPEndPoint internalSecureTcp, IPEndPoint externalTcp, IPEndPoint externalSecureTcp, IPEndPoint internalHttp, IPEndPoint externalHttp)
     parameters:
     - id: instanceId
-      type: Guid
+      type: System.Guid
     - id: debugIndex
       type: System.Int32
     - id: internalTcp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: internalSecureTcp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalTcp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalSecureTcp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: internalHttp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalHttp
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public Sub New(instanceId As Guid, debugIndex As Integer, internalTcp As IPEndPoint, internalSecureTcp As IPEndPoint, externalTcp As IPEndPoint, externalSecureTcp As IPEndPoint, internalHttp As IPEndPoint, externalHttp As IPEndPoint)
   overload: EventStore.Core.Data.VNodeInfo.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Data.VNodeInfo.Is(IPEndPoint)
-  commentId: M:EventStore.Core.Data.VNodeInfo.Is(IPEndPoint)
-  id: Is(IPEndPoint)
+- uid: EventStore.Core.Data.VNodeInfo.Is(System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Data.VNodeInfo.Is(System.Net.IPEndPoint)
+  id: Is(System.Net.IPEndPoint)
   parent: EventStore.Core.Data.VNodeInfo
   langs:
   - csharp
   - vb
   name: Is(IPEndPoint)
   nameWithType: VNodeInfo.Is(IPEndPoint)
-  fullName: EventStore.Core.Data.VNodeInfo.Is(IPEndPoint)
+  fullName: EventStore.Core.Data.VNodeInfo.Is(System.Net.IPEndPoint)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Is
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 35
   assemblies:
   - EventStore.Core
@@ -390,7 +351,7 @@ items:
     content: public bool Is(IPEndPoint endPoint)
     parameters:
     - id: endPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     return:
       type: System.Boolean
     content.vb: Public Function Is(endPoint As IPEndPoint) As Boolean
@@ -411,12 +372,8 @@ items:
   fullName: EventStore.Core.Data.VNodeInfo.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Data/VNodeInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Core/Data/VNodeInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/VNodeInfo.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -426,6 +383,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Core.Data.VNodeInfo.ToString*
   modifiers.csharp:
   - public
@@ -446,6 +404,254 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -811,11 +1017,13 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -823,11 +1031,19 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Core.Data.VNodeInfo.#ctor*
   commentId: Overload:EventStore.Core.Data.VNodeInfo.#ctor
   name: VNodeInfo
@@ -845,6 +1061,37 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Data.VNodeInfo.ToString*
   commentId: Overload:EventStore.Core.Data.VNodeInfo.ToString
   name: ToString

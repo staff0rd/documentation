@@ -5,10 +5,10 @@ items:
   id: IHttpClient
   parent: EventStore.Transport.Http.Client
   children:
-  - EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  - EventStore.Transport.Http.Client.IHttpClient.Get(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  - EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  - EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
+  - EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  - EventStore.Transport.Http.Client.IHttpClient.Get(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  - EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  - EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
   langs:
   - csharp
   - vb
@@ -17,12 +17,8 @@ items:
   fullName: EventStore.Transport.Http.Client.IHttpClient
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Client/IHttpClient.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IHttpClient
-    path: ../EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
     startLine: 3
   assemblies:
   - EventStore.Transport.Http
@@ -42,24 +38,20 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: EventStore.Transport.Http.Client.IHttpClient.Get(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Get(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  id: Get(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
+- uid: EventStore.Transport.Http.Client.IHttpClient.Get(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Get(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  id: Get(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
   parent: EventStore.Transport.Http.Client.IHttpClient
   langs:
   - csharp
   - vb
   name: Get(String, Action<HttpResponse>, Action<Exception>)
   nameWithType: IHttpClient.Get(String, Action<HttpResponse>, Action<Exception>)
-  fullName: EventStore.Transport.Http.Client.IHttpClient.Get(System.String, Action<EventStore.Transport.Http.HttpResponse>, Action<Exception>)
+  fullName: EventStore.Transport.Http.Client.IHttpClient.Get(System.String, System.Action<EventStore.Transport.Http.HttpResponse>, System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Client/IHttpClient.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Get
-    path: ../EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
     startLine: 4
   assemblies:
   - EventStore.Transport.Http
@@ -70,32 +62,28 @@ items:
     - id: url
       type: System.String
     - id: onSuccess
-      type: Action{EventStore.Transport.Http.HttpResponse}
+      type: System.Action{EventStore.Transport.Http.HttpResponse}
     - id: onException
-      type: Action{Exception}
+      type: System.Action{System.Exception}
     content.vb: Sub Get(url As String, onSuccess As Action(Of HttpResponse), onException As Action(Of Exception))
   overload: EventStore.Transport.Http.Client.IHttpClient.Get*
   nameWithType.vb: IHttpClient.Get(String, Action(Of HttpResponse), Action(Of Exception))
-  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Get(System.String, Action(Of EventStore.Transport.Http.HttpResponse), Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Get(System.String, System.Action(Of EventStore.Transport.Http.HttpResponse), System.Action(Of System.Exception))
   name.vb: Get(String, Action(Of HttpResponse), Action(Of Exception))
-- uid: EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  id: Post(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
+- uid: EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Post(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  id: Post(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
   parent: EventStore.Transport.Http.Client.IHttpClient
   langs:
   - csharp
   - vb
   name: Post(String, String, String, Action<HttpResponse>, Action<Exception>)
   nameWithType: IHttpClient.Post(String, String, String, Action<HttpResponse>, Action<Exception>)
-  fullName: EventStore.Transport.Http.Client.IHttpClient.Post(System.String, System.String, System.String, Action<EventStore.Transport.Http.HttpResponse>, Action<Exception>)
+  fullName: EventStore.Transport.Http.Client.IHttpClient.Post(System.String, System.String, System.String, System.Action<EventStore.Transport.Http.HttpResponse>, System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Client/IHttpClient.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Post
-    path: ../EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
     startLine: 6
   assemblies:
   - EventStore.Transport.Http
@@ -110,32 +98,28 @@ items:
     - id: contentType
       type: System.String
     - id: onSuccess
-      type: Action{EventStore.Transport.Http.HttpResponse}
+      type: System.Action{EventStore.Transport.Http.HttpResponse}
     - id: onException
-      type: Action{Exception}
+      type: System.Action{System.Exception}
     content.vb: Sub Post(url As String, request As String, contentType As String, onSuccess As Action(Of HttpResponse), onException As Action(Of Exception))
   overload: EventStore.Transport.Http.Client.IHttpClient.Post*
   nameWithType.vb: IHttpClient.Post(String, String, String, Action(Of HttpResponse), Action(Of Exception))
-  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Post(System.String, System.String, System.String, Action(Of EventStore.Transport.Http.HttpResponse), Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Post(System.String, System.String, System.String, System.Action(Of EventStore.Transport.Http.HttpResponse), System.Action(Of System.Exception))
   name.vb: Post(String, String, String, Action(Of HttpResponse), Action(Of Exception))
-- uid: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  id: Delete(System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
+- uid: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Delete(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  id: Delete(System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
   parent: EventStore.Transport.Http.Client.IHttpClient
   langs:
   - csharp
   - vb
   name: Delete(String, Action<HttpResponse>, Action<Exception>)
   nameWithType: IHttpClient.Delete(String, Action<HttpResponse>, Action<Exception>)
-  fullName: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String, Action<EventStore.Transport.Http.HttpResponse>, Action<Exception>)
+  fullName: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String, System.Action<EventStore.Transport.Http.HttpResponse>, System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Client/IHttpClient.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Delete
-    path: ../EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
     startLine: 9
   assemblies:
   - EventStore.Transport.Http
@@ -146,32 +130,28 @@ items:
     - id: url
       type: System.String
     - id: onSuccess
-      type: Action{EventStore.Transport.Http.HttpResponse}
+      type: System.Action{EventStore.Transport.Http.HttpResponse}
     - id: onException
-      type: Action{Exception}
+      type: System.Action{System.Exception}
     content.vb: Sub Delete(url As String, onSuccess As Action(Of HttpResponse), onException As Action(Of Exception))
   overload: EventStore.Transport.Http.Client.IHttpClient.Delete*
   nameWithType.vb: IHttpClient.Delete(String, Action(Of HttpResponse), Action(Of Exception))
-  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String, Action(Of EventStore.Transport.Http.HttpResponse), Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Delete(System.String, System.Action(Of EventStore.Transport.Http.HttpResponse), System.Action(Of System.Exception))
   name.vb: Delete(String, Action(Of HttpResponse), Action(Of Exception))
-- uid: EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
-  id: Put(System.String,System.String,System.String,Action{EventStore.Transport.Http.HttpResponse},Action{Exception})
+- uid: EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  commentId: M:EventStore.Transport.Http.Client.IHttpClient.Put(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
+  id: Put(System.String,System.String,System.String,System.Action{EventStore.Transport.Http.HttpResponse},System.Action{System.Exception})
   parent: EventStore.Transport.Http.Client.IHttpClient
   langs:
   - csharp
   - vb
   name: Put(String, String, String, Action<HttpResponse>, Action<Exception>)
   nameWithType: IHttpClient.Put(String, String, String, Action<HttpResponse>, Action<Exception>)
-  fullName: EventStore.Transport.Http.Client.IHttpClient.Put(System.String, System.String, System.String, Action<EventStore.Transport.Http.HttpResponse>, Action<Exception>)
+  fullName: EventStore.Transport.Http.Client.IHttpClient.Put(System.String, System.String, System.String, System.Action<EventStore.Transport.Http.HttpResponse>, System.Action<System.Exception>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/Client/IHttpClient.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Put
-    path: ../EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/Client/IHttpClient.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Http
@@ -186,13 +166,13 @@ items:
     - id: contentType
       type: System.String
     - id: onSuccess
-      type: Action{EventStore.Transport.Http.HttpResponse}
+      type: System.Action{EventStore.Transport.Http.HttpResponse}
     - id: onException
-      type: Action{Exception}
+      type: System.Action{System.Exception}
     content.vb: Sub Put(url As String, request As String, contentType As String, onSuccess As Action(Of HttpResponse), onException As Action(Of Exception))
   overload: EventStore.Transport.Http.Client.IHttpClient.Put*
   nameWithType.vb: IHttpClient.Put(String, String, String, Action(Of HttpResponse), Action(Of Exception))
-  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Put(System.String, System.String, System.String, Action(Of EventStore.Transport.Http.HttpResponse), Action(Of Exception))
+  fullName.vb: EventStore.Transport.Http.Client.IHttpClient.Put(System.String, System.String, System.String, System.Action(Of EventStore.Transport.Http.HttpResponse), System.Action(Of System.Exception))
   name.vb: Put(String, String, String, Action(Of HttpResponse), Action(Of Exception))
 references:
 - uid: EventStore.Transport.Http.Client
@@ -571,20 +551,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Action{EventStore.Transport.Http.HttpResponse}
-  commentId: '!:Action{EventStore.Transport.Http.HttpResponse}'
-  definition: Action`1
+- uid: System.Action{EventStore.Transport.Http.HttpResponse}
+  commentId: T:System.Action{EventStore.Transport.Http.HttpResponse}
+  parent: System
+  definition: System.Action`1
   name: Action<HttpResponse>
   nameWithType: Action<HttpResponse>
-  fullName: Action<EventStore.Transport.Http.HttpResponse>
+  fullName: System.Action<EventStore.Transport.Http.HttpResponse>
   nameWithType.vb: Action(Of HttpResponse)
-  fullName.vb: Action(Of EventStore.Transport.Http.HttpResponse)
+  fullName.vb: System.Action(Of EventStore.Transport.Http.HttpResponse)
   name.vb: Action(Of HttpResponse)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -597,10 +578,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -612,45 +593,46 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{Exception}
-  commentId: '!:Action{Exception}'
-  definition: Action`1
+- uid: System.Action{System.Exception}
+  commentId: T:System.Action{System.Exception}
+  parent: System
+  definition: System.Action`1
   name: Action<Exception>
   nameWithType: Action<Exception>
-  fullName: Action<Exception>
+  fullName: System.Action<System.Exception>
   nameWithType.vb: Action(Of Exception)
-  fullName.vb: Action(Of Exception)
+  fullName.vb: System.Action(Of System.Exception)
   name.vb: Action(Of Exception)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
@@ -661,41 +643,42 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

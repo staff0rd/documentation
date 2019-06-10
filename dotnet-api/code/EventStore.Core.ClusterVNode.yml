@@ -6,8 +6,8 @@ items:
   parent: EventStore.Core
   children:
   - EventStore.Core.ClusterVNode.#ctor(EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Cluster.Settings.ClusterVNodeSettings,EventStore.Core.Services.Gossip.IGossipSeedSource,EventStore.Core.Services.Transport.Http.Controllers.InfoController,EventStore.Core.ISubsystem[])
-  - EventStore.Core.ClusterVNode.AddTask(Task)
-  - EventStore.Core.ClusterVNode.AddTasks(IEnumerable{Task})
+  - EventStore.Core.ClusterVNode.AddTask(System.Threading.Tasks.Task)
+  - EventStore.Core.ClusterVNode.AddTasks(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})
   - EventStore.Core.ClusterVNode.ExternalHttpService
   - EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
   - EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
@@ -21,7 +21,7 @@ items:
   - EventStore.Core.ClusterVNode.Start
   - EventStore.Core.ClusterVNode.StartAndWaitUntilReady
   - EventStore.Core.ClusterVNode.Stop
-  - EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
+  - EventStore.Core.ClusterVNode.Stop(System.TimeSpan,System.Boolean,System.Boolean)
   - EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean,System.Boolean)
   - EventStore.Core.ClusterVNode.Tasks
   - EventStore.Core.ClusterVNode.TimerService
@@ -34,27 +34,29 @@ items:
   fullName: EventStore.Core.ClusterVNode
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterVNode
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 42
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core
   syntax:
-    content: 'public class ClusterVNode : object, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShutdown>'
+    content: 'public class ClusterVNode : IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShutdown>'
     content.vb: >-
       Public Class ClusterVNode
-          Inherits Object
           Implements IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShutdown)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShutdown}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -79,12 +81,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.MainQueue
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MainQueue
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 47
   assemblies:
   - EventStore.Core
@@ -114,12 +112,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.MainBus
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MainBus
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 51
   assemblies:
   - EventStore.Core
@@ -149,12 +143,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.InternalHttpService
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalHttpService
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -184,12 +174,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.ExternalHttpService
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalHttpService
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 59
   assemblies:
   - EventStore.Core
@@ -219,12 +205,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.TimerService
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TimerService
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 63
   assemblies:
   - EventStore.Core
@@ -254,12 +236,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.NetworkSendService
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NetworkSendService
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 67
   assemblies:
   - EventStore.Core
@@ -289,12 +267,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.InternalAuthenticationProvider
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalAuthenticationProvider
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 71
   assemblies:
   - EventStore.Core
@@ -324,12 +298,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.NodeStatusChanged
   type: Event
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NodeStatusChanged
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 95
   assemblies:
   - EventStore.Core
@@ -337,7 +307,7 @@ items:
   syntax:
     content: public event EventHandler<VNodeStatusChangeArgs> NodeStatusChanged
     return:
-      type: EventHandler{EventStore.Core.VNodeStatusChangeArgs}
+      type: System.EventHandler{EventStore.Core.VNodeStatusChangeArgs}
     content.vb: Public Event NodeStatusChanged As EventHandler(Of VNodeStatusChangeArgs)
   modifiers.csharp:
   - public
@@ -355,12 +325,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.Tasks
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Tasks
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 97
   assemblies:
   - EventStore.Core
@@ -369,7 +335,7 @@ items:
     content: public IEnumerable<Task> Tasks { get; }
     parameters: []
     return:
-      type: IEnumerable{Task}
+      type: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
     content.vb: Public ReadOnly Property Tasks As IEnumerable(Of Task)
   overload: EventStore.Core.ClusterVNode.Tasks*
   modifiers.csharp:
@@ -390,12 +356,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.OnNodeStatusChanged(EventStore.Core.VNodeStatusChangeArgs)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OnNodeStatusChanged
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 105
   assemblies:
   - EventStore.Core
@@ -425,12 +387,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.ClusterVNode(EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Cluster.Settings.ClusterVNodeSettings, EventStore.Core.Services.Gossip.IGossipSeedSource, EventStore.Core.Services.Transport.Http.Controllers.InfoController, EventStore.Core.ISubsystem[])
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 111
   assemblies:
   - EventStore.Core
@@ -469,12 +427,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.Start()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 649
   assemblies:
   - EventStore.Core
@@ -499,12 +453,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.StopNonblocking(System.Boolean, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StopNonblocking
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 653
   assemblies:
   - EventStore.Core
@@ -534,12 +484,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 661
   assemblies:
   - EventStore.Core
@@ -554,24 +500,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
-  commentId: M:EventStore.Core.ClusterVNode.Stop(TimeSpan,System.Boolean,System.Boolean)
-  id: Stop(TimeSpan,System.Boolean,System.Boolean)
+- uid: EventStore.Core.ClusterVNode.Stop(System.TimeSpan,System.Boolean,System.Boolean)
+  commentId: M:EventStore.Core.ClusterVNode.Stop(System.TimeSpan,System.Boolean,System.Boolean)
+  id: Stop(System.TimeSpan,System.Boolean,System.Boolean)
   parent: EventStore.Core.ClusterVNode
   langs:
   - csharp
   - vb
   name: Stop(TimeSpan, Boolean, Boolean)
   nameWithType: ClusterVNode.Stop(TimeSpan, Boolean, Boolean)
-  fullName: EventStore.Core.ClusterVNode.Stop(TimeSpan, System.Boolean, System.Boolean)
+  fullName: EventStore.Core.ClusterVNode.Stop(System.TimeSpan, System.Boolean, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 665
   assemblies:
   - EventStore.Core
@@ -580,7 +522,7 @@ items:
     content: public bool Stop(TimeSpan timeout, bool exitProcess, bool shutdownHttp)
     parameters:
     - id: timeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: exitProcess
       type: System.Boolean
     - id: shutdownHttp
@@ -605,12 +547,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 670
   assemblies:
   - EventStore.Core
@@ -640,12 +578,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 674
   assemblies:
   - EventStore.Core
@@ -663,24 +597,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.ClusterVNode.AddTasks(IEnumerable{Task})
-  commentId: M:EventStore.Core.ClusterVNode.AddTasks(IEnumerable{Task})
-  id: AddTasks(IEnumerable{Task})
+- uid: EventStore.Core.ClusterVNode.AddTasks(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})
+  commentId: M:EventStore.Core.ClusterVNode.AddTasks(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})
+  id: AddTasks(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})
   parent: EventStore.Core.ClusterVNode
   langs:
   - csharp
   - vb
   name: AddTasks(IEnumerable<Task>)
   nameWithType: ClusterVNode.AddTasks(IEnumerable<Task>)
-  fullName: EventStore.Core.ClusterVNode.AddTasks(IEnumerable<Task>)
+  fullName: EventStore.Core.ClusterVNode.AddTasks(System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddTasks
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 678
   assemblies:
   - EventStore.Core
@@ -689,7 +619,7 @@ items:
     content: public void AddTasks(IEnumerable<Task> tasks)
     parameters:
     - id: tasks
-      type: IEnumerable{Task}
+      type: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
     content.vb: Public Sub AddTasks(tasks As IEnumerable(Of Task))
   overload: EventStore.Core.ClusterVNode.AddTasks*
   nameWithType.vb: ClusterVNode.AddTasks(IEnumerable(Of Task))
@@ -697,26 +627,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.ClusterVNode.AddTasks(IEnumerable(Of Task))
+  fullName.vb: EventStore.Core.ClusterVNode.AddTasks(System.Collections.Generic.IEnumerable(Of System.Threading.Tasks.Task))
   name.vb: AddTasks(IEnumerable(Of Task))
-- uid: EventStore.Core.ClusterVNode.AddTask(Task)
-  commentId: M:EventStore.Core.ClusterVNode.AddTask(Task)
-  id: AddTask(Task)
+- uid: EventStore.Core.ClusterVNode.AddTask(System.Threading.Tasks.Task)
+  commentId: M:EventStore.Core.ClusterVNode.AddTask(System.Threading.Tasks.Task)
+  id: AddTask(System.Threading.Tasks.Task)
   parent: EventStore.Core.ClusterVNode
   langs:
   - csharp
   - vb
   name: AddTask(Task)
   nameWithType: ClusterVNode.AddTask(Task)
-  fullName: EventStore.Core.ClusterVNode.AddTask(Task)
+  fullName: EventStore.Core.ClusterVNode.AddTask(System.Threading.Tasks.Task)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddTask
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 686
   assemblies:
   - EventStore.Core
@@ -725,7 +651,7 @@ items:
     content: public void AddTask(Task task)
     parameters:
     - id: task
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public Sub AddTask(task As Task)
   overload: EventStore.Core.ClusterVNode.AddTask*
   modifiers.csharp:
@@ -744,12 +670,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.StartAndWaitUntilReady()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartAndWaitUntilReady
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 707
   assemblies:
   - EventStore.Core
@@ -757,7 +679,7 @@ items:
   syntax:
     content: public Task<ClusterVNode> StartAndWaitUntilReady()
     return:
-      type: Task{EventStore.Core.ClusterVNode}
+      type: System.Threading.Tasks.Task{EventStore.Core.ClusterVNode}
     content.vb: Public Function StartAndWaitUntilReady As Task(Of ClusterVNode)
   overload: EventStore.Core.ClusterVNode.StartAndWaitUntilReady*
   modifiers.csharp:
@@ -776,12 +698,8 @@ items:
   fullName: EventStore.Core.ClusterVNode.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/ClusterVNode.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Core/ClusterVNode.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/ClusterVNode.cs
     startLine: 718
   assemblies:
   - EventStore.Core
@@ -791,6 +709,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Core.ClusterVNode.ToString*
   modifiers.csharp:
   - public
@@ -888,6 +807,254 @@ references:
     name: SystemMessage.BecomeShutdown
     nameWithType: SystemMessage.BecomeShutdown
     fullName: EventStore.Core.Messages.SystemMessage.BecomeShutdown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -1383,20 +1550,21 @@ references:
   name: EventStore.Core.Authentication
   nameWithType: EventStore.Core.Authentication
   fullName: EventStore.Core.Authentication
-- uid: EventHandler{EventStore.Core.VNodeStatusChangeArgs}
-  commentId: '!:EventHandler{EventStore.Core.VNodeStatusChangeArgs}'
-  definition: EventHandler`1
+- uid: System.EventHandler{EventStore.Core.VNodeStatusChangeArgs}
+  commentId: T:System.EventHandler{EventStore.Core.VNodeStatusChangeArgs}
+  parent: System
+  definition: System.EventHandler`1
   name: EventHandler<VNodeStatusChangeArgs>
   nameWithType: EventHandler<VNodeStatusChangeArgs>
-  fullName: EventHandler<EventStore.Core.VNodeStatusChangeArgs>
+  fullName: System.EventHandler<EventStore.Core.VNodeStatusChangeArgs>
   nameWithType.vb: EventHandler(Of VNodeStatusChangeArgs)
-  fullName.vb: EventHandler(Of EventStore.Core.VNodeStatusChangeArgs)
+  fullName.vb: System.EventHandler(Of EventStore.Core.VNodeStatusChangeArgs)
   name.vb: EventHandler(Of VNodeStatusChangeArgs)
   spec.csharp:
-  - uid: EventHandler`1
+  - uid: System.EventHandler`1
     name: EventHandler
     nameWithType: EventHandler
-    fullName: EventHandler
+    fullName: System.EventHandler
     isExternal: true
   - name: <
     nameWithType: <
@@ -1409,10 +1577,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: EventHandler`1
+  - uid: System.EventHandler`1
     name: EventHandler
     nameWithType: EventHandler
-    fullName: EventHandler
+    fullName: System.EventHandler
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1424,42 +1592,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventHandler`1
-  commentId: '!:EventHandler`1'
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
   isExternal: true
-  name: EventHandler<>
-  nameWithType: EventHandler<>
-  fullName: EventHandler<>
-  nameWithType.vb: EventHandler(Of )
-  fullName.vb: EventHandler(Of )
-  name.vb: EventHandler(Of )
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
   spec.csharp:
-  - uid: EventHandler`1
+  - uid: System.EventHandler`1
     name: EventHandler
     nameWithType: EventHandler
-    fullName: EventHandler
+    fullName: System.EventHandler
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TEventArgs
+    nameWithType: TEventArgs
+    fullName: TEventArgs
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: EventHandler`1
+  - uid: System.EventHandler`1
     name: EventHandler
     nameWithType: EventHandler
-    fullName: EventHandler
+    fullName: System.EventHandler
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TEventArgs
+    nameWithType: TEventArgs
+    fullName: TEventArgs
   - name: )
     nameWithType: )
     fullName: )
@@ -1468,87 +1636,95 @@ references:
   name: Tasks
   nameWithType: ClusterVNode.Tasks
   fullName: EventStore.Core.ClusterVNode.Tasks
-- uid: IEnumerable{Task}
-  commentId: '!:IEnumerable{Task}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<Task>
   nameWithType: IEnumerable<Task>
-  fullName: IEnumerable<Task>
+  fullName: System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task>
   nameWithType.vb: IEnumerable(Of Task)
-  fullName.vb: IEnumerable(Of Task)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Threading.Tasks.Task)
   name.vb: IEnumerable(Of Task)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.ClusterVNode.OnNodeStatusChanged*
   commentId: Overload:EventStore.Core.ClusterVNode.OnNodeStatusChanged
   name: OnNodeStatusChanged
@@ -1655,11 +1831,13 @@ references:
   name: Stop
   nameWithType: ClusterVNode.Stop
   fullName: EventStore.Core.ClusterVNode.Stop
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.ClusterVNode.Handle*
   commentId: Overload:EventStore.Core.ClusterVNode.Handle
   name: Handle
@@ -1805,30 +1983,39 @@ references:
   name: AddTask
   nameWithType: ClusterVNode.AddTask
   fullName: EventStore.Core.ClusterVNode.AddTask
-- uid: Task
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: EventStore.Core.ClusterVNode.StartAndWaitUntilReady*
   commentId: Overload:EventStore.Core.ClusterVNode.StartAndWaitUntilReady
   name: StartAndWaitUntilReady
   nameWithType: ClusterVNode.StartAndWaitUntilReady
   fullName: EventStore.Core.ClusterVNode.StartAndWaitUntilReady
-- uid: Task{EventStore.Core.ClusterVNode}
-  commentId: '!:Task{EventStore.Core.ClusterVNode}'
-  definition: Task`1
+- uid: System.Threading.Tasks.Task{EventStore.Core.ClusterVNode}
+  commentId: T:System.Threading.Tasks.Task{EventStore.Core.ClusterVNode}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
   name: Task<ClusterVNode>
   nameWithType: Task<ClusterVNode>
-  fullName: Task<EventStore.Core.ClusterVNode>
+  fullName: System.Threading.Tasks.Task<EventStore.Core.ClusterVNode>
   nameWithType.vb: Task(Of ClusterVNode)
-  fullName.vb: Task(Of EventStore.Core.ClusterVNode)
+  fullName.vb: System.Threading.Tasks.Task(Of EventStore.Core.ClusterVNode)
   name.vb: Task(Of ClusterVNode)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
@@ -1841,10 +2028,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1856,42 +2043,73 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Task`1
-  commentId: '!:Task`1'
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
-  name: Task<>
-  nameWithType: Task<>
-  fullName: Task<>
-  nameWithType.vb: Task(Of )
-  fullName.vb: Task(Of )
-  name.vb: Task(Of )
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
   spec.csharp:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Task`1
+  - uid: System.Threading.Tasks.Task`1
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )

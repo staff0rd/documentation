@@ -7,8 +7,8 @@ items:
   children:
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.CatalogPosition
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.CatalogStream
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(JsonToken,JsonReader)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,JsonReader)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(Newtonsoft.Json.JsonToken,Newtonsoft.Json.JsonReader)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,Newtonsoft.Json.JsonReader)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.CommitPosition
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.Completed
@@ -18,14 +18,14 @@ items:
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals(System.Object)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromByStreamPosition(System.Int32,System.String,System.Int64,System.String,System.Int64,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,IDictionary{System.String,System.Int64})
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,System.Collections.Generic.IDictionary{System.String,System.Int64})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(Newtonsoft.Json.JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPhase(System.Int32,System.Boolean)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPosition(System.Int32,EventStore.Core.Data.TFPos)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPosition(System.Int32,System.Int64,System.Int64)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPreparePosition(System.Int32,System.Int64)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPosition(System.Int32,System.String,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,IDictionary{System.String,System.Int64})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,System.Collections.Generic.IDictionary{System.String,System.Int64})
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.GetHashCode
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.op_Equality(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.op_GreaterThan(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag)
@@ -37,15 +37,15 @@ items:
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.Position
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.PreparePosition
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.Streams
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(IEnumerable{KeyValuePair{System.String,JToken}})
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(IEnumerable{KeyValuePair{System.String,JToken}})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.ToString
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateEventTypeIndexPosition(EventStore.Core.Data.TFPos)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateEventTypeIndexPosition(EventStore.Core.Data.TFPos,System.String,System.Int64)
   - EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateStreamPosition(System.String,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}},JsonWriter)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}},Newtonsoft.Json.JsonWriter)
   langs:
   - csharp
   - vb
@@ -54,12 +54,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointTag
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
@@ -68,9 +64,16 @@ items:
     content: 'public class CheckpointTag : IComparable<CheckpointTag>'
     content.vb: >-
       Public Class CheckpointTag
-          Inherits IComparable(Of CheckpointTag)
+          Implements IComparable(Of CheckpointTag)
   inheritance:
   - System.Object
+  implements:
+  - System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -95,12 +98,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Phase
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Phase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 13
   assemblies:
   - EventStore.Projections.Core
@@ -128,12 +127,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Position
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Position
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 15
   assemblies:
   - EventStore.Projections.Core
@@ -161,12 +156,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Streams
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Streams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 18
   assemblies:
   - EventStore.Projections.Core
@@ -174,7 +165,7 @@ items:
   syntax:
     content: public readonly Dictionary<string, long> Streams
     return:
-      type: Dictionary{System.String,System.Int64}
+      type: System.Collections.Generic.Dictionary{System.String,System.Int64}
     content.vb: Public ReadOnly Streams As Dictionary(Of String, Long)
   modifiers.csharp:
   - public
@@ -194,12 +185,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CatalogStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CatalogStream
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 20
   assemblies:
   - EventStore.Projections.Core
@@ -227,12 +214,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.DataStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DataStream
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 21
   assemblies:
   - EventStore.Projections.Core
@@ -260,12 +243,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CatalogPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CatalogPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 22
   assemblies:
   - EventStore.Projections.Core
@@ -293,12 +272,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.DataPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DataPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 23
   assemblies:
   - EventStore.Projections.Core
@@ -326,12 +301,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.GreaterThan(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_GreaterThan
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 127
   assemblies:
   - EventStore.Projections.Core
@@ -365,12 +336,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.GreaterThanOrEqual(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_GreaterThanOrEqual
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 187
   assemblies:
   - EventStore.Projections.Core
@@ -404,12 +371,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.LessThan(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_LessThan
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 238
   assemblies:
   - EventStore.Projections.Core
@@ -443,12 +406,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.LessThanOrEqual(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_LessThanOrEqual
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 242
   assemblies:
   - EventStore.Projections.Core
@@ -482,12 +441,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Equality(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_Equality
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 246
   assemblies:
   - EventStore.Projections.Core
@@ -521,12 +476,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Inequality(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Operator
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: op_Inequality
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 250
   assemblies:
   - EventStore.Projections.Core
@@ -560,12 +511,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 254
   assemblies:
   - EventStore.Projections.Core
@@ -595,12 +542,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals(System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 292
   assemblies:
   - EventStore.Projections.Core
@@ -613,6 +556,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals*
   modifiers.csharp:
   - public
@@ -632,12 +576,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.GetHashCode()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetHashCode
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 299
   assemblies:
   - EventStore.Projections.Core
@@ -647,6 +587,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.GetHashCode*
   modifiers.csharp:
   - public
@@ -666,12 +607,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CommitPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 304
   assemblies:
   - EventStore.Projections.Core
@@ -701,12 +638,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.PreparePosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PreparePosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 319
   assemblies:
   - EventStore.Projections.Core
@@ -736,12 +669,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Empty
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Empty
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 332
   assemblies:
   - EventStore.Projections.Core
@@ -773,12 +702,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPhase(System.Int32, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromPhase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 339
   assemblies:
   - EventStore.Projections.Core
@@ -812,12 +737,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPosition(System.Int32, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 343
   assemblies:
   - EventStore.Projections.Core
@@ -853,12 +774,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPosition(System.Int32, EventStore.Core.Data.TFPos)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 347
   assemblies:
   - EventStore.Projections.Core
@@ -892,12 +809,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromPreparePosition(System.Int32, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromPreparePosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 351
   assemblies:
   - EventStore.Projections.Core
@@ -931,12 +844,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPosition(System.Int32, System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromStreamPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 355
   assemblies:
   - EventStore.Projections.Core
@@ -960,24 +869,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,IDictionary{System.String,System.Int64})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,IDictionary{System.String,System.Int64})
-  id: FromStreamPositions(System.Int32,IDictionary{System.String,System.Int64})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,System.Collections.Generic.IDictionary{System.String,System.Int64})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32,System.Collections.Generic.IDictionary{System.String,System.Int64})
+  id: FromStreamPositions(System.Int32,System.Collections.Generic.IDictionary{System.String,System.Int64})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: FromStreamPositions(Int32, IDictionary<String, Int64>)
   nameWithType: CheckpointTag.FromStreamPositions(Int32, IDictionary<String, Int64>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32, IDictionary<System.String, System.Int64>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32, System.Collections.Generic.IDictionary<System.String, System.Int64>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromStreamPositions
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 359
   assemblies:
   - EventStore.Projections.Core
@@ -988,7 +893,7 @@ items:
     - id: phase
       type: System.Int32
     - id: streams
-      type: IDictionary{System.String,System.Int64}
+      type: System.Collections.Generic.IDictionary{System.String,System.Int64}
     return:
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     content.vb: Public Shared Function FromStreamPositions(phase As Integer, streams As IDictionary(Of String, Long)) As CheckpointTag
@@ -1000,26 +905,22 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32, IDictionary(Of System.String, System.Int64))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions(System.Int32, System.Collections.Generic.IDictionary(Of System.String, System.Int64))
   name.vb: FromStreamPositions(Int32, IDictionary(Of String, Int64))
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,IDictionary{System.String,System.Int64})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,IDictionary{System.String,System.Int64})
-  id: FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,IDictionary{System.String,System.Int64})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,System.Collections.Generic.IDictionary{System.String,System.Int64})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,System.Collections.Generic.IDictionary{System.String,System.Int64})
+  id: FromEventTypeIndexPositions(System.Int32,EventStore.Core.Data.TFPos,System.Collections.Generic.IDictionary{System.String,System.Int64})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: FromEventTypeIndexPositions(Int32, TFPos, IDictionary<String, Int64>)
   nameWithType: CheckpointTag.FromEventTypeIndexPositions(Int32, TFPos, IDictionary<String, Int64>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32, EventStore.Core.Data.TFPos, IDictionary<System.String, System.Int64>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32, EventStore.Core.Data.TFPos, System.Collections.Generic.IDictionary<System.String, System.Int64>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromEventTypeIndexPositions
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 364
   assemblies:
   - EventStore.Projections.Core
@@ -1032,7 +933,7 @@ items:
     - id: position
       type: EventStore.Core.Data.TFPos
     - id: streams
-      type: IDictionary{System.String,System.Int64}
+      type: System.Collections.Generic.IDictionary{System.String,System.Int64}
     return:
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     content.vb: Public Shared Function FromEventTypeIndexPositions(phase As Integer, position As TFPos, streams As IDictionary(Of String, Long)) As CheckpointTag
@@ -1044,7 +945,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32, EventStore.Core.Data.TFPos, IDictionary(Of System.String, System.Int64))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromEventTypeIndexPositions(System.Int32, EventStore.Core.Data.TFPos, System.Collections.Generic.IDictionary(Of System.String, System.Int64))
   name.vb: FromEventTypeIndexPositions(Int32, TFPos, IDictionary(Of String, Int64))
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromByStreamPosition(System.Int32,System.String,System.Int64,System.String,System.Int64,System.Int64)
   commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromByStreamPosition(System.Int32,System.String,System.Int64,System.String,System.Int64,System.Int64)
@@ -1058,12 +959,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromByStreamPosition(System.Int32, System.String, System.Int64, System.String, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromByStreamPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 370
   assemblies:
   - EventStore.Projections.Core
@@ -1105,12 +1002,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompareTo
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 376
   assemblies:
   - EventStore.Projections.Core
@@ -1124,6 +1017,8 @@ items:
       type: System.Int32
     content.vb: Public Function CompareTo(other As CheckpointTag) As Integer
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.CompareTo*
+  implements:
+  - System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1140,12 +1035,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 380
   assemblies:
   - EventStore.Projections.Core
@@ -1155,6 +1046,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToString*
   modifiers.csharp:
   - public
@@ -1174,12 +1066,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Completed
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Completed
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 424
   assemblies:
   - EventStore.Projections.Core
@@ -1209,12 +1097,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateStreamPosition(System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UpdateStreamPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 450
   assemblies:
   - EventStore.Projections.Core
@@ -1246,12 +1130,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateEventTypeIndexPosition(EventStore.Core.Data.TFPos, System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UpdateEventTypeIndexPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 457
   assemblies:
   - EventStore.Projections.Core
@@ -1285,12 +1165,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.UpdateEventTypeIndexPosition(EventStore.Core.Data.TFPos)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UpdateEventTypeIndexPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 464
   assemblies:
   - EventStore.Projections.Core
@@ -1308,24 +1184,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  id: ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  id: ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: ToJsonBytes(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>)
   nameWithType: CheckpointTag.ToJsonBytes(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable<KeyValuePair<System.String, JToken>>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonBytes
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 492
   assemblies:
   - EventStore.Projections.Core
@@ -1336,7 +1208,7 @@ items:
     - id: projectionVersion
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: extraMetaData
-      type: IEnumerable{KeyValuePair{System.String,JToken}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
     return:
       type: System.Byte[]
     content.vb: Public Function ToJsonBytes(projectionVersion As ProjectionVersion, extraMetaData As IEnumerable(Of KeyValuePair(Of String, JToken)) = Nothing) As Byte()
@@ -1346,26 +1218,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable(Of KeyValuePair(Of System.String, JToken)))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonBytes(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken)))
   name.vb: ToJsonBytes(ProjectionVersion, IEnumerable(Of KeyValuePair(Of String, JToken)))
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
-  id: ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  id: ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: ToJsonString(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>)
   nameWithType: CheckpointTag.ToJsonString(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable<KeyValuePair<System.String, JToken>>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonString
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 507
   assemblies:
   - EventStore.Projections.Core
@@ -1376,7 +1244,7 @@ items:
     - id: projectionVersion
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: extraMetaData
-      type: IEnumerable{KeyValuePair{System.String,JToken}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
     return:
       type: System.String
     content.vb: Public Function ToJsonString(projectionVersion As ProjectionVersion, extraMetaData As IEnumerable(Of KeyValuePair(Of String, JToken)) = Nothing) As String
@@ -1386,26 +1254,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable(Of KeyValuePair(Of System.String, JToken)))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken)))
   name.vb: ToJsonString(ProjectionVersion, IEnumerable(Of KeyValuePair(Of String, JToken)))
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(IEnumerable{KeyValuePair{System.String,JToken}})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(IEnumerable{KeyValuePair{System.String,JToken}})
-  id: ToJsonString(IEnumerable{KeyValuePair{System.String,JToken}})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  id: ToJsonString(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: ToJsonString(IEnumerable<KeyValuePair<String, JToken>>)
   nameWithType: CheckpointTag.ToJsonString(IEnumerable<KeyValuePair<String, JToken>>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(IEnumerable<KeyValuePair<System.String, JToken>>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonString
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 521
   assemblies:
   - EventStore.Projections.Core
@@ -1414,7 +1278,7 @@ items:
     content: public string ToJsonString(IEnumerable<KeyValuePair<string, JToken>> extraMetaData = null)
     parameters:
     - id: extraMetaData
-      type: IEnumerable{KeyValuePair{System.String,JToken}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
     return:
       type: System.String
     content.vb: Public Function ToJsonString(extraMetaData As IEnumerable(Of KeyValuePair(Of String, JToken)) = Nothing) As String
@@ -1424,26 +1288,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(IEnumerable(Of KeyValuePair(Of System.String, JToken)))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonString(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken)))
   name.vb: ToJsonString(IEnumerable(Of KeyValuePair(Of String, JToken)))
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(IEnumerable{KeyValuePair{System.String,JToken}})
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(IEnumerable{KeyValuePair{System.String,JToken}})
-  id: ToJsonRaw(IEnumerable{KeyValuePair{System.String,JToken}})
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
+  id: ToJsonRaw(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}})
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: ToJsonRaw(IEnumerable<KeyValuePair<String, JToken>>)
   nameWithType: CheckpointTag.ToJsonRaw(IEnumerable<KeyValuePair<String, JToken>>)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(IEnumerable<KeyValuePair<System.String, JToken>>)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToJsonRaw
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 531
   assemblies:
   - EventStore.Projections.Core
@@ -1452,9 +1312,9 @@ items:
     content: public JRaw ToJsonRaw(IEnumerable<KeyValuePair<string, JToken>> extraMetaData = null)
     parameters:
     - id: extraMetaData
-      type: IEnumerable{KeyValuePair{System.String,JToken}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
     return:
-      type: JRaw
+      type: Newtonsoft.Json.Linq.JRaw
     content.vb: Public Function ToJsonRaw(extraMetaData As IEnumerable(Of KeyValuePair(Of String, JToken)) = Nothing) As JRaw
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw*
   nameWithType.vb: CheckpointTag.ToJsonRaw(IEnumerable(Of KeyValuePair(Of String, JToken)))
@@ -1462,26 +1322,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(IEnumerable(Of KeyValuePair(Of System.String, JToken)))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken)))
   name.vb: ToJsonRaw(IEnumerable(Of KeyValuePair(Of String, JToken)))
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}},JsonWriter)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}},JsonWriter)
-  id: WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,IEnumerable{KeyValuePair{System.String,JToken}},JsonWriter)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}},Newtonsoft.Json.JsonWriter)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}},Newtonsoft.Json.JsonWriter)
+  id: WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}},Newtonsoft.Json.JsonWriter)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: WriteTo(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>, JsonWriter)
   nameWithType: CheckpointTag.WriteTo(ProjectionVersion, IEnumerable<KeyValuePair<String, JToken>>, JsonWriter)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable<KeyValuePair<System.String, JToken>>, JsonWriter)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>, Newtonsoft.Json.JsonWriter)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteTo
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 541
   assemblies:
   - EventStore.Projections.Core
@@ -1492,9 +1348,9 @@ items:
     - id: projectionVersion
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: extraMetaData
-      type: IEnumerable{KeyValuePair{System.String,JToken}}
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
     - id: jsonWriter
-      type: JsonWriter
+      type: Newtonsoft.Json.JsonWriter
     content.vb: Public Sub WriteTo(projectionVersion As ProjectionVersion, extraMetaData As IEnumerable(Of KeyValuePair(Of String, JToken)), jsonWriter As JsonWriter)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo*
   nameWithType.vb: CheckpointTag.WriteTo(ProjectionVersion, IEnumerable(Of KeyValuePair(Of String, JToken)), JsonWriter)
@@ -1502,26 +1358,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion, IEnumerable(Of KeyValuePair(Of System.String, JToken)), JsonWriter)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo(EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken)), Newtonsoft.Json.JsonWriter)
   name.vb: WriteTo(ProjectionVersion, IEnumerable(Of KeyValuePair(Of String, JToken)), JsonWriter)
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
-  id: FromJson(JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(Newtonsoft.Json.JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(Newtonsoft.Json.JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
+  id: FromJson(Newtonsoft.Json.JsonReader,EventStore.Projections.Core.Services.Processing.ProjectionVersion,System.Boolean)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: FromJson(JsonReader, ProjectionVersion, Boolean)
   nameWithType: CheckpointTag.FromJson(JsonReader, ProjectionVersion, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(JsonReader, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson(Newtonsoft.Json.JsonReader, EventStore.Projections.Core.Services.Processing.ProjectionVersion, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromJson
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 621
   assemblies:
   - EventStore.Projections.Core
@@ -1530,7 +1382,7 @@ items:
     content: public static CheckpointTagVersion FromJson(JsonReader reader, ProjectionVersion current, bool skipStartObject = false)
     parameters:
     - id: reader
-      type: JsonReader
+      type: Newtonsoft.Json.JsonReader
     - id: current
       type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
     - id: skipStartObject
@@ -1545,24 +1397,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(JsonToken,JsonReader)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(JsonToken,JsonReader)
-  id: Check(JsonToken,JsonReader)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(Newtonsoft.Json.JsonToken,Newtonsoft.Json.JsonReader)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(Newtonsoft.Json.JsonToken,Newtonsoft.Json.JsonReader)
+  id: Check(Newtonsoft.Json.JsonToken,Newtonsoft.Json.JsonReader)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: Check(JsonToken, JsonReader)
   nameWithType: CheckpointTag.Check(JsonToken, JsonReader)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(JsonToken, JsonReader)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(Newtonsoft.Json.JsonToken, Newtonsoft.Json.JsonReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Check
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 768
   assemblies:
   - EventStore.Projections.Core
@@ -1571,9 +1419,9 @@ items:
     content: public static void Check(JsonToken type, JsonReader reader)
     parameters:
     - id: type
-      type: JsonToken
+      type: Newtonsoft.Json.JsonToken
     - id: reader
-      type: JsonReader
+      type: Newtonsoft.Json.JsonReader
     content.vb: Public Shared Sub Check(type As JsonToken, reader As JsonReader)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check*
   modifiers.csharp:
@@ -1582,24 +1430,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,JsonReader)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,JsonReader)
-  id: Check(System.Boolean,JsonReader)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,Newtonsoft.Json.JsonReader)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean,Newtonsoft.Json.JsonReader)
+  id: Check(System.Boolean,Newtonsoft.Json.JsonReader)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTag
   langs:
   - csharp
   - vb
   name: Check(Boolean, JsonReader)
   nameWithType: CheckpointTag.Check(Boolean, JsonReader)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean, JsonReader)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check(System.Boolean, Newtonsoft.Json.JsonReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Check
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 773
   assemblies:
   - EventStore.Projections.Core
@@ -1610,7 +1454,7 @@ items:
     - id: read
       type: System.Boolean
     - id: reader
-      type: JsonReader
+      type: Newtonsoft.Json.JsonReader
     content.vb: Public Shared Sub Check(read As Boolean, reader As JsonReader)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check*
   modifiers.csharp:
@@ -1632,6 +1476,224 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}
+  commentId: T:System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}
+  parent: System
+  definition: System.IComparable`1
+  name: IComparable<CheckpointTag>
+  nameWithType: IComparable<CheckpointTag>
+  fullName: System.IComparable<EventStore.Projections.Core.Services.Processing.CheckpointTag>
+  nameWithType.vb: IComparable(Of CheckpointTag)
+  fullName.vb: System.IComparable(Of EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  name.vb: IComparable(Of CheckpointTag)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1789,6 +1851,45 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -2015,20 +2116,21 @@ references:
   name: EventStore.Core.Data
   nameWithType: EventStore.Core.Data
   fullName: EventStore.Core.Data
-- uid: Dictionary{System.String,System.Int64}
-  commentId: '!:Dictionary{System.String,System.Int64}'
-  definition: Dictionary`2
+- uid: System.Collections.Generic.Dictionary{System.String,System.Int64}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Int64}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
   name: Dictionary<String, Int64>
   nameWithType: Dictionary<String, Int64>
-  fullName: Dictionary<System.String, System.Int64>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.Int64>
   nameWithType.vb: Dictionary(Of String, Int64)
-  fullName.vb: Dictionary(Of System.String, System.Int64)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.Int64)
   name.vb: Dictionary(Of String, Int64)
   spec.csharp:
-  - uid: Dictionary`2
+  - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     nameWithType: Dictionary
-    fullName: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: <
     nameWithType: <
@@ -2050,10 +2152,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Dictionary`2
+  - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     nameWithType: Dictionary
-    fullName: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2074,56 +2176,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Dictionary`2
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
-  name: Dictionary<, >
-  nameWithType: Dictionary<, >
-  fullName: Dictionary<, >
-  nameWithType.vb: Dictionary(Of , )
-  fullName.vb: Dictionary(Of , )
-  name.vb: Dictionary(Of , )
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: Dictionary`2
+  - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     nameWithType: Dictionary
-    fullName: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Dictionary`2
+  - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     nameWithType: Dictionary
-    fullName: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -2186,6 +2295,78 @@ references:
   name: Equals
   nameWithType: CheckpointTag.Equals
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Equals
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.GetHashCode*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTag.GetHashCode
   name: GetHashCode
@@ -2197,7 +2378,8 @@ references:
   nameWithType: CheckpointTag.CommitPosition
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CommitPosition
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -2313,20 +2495,21 @@ references:
   name: FromStreamPositions
   nameWithType: CheckpointTag.FromStreamPositions
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromStreamPositions
-- uid: IDictionary{System.String,System.Int64}
-  commentId: '!:IDictionary{System.String,System.Int64}'
-  definition: IDictionary`2
+- uid: System.Collections.Generic.IDictionary{System.String,System.Int64}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Int64}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
   name: IDictionary<String, Int64>
   nameWithType: IDictionary<String, Int64>
-  fullName: IDictionary<System.String, System.Int64>
+  fullName: System.Collections.Generic.IDictionary<System.String, System.Int64>
   nameWithType.vb: IDictionary(Of String, Int64)
-  fullName.vb: IDictionary(Of System.String, System.Int64)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.Int64)
   name.vb: IDictionary(Of String, Int64)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
@@ -2348,10 +2531,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2372,53 +2555,54 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IDictionary`2
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  name: IDictionary<, >
-  nameWithType: IDictionary<, >
-  fullName: IDictionary<, >
-  nameWithType.vb: IDictionary(Of , )
-  fullName.vb: IDictionary(Of , )
-  name.vb: IDictionary(Of , )
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: )
     nameWithType: )
     fullName: )
@@ -2437,6 +2621,116 @@ references:
   name: CompareTo
   nameWithType: CheckpointTag.CompareTo
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.CompareTo
+- uid: System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: System.IComparable{EventStore.Projections.Core.Services.Processing.CheckpointTag}
+  definition: System.IComparable`1.CompareTo(`0)
+  name: CompareTo(CheckpointTag)
+  nameWithType: IComparable<CheckpointTag>.CompareTo(CheckpointTag)
+  fullName: System.IComparable<EventStore.Projections.Core.Services.Processing.CheckpointTag>.CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  nameWithType.vb: IComparable(Of CheckpointTag).CompareTo(CheckpointTag)
+  fullName.vb: System.IComparable(Of EventStore.Projections.Core.Services.Processing.CheckpointTag).CompareTo(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable<CheckpointTag>.CompareTo
+    fullName: System.IComparable<EventStore.Projections.Core.Services.Processing.CheckpointTag>.CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable(Of CheckpointTag).CompareTo
+    fullName: System.IComparable(Of EventStore.Projections.Core.Services.Processing.CheckpointTag).CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IComparable`1.CompareTo(`0)
+  commentId: M:System.IComparable`1.CompareTo(`0)
+  isExternal: true
+  name: CompareTo(T)
+  nameWithType: IComparable<T>.CompareTo(T)
+  fullName: System.IComparable<T>.CompareTo(T)
+  nameWithType.vb: IComparable(Of T).CompareTo(T)
+  fullName.vb: System.IComparable(Of T).CompareTo(T)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable<T>.CompareTo
+    fullName: System.IComparable<T>.CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    nameWithType: IComparable(Of T).CompareTo
+    fullName: System.IComparable(Of T).CompareTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToString*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTag.ToString
   name: ToString
@@ -2468,28 +2762,29 @@ references:
   name: ProjectionVersion
   nameWithType: ProjectionVersion
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionVersion
-- uid: IEnumerable{KeyValuePair{System.String,JToken}}
-  commentId: '!:IEnumerable{KeyValuePair{System.String,JToken}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Linq.JToken}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<KeyValuePair<String, JToken>>
   nameWithType: IEnumerable<KeyValuePair<String, JToken>>
-  fullName: IEnumerable<KeyValuePair<System.String, JToken>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Newtonsoft.Json.Linq.JToken>>
   nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, JToken))
-  fullName.vb: IEnumerable(Of KeyValuePair(Of System.String, JToken))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Newtonsoft.Json.Linq.JToken))
   name.vb: IEnumerable(Of KeyValuePair(Of String, JToken))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: <
     nameWithType: <
@@ -2502,10 +2797,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: JToken
+  - uid: Newtonsoft.Json.Linq.JToken
     name: JToken
     nameWithType: JToken
-    fullName: JToken
+    fullName: Newtonsoft.Json.Linq.JToken
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -2514,18 +2809,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: KeyValuePair`2
+  - uid: System.Collections.Generic.KeyValuePair`2
     name: KeyValuePair
     nameWithType: KeyValuePair
-    fullName: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2538,10 +2833,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: JToken
+  - uid: Newtonsoft.Json.Linq.JToken
     name: JToken
     nameWithType: JToken
-    fullName: JToken
+    fullName: Newtonsoft.Json.Linq.JToken
     isExternal: true
   - name: )
     nameWithType: )
@@ -2575,41 +2870,42 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -2623,32 +2919,49 @@ references:
   name: ToJsonRaw
   nameWithType: CheckpointTag.ToJsonRaw
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.ToJsonRaw
-- uid: JRaw
-  commentId: '!:JRaw'
+- uid: Newtonsoft.Json.Linq.JRaw
+  commentId: T:Newtonsoft.Json.Linq.JRaw
+  parent: Newtonsoft.Json.Linq
   isExternal: true
   name: JRaw
   nameWithType: JRaw
-  fullName: JRaw
+  fullName: Newtonsoft.Json.Linq.JRaw
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo
   name: WriteTo
   nameWithType: CheckpointTag.WriteTo
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.WriteTo
-- uid: JsonWriter
+- uid: Newtonsoft.Json.JsonWriter
+  commentId: T:Newtonsoft.Json.JsonWriter
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonWriter
   nameWithType: JsonWriter
-  fullName: JsonWriter
+  fullName: Newtonsoft.Json.JsonWriter
+- uid: Newtonsoft.Json
+  commentId: N:Newtonsoft.Json
+  isExternal: true
+  name: Newtonsoft.Json
+  nameWithType: Newtonsoft.Json
+  fullName: Newtonsoft.Json
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson
   name: FromJson
   nameWithType: CheckpointTag.FromJson
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.FromJson
-- uid: JsonReader
+- uid: Newtonsoft.Json.JsonReader
+  commentId: T:Newtonsoft.Json.JsonReader
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonReader
   nameWithType: JsonReader
-  fullName: JsonReader
+  fullName: Newtonsoft.Json.JsonReader
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagVersion
   commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTagVersion
   parent: EventStore.Projections.Core.Services.Processing
@@ -2660,9 +2973,10 @@ references:
   name: Check
   nameWithType: CheckpointTag.Check
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag.Check
-- uid: JsonToken
-  commentId: '!:JsonToken'
+- uid: Newtonsoft.Json.JsonToken
+  commentId: T:Newtonsoft.Json.JsonToken
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonToken
   nameWithType: JsonToken
-  fullName: JsonToken
+  fullName: Newtonsoft.Json.JsonToken

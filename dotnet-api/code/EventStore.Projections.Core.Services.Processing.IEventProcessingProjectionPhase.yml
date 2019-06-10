@@ -5,11 +5,11 @@ items:
   id: IEventProcessingProjectionPhase
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
   - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.FinalizeEventProcessing(EventStore.Projections.Core.Services.Processing.EventProcessedResult,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Single)
   - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessCommittedEvent(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived,System.String)
   - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessPartitionDeleted(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   - EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.TransformCatalogEvent(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
   langs:
   - csharp
@@ -19,12 +19,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IEventProcessingProjectionPhase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 23
   assemblies:
   - EventStore.Projections.Core
@@ -35,7 +31,7 @@ items:
       Public Interface IEventProcessingProjectionPhase
           Inherits IProjectionPhaseStateManager
   inheritedMembers:
-  - EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
   - EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.UnlockAndForgetBefore(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.LastProcessedEventPosition
   extensionMethods:
@@ -62,12 +58,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.TransformCatalogEvent(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransformCatalogEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 24
   assemblies:
   - EventStore.Projections.Core
@@ -93,12 +85,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessCommittedEvent(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProcessCommittedEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 26
   assemblies:
   - EventStore.Projections.Core
@@ -126,12 +114,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.FinalizeEventProcessing(EventStore.Projections.Core.Services.Processing.EventProcessedResult, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Single)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FinalizeEventProcessing
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 29
   assemblies:
   - EventStore.Projections.Core
@@ -147,24 +131,20 @@ items:
       type: System.Single
     content.vb: Sub FinalizeEventProcessing(result As EventProcessedResult, eventCheckpointTag As CheckpointTag, progress As Single)
   overload: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.FinalizeEventProcessing*
-- uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  id: RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+- uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  id: RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   parent: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase
   langs:
   - csharp
   - vb
   name: RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
   nameWithType: IEventProcessingProjectionPhase.RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
-  fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action)
+  fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RecordEventOrder
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 32
   assemblies:
   - EventStore.Projections.Core
@@ -177,27 +157,23 @@ items:
     - id: orderCheckpointTag
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: completed
-      type: Action
+      type: System.Action
     content.vb: Sub RecordEventOrder(resolvedEvent As ResolvedEvent, orderCheckpointTag As CheckpointTag, completed As Action)
   overload: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.RecordEventOrder*
-- uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  id: EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+- uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  id: EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
   parent: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase
   langs:
   - csharp
   - vb
   name: EmitEofResult(String, String, CheckpointTag, Guid, String)
   nameWithType: IEventProcessingProjectionPhase.EmitEofResult(String, String, CheckpointTag, Guid, String)
-  fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult(System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Guid, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EmitEofResult
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 34
   assemblies:
   - EventStore.Projections.Core
@@ -212,7 +188,7 @@ items:
     - id: causedBy
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: causedByGuid
-      type: Guid
+      type: System.Guid
     - id: correlationId
       type: System.String
     content.vb: Sub EmitEofResult(partition As String, resultBody As String, causedBy As CheckpointTag, causedByGuid As Guid, correlationId As String)
@@ -229,12 +205,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessPartitionDeleted(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProcessPartitionDeleted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/IEventProcessingPhase.cs
     startLine: 37
   assemblies:
   - EventStore.Projections.Core
@@ -256,18 +228,18 @@ references:
   name: EventStore.Projections.Core.Services.Processing
   nameWithType: EventStore.Projections.Core.Services.Processing
   fullName: EventStore.Projections.Core.Services.Processing
-- uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+- uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
   parent: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager
   isExternal: true
   name: BeginGetPartitionStateAt(String, CheckpointTag, Action<PartitionState>, Boolean)
   nameWithType: IProjectionPhaseStateManager.BeginGetPartitionStateAt(String, CheckpointTag, Action<PartitionState>, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action<EventStore.Projections.Core.Services.Processing.PartitionState>, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action<EventStore.Projections.Core.Services.Processing.PartitionState>, System.Boolean)
   nameWithType.vb: IProjectionPhaseStateManager.BeginGetPartitionStateAt(String, CheckpointTag, Action(Of PartitionState), Boolean)
-  fullName.vb: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action(Of EventStore.Projections.Core.Services.Processing.PartitionState), System.Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action(Of EventStore.Projections.Core.Services.Processing.PartitionState), System.Boolean)
   name.vb: BeginGetPartitionStateAt(String, CheckpointTag, Action(Of PartitionState), Boolean)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
     name: BeginGetPartitionStateAt
     nameWithType: IProjectionPhaseStateManager.BeginGetPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt
@@ -289,10 +261,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -316,7 +288,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
     name: BeginGetPartitionStateAt
     nameWithType: IProjectionPhaseStateManager.BeginGetPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager.BeginGetPartitionStateAt
@@ -338,10 +310,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -823,6 +795,8 @@ references:
   nameWithType: CheckpointTag
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
 - uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
   name: Single
   nameWithType: Single
@@ -838,21 +812,25 @@ references:
   name: ResolvedEvent
   nameWithType: ResolvedEvent
   fullName: EventStore.Projections.Core.Services.Processing.ResolvedEvent
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
 - uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult
   name: EmitEofResult
   nameWithType: IEventProcessingProjectionPhase.EmitEofResult
   fullName: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.EmitEofResult
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessPartitionDeleted*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase.ProcessPartitionDeleted
   name: ProcessPartitionDeleted

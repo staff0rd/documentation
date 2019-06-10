@@ -5,7 +5,7 @@ items:
   id: Application
   parent: EventStore.Common.Utils
   children:
-  - EventStore.Common.Utils.Application.AddDefines(IEnumerable{System.String})
+  - EventStore.Common.Utils.Application.AddDefines(System.Collections.Generic.IEnumerable{System.String})
   - EventStore.Common.Utils.Application.AdditionalCommitChecks
   - EventStore.Common.Utils.Application.AlwaysKeepScavenged
   - EventStore.Common.Utils.Application.DisableMergeChunks
@@ -17,7 +17,7 @@ items:
   - EventStore.Common.Utils.Application.InfiniteMetastreams
   - EventStore.Common.Utils.Application.IsDefined(System.String)
   - EventStore.Common.Utils.Application.Log
-  - EventStore.Common.Utils.Application.RegisterExitAction(Action{System.Int32})
+  - EventStore.Common.Utils.Application.RegisterExitAction(System.Action{System.Int32})
   langs:
   - csharp
   - vb
@@ -26,23 +26,25 @@ items:
   fullName: EventStore.Common.Utils.Application
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Application
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 11
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: 'public class Application : object'
-    content.vb: >-
-      Public Class Application
-          Inherits Object
+    content: public class Application
+    content.vb: Public Class Application
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -67,21 +69,17 @@ items:
   fullName: EventStore.Common.Utils.Application.AdditionalCommitChecks
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AdditionalCommitChecks
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 12
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string AdditionalCommitChecks = null
+    content: public const string AdditionalCommitChecks = "ADDITIONAL_COMMIT_CHECKS"
     return:
       type: System.String
-    content.vb: Public Const AdditionalCommitChecks As String = Nothing
+    content.vb: Public Const AdditionalCommitChecks As String = "ADDITIONAL_COMMIT_CHECKS"
   modifiers.csharp:
   - public
   - const
@@ -100,21 +98,17 @@ items:
   fullName: EventStore.Common.Utils.Application.InfiniteMetastreams
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InfiniteMetastreams
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 13
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string InfiniteMetastreams = null
+    content: public const string InfiniteMetastreams = "INFINITE_METASTREAMS"
     return:
       type: System.String
-    content.vb: Public Const InfiniteMetastreams As String = Nothing
+    content.vb: Public Const InfiniteMetastreams As String = "INFINITE_METASTREAMS"
   modifiers.csharp:
   - public
   - const
@@ -133,21 +127,17 @@ items:
   fullName: EventStore.Common.Utils.Application.DumpStatistics
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DumpStatistics
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 14
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string DumpStatistics = null
+    content: public const string DumpStatistics = "DUMP_STATISTICS"
     return:
       type: System.String
-    content.vb: Public Const DumpStatistics As String = Nothing
+    content.vb: Public Const DumpStatistics As String = "DUMP_STATISTICS"
   modifiers.csharp:
   - public
   - const
@@ -166,21 +156,17 @@ items:
   fullName: EventStore.Common.Utils.Application.DoNotTimeoutRequests
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DoNotTimeoutRequests
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 15
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string DoNotTimeoutRequests = null
+    content: public const string DoNotTimeoutRequests = "DO_NOT_TIMEOUT_REQUESTS"
     return:
       type: System.String
-    content.vb: Public Const DoNotTimeoutRequests As String = Nothing
+    content.vb: Public Const DoNotTimeoutRequests As String = "DO_NOT_TIMEOUT_REQUESTS"
   modifiers.csharp:
   - public
   - const
@@ -199,21 +185,17 @@ items:
   fullName: EventStore.Common.Utils.Application.AlwaysKeepScavenged
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AlwaysKeepScavenged
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 16
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string AlwaysKeepScavenged = null
+    content: public const string AlwaysKeepScavenged = "ALWAYS_KEEP_SCAVENGED"
     return:
       type: System.String
-    content.vb: Public Const AlwaysKeepScavenged As String = Nothing
+    content.vb: Public Const AlwaysKeepScavenged As String = "ALWAYS_KEEP_SCAVENGED"
   modifiers.csharp:
   - public
   - const
@@ -232,21 +214,17 @@ items:
   fullName: EventStore.Common.Utils.Application.DisableMergeChunks
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableMergeChunks
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 17
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string DisableMergeChunks = null
+    content: public const string DisableMergeChunks = "DISABLE_MERGE_CHUNKS"
     return:
       type: System.String
-    content.vb: Public Const DisableMergeChunks As String = Nothing
+    content.vb: Public Const DisableMergeChunks As String = "DISABLE_MERGE_CHUNKS"
   modifiers.csharp:
   - public
   - const
@@ -265,12 +243,8 @@ items:
   fullName: EventStore.Common.Utils.Application.Log
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Log
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 19
   assemblies:
   - EventStore.Common
@@ -288,24 +262,20 @@ items:
   - Protected
   - Shared
   - ReadOnly
-- uid: EventStore.Common.Utils.Application.RegisterExitAction(Action{System.Int32})
-  commentId: M:EventStore.Common.Utils.Application.RegisterExitAction(Action{System.Int32})
-  id: RegisterExitAction(Action{System.Int32})
+- uid: EventStore.Common.Utils.Application.RegisterExitAction(System.Action{System.Int32})
+  commentId: M:EventStore.Common.Utils.Application.RegisterExitAction(System.Action{System.Int32})
+  id: RegisterExitAction(System.Action{System.Int32})
   parent: EventStore.Common.Utils.Application
   langs:
   - csharp
   - vb
   name: RegisterExitAction(Action<Int32>)
   nameWithType: Application.RegisterExitAction(Action<Int32>)
-  fullName: EventStore.Common.Utils.Application.RegisterExitAction(Action<System.Int32>)
+  fullName: EventStore.Common.Utils.Application.RegisterExitAction(System.Action<System.Int32>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RegisterExitAction
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 26
   assemblies:
   - EventStore.Common
@@ -314,7 +284,7 @@ items:
     content: public static void RegisterExitAction(Action<int> exitAction)
     parameters:
     - id: exitAction
-      type: Action{System.Int32}
+      type: System.Action{System.Int32}
     content.vb: Public Shared Sub RegisterExitAction(exitAction As Action(Of Integer))
   overload: EventStore.Common.Utils.Application.RegisterExitAction*
   nameWithType.vb: Application.RegisterExitAction(Action(Of Int32))
@@ -324,7 +294,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Utils.Application.RegisterExitAction(Action(Of System.Int32))
+  fullName.vb: EventStore.Common.Utils.Application.RegisterExitAction(System.Action(Of System.Int32))
   name.vb: RegisterExitAction(Action(Of Int32))
 - uid: EventStore.Common.Utils.Application.ExitSilent(System.Int32,System.String)
   commentId: M:EventStore.Common.Utils.Application.ExitSilent(System.Int32,System.String)
@@ -338,12 +308,8 @@ items:
   fullName: EventStore.Common.Utils.Application.ExitSilent(System.Int32, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExitSilent
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 32
   assemblies:
   - EventStore.Common
@@ -375,12 +341,8 @@ items:
   fullName: EventStore.Common.Utils.Application.Exit(EventStore.Common.Utils.ExitCode, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Exit
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 36
   assemblies:
   - EventStore.Common
@@ -412,12 +374,8 @@ items:
   fullName: EventStore.Common.Utils.Application.Exit(System.Int32, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Exit
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 40
   assemblies:
   - EventStore.Common
@@ -437,24 +395,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Common.Utils.Application.AddDefines(IEnumerable{System.String})
-  commentId: M:EventStore.Common.Utils.Application.AddDefines(IEnumerable{System.String})
-  id: AddDefines(IEnumerable{System.String})
+- uid: EventStore.Common.Utils.Application.AddDefines(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:EventStore.Common.Utils.Application.AddDefines(System.Collections.Generic.IEnumerable{System.String})
+  id: AddDefines(System.Collections.Generic.IEnumerable{System.String})
   parent: EventStore.Common.Utils.Application
   langs:
   - csharp
   - vb
   name: AddDefines(IEnumerable<String>)
   nameWithType: Application.AddDefines(IEnumerable<String>)
-  fullName: EventStore.Common.Utils.Application.AddDefines(IEnumerable<System.String>)
+  fullName: EventStore.Common.Utils.Application.AddDefines(System.Collections.Generic.IEnumerable<System.String>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddDefines
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 64
   assemblies:
   - EventStore.Common
@@ -463,7 +417,7 @@ items:
     content: public static void AddDefines(IEnumerable<string> defines)
     parameters:
     - id: defines
-      type: IEnumerable{System.String}
+      type: System.Collections.Generic.IEnumerable{System.String}
     content.vb: Public Shared Sub AddDefines(defines As IEnumerable(Of String))
   overload: EventStore.Common.Utils.Application.AddDefines*
   nameWithType.vb: Application.AddDefines(IEnumerable(Of String))
@@ -473,7 +427,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Utils.Application.AddDefines(IEnumerable(Of System.String))
+  fullName.vb: EventStore.Common.Utils.Application.AddDefines(System.Collections.Generic.IEnumerable(Of System.String))
   name.vb: AddDefines(IEnumerable(Of String))
 - uid: EventStore.Common.Utils.Application.IsDefined(System.String)
   commentId: M:EventStore.Common.Utils.Application.IsDefined(System.String)
@@ -487,12 +441,8 @@ items:
   fullName: EventStore.Common.Utils.Application.IsDefined(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Application.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsDefined
-    path: ../EventStore/src/EventStore.Common/Utils/Application.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Application.cs
     startLine: 70
   assemblies:
   - EventStore.Common
@@ -525,6 +475,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -908,20 +1137,21 @@ references:
   name: RegisterExitAction
   nameWithType: Application.RegisterExitAction
   fullName: EventStore.Common.Utils.Application.RegisterExitAction
-- uid: Action{System.Int32}
-  commentId: '!:Action{System.Int32}'
-  definition: Action`1
+- uid: System.Action{System.Int32}
+  commentId: T:System.Action{System.Int32}
+  parent: System
+  definition: System.Action`1
   name: Action<Int32>
   nameWithType: Action<Int32>
-  fullName: Action<System.Int32>
+  fullName: System.Action<System.Int32>
   nameWithType.vb: Action(Of Int32)
-  fullName.vb: Action(Of System.Int32)
+  fullName.vb: System.Action(Of System.Int32)
   name.vb: Action(Of Int32)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -935,10 +1165,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -951,41 +1181,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1017,20 +1248,21 @@ references:
   name: AddDefines
   nameWithType: Application.AddDefines
   fullName: EventStore.Common.Utils.Application.AddDefines
-- uid: IEnumerable{System.String}
-  commentId: '!:IEnumerable{System.String}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<String>
   nameWithType: IEnumerable<String>
-  fullName: IEnumerable<System.String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
   nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: IEnumerable(Of System.String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
   name.vb: IEnumerable(Of String)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -1044,10 +1276,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1060,44 +1292,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Common.Utils.Application.IsDefined*
   commentId: Overload:EventStore.Common.Utils.Application.IsDefined
   name: IsDefined

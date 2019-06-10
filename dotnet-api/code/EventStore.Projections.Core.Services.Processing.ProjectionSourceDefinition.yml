@@ -40,32 +40,45 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionSourceDefinition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 5
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class ProjectionSourceDefinition : object, IQuerySources'
+    content: >-
+      [DataContract]
+
+      public class ProjectionSourceDefinition : IQuerySources
     content.vb: >-
+      <DataContract>
+
       Public Class ProjectionSourceDefinition
-          Inherits Object
           Implements IQuerySources
   inheritance:
   - System.Object
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  - EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  - EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
   - EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.Runtime.Serialization.DataContractAttribute
+    ctor: System.Runtime.Serialization.DataContractAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - class
@@ -84,25 +97,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.AllEvents
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AllEvents
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public bool AllEvents { get; set; }
+    content: >-
+      [DataMember]
+
+      public bool AllEvents { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property AllEvents As Boolean
+    content.vb: >-
+      <DataMember>
+
+      Public Property AllEvents As Boolean
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.AllEvents*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.AllEvents
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -121,25 +140,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.AllStreams
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AllStreams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 9
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public bool AllStreams { get; set; }
+    content: >-
+      [DataMember]
+
+      public bool AllStreams { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property AllStreams As Boolean
+    content.vb: >-
+      <DataMember>
+
+      Public Property AllStreams As Boolean
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.AllStreams*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.AllStreams
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -158,23 +183,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.ByStream
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ByStream
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 11
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public bool ByStream { get; set; }
+    content: >-
+      [DataMember]
+
+      public bool ByStream { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property ByStream As Boolean
+    content.vb: >-
+      <DataMember>
+
+      Public Property ByStream As Boolean
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.ByStream*
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -193,25 +224,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.ByCustomPartitions
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ByCustomPartitions
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 13
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public bool ByCustomPartitions { get; set; }
+    content: >-
+      [DataMember]
+
+      public bool ByCustomPartitions { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property ByCustomPartitions As Boolean
+    content.vb: >-
+      <DataMember>
+
+      Public Property ByCustomPartitions As Boolean
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.ByCustomPartitions*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.ByCustomPartitions
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -230,25 +267,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Categories
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Categories
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 15
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public string[] Categories { get; set; }
+    content: >-
+      [DataMember]
+
+      public string[] Categories { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property Categories As String()
+    content.vb: >-
+      <DataMember>
+
+      Public Property Categories As String()
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Categories*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.Categories
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -267,25 +310,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Events
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Events
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 17
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public string[] Events { get; set; }
+    content: >-
+      [DataMember]
+
+      public string[] Events { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property Events As String()
+    content.vb: >-
+      <DataMember>
+
+      Public Property Events As String()
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Events*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.Events
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -304,25 +353,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Streams
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Streams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 19
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public string[] Streams { get; set; }
+    content: >-
+      [DataMember]
+
+      public string[] Streams { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property Streams As String()
+    content.vb: >-
+      <DataMember>
+
+      Public Property Streams As String()
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Streams*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.Streams
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -341,25 +396,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.CatalogStream
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CatalogStream
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 21
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public string CatalogStream { get; set; }
+    content: >-
+      [DataMember]
+
+      public string CatalogStream { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CatalogStream As String
+    content.vb: >-
+      <DataMember>
+
+      Public Property CatalogStream As String
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.CatalogStream*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.CatalogStream
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -378,25 +439,31 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.LimitingCommitPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LimitingCommitPosition
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 23
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public long? LimitingCommitPosition { get; set; }
+    content: >-
+      [DataMember]
+
+      public long? LimitingCommitPosition { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Property LimitingCommitPosition As Long?
+    content.vb: >-
+      <DataMember>
+
+      Public Property LimitingCommitPosition As Long?
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.LimitingCommitPosition*
   implements:
   - EventStore.Projections.Core.Messages.IQuerySources.LimitingCommitPosition
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -415,23 +482,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Options
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Options
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 25
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public QuerySourceOptions Options { get; set; }
+    content: >-
+      [DataMember]
+
+      public QuerySourceOptions Options { get; set; }
     parameters: []
     return:
       type: EventStore.Projections.Core.Services.Processing.QuerySourceOptions
-    content.vb: Public Property Options As QuerySourceOptions
+    content.vb: >-
+      <DataMember>
+
+      Public Property Options As QuerySourceOptions
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Options*
+  attributes:
+  - type: System.Runtime.Serialization.DataMemberAttribute
+    ctor: System.Runtime.Serialization.DataMemberAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - get
@@ -451,12 +524,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.DefinesStateTransform
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.DefinesStateTransform
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 27
   assemblies:
   - EventStore.Projections.Core
@@ -489,12 +558,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.DefinesCatalogTransform
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.DefinesCatalogTransform
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 31
   assemblies:
   - EventStore.Projections.Core
@@ -527,12 +592,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.ProducesResults
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.ProducesResults
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 35
   assemblies:
   - EventStore.Projections.Core
@@ -565,12 +626,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.DefinesFold
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.DefinesFold
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 39
   assemblies:
   - EventStore.Projections.Core
@@ -603,12 +660,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.HandlesDeletedNotifications
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.HandlesDeletedNotifications
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 43
   assemblies:
   - EventStore.Projections.Core
@@ -641,12 +694,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.IncludeLinksOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.IncludeLinksOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 47
   assemblies:
   - EventStore.Projections.Core
@@ -679,12 +728,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.DisableParallelismOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.DisableParallelismOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 51
   assemblies:
   - EventStore.Projections.Core
@@ -717,12 +762,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.ResultStreamNameOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.ResultStreamNameOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 55
   assemblies:
   - EventStore.Projections.Core
@@ -755,12 +796,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.PartitionResultStreamNamePatternOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.PartitionResultStreamNamePatternOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 59
   assemblies:
   - EventStore.Projections.Core
@@ -793,12 +830,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.ReorderEventsOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.ReorderEventsOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 63
   assemblies:
   - EventStore.Projections.Core
@@ -831,12 +864,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.ProcessingLagOption
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.ProcessingLagOption
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 67
   assemblies:
   - EventStore.Projections.Core
@@ -869,12 +898,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.IsBiState
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.IsBiState
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 71
   assemblies:
   - EventStore.Projections.Core
@@ -907,12 +932,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.EventStore.Projections.Core.Messages.IQuerySources.ByStreams
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Projections.Core.Messages.IQuerySources.ByStreams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 75
   assemblies:
   - EventStore.Projections.Core
@@ -944,12 +965,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.From(EventStore.Projections.Core.Messages.IQuerySources)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: From
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 79
   assemblies:
   - EventStore.Projections.Core
@@ -981,12 +998,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Equals(EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 118
   assemblies:
   - EventStore.Projections.Core
@@ -1016,12 +1029,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Equals(System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 130
   assemblies:
   - EventStore.Projections.Core
@@ -1034,6 +1043,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Equals*
   modifiers.csharp:
   - public
@@ -1053,12 +1063,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.GetHashCode()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetHashCode
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionSourceDefinition.cs
     startLine: 137
   assemblies:
   - EventStore.Projections.Core
@@ -1068,6 +1074,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.GetHashCode*
   modifiers.csharp:
   - public
@@ -1094,6 +1101,213 @@ references:
   name: IQuerySources
   nameWithType: IQuerySources
   fullName: EventStore.Projections.Core.Messages.IQuerySources
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1175,6 +1389,93 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+  parent: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+  definition: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasStreams()
+  nameWithType: QuerySourcesExtensions.HasStreams()
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+    name: HasStreams
+    nameWithType: QuerySourcesExtensions.HasStreams
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+    name: HasStreams
+    nameWithType: QuerySourcesExtensions.HasStreams
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+  parent: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+  definition: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasCategories()
+  nameWithType: QuerySourcesExtensions.HasCategories()
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+    name: HasCategories
+    nameWithType: QuerySourcesExtensions.HasCategories
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+    name: HasCategories
+    nameWithType: QuerySourcesExtensions.HasCategories
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.IQuerySources.EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+  parent: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+  definition: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasEvents()
+  nameWithType: QuerySourcesExtensions.HasEvents()
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+    name: HasEvents
+    nameWithType: QuerySourcesExtensions.HasEvents
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+    name: HasEvents
+    nameWithType: QuerySourcesExtensions.HasEvents
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
   - name: (
     nameWithType: (
     fullName: (
@@ -1373,6 +1674,117 @@ references:
     nameWithType: Object
     fullName: System.Object
     isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasStreams(IQuerySources)
+  nameWithType: QuerySourcesExtensions.HasStreams(IQuerySources)
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasStreams
+    nameWithType: QuerySourcesExtensions.HasStreams
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasStreams
+    nameWithType: QuerySourcesExtensions.HasStreams
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasStreams
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+  commentId: T:EventStore.Projections.Core.Messages.QuerySourcesExtensions
+  parent: EventStore.Projections.Core.Messages
+  name: QuerySourcesExtensions
+  nameWithType: QuerySourcesExtensions
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+- uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasCategories(IQuerySources)
+  nameWithType: QuerySourcesExtensions.HasCategories(IQuerySources)
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasCategories
+    nameWithType: QuerySourcesExtensions.HasCategories
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasCategories
+    nameWithType: QuerySourcesExtensions.HasCategories
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasCategories
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+  commentId: M:EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+  name: HasEvents(IQuerySources)
+  nameWithType: QuerySourcesExtensions.HasEvents(IQuerySources)
+  fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasEvents
+    nameWithType: QuerySourcesExtensions.HasEvents
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents(EventStore.Projections.Core.Messages.IQuerySources)
+    name: HasEvents
+    nameWithType: QuerySourcesExtensions.HasEvents
+    fullName: EventStore.Projections.Core.Messages.QuerySourcesExtensions.HasEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+    nameWithType: IQuerySources
+    fullName: EventStore.Projections.Core.Messages.IQuerySources
   - name: )
     nameWithType: )
     fullName: )
@@ -1598,7 +2010,8 @@ references:
   nameWithType: IQuerySources.LimitingCommitPosition
   fullName: EventStore.Projections.Core.Messages.IQuerySources.LimitingCommitPosition
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -1834,7 +2247,8 @@ references:
   nameWithType: IQuerySources.ProcessingLagOption
   fullName: EventStore.Projections.Core.Messages.IQuerySources.ProcessingLagOption
 - uid: System.Nullable{System.Int32}
-  commentId: '!:System.Nullable{System.Int32}'
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int32>
   nameWithType: Nullable<Int32>
@@ -1918,6 +2332,78 @@ references:
   name: Equals
   nameWithType: ProjectionSourceDefinition.Equals
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.Equals
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.GetHashCode*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition.GetHashCode
   name: GetHashCode

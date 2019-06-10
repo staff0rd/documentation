@@ -6,14 +6,14 @@ items:
   parent: EventStore.Projections.Core.v8
   children:
   - EventStore.Projections.Core.v8.Js1.ApiVersion
-  - EventStore.Projections.Core.v8.Js1.CompileModule(IntPtr,System.String,System.String)
+  - EventStore.Projections.Core.v8.Js1.CompileModule(System.IntPtr,System.String,System.String)
   - EventStore.Projections.Core.v8.Js1.CompilePrelude(System.String,System.String,EventStore.Projections.Core.v8.Js1.LoadModuleDelegate,EventStore.Projections.Core.v8.Js1.EnterCancellableRegionDelegate,EventStore.Projections.Core.v8.Js1.ExitCancellableRegionDelegate,EventStore.Projections.Core.v8.Js1.LogDelegate)
-  - EventStore.Projections.Core.v8.Js1.CompileQuery(IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
-  - EventStore.Projections.Core.v8.Js1.DisposeScript(IntPtr)
-  - EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(IntPtr,IntPtr,System.String,System.String[],System.Int32,IntPtr@,IntPtr@,IntPtr@)
-  - EventStore.Projections.Core.v8.Js1.FreeResult(IntPtr)
-  - EventStore.Projections.Core.v8.Js1.ReportErrors(IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
-  - EventStore.Projections.Core.v8.Js1.TerminateExecution(IntPtr)
+  - EventStore.Projections.Core.v8.Js1.CompileQuery(System.IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
+  - EventStore.Projections.Core.v8.Js1.DisposeScript(System.IntPtr)
+  - EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(System.IntPtr,System.IntPtr,System.String,System.String[],System.Int32,System.IntPtr@,System.IntPtr@,System.IntPtr@)
+  - EventStore.Projections.Core.v8.Js1.FreeResult(System.IntPtr)
+  - EventStore.Projections.Core.v8.Js1.ReportErrors(System.IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
+  - EventStore.Projections.Core.v8.Js1.TerminateExecution(System.IntPtr)
   langs:
   - csharp
   - vb
@@ -22,23 +22,25 @@ items:
   fullName: EventStore.Projections.Core.v8.Js1
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/js1.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Js1
-    path: ../EventStore/src/EventStore.Projections.Core/v8/js1.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/js1.cs
     startLine: 4
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.v8
   syntax:
-    content: 'public static class Js1 : object'
-    content.vb: >-
-      Public Module Js1
-          Inherits Object
+    content: public static class Js1
+    content.vb: Public Module Js1
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -66,7 +68,7 @@ items:
   syntax:
     content: public static IntPtr ApiVersion()
     return:
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Function ApiVersion As IntPtr
   overload: EventStore.Projections.Core.v8.Js1.ApiVersion*
   modifiers.csharp:
@@ -75,16 +77,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.CompileModule(IntPtr,System.String,System.String)
-  commentId: M:EventStore.Projections.Core.v8.Js1.CompileModule(IntPtr,System.String,System.String)
-  id: CompileModule(IntPtr,System.String,System.String)
+- uid: EventStore.Projections.Core.v8.Js1.CompileModule(System.IntPtr,System.String,System.String)
+  commentId: M:EventStore.Projections.Core.v8.Js1.CompileModule(System.IntPtr,System.String,System.String)
+  id: CompileModule(System.IntPtr,System.String,System.String)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: CompileModule(IntPtr, String, String)
   nameWithType: Js1.CompileModule(IntPtr, String, String)
-  fullName: EventStore.Projections.Core.v8.Js1.CompileModule(IntPtr, System.String, System.String)
+  fullName: EventStore.Projections.Core.v8.Js1.CompileModule(System.IntPtr, System.String, System.String)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -96,13 +98,13 @@ items:
     content: public static IntPtr CompileModule(IntPtr prelude, string script, string fileName)
     parameters:
     - id: prelude
-      type: IntPtr
+      type: System.IntPtr
     - id: script
       type: System.String
     - id: fileName
       type: System.String
     return:
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Function CompileModule(prelude As IntPtr, script As String, fileName As String) As IntPtr
   overload: EventStore.Projections.Core.v8.Js1.CompileModule*
   modifiers.csharp:
@@ -144,7 +146,7 @@ items:
     - id: logHandler
       type: EventStore.Projections.Core.v8.Js1.LogDelegate
     return:
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Function CompilePrelude(prelude As String, fileName As String, loadModuleHandler As Js1.LoadModuleDelegate, enterCancellableRegionHandler As Js1.EnterCancellableRegionDelegate, exitCancellableRegionHandler As Js1.ExitCancellableRegionDelegate, logHandler As Js1.LogDelegate) As IntPtr
   overload: EventStore.Projections.Core.v8.Js1.CompilePrelude*
   modifiers.csharp:
@@ -153,16 +155,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.CompileQuery(IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
-  commentId: M:EventStore.Projections.Core.v8.Js1.CompileQuery(IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
-  id: CompileQuery(IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
+- uid: EventStore.Projections.Core.v8.Js1.CompileQuery(System.IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
+  commentId: M:EventStore.Projections.Core.v8.Js1.CompileQuery(System.IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
+  id: CompileQuery(System.IntPtr,System.String,System.String,EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate,EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: CompileQuery(IntPtr, String, String, Js1.CommandHandlerRegisteredDelegate, Js1.ReverseCommandHandlerDelegate)
   nameWithType: Js1.CompileQuery(IntPtr, String, String, Js1.CommandHandlerRegisteredDelegate, Js1.ReverseCommandHandlerDelegate)
-  fullName: EventStore.Projections.Core.v8.Js1.CompileQuery(IntPtr, System.String, System.String, EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate, EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
+  fullName: EventStore.Projections.Core.v8.Js1.CompileQuery(System.IntPtr, System.String, System.String, EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate, EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -174,7 +176,7 @@ items:
     content: public static IntPtr CompileQuery(IntPtr prelude, string script, string fileName, Js1.CommandHandlerRegisteredDelegate commandHandlerRegisteredCallback, Js1.ReverseCommandHandlerDelegate reverseCommandHandler)
     parameters:
     - id: prelude
-      type: IntPtr
+      type: System.IntPtr
     - id: script
       type: System.String
     - id: fileName
@@ -184,7 +186,7 @@ items:
     - id: reverseCommandHandler
       type: EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate
     return:
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Function CompileQuery(prelude As IntPtr, script As String, fileName As String, commandHandlerRegisteredCallback As Js1.CommandHandlerRegisteredDelegate, reverseCommandHandler As Js1.ReverseCommandHandlerDelegate) As IntPtr
   overload: EventStore.Projections.Core.v8.Js1.CompileQuery*
   modifiers.csharp:
@@ -193,16 +195,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.DisposeScript(IntPtr)
-  commentId: M:EventStore.Projections.Core.v8.Js1.DisposeScript(IntPtr)
-  id: DisposeScript(IntPtr)
+- uid: EventStore.Projections.Core.v8.Js1.DisposeScript(System.IntPtr)
+  commentId: M:EventStore.Projections.Core.v8.Js1.DisposeScript(System.IntPtr)
+  id: DisposeScript(System.IntPtr)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: DisposeScript(IntPtr)
   nameWithType: Js1.DisposeScript(IntPtr)
-  fullName: EventStore.Projections.Core.v8.Js1.DisposeScript(IntPtr)
+  fullName: EventStore.Projections.Core.v8.Js1.DisposeScript(System.IntPtr)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -214,7 +216,7 @@ items:
     content: public static void DisposeScript(IntPtr scriptHandle)
     parameters:
     - id: scriptHandle
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Sub DisposeScript(scriptHandle As IntPtr)
   overload: EventStore.Projections.Core.v8.Js1.DisposeScript*
   modifiers.csharp:
@@ -223,16 +225,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(IntPtr,IntPtr,System.String,System.String[],System.Int32,IntPtr@,IntPtr@,IntPtr@)
-  commentId: M:EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(IntPtr,IntPtr,System.String,System.String[],System.Int32,IntPtr@,IntPtr@,IntPtr@)
-  id: ExecuteCommandHandler(IntPtr,IntPtr,System.String,System.String[],System.Int32,IntPtr@,IntPtr@,IntPtr@)
+- uid: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(System.IntPtr,System.IntPtr,System.String,System.String[],System.Int32,System.IntPtr@,System.IntPtr@,System.IntPtr@)
+  commentId: M:EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(System.IntPtr,System.IntPtr,System.String,System.String[],System.Int32,System.IntPtr@,System.IntPtr@,System.IntPtr@)
+  id: ExecuteCommandHandler(System.IntPtr,System.IntPtr,System.String,System.String[],System.Int32,System.IntPtr@,System.IntPtr@,System.IntPtr@)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: ExecuteCommandHandler(IntPtr, IntPtr, String, String[], Int32, out IntPtr, out IntPtr, out IntPtr)
   nameWithType: Js1.ExecuteCommandHandler(IntPtr, IntPtr, String, String[], Int32, out IntPtr, out IntPtr, out IntPtr)
-  fullName: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(IntPtr, IntPtr, System.String, System.String[], System.Int32, out IntPtr, out IntPtr, out IntPtr)
+  fullName: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(System.IntPtr, System.IntPtr, System.String, System.String[], System.Int32, out System.IntPtr, out System.IntPtr, out System.IntPtr)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -244,9 +246,9 @@ items:
     content: public static bool ExecuteCommandHandler(IntPtr scriptHandle, IntPtr eventHandlerHandle, string dataJson, string[] dataOther, int otherLength, out IntPtr resultJson, out IntPtr result2Json, out IntPtr memoryHandle)
     parameters:
     - id: scriptHandle
-      type: IntPtr
+      type: System.IntPtr
     - id: eventHandlerHandle
-      type: IntPtr
+      type: System.IntPtr
     - id: dataJson
       type: System.String
     - id: dataOther
@@ -254,11 +256,11 @@ items:
     - id: otherLength
       type: System.Int32
     - id: resultJson
-      type: IntPtr
+      type: System.IntPtr
     - id: result2Json
-      type: IntPtr
+      type: System.IntPtr
     - id: memoryHandle
-      type: IntPtr
+      type: System.IntPtr
     return:
       type: System.Boolean
     content.vb: Public Shared Function ExecuteCommandHandler(scriptHandle As IntPtr, eventHandlerHandle As IntPtr, dataJson As String, dataOther As String(), otherLength As Integer, ByRef resultJson As IntPtr, ByRef result2Json As IntPtr, ByRef memoryHandle As IntPtr) As Boolean
@@ -270,18 +272,18 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(IntPtr, IntPtr, System.String, System.String(), System.Int32, ByRef IntPtr, ByRef IntPtr, ByRef IntPtr)
+  fullName.vb: EventStore.Projections.Core.v8.Js1.ExecuteCommandHandler(System.IntPtr, System.IntPtr, System.String, System.String(), System.Int32, ByRef System.IntPtr, ByRef System.IntPtr, ByRef System.IntPtr)
   name.vb: ExecuteCommandHandler(IntPtr, IntPtr, String, String(), Int32, ByRef IntPtr, ByRef IntPtr, ByRef IntPtr)
-- uid: EventStore.Projections.Core.v8.Js1.FreeResult(IntPtr)
-  commentId: M:EventStore.Projections.Core.v8.Js1.FreeResult(IntPtr)
-  id: FreeResult(IntPtr)
+- uid: EventStore.Projections.Core.v8.Js1.FreeResult(System.IntPtr)
+  commentId: M:EventStore.Projections.Core.v8.Js1.FreeResult(System.IntPtr)
+  id: FreeResult(System.IntPtr)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: FreeResult(IntPtr)
   nameWithType: Js1.FreeResult(IntPtr)
-  fullName: EventStore.Projections.Core.v8.Js1.FreeResult(IntPtr)
+  fullName: EventStore.Projections.Core.v8.Js1.FreeResult(System.IntPtr)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -293,7 +295,7 @@ items:
     content: public static void FreeResult(IntPtr resultHandle)
     parameters:
     - id: resultHandle
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Sub FreeResult(resultHandle As IntPtr)
   overload: EventStore.Projections.Core.v8.Js1.FreeResult*
   modifiers.csharp:
@@ -302,16 +304,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.TerminateExecution(IntPtr)
-  commentId: M:EventStore.Projections.Core.v8.Js1.TerminateExecution(IntPtr)
-  id: TerminateExecution(IntPtr)
+- uid: EventStore.Projections.Core.v8.Js1.TerminateExecution(System.IntPtr)
+  commentId: M:EventStore.Projections.Core.v8.Js1.TerminateExecution(System.IntPtr)
+  id: TerminateExecution(System.IntPtr)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: TerminateExecution(IntPtr)
   nameWithType: Js1.TerminateExecution(IntPtr)
-  fullName: EventStore.Projections.Core.v8.Js1.TerminateExecution(IntPtr)
+  fullName: EventStore.Projections.Core.v8.Js1.TerminateExecution(System.IntPtr)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -323,7 +325,7 @@ items:
     content: public static void TerminateExecution(IntPtr scriptHandle)
     parameters:
     - id: scriptHandle
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Shared Sub TerminateExecution(scriptHandle As IntPtr)
   overload: EventStore.Projections.Core.v8.Js1.TerminateExecution*
   modifiers.csharp:
@@ -332,16 +334,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.v8.Js1.ReportErrors(IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
-  commentId: M:EventStore.Projections.Core.v8.Js1.ReportErrors(IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
-  id: ReportErrors(IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
+- uid: EventStore.Projections.Core.v8.Js1.ReportErrors(System.IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
+  commentId: M:EventStore.Projections.Core.v8.Js1.ReportErrors(System.IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
+  id: ReportErrors(System.IntPtr,EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
   parent: EventStore.Projections.Core.v8.Js1
   langs:
   - csharp
   - vb
   name: ReportErrors(IntPtr, Js1.ReportErrorDelegate)
   nameWithType: Js1.ReportErrors(IntPtr, Js1.ReportErrorDelegate)
-  fullName: EventStore.Projections.Core.v8.Js1.ReportErrors(IntPtr, EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
+  fullName: EventStore.Projections.Core.v8.Js1.ReportErrors(System.IntPtr, EventStore.Projections.Core.v8.Js1.ReportErrorDelegate)
   type: Method
   source:
     path: EventStore.Projections.Core
@@ -353,7 +355,7 @@ items:
     content: public static void ReportErrors(IntPtr scriptHandle, Js1.ReportErrorDelegate reportErrorCallback)
     parameters:
     - id: scriptHandle
-      type: IntPtr
+      type: System.IntPtr
     - id: reportErrorCallback
       type: EventStore.Projections.Core.v8.Js1.ReportErrorDelegate
     content.vb: Public Shared Sub ReportErrors(scriptHandle As IntPtr, reportErrorCallback As Js1.ReportErrorDelegate)
@@ -377,6 +379,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -389,11 +670,13 @@ references:
   name: ApiVersion
   nameWithType: Js1.ApiVersion
   fullName: EventStore.Projections.Core.v8.Js1.ApiVersion
-- uid: IntPtr
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
   isExternal: true
   name: IntPtr
   nameWithType: IntPtr
-  fullName: IntPtr
+  fullName: System.IntPtr
 - uid: EventStore.Projections.Core.v8.Js1.CompileModule*
   commentId: Overload:EventStore.Projections.Core.v8.Js1.CompileModule
   isExternal: true

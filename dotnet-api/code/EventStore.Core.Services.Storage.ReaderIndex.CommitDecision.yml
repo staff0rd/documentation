@@ -8,6 +8,7 @@ items:
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.CorruptedIdempotency
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Deleted
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Idempotent
+  - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.IdempotentNotReady
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.InvalidTransaction
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Ok
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.WrongExpectedVersion
@@ -19,20 +20,19 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision
   type: Enum
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitDecision
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 1
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Storage.ReaderIndex
   syntax:
-    content: 'public enum CommitDecision : int'
-    content.vb: Public Enum CommitDecision As Integer
+    content: public enum CommitDecision
+    content.vb: Public Enum CommitDecision
   extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
@@ -54,12 +54,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Ok
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Ok
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 2
   assemblies:
   - EventStore.Core
@@ -86,12 +82,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.WrongExpectedVersion
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WrongExpectedVersion
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 3
   assemblies:
   - EventStore.Core
@@ -118,12 +110,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Deleted
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Deleted
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -150,12 +138,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.Idempotent
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Idempotent
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 5
   assemblies:
   - EventStore.Core
@@ -182,12 +166,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.CorruptedIdempotency
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CorruptedIdempotency
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 6
   assemblies:
   - EventStore.Core
@@ -214,12 +194,8 @@ items:
   fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.InvalidTransaction
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InvalidTransaction
-    path: ../EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -234,12 +210,127 @@ items:
   modifiers.vb:
   - Public
   - Const
+- uid: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.IdempotentNotReady
+  commentId: F:EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.IdempotentNotReady
+  id: IdempotentNotReady
+  parent: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision
+  langs:
+  - csharp
+  - vb
+  name: IdempotentNotReady
+  nameWithType: CommitDecision.IdempotentNotReady
+  fullName: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.IdempotentNotReady
+  type: Field
+  source:
+    id: IdempotentNotReady
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Storage/ReaderIndex/CommitDecision.cs
+    startLine: 8
+  assemblies:
+  - EventStore.Core
+  namespace: EventStore.Core.Services.Storage.ReaderIndex
+  syntax:
+    content: IdempotentNotReady = 6
+    return:
+      type: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
 references:
 - uid: EventStore.Core.Services.Storage.ReaderIndex
   commentId: N:EventStore.Core.Services.Storage.ReaderIndex
   name: EventStore.Core.Services.Storage.ReaderIndex
   nameWithType: EventStore.Core.Services.Storage.ReaderIndex
   fullName: EventStore.Core.Services.Storage.ReaderIndex
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Storage.ReaderIndex.CommitDecision.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
   parent: EventStore.Projections.Core.Utils.EnumExtensions
@@ -333,6 +424,126 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -456,6 +667,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
 - uid: EventStore.Projections.Core.Utils
   commentId: N:EventStore.Projections.Core.Utils
   name: EventStore.Projections.Core.Utils

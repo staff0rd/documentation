@@ -14,14 +14,14 @@ items:
   - EventStore.Core.Cluster.MemberInfo.ExternalHttpEndPoint
   - EventStore.Core.Cluster.MemberInfo.ExternalSecureTcpEndPoint
   - EventStore.Core.Cluster.MemberInfo.ExternalTcpEndPoint
-  - EventStore.Core.Cluster.MemberInfo.ForManager(Guid,DateTime,System.Boolean,IPEndPoint,IPEndPoint)
-  - EventStore.Core.Cluster.MemberInfo.ForVNode(Guid,DateTime,EventStore.Core.Data.VNodeState,System.Boolean,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,Guid,System.Int32)
+  - EventStore.Core.Cluster.MemberInfo.ForManager(System.Guid,System.DateTime,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  - EventStore.Core.Cluster.MemberInfo.ForVNode(System.Guid,System.DateTime,EventStore.Core.Data.VNodeState,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,System.Guid,System.Int32)
   - EventStore.Core.Cluster.MemberInfo.GetHashCode
   - EventStore.Core.Cluster.MemberInfo.InstanceId
   - EventStore.Core.Cluster.MemberInfo.InternalHttpEndPoint
   - EventStore.Core.Cluster.MemberInfo.InternalSecureTcpEndPoint
   - EventStore.Core.Cluster.MemberInfo.InternalTcpEndPoint
-  - EventStore.Core.Cluster.MemberInfo.Is(IPEndPoint)
+  - EventStore.Core.Cluster.MemberInfo.Is(System.Net.IPEndPoint)
   - EventStore.Core.Cluster.MemberInfo.IsAlive
   - EventStore.Core.Cluster.MemberInfo.LastCommitPosition
   - EventStore.Core.Cluster.MemberInfo.NodePriority
@@ -38,12 +38,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MemberInfo
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 8
   assemblies:
   - EventStore.Core
@@ -52,9 +48,16 @@ items:
     content: 'public class MemberInfo : IEquatable<MemberInfo>'
     content.vb: >-
       Public Class MemberInfo
-          Inherits IEquatable(Of MemberInfo)
+          Implements IEquatable(Of MemberInfo)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{EventStore.Core.Cluster.MemberInfo}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -79,12 +82,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.InstanceId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InstanceId
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 9
   assemblies:
   - EventStore.Core
@@ -92,7 +91,7 @@ items:
   syntax:
     content: public readonly Guid InstanceId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly InstanceId As Guid
   modifiers.csharp:
   - public
@@ -112,12 +111,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.TimeStamp
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TimeStamp
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 11
   assemblies:
   - EventStore.Core
@@ -125,8 +120,8 @@ items:
   syntax:
     content: public readonly DateTime TimeStamp
     return:
-      type: DateTime
-    content.vb: Public ReadOnly TimeStamp As DateTime
+      type: System.DateTime
+    content.vb: Public ReadOnly TimeStamp As Date
   modifiers.csharp:
   - public
   - readonly
@@ -145,12 +140,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.State
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: State
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 12
   assemblies:
   - EventStore.Core
@@ -178,12 +169,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.IsAlive
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsAlive
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -211,12 +198,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.InternalTcpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalTcpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -224,7 +207,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalTcpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalTcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -244,12 +227,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.InternalSecureTcpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalSecureTcpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 16
   assemblies:
   - EventStore.Core
@@ -257,7 +236,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalSecureTcpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalSecureTcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -277,12 +256,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.ExternalTcpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalTcpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 17
   assemblies:
   - EventStore.Core
@@ -290,7 +265,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalTcpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalTcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -310,12 +285,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.ExternalSecureTcpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalSecureTcpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 18
   assemblies:
   - EventStore.Core
@@ -323,7 +294,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalSecureTcpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalSecureTcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -343,12 +314,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.InternalHttpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InternalHttpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 19
   assemblies:
   - EventStore.Core
@@ -356,7 +323,7 @@ items:
   syntax:
     content: public readonly IPEndPoint InternalHttpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly InternalHttpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -376,12 +343,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.ExternalHttpEndPoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExternalHttpEndPoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 20
   assemblies:
   - EventStore.Core
@@ -389,7 +352,7 @@ items:
   syntax:
     content: public readonly IPEndPoint ExternalHttpEndPoint
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly ExternalHttpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -409,12 +372,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.LastCommitPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastCommitPosition
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 22
   assemblies:
   - EventStore.Core
@@ -442,12 +401,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.WriterCheckpoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriterCheckpoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 23
   assemblies:
   - EventStore.Core
@@ -475,12 +430,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.ChaserCheckpoint
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChaserCheckpoint
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -508,12 +459,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.EpochPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EpochPosition
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 25
   assemblies:
   - EventStore.Core
@@ -541,12 +488,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.EpochNumber
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EpochNumber
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 26
   assemblies:
   - EventStore.Core
@@ -574,12 +517,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.EpochId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EpochId
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 27
   assemblies:
   - EventStore.Core
@@ -587,7 +526,7 @@ items:
   syntax:
     content: public readonly Guid EpochId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly EpochId As Guid
   modifiers.csharp:
   - public
@@ -607,12 +546,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.NodePriority
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NodePriority
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 29
   assemblies:
   - EventStore.Core
@@ -628,24 +563,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Cluster.MemberInfo.ForManager(Guid,DateTime,System.Boolean,IPEndPoint,IPEndPoint)
-  commentId: M:EventStore.Core.Cluster.MemberInfo.ForManager(Guid,DateTime,System.Boolean,IPEndPoint,IPEndPoint)
-  id: ForManager(Guid,DateTime,System.Boolean,IPEndPoint,IPEndPoint)
+- uid: EventStore.Core.Cluster.MemberInfo.ForManager(System.Guid,System.DateTime,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Cluster.MemberInfo.ForManager(System.Guid,System.DateTime,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  id: ForManager(System.Guid,System.DateTime,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint)
   parent: EventStore.Core.Cluster.MemberInfo
   langs:
   - csharp
   - vb
   name: ForManager(Guid, DateTime, Boolean, IPEndPoint, IPEndPoint)
   nameWithType: MemberInfo.ForManager(Guid, DateTime, Boolean, IPEndPoint, IPEndPoint)
-  fullName: EventStore.Core.Cluster.MemberInfo.ForManager(Guid, DateTime, System.Boolean, IPEndPoint, IPEndPoint)
+  fullName: EventStore.Core.Cluster.MemberInfo.ForManager(System.Guid, System.DateTime, System.Boolean, System.Net.IPEndPoint, System.Net.IPEndPoint)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ForManager
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 31
   assemblies:
   - EventStore.Core
@@ -654,18 +585,18 @@ items:
     content: public static MemberInfo ForManager(Guid instanceId, DateTime timeStamp, bool isAlive, IPEndPoint internalHttpEndPoint, IPEndPoint externalHttpEndPoint)
     parameters:
     - id: instanceId
-      type: Guid
+      type: System.Guid
     - id: timeStamp
-      type: DateTime
+      type: System.DateTime
     - id: isAlive
       type: System.Boolean
     - id: internalHttpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalHttpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     return:
       type: EventStore.Core.Cluster.MemberInfo
-    content.vb: Public Shared Function ForManager(instanceId As Guid, timeStamp As DateTime, isAlive As Boolean, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint) As MemberInfo
+    content.vb: Public Shared Function ForManager(instanceId As Guid, timeStamp As Date, isAlive As Boolean, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint) As MemberInfo
   overload: EventStore.Core.Cluster.MemberInfo.ForManager*
   modifiers.csharp:
   - public
@@ -673,24 +604,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Cluster.MemberInfo.ForVNode(Guid,DateTime,EventStore.Core.Data.VNodeState,System.Boolean,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,Guid,System.Int32)
-  commentId: M:EventStore.Core.Cluster.MemberInfo.ForVNode(Guid,DateTime,EventStore.Core.Data.VNodeState,System.Boolean,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,Guid,System.Int32)
-  id: ForVNode(Guid,DateTime,EventStore.Core.Data.VNodeState,System.Boolean,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,Guid,System.Int32)
+- uid: EventStore.Core.Cluster.MemberInfo.ForVNode(System.Guid,System.DateTime,EventStore.Core.Data.VNodeState,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,System.Guid,System.Int32)
+  commentId: M:EventStore.Core.Cluster.MemberInfo.ForVNode(System.Guid,System.DateTime,EventStore.Core.Data.VNodeState,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,System.Guid,System.Int32)
+  id: ForVNode(System.Guid,System.DateTime,EventStore.Core.Data.VNodeState,System.Boolean,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Net.IPEndPoint,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32,System.Guid,System.Int32)
   parent: EventStore.Core.Cluster.MemberInfo
   langs:
   - csharp
   - vb
   name: ForVNode(Guid, DateTime, VNodeState, Boolean, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, Int64, Int64, Int64, Int64, Int32, Guid, Int32)
   nameWithType: MemberInfo.ForVNode(Guid, DateTime, VNodeState, Boolean, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, Int64, Int64, Int64, Int64, Int32, Guid, Int32)
-  fullName: EventStore.Core.Cluster.MemberInfo.ForVNode(Guid, DateTime, EventStore.Core.Data.VNodeState, System.Boolean, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, IPEndPoint, System.Int64, System.Int64, System.Int64, System.Int64, System.Int32, Guid, System.Int32)
+  fullName: EventStore.Core.Cluster.MemberInfo.ForVNode(System.Guid, System.DateTime, EventStore.Core.Data.VNodeState, System.Boolean, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Net.IPEndPoint, System.Int64, System.Int64, System.Int64, System.Int64, System.Int32, System.Guid, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ForVNode
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 39
   assemblies:
   - EventStore.Core
@@ -699,25 +626,25 @@ items:
     content: public static MemberInfo ForVNode(Guid instanceId, DateTime timeStamp, VNodeState state, bool isAlive, IPEndPoint internalTcpEndPoint, IPEndPoint internalSecureTcpEndPoint, IPEndPoint externalTcpEndPoint, IPEndPoint externalSecureTcpEndPoint, IPEndPoint internalHttpEndPoint, IPEndPoint externalHttpEndPoint, long lastCommitPosition, long writerCheckpoint, long chaserCheckpoint, long epochPosition, int epochNumber, Guid epochId, int nodePriority)
     parameters:
     - id: instanceId
-      type: Guid
+      type: System.Guid
     - id: timeStamp
-      type: DateTime
+      type: System.DateTime
     - id: state
       type: EventStore.Core.Data.VNodeState
     - id: isAlive
       type: System.Boolean
     - id: internalTcpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: internalSecureTcpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalTcpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalSecureTcpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: internalHttpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: externalHttpEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: lastCommitPosition
       type: System.Int64
     - id: writerCheckpoint
@@ -729,12 +656,12 @@ items:
     - id: epochNumber
       type: System.Int32
     - id: epochId
-      type: Guid
+      type: System.Guid
     - id: nodePriority
       type: System.Int32
     return:
       type: EventStore.Core.Cluster.MemberInfo
-    content.vb: Public Shared Function ForVNode(instanceId As Guid, timeStamp As DateTime, state As VNodeState, isAlive As Boolean, internalTcpEndPoint As IPEndPoint, internalSecureTcpEndPoint As IPEndPoint, externalTcpEndPoint As IPEndPoint, externalSecureTcpEndPoint As IPEndPoint, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint, lastCommitPosition As Long, writerCheckpoint As Long, chaserCheckpoint As Long, epochPosition As Long, epochNumber As Integer, epochId As Guid, nodePriority As Integer) As MemberInfo
+    content.vb: Public Shared Function ForVNode(instanceId As Guid, timeStamp As Date, state As VNodeState, isAlive As Boolean, internalTcpEndPoint As IPEndPoint, internalSecureTcpEndPoint As IPEndPoint, externalTcpEndPoint As IPEndPoint, externalSecureTcpEndPoint As IPEndPoint, internalHttpEndPoint As IPEndPoint, externalHttpEndPoint As IPEndPoint, lastCommitPosition As Long, writerCheckpoint As Long, chaserCheckpoint As Long, epochPosition As Long, epochNumber As Integer, epochId As Guid, nodePriority As Integer) As MemberInfo
   overload: EventStore.Core.Cluster.MemberInfo.ForVNode*
   modifiers.csharp:
   - public
@@ -742,24 +669,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.Cluster.MemberInfo.Is(IPEndPoint)
-  commentId: M:EventStore.Core.Cluster.MemberInfo.Is(IPEndPoint)
-  id: Is(IPEndPoint)
+- uid: EventStore.Core.Cluster.MemberInfo.Is(System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Cluster.MemberInfo.Is(System.Net.IPEndPoint)
+  id: Is(System.Net.IPEndPoint)
   parent: EventStore.Core.Cluster.MemberInfo
   langs:
   - csharp
   - vb
   name: Is(IPEndPoint)
   nameWithType: MemberInfo.Is(IPEndPoint)
-  fullName: EventStore.Core.Cluster.MemberInfo.Is(IPEndPoint)
+  fullName: EventStore.Core.Cluster.MemberInfo.Is(System.Net.IPEndPoint)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Is
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 127
   assemblies:
   - EventStore.Core
@@ -768,7 +691,7 @@ items:
     content: public bool Is(IPEndPoint endPoint)
     parameters:
     - id: endPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     return:
       type: System.Boolean
     content.vb: Public Function Is(endPoint As IPEndPoint) As Boolean
@@ -789,18 +712,14 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.Updated(System.Nullable<EventStore.Core.Data.VNodeState>, System.Nullable<System.Boolean>, System.Nullable<System.Int64>, System.Nullable<System.Int64>, System.Nullable<System.Int64>, EventStore.Core.TransactionLog.LogRecords.EpochRecord)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Updated
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 137
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Cluster
   syntax:
-    content: public MemberInfo Updated(VNodeState? state = null, bool? isAlive = null, long? lastCommitPosition = null, long? writerCheckpoint = null, long? chaserCheckpoint = null, EpochRecord epoch = null)
+    content: public MemberInfo Updated(VNodeState? state = default(VNodeState? ), bool? isAlive = default(bool? ), long? lastCommitPosition = default(long? ), long? writerCheckpoint = default(long? ), long? chaserCheckpoint = default(long? ), EpochRecord epoch = null)
     parameters:
     - id: state
       type: System.Nullable{EventStore.Core.Data.VNodeState}
@@ -837,12 +756,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 162
   assemblies:
   - EventStore.Core
@@ -852,6 +767,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Core.Cluster.MemberInfo.ToString*
   modifiers.csharp:
   - public
@@ -871,12 +787,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.Equals(EventStore.Core.Cluster.MemberInfo)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 178
   assemblies:
   - EventStore.Core
@@ -890,6 +802,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As MemberInfo) As Boolean
   overload: EventStore.Core.Cluster.MemberInfo.Equals*
+  implements:
+  - System.IEquatable{EventStore.Core.Cluster.MemberInfo}.Equals(EventStore.Core.Cluster.MemberInfo)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -906,12 +820,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.Equals(System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Equals
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 197
   assemblies:
   - EventStore.Core
@@ -924,6 +834,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: EventStore.Core.Cluster.MemberInfo.Equals*
   modifiers.csharp:
   - public
@@ -943,12 +854,8 @@ items:
   fullName: EventStore.Core.Cluster.MemberInfo.GetHashCode()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Cluster/MemberInfo.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetHashCode
-    path: ../EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Cluster/MemberInfo.cs
     startLine: 204
   assemblies:
   - EventStore.Core
@@ -958,6 +865,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: EventStore.Core.Cluster.MemberInfo.GetHashCode*
   modifiers.csharp:
   - public
@@ -978,6 +886,224 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IEquatable{EventStore.Core.Cluster.MemberInfo}
+  commentId: T:System.IEquatable{EventStore.Core.Cluster.MemberInfo}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<MemberInfo>
+  nameWithType: IEquatable<MemberInfo>
+  fullName: System.IEquatable<EventStore.Core.Cluster.MemberInfo>
+  nameWithType.vb: IEquatable(Of MemberInfo)
+  fullName.vb: System.IEquatable(Of EventStore.Core.Cluster.MemberInfo)
+  name.vb: IEquatable(Of MemberInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1135,6 +1261,45 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -1343,16 +1508,20 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
-- uid: DateTime
+  fullName: System.Guid
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
   isExternal: true
   name: DateTime
   nameWithType: DateTime
-  fullName: DateTime
+  fullName: System.DateTime
 - uid: EventStore.Core.Data.VNodeState
   commentId: T:EventStore.Core.Data.VNodeState
   parent: EventStore.Core.Data
@@ -1371,11 +1540,19 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: System.Int64
   commentId: T:System.Int64
   parent: System
@@ -1417,7 +1594,8 @@ references:
   nameWithType: MemberInfo.Updated
   fullName: EventStore.Core.Cluster.MemberInfo.Updated
 - uid: System.Nullable{EventStore.Core.Data.VNodeState}
-  commentId: '!:System.Nullable{EventStore.Core.Data.VNodeState}'
+  commentId: T:System.Nullable{EventStore.Core.Data.VNodeState}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<VNodeState>
   nameWithType: Nullable<VNodeState>
@@ -1458,7 +1636,8 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable{System.Boolean}
-  commentId: '!:System.Nullable{System.Boolean}'
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Boolean>
   nameWithType: Nullable<Boolean>
@@ -1501,7 +1680,8 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -1593,6 +1773,37 @@ references:
   name: EventStore.Core.TransactionLog.LogRecords
   nameWithType: EventStore.Core.TransactionLog.LogRecords
   fullName: EventStore.Core.TransactionLog.LogRecords
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Cluster.MemberInfo.ToString*
   commentId: Overload:EventStore.Core.Cluster.MemberInfo.ToString
   name: ToString
@@ -1610,6 +1821,157 @@ references:
   name: Equals
   nameWithType: MemberInfo.Equals
   fullName: EventStore.Core.Cluster.MemberInfo.Equals
+- uid: System.IEquatable{EventStore.Core.Cluster.MemberInfo}.Equals(EventStore.Core.Cluster.MemberInfo)
+  commentId: M:System.IEquatable{EventStore.Core.Cluster.MemberInfo}.Equals(EventStore.Core.Cluster.MemberInfo)
+  parent: System.IEquatable{EventStore.Core.Cluster.MemberInfo}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(MemberInfo)
+  nameWithType: IEquatable<MemberInfo>.Equals(MemberInfo)
+  fullName: System.IEquatable<EventStore.Core.Cluster.MemberInfo>.Equals(EventStore.Core.Cluster.MemberInfo)
+  nameWithType.vb: IEquatable(Of MemberInfo).Equals(MemberInfo)
+  fullName.vb: System.IEquatable(Of EventStore.Core.Cluster.MemberInfo).Equals(EventStore.Core.Cluster.MemberInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<MemberInfo>.Equals
+    fullName: System.IEquatable<EventStore.Core.Cluster.MemberInfo>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of MemberInfo).Equals
+    fullName: System.IEquatable(Of EventStore.Core.Cluster.MemberInfo).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Cluster.MemberInfo
+    name: MemberInfo
+    nameWithType: MemberInfo
+    fullName: EventStore.Core.Cluster.MemberInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Cluster.MemberInfo.GetHashCode*
   commentId: Overload:EventStore.Core.Cluster.MemberInfo.GetHashCode
   name: GetHashCode

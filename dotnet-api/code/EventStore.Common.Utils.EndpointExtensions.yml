@@ -7,8 +7,8 @@ items:
   children:
   - EventStore.Common.Utils.EndpointExtensions.HTTP_SCHEMA
   - EventStore.Common.Utils.EndpointExtensions.HTTPS_SCHEMA
-  - EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String)
-  - EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String,System.Object[])
+  - EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String)
+  - EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String,System.Object[])
   langs:
   - csharp
   - vb
@@ -17,23 +17,25 @@ items:
   fullName: EventStore.Common.Utils.EndpointExtensions
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Utils/EndpointExtensions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EndpointExtensions
-    path: ../EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
     startLine: 3
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: 'public static class EndpointExtensions : object'
-    content.vb: >-
-      Public Module EndpointExtensions
-          Inherits Object
+    content: public static class EndpointExtensions
+    content.vb: Public Module EndpointExtensions
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -53,21 +55,17 @@ items:
   fullName: EventStore.Common.Utils.EndpointExtensions.HTTP_SCHEMA
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/EndpointExtensions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HTTP_SCHEMA
-    path: ../EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
     startLine: 4
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string HTTP_SCHEMA = null
+    content: public const string HTTP_SCHEMA = "http"
     return:
       type: System.String
-    content.vb: Public Const HTTP_SCHEMA As String = Nothing
+    content.vb: Public Const HTTP_SCHEMA As String = "http"
   modifiers.csharp:
   - public
   - const
@@ -86,30 +84,26 @@ items:
   fullName: EventStore.Common.Utils.EndpointExtensions.HTTPS_SCHEMA
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/EndpointExtensions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HTTPS_SCHEMA
-    path: ../EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
     startLine: 5
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: public const string HTTPS_SCHEMA = null
+    content: public const string HTTPS_SCHEMA = "https"
     return:
       type: System.String
-    content.vb: Public Const HTTPS_SCHEMA As String = Nothing
+    content.vb: Public Const HTTPS_SCHEMA As String = "https"
   modifiers.csharp:
   - public
   - const
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String)
-  commentId: M:EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String)
-  id: ToHttpUrl(EndPoint,System.String,System.String)
+- uid: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String)
+  commentId: M:EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String)
+  id: ToHttpUrl(System.Net.EndPoint,System.String,System.String)
   isExtensionMethod: true
   parent: EventStore.Common.Utils.EndpointExtensions
   langs:
@@ -117,15 +111,11 @@ items:
   - vb
   name: ToHttpUrl(EndPoint, String, String)
   nameWithType: EndpointExtensions.ToHttpUrl(EndPoint, String, String)
-  fullName: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint, System.String, System.String)
+  fullName: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint, System.String, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/EndpointExtensions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToHttpUrl
-    path: ../EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
     startLine: 7
   assemblies:
   - EventStore.Common
@@ -134,7 +124,7 @@ items:
     content: public static string ToHttpUrl(this EndPoint endPoint, string schema, string rawUrl = null)
     parameters:
     - id: endPoint
-      type: EndPoint
+      type: System.Net.EndPoint
     - id: schema
       type: System.String
     - id: rawUrl
@@ -152,9 +142,9 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String,System.Object[])
-  commentId: M:EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint,System.String,System.String,System.Object[])
-  id: ToHttpUrl(EndPoint,System.String,System.String,System.Object[])
+- uid: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String,System.Object[])
+  commentId: M:EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint,System.String,System.String,System.Object[])
+  id: ToHttpUrl(System.Net.EndPoint,System.String,System.String,System.Object[])
   isExtensionMethod: true
   parent: EventStore.Common.Utils.EndpointExtensions
   langs:
@@ -162,15 +152,11 @@ items:
   - vb
   name: ToHttpUrl(EndPoint, String, String, Object[])
   nameWithType: EndpointExtensions.ToHttpUrl(EndPoint, String, String, Object[])
-  fullName: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint, System.String, System.String, System.Object[])
+  fullName: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint, System.String, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/EndpointExtensions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToHttpUrl
-    path: ../EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/EndpointExtensions.cs
     startLine: 23
   assemblies:
   - EventStore.Common
@@ -179,7 +165,7 @@ items:
     content: public static string ToHttpUrl(this EndPoint endPoint, string schema, string formatString, params object[] args)
     parameters:
     - id: endPoint
-      type: EndPoint
+      type: System.Net.EndPoint
     - id: schema
       type: System.String
     - id: formatString
@@ -200,7 +186,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(EndPoint, System.String, System.String, System.Object())
+  fullName.vb: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl(System.Net.EndPoint, System.String, System.String, System.Object())
   name.vb: ToHttpUrl(EndPoint, String, String, Object())
 references:
 - uid: EventStore.Common.Utils
@@ -215,6 +201,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -233,11 +498,19 @@ references:
   name: ToHttpUrl
   nameWithType: EndpointExtensions.ToHttpUrl
   fullName: EventStore.Common.Utils.EndpointExtensions.ToHttpUrl
-- uid: EndPoint
+- uid: System.Net.EndPoint
+  commentId: T:System.Net.EndPoint
+  parent: System.Net
   isExternal: true
   name: EndPoint
   nameWithType: EndPoint
-  fullName: EndPoint
+  fullName: System.Net.EndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: System.Object[]
   isExternal: true
   name: Object[]

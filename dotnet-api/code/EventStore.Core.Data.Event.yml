@@ -5,8 +5,8 @@ items:
   id: Event
   parent: EventStore.Core.Data
   children:
-  - EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
-  - EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.String,System.String)
+  - EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
+  - EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.String,System.String)
   - EventStore.Core.Data.Event.Data
   - EventStore.Core.Data.Event.EventId
   - EventStore.Core.Data.Event.EventType
@@ -20,23 +20,25 @@ items:
   fullName: EventStore.Core.Data.Event
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Event
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 5
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Data
   syntax:
-    content: 'public class Event : object'
-    content.vb: >-
-      Public Class Event
-          Inherits Object
+    content: public class Event
+    content.vb: Public Class Event
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -61,12 +63,8 @@ items:
   fullName: EventStore.Core.Data.Event.EventId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventId
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 6
   assemblies:
   - EventStore.Core
@@ -74,7 +72,7 @@ items:
   syntax:
     content: public readonly Guid EventId
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public ReadOnly EventId As Guid
   modifiers.csharp:
   - public
@@ -94,12 +92,8 @@ items:
   fullName: EventStore.Core.Data.Event.EventType
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventType
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -127,12 +121,8 @@ items:
   fullName: EventStore.Core.Data.Event.IsJson
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsJson
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 8
   assemblies:
   - EventStore.Core
@@ -160,12 +150,8 @@ items:
   fullName: EventStore.Core.Data.Event.Data
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Data
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -193,12 +179,8 @@ items:
   fullName: EventStore.Core.Data.Event.Metadata
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Metadata
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 11
   assemblies:
   - EventStore.Core
@@ -214,24 +196,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.String,System.String)
-  commentId: M:EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.String,System.String)
-  id: '#ctor(Guid,System.String,System.Boolean,System.String,System.String)'
+- uid: EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.String,System.String)
+  commentId: M:EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.String,System.String)
+  id: '#ctor(System.Guid,System.String,System.Boolean,System.String,System.String)'
   parent: EventStore.Core.Data.Event
   langs:
   - csharp
   - vb
   name: Event(Guid, String, Boolean, String, String)
   nameWithType: Event.Event(Guid, String, Boolean, String, String)
-  fullName: EventStore.Core.Data.Event.Event(Guid, System.String, System.Boolean, System.String, System.String)
+  fullName: EventStore.Core.Data.Event.Event(System.Guid, System.String, System.Boolean, System.String, System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -240,7 +218,7 @@ items:
     content: public Event(Guid eventId, string eventType, bool isJson, string data, string metadata)
     parameters:
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventType
       type: System.String
     - id: isJson
@@ -255,24 +233,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
-  commentId: M:EventStore.Core.Data.Event.#ctor(Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
-  id: '#ctor(Guid,System.String,System.Boolean,System.Byte[],System.Byte[])'
+- uid: EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
+  commentId: M:EventStore.Core.Data.Event.#ctor(System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[])
+  id: '#ctor(System.Guid,System.String,System.Boolean,System.Byte[],System.Byte[])'
   parent: EventStore.Core.Data.Event
   langs:
   - csharp
   - vb
   name: Event(Guid, String, Boolean, Byte[], Byte[])
   nameWithType: Event.Event(Guid, String, Boolean, Byte[], Byte[])
-  fullName: EventStore.Core.Data.Event.Event(Guid, System.String, System.Boolean, System.Byte[], System.Byte[])
+  fullName: EventStore.Core.Data.Event.Event(System.Guid, System.String, System.Boolean, System.Byte[], System.Byte[])
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Data/Event.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Data/Event.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Data/Event.cs
     startLine: 19
   assemblies:
   - EventStore.Core
@@ -281,7 +255,7 @@ items:
     content: public Event(Guid eventId, string eventType, bool isJson, byte[] data, byte[] metadata)
     parameters:
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventType
       type: System.String
     - id: isJson
@@ -297,7 +271,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Data.Event.Event(Guid, System.String, System.Boolean, System.Byte(), System.Byte())
+  fullName.vb: EventStore.Core.Data.Event.Event(System.Guid, System.String, System.Boolean, System.Byte(), System.Byte())
   name.vb: Event(Guid, String, Boolean, Byte(), Byte())
 references:
 - uid: EventStore.Core.Data
@@ -312,6 +286,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -677,11 +930,13 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.String
   commentId: T:System.String
   parent: System

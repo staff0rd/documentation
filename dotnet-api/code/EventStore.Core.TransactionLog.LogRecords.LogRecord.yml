@@ -6,22 +6,22 @@ items:
   parent: EventStore.Core.TransactionLog.LogRecords
   children:
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.#ctor(EventStore.Core.TransactionLog.LogRecords.LogRecordType,System.Byte,System.Int64)
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,Guid,System.Int64,System.Int64)
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,Guid,Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,System.Guid,System.Int64,System.Int64)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,System.Guid,System.Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.GetNextLogPosition(System.Int64,System.Int32)
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.GetPrevLogPosition(System.Int64,System.Int32)
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.GetSizeWithLengthPrefixAndSuffix
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.LogPosition
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.NoData
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime})
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(BinaryReader)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime})
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(System.IO.BinaryReader)
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.RecordType
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,Guid,Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,Guid,System.String,System.Int64)
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,Guid,Guid,System.Int64,System.String)
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,System.Guid,System.Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,System.Guid,System.String,System.Int64)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,System.Guid,System.Guid,System.Int64,System.String)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
   - EventStore.Core.TransactionLog.LogRecords.LogRecord.Version
-  - EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(BinaryWriter)
+  - EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(System.IO.BinaryWriter)
   langs:
   - csharp
   - vb
@@ -30,27 +30,29 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogRecord
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 18
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: 'public abstract class LogRecord : object'
-    content.vb: >-
-      Public MustInherit Class LogRecord
-          Inherits Object
+    content: public abstract class LogRecord
+    content.vb: Public MustInherit Class LogRecord
   inheritance:
   - System.Object
   derivedClasses:
   - EventStore.Core.TransactionLog.LogRecords.CommitLogRecord
   - EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
   - EventStore.Core.TransactionLog.LogRecords.SystemLogRecord
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -77,12 +79,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.NoData
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NoData
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 19
   assemblies:
   - EventStore.Core
@@ -112,12 +110,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.RecordType
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RecordType
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 21
   assemblies:
   - EventStore.Core
@@ -145,12 +139,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Version
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Version
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 22
   assemblies:
   - EventStore.Core
@@ -178,12 +168,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.LogPosition
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogPosition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 23
   assemblies:
   - EventStore.Core
@@ -211,12 +197,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.GetNextLogPosition(System.Int64, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetNextLogPosition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 25
   assemblies:
   - EventStore.Core
@@ -248,12 +230,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.GetPrevLogPosition(System.Int64, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetPrevLogPosition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 29
   assemblies:
   - EventStore.Core
@@ -273,24 +251,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(BinaryReader)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(BinaryReader)
-  id: ReadFrom(BinaryReader)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(System.IO.BinaryReader)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(System.IO.BinaryReader)
+  id: ReadFrom(System.IO.BinaryReader)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: ReadFrom(BinaryReader)
   nameWithType: LogRecord.ReadFrom(BinaryReader)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(BinaryReader)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom(System.IO.BinaryReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadFrom
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 33
   assemblies:
   - EventStore.Core
@@ -299,7 +273,7 @@ items:
     content: public static LogRecord ReadFrom(BinaryReader reader)
     parameters:
     - id: reader
-      type: BinaryReader
+      type: System.IO.BinaryReader
     return:
       type: EventStore.Core.TransactionLog.LogRecords.LogRecord
     content.vb: Public Shared Function ReadFrom(reader As BinaryReader) As LogRecord
@@ -310,37 +284,33 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime})
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime})
-  id: Prepare(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime})
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime})
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime})
+  id: Prepare(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime})
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: Prepare(Int64, Guid, Guid, Int64, Int32, String, Int64, PrepareFlags, String, Byte[], Byte[], Nullable<DateTime>)
   nameWithType: LogRecord.Prepare(Int64, Guid, Guid, Int64, Int32, String, Int64, PrepareFlags, String, Byte[], Byte[], Nullable<DateTime>)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte[], System.Byte[], System.Nullable<DateTime>)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64, System.Guid, System.Guid, System.Int64, System.Int32, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte[], System.Byte[], System.Nullable<System.DateTime>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Prepare
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 52
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: public static PrepareLogRecord Prepare(long logPosition, Guid correlationId, Guid eventId, long transactionPos, int transactionOffset, string eventStreamId, long expectedVersion, PrepareFlags flags, string eventType, byte[] data, byte[] metadata, DateTime? timeStamp = null)
+    content: public static PrepareLogRecord Prepare(long logPosition, Guid correlationId, Guid eventId, long transactionPos, int transactionOffset, string eventStreamId, long expectedVersion, PrepareFlags flags, string eventType, byte[] data, byte[] metadata, DateTime? timeStamp = default(DateTime? ))
     parameters:
     - id: logPosition
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: transactionPos
       type: System.Int64
     - id: transactionOffset
@@ -358,10 +328,10 @@ items:
     - id: metadata
       type: System.Byte[]
     - id: timeStamp
-      type: System.Nullable{DateTime}
+      type: System.Nullable{System.DateTime}
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
-    content.vb: Public Shared Function Prepare(logPosition As Long, correlationId As Guid, eventId As Guid, transactionPos As Long, transactionOffset As Integer, eventStreamId As String, expectedVersion As Long, flags As PrepareFlags, eventType As String, data As Byte(), metadata As Byte(), timeStamp As DateTime? = Nothing) As PrepareLogRecord
+    content.vb: Public Shared Function Prepare(logPosition As Long, correlationId As Guid, eventId As Guid, transactionPos As Long, transactionOffset As Integer, eventStreamId As String, expectedVersion As Long, flags As PrepareFlags, eventType As String, data As Byte(), metadata As Byte(), timeStamp As Date? = Nothing) As PrepareLogRecord
   overload: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare*
   nameWithType.vb: LogRecord.Prepare(Int64, Guid, Guid, Int64, Int32, String, Int64, PrepareFlags, String, Byte(), Byte(), Nullable(Of DateTime))
   modifiers.csharp:
@@ -370,26 +340,22 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte(), System.Byte(), System.Nullable(Of DateTime))
+  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare(System.Int64, System.Guid, System.Guid, System.Int64, System.Int32, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags, System.String, System.Byte(), System.Byte(), System.Nullable(Of System.DateTime))
   name.vb: Prepare(Int64, Guid, Guid, Int64, Int32, String, Int64, PrepareFlags, String, Byte(), Byte(), Nullable(Of DateTime))
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,Guid,System.Int64,System.Int64)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,Guid,System.Int64,System.Int64)
-  id: Commit(System.Int64,Guid,System.Int64,System.Int64)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,System.Guid,System.Int64,System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64,System.Guid,System.Int64,System.Int64)
+  id: Commit(System.Int64,System.Guid,System.Int64,System.Int64)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: Commit(Int64, Guid, Int64, Int64)
   nameWithType: LogRecord.Commit(Int64, Guid, Int64, Int64)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64, Guid, System.Int64, System.Int64)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Commit(System.Int64, System.Guid, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Commit
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 61
   assemblies:
   - EventStore.Core
@@ -400,7 +366,7 @@ items:
     - id: logPosition
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: startPosition
       type: System.Int64
     - id: eventNumber
@@ -415,37 +381,33 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,Guid,Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,Guid,Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
-  id: SingleWrite(System.Int64,Guid,Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,System.Guid,System.Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64,System.Guid,System.Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
+  id: SingleWrite(System.Int64,System.Guid,System.Guid,System.String,System.Int64,System.String,System.Byte[],System.Byte[],System.Nullable{System.DateTime},System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags})
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: SingleWrite(Int64, Guid, Guid, String, Int64, String, Byte[], Byte[], Nullable<DateTime>, Nullable<PrepareFlags>)
   nameWithType: LogRecord.SingleWrite(Int64, Guid, Guid, String, Int64, String, Byte[], Byte[], Nullable<DateTime>, Nullable<PrepareFlags>)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64, Guid, Guid, System.String, System.Int64, System.String, System.Byte[], System.Byte[], System.Nullable<DateTime>, System.Nullable<EventStore.Core.TransactionLog.LogRecords.PrepareFlags>)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64, System.Guid, System.Guid, System.String, System.Int64, System.String, System.Byte[], System.Byte[], System.Nullable<System.DateTime>, System.Nullable<EventStore.Core.TransactionLog.LogRecords.PrepareFlags>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SingleWrite
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 66
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: public static PrepareLogRecord SingleWrite(long logPosition, Guid correlationId, Guid eventId, string eventStreamId, long expectedVersion, string eventType, byte[] data, byte[] metadata, DateTime? timestamp = null, PrepareFlags? additionalFlags = null)
+    content: public static PrepareLogRecord SingleWrite(long logPosition, Guid correlationId, Guid eventId, string eventStreamId, long expectedVersion, string eventType, byte[] data, byte[] metadata, DateTime? timestamp = default(DateTime? ), PrepareFlags? additionalFlags = default(PrepareFlags? ))
     parameters:
     - id: logPosition
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventStreamId
       type: System.String
     - id: expectedVersion
@@ -457,12 +419,12 @@ items:
     - id: metadata
       type: System.Byte[]
     - id: timestamp
-      type: System.Nullable{DateTime}
+      type: System.Nullable{System.DateTime}
     - id: additionalFlags
       type: System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
-    content.vb: Public Shared Function SingleWrite(logPosition As Long, correlationId As Guid, eventId As Guid, eventStreamId As String, expectedVersion As Long, eventType As String, data As Byte(), metadata As Byte(), timestamp As DateTime? = Nothing, additionalFlags As PrepareFlags? = Nothing) As PrepareLogRecord
+    content.vb: Public Shared Function SingleWrite(logPosition As Long, correlationId As Guid, eventId As Guid, eventStreamId As String, expectedVersion As Long, eventType As String, data As Byte(), metadata As Byte(), timestamp As Date? = Nothing, additionalFlags As PrepareFlags? = Nothing) As PrepareLogRecord
   overload: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite*
   nameWithType.vb: LogRecord.SingleWrite(Int64, Guid, Guid, String, Int64, String, Byte(), Byte(), Nullable(Of DateTime), Nullable(Of PrepareFlags))
   modifiers.csharp:
@@ -471,26 +433,22 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64, Guid, Guid, System.String, System.Int64, System.String, System.Byte(), System.Byte(), System.Nullable(Of DateTime), System.Nullable(Of EventStore.Core.TransactionLog.LogRecords.PrepareFlags))
+  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite(System.Int64, System.Guid, System.Guid, System.String, System.Int64, System.String, System.Byte(), System.Byte(), System.Nullable(Of System.DateTime), System.Nullable(Of EventStore.Core.TransactionLog.LogRecords.PrepareFlags))
   name.vb: SingleWrite(Int64, Guid, Guid, String, Int64, String, Byte(), Byte(), Nullable(Of DateTime), Nullable(Of PrepareFlags))
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,Guid,System.String,System.Int64)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,Guid,System.String,System.Int64)
-  id: TransactionBegin(System.Int64,Guid,System.String,System.Int64)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,System.Guid,System.String,System.Int64)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64,System.Guid,System.String,System.Int64)
+  id: TransactionBegin(System.Int64,System.Guid,System.String,System.Int64)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: TransactionBegin(Int64, Guid, String, Int64)
   nameWithType: LogRecord.TransactionBegin(Int64, Guid, String, Int64)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64, Guid, System.String, System.Int64)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionBegin(System.Int64, System.Guid, System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionBegin
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 78
   assemblies:
   - EventStore.Core
@@ -501,7 +459,7 @@ items:
     - id: logPos
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventStreamId
       type: System.String
     - id: expectedVersion
@@ -516,24 +474,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
-  id: TransactionWrite(System.Int64,Guid,Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
+  id: TransactionWrite(System.Int64,System.Guid,System.Guid,System.Int64,System.Int32,System.String,System.String,System.Byte[],System.Byte[],System.Boolean)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: TransactionWrite(Int64, Guid, Guid, Int64, Int32, String, String, Byte[], Byte[], Boolean)
   nameWithType: LogRecord.TransactionWrite(Int64, Guid, Guid, Int64, Int32, String, String, Byte[], Byte[], Boolean)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.String, System.Byte[], System.Byte[], System.Boolean)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64, System.Guid, System.Guid, System.Int64, System.Int32, System.String, System.String, System.Byte[], System.Byte[], System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionWrite
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 85
   assemblies:
   - EventStore.Core
@@ -544,9 +498,9 @@ items:
     - id: logPosition
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: transactionPos
       type: System.Int64
     - id: transactionOffset
@@ -572,26 +526,22 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64, Guid, Guid, System.Int64, System.Int32, System.String, System.String, System.Byte(), System.Byte(), System.Boolean)
+  fullName.vb: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionWrite(System.Int64, System.Guid, System.Guid, System.Int64, System.Int32, System.String, System.String, System.Byte(), System.Byte(), System.Boolean)
   name.vb: TransactionWrite(Int64, Guid, Guid, Int64, Int32, String, String, Byte(), Byte(), Boolean)
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,Guid,Guid,System.Int64,System.String)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,Guid,Guid,System.Int64,System.String)
-  id: TransactionEnd(System.Int64,Guid,Guid,System.Int64,System.String)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,System.Guid,System.Guid,System.Int64,System.String)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64,System.Guid,System.Guid,System.Int64,System.String)
+  id: TransactionEnd(System.Int64,System.Guid,System.Guid,System.Int64,System.String)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: TransactionEnd(Int64, Guid, Guid, Int64, String)
   nameWithType: LogRecord.TransactionEnd(Int64, Guid, Guid, Int64, String)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64, Guid, Guid, System.Int64, System.String)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.TransactionEnd(System.Int64, System.Guid, System.Guid, System.Int64, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransactionEnd
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 94
   assemblies:
   - EventStore.Core
@@ -602,9 +552,9 @@ items:
     - id: logPos
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: transactionPos
       type: System.Int64
     - id: eventStreamId
@@ -619,37 +569,33 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,Guid,Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,Guid,Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
-  id: DeleteTombstone(System.Int64,Guid,Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,System.Guid,System.Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64,System.Guid,System.Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+  id: DeleteTombstone(System.Int64,System.Guid,System.Guid,System.String,System.Int64,EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: DeleteTombstone(Int64, Guid, Guid, String, Int64, PrepareFlags)
   nameWithType: LogRecord.DeleteTombstone(Int64, Guid, Guid, String, Int64, PrepareFlags)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64, Guid, Guid, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone(System.Int64, System.Guid, System.Guid, System.String, System.Int64, EventStore.Core.TransactionLog.LogRecords.PrepareFlags)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DeleteTombstone
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 101
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.LogRecords
   syntax:
-    content: public static PrepareLogRecord DeleteTombstone(long logPosition, Guid correlationId, Guid eventId, string eventStreamId, long expectedVersion, PrepareFlags additionalFlags = default(PrepareFlags))
+    content: public static PrepareLogRecord DeleteTombstone(long logPosition, Guid correlationId, Guid eventId, string eventStreamId, long expectedVersion, PrepareFlags additionalFlags = PrepareFlags.None)
     parameters:
     - id: logPosition
       type: System.Int64
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: eventId
-      type: Guid
+      type: System.Guid
     - id: eventStreamId
       type: System.String
     - id: expectedVersion
@@ -658,7 +604,7 @@ items:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
     return:
       type: EventStore.Core.TransactionLog.LogRecords.PrepareLogRecord
-    content.vb: Public Shared Function DeleteTombstone(logPosition As Long, correlationId As Guid, eventId As Guid, eventStreamId As String, expectedVersion As Long, additionalFlags As PrepareFlags = Nothing) As PrepareLogRecord
+    content.vb: Public Shared Function DeleteTombstone(logPosition As Long, correlationId As Guid, eventId As Guid, eventStreamId As String, expectedVersion As Long, additionalFlags As PrepareFlags = PrepareFlags.None) As PrepareLogRecord
   overload: EventStore.Core.TransactionLog.LogRecords.LogRecord.DeleteTombstone*
   modifiers.csharp:
   - public
@@ -678,12 +624,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.LogRecord(EventStore.Core.TransactionLog.LogRecords.LogRecordType, System.Byte, System.Int64)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 110
   assemblies:
   - EventStore.Core
@@ -703,24 +645,20 @@ items:
   - protected
   modifiers.vb:
   - Protected
-- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(BinaryWriter)
-  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(BinaryWriter)
-  id: WriteTo(BinaryWriter)
+- uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(System.IO.BinaryWriter)
+  commentId: M:EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(System.IO.BinaryWriter)
+  id: WriteTo(System.IO.BinaryWriter)
   parent: EventStore.Core.TransactionLog.LogRecords.LogRecord
   langs:
   - csharp
   - vb
   name: WriteTo(BinaryWriter)
   nameWithType: LogRecord.WriteTo(BinaryWriter)
-  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(BinaryWriter)
+  fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo(System.IO.BinaryWriter)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteTo
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 117
   assemblies:
   - EventStore.Core
@@ -729,7 +667,7 @@ items:
     content: public virtual void WriteTo(BinaryWriter writer)
     parameters:
     - id: writer
-      type: BinaryWriter
+      type: System.IO.BinaryWriter
     content.vb: Public Overridable Sub WriteTo(writer As BinaryWriter)
   overload: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo*
   modifiers.csharp:
@@ -750,12 +688,8 @@ items:
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.GetSizeWithLengthPrefixAndSuffix()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetSizeWithLengthPrefixAndSuffix
-    path: ../EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/LogRecords/LogRecord.cs
     startLine: 123
   assemblies:
   - EventStore.Core
@@ -783,6 +717,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1216,27 +1429,37 @@ references:
   name: ReadFrom
   nameWithType: LogRecord.ReadFrom
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.ReadFrom
-- uid: BinaryReader
+- uid: System.IO.BinaryReader
+  commentId: T:System.IO.BinaryReader
+  parent: System.IO
   isExternal: true
   name: BinaryReader
   nameWithType: BinaryReader
-  fullName: BinaryReader
+  fullName: System.IO.BinaryReader
 - uid: EventStore.Core.TransactionLog.LogRecords.LogRecord
   commentId: T:EventStore.Core.TransactionLog.LogRecords.LogRecord
   parent: EventStore.Core.TransactionLog.LogRecords
   name: LogRecord
   nameWithType: LogRecord
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
 - uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare*
   commentId: Overload:EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare
   name: Prepare
   nameWithType: LogRecord.Prepare
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.Prepare
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1250,14 +1473,15 @@ references:
   name: PrepareFlags
   nameWithType: PrepareFlags
   fullName: EventStore.Core.TransactionLog.LogRecords.PrepareFlags
-- uid: System.Nullable{DateTime}
-  commentId: '!:System.Nullable{DateTime}'
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<DateTime>
   nameWithType: Nullable<DateTime>
-  fullName: System.Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
   nameWithType.vb: Nullable(Of DateTime)
-  fullName.vb: System.Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
   name.vb: Nullable(Of DateTime)
   spec.csharp:
   - uid: System.Nullable`1
@@ -1268,10 +1492,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1285,10 +1509,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: DateTime
+  - uid: System.DateTime
     name: DateTime
     nameWithType: DateTime
-    fullName: DateTime
+    fullName: System.DateTime
     isExternal: true
   - name: )
     nameWithType: )
@@ -1355,7 +1579,8 @@ references:
   nameWithType: LogRecord.SingleWrite
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.SingleWrite
 - uid: System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}
-  commentId: '!:System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}'
+  commentId: T:System.Nullable{EventStore.Core.TransactionLog.LogRecords.PrepareFlags}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<PrepareFlags>
   nameWithType: Nullable<PrepareFlags>
@@ -1432,11 +1657,13 @@ references:
   name: WriteTo
   nameWithType: LogRecord.WriteTo
   fullName: EventStore.Core.TransactionLog.LogRecords.LogRecord.WriteTo
-- uid: BinaryWriter
+- uid: System.IO.BinaryWriter
+  commentId: T:System.IO.BinaryWriter
+  parent: System.IO
   isExternal: true
   name: BinaryWriter
   nameWithType: BinaryWriter
-  fullName: BinaryWriter
+  fullName: System.IO.BinaryWriter
 - uid: EventStore.Core.TransactionLog.LogRecords.LogRecord.GetSizeWithLengthPrefixAndSuffix*
   commentId: Overload:EventStore.Core.TransactionLog.LogRecords.LogRecord.GetSizeWithLengthPrefixAndSuffix
   name: GetSizeWithLengthPrefixAndSuffix

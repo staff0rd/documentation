@@ -6,18 +6,18 @@ items:
   parent: EventStore.Common.Log
   children:
   - EventStore.Common.Log.ConsoleLogger.Debug(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.DebugException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.DebugException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.ConsoleLogger.Error(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.ErrorException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.ErrorException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.ConsoleLogger.Fatal(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.FatalException(Exception,System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{TimeSpan})
+  - EventStore.Common.Log.ConsoleLogger.FatalException(System.Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{System.TimeSpan})
   - EventStore.Common.Log.ConsoleLogger.Info(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.InfoException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.InfoException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.ConsoleLogger.Trace(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.TraceException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.TraceException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.ConsoleLogger.Warn(System.String,System.Object[])
-  - EventStore.Common.Log.ConsoleLogger.WarnException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ConsoleLogger.WarnException(System.Exception,System.String,System.Object[])
   langs:
   - csharp
   - vb
@@ -26,26 +26,29 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConsoleLogger
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 6
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
   syntax:
-    content: 'public class ConsoleLogger : object, ILogger'
+    content: 'public class ConsoleLogger : ILogger'
     content.vb: >-
       Public Class ConsoleLogger
-          Inherits Object
           Implements ILogger
   inheritance:
   - System.Object
   implements:
   - EventStore.Common.Log.ILogger
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -58,43 +61,39 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{TimeSpan})
-  commentId: M:EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{TimeSpan})
-  id: Flush(System.Nullable{TimeSpan})
+- uid: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{System.TimeSpan})
+  commentId: M:EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable{System.TimeSpan})
+  id: Flush(System.Nullable{System.TimeSpan})
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: Flush(Nullable<TimeSpan>)
   nameWithType: ConsoleLogger.Flush(Nullable<TimeSpan>)
-  fullName: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable<TimeSpan>)
+  fullName: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable<System.TimeSpan>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Flush
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 7
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
   syntax:
-    content: public void Flush(TimeSpan? maxTimeToWait = null)
+    content: public void Flush(TimeSpan? maxTimeToWait = default(TimeSpan? ))
     parameters:
     - id: maxTimeToWait
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public Sub Flush(maxTimeToWait As TimeSpan? = Nothing)
   overload: EventStore.Common.Log.ConsoleLogger.Flush*
   implements:
-  - EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
   nameWithType.vb: ConsoleLogger.Flush(Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable(Of TimeSpan))
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.Flush(System.Nullable(Of System.TimeSpan))
   name.vb: Flush(Nullable(Of TimeSpan))
 - uid: EventStore.Common.Log.ConsoleLogger.Fatal(System.String,System.Object[])
   commentId: M:EventStore.Common.Log.ConsoleLogger.Fatal(System.String,System.Object[])
@@ -108,12 +107,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Fatal(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Fatal
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 10
   assemblies:
   - EventStore.Common
@@ -148,12 +143,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Error(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Error
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 14
   assemblies:
   - EventStore.Common
@@ -188,12 +179,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Info(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Info
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 18
   assemblies:
   - EventStore.Common
@@ -228,12 +215,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Debug(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Debug
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 22
   assemblies:
   - EventStore.Common
@@ -268,12 +251,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Warn(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Warn
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 26
   assemblies:
   - EventStore.Common
@@ -308,12 +287,8 @@ items:
   fullName: EventStore.Common.Log.ConsoleLogger.Trace(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Trace
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 30
   assemblies:
   - EventStore.Common
@@ -336,24 +311,20 @@ items:
   - Public
   fullName.vb: EventStore.Common.Log.ConsoleLogger.Trace(System.String, System.Object())
   name.vb: Trace(String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.FatalException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.FatalException(Exception,System.String,System.Object[])
-  id: FatalException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.FatalException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.FatalException(System.Exception,System.String,System.Object[])
+  id: FatalException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: FatalException(Exception, String, Object[])
   nameWithType: ConsoleLogger.FatalException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.FatalException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.FatalException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FatalException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 34
   assemblies:
   - EventStore.Common
@@ -362,7 +333,7 @@ items:
     content: public void FatalException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -370,32 +341,28 @@ items:
     content.vb: Public Sub FatalException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.FatalException*
   implements:
-  - EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.FatalException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.FatalException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.FatalException(System.Exception, System.String, System.Object())
   name.vb: FatalException(Exception, String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.ErrorException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.ErrorException(Exception,System.String,System.Object[])
-  id: ErrorException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.ErrorException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.ErrorException(System.Exception,System.String,System.Object[])
+  id: ErrorException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: ErrorException(Exception, String, Object[])
   nameWithType: ConsoleLogger.ErrorException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.ErrorException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.ErrorException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ErrorException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 38
   assemblies:
   - EventStore.Common
@@ -404,7 +371,7 @@ items:
     content: public void ErrorException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -412,32 +379,28 @@ items:
     content.vb: Public Sub ErrorException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.ErrorException*
   implements:
-  - EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.ErrorException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.ErrorException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.ErrorException(System.Exception, System.String, System.Object())
   name.vb: ErrorException(Exception, String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.InfoException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.InfoException(Exception,System.String,System.Object[])
-  id: InfoException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.InfoException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.InfoException(System.Exception,System.String,System.Object[])
+  id: InfoException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: InfoException(Exception, String, Object[])
   nameWithType: ConsoleLogger.InfoException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.InfoException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.InfoException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InfoException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 42
   assemblies:
   - EventStore.Common
@@ -446,7 +409,7 @@ items:
     content: public void InfoException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -454,32 +417,28 @@ items:
     content.vb: Public Sub InfoException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.InfoException*
   implements:
-  - EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.InfoException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.InfoException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.InfoException(System.Exception, System.String, System.Object())
   name.vb: InfoException(Exception, String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.DebugException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.DebugException(Exception,System.String,System.Object[])
-  id: DebugException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.DebugException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.DebugException(System.Exception,System.String,System.Object[])
+  id: DebugException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: DebugException(Exception, String, Object[])
   nameWithType: ConsoleLogger.DebugException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.DebugException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.DebugException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DebugException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 46
   assemblies:
   - EventStore.Common
@@ -488,7 +447,7 @@ items:
     content: public void DebugException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -496,32 +455,28 @@ items:
     content.vb: Public Sub DebugException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.DebugException*
   implements:
-  - EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.DebugException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.DebugException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.DebugException(System.Exception, System.String, System.Object())
   name.vb: DebugException(Exception, String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.WarnException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.WarnException(Exception,System.String,System.Object[])
-  id: WarnException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.WarnException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.WarnException(System.Exception,System.String,System.Object[])
+  id: WarnException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: WarnException(Exception, String, Object[])
   nameWithType: ConsoleLogger.WarnException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.WarnException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.WarnException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WarnException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 50
   assemblies:
   - EventStore.Common
@@ -530,7 +485,7 @@ items:
     content: public void WarnException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -538,32 +493,28 @@ items:
     content.vb: Public Sub WarnException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.WarnException*
   implements:
-  - EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.WarnException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.WarnException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.WarnException(System.Exception, System.String, System.Object())
   name.vb: WarnException(Exception, String, Object())
-- uid: EventStore.Common.Log.ConsoleLogger.TraceException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ConsoleLogger.TraceException(Exception,System.String,System.Object[])
-  id: TraceException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ConsoleLogger.TraceException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ConsoleLogger.TraceException(System.Exception,System.String,System.Object[])
+  id: TraceException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ConsoleLogger
   langs:
   - csharp
   - vb
   name: TraceException(Exception, String, Object[])
   nameWithType: ConsoleLogger.TraceException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ConsoleLogger.TraceException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ConsoleLogger.TraceException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/ConsoleLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TraceException
-    path: ../EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/ConsoleLogger.cs
     startLine: 54
   assemblies:
   - EventStore.Common
@@ -572,7 +523,7 @@ items:
     content: public void TraceException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -580,13 +531,13 @@ items:
     content.vb: Public Sub TraceException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.ConsoleLogger.TraceException*
   implements:
-  - EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
   nameWithType.vb: ConsoleLogger.TraceException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.ConsoleLogger.TraceException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ConsoleLogger.TraceException(System.Exception, System.String, System.Object())
   name.vb: TraceException(Exception, String, Object())
 references:
 - uid: EventStore.Common.Log
@@ -607,6 +558,285 @@ references:
   name: ILogger
   nameWithType: ILogger
   fullName: EventStore.Common.Log.ILogger
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -977,18 +1207,18 @@ references:
   name: Flush
   nameWithType: ConsoleLogger.Flush
   fullName: EventStore.Common.Log.ConsoleLogger.Flush
-- uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
-  commentId: M:EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+- uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
+  commentId: M:EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: Flush(Nullable<TimeSpan>)
   nameWithType: ILogger.Flush(Nullable<TimeSpan>)
-  fullName: EventStore.Common.Log.ILogger.Flush(System.Nullable<TimeSpan>)
+  fullName: EventStore.Common.Log.ILogger.Flush(System.Nullable<System.TimeSpan>)
   nameWithType.vb: ILogger.Flush(Nullable(Of TimeSpan))
-  fullName.vb: EventStore.Common.Log.ILogger.Flush(System.Nullable(Of TimeSpan))
+  fullName.vb: EventStore.Common.Log.ILogger.Flush(System.Nullable(Of System.TimeSpan))
   name.vb: Flush(Nullable(Of TimeSpan))
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
     name: Flush
     nameWithType: ILogger.Flush
     fullName: EventStore.Common.Log.ILogger.Flush
@@ -1003,10 +1233,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1015,7 +1245,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
     name: Flush
     nameWithType: ILogger.Flush
     fullName: EventStore.Common.Log.ILogger.Flush
@@ -1030,10 +1260,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -1041,14 +1271,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable{TimeSpan}
-  commentId: '!:System.Nullable{TimeSpan}'
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TimeSpan>
   nameWithType: Nullable<TimeSpan>
-  fullName: System.Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
   nameWithType.vb: Nullable(Of TimeSpan)
-  fullName.vb: System.Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
   name.vb: Nullable(Of TimeSpan)
   spec.csharp:
   - uid: System.Nullable`1
@@ -1059,10 +1290,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1076,10 +1307,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -1575,28 +1806,28 @@ references:
   name: FatalException
   nameWithType: ConsoleLogger.FatalException
   fullName: EventStore.Common.Log.ConsoleLogger.FatalException
-- uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: FatalException(Exception, String, Object[])
   nameWithType: ILogger.FatalException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.FatalException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.FatalException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.FatalException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.FatalException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.FatalException(System.Exception, System.String, System.Object())
   name.vb: FatalException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
     name: FatalException
     nameWithType: ILogger.FatalException
     fullName: EventStore.Common.Log.ILogger.FatalException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1621,17 +1852,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
     name: FatalException
     nameWithType: ILogger.FatalException
     fullName: EventStore.Common.Log.ILogger.FatalException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1655,38 +1886,40 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Exception
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
   isExternal: true
   name: Exception
   nameWithType: Exception
-  fullName: Exception
+  fullName: System.Exception
 - uid: EventStore.Common.Log.ConsoleLogger.ErrorException*
   commentId: Overload:EventStore.Common.Log.ConsoleLogger.ErrorException
   name: ErrorException
   nameWithType: ConsoleLogger.ErrorException
   fullName: EventStore.Common.Log.ConsoleLogger.ErrorException
-- uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: ErrorException(Exception, String, Object[])
   nameWithType: ILogger.ErrorException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.ErrorException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.ErrorException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.ErrorException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.ErrorException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.ErrorException(System.Exception, System.String, System.Object())
   name.vb: ErrorException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
     name: ErrorException
     nameWithType: ILogger.ErrorException
     fullName: EventStore.Common.Log.ILogger.ErrorException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1711,17 +1944,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
     name: ErrorException
     nameWithType: ILogger.ErrorException
     fullName: EventStore.Common.Log.ILogger.ErrorException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1750,28 +1983,28 @@ references:
   name: InfoException
   nameWithType: ConsoleLogger.InfoException
   fullName: EventStore.Common.Log.ConsoleLogger.InfoException
-- uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: InfoException(Exception, String, Object[])
   nameWithType: ILogger.InfoException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.InfoException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.InfoException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.InfoException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.InfoException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.InfoException(System.Exception, System.String, System.Object())
   name.vb: InfoException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
     name: InfoException
     nameWithType: ILogger.InfoException
     fullName: EventStore.Common.Log.ILogger.InfoException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1796,17 +2029,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
     name: InfoException
     nameWithType: ILogger.InfoException
     fullName: EventStore.Common.Log.ILogger.InfoException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1835,28 +2068,28 @@ references:
   name: DebugException
   nameWithType: ConsoleLogger.DebugException
   fullName: EventStore.Common.Log.ConsoleLogger.DebugException
-- uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: DebugException(Exception, String, Object[])
   nameWithType: ILogger.DebugException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.DebugException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.DebugException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.DebugException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.DebugException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.DebugException(System.Exception, System.String, System.Object())
   name.vb: DebugException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
     name: DebugException
     nameWithType: ILogger.DebugException
     fullName: EventStore.Common.Log.ILogger.DebugException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1881,17 +2114,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
     name: DebugException
     nameWithType: ILogger.DebugException
     fullName: EventStore.Common.Log.ILogger.DebugException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1920,28 +2153,28 @@ references:
   name: WarnException
   nameWithType: ConsoleLogger.WarnException
   fullName: EventStore.Common.Log.ConsoleLogger.WarnException
-- uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: WarnException(Exception, String, Object[])
   nameWithType: ILogger.WarnException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.WarnException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.WarnException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.WarnException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.WarnException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.WarnException(System.Exception, System.String, System.Object())
   name.vb: WarnException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
     name: WarnException
     nameWithType: ILogger.WarnException
     fullName: EventStore.Common.Log.ILogger.WarnException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1966,17 +2199,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
     name: WarnException
     nameWithType: ILogger.WarnException
     fullName: EventStore.Common.Log.ILogger.WarnException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2005,28 +2238,28 @@ references:
   name: TraceException
   nameWithType: ConsoleLogger.TraceException
   fullName: EventStore.Common.Log.ConsoleLogger.TraceException
-- uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: TraceException(Exception, String, Object[])
   nameWithType: ILogger.TraceException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.TraceException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.TraceException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.TraceException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.TraceException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.TraceException(System.Exception, System.String, System.Object())
   name.vb: TraceException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
     name: TraceException
     nameWithType: ILogger.TraceException
     fullName: EventStore.Common.Log.ILogger.TraceException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2051,17 +2284,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
     name: TraceException
     nameWithType: ILogger.TraceException
     fullName: EventStore.Common.Log.ILogger.TraceException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '

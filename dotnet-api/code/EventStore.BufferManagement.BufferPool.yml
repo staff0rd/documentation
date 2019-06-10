@@ -17,12 +17,12 @@ items:
   - EventStore.BufferManagement.BufferPool.Finalize
   - EventStore.BufferManagement.BufferPool.Item(System.Int32)
   - EventStore.BufferManagement.BufferPool.Length
-  - EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,ArraySegment{System.Byte})
+  - EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.ArraySegment{System.Byte})
   - EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.Byte[],System.Int32,System.Int32)
   - EventStore.BufferManagement.BufferPool.SetLength(System.Int32)
   - EventStore.BufferManagement.BufferPool.SetLength(System.Int32,System.Boolean)
   - EventStore.BufferManagement.BufferPool.ToByteArray
-  - EventStore.BufferManagement.BufferPool.Write(System.Int32,ArraySegment{System.Byte})
+  - EventStore.BufferManagement.BufferPool.Write(System.Int32,System.ArraySegment{System.Byte})
   - EventStore.BufferManagement.BufferPool.Write(System.Int32,System.Byte[],System.Int32,System.Int32)
   langs:
   - csharp
@@ -32,12 +32,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool
   type: Class
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BufferPool
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 4
   assemblies:
   - EventStore.BufferManagement
@@ -46,9 +42,19 @@ items:
     content: 'public class BufferPool : IDisposable'
     content.vb: >-
       Public Class BufferPool
-          Inherits IDisposable
+          Implements IDisposable
   inheritance:
   - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -73,12 +79,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Capacity
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Capacity
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 28
   assemblies:
   - EventStore.BufferManagement
@@ -111,12 +113,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Length
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Length
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 39
   assemblies:
   - EventStore.BufferManagement
@@ -149,12 +147,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.EffectiveBuffers
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EffectiveBuffers
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 47
   assemblies:
   - EventStore.BufferManagement
@@ -165,7 +159,7 @@ items:
     content: public IEnumerable<ArraySegment<byte>> EffectiveBuffers { get; }
     parameters: []
     return:
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
       description: The effective buffers.
     content.vb: Public ReadOnly Property EffectiveBuffers As IEnumerable(Of ArraySegment(Of Byte))
   overload: EventStore.BufferManagement.BufferPool.EffectiveBuffers*
@@ -187,17 +181,13 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Item[System.Int32]
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: this[]
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 67
   assemblies:
   - EventStore.BufferManagement
   namespace: EventStore.BufferManagement
-  summary: "\nGets or sets the <see cref=\"!:System.Byte\"></see> with the specified index.\n"
+  summary: "\nGets or sets the <xref href=\"System.Byte\" data-throw-if-not-resolved=\"false\"></xref> with the specified index.\n"
   example: []
   syntax:
     content: public byte this[int index] { get; set; }
@@ -229,12 +219,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.BufferPool()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 92
   assemblies:
   - EventStore.BufferManagement
@@ -261,12 +247,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.BufferPool(EventStore.BufferManagement.BufferManager)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 99
   assemblies:
   - EventStore.BufferManagement
@@ -297,12 +279,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.BufferPool(System.Int32, EventStore.BufferManagement.BufferManager)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 107
   assemblies:
   - EventStore.BufferManagement
@@ -336,12 +314,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Append(System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Append
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 124
   assemblies:
   - EventStore.BufferManagement
@@ -375,12 +349,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Append(System.Byte[], System.Int32, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Append
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 136
   assemblies:
   - EventStore.BufferManagement
@@ -420,12 +390,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Write(System.Int32, System.Byte[], System.Int32, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Write
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 147
   assemblies:
   - EventStore.BufferManagement
@@ -456,24 +422,20 @@ items:
   - Public
   fullName.vb: EventStore.BufferManagement.BufferPool.Write(System.Int32, System.Byte(), System.Int32, System.Int32)
   name.vb: Write(Int32, Byte(), Int32, Int32)
-- uid: EventStore.BufferManagement.BufferPool.Write(System.Int32,ArraySegment{System.Byte})
-  commentId: M:EventStore.BufferManagement.BufferPool.Write(System.Int32,ArraySegment{System.Byte})
-  id: Write(System.Int32,ArraySegment{System.Byte})
+- uid: EventStore.BufferManagement.BufferPool.Write(System.Int32,System.ArraySegment{System.Byte})
+  commentId: M:EventStore.BufferManagement.BufferPool.Write(System.Int32,System.ArraySegment{System.Byte})
+  id: Write(System.Int32,System.ArraySegment{System.Byte})
   parent: EventStore.BufferManagement.BufferPool
   langs:
   - csharp
   - vb
   name: Write(Int32, ArraySegment<Byte>)
   nameWithType: BufferPool.Write(Int32, ArraySegment<Byte>)
-  fullName: EventStore.BufferManagement.BufferPool.Write(System.Int32, ArraySegment<System.Byte>)
+  fullName: EventStore.BufferManagement.BufferPool.Write(System.Int32, System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Write
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 162
   assemblies:
   - EventStore.BufferManagement
@@ -487,7 +449,7 @@ items:
       type: System.Int32
       description: The position to write at.
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
       description: The data.
     content.vb: Public Sub Write(position As Integer, data As ArraySegment(Of Byte))
   overload: EventStore.BufferManagement.BufferPool.Write*
@@ -496,7 +458,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.BufferManagement.BufferPool.Write(System.Int32, ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.BufferManagement.BufferPool.Write(System.Int32, System.ArraySegment(Of System.Byte))
   name.vb: Write(Int32, ArraySegment(Of Byte))
 - uid: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.Byte[],System.Int32,System.Int32)
   commentId: M:EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.Byte[],System.Int32,System.Int32)
@@ -510,12 +472,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, System.Byte[], System.Int32, System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadFrom
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 191
   assemblies:
   - EventStore.BufferManagement
@@ -549,24 +507,20 @@ items:
   - Public
   fullName.vb: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, System.Byte(), System.Int32, System.Int32)
   name.vb: ReadFrom(Int32, Byte(), Int32, Int32)
-- uid: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,ArraySegment{System.Byte})
-  commentId: M:EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,ArraySegment{System.Byte})
-  id: ReadFrom(System.Int32,ArraySegment{System.Byte})
+- uid: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.ArraySegment{System.Byte})
+  commentId: M:EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32,System.ArraySegment{System.Byte})
+  id: ReadFrom(System.Int32,System.ArraySegment{System.Byte})
   parent: EventStore.BufferManagement.BufferPool
   langs:
   - csharp
   - vb
   name: ReadFrom(Int32, ArraySegment<Byte>)
   nameWithType: BufferPool.ReadFrom(Int32, ArraySegment<Byte>)
-  fullName: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, ArraySegment<System.Byte>)
+  fullName: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadFrom
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 207
   assemblies:
   - EventStore.BufferManagement
@@ -580,7 +534,7 @@ items:
       type: System.Int32
       description: The position to read from.
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
       description: Where to read the data to.
     return:
       type: System.Int32
@@ -592,7 +546,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.BufferManagement.BufferPool.ReadFrom(System.Int32, System.ArraySegment(Of System.Byte))
   name.vb: ReadFrom(Int32, ArraySegment(Of Byte))
 - uid: EventStore.BufferManagement.BufferPool.SetLength(System.Int32)
   commentId: M:EventStore.BufferManagement.BufferPool.SetLength(System.Int32)
@@ -606,12 +560,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.SetLength(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetLength
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 234
   assemblies:
   - EventStore.BufferManagement
@@ -642,12 +592,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.SetLength(System.Int32, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetLength
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 243
   assemblies:
   - EventStore.BufferManagement
@@ -681,12 +627,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.ToByteArray()
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToByteArray
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 276
   assemblies:
   - EventStore.BufferManagement
@@ -716,12 +658,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 304
   assemblies:
   - EventStore.BufferManagement
@@ -732,6 +670,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.BufferManagement.BufferPool.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -748,12 +688,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.Finalize()
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Finalize
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 309
   assemblies:
   - EventStore.BufferManagement
@@ -778,12 +714,8 @@ items:
   fullName: EventStore.BufferManagement.BufferPool.DisposeInternal()
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferPool.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisposeInternal
-    path: ../EventStore/src/EventStore.BufferManagement/BufferPool.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferPool.cs
     startLine: 313
   assemblies:
   - EventStore.BufferManagement
@@ -811,6 +743,292 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1204,28 +1422,29 @@ references:
   name: EffectiveBuffers
   nameWithType: BufferPool.EffectiveBuffers
   fullName: EventStore.BufferManagement.BufferPool.EffectiveBuffers
-- uid: IEnumerable{ArraySegment{System.Byte}}
-  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ArraySegment<Byte>>
   nameWithType: IEnumerable<ArraySegment<Byte>>
-  fullName: IEnumerable<ArraySegment<System.Byte>>
+  fullName: System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>
   nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
-  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))
   name.vb: IEnumerable(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1242,18 +1461,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1269,49 +1488,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.BufferManagement.BufferPool.Item*
-  commentId: Overload:EventStore.BufferManagement.BufferPool.Item
-  name: Item
-  nameWithType: BufferPool.Item
-  fullName: EventStore.BufferManagement.BufferPool.Item
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: System.Byte
   commentId: T:System.Byte
   parent: System
@@ -1319,6 +1540,11 @@ references:
   name: Byte
   nameWithType: Byte
   fullName: System.Byte
+- uid: EventStore.BufferManagement.BufferPool.Item*
+  commentId: Overload:EventStore.BufferManagement.BufferPool.Item
+  name: Item
+  nameWithType: BufferPool.Item
+  fullName: EventStore.BufferManagement.BufferPool.Item
 - uid: EventStore.BufferManagement.BufferPool.#ctor*
   commentId: Overload:EventStore.BufferManagement.BufferPool.#ctor
   name: BufferPool
@@ -1366,20 +1592,21 @@ references:
   name: Write
   nameWithType: BufferPool.Write
   fullName: EventStore.BufferManagement.BufferPool.Write
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1393,10 +1620,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1409,41 +1636,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment`1
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
   isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1474,6 +1702,37 @@ references:
   name: Dispose
   nameWithType: BufferPool.Dispose
   fullName: EventStore.BufferManagement.BufferPool.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.BufferManagement.BufferPool.Finalize*
   commentId: Overload:EventStore.BufferManagement.BufferPool.Finalize
   name: Finalize

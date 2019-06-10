@@ -5,11 +5,11 @@ items:
   id: WriteStreamTwoPhaseRequestManager
   parent: EventStore.Core.Services.RequestManager.Managers
   children:
-  - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
+  - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
   - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
   - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
   - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.Handle(EventStore.Core.Messages.ClientMessage.WriteEvents)
-  - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(Guid)
+  - EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(System.Guid)
   langs:
   - csharp
   - vb
@@ -18,12 +18,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteStreamTwoPhaseRequestManager
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 6
   assemblies:
   - EventStore.Core
@@ -55,8 +51,8 @@ items:
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.NextTimeoutTime
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.PrepareTimeout
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
-  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
-  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.String,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.Int64,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CheckStreamAccessCompleted)
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.WrongExpectedVersion)
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.StreamDeleted)
@@ -64,6 +60,13 @@ items:
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.AlreadyCommitted)
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.PrepareAck)
   - EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.Handle(EventStore.Core.Messages.StorageMessage.CommitReplicated)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -76,24 +79,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,TimeSpan,TimeSpan,System.Boolean)'
+- uid: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.TimeSpan,System.TimeSpan,System.Boolean)'
   parent: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager
   langs:
   - csharp
   - vb
   name: WriteStreamTwoPhaseRequestManager(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
   nameWithType: WriteStreamTwoPhaseRequestManager.WriteStreamTwoPhaseRequestManager(IPublisher, Int32, TimeSpan, TimeSpan, Boolean)
-  fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.WriteStreamTwoPhaseRequestManager(EventStore.Core.Bus.IPublisher, System.Int32, TimeSpan, TimeSpan, System.Boolean)
+  fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.WriteStreamTwoPhaseRequestManager(EventStore.Core.Bus.IPublisher, System.Int32, System.TimeSpan, System.TimeSpan, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -106,9 +105,9 @@ items:
     - id: prepareCount
       type: System.Int32
     - id: prepareTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: commitTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: betterOrdering
       type: System.Boolean
     content.vb: Public Sub New(publisher As IPublisher, prepareCount As Integer, prepareTimeout As TimeSpan, commitTimeout As TimeSpan, betterOrdering As Boolean)
@@ -129,12 +128,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.Handle(EventStore.Core.Messages.ClientMessage.WriteEvents)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 18
   assemblies:
   - EventStore.Core
@@ -152,24 +147,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(Guid)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(Guid)
-  id: OnSecurityAccessGranted(Guid)
+- uid: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(System.Guid)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(System.Guid)
+  id: OnSecurityAccessGranted(System.Guid)
   parent: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager
   langs:
   - csharp
   - vb
   name: OnSecurityAccessGranted(Guid)
   nameWithType: WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(Guid)
-  fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(Guid)
+  fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OnSecurityAccessGranted
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -178,9 +169,9 @@ items:
     content: protected override void OnSecurityAccessGranted(Guid internalCorrId)
     parameters:
     - id: internalCorrId
-      type: Guid
+      type: System.Guid
     content.vb: Protected Overrides Sub OnSecurityAccessGranted(internalCorrId As Guid)
-  overridden: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  overridden: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
   overload: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted*
   modifiers.csharp:
   - protected
@@ -200,12 +191,8 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.CompleteSuccessRequest(System.Int64, System.Int64, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompleteSuccessRequest
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 32
   assemblies:
   - EventStore.Core
@@ -242,18 +229,14 @@ items:
   fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.CompleteFailedRequest(EventStore.Core.Messages.OperationResult, System.String, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompleteFailedRequest
-    path: ../EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestManager/Managers/WriteStreamTwoPhaseRequestManager.cs
     startLine: 39
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.RequestManager.Managers
   syntax:
-    content: protected override void CompleteFailedRequest(OperationResult result, string error, long currentVersion = null)
+    content: protected override void CompleteFailedRequest(OperationResult result, string error, long currentVersion = -1L)
     parameters:
     - id: result
       type: EventStore.Core.Messages.OperationResult
@@ -261,7 +244,7 @@ items:
       type: System.String
     - id: currentVersion
       type: System.Int64
-    content.vb: Protected Overrides Sub CompleteFailedRequest(result As OperationResult, error As String, currentVersion As Long = Nothing)
+    content.vb: Protected Overrides Sub CompleteFailedRequest(result As OperationResult, error As String, currentVersion As Long = -1L)
   overridden: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteFailedRequest(EventStore.Core.Messages.OperationResult,System.String,System.Int64)
   overload: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.CompleteFailedRequest*
   modifiers.csharp:
@@ -657,15 +640,15 @@ references:
   name: CommitTimeout
   nameWithType: TwoPhaseRequestManagerBase.CommitTimeout
   fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CommitTimeout
-- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.String,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.String,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
   parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
   isExternal: true
   name: InitNoPreparePhase(IEnvelope, Guid, Guid, String, IPrincipal, StreamAccessType)
   nameWithType: TwoPhaseRequestManagerBase.InitNoPreparePhase(IEnvelope, Guid, Guid, String, IPrincipal, StreamAccessType)
-  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope, Guid, Guid, System.String, IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope, System.Guid, System.Guid, System.String, System.Security.Principal.IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
   spec.csharp:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.String,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
     name: InitNoPreparePhase
     nameWithType: TwoPhaseRequestManagerBase.InitNoPreparePhase
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase
@@ -679,18 +662,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -703,10 +686,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -719,7 +702,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.String,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.String,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
     name: InitNoPreparePhase
     nameWithType: TwoPhaseRequestManagerBase.InitNoPreparePhase
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitNoPreparePhase
@@ -733,18 +716,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -757,10 +740,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -772,15 +755,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.Int64,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.Int64,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
   parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
   isExternal: true
   name: InitTwoPhase(IEnvelope, Guid, Guid, Int64, IPrincipal, StreamAccessType)
   nameWithType: TwoPhaseRequestManagerBase.InitTwoPhase(IEnvelope, Guid, Guid, Int64, IPrincipal, StreamAccessType)
-  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope, Guid, Guid, System.Int64, IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope, System.Guid, System.Guid, System.Int64, System.Security.Principal.IPrincipal, EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
   spec.csharp:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.Int64,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
     name: InitTwoPhase
     nameWithType: TwoPhaseRequestManagerBase.InitTwoPhase
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase
@@ -794,18 +777,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -818,10 +801,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -834,7 +817,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,Guid,Guid,System.Int64,IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase(EventStore.Core.Messaging.IEnvelope,System.Guid,System.Guid,System.Int64,System.Security.Principal.IPrincipal,EventStore.Core.Services.Storage.ReaderIndex.StreamAccessType)
     name: InitTwoPhase
     nameWithType: TwoPhaseRequestManagerBase.InitTwoPhase
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.InitTwoPhase
@@ -848,18 +831,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -872,10 +855,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1136,6 +1119,285 @@ references:
     name: StorageMessage.CommitReplicated
     nameWithType: StorageMessage.CommitReplicated
     fullName: EventStore.Core.Messages.StorageMessage.CommitReplicated
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1568,11 +1830,13 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -1670,41 +1934,41 @@ references:
   name: EventStore.Core.Messages
   nameWithType: EventStore.Core.Messages
   fullName: EventStore.Core.Messages
-- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
-  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+- uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
+  commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
   parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase
   isExternal: true
   name: OnSecurityAccessGranted(Guid)
   nameWithType: TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
-  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
   spec.csharp:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
     name: OnSecurityAccessGranted
     nameWithType: TwoPhaseRequestManagerBase.OnSecurityAccessGranted
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(Guid)
+  - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted(System.Guid)
     name: OnSecurityAccessGranted
     nameWithType: TwoPhaseRequestManagerBase.OnSecurityAccessGranted
     fullName: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.OnSecurityAccessGranted
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
@@ -1714,11 +1978,13 @@ references:
   name: OnSecurityAccessGranted
   nameWithType: WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted
   fullName: EventStore.Core.Services.RequestManager.Managers.WriteStreamTwoPhaseRequestManager.OnSecurityAccessGranted
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
   commentId: M:EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase.CompleteSuccessRequest(System.Int64,System.Int64,System.Int64,System.Int64)
   parent: EventStore.Core.Services.RequestManager.Managers.TwoPhaseRequestManagerBase

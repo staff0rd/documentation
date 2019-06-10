@@ -5,9 +5,9 @@ items:
   id: KnownEndpointGossipSeedSource
   parent: EventStore.Core.Services.Gossip
   children:
-  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(IPEndPoint[])
-  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
-  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(System.Net.IPEndPoint[])
+  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
+  - EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
   langs:
   - csharp
   - vb
@@ -16,26 +16,29 @@ items:
   fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/LoopbackDns.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: KnownEndpointGossipSeedSource
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
     startLine: 4
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Gossip
   syntax:
-    content: 'public class KnownEndpointGossipSeedSource : object, IGossipSeedSource'
+    content: 'public class KnownEndpointGossipSeedSource : IGossipSeedSource'
     content.vb: >-
       Public Class KnownEndpointGossipSeedSource
-          Inherits Object
           Implements IGossipSeedSource
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Services.Gossip.IGossipSeedSource
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -48,24 +51,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(IPEndPoint[])
-  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(IPEndPoint[])
-  id: '#ctor(IPEndPoint[])'
+- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(System.Net.IPEndPoint[])
+  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor(System.Net.IPEndPoint[])
+  id: '#ctor(System.Net.IPEndPoint[])'
   parent: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource
   langs:
   - csharp
   - vb
   name: KnownEndpointGossipSeedSource(IPEndPoint[])
   nameWithType: KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(IPEndPoint[])
-  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(IPEndPoint[])
+  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(System.Net.IPEndPoint[])
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/LoopbackDns.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -74,7 +73,7 @@ items:
     content: public KnownEndpointGossipSeedSource(IPEndPoint[] ipEndPoints)
     parameters:
     - id: ipEndPoints
-      type: IPEndPoint[]
+      type: System.Net.IPEndPoint[]
     content.vb: Public Sub New(ipEndPoints As IPEndPoint())
   overload: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.#ctor*
   nameWithType.vb: KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(IPEndPoint())
@@ -82,26 +81,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(IPEndPoint())
+  fullName.vb: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource(System.Net.IPEndPoint())
   name.vb: KnownEndpointGossipSeedSource(IPEndPoint())
-- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
-  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
-  id: BeginGetHostEndpoints(AsyncCallback,System.Object)
+- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
+  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
+  id: BeginGetHostEndpoints(System.AsyncCallback,System.Object)
   parent: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource
   langs:
   - csharp
   - vb
   name: BeginGetHostEndpoints(AsyncCallback, Object)
   nameWithType: KnownEndpointGossipSeedSource.BeginGetHostEndpoints(AsyncCallback, Object)
-  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(AsyncCallback, System.Object)
+  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/LoopbackDns.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BeginGetHostEndpoints
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
     startLine: 13
   assemblies:
   - EventStore.Core
@@ -110,37 +105,33 @@ items:
     content: public IAsyncResult BeginGetHostEndpoints(AsyncCallback requestCallback, object state)
     parameters:
     - id: requestCallback
-      type: AsyncCallback
+      type: System.AsyncCallback
     - id: state
       type: System.Object
     return:
-      type: IAsyncResult
+      type: System.IAsyncResult
     content.vb: Public Function BeginGetHostEndpoints(requestCallback As AsyncCallback, state As Object) As IAsyncResult
   overload: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints*
   implements:
-  - EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
+  - EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
-  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
-  id: EndGetHostEndpoints(IAsyncResult)
+- uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
+  commentId: M:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
+  id: EndGetHostEndpoints(System.IAsyncResult)
   parent: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource
   langs:
   - csharp
   - vb
   name: EndGetHostEndpoints(IAsyncResult)
   nameWithType: KnownEndpointGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
-  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Gossip/LoopbackDns.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EndGetHostEndpoints
-    path: ../EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Gossip/LoopbackDns.cs
     startLine: 18
   assemblies:
   - EventStore.Core
@@ -149,13 +140,13 @@ items:
     content: public IPEndPoint[] EndGetHostEndpoints(IAsyncResult asyncResult)
     parameters:
     - id: asyncResult
-      type: IAsyncResult
+      type: System.IAsyncResult
     return:
-      type: IPEndPoint[]
+      type: System.Net.IPEndPoint[]
     content.vb: Public Function EndGetHostEndpoints(asyncResult As IAsyncResult) As IPEndPoint()
   overload: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints*
   implements:
-  - EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  - EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -179,6 +170,285 @@ references:
   name: IGossipSeedSource
   nameWithType: IGossipSeedSource
   fullName: EventStore.Core.Services.Gossip.IGossipSeedSource
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -549,28 +819,28 @@ references:
   name: KnownEndpointGossipSeedSource
   nameWithType: KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource
   fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.KnownEndpointGossipSeedSource
-- uid: IPEndPoint[]
+- uid: System.Net.IPEndPoint[]
   isExternal: true
   name: IPEndPoint[]
   nameWithType: IPEndPoint[]
-  fullName: IPEndPoint[]
+  fullName: System.Net.IPEndPoint[]
   nameWithType.vb: IPEndPoint()
-  fullName.vb: IPEndPoint()
+  fullName.vb: System.Net.IPEndPoint()
   name.vb: IPEndPoint()
   spec.csharp:
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: '[]'
     nameWithType: '[]'
     fullName: '[]'
   spec.vb:
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: ()
     nameWithType: ()
@@ -580,25 +850,25 @@ references:
   name: BeginGetHostEndpoints
   nameWithType: KnownEndpointGossipSeedSource.BeginGetHostEndpoints
   fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.BeginGetHostEndpoints
-- uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
-  commentId: M:EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
+- uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
+  commentId: M:EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
   parent: EventStore.Core.Services.Gossip.IGossipSeedSource
   isExternal: true
   name: BeginGetHostEndpoints(AsyncCallback, Object)
   nameWithType: IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback, Object)
-  fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback, System.Object)
+  fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback, System.Object)
   spec.csharp:
-  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
+  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
     name: BeginGetHostEndpoints
     nameWithType: IGossipSeedSource.BeginGetHostEndpoints
     fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints
   - name: (
     nameWithType: (
     fullName: (
-  - uid: AsyncCallback
+  - uid: System.AsyncCallback
     name: AsyncCallback
     nameWithType: AsyncCallback
-    fullName: AsyncCallback
+    fullName: System.AsyncCallback
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -612,17 +882,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(AsyncCallback,System.Object)
+  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints(System.AsyncCallback,System.Object)
     name: BeginGetHostEndpoints
     nameWithType: IGossipSeedSource.BeginGetHostEndpoints
     fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.BeginGetHostEndpoints
   - name: (
     nameWithType: (
     fullName: (
-  - uid: AsyncCallback
+  - uid: System.AsyncCallback
     name: AsyncCallback
     nameWithType: AsyncCallback
-    fullName: AsyncCallback
+    fullName: System.AsyncCallback
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -635,56 +905,60 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: AsyncCallback
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
   isExternal: true
   name: AsyncCallback
   nameWithType: AsyncCallback
-  fullName: AsyncCallback
-- uid: IAsyncResult
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
   isExternal: true
   name: IAsyncResult
   nameWithType: IAsyncResult
-  fullName: IAsyncResult
+  fullName: System.IAsyncResult
 - uid: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints*
   commentId: Overload:EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints
   name: EndGetHostEndpoints
   nameWithType: KnownEndpointGossipSeedSource.EndGetHostEndpoints
   fullName: EventStore.Core.Services.Gossip.KnownEndpointGossipSeedSource.EndGetHostEndpoints
-- uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
-  commentId: M:EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+- uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
+  commentId: M:EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
   parent: EventStore.Core.Services.Gossip.IGossipSeedSource
   isExternal: true
   name: EndGetHostEndpoints(IAsyncResult)
   nameWithType: IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
-  fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
   spec.csharp:
-  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
     name: EndGetHostEndpoints
     nameWithType: IGossipSeedSource.EndGetHostEndpoints
     fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints
   - name: (
     nameWithType: (
     fullName: (
-  - uid: IAsyncResult
+  - uid: System.IAsyncResult
     name: IAsyncResult
     nameWithType: IAsyncResult
-    fullName: IAsyncResult
+    fullName: System.IAsyncResult
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(IAsyncResult)
+  - uid: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints(System.IAsyncResult)
     name: EndGetHostEndpoints
     nameWithType: IGossipSeedSource.EndGetHostEndpoints
     fullName: EventStore.Core.Services.Gossip.IGossipSeedSource.EndGetHostEndpoints
   - name: (
     nameWithType: (
     fullName: (
-  - uid: IAsyncResult
+  - uid: System.IAsyncResult
     name: IAsyncResult
     nameWithType: IAsyncResult
-    fullName: IAsyncResult
+    fullName: System.IAsyncResult
     isExternal: true
   - name: )
     nameWithType: )

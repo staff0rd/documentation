@@ -5,10 +5,10 @@ items:
   id: ReaderStrategy
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,IPrincipal)
-  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,IPrincipal,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
-  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,System.Security.Principal.IPrincipal)
+  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,System.Security.Principal.IPrincipal,System.Int64)
+  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  - EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   - EventStore.Projections.Core.Services.Processing.ReaderStrategy.EventFilter
   - EventStore.Projections.Core.Services.Processing.ReaderStrategy.IsReadingOrderRepeatable
   - EventStore.Projections.Core.Services.Processing.ReaderStrategy.Phase
@@ -21,26 +21,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReaderStrategy
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 11
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class ReaderStrategy : object, IReaderStrategy'
+    content: 'public class ReaderStrategy : IReaderStrategy'
     content.vb: >-
       Public Class ReaderStrategy
-          Inherits Object
           Implements IReaderStrategy
   inheritance:
   - System.Object
   implements:
   - EventStore.Projections.Core.Services.Processing.IReaderStrategy
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -53,24 +56,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,IPrincipal,System.Int64)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,IPrincipal,System.Int64)
-  id: CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,IPrincipal,System.Int64)
+- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,System.Security.Principal.IPrincipal,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,System.Security.Principal.IPrincipal,System.Int64)
+  id: CreateExternallyFedReaderStrategy(System.String,System.Int32,EventStore.Core.Services.TimerService.ITimeProvider,System.Security.Principal.IPrincipal,System.Int64)
   parent: EventStore.Projections.Core.Services.Processing.ReaderStrategy
   langs:
   - csharp
   - vb
   name: CreateExternallyFedReaderStrategy(String, Int32, ITimeProvider, IPrincipal, Int64)
   nameWithType: ReaderStrategy.CreateExternallyFedReaderStrategy(String, Int32, ITimeProvider, IPrincipal, Int64)
-  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String, System.Int32, EventStore.Core.Services.TimerService.ITimeProvider, IPrincipal, System.Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateExternallyFedReaderStrategy(System.String, System.Int32, EventStore.Core.Services.TimerService.ITimeProvider, System.Security.Principal.IPrincipal, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateExternallyFedReaderStrategy
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 32
   assemblies:
   - EventStore.Projections.Core
@@ -85,7 +84,7 @@ items:
     - id: timeProvider
       type: EventStore.Core.Services.TimerService.ITimeProvider
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: limitingCommitPosition
       type: System.Int64
     return:
@@ -98,24 +97,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,IPrincipal)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,IPrincipal)
-  id: Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,IPrincipal)
+- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,System.Security.Principal.IPrincipal)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,System.Security.Principal.IPrincipal)
+  id: Create(System.String,System.Int32,EventStore.Projections.Core.Messages.IQuerySources,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean,System.Security.Principal.IPrincipal)
   parent: EventStore.Projections.Core.Services.Processing.ReaderStrategy
   langs:
   - csharp
   - vb
   name: Create(String, Int32, IQuerySources, ITimeProvider, Boolean, IPrincipal)
   nameWithType: ReaderStrategy.Create(String, Int32, IQuerySources, ITimeProvider, Boolean, IPrincipal)
-  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String, System.Int32, EventStore.Projections.Core.Messages.IQuerySources, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean, IPrincipal)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create(System.String, System.Int32, EventStore.Projections.Core.Messages.IQuerySources, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean, System.Security.Principal.IPrincipal)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Create
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 46
   assemblies:
   - EventStore.Projections.Core
@@ -134,7 +129,7 @@ items:
     - id: stopOnEof
       type: System.Boolean
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     return:
       type: EventStore.Projections.Core.Services.Processing.IReaderStrategy
     content.vb: Public Shared Function Create(tag As String, phase As Integer, sources As IQuerySources, timeProvider As ITimeProvider, stopOnEof As Boolean, runAs As IPrincipal) As IReaderStrategy
@@ -157,12 +152,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.IsReadingOrderRepeatable
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsReadingOrderRepeatable
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 149
   assemblies:
   - EventStore.Projections.Core
@@ -194,12 +185,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.EventFilter
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventFilter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 153
   assemblies:
   - EventStore.Projections.Core
@@ -231,12 +218,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.PositionTagger
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PositionTagger
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 157
   assemblies:
   - EventStore.Projections.Core
@@ -268,12 +251,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Phase
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Phase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 161
   assemblies:
   - EventStore.Projections.Core
@@ -291,24 +270,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
-  id: CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  id: CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   parent: EventStore.Projections.Core.Services.Processing.ReaderStrategy
   langs:
   - csharp
   - vb
   name: CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
   nameWithType: ReaderStrategy.CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
-  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Guid, EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateReaderSubscription
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 165
   assemblies:
   - EventStore.Projections.Core
@@ -321,7 +296,7 @@ items:
     - id: fromCheckpointTag
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     - id: subscriptionId
-      type: Guid
+      type: System.Guid
     - id: readerSubscriptionOptions
       type: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
     return:
@@ -329,29 +304,25 @@ items:
     content.vb: Public Function CreateReaderSubscription(publisher As IPublisher, fromCheckpointTag As CheckpointTag, subscriptionId As Guid, readerSubscriptionOptions As ReaderSubscriptionOptions) As IReaderSubscription
   overload: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription*
   implements:
-  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
-  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
-  id: CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+- uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  commentId: M:EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  id: CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
   parent: EventStore.Projections.Core.Services.Processing.ReaderStrategy
   langs:
   - csharp
   - vb
   name: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
   nameWithType: ReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
-  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable<System.Int32>)
+  fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(System.Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable<System.Int32>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreatePausedEventReader
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ReaderStrategy.cs
     startLine: 196
   assemblies:
   - EventStore.Projections.Core
@@ -360,7 +331,7 @@ items:
     content: public IEventReader CreatePausedEventReader(Guid eventReaderId, IPublisher publisher, IODispatcher ioDispatcher, CheckpointTag checkpointTag, bool stopOnEof, int? stopAfterNEvents)
     parameters:
     - id: eventReaderId
-      type: Guid
+      type: System.Guid
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: ioDispatcher
@@ -376,13 +347,13 @@ items:
     content.vb: Public Function CreatePausedEventReader(eventReaderId As Guid, publisher As IPublisher, ioDispatcher As IODispatcher, checkpointTag As CheckpointTag, stopOnEof As Boolean, stopAfterNEvents As Integer?) As IEventReader
   overload: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader*
   implements:
-  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  - EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
   nameWithType.vb: ReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable(Of System.Int32))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader(System.Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable(Of System.Int32))
   name.vb: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
 references:
 - uid: EventStore.Projections.Core.Services.Processing
@@ -403,6 +374,285 @@ references:
   name: IReaderStrategy
   nameWithType: IReaderStrategy
   fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -793,11 +1043,13 @@ references:
   name: ITimeProvider
   nameWithType: ITimeProvider
   fullName: EventStore.Core.Services.TimerService.ITimeProvider
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: System.Int64
   commentId: T:System.Int64
   parent: System
@@ -810,6 +1062,12 @@ references:
   name: EventStore.Core.Services.TimerService
   nameWithType: EventStore.Core.Services.TimerService
   fullName: EventStore.Core.Services.TimerService
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.ReaderStrategy.Create
   name: Create
@@ -888,15 +1146,15 @@ references:
   name: CreateReaderSubscription
   nameWithType: ReaderStrategy.CreateReaderSubscription
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreateReaderSubscription
-- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
-  commentId: M:EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   parent: EventStore.Projections.Core.Services.Processing.IReaderStrategy
   isExternal: true
   name: CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
   nameWithType: IReaderStrategy.CreateReaderSubscription(IPublisher, CheckpointTag, Guid, ReaderSubscriptionOptions)
-  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Guid, EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
     name: CreateReaderSubscription
     nameWithType: IReaderStrategy.CreateReaderSubscription
     fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription
@@ -917,10 +1175,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -933,7 +1191,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription(EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions)
     name: CreateReaderSubscription
     nameWithType: IReaderStrategy.CreateReaderSubscription
     fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreateReaderSubscription
@@ -954,10 +1212,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -981,11 +1239,13 @@ references:
   name: CheckpointTag
   nameWithType: CheckpointTag
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
   commentId: T:EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
   parent: EventStore.Projections.Core.Services.Processing
@@ -1008,28 +1268,28 @@ references:
   name: CreatePausedEventReader
   nameWithType: ReaderStrategy.CreatePausedEventReader
   fullName: EventStore.Projections.Core.Services.Processing.ReaderStrategy.CreatePausedEventReader
-- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
-  commentId: M:EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+- uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  commentId: M:EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
   parent: EventStore.Projections.Core.Services.Processing.IReaderStrategy
   isExternal: true
   name: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
   nameWithType: IReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable<Int32>)
-  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable<System.Int32>)
+  fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable<System.Int32>)
   nameWithType.vb: IReaderStrategy.CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
-  fullName.vb: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable(Of System.Int32))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean, System.Nullable(Of System.Int32))
   name.vb: CreatePausedEventReader(Guid, IPublisher, IODispatcher, CheckpointTag, Boolean, Nullable(Of Int32))
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
     name: CreatePausedEventReader
     nameWithType: IReaderStrategy.CreatePausedEventReader
     fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1083,17 +1343,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader(System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean,System.Nullable{System.Int32})
     name: CreatePausedEventReader
     nameWithType: IReaderStrategy.CreatePausedEventReader
     fullName: EventStore.Projections.Core.Services.Processing.IReaderStrategy.CreatePausedEventReader
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1153,7 +1413,8 @@ references:
   nameWithType: IODispatcher
   fullName: EventStore.Core.Helpers.IODispatcher
 - uid: System.Nullable{System.Int32}
-  commentId: '!:System.Nullable{System.Int32}'
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<Int32>
   nameWithType: Nullable<Int32>

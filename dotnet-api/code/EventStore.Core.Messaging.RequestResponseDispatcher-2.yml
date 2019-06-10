@@ -5,13 +5,13 @@ items:
   id: RequestResponseDispatcher`2
   parent: EventStore.Core.Messaging
   children:
-  - EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
-  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`0,System.Guid},System.Func{`1,System.Guid},EventStore.Core.Messaging.IEnvelope,System.Func{System.Guid,EventStore.Core.Messaging.Message})
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(System.Guid)
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.Envelope
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.Handle(`1)
-  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
+  - EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,System.Action{`1})
   langs:
   - csharp
   - vb
@@ -20,33 +20,38 @@ items:
   fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestResponseDispatcher
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 6
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messaging
   syntax:
-    content: 'public sealed class RequestResponseDispatcher<TRequest, TResponse> : object, IHandle<TResponse> where TRequest : Message where TResponse : Message'
+    content: 'public sealed class RequestResponseDispatcher<TRequest, TResponse> : IHandle<TResponse> where TRequest : Message where TResponse : Message'
     typeParameters:
     - id: TRequest
     - id: TResponse
     content.vb: >-
       Public NotInheritable Class RequestResponseDispatcher(Of TRequest As Message, TResponse As Message)
-          Inherits Object
           Implements IHandle(Of TResponse)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Bus.IHandle{{TResponse}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Bus.IHandle{`1}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  - EventStore.Core.Bus.IHandle{`1}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse)
@@ -60,24 +65,20 @@ items:
   - Class
   fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse)
   name.vb: RequestResponseDispatcher(Of TRequest, TResponse)
-- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
-  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})
-  id: '#ctor(EventStore.Core.Bus.IPublisher,Func{`0,Guid},Func{`1,Guid},EventStore.Core.Messaging.IEnvelope,Func{Guid,EventStore.Core.Messaging.Message})'
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`0,System.Guid},System.Func{`1,System.Guid},EventStore.Core.Messaging.IEnvelope,System.Func{System.Guid,EventStore.Core.Messaging.Message})
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`0,System.Guid},System.Func{`1,System.Guid},EventStore.Core.Messaging.IEnvelope,System.Func{System.Guid,EventStore.Core.Messaging.Message})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Func{`0,System.Guid},System.Func{`1,System.Guid},EventStore.Core.Messaging.IEnvelope,System.Func{System.Guid,EventStore.Core.Messaging.Message})'
   parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
   langs:
   - csharp
   - vb
   name: RequestResponseDispatcher(IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, IEnvelope, Func<Guid, Message>)
   nameWithType: RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher(IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, IEnvelope, Func<Guid, Message>)
-  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, Func<TRequest, Guid>, Func<TResponse, Guid>, EventStore.Core.Messaging.IEnvelope, Func<Guid, EventStore.Core.Messaging.Message>)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, System.Func<TRequest, System.Guid>, System.Func<TResponse, System.Guid>, EventStore.Core.Messaging.IEnvelope, System.Func<System.Guid, EventStore.Core.Messaging.Message>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 17
   assemblies:
   - EventStore.Core
@@ -88,13 +89,13 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: getRequestCorrelationId
-      type: Func{{TRequest},Guid}
+      type: System.Func{{TRequest},System.Guid}
     - id: getResponseCorrelationId
-      type: Func{{TResponse},Guid}
+      type: System.Func{{TResponse},System.Guid}
     - id: defaultReplyEnvelope
       type: EventStore.Core.Messaging.IEnvelope
     - id: cancelMessageFactory
-      type: Func{Guid,EventStore.Core.Messaging.Message}
+      type: System.Func{System.Guid,EventStore.Core.Messaging.Message}
     content.vb: Public Sub New(publisher As IPublisher, getRequestCorrelationId As Func(Of TRequest, Guid), getResponseCorrelationId As Func(Of TResponse, Guid), defaultReplyEnvelope As IEnvelope, cancelMessageFactory As Func(Of Guid, Message) = Nothing)
   overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.#ctor*
   nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher(IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), IEnvelope, Func(Of Guid, Message))
@@ -102,26 +103,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), EventStore.Core.Messaging.IEnvelope, Func(Of Guid, EventStore.Core.Messaging.Message))
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).RequestResponseDispatcher(EventStore.Core.Bus.IPublisher, System.Func(Of TRequest, System.Guid), System.Func(Of TResponse, System.Guid), EventStore.Core.Messaging.IEnvelope, System.Func(Of System.Guid, EventStore.Core.Messaging.Message))
   name.vb: RequestResponseDispatcher(IPublisher, Func(Of TRequest, Guid), Func(Of TResponse, Guid), IEnvelope, Func(Of Guid, Message))
-- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
-  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,Action{`1})
-  id: Publish(`0,Action{`1})
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,System.Action{`1})
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish(`0,System.Action{`1})
+  id: Publish(`0,System.Action{`1})
   parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
   langs:
   - csharp
   - vb
   name: Publish(TRequest, Action<TResponse>)
   nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Publish(TRequest, Action<TResponse>)
-  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Publish(TRequest, Action<TResponse>)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Publish(TRequest, System.Action<TResponse>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 30
   assemblies:
   - EventStore.Core
@@ -132,9 +129,9 @@ items:
     - id: request
       type: '{TRequest}'
     - id: action
-      type: Action{{TResponse}}
+      type: System.Action{{TResponse}}
     return:
-      type: Guid
+      type: System.Guid
     content.vb: Public Function Publish(request As TRequest, action As Action(Of TResponse)) As Guid
   overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Publish*
   nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Publish(TRequest, Action(Of TResponse))
@@ -142,7 +139,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Publish(TRequest, Action(Of TResponse))
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Publish(TRequest, System.Action(Of TResponse))
   name.vb: Publish(TRequest, Action(Of TResponse))
 - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
   commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.EventStore#Core#Bus#IHandle{TResponse}#Handle(`1)
@@ -157,12 +154,8 @@ items:
   fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.EventStore.Core.Bus.IHandle<TResponse>.Handle(TResponse)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStore.Core.Bus.IHandle<TResponse>.Handle
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -191,12 +184,8 @@ items:
   fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Handle(TResponse)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 49
   assemblies:
   - EventStore.Core
@@ -228,12 +217,8 @@ items:
   fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Envelope
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Envelope
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 71
   assemblies:
   - EventStore.Core
@@ -253,24 +238,20 @@ items:
   - Public
   - ReadOnly
   fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Envelope
-- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
-  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(Guid)
-  id: Cancel(Guid)
+- uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(System.Guid)
+  commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel(System.Guid)
+  id: Cancel(System.Guid)
   parent: EventStore.Core.Messaging.RequestResponseDispatcher`2
   langs:
   - csharp
   - vb
   name: Cancel(Guid)
   nameWithType: RequestResponseDispatcher<TRequest, TResponse>.Cancel(Guid)
-  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Cancel(Guid)
+  fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.Cancel(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Cancel
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 75
   assemblies:
   - EventStore.Core
@@ -279,7 +260,7 @@ items:
     content: public void Cancel(Guid requestId)
     parameters:
     - id: requestId
-      type: Guid
+      type: System.Guid
     content.vb: Public Sub Cancel(requestId As Guid)
   overload: EventStore.Core.Messaging.RequestResponseDispatcher`2.Cancel*
   nameWithType.vb: RequestResponseDispatcher(Of TRequest, TResponse).Cancel(Guid)
@@ -287,7 +268,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Cancel(Guid)
+  fullName.vb: EventStore.Core.Messaging.RequestResponseDispatcher(Of TRequest, TResponse).Cancel(System.Guid)
 - uid: EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
   commentId: M:EventStore.Core.Messaging.RequestResponseDispatcher`2.CancelAll
   id: CancelAll
@@ -300,12 +281,8 @@ items:
   fullName: EventStore.Core.Messaging.RequestResponseDispatcher<TRequest, TResponse>.CancelAll()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CancelAll
-    path: ../EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messaging/RequestResponseDispatcher.cs
     startLine: 82
   assemblies:
   - EventStore.Core
@@ -368,6 +345,285 @@ references:
   - name: TResponse
     nameWithType: TResponse
     fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -452,6 +708,70 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{`1}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, TResponse>()
+  nameWithType: HandleExtensions.WidenFrom<TInput, TResponse>()
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TResponse>()
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, TResponse)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TResponse)()
+  name.vb: WidenFrom(Of TInput, TResponse)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom<TInput, TResponse>
+    nameWithType: HandleExtensions.WidenFrom<TInput, TResponse>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom(Of TInput, TResponse)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, TResponse)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{`1}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, TResponse>()
+  nameWithType: HandleExtensions.NarrowTo<TInput, TResponse>()
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TResponse>()
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, TResponse)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TResponse)()
+  name.vb: NarrowTo(Of TInput, TResponse)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo<TInput, TResponse>
+    nameWithType: HandleExtensions.NarrowTo<TInput, TResponse>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo(Of TInput, TResponse)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, TResponse)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TResponse)
   - name: (
     nameWithType: (
     fullName: (
@@ -689,6 +1009,124 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom<TInput, TOutput>
+    nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom(Of TInput, TOutput)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions
+  commentId: T:EventStore.Core.Bus.HandleExtensions
+  parent: EventStore.Core.Bus
+  name: HandleExtensions
+  nameWithType: HandleExtensions
+  fullName: EventStore.Core.Bus.HandleExtensions
+- uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo<TInput, TOutput>
+    nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo(Of TInput, TOutput)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   name: Serialize<T>(T)
@@ -790,20 +1228,21 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Func{{TRequest},Guid}
-  commentId: '!:Func{`0,Guid}'
-  definition: Func`2
+- uid: System.Func{{TRequest},System.Guid}
+  commentId: T:System.Func{`0,System.Guid}
+  parent: System
+  definition: System.Func`2
   name: Func<TRequest, Guid>
   nameWithType: Func<TRequest, Guid>
-  fullName: Func<TRequest, Guid>
+  fullName: System.Func<TRequest, System.Guid>
   nameWithType.vb: Func(Of TRequest, Guid)
-  fullName.vb: Func(Of TRequest, Guid)
+  fullName.vb: System.Func(Of TRequest, System.Guid)
   name.vb: Func(Of TRequest, Guid)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -814,19 +1253,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -837,28 +1276,29 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func{{TResponse},Guid}
-  commentId: '!:Func{`1,Guid}'
-  definition: Func`2
+- uid: System.Func{{TResponse},System.Guid}
+  commentId: T:System.Func{`1,System.Guid}
+  parent: System
+  definition: System.Func`2
   name: Func<TResponse, Guid>
   nameWithType: Func<TResponse, Guid>
-  fullName: Func<TResponse, Guid>
+  fullName: System.Func<TResponse, System.Guid>
   nameWithType.vb: Func(Of TResponse, Guid)
-  fullName.vb: Func(Of TResponse, Guid)
+  fullName.vb: System.Func(Of TResponse, System.Guid)
   name.vb: Func(Of TResponse, Guid)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -869,19 +1309,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -892,10 +1332,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
@@ -906,28 +1346,29 @@ references:
   name: IEnvelope
   nameWithType: IEnvelope
   fullName: EventStore.Core.Messaging.IEnvelope
-- uid: Func{Guid,EventStore.Core.Messaging.Message}
-  commentId: '!:Func{Guid,EventStore.Core.Messaging.Message}'
-  definition: Func`2
+- uid: System.Func{System.Guid,EventStore.Core.Messaging.Message}
+  commentId: T:System.Func{System.Guid,EventStore.Core.Messaging.Message}
+  parent: System
+  definition: System.Func`2
   name: Func<Guid, Message>
   nameWithType: Func<Guid, Message>
-  fullName: Func<Guid, EventStore.Core.Messaging.Message>
+  fullName: System.Func<System.Guid, EventStore.Core.Messaging.Message>
   nameWithType.vb: Func(Of Guid, Message)
-  fullName.vb: Func(Of Guid, EventStore.Core.Messaging.Message)
+  fullName.vb: System.Func(Of System.Guid, EventStore.Core.Messaging.Message)
   name.vb: Func(Of Guid, Message)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -940,18 +1381,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -963,53 +1404,54 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`2
+- uid: System.Func`2
+  commentId: T:System.Func`2
   isExternal: true
-  name: Func<, >
-  nameWithType: Func<, >
-  fullName: Func<, >
-  nameWithType.vb: Func(Of , )
-  fullName.vb: Func(Of , )
-  name.vb: Func(Of , )
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
@@ -1026,20 +1468,21 @@ references:
   name: TRequest
   nameWithType: TRequest
   fullName: TRequest
-- uid: Action{{TResponse}}
-  commentId: '!:Action{`1}'
-  definition: Action`1
+- uid: System.Action{{TResponse}}
+  commentId: T:System.Action{`1}
+  parent: System
+  definition: System.Action`1
   name: Action<TResponse>
   nameWithType: Action<TResponse>
-  fullName: Action<TResponse>
+  fullName: System.Action<TResponse>
   nameWithType.vb: Action(Of TResponse)
-  fullName.vb: Action(Of TResponse)
+  fullName.vb: System.Action(Of TResponse)
   name.vb: Action(Of TResponse)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1051,10 +1494,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1065,51 +1508,54 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: TRequest
   commentId: '!:TRequest'
   name: TRequest
   nameWithType: TRequest
   fullName: TRequest
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

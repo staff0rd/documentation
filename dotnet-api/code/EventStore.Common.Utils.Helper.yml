@@ -5,9 +5,9 @@ items:
   id: Helper
   parent: EventStore.Common.Utils
   children:
-  - EventStore.Common.Utils.Helper.EatException(Action)
-  - EventStore.Common.Utils.Helper.EatException``1(Func{``0},``0)
-  - EventStore.Common.Utils.Helper.FormatBinaryDump(ArraySegment{System.Byte})
+  - EventStore.Common.Utils.Helper.EatException(System.Action)
+  - EventStore.Common.Utils.Helper.EatException``1(System.Func{``0},``0)
+  - EventStore.Common.Utils.Helper.FormatBinaryDump(System.ArraySegment{System.Byte})
   - EventStore.Common.Utils.Helper.FormatBinaryDump(System.Byte[])
   - EventStore.Common.Utils.Helper.GetDefaultLogsDir
   - EventStore.Common.Utils.Helper.UTF8NoBom
@@ -19,23 +19,25 @@ items:
   fullName: EventStore.Common.Utils.Helper
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Helper
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 6
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: 'public static class Helper : object'
-    content.vb: >-
-      Public Module Helper
-          Inherits Object
+    content: public static class Helper
+    content.vb: Public Module Helper
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -55,12 +57,8 @@ items:
   fullName: EventStore.Common.Utils.Helper.UTF8NoBom
   type: Field
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UTF8NoBom
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 7
   assemblies:
   - EventStore.Common
@@ -68,7 +66,7 @@ items:
   syntax:
     content: public static readonly UTF8Encoding UTF8NoBom
     return:
-      type: UTF8Encoding
+      type: System.Text.UTF8Encoding
     content.vb: Public Shared ReadOnly UTF8NoBom As UTF8Encoding
   modifiers.csharp:
   - public
@@ -78,24 +76,20 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: EventStore.Common.Utils.Helper.EatException(Action)
-  commentId: M:EventStore.Common.Utils.Helper.EatException(Action)
-  id: EatException(Action)
+- uid: EventStore.Common.Utils.Helper.EatException(System.Action)
+  commentId: M:EventStore.Common.Utils.Helper.EatException(System.Action)
+  id: EatException(System.Action)
   parent: EventStore.Common.Utils.Helper
   langs:
   - csharp
   - vb
   name: EatException(Action)
   nameWithType: Helper.EatException(Action)
-  fullName: EventStore.Common.Utils.Helper.EatException(Action)
+  fullName: EventStore.Common.Utils.Helper.EatException(System.Action)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EatException
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 9
   assemblies:
   - EventStore.Common
@@ -104,7 +98,7 @@ items:
     content: public static void EatException(Action action)
     parameters:
     - id: action
-      type: Action
+      type: System.Action
     content.vb: Public Shared Sub EatException(action As Action)
   overload: EventStore.Common.Utils.Helper.EatException*
   modifiers.csharp:
@@ -113,24 +107,20 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.Common.Utils.Helper.EatException``1(Func{``0},``0)
-  commentId: M:EventStore.Common.Utils.Helper.EatException``1(Func{``0},``0)
-  id: EatException``1(Func{``0},``0)
+- uid: EventStore.Common.Utils.Helper.EatException``1(System.Func{``0},``0)
+  commentId: M:EventStore.Common.Utils.Helper.EatException``1(System.Func{``0},``0)
+  id: EatException``1(System.Func{``0},``0)
   parent: EventStore.Common.Utils.Helper
   langs:
   - csharp
   - vb
   name: EatException<T>(Func<T>, T)
   nameWithType: Helper.EatException<T>(Func<T>, T)
-  fullName: EventStore.Common.Utils.Helper.EatException<T>(Func<T>, T)
+  fullName: EventStore.Common.Utils.Helper.EatException<T>(System.Func<T>, T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EatException
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 16
   assemblies:
   - EventStore.Common
@@ -139,7 +129,7 @@ items:
     content: public static T EatException<T>(Func<T> action, T defaultValue = null)
     parameters:
     - id: action
-      type: Func{{T}}
+      type: System.Func{{T}}
     - id: defaultValue
       type: '{T}'
     typeParameters:
@@ -155,7 +145,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Utils.Helper.EatException(Of T)(Func(Of T), T)
+  fullName.vb: EventStore.Common.Utils.Helper.EatException(Of T)(System.Func(Of T), T)
   name.vb: EatException(Of T)(Func(Of T), T)
 - uid: EventStore.Common.Utils.Helper.GetDefaultLogsDir
   commentId: M:EventStore.Common.Utils.Helper.GetDefaultLogsDir
@@ -169,12 +159,8 @@ items:
   fullName: EventStore.Common.Utils.Helper.GetDefaultLogsDir()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetDefaultLogsDir
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 24
   assemblies:
   - EventStore.Common
@@ -203,12 +189,8 @@ items:
   fullName: EventStore.Common.Utils.Helper.FormatBinaryDump(System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FormatBinaryDump
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 28
   assemblies:
   - EventStore.Common
@@ -231,24 +213,20 @@ items:
   - Shared
   fullName.vb: EventStore.Common.Utils.Helper.FormatBinaryDump(System.Byte())
   name.vb: FormatBinaryDump(Byte())
-- uid: EventStore.Common.Utils.Helper.FormatBinaryDump(ArraySegment{System.Byte})
-  commentId: M:EventStore.Common.Utils.Helper.FormatBinaryDump(ArraySegment{System.Byte})
-  id: FormatBinaryDump(ArraySegment{System.Byte})
+- uid: EventStore.Common.Utils.Helper.FormatBinaryDump(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Common.Utils.Helper.FormatBinaryDump(System.ArraySegment{System.Byte})
+  id: FormatBinaryDump(System.ArraySegment{System.Byte})
   parent: EventStore.Common.Utils.Helper
   langs:
   - csharp
   - vb
   name: FormatBinaryDump(ArraySegment<Byte>)
   nameWithType: Helper.FormatBinaryDump(ArraySegment<Byte>)
-  fullName: EventStore.Common.Utils.Helper.FormatBinaryDump(ArraySegment<System.Byte>)
+  fullName: EventStore.Common.Utils.Helper.FormatBinaryDump(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/Helper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FormatBinaryDump
-    path: ../EventStore/src/EventStore.Common/Utils/Helper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/Helper.cs
     startLine: 32
   assemblies:
   - EventStore.Common
@@ -257,7 +235,7 @@ items:
     content: public static string FormatBinaryDump(ArraySegment<byte> logBulk)
     parameters:
     - id: logBulk
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
     return:
       type: System.String
     content.vb: Public Shared Function FormatBinaryDump(logBulk As ArraySegment(Of Byte)) As String
@@ -269,7 +247,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: EventStore.Common.Utils.Helper.FormatBinaryDump(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Common.Utils.Helper.FormatBinaryDump(System.ArraySegment(Of System.Byte))
   name.vb: FormatBinaryDump(ArraySegment(Of Byte))
 references:
 - uid: EventStore.Common.Utils
@@ -284,42 +262,331 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
   name: System
   nameWithType: System
   fullName: System
-- uid: UTF8Encoding
-  commentId: '!:UTF8Encoding'
+- uid: System.Text.UTF8Encoding
+  commentId: T:System.Text.UTF8Encoding
+  parent: System.Text
   isExternal: true
   name: UTF8Encoding
   nameWithType: UTF8Encoding
-  fullName: UTF8Encoding
+  fullName: System.Text.UTF8Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
 - uid: EventStore.Common.Utils.Helper.EatException*
   commentId: Overload:EventStore.Common.Utils.Helper.EatException
   name: EatException
   nameWithType: Helper.EatException
   fullName: EventStore.Common.Utils.Helper.EatException
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
-- uid: Func{{T}}
-  commentId: '!:Func{``0}'
-  definition: Func`1
+  fullName: System.Action
+- uid: System.Func{{T}}
+  commentId: T:System.Func{``0}
+  parent: System
+  definition: System.Func`1
   name: Func<T>
   nameWithType: Func<T>
-  fullName: Func<T>
+  fullName: System.Func<T>
   nameWithType.vb: Func(Of T)
-  fullName.vb: Func(Of T)
+  fullName.vb: System.Func(Of T)
   name.vb: Func(Of T)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -331,10 +598,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -351,41 +618,42 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: Func`1
+- uid: System.Func`1
+  commentId: T:System.Func`1
   isExternal: true
-  name: Func<>
-  nameWithType: Func<>
-  fullName: Func<>
-  nameWithType.vb: Func(Of )
-  fullName.vb: Func(Of )
-  name.vb: Func(Of )
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
@@ -436,20 +704,21 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -463,10 +732,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -479,41 +748,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment`1
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
   isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

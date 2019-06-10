@@ -6,7 +6,7 @@ items:
   parent: EventStore.Projections.Core.Services.Processing
   children:
   - EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.#ctor(EventStore.Core.Helpers.IODispatcher)
-  - EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
   langs:
   - csharp
   - vb
@@ -15,26 +15,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EmittedStreamsWriter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class EmittedStreamsWriter : object, IEmittedStreamsWriter'
+    content: 'public class EmittedStreamsWriter : IEmittedStreamsWriter'
     content.vb: >-
       Public Class EmittedStreamsWriter
-          Inherits Object
           Implements IEmittedStreamsWriter
   inheritance:
   - System.Object
   implements:
   - EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -59,12 +62,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.EmittedStreamsWriter(EventStore.Core.Helpers.IODispatcher)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
     startLine: 10
   assemblies:
   - EventStore.Projections.Core
@@ -80,24 +79,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
-  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
-  id: WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+- uid: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  id: WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
   parent: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter
   langs:
   - csharp
   - vb
   name: WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
   nameWithType: EmittedStreamsWriter.WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
-  fullName: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event[], IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event[], System.Security.Principal.IPrincipal, System.Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteEvents
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedStreamsWriter.cs
     startLine: 14
   assemblies:
   - EventStore.Projections.Core
@@ -112,19 +107,19 @@ items:
     - id: events
       type: EventStore.Core.Data.Event[]
     - id: writeAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: complete
-      type: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+      type: System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
     content.vb: Public Sub WriteEvents(streamId As String, expectedVersion As Long, events As  Event (), writeAs As IPrincipal, complete As Action(Of ClientMessage.WriteEventsCompleted))
   overload: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents*
   implements:
-  - EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
   nameWithType.vb: EmittedStreamsWriter.WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event(), IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event(), System.Security.Principal.IPrincipal, System.Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
   name.vb: WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
 references:
 - uid: EventStore.Projections.Core.Services.Processing
@@ -145,6 +140,285 @@ references:
   name: IEmittedStreamsWriter
   nameWithType: IEmittedStreamsWriter
   fullName: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -531,18 +805,18 @@ references:
   name: WriteEvents
   nameWithType: EmittedStreamsWriter.WriteEvents
   fullName: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter.WriteEvents
-- uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
-  commentId: M:EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+- uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  commentId: M:EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
   parent: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter
   isExternal: true
   name: WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
   nameWithType: IEmittedStreamsWriter.WriteEvents(String, Int64, Event[], IPrincipal, Action<ClientMessage.WriteEventsCompleted>)
-  fullName: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event[], IPrincipal, Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
+  fullName: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event[], System.Security.Principal.IPrincipal, System.Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>)
   nameWithType.vb: IEmittedStreamsWriter.WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
-  fullName.vb: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event(), IPrincipal, Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String, System.Int64, EventStore.Core.Data.Event(), System.Security.Principal.IPrincipal, System.Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted))
   name.vb: WriteEvents(String, Int64, Event(), IPrincipal, Action(Of ClientMessage.WriteEventsCompleted))
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
     name: WriteEvents
     nameWithType: IEmittedStreamsWriter.WriteEvents
     fullName: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents
@@ -575,18 +849,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -602,7 +876,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],IPrincipal,Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents(System.String,System.Int64,EventStore.Core.Data.Event[],System.Security.Principal.IPrincipal,System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted})
     name: WriteEvents
     nameWithType: IEmittedStreamsWriter.WriteEvents
     fullName: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter.WriteEvents
@@ -635,18 +909,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPrincipal
+  - uid: System.Security.Principal.IPrincipal
     name: IPrincipal
     nameWithType: IPrincipal
-    fullName: IPrincipal
+    fullName: System.Security.Principal.IPrincipal
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -699,25 +973,28 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
-- uid: Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
-  commentId: '!:Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}'
-  definition: Action`1
+  fullName: System.Security.Principal.IPrincipal
+- uid: System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  commentId: T:System.Action{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
+  parent: System
+  definition: System.Action`1
   name: Action<ClientMessage.WriteEventsCompleted>
   nameWithType: Action<ClientMessage.WriteEventsCompleted>
-  fullName: Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
+  fullName: System.Action<EventStore.Core.Messages.ClientMessage.WriteEventsCompleted>
   nameWithType.vb: Action(Of ClientMessage.WriteEventsCompleted)
-  fullName.vb: Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
+  fullName.vb: System.Action(Of EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
   name.vb: Action(Of ClientMessage.WriteEventsCompleted)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -730,10 +1007,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -745,41 +1022,48 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

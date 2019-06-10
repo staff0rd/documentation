@@ -6,8 +6,8 @@ items:
   parent: EventStore.Transport.Tcp
   children:
   - EventStore.Transport.Tcp.TcpClientConnector.#ctor
-  - EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(Guid,IPEndPoint,TimeSpan,System.String,System.Boolean,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
-  - EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(Guid,IPEndPoint,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+  - EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.String,System.Boolean,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
+  - EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
   langs:
   - csharp
   - vb
@@ -16,23 +16,25 @@ items:
   fullName: EventStore.Transport.Tcp.TcpClientConnector
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpClientConnector.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpClientConnector
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
     startLine: 9
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
   syntax:
-    content: 'public class TcpClientConnector : object'
-    content.vb: >-
-      Public Class TcpClientConnector
-          Inherits Object
+    content: public class TcpClientConnector
+    content.vb: Public Class TcpClientConnector
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -57,12 +59,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpClientConnector.TcpClientConnector()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpClientConnector.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
     startLine: 18
   assemblies:
   - EventStore.Transport.Tcp
@@ -75,24 +73,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(Guid,IPEndPoint,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
-  commentId: M:EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(Guid,IPEndPoint,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
-  id: ConnectTo(Guid,IPEndPoint,TimeSpan,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+- uid: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
+  commentId: M:EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
+  id: ConnectTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
   parent: EventStore.Transport.Tcp.TcpClientConnector
   langs:
   - csharp
   - vb
   name: ConnectTo(Guid, IPEndPoint, TimeSpan, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
   nameWithType: TcpClientConnector.ConnectTo(Guid, IPEndPoint, TimeSpan, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
-  fullName: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(Guid, IPEndPoint, TimeSpan, Action<EventStore.Transport.Tcp.ITcpConnection>, Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>, System.Boolean)
+  fullName: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(System.Guid, System.Net.IPEndPoint, System.TimeSpan, System.Action<EventStore.Transport.Tcp.ITcpConnection>, System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError>, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpClientConnector.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectTo
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
     startLine: 33
   assemblies:
   - EventStore.Transport.Tcp
@@ -101,15 +95,15 @@ items:
     content: public ITcpConnection ConnectTo(Guid connectionId, IPEndPoint remoteEndPoint, TimeSpan connectionTimeout, Action<ITcpConnection> onConnectionEstablished = null, Action<ITcpConnection, SocketError> onConnectionFailed = null, bool verbose = true)
     parameters:
     - id: connectionId
-      type: Guid
+      type: System.Guid
     - id: remoteEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: connectionTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: onConnectionEstablished
-      type: Action{EventStore.Transport.Tcp.ITcpConnection}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection}
     - id: onConnectionFailed
-      type: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
     - id: verbose
       type: System.Boolean
     return:
@@ -121,26 +115,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(Guid, IPEndPoint, TimeSpan, Action(Of EventStore.Transport.Tcp.ITcpConnection), Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError), System.Boolean)
+  fullName.vb: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo(System.Guid, System.Net.IPEndPoint, System.TimeSpan, System.Action(Of EventStore.Transport.Tcp.ITcpConnection), System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError), System.Boolean)
   name.vb: ConnectTo(Guid, IPEndPoint, TimeSpan, Action(Of ITcpConnection), Action(Of ITcpConnection, SocketError), Boolean)
-- uid: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(Guid,IPEndPoint,TimeSpan,System.String,System.Boolean,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
-  commentId: M:EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(Guid,IPEndPoint,TimeSpan,System.String,System.Boolean,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
-  id: ConnectSslTo(Guid,IPEndPoint,TimeSpan,System.String,System.Boolean,Action{EventStore.Transport.Tcp.ITcpConnection},Action{EventStore.Transport.Tcp.ITcpConnection,SocketError},System.Boolean)
+- uid: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.String,System.Boolean,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
+  commentId: M:EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.String,System.Boolean,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
+  id: ConnectSslTo(System.Guid,System.Net.IPEndPoint,System.TimeSpan,System.String,System.Boolean,System.Action{EventStore.Transport.Tcp.ITcpConnection},System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError},System.Boolean)
   parent: EventStore.Transport.Tcp.TcpClientConnector
   langs:
   - csharp
   - vb
   name: ConnectSslTo(Guid, IPEndPoint, TimeSpan, String, Boolean, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
   nameWithType: TcpClientConnector.ConnectSslTo(Guid, IPEndPoint, TimeSpan, String, Boolean, Action<ITcpConnection>, Action<ITcpConnection, SocketError>, Boolean)
-  fullName: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(Guid, IPEndPoint, TimeSpan, System.String, System.Boolean, Action<EventStore.Transport.Tcp.ITcpConnection>, Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>, System.Boolean)
+  fullName: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(System.Guid, System.Net.IPEndPoint, System.TimeSpan, System.String, System.Boolean, System.Action<EventStore.Transport.Tcp.ITcpConnection>, System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError>, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpClientConnector.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectSslTo
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpClientConnector.cs
     startLine: 44
   assemblies:
   - EventStore.Transport.Tcp
@@ -149,19 +139,19 @@ items:
     content: public ITcpConnection ConnectSslTo(Guid connectionId, IPEndPoint remoteEndPoint, TimeSpan connectionTimeout, string targetHost, bool validateServer, Action<ITcpConnection> onConnectionEstablished = null, Action<ITcpConnection, SocketError> onConnectionFailed = null, bool verbose = true)
     parameters:
     - id: connectionId
-      type: Guid
+      type: System.Guid
     - id: remoteEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: connectionTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: targetHost
       type: System.String
     - id: validateServer
       type: System.Boolean
     - id: onConnectionEstablished
-      type: Action{EventStore.Transport.Tcp.ITcpConnection}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection}
     - id: onConnectionFailed
-      type: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
+      type: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
     - id: verbose
       type: System.Boolean
     return:
@@ -173,7 +163,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(Guid, IPEndPoint, TimeSpan, System.String, System.Boolean, Action(Of EventStore.Transport.Tcp.ITcpConnection), Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError), System.Boolean)
+  fullName.vb: EventStore.Transport.Tcp.TcpClientConnector.ConnectSslTo(System.Guid, System.Net.IPEndPoint, System.TimeSpan, System.String, System.Boolean, System.Action(Of EventStore.Transport.Tcp.ITcpConnection), System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError), System.Boolean)
   name.vb: ConnectSslTo(Guid, IPEndPoint, TimeSpan, String, Boolean, Action(Of ITcpConnection), Action(Of ITcpConnection, SocketError), Boolean)
 references:
 - uid: EventStore.Transport.Tcp
@@ -188,6 +178,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -563,35 +832,42 @@ references:
   name: ConnectTo
   nameWithType: TcpClientConnector.ConnectTo
   fullName: EventStore.Transport.Tcp.TcpClientConnector.ConnectTo
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
-- uid: IPEndPoint
+  fullName: System.Guid
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
-- uid: TimeSpan
+  fullName: System.Net.IPEndPoint
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
-- uid: Action{EventStore.Transport.Tcp.ITcpConnection}
-  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection}'
-  definition: Action`1
+  fullName: System.TimeSpan
+- uid: System.Action{EventStore.Transport.Tcp.ITcpConnection}
+  commentId: T:System.Action{EventStore.Transport.Tcp.ITcpConnection}
+  parent: System
+  definition: System.Action`1
   name: Action<ITcpConnection>
   nameWithType: Action<ITcpConnection>
-  fullName: Action<EventStore.Transport.Tcp.ITcpConnection>
+  fullName: System.Action<EventStore.Transport.Tcp.ITcpConnection>
   nameWithType.vb: Action(Of ITcpConnection)
-  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection)
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.ITcpConnection)
   name.vb: Action(Of ITcpConnection)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -604,10 +880,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -619,20 +895,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}
-  commentId: '!:Action{EventStore.Transport.Tcp.ITcpConnection,SocketError}'
-  definition: Action`2
+- uid: System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
+  commentId: T:System.Action{EventStore.Transport.Tcp.ITcpConnection,System.Net.Sockets.SocketError}
+  parent: System
+  definition: System.Action`2
   name: Action<ITcpConnection, SocketError>
   nameWithType: Action<ITcpConnection, SocketError>
-  fullName: Action<EventStore.Transport.Tcp.ITcpConnection, SocketError>
+  fullName: System.Action<EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError>
   nameWithType.vb: Action(Of ITcpConnection, SocketError)
-  fullName.vb: Action(Of EventStore.Transport.Tcp.ITcpConnection, SocketError)
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.ITcpConnection, System.Net.Sockets.SocketError)
   name.vb: Action(Of ITcpConnection, SocketError)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -644,19 +921,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -668,10 +945,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: )
     nameWithType: )
@@ -689,91 +966,99 @@ references:
   name: ITcpConnection
   nameWithType: ITcpConnection
   fullName: EventStore.Transport.Tcp.ITcpConnection
-- uid: Action`1
+- uid: System.Net
+  commentId: N:System.Net
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )

@@ -17,26 +17,52 @@ items:
   fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConcurrentQueueWrapper
-    path: ../EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
     startLine: 8
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Utils
   syntax:
-    content: 'public class ConcurrentQueueWrapper<T> : ConcurrentQueue<T>'
+    content: 'public class ConcurrentQueueWrapper<T> : ConcurrentQueue<T>, IProducerConsumerCollection<T>, ICollection, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: T
     content.vb: >-
       Public Class ConcurrentQueueWrapper(Of T)
           Inherits ConcurrentQueue(Of T)
+          Implements IProducerConsumerCollection(Of T), ICollection, IReadOnlyCollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}
+  implements:
+  - System.Collections.Concurrent.IProducerConsumerCollection{{T}}
+  - System.Collections.ICollection
+  - System.Collections.Generic.IReadOnlyCollection{{T}}
+  - System.Collections.Generic.IEnumerable{{T}}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.CopyTo({T}[],System.Int32)
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.GetEnumerator
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd({T})
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake({T}@)
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#IEnumerable#GetEnumerator
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.ToArray
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.TryPeek({T}@)
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#IsSynchronized
+  - System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#SyncRoot
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
+  - System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.Safe``1
+  - System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Predicate{{T}})
+  - System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1
+  - System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
@@ -63,12 +89,8 @@ items:
   fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>.IsEmpty
   type: Property
   source:
-    remote:
-      path: src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsEmpty
-    path: ../EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
     startLine: 11
   assemblies:
   - EventStore.Common
@@ -100,12 +122,8 @@ items:
   fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>.Count
   type: Property
   source:
-    remote:
-      path: src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Count
-    path: ../EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
     startLine: 15
   assemblies:
   - EventStore.Common
@@ -137,12 +155,8 @@ items:
   fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>.TryDequeue(out T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryDequeue
-    path: ../EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
     startLine: 21
   assemblies:
   - EventStore.Common
@@ -175,12 +189,8 @@ items:
   fullName: EventStore.Common.Utils.ConcurrentQueueWrapper<T>.Enqueue(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Enqueue
-    path: ../EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Utils/ConcurrentQueueWrapper.cs
     startLine: 30
   assemblies:
   - EventStore.Common
@@ -211,6 +221,976 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  commentId: T:System.Collections.Concurrent.ConcurrentQueue{`0}
+  parent: System.Collections.Concurrent
+  definition: System.Collections.Concurrent.ConcurrentQueue`1
+  name: ConcurrentQueue<T>
+  nameWithType: ConcurrentQueue<T>
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>
+  nameWithType.vb: ConcurrentQueue(Of T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T)
+  name.vb: ConcurrentQueue(Of T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1
+    name: ConcurrentQueue
+    nameWithType: ConcurrentQueue
+    fullName: System.Collections.Concurrent.ConcurrentQueue
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1
+    name: ConcurrentQueue
+    nameWithType: ConcurrentQueue
+    fullName: System.Collections.Concurrent.ConcurrentQueue
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.IProducerConsumerCollection{{T}}
+  commentId: T:System.Collections.Concurrent.IProducerConsumerCollection{`0}
+  parent: System.Collections.Concurrent
+  definition: System.Collections.Concurrent.IProducerConsumerCollection`1
+  name: IProducerConsumerCollection<T>
+  nameWithType: IProducerConsumerCollection<T>
+  fullName: System.Collections.Concurrent.IProducerConsumerCollection<T>
+  nameWithType.vb: IProducerConsumerCollection(Of T)
+  fullName.vb: System.Collections.Concurrent.IProducerConsumerCollection(Of T)
+  name.vb: IProducerConsumerCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.IProducerConsumerCollection`1
+    name: IProducerConsumerCollection
+    nameWithType: IProducerConsumerCollection
+    fullName: System.Collections.Concurrent.IProducerConsumerCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Concurrent.IProducerConsumerCollection`1
+    name: IProducerConsumerCollection
+    nameWithType: IProducerConsumerCollection
+    fullName: System.Collections.Concurrent.IProducerConsumerCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.Generic.IReadOnlyCollection{{T}}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.CopyTo({T}[],System.Int32)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.CopyTo(`0[],System.Int32)
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(T[], Int32)
+  nameWithType: ConcurrentQueue<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ConcurrentQueue(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ConcurrentQueue<T>.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ConcurrentQueue(Of T).CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.GetEnumerator
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.GetEnumerator
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: ConcurrentQueue<T>.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.GetEnumerator()
+  nameWithType.vb: ConcurrentQueue(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ConcurrentQueue<T>.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ConcurrentQueue(Of T).GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd({T})
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  name: IProducerConsumerCollection<T>.TryAdd(T)
+  nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryAdd(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  name.vb: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+    name: IProducerConsumerCollection<T>.TryAdd
+    nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryAdd
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+    name: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    nameWithType: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake({T}@)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+  name: IProducerConsumerCollection<T>.TryTake(T)
+  nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryTake(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  name.vb: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+    name: IProducerConsumerCollection<T>.TryTake
+    nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryTake
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+    name: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    nameWithType: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: ConcurrentQueue<T>.ICollection.CopyTo(Array, Int32)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo(Array, Int32)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: ICollection.CopyTo
+    nameWithType: ConcurrentQueue<T>.ICollection.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: System.Collections.ICollection.CopyTo
+    nameWithType: ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#IEnumerable#GetEnumerator
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  nameWithType: ConcurrentQueue<T>.IEnumerable.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: ConcurrentQueue<T>.IEnumerable.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.ToArray
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.ToArray
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+  name: ToArray()
+  nameWithType: ConcurrentQueue<T>.ToArray()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.ToArray()
+  nameWithType.vb: ConcurrentQueue(Of T).ToArray()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).ToArray()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+    name: ToArray
+    nameWithType: ConcurrentQueue<T>.ToArray
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.ToArray
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+    name: ToArray
+    nameWithType: ConcurrentQueue(Of T).ToArray
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).ToArray
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.TryPeek({T}@)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue{`0}.TryPeek(`0@)
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+  name: TryPeek(T)
+  nameWithType: ConcurrentQueue<T>.TryPeek(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.TryPeek(T)
+  nameWithType.vb: ConcurrentQueue(Of T).TryPeek(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).TryPeek(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+    name: TryPeek
+    nameWithType: ConcurrentQueue<T>.TryPeek
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.TryPeek
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+    name: TryPeek
+    nameWithType: ConcurrentQueue(Of T).TryPeek
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).TryPeek
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#IsSynchronized
+  commentId: P:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#ICollection#IsSynchronized
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#IsSynchronized
+  name: ICollection.IsSynchronized
+  nameWithType: ConcurrentQueue<T>.ICollection.IsSynchronized
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.IsSynchronized
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Collections.Concurrent.ConcurrentQueue{{T}}.System#Collections#ICollection#SyncRoot
+  commentId: P:System.Collections.Concurrent.ConcurrentQueue{`0}.System#Collections#ICollection#SyncRoot
+  parent: System.Collections.Concurrent.ConcurrentQueue{{T}}
+  definition: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#SyncRoot
+  name: ICollection.SyncRoot
+  nameWithType: ConcurrentQueue<T>.ICollection.SyncRoot
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.SyncRoot
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.Safe``1
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+  parent: EventStore.Common.Utils.EnumerableExtensions
+  definition: EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+  name: Safe<T>()
+  nameWithType: EnumerableExtensions.Safe<T>()
+  fullName: EventStore.Common.Utils.EnumerableExtensions.Safe<T>()
+  nameWithType.vb: EnumerableExtensions.Safe(Of T)()
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.Safe(Of T)()
+  name.vb: Safe(Of T)()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Safe``1
+    name: Safe<T>
+    nameWithType: EnumerableExtensions.Safe<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Safe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Safe``1
+    name: Safe(Of T)
+    nameWithType: EnumerableExtensions.Safe(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Safe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Predicate{{T}})
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+  parent: EventStore.Common.Utils.EnumerableExtensions
+  definition: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+  name: Contains<T>(Predicate<T>)
+  nameWithType: EnumerableExtensions.Contains<T>(Predicate<T>)
+  fullName: EventStore.Common.Utils.EnumerableExtensions.Contains<T>(System.Predicate<T>)
+  nameWithType.vb: EnumerableExtensions.Contains(Of T)(Predicate(Of T))
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.Contains(Of T)(System.Predicate(Of T))
+  name.vb: Contains(Of T)(Predicate(Of T))
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Predicate{``0})
+    name: Contains<T>
+    nameWithType: EnumerableExtensions.Contains<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Contains<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Predicate{``0})
+    name: Contains(Of T)
+    nameWithType: EnumerableExtensions.Contains(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Contains(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  parent: EventStore.Common.Utils.EnumerableExtensions
+  definition: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  name: IsEmpty<T>()
+  nameWithType: EnumerableExtensions.IsEmpty<T>()
+  fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty<T>()
+  nameWithType.vb: EnumerableExtensions.IsEmpty(Of T)()
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.IsEmpty(Of T)()
+  name.vb: IsEmpty(Of T)()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1
+    name: IsEmpty<T>
+    nameWithType: EnumerableExtensions.IsEmpty<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1
+    name: IsEmpty(Of T)
+    nameWithType: EnumerableExtensions.IsEmpty(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{`0}.EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  parent: EventStore.Common.Utils.EnumerableExtensions
+  definition: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  name: IsNotEmpty<T>()
+  nameWithType: EnumerableExtensions.IsNotEmpty<T>()
+  fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty<T>()
+  nameWithType.vb: EnumerableExtensions.IsNotEmpty(Of T)()
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty(Of T)()
+  name.vb: IsNotEmpty(Of T)()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1
+    name: IsNotEmpty<T>
+    nameWithType: EnumerableExtensions.IsNotEmpty<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1
+    name: IsNotEmpty(Of T)
+    nameWithType: EnumerableExtensions.IsNotEmpty(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -368,6 +1348,807 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Collections.Concurrent.ConcurrentQueue`1
+  commentId: T:System.Collections.Concurrent.ConcurrentQueue`1
+  isExternal: true
+  name: ConcurrentQueue<T>
+  nameWithType: ConcurrentQueue<T>
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>
+  nameWithType.vb: ConcurrentQueue(Of T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T)
+  name.vb: ConcurrentQueue(Of T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1
+    name: ConcurrentQueue
+    nameWithType: ConcurrentQueue
+    fullName: System.Collections.Concurrent.ConcurrentQueue
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1
+    name: ConcurrentQueue
+    nameWithType: ConcurrentQueue
+    fullName: System.Collections.Concurrent.ConcurrentQueue
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent
+  commentId: N:System.Collections.Concurrent
+  isExternal: true
+  name: System.Collections.Concurrent
+  nameWithType: System.Collections.Concurrent
+  fullName: System.Collections.Concurrent
+- uid: System.Collections.Concurrent.IProducerConsumerCollection`1
+  commentId: T:System.Collections.Concurrent.IProducerConsumerCollection`1
+  isExternal: true
+  name: IProducerConsumerCollection<T>
+  nameWithType: IProducerConsumerCollection<T>
+  fullName: System.Collections.Concurrent.IProducerConsumerCollection<T>
+  nameWithType.vb: IProducerConsumerCollection(Of T)
+  fullName.vb: System.Collections.Concurrent.IProducerConsumerCollection(Of T)
+  name.vb: IProducerConsumerCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.IProducerConsumerCollection`1
+    name: IProducerConsumerCollection
+    nameWithType: IProducerConsumerCollection
+    fullName: System.Collections.Concurrent.IProducerConsumerCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Concurrent.IProducerConsumerCollection`1
+    name: IProducerConsumerCollection
+    nameWithType: IProducerConsumerCollection
+    fullName: System.Collections.Concurrent.IProducerConsumerCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: ConcurrentQueue<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ConcurrentQueue(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ConcurrentQueue<T>.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ConcurrentQueue(Of T).CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: ConcurrentQueue<T>.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.GetEnumerator()
+  nameWithType.vb: ConcurrentQueue(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ConcurrentQueue<T>.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ConcurrentQueue(Of T).GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+  isExternal: true
+  name: IProducerConsumerCollection<T>.TryAdd(T)
+  nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryAdd(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  name.vb: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+    name: IProducerConsumerCollection<T>.TryAdd
+    nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryAdd
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryAdd(`0)
+    name: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    nameWithType: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+  isExternal: true
+  name: IProducerConsumerCollection<T>.TryTake(T)
+  nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryTake(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  name.vb: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+    name: IProducerConsumerCollection<T>.TryTake
+    nameWithType: ConcurrentQueue<T>.IProducerConsumerCollection<T>.TryTake
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#Concurrent#IProducerConsumerCollection{T}#TryTake(`0@)
+    name: System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    nameWithType: ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.Concurrent.IProducerConsumerCollection<T>.TryTake
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  isExternal: true
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: ConcurrentQueue<T>.ICollection.CopyTo(Array, Int32)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo(Array, Int32)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: ICollection.CopyTo
+    nameWithType: ConcurrentQueue<T>.ICollection.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: System.Collections.ICollection.CopyTo
+    nameWithType: ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+  isExternal: true
+  name: IEnumerable.GetEnumerator()
+  nameWithType: ConcurrentQueue<T>.IEnumerable.GetEnumerator()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: ConcurrentQueue<T>.IEnumerable.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+  isExternal: true
+  name: ToArray()
+  nameWithType: ConcurrentQueue<T>.ToArray()
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.ToArray()
+  nameWithType.vb: ConcurrentQueue(Of T).ToArray()
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).ToArray()
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+    name: ToArray
+    nameWithType: ConcurrentQueue<T>.ToArray
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.ToArray
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.ToArray
+    name: ToArray
+    nameWithType: ConcurrentQueue(Of T).ToArray
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).ToArray
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+  commentId: M:System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+  isExternal: true
+  name: TryPeek(T)
+  nameWithType: ConcurrentQueue<T>.TryPeek(T)
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.TryPeek(T)
+  nameWithType.vb: ConcurrentQueue(Of T).TryPeek(T)
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).TryPeek(T)
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+    name: TryPeek
+    nameWithType: ConcurrentQueue<T>.TryPeek
+    fullName: System.Collections.Concurrent.ConcurrentQueue<T>.TryPeek
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Concurrent.ConcurrentQueue`1.TryPeek(`0@)
+    name: TryPeek
+    nameWithType: ConcurrentQueue(Of T).TryPeek
+    fullName: System.Collections.Concurrent.ConcurrentQueue(Of T).TryPeek
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#IsSynchronized
+  commentId: P:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#IsSynchronized
+  isExternal: true
+  name: ICollection.IsSynchronized
+  nameWithType: ConcurrentQueue<T>.ICollection.IsSynchronized
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.IsSynchronized
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#SyncRoot
+  commentId: P:System.Collections.Concurrent.ConcurrentQueue`1.System#Collections#ICollection#SyncRoot
+  isExternal: true
+  name: ICollection.SyncRoot
+  nameWithType: ConcurrentQueue<T>.ICollection.SyncRoot
+  fullName: System.Collections.Concurrent.ConcurrentQueue<T>.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: ConcurrentQueue(Of T).System.Collections.ICollection.SyncRoot
+  fullName.vb: System.Collections.Concurrent.ConcurrentQueue(Of T).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+  isExternal: true
+  name: Safe<T>(IEnumerable<T>)
+  nameWithType: EnumerableExtensions.Safe<T>(IEnumerable<T>)
+  fullName: EventStore.Common.Utils.EnumerableExtensions.Safe<T>(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: EnumerableExtensions.Safe(Of T)(IEnumerable(Of T))
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.Safe(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Safe(Of T)(IEnumerable(Of T))
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+    name: Safe<T>
+    nameWithType: EnumerableExtensions.Safe<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Safe<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Safe``1(System.Collections.Generic.IEnumerable{``0})
+    name: Safe(Of T)
+    nameWithType: EnumerableExtensions.Safe(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Safe(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.EnumerableExtensions
+  commentId: T:EventStore.Common.Utils.EnumerableExtensions
+  parent: EventStore.Common.Utils
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: EventStore.Common.Utils.EnumerableExtensions
+- uid: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+  isExternal: true
+  name: Contains<T>(IEnumerable<T>, Predicate<T>)
+  nameWithType: EnumerableExtensions.Contains<T>(IEnumerable<T>, Predicate<T>)
+  fullName: EventStore.Common.Utils.EnumerableExtensions.Contains<T>(System.Collections.Generic.IEnumerable<T>, System.Predicate<T>)
+  nameWithType.vb: EnumerableExtensions.Contains(Of T)(IEnumerable(Of T), Predicate(Of T))
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.Contains(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Predicate(Of T))
+  name.vb: Contains(Of T)(IEnumerable(Of T), Predicate(Of T))
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+    name: Contains<T>
+    nameWithType: EnumerableExtensions.Contains<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Contains<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})
+    name: Contains(Of T)
+    nameWithType: EnumerableExtensions.Contains(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.Contains(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  isExternal: true
+  name: IsEmpty<T>(IEnumerable<T>)
+  nameWithType: EnumerableExtensions.IsEmpty<T>(IEnumerable<T>)
+  fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty<T>(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: EnumerableExtensions.IsEmpty(Of T)(IEnumerable(Of T))
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.IsEmpty(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsEmpty(Of T)(IEnumerable(Of T))
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+    name: IsEmpty<T>
+    nameWithType: EnumerableExtensions.IsEmpty<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})
+    name: IsEmpty(Of T)
+    nameWithType: EnumerableExtensions.IsEmpty(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsEmpty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  commentId: M:EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+  isExternal: true
+  name: IsNotEmpty<T>(IEnumerable<T>)
+  nameWithType: EnumerableExtensions.IsNotEmpty<T>(IEnumerable<T>)
+  fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty<T>(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: EnumerableExtensions.IsNotEmpty(Of T)(IEnumerable(Of T))
+  fullName.vb: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: IsNotEmpty(Of T)(IEnumerable(Of T))
+  spec.csharp:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+    name: IsNotEmpty<T>
+    nameWithType: EnumerableExtensions.IsNotEmpty<T>
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})
+    name: IsNotEmpty(Of T)
+    nameWithType: EnumerableExtensions.IsNotEmpty(Of T)
+    fullName: EventStore.Common.Utils.EnumerableExtensions.IsNotEmpty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true

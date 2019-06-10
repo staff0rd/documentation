@@ -10,7 +10,7 @@ items:
   - EventStore.Transport.Tcp.TcpTypedConnection`1.ConnectionClosed
   - EventStore.Transport.Tcp.TcpTypedConnection`1.EnqueueSend(`0)
   - EventStore.Transport.Tcp.TcpTypedConnection`1.LocalEndPoint
-  - EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
+  - EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(System.Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
   - EventStore.Transport.Tcp.TcpTypedConnection`1.RemoteEndPoint
   - EventStore.Transport.Tcp.TcpTypedConnection`1.SendQueueSize
   langs:
@@ -21,25 +21,27 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpTypedConnection
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 9
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
   syntax:
-    content: 'public class TcpTypedConnection<T> : object'
+    content: public class TcpTypedConnection<T>
     typeParameters:
     - id: T
-    content.vb: >-
-      Public Class TcpTypedConnection(Of T)
-          Inherits Object
+    content.vb: Public Class TcpTypedConnection(Of T)
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -67,12 +69,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.ConnectionClosed
   type: Event
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionClosed
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 12
   assemblies:
   - EventStore.Transport.Tcp
@@ -80,7 +78,7 @@ items:
   syntax:
     content: public event Action<TcpTypedConnection<T>, SocketError> ConnectionClosed
     return:
-      type: Action{EventStore.Transport.Tcp.TcpTypedConnection`1,SocketError}
+      type: System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,System.Net.Sockets.SocketError}
     content.vb: Public Event ConnectionClosed As Action(Of TcpTypedConnection(Of T), SocketError)
   nameWithType.vb: TcpTypedConnection(Of T).ConnectionClosed
   modifiers.csharp:
@@ -100,12 +98,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.RemoteEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoteEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 20
   assemblies:
   - EventStore.Transport.Tcp
@@ -114,7 +108,7 @@ items:
     content: public IPEndPoint RemoteEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly Property RemoteEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.TcpTypedConnection`1.RemoteEndPoint*
   nameWithType.vb: TcpTypedConnection(Of T).RemoteEndPoint
@@ -137,12 +131,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.LocalEndPoint
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LocalEndPoint
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 24
   assemblies:
   - EventStore.Transport.Tcp
@@ -151,7 +141,7 @@ items:
     content: public IPEndPoint LocalEndPoint { get; }
     parameters: []
     return:
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public ReadOnly Property LocalEndPoint As IPEndPoint
   overload: EventStore.Transport.Tcp.TcpTypedConnection`1.LocalEndPoint*
   nameWithType.vb: TcpTypedConnection(Of T).LocalEndPoint
@@ -174,12 +164,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.SendQueueSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendQueueSize
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 28
   assemblies:
   - EventStore.Transport.Tcp
@@ -211,12 +197,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.TcpTypedConnection(EventStore.Transport.Tcp.ITcpConnection, EventStore.Transport.Tcp.Formatting.IMessageFormatter<T>, EventStore.Transport.Tcp.Framing.IMessageFramer)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 32
   assemblies:
   - EventStore.Transport.Tcp
@@ -251,12 +233,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.EnqueueSend(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnqueueSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 58
   assemblies:
   - EventStore.Transport.Tcp
@@ -274,24 +252,20 @@ items:
   modifiers.vb:
   - Public
   fullName.vb: EventStore.Transport.Tcp.TcpTypedConnection(Of T).EnqueueSend(T)
-- uid: EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
-  commentId: M:EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
-  id: ReceiveAsync(Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
+- uid: EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(System.Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
+  commentId: M:EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync(System.Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
+  id: ReceiveAsync(System.Action{EventStore.Transport.Tcp.TcpTypedConnection{`0},`0})
   parent: EventStore.Transport.Tcp.TcpTypedConnection`1
   langs:
   - csharp
   - vb
   name: ReceiveAsync(Action<TcpTypedConnection<T>, T>)
   nameWithType: TcpTypedConnection<T>.ReceiveAsync(Action<TcpTypedConnection<T>, T>)
-  fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.ReceiveAsync(Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, T>)
+  fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.ReceiveAsync(System.Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, T>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceiveAsync
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 63
   assemblies:
   - EventStore.Transport.Tcp
@@ -300,7 +274,7 @@ items:
     content: public void ReceiveAsync(Action<TcpTypedConnection<T>, T> callback)
     parameters:
     - id: callback
-      type: Action{EventStore.Transport.Tcp.TcpTypedConnection`1,{T}}
+      type: System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,{T}}
     content.vb: Public Sub ReceiveAsync(callback As Action(Of TcpTypedConnection(Of T), T))
   overload: EventStore.Transport.Tcp.TcpTypedConnection`1.ReceiveAsync*
   nameWithType.vb: TcpTypedConnection(Of T).ReceiveAsync(Action(Of TcpTypedConnection(Of T), T))
@@ -308,7 +282,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.TcpTypedConnection(Of T).ReceiveAsync(Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), T))
+  fullName.vb: EventStore.Transport.Tcp.TcpTypedConnection(Of T).ReceiveAsync(System.Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), T))
   name.vb: ReceiveAsync(Action(Of TcpTypedConnection(Of T), T))
 - uid: EventStore.Transport.Tcp.TcpTypedConnection`1.Close(System.String)
   commentId: M:EventStore.Transport.Tcp.TcpTypedConnection`1.Close(System.String)
@@ -322,12 +296,8 @@ items:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.Close(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpTypedConnection.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Close
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpTypedConnection.cs
     startLine: 91
   assemblies:
   - EventStore.Transport.Tcp
@@ -358,6 +328,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -723,20 +972,21 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: Action{EventStore.Transport.Tcp.TcpTypedConnection`1,SocketError}
-  commentId: '!:Action{EventStore.Transport.Tcp.TcpTypedConnection`1,SocketError}'
-  definition: Action`2
+- uid: System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,System.Net.Sockets.SocketError}
+  commentId: T:System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,System.Net.Sockets.SocketError}
+  parent: System
+  definition: System.Action`2
   name: Action<TcpTypedConnection<T>, SocketError>
   nameWithType: Action<TcpTypedConnection<T>, SocketError>
-  fullName: Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, SocketError>
+  fullName: System.Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, System.Net.Sockets.SocketError>
   nameWithType.vb: Action(Of TcpTypedConnection(Of T), SocketError)
-  fullName.vb: Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), SocketError)
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), System.Net.Sockets.SocketError)
   name.vb: Action(Of TcpTypedConnection(Of T), SocketError)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -757,19 +1007,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -790,61 +1040,62 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: SocketError
+  - uid: System.Net.Sockets.SocketError
     name: SocketError
     nameWithType: SocketError
-    fullName: SocketError
+    fullName: System.Net.Sockets.SocketError
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
@@ -855,11 +1106,19 @@ references:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.RemoteEndPoint
   nameWithType.vb: TcpTypedConnection(Of T).RemoteEndPoint
   fullName.vb: EventStore.Transport.Tcp.TcpTypedConnection(Of T).RemoteEndPoint
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Transport.Tcp.TcpTypedConnection`1.LocalEndPoint*
   commentId: Overload:EventStore.Transport.Tcp.TcpTypedConnection`1.LocalEndPoint
   name: LocalEndPoint
@@ -1008,20 +1267,21 @@ references:
   fullName: EventStore.Transport.Tcp.TcpTypedConnection<T>.ReceiveAsync
   nameWithType.vb: TcpTypedConnection(Of T).ReceiveAsync
   fullName.vb: EventStore.Transport.Tcp.TcpTypedConnection(Of T).ReceiveAsync
-- uid: Action{EventStore.Transport.Tcp.TcpTypedConnection`1,{T}}
-  commentId: '!:Action{EventStore.Transport.Tcp.TcpTypedConnection`1,`0}'
-  definition: Action`2
+- uid: System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,{T}}
+  commentId: T:System.Action{EventStore.Transport.Tcp.TcpTypedConnection`1,`0}
+  parent: System
+  definition: System.Action`2
   name: Action<TcpTypedConnection<T>, T>
   nameWithType: Action<TcpTypedConnection<T>, T>
-  fullName: Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, T>
+  fullName: System.Action<EventStore.Transport.Tcp.TcpTypedConnection<T>, T>
   nameWithType.vb: Action(Of TcpTypedConnection(Of T), T)
-  fullName.vb: Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), T)
+  fullName.vb: System.Action(Of EventStore.Transport.Tcp.TcpTypedConnection(Of T), T)
   name.vb: Action(Of TcpTypedConnection(Of T), T)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -1049,10 +1309,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '

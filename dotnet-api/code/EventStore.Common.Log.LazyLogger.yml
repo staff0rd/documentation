@@ -5,20 +5,20 @@ items:
   id: LazyLogger
   parent: EventStore.Common.Log
   children:
-  - EventStore.Common.Log.LazyLogger.#ctor(Func{EventStore.Common.Log.ILogger})
+  - EventStore.Common.Log.LazyLogger.#ctor(System.Func{EventStore.Common.Log.ILogger})
   - EventStore.Common.Log.LazyLogger.Debug(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.DebugException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.DebugException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.LazyLogger.Error(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.ErrorException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.ErrorException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.LazyLogger.Fatal(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.FatalException(Exception,System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.Flush(System.Nullable{TimeSpan})
+  - EventStore.Common.Log.LazyLogger.FatalException(System.Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.Flush(System.Nullable{System.TimeSpan})
   - EventStore.Common.Log.LazyLogger.Info(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.InfoException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.InfoException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.LazyLogger.Trace(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.TraceException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.TraceException(System.Exception,System.String,System.Object[])
   - EventStore.Common.Log.LazyLogger.Warn(System.String,System.Object[])
-  - EventStore.Common.Log.LazyLogger.WarnException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.LazyLogger.WarnException(System.Exception,System.String,System.Object[])
   langs:
   - csharp
   - vb
@@ -27,26 +27,29 @@ items:
   fullName: EventStore.Common.Log.LazyLogger
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LazyLogger
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 4
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
   syntax:
-    content: 'public class LazyLogger : object, ILogger'
+    content: 'public class LazyLogger : ILogger'
     content.vb: >-
       Public Class LazyLogger
-          Inherits Object
           Implements ILogger
   inheritance:
   - System.Object
   implements:
   - EventStore.Common.Log.ILogger
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -59,24 +62,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Common.Log.LazyLogger.#ctor(Func{EventStore.Common.Log.ILogger})
-  commentId: M:EventStore.Common.Log.LazyLogger.#ctor(Func{EventStore.Common.Log.ILogger})
-  id: '#ctor(Func{EventStore.Common.Log.ILogger})'
+- uid: EventStore.Common.Log.LazyLogger.#ctor(System.Func{EventStore.Common.Log.ILogger})
+  commentId: M:EventStore.Common.Log.LazyLogger.#ctor(System.Func{EventStore.Common.Log.ILogger})
+  id: '#ctor(System.Func{EventStore.Common.Log.ILogger})'
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: LazyLogger(Func<ILogger>)
   nameWithType: LazyLogger.LazyLogger(Func<ILogger>)
-  fullName: EventStore.Common.Log.LazyLogger.LazyLogger(Func<EventStore.Common.Log.ILogger>)
+  fullName: EventStore.Common.Log.LazyLogger.LazyLogger(System.Func<EventStore.Common.Log.ILogger>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 7
   assemblies:
   - EventStore.Common
@@ -85,7 +84,7 @@ items:
     content: public LazyLogger(Func<ILogger> factory)
     parameters:
     - id: factory
-      type: Func{EventStore.Common.Log.ILogger}
+      type: System.Func{EventStore.Common.Log.ILogger}
     content.vb: Public Sub New(factory As Func(Of ILogger))
   overload: EventStore.Common.Log.LazyLogger.#ctor*
   nameWithType.vb: LazyLogger.LazyLogger(Func(Of ILogger))
@@ -93,45 +92,41 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.LazyLogger(Func(Of EventStore.Common.Log.ILogger))
+  fullName.vb: EventStore.Common.Log.LazyLogger.LazyLogger(System.Func(Of EventStore.Common.Log.ILogger))
   name.vb: LazyLogger(Func(Of ILogger))
-- uid: EventStore.Common.Log.LazyLogger.Flush(System.Nullable{TimeSpan})
-  commentId: M:EventStore.Common.Log.LazyLogger.Flush(System.Nullable{TimeSpan})
-  id: Flush(System.Nullable{TimeSpan})
+- uid: EventStore.Common.Log.LazyLogger.Flush(System.Nullable{System.TimeSpan})
+  commentId: M:EventStore.Common.Log.LazyLogger.Flush(System.Nullable{System.TimeSpan})
+  id: Flush(System.Nullable{System.TimeSpan})
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: Flush(Nullable<TimeSpan>)
   nameWithType: LazyLogger.Flush(Nullable<TimeSpan>)
-  fullName: EventStore.Common.Log.LazyLogger.Flush(System.Nullable<TimeSpan>)
+  fullName: EventStore.Common.Log.LazyLogger.Flush(System.Nullable<System.TimeSpan>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Flush
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 12
   assemblies:
   - EventStore.Common
   namespace: EventStore.Common.Log
   syntax:
-    content: public void Flush(TimeSpan? maxTimeToWait = null)
+    content: public void Flush(TimeSpan? maxTimeToWait = default(TimeSpan? ))
     parameters:
     - id: maxTimeToWait
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     content.vb: Public Sub Flush(maxTimeToWait As TimeSpan? = Nothing)
   overload: EventStore.Common.Log.LazyLogger.Flush*
   implements:
-  - EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
   nameWithType.vb: LazyLogger.Flush(Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.Flush(System.Nullable(Of TimeSpan))
+  fullName.vb: EventStore.Common.Log.LazyLogger.Flush(System.Nullable(Of System.TimeSpan))
   name.vb: Flush(Nullable(Of TimeSpan))
 - uid: EventStore.Common.Log.LazyLogger.Fatal(System.String,System.Object[])
   commentId: M:EventStore.Common.Log.LazyLogger.Fatal(System.String,System.Object[])
@@ -145,12 +140,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Fatal(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Fatal
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 16
   assemblies:
   - EventStore.Common
@@ -185,12 +176,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Error(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Error
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 20
   assemblies:
   - EventStore.Common
@@ -225,12 +212,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Info(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Info
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 24
   assemblies:
   - EventStore.Common
@@ -265,12 +248,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Warn(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Warn
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 28
   assemblies:
   - EventStore.Common
@@ -305,12 +284,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Debug(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Debug
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 32
   assemblies:
   - EventStore.Common
@@ -345,12 +320,8 @@ items:
   fullName: EventStore.Common.Log.LazyLogger.Trace(System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Trace
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 36
   assemblies:
   - EventStore.Common
@@ -373,24 +344,20 @@ items:
   - Public
   fullName.vb: EventStore.Common.Log.LazyLogger.Trace(System.String, System.Object())
   name.vb: Trace(String, Object())
-- uid: EventStore.Common.Log.LazyLogger.FatalException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.FatalException(Exception,System.String,System.Object[])
-  id: FatalException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.FatalException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.FatalException(System.Exception,System.String,System.Object[])
+  id: FatalException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: FatalException(Exception, String, Object[])
   nameWithType: LazyLogger.FatalException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.FatalException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.FatalException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FatalException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 40
   assemblies:
   - EventStore.Common
@@ -399,7 +366,7 @@ items:
     content: public void FatalException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -407,32 +374,28 @@ items:
     content.vb: Public Sub FatalException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.FatalException*
   implements:
-  - EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.FatalException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.FatalException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.FatalException(System.Exception, System.String, System.Object())
   name.vb: FatalException(Exception, String, Object())
-- uid: EventStore.Common.Log.LazyLogger.ErrorException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.ErrorException(Exception,System.String,System.Object[])
-  id: ErrorException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.ErrorException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.ErrorException(System.Exception,System.String,System.Object[])
+  id: ErrorException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: ErrorException(Exception, String, Object[])
   nameWithType: LazyLogger.ErrorException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.ErrorException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.ErrorException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ErrorException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 44
   assemblies:
   - EventStore.Common
@@ -441,7 +404,7 @@ items:
     content: public void ErrorException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -449,32 +412,28 @@ items:
     content.vb: Public Sub ErrorException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.ErrorException*
   implements:
-  - EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.ErrorException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.ErrorException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.ErrorException(System.Exception, System.String, System.Object())
   name.vb: ErrorException(Exception, String, Object())
-- uid: EventStore.Common.Log.LazyLogger.InfoException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.InfoException(Exception,System.String,System.Object[])
-  id: InfoException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.InfoException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.InfoException(System.Exception,System.String,System.Object[])
+  id: InfoException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: InfoException(Exception, String, Object[])
   nameWithType: LazyLogger.InfoException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.InfoException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.InfoException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InfoException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 48
   assemblies:
   - EventStore.Common
@@ -483,7 +442,7 @@ items:
     content: public void InfoException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -491,32 +450,28 @@ items:
     content.vb: Public Sub InfoException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.InfoException*
   implements:
-  - EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.InfoException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.InfoException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.InfoException(System.Exception, System.String, System.Object())
   name.vb: InfoException(Exception, String, Object())
-- uid: EventStore.Common.Log.LazyLogger.DebugException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.DebugException(Exception,System.String,System.Object[])
-  id: DebugException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.DebugException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.DebugException(System.Exception,System.String,System.Object[])
+  id: DebugException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: DebugException(Exception, String, Object[])
   nameWithType: LazyLogger.DebugException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.DebugException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.DebugException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DebugException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 52
   assemblies:
   - EventStore.Common
@@ -525,7 +480,7 @@ items:
     content: public void DebugException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -533,32 +488,28 @@ items:
     content.vb: Public Sub DebugException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.DebugException*
   implements:
-  - EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.DebugException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.DebugException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.DebugException(System.Exception, System.String, System.Object())
   name.vb: DebugException(Exception, String, Object())
-- uid: EventStore.Common.Log.LazyLogger.WarnException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.WarnException(Exception,System.String,System.Object[])
-  id: WarnException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.WarnException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.WarnException(System.Exception,System.String,System.Object[])
+  id: WarnException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: WarnException(Exception, String, Object[])
   nameWithType: LazyLogger.WarnException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.WarnException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.WarnException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WarnException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 56
   assemblies:
   - EventStore.Common
@@ -567,7 +518,7 @@ items:
     content: public void WarnException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -575,32 +526,28 @@ items:
     content.vb: Public Sub WarnException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.WarnException*
   implements:
-  - EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.WarnException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.WarnException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.WarnException(System.Exception, System.String, System.Object())
   name.vb: WarnException(Exception, String, Object())
-- uid: EventStore.Common.Log.LazyLogger.TraceException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.LazyLogger.TraceException(Exception,System.String,System.Object[])
-  id: TraceException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.LazyLogger.TraceException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.LazyLogger.TraceException(System.Exception,System.String,System.Object[])
+  id: TraceException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.LazyLogger
   langs:
   - csharp
   - vb
   name: TraceException(Exception, String, Object[])
   nameWithType: LazyLogger.TraceException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.LazyLogger.TraceException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.LazyLogger.TraceException(System.Exception, System.String, System.Object[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/LazyLogger.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TraceException
-    path: ../EventStore/src/EventStore.Common/Log/LazyLogger.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/LazyLogger.cs
     startLine: 60
   assemblies:
   - EventStore.Common
@@ -609,7 +556,7 @@ items:
     content: public void TraceException(Exception exc, string format, params object[] args)
     parameters:
     - id: exc
-      type: Exception
+      type: System.Exception
     - id: format
       type: System.String
     - id: args
@@ -617,13 +564,13 @@ items:
     content.vb: Public Sub TraceException(exc As Exception, format As String, ParamArray args As Object())
   overload: EventStore.Common.Log.LazyLogger.TraceException*
   implements:
-  - EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
   nameWithType.vb: LazyLogger.TraceException(Exception, String, Object())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Common.Log.LazyLogger.TraceException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.LazyLogger.TraceException(System.Exception, System.String, System.Object())
   name.vb: TraceException(Exception, String, Object())
 references:
 - uid: EventStore.Common.Log
@@ -644,6 +591,285 @@ references:
   name: ILogger
   nameWithType: ILogger
   fullName: EventStore.Common.Log.ILogger
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1014,20 +1240,21 @@ references:
   name: LazyLogger
   nameWithType: LazyLogger.LazyLogger
   fullName: EventStore.Common.Log.LazyLogger.LazyLogger
-- uid: Func{EventStore.Common.Log.ILogger}
-  commentId: '!:Func{EventStore.Common.Log.ILogger}'
-  definition: Func`1
+- uid: System.Func{EventStore.Common.Log.ILogger}
+  commentId: T:System.Func{EventStore.Common.Log.ILogger}
+  parent: System
+  definition: System.Func`1
   name: Func<ILogger>
   nameWithType: Func<ILogger>
-  fullName: Func<EventStore.Common.Log.ILogger>
+  fullName: System.Func<EventStore.Common.Log.ILogger>
   nameWithType.vb: Func(Of ILogger)
-  fullName.vb: Func(Of EventStore.Common.Log.ILogger)
+  fullName.vb: System.Func(Of EventStore.Common.Log.ILogger)
   name.vb: Func(Of ILogger)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1040,10 +1267,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1055,41 +1282,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`1
+- uid: System.Func`1
+  commentId: T:System.Func`1
   isExternal: true
-  name: Func<>
-  nameWithType: Func<>
-  fullName: Func<>
-  nameWithType.vb: Func(Of )
-  fullName.vb: Func(Of )
-  name.vb: Func(Of )
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
   spec.csharp:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`1
+  - uid: System.Func`1
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
@@ -1098,18 +1326,18 @@ references:
   name: Flush
   nameWithType: LazyLogger.Flush
   fullName: EventStore.Common.Log.LazyLogger.Flush
-- uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
-  commentId: M:EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+- uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
+  commentId: M:EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: Flush(Nullable<TimeSpan>)
   nameWithType: ILogger.Flush(Nullable<TimeSpan>)
-  fullName: EventStore.Common.Log.ILogger.Flush(System.Nullable<TimeSpan>)
+  fullName: EventStore.Common.Log.ILogger.Flush(System.Nullable<System.TimeSpan>)
   nameWithType.vb: ILogger.Flush(Nullable(Of TimeSpan))
-  fullName.vb: EventStore.Common.Log.ILogger.Flush(System.Nullable(Of TimeSpan))
+  fullName.vb: EventStore.Common.Log.ILogger.Flush(System.Nullable(Of System.TimeSpan))
   name.vb: Flush(Nullable(Of TimeSpan))
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
     name: Flush
     nameWithType: ILogger.Flush
     fullName: EventStore.Common.Log.ILogger.Flush
@@ -1124,10 +1352,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1136,7 +1364,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{TimeSpan})
+  - uid: EventStore.Common.Log.ILogger.Flush(System.Nullable{System.TimeSpan})
     name: Flush
     nameWithType: ILogger.Flush
     fullName: EventStore.Common.Log.ILogger.Flush
@@ -1151,10 +1379,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -1162,14 +1390,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable{TimeSpan}
-  commentId: '!:System.Nullable{TimeSpan}'
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TimeSpan>
   nameWithType: Nullable<TimeSpan>
-  fullName: System.Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
   nameWithType.vb: Nullable(Of TimeSpan)
-  fullName.vb: System.Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
   name.vb: Nullable(Of TimeSpan)
   spec.csharp:
   - uid: System.Nullable`1
@@ -1180,10 +1409,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1197,10 +1426,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -1696,28 +1925,28 @@ references:
   name: FatalException
   nameWithType: LazyLogger.FatalException
   fullName: EventStore.Common.Log.LazyLogger.FatalException
-- uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: FatalException(Exception, String, Object[])
   nameWithType: ILogger.FatalException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.FatalException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.FatalException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.FatalException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.FatalException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.FatalException(System.Exception, System.String, System.Object())
   name.vb: FatalException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
     name: FatalException
     nameWithType: ILogger.FatalException
     fullName: EventStore.Common.Log.ILogger.FatalException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1742,17 +1971,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.FatalException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.FatalException(System.Exception,System.String,System.Object[])
     name: FatalException
     nameWithType: ILogger.FatalException
     fullName: EventStore.Common.Log.ILogger.FatalException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1776,38 +2005,40 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Exception
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
   isExternal: true
   name: Exception
   nameWithType: Exception
-  fullName: Exception
+  fullName: System.Exception
 - uid: EventStore.Common.Log.LazyLogger.ErrorException*
   commentId: Overload:EventStore.Common.Log.LazyLogger.ErrorException
   name: ErrorException
   nameWithType: LazyLogger.ErrorException
   fullName: EventStore.Common.Log.LazyLogger.ErrorException
-- uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: ErrorException(Exception, String, Object[])
   nameWithType: ILogger.ErrorException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.ErrorException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.ErrorException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.ErrorException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.ErrorException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.ErrorException(System.Exception, System.String, System.Object())
   name.vb: ErrorException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
     name: ErrorException
     nameWithType: ILogger.ErrorException
     fullName: EventStore.Common.Log.ILogger.ErrorException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1832,17 +2063,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.ErrorException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.ErrorException(System.Exception,System.String,System.Object[])
     name: ErrorException
     nameWithType: ILogger.ErrorException
     fullName: EventStore.Common.Log.ILogger.ErrorException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1871,28 +2102,28 @@ references:
   name: InfoException
   nameWithType: LazyLogger.InfoException
   fullName: EventStore.Common.Log.LazyLogger.InfoException
-- uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: InfoException(Exception, String, Object[])
   nameWithType: ILogger.InfoException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.InfoException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.InfoException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.InfoException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.InfoException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.InfoException(System.Exception, System.String, System.Object())
   name.vb: InfoException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
     name: InfoException
     nameWithType: ILogger.InfoException
     fullName: EventStore.Common.Log.ILogger.InfoException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1917,17 +2148,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.InfoException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.InfoException(System.Exception,System.String,System.Object[])
     name: InfoException
     nameWithType: ILogger.InfoException
     fullName: EventStore.Common.Log.ILogger.InfoException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1956,28 +2187,28 @@ references:
   name: DebugException
   nameWithType: LazyLogger.DebugException
   fullName: EventStore.Common.Log.LazyLogger.DebugException
-- uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: DebugException(Exception, String, Object[])
   nameWithType: ILogger.DebugException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.DebugException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.DebugException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.DebugException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.DebugException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.DebugException(System.Exception, System.String, System.Object())
   name.vb: DebugException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
     name: DebugException
     nameWithType: ILogger.DebugException
     fullName: EventStore.Common.Log.ILogger.DebugException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2002,17 +2233,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.DebugException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.DebugException(System.Exception,System.String,System.Object[])
     name: DebugException
     nameWithType: ILogger.DebugException
     fullName: EventStore.Common.Log.ILogger.DebugException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2041,28 +2272,28 @@ references:
   name: WarnException
   nameWithType: LazyLogger.WarnException
   fullName: EventStore.Common.Log.LazyLogger.WarnException
-- uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: WarnException(Exception, String, Object[])
   nameWithType: ILogger.WarnException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.WarnException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.WarnException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.WarnException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.WarnException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.WarnException(System.Exception, System.String, System.Object())
   name.vb: WarnException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
     name: WarnException
     nameWithType: ILogger.WarnException
     fullName: EventStore.Common.Log.ILogger.WarnException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2087,17 +2318,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.WarnException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.WarnException(System.Exception,System.String,System.Object[])
     name: WarnException
     nameWithType: ILogger.WarnException
     fullName: EventStore.Common.Log.ILogger.WarnException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2126,28 +2357,28 @@ references:
   name: TraceException
   nameWithType: LazyLogger.TraceException
   fullName: EventStore.Common.Log.LazyLogger.TraceException
-- uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
-  commentId: M:EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+- uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
+  commentId: M:EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
   parent: EventStore.Common.Log.ILogger
   isExternal: true
   name: TraceException(Exception, String, Object[])
   nameWithType: ILogger.TraceException(Exception, String, Object[])
-  fullName: EventStore.Common.Log.ILogger.TraceException(Exception, System.String, System.Object[])
+  fullName: EventStore.Common.Log.ILogger.TraceException(System.Exception, System.String, System.Object[])
   nameWithType.vb: ILogger.TraceException(Exception, String, Object())
-  fullName.vb: EventStore.Common.Log.ILogger.TraceException(Exception, System.String, System.Object())
+  fullName.vb: EventStore.Common.Log.ILogger.TraceException(System.Exception, System.String, System.Object())
   name.vb: TraceException(Exception, String, Object())
   spec.csharp:
-  - uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
     name: TraceException
     nameWithType: ILogger.TraceException
     fullName: EventStore.Common.Log.ILogger.TraceException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2172,17 +2403,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Common.Log.ILogger.TraceException(Exception,System.String,System.Object[])
+  - uid: EventStore.Common.Log.ILogger.TraceException(System.Exception,System.String,System.Object[])
     name: TraceException
     nameWithType: ILogger.TraceException
     fullName: EventStore.Common.Log.ILogger.TraceException
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: ', '
     nameWithType: ', '

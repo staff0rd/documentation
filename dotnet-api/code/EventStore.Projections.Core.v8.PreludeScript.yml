@@ -5,7 +5,7 @@ items:
   id: PreludeScript
   parent: EventStore.Projections.Core.v8
   children:
-  - EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,Func{System.String,Tuple{System.String,System.String}},Action{System.Int32,Action},Action{System.String,System.Object[]})
+  - EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,System.Func{System.String,System.Tuple{System.String,System.String}},System.Action{System.Int32,System.Action},System.Action{System.String,System.Object[]})
   - EventStore.Projections.Core.v8.PreludeScript.CancelTerminateExecution
   - EventStore.Projections.Core.v8.PreludeScript.Dispose
   - EventStore.Projections.Core.v8.PreludeScript.GetHandle
@@ -18,12 +18,8 @@ items:
   fullName: EventStore.Projections.Core.v8.PreludeScript
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PreludeScript
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 6
   assemblies:
   - EventStore.Projections.Core
@@ -32,9 +28,19 @@ items:
     content: 'public class PreludeScript : IDisposable'
     content.vb: >-
       Public Class PreludeScript
-          Inherits IDisposable
+          Implements IDisposable
   inheritance:
   - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -47,24 +53,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,Func{System.String,Tuple{System.String,System.String}},Action{System.Int32,Action},Action{System.String,System.Object[]})
-  commentId: M:EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,Func{System.String,Tuple{System.String,System.String}},Action{System.Int32,Action},Action{System.String,System.Object[]})
-  id: '#ctor(System.String,System.String,Func{System.String,Tuple{System.String,System.String}},Action{System.Int32,Action},Action{System.String,System.Object[]})'
+- uid: EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,System.Func{System.String,System.Tuple{System.String,System.String}},System.Action{System.Int32,System.Action},System.Action{System.String,System.Object[]})
+  commentId: M:EventStore.Projections.Core.v8.PreludeScript.#ctor(System.String,System.String,System.Func{System.String,System.Tuple{System.String,System.String}},System.Action{System.Int32,System.Action},System.Action{System.String,System.Object[]})
+  id: '#ctor(System.String,System.String,System.Func{System.String,System.Tuple{System.String,System.String}},System.Action{System.Int32,System.Action},System.Action{System.String,System.Object[]})'
   parent: EventStore.Projections.Core.v8.PreludeScript
   langs:
   - csharp
   - vb
   name: PreludeScript(String, String, Func<String, Tuple<String, String>>, Action<Int32, Action>, Action<String, Object[]>)
   nameWithType: PreludeScript.PreludeScript(String, String, Func<String, Tuple<String, String>>, Action<Int32, Action>, Action<String, Object[]>)
-  fullName: EventStore.Projections.Core.v8.PreludeScript.PreludeScript(System.String, System.String, Func<System.String, Tuple<System.String, System.String>>, Action<System.Int32, Action>, Action<System.String, System.Object[]>)
+  fullName: EventStore.Projections.Core.v8.PreludeScript.PreludeScript(System.String, System.String, System.Func<System.String, System.Tuple<System.String, System.String>>, System.Action<System.Int32, System.Action>, System.Action<System.String, System.Object[]>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 32
   assemblies:
   - EventStore.Projections.Core
@@ -77,11 +79,11 @@ items:
     - id: fileName
       type: System.String
     - id: getModuleSourceAndFileName
-      type: Func{System.String,Tuple{System.String,System.String}}
+      type: System.Func{System.String,System.Tuple{System.String,System.String}}
     - id: cancelCallbackFactory
-      type: Action{System.Int32,Action}
+      type: System.Action{System.Int32,System.Action}
     - id: logger
-      type: Action{System.String,System.Object[]}
+      type: System.Action{System.String,System.Object[]}
     content.vb: Public Sub New(script As String, fileName As String, getModuleSourceAndFileName As Func(Of String, Tuple(Of String, String)), cancelCallbackFactory As Action(Of Integer, Action), logger As Action(Of String, Object()) = Nothing)
   overload: EventStore.Projections.Core.v8.PreludeScript.#ctor*
   nameWithType.vb: PreludeScript.PreludeScript(String, String, Func(Of String, Tuple(Of String, String)), Action(Of Int32, Action), Action(Of String, Object()))
@@ -89,7 +91,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.v8.PreludeScript.PreludeScript(System.String, System.String, Func(Of System.String, Tuple(Of System.String, System.String)), Action(Of System.Int32, Action), Action(Of System.String, System.Object()))
+  fullName.vb: EventStore.Projections.Core.v8.PreludeScript.PreludeScript(System.String, System.String, System.Func(Of System.String, System.Tuple(Of System.String, System.String)), System.Action(Of System.Int32, System.Action), System.Action(Of System.String, System.Object()))
   name.vb: PreludeScript(String, String, Func(Of String, Tuple(Of String, String)), Action(Of Int32, Action), Action(Of String, Object()))
 - uid: EventStore.Projections.Core.v8.PreludeScript.Dispose
   commentId: M:EventStore.Projections.Core.v8.PreludeScript.Dispose
@@ -103,12 +105,8 @@ items:
   fullName: EventStore.Projections.Core.v8.PreludeScript.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 105
   assemblies:
   - EventStore.Projections.Core
@@ -117,6 +115,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Projections.Core.v8.PreludeScript.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -133,12 +133,8 @@ items:
   fullName: EventStore.Projections.Core.v8.PreludeScript.GetHandle()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetHandle
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 110
   assemblies:
   - EventStore.Projections.Core
@@ -146,7 +142,7 @@ items:
   syntax:
     content: public IntPtr GetHandle()
     return:
-      type: IntPtr
+      type: System.IntPtr
     content.vb: Public Function GetHandle As IntPtr
   overload: EventStore.Projections.Core.v8.PreludeScript.GetHandle*
   modifiers.csharp:
@@ -165,12 +161,8 @@ items:
   fullName: EventStore.Projections.Core.v8.PreludeScript.ScheduleTerminateExecution()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ScheduleTerminateExecution
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 140
   assemblies:
   - EventStore.Projections.Core
@@ -195,12 +187,8 @@ items:
   fullName: EventStore.Projections.Core.v8.PreludeScript.CancelTerminateExecution()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/v8/PreludeScript.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CancelTerminateExecution
-    path: ../EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/v8/PreludeScript.cs
     startLine: 158
   assemblies:
   - EventStore.Projections.Core
@@ -228,6 +216,292 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -605,20 +879,21 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Func{System.String,Tuple{System.String,System.String}}
-  commentId: '!:Func{System.String,Tuple{System.String,System.String}}'
-  definition: Func`2
+- uid: System.Func{System.String,System.Tuple{System.String,System.String}}
+  commentId: T:System.Func{System.String,System.Tuple{System.String,System.String}}
+  parent: System
+  definition: System.Func`2
   name: Func<String, Tuple<String, String>>
   nameWithType: Func<String, Tuple<String, String>>
-  fullName: Func<System.String, Tuple<System.String, System.String>>
+  fullName: System.Func<System.String, System.Tuple<System.String, System.String>>
   nameWithType.vb: Func(Of String, Tuple(Of String, String))
-  fullName.vb: Func(Of System.String, Tuple(Of System.String, System.String))
+  fullName.vb: System.Func(Of System.String, System.Tuple(Of System.String, System.String))
   name.vb: Func(Of String, Tuple(Of String, String))
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -631,10 +906,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: <
     nameWithType: <
@@ -659,10 +934,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -675,10 +950,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Tuple`2
+  - uid: System.Tuple`2
     name: Tuple
     nameWithType: Tuple
-    fullName: Tuple
+    fullName: System.Tuple
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -702,20 +977,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{System.Int32,Action}
-  commentId: '!:Action{System.Int32,Action}'
-  definition: Action`2
+- uid: System.Action{System.Int32,System.Action}
+  commentId: T:System.Action{System.Int32,System.Action}
+  parent: System
+  definition: System.Action`2
   name: Action<Int32, Action>
   nameWithType: Action<Int32, Action>
-  fullName: Action<System.Int32, Action>
+  fullName: System.Action<System.Int32, System.Action>
   nameWithType.vb: Action(Of Int32, Action)
-  fullName.vb: Action(Of System.Int32, Action)
+  fullName.vb: System.Action(Of System.Int32, System.Action)
   name.vb: Action(Of Int32, Action)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -728,19 +1004,19 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -753,28 +1029,29 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{System.String,System.Object[]}
-  commentId: '!:Action{System.String,System.Object[]}'
-  definition: Action`2
+- uid: System.Action{System.String,System.Object[]}
+  commentId: T:System.Action{System.String,System.Object[]}
+  parent: System
+  definition: System.Action`2
   name: Action<String, Object[]>
   nameWithType: Action<String, Object[]>
-  fullName: Action<System.String, System.Object[]>
+  fullName: System.Action<System.String, System.Object[]>
   nameWithType.vb: Action(Of String, Object())
-  fullName.vb: Action(Of System.String, System.Object())
+  fullName.vb: System.Action(Of System.String, System.Object())
   name.vb: Action(Of String, Object())
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -799,10 +1076,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -826,103 +1103,105 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`2
+- uid: System.Func`2
+  commentId: T:System.Func`2
   isExternal: true
-  name: Func<, >
-  nameWithType: Func<, >
-  fullName: Func<, >
-  nameWithType.vb: Func(Of , )
-  fullName.vb: Func(Of , )
-  name.vb: Func(Of , )
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
@@ -931,16 +1210,49 @@ references:
   name: Dispose
   nameWithType: PreludeScript.Dispose
   fullName: EventStore.Projections.Core.v8.PreludeScript.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.v8.PreludeScript.GetHandle*
   commentId: Overload:EventStore.Projections.Core.v8.PreludeScript.GetHandle
   name: GetHandle
   nameWithType: PreludeScript.GetHandle
   fullName: EventStore.Projections.Core.v8.PreludeScript.GetHandle
-- uid: IntPtr
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
   isExternal: true
   name: IntPtr
   nameWithType: IntPtr
-  fullName: IntPtr
+  fullName: System.IntPtr
 - uid: EventStore.Projections.Core.v8.PreludeScript.ScheduleTerminateExecution*
   commentId: Overload:EventStore.Projections.Core.v8.PreludeScript.ScheduleTerminateExecution
   name: ScheduleTerminateExecution

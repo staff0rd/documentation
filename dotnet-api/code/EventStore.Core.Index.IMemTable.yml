@@ -6,7 +6,7 @@ items:
   parent: EventStore.Core.Index
   children:
   - EventStore.Core.Index.IMemTable.Add(System.UInt64,System.Int64,System.Int64)
-  - EventStore.Core.Index.IMemTable.AddEntries(IList{EventStore.Core.Index.IndexEntry})
+  - EventStore.Core.Index.IMemTable.AddEntries(System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry})
   - EventStore.Core.Index.IMemTable.MarkForConversion
   langs:
   - csharp
@@ -16,12 +16,8 @@ items:
   fullName: EventStore.Core.Index.IMemTable
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Core/Index/IMemTable.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IMemTable
-    path: ../EventStore/src/EventStore.Core/Index/IMemTable.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/IMemTable.cs
     startLine: 3
   assemblies:
   - EventStore.Core
@@ -64,12 +60,8 @@ items:
   fullName: EventStore.Core.Index.IMemTable.MarkForConversion()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/IMemTable.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MarkForConversion
-    path: ../EventStore/src/EventStore.Core/Index/IMemTable.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/IMemTable.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -92,12 +84,8 @@ items:
   fullName: EventStore.Core.Index.IMemTable.Add(System.UInt64, System.Int64, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/IMemTable.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Add
-    path: ../EventStore/src/EventStore.Core/Index/IMemTable.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/IMemTable.cs
     startLine: 5
   assemblies:
   - EventStore.Core
@@ -113,24 +101,20 @@ items:
       type: System.Int64
     content.vb: Sub Add(stream As ULong, version As Long, position As Long)
   overload: EventStore.Core.Index.IMemTable.Add*
-- uid: EventStore.Core.Index.IMemTable.AddEntries(IList{EventStore.Core.Index.IndexEntry})
-  commentId: M:EventStore.Core.Index.IMemTable.AddEntries(IList{EventStore.Core.Index.IndexEntry})
-  id: AddEntries(IList{EventStore.Core.Index.IndexEntry})
+- uid: EventStore.Core.Index.IMemTable.AddEntries(System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry})
+  commentId: M:EventStore.Core.Index.IMemTable.AddEntries(System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry})
+  id: AddEntries(System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry})
   parent: EventStore.Core.Index.IMemTable
   langs:
   - csharp
   - vb
   name: AddEntries(IList<IndexEntry>)
   nameWithType: IMemTable.AddEntries(IList<IndexEntry>)
-  fullName: EventStore.Core.Index.IMemTable.AddEntries(IList<EventStore.Core.Index.IndexEntry>)
+  fullName: EventStore.Core.Index.IMemTable.AddEntries(System.Collections.Generic.IList<EventStore.Core.Index.IndexEntry>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Index/IMemTable.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddEntries
-    path: ../EventStore/src/EventStore.Core/Index/IMemTable.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Index/IMemTable.cs
     startLine: 6
   assemblies:
   - EventStore.Core
@@ -139,11 +123,11 @@ items:
     content: void AddEntries(IList<IndexEntry> entries)
     parameters:
     - id: entries
-      type: IList{EventStore.Core.Index.IndexEntry}
+      type: System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry}
     content.vb: Sub AddEntries(entries As IList(Of IndexEntry))
   overload: EventStore.Core.Index.IMemTable.AddEntries*
   nameWithType.vb: IMemTable.AddEntries(IList(Of IndexEntry))
-  fullName.vb: EventStore.Core.Index.IMemTable.AddEntries(IList(Of EventStore.Core.Index.IndexEntry))
+  fullName.vb: EventStore.Core.Index.IMemTable.AddEntries(System.Collections.Generic.IList(Of EventStore.Core.Index.IndexEntry))
   name.vb: AddEntries(IList(Of IndexEntry))
 references:
 - uid: EventStore.Core.Index
@@ -875,6 +859,8 @@ references:
   nameWithType: IMemTable.Add
   fullName: EventStore.Core.Index.IMemTable.Add
 - uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
   isExternal: true
   name: UInt64
   nameWithType: UInt64
@@ -891,20 +877,21 @@ references:
   name: AddEntries
   nameWithType: IMemTable.AddEntries
   fullName: EventStore.Core.Index.IMemTable.AddEntries
-- uid: IList{EventStore.Core.Index.IndexEntry}
-  commentId: '!:IList{EventStore.Core.Index.IndexEntry}'
-  definition: IList`1
+- uid: System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry}
+  commentId: T:System.Collections.Generic.IList{EventStore.Core.Index.IndexEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
   name: IList<IndexEntry>
   nameWithType: IList<IndexEntry>
-  fullName: IList<EventStore.Core.Index.IndexEntry>
+  fullName: System.Collections.Generic.IList<EventStore.Core.Index.IndexEntry>
   nameWithType.vb: IList(Of IndexEntry)
-  fullName.vb: IList(Of EventStore.Core.Index.IndexEntry)
+  fullName.vb: System.Collections.Generic.IList(Of EventStore.Core.Index.IndexEntry)
   name.vb: IList(Of IndexEntry)
   spec.csharp:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
@@ -917,10 +904,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -932,41 +919,48 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IList`1
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
   isExternal: true
-  name: IList<>
-  nameWithType: IList<>
-  fullName: IList<>
-  nameWithType.vb: IList(Of )
-  fullName.vb: IList(Of )
-  name.vb: IList(Of )
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
   spec.csharp:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IList`1
+  - uid: System.Collections.Generic.IList`1
     name: IList
     nameWithType: IList
-    fullName: IList
+    fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

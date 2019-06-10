@@ -5,7 +5,7 @@ items:
   id: AllStreamsCatalogEventReader
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
   - EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.AreEventsRequested
   - EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
   - EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.RequestEvents
@@ -17,12 +17,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AllStreamsCatalogEventReader
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
     startLine: 14
   assemblies:
   - EventStore.Projections.Core
@@ -38,7 +34,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.EventReader
   implements:
   - EventStore.Projections.Core.Services.Processing.IEventReader
-  - IDisposable
+  - System.IDisposable
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
   inheritedMembers:
   - EventStore.Projections.Core.Services.Processing.EventReader.EventReaderCorrelationId
@@ -58,6 +54,13 @@ items:
   - EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
   - EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
   - EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -70,24 +73,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
-  id: '#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)'
+- uid: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  id: '#ctor(EventStore.Core.Helpers.IODispatcher,EventStore.Core.Bus.IPublisher,System.Guid,System.Security.Principal.IPrincipal,System.Int64,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)'
   parent: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader
   langs:
   - csharp
   - vb
   name: AllStreamsCatalogEventReader(IODispatcher, IPublisher, Guid, IPrincipal, Int64, ITimeProvider, Boolean)
   nameWithType: AllStreamsCatalogEventReader.AllStreamsCatalogEventReader(IODispatcher, IPublisher, Guid, IPrincipal, Int64, ITimeProvider, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.AllStreamsCatalogEventReader(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Bus.IPublisher, Guid, IPrincipal, System.Int64, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.AllStreamsCatalogEventReader(EventStore.Core.Helpers.IODispatcher, EventStore.Core.Bus.IPublisher, System.Guid, System.Security.Principal.IPrincipal, System.Int64, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
     startLine: 169
   assemblies:
   - EventStore.Projections.Core
@@ -100,9 +99,9 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: eventReaderCorrelationId
-      type: Guid
+      type: System.Guid
     - id: readAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: fromSequenceNumber
       type: System.Int64
     - id: timeProvider
@@ -127,12 +126,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.AreEventsRequested()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AreEventsRequested
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
     startLine: 184
   assemblies:
   - EventStore.Projections.Core
@@ -162,12 +157,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
     startLine: 188
   assemblies:
   - EventStore.Projections.Core
@@ -197,12 +188,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader.RequestEvents()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestEvents
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/AllStreamsCatalogEventReader.cs
     startLine: 275
   assemblies:
   - EventStore.Projections.Core
@@ -243,11 +230,13 @@ references:
   name: IEventReader
   nameWithType: IEventReader
   fullName: EventStore.Projections.Core.Services.Processing.IEventReader
-- uid: IDisposable
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
   isExternal: true
   name: IDisposable
   nameWithType: IDisposable
-  fullName: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
   commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted}
   parent: EventStore.Core.Bus
@@ -846,6 +835,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1269,16 +1537,20 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
-- uid: IPrincipal
+  fullName: System.Guid
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: System.Int64
   commentId: T:System.Int64
   parent: System
@@ -1304,6 +1576,12 @@ references:
   name: EventStore.Core.Helpers
   nameWithType: EventStore.Core.Helpers
   fullName: EventStore.Core.Helpers
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Core.Services.TimerService
   commentId: N:EventStore.Core.Services.TimerService
   name: EventStore.Core.Services.TimerService

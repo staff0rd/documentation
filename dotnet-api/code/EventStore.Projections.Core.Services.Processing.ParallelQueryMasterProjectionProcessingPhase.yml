@@ -5,11 +5,11 @@ items:
   id: ParallelQueryMasterProjectionProcessingPhase
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
+  - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,System.Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase._maxScheduledSizePerWorker
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase._maxUnmeasuredTasksPerWorker
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.AssignSlaves(EventStore.Projections.Core.Messages.SlaveProjectionCommunicationChannels)
-  - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.Dispose
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.Handle(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
   - EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.NewCheckpointStarted(EventStore.Projections.Core.Services.Processing.CheckpointTag)
@@ -23,12 +23,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ParallelQueryMasterProjectionProcessingPhase
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
@@ -53,7 +49,7 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.ReaderAssignedReader}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.Failed}
   - EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
-  - IDisposable
+  - System.IDisposable
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult}
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
@@ -100,23 +96,23 @@ items:
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Handle(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.Failed)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.UnsubscribeFromPreRecordedOrderEvents
-  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
+  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.GetSubscriptionOptions
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SubscribeReaders(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SubscribeToPreRecordedOrderEvents
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Handle(CoreProjectionProcessingMessage.PrerecordedEventsLoaded)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,Exception)
+  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,System.Exception)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.ValidateEmittedEvents(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[])
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.InitializeFromCheckpoint(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.GetBufferedEventCount
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.GetStatus
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.InternalCommittedEventProcessed(System.String,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived,EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],EventStore.Projections.Core.Services.Processing.PartitionState,EventStore.Projections.Core.Services.Processing.PartitionState)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.InternalPartitionDeletedProcessed(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.PartitionState)
-  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.FinalizeEventProcessing(EventStore.Projections.Core.Services.Processing.EventProcessedResult,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Single)
-  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Complete
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetCurrentCheckpointSuggestedWorkItem(EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.GetStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
@@ -125,6 +121,13 @@ items:
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase._subscriptionStartedAtLastCommitPosition
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Handle(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.ReaderAssignedReader)
   - EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetProjectionState(EventStore.Projections.Core.Services.Processing.PhaseState)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -149,21 +152,17 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase._maxScheduledSizePerWorker
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: _maxScheduledSizePerWorker
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 11
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public const int _maxScheduledSizePerWorker = null
+    content: public const int _maxScheduledSizePerWorker = 10000
     return:
       type: System.Int32
-    content.vb: Public Const _maxScheduledSizePerWorker As Integer = Nothing
+    content.vb: Public Const _maxScheduledSizePerWorker As Integer = 10000
   modifiers.csharp:
   - public
   - const
@@ -182,45 +181,37 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase._maxUnmeasuredTasksPerWorker
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: _maxUnmeasuredTasksPerWorker
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: public const int _maxUnmeasuredTasksPerWorker = null
+    content: public const int _maxUnmeasuredTasksPerWorker = 30
     return:
       type: System.Int32
-    content.vb: Public Const _maxUnmeasuredTasksPerWorker As Integer = Nothing
+    content.vb: Public Const _maxUnmeasuredTasksPerWorker As Integer = 30
   modifiers.csharp:
   - public
   - const
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
-  id: '#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)'
+- uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,System.Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,System.Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
+  id: '#ctor(EventStore.Projections.Core.Services.Processing.CoreProjection,System.Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ProjectionConfig,System.Action,EventStore.Projections.Core.Services.IProjectionStateHandler,EventStore.Projections.Core.Services.Processing.PartitionStateCache,System.String,EventStore.Common.Log.ILogger,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Projections.Core.Services.Processing.IReaderStrategy,EventStore.Projections.Core.Services.Processing.IResultWriter,System.Boolean,System.Boolean,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)'
   parent: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase
   langs:
   - csharp
   - vb
   name: ParallelQueryMasterProjectionProcessingPhase(CoreProjection, Guid, IPublisher, IPublisher, ProjectionConfig, Action, IProjectionStateHandler, PartitionStateCache, String, ILogger, CheckpointTag, ICoreProjectionCheckpointManager, ReaderSubscriptionDispatcher, IReaderStrategy, IResultWriter, Boolean, Boolean, SpooledStreamReadingDispatcher, IEmittedStreamsTracker)
   nameWithType: ParallelQueryMasterProjectionProcessingPhase.ParallelQueryMasterProjectionProcessingPhase(CoreProjection, Guid, IPublisher, IPublisher, ProjectionConfig, Action, IProjectionStateHandler, PartitionStateCache, String, ILogger, CheckpointTag, ICoreProjectionCheckpointManager, ReaderSubscriptionDispatcher, IReaderStrategy, IResultWriter, Boolean, Boolean, SpooledStreamReadingDispatcher, IEmittedStreamsTracker)
-  fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.ParallelQueryMasterProjectionProcessingPhase(EventStore.Projections.Core.Services.Processing.CoreProjection, Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.ProjectionConfig, Action, EventStore.Projections.Core.Services.IProjectionStateHandler, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.String, EventStore.Common.Log.ILogger, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Projections.Core.Services.Processing.IReaderStrategy, EventStore.Projections.Core.Services.Processing.IResultWriter, System.Boolean, System.Boolean, EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher, EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.ParallelQueryMasterProjectionProcessingPhase(EventStore.Projections.Core.Services.Processing.CoreProjection, System.Guid, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, EventStore.Projections.Core.Services.ProjectionConfig, System.Action, EventStore.Projections.Core.Services.IProjectionStateHandler, EventStore.Projections.Core.Services.Processing.PartitionStateCache, System.String, EventStore.Common.Log.ILogger, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Projections.Core.Services.Processing.IReaderStrategy, EventStore.Projections.Core.Services.Processing.IResultWriter, System.Boolean, System.Boolean, EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher, EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 22
   assemblies:
   - EventStore.Projections.Core
@@ -231,7 +222,7 @@ items:
     - id: coreProjection
       type: EventStore.Projections.Core.Services.Processing.CoreProjection
     - id: projectionCorrelationId
-      type: Guid
+      type: System.Guid
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: inputQueue
@@ -239,7 +230,7 @@ items:
     - id: projectionConfig
       type: EventStore.Projections.Core.Services.ProjectionConfig
     - id: updateStatistics
-      type: Action
+      type: System.Action
     - id: stateHandler
       type: EventStore.Projections.Core.Services.IProjectionStateHandler
     - id: partitionStateCache
@@ -284,12 +275,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.NewCheckpointStarted(EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NewCheckpointStarted
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 68
   assemblies:
   - EventStore.Projections.Core
@@ -320,12 +307,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 71
   assemblies:
   - EventStore.Projections.Core
@@ -353,12 +336,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.AssignSlaves(EventStore.Projections.Core.Messages.SlaveProjectionCommunicationChannels)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AssignSlaves
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 74
   assemblies:
   - EventStore.Projections.Core
@@ -389,12 +368,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.Subscribe(EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Subscribe
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 81
   assemblies:
   - EventStore.Projections.Core
@@ -427,12 +402,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.Handle(EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 88
   assemblies:
   - EventStore.Projections.Core
@@ -462,12 +433,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.TransformCatalogEvent(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.ResolvedEvent)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TransformCatalogEvent
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 116
   assemblies:
   - EventStore.Projections.Core
@@ -489,24 +456,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  id: CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+- uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  id: CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
   parent: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase
   langs:
   - csharp
   - vb
   name: CompleteSpoolProcessingWorkItem(Guid, CheckpointTag)
   nameWithType: ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(Guid, CheckpointTag)
-  fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem(System.Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompleteSpoolProcessingWorkItem
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ParallelQueryMasterProjectionProcessingPhase.cs
     startLine: 120
   assemblies:
   - EventStore.Projections.Core
@@ -515,13 +478,13 @@ items:
     content: public void CompleteSpoolProcessingWorkItem(Guid correlationId, CheckpointTag position)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: position
       type: EventStore.Projections.Core.Services.Processing.CheckpointTag
     content.vb: Public Sub CompleteSpoolProcessingWorkItem(correlationId As Guid, position As CheckpointTag)
   overload: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem*
   implements:
-  - EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -843,11 +806,13 @@ references:
   name: IProjectionProcessingPhase
   nameWithType: IProjectionProcessingPhase
   fullName: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
-- uid: IDisposable
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
   isExternal: true
   name: IDisposable
   nameWithType: IDisposable
-  fullName: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
   commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState}
   parent: EventStore.Core.Bus
@@ -1672,41 +1637,41 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
+- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
   parent: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
   isExternal: true
   name: Subscribed(Guid)
   nameWithType: EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
-  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
     name: Subscribed
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.Subscribed
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(Guid)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed(System.Guid)
     name: Subscribed
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.Subscribed
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.Subscribed
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: )
     nameWithType: )
@@ -1875,15 +1840,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,Exception)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,Exception)
+- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,System.Exception)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,System.Exception)
   parent: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
   isExternal: true
   name: SetFaulting(String, Exception)
   nameWithType: EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(String, Exception)
-  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String, Exception)
+  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String, System.Exception)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,Exception)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,System.Exception)
     name: SetFaulting
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.SetFaulting
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting
@@ -1898,16 +1863,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,Exception)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting(System.String,System.Exception)
     name: SetFaulting
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.SetFaulting
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.SetFaulting
@@ -1922,10 +1887,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Exception
+  - uid: System.Exception
     name: Exception
     nameWithType: Exception
-    fullName: Exception
+    fullName: System.Exception
     isExternal: true
   - name: )
     nameWithType: )
@@ -2238,18 +2203,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
   parent: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
   isExternal: true
   name: BeginGetPartitionStateAt(String, CheckpointTag, Action<PartitionState>, Boolean)
   nameWithType: EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(String, CheckpointTag, Action<PartitionState>, Boolean)
-  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action<EventStore.Projections.Core.Services.Processing.PartitionState>, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action<EventStore.Projections.Core.Services.Processing.PartitionState>, System.Boolean)
   nameWithType.vb: EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(String, CheckpointTag, Action(Of PartitionState), Boolean)
-  fullName.vb: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action(Of EventStore.Projections.Core.Services.Processing.PartitionState), System.Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action(Of EventStore.Projections.Core.Services.Processing.PartitionState), System.Boolean)
   name.vb: BeginGetPartitionStateAt(String, CheckpointTag, Action(Of PartitionState), Boolean)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
     name: BeginGetPartitionStateAt
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt
@@ -2271,10 +2236,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -2298,7 +2263,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action{EventStore.Projections.Core.Services.Processing.PartitionState},System.Boolean)
     name: BeginGetPartitionStateAt
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.BeginGetPartitionStateAt
@@ -2320,10 +2285,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2413,15 +2378,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
   parent: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
   isExternal: true
   name: EmitEofResult(String, String, CheckpointTag, Guid, String)
   nameWithType: EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(String, String, CheckpointTag, Guid, String)
-  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, System.String)
+  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Guid, System.String)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
     name: EmitEofResult
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult
@@ -2451,10 +2416,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2468,7 +2433,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult(System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Guid,System.String)
     name: EmitEofResult
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.EmitEofResult
@@ -2498,10 +2463,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -2514,15 +2479,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+- uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
   parent: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
   isExternal: true
   name: RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
   nameWithType: EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(ResolvedEvent, CheckpointTag, Action)
-  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action)
+  fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Action)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
     name: RecordEventOrder
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder
@@ -2543,16 +2508,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action)
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder(EventStore.Projections.Core.Services.Processing.ResolvedEvent,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Action)
     name: RecordEventOrder
     nameWithType: EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder
     fullName: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase.RecordEventOrder
@@ -2573,10 +2538,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
@@ -2812,6 +2777,285 @@ references:
     name: PhaseState
     nameWithType: PhaseState
     fullName: EventStore.Projections.Core.Services.Processing.PhaseState
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -3239,11 +3483,13 @@ references:
   name: CoreProjection
   nameWithType: CoreProjection
   fullName: EventStore.Projections.Core.Services.Processing.CoreProjection
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Bus.IPublisher
   commentId: T:EventStore.Core.Bus.IPublisher
   parent: EventStore.Core.Bus
@@ -3256,11 +3502,13 @@ references:
   name: ProjectionConfig
   nameWithType: ProjectionConfig
   fullName: EventStore.Projections.Core.Services.ProjectionConfig
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
 - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
   commentId: T:EventStore.Projections.Core.Services.IProjectionStateHandler
   parent: EventStore.Projections.Core.Services
@@ -3680,25 +3928,25 @@ references:
   name: CompleteSpoolProcessingWorkItem
   nameWithType: ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem
   fullName: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase.CompleteSpoolProcessingWorkItem
-- uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
-  commentId: M:EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+- uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
   parent: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer
   isExternal: true
   name: CompleteSpoolProcessingWorkItem(Guid, CheckpointTag)
   nameWithType: ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid, CheckpointTag)
-  fullName: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid, EventStore.Projections.Core.Services.Processing.CheckpointTag)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
     name: CompleteSpoolProcessingWorkItem
     nameWithType: ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem
     fullName: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -3711,17 +3959,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem(System.Guid,EventStore.Projections.Core.Services.Processing.CheckpointTag)
     name: CompleteSpoolProcessingWorkItem
     nameWithType: ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem
     fullName: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer.CompleteSpoolProcessingWorkItem
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '

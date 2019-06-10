@@ -5,7 +5,7 @@ items:
   id: IScheduler
   parent: EventStore.Core.Services.TimerService
   children:
-  - EventStore.Core.Services.TimerService.IScheduler.Schedule(TimeSpan,Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
+  - EventStore.Core.Services.TimerService.IScheduler.Schedule(System.TimeSpan,System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
   - EventStore.Core.Services.TimerService.IScheduler.Stop
   langs:
   - csharp
@@ -15,12 +15,8 @@ items:
   fullName: EventStore.Core.Services.TimerService.IScheduler
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/IScheduler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IScheduler
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
     startLine: 3
   assemblies:
   - EventStore.Core
@@ -30,6 +26,8 @@ items:
     content.vb: >-
       Public Interface IScheduler
           Inherits IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -54,12 +52,8 @@ items:
   fullName: EventStore.Core.Services.TimerService.IScheduler.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/IScheduler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -68,24 +62,20 @@ items:
     content: void Stop()
     content.vb: Sub Stop
   overload: EventStore.Core.Services.TimerService.IScheduler.Stop*
-- uid: EventStore.Core.Services.TimerService.IScheduler.Schedule(TimeSpan,Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
-  commentId: M:EventStore.Core.Services.TimerService.IScheduler.Schedule(TimeSpan,Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
-  id: Schedule(TimeSpan,Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
+- uid: EventStore.Core.Services.TimerService.IScheduler.Schedule(System.TimeSpan,System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
+  commentId: M:EventStore.Core.Services.TimerService.IScheduler.Schedule(System.TimeSpan,System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
+  id: Schedule(System.TimeSpan,System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object},System.Object)
   parent: EventStore.Core.Services.TimerService.IScheduler
   langs:
   - csharp
   - vb
   name: Schedule(TimeSpan, Action<IScheduler, Object>, Object)
   nameWithType: IScheduler.Schedule(TimeSpan, Action<IScheduler, Object>, Object)
-  fullName: EventStore.Core.Services.TimerService.IScheduler.Schedule(TimeSpan, Action<EventStore.Core.Services.TimerService.IScheduler, System.Object>, System.Object)
+  fullName: EventStore.Core.Services.TimerService.IScheduler.Schedule(System.TimeSpan, System.Action<EventStore.Core.Services.TimerService.IScheduler, System.Object>, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/IScheduler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Schedule
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/IScheduler.cs
     startLine: 5
   assemblies:
   - EventStore.Core
@@ -94,15 +84,15 @@ items:
     content: void Schedule(TimeSpan after, Action<IScheduler, object> callback, object state)
     parameters:
     - id: after
-      type: TimeSpan
+      type: System.TimeSpan
     - id: callback
-      type: Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}
+      type: System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}
     - id: state
       type: System.Object
     content.vb: Sub Schedule(after As TimeSpan, callback As Action(Of IScheduler, Object), state As Object)
   overload: EventStore.Core.Services.TimerService.IScheduler.Schedule*
   nameWithType.vb: IScheduler.Schedule(TimeSpan, Action(Of IScheduler, Object), Object)
-  fullName.vb: EventStore.Core.Services.TimerService.IScheduler.Schedule(TimeSpan, Action(Of EventStore.Core.Services.TimerService.IScheduler, System.Object), System.Object)
+  fullName.vb: EventStore.Core.Services.TimerService.IScheduler.Schedule(System.TimeSpan, System.Action(Of EventStore.Core.Services.TimerService.IScheduler, System.Object), System.Object)
   name.vb: Schedule(TimeSpan, Action(Of IScheduler, Object), Object)
 references:
 - uid: EventStore.Core.Services.TimerService
@@ -110,6 +100,37 @@ references:
   name: EventStore.Core.Services.TimerService
   nameWithType: EventStore.Core.Services.TimerService
   fullName: EventStore.Core.Services.TimerService
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -261,6 +282,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -459,6 +487,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: EventStore.Common.Utils
   commentId: N:EventStore.Common.Utils
   name: EventStore.Common.Utils
@@ -479,25 +513,28 @@ references:
   name: Schedule
   nameWithType: IScheduler.Schedule
   fullName: EventStore.Core.Services.TimerService.IScheduler.Schedule
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
-- uid: Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}
-  commentId: '!:Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}'
-  definition: Action`2
+  fullName: System.TimeSpan
+- uid: System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}
+  commentId: T:System.Action{EventStore.Core.Services.TimerService.IScheduler,System.Object}
+  parent: System
+  definition: System.Action`2
   name: Action<IScheduler, Object>
   nameWithType: Action<IScheduler, Object>
-  fullName: Action<EventStore.Core.Services.TimerService.IScheduler, System.Object>
+  fullName: System.Action<EventStore.Core.Services.TimerService.IScheduler, System.Object>
   nameWithType.vb: Action(Of IScheduler, Object)
-  fullName.vb: Action(Of EventStore.Core.Services.TimerService.IScheduler, System.Object)
+  fullName.vb: System.Action(Of EventStore.Core.Services.TimerService.IScheduler, System.Object)
   name.vb: Action(Of IScheduler, Object)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
@@ -518,10 +555,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -548,59 +585,54 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Action`2
+- uid: System.Action`2
+  commentId: T:System.Action`2
   isExternal: true
-  name: Action<, >
-  nameWithType: Action<, >
-  fullName: Action<, >
-  nameWithType.vb: Action(Of , )
-  fullName.vb: Action(Of , )
-  name.vb: Action(Of , )
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
   spec.csharp:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`2
+  - uid: System.Action`2
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: )
     nameWithType: )
     fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System

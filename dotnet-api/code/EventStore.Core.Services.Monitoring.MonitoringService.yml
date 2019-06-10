@@ -5,7 +5,7 @@ items:
   id: MonitoringService
   parent: EventStore.Core.Services.Monitoring
   children:
-  - EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
+  - EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,System.TimeSpan,System.Net.IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,System.Net.IPEndPoint,System.Net.IPEndPoint)
   - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
   - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
   - EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
@@ -23,21 +23,16 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MonitoringService
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 26
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: 'public class MonitoringService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<SystemMessage.BecomeShutdown>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<MonitoringMessage.GetFreshStats>, IHandle<MonitoringMessage.GetFreshTcpConnectionStats>'
+    content: 'public class MonitoringService : IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.BecomeShuttingDown>, IHandle<SystemMessage.BecomeShutdown>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<MonitoringMessage.GetFreshStats>, IHandle<MonitoringMessage.GetFreshTcpConnectionStats>'
     content.vb: >-
       Public Class MonitoringService
-          Inherits Object
           Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.BecomeShuttingDown), IHandle(Of SystemMessage.BecomeShutdown), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of MonitoringMessage.GetFreshStats), IHandle(Of MonitoringMessage.GetFreshTcpConnectionStats)
   inheritance:
   - System.Object
@@ -49,6 +44,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.WriteEventsCompleted}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshStats}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -73,12 +76,8 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.MemoizePeriod
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MemoizePeriod
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 39
   assemblies:
   - EventStore.Core
@@ -86,7 +85,7 @@ items:
   syntax:
     content: public static readonly TimeSpan MemoizePeriod
     return:
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Shared ReadOnly MemoizePeriod As TimeSpan
   modifiers.csharp:
   - public
@@ -96,25 +95,21 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
-  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)
-  id: '#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,TimeSpan,IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,IPEndPoint,IPEndPoint)'
+- uid: EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,System.TimeSpan,System.Net.IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Services.Monitoring.MonitoringService.#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,System.TimeSpan,System.Net.IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,System.Net.IPEndPoint,System.Net.IPEndPoint)
+  id: '#ctor(EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Core.TransactionLog.Checkpoint.ICheckpoint,System.String,System.TimeSpan,System.Net.IPEndPoint,EventStore.Core.Services.Monitoring.StatsStorage,System.Net.IPEndPoint,System.Net.IPEndPoint)'
   parent: EventStore.Core.Services.Monitoring.MonitoringService
   langs:
   - csharp
   - vb
   name: MonitoringService(IQueuedHandler, IPublisher, IPublisher, ICheckpoint, String, TimeSpan, IPEndPoint, StatsStorage, IPEndPoint, IPEndPoint)
   nameWithType: MonitoringService.MonitoringService(IQueuedHandler, IPublisher, IPublisher, ICheckpoint, String, TimeSpan, IPEndPoint, StatsStorage, IPEndPoint, IPEndPoint)
-  fullName: EventStore.Core.Services.Monitoring.MonitoringService.MonitoringService(EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.String, TimeSpan, IPEndPoint, EventStore.Core.Services.Monitoring.StatsStorage, IPEndPoint, IPEndPoint)
+  fullName: EventStore.Core.Services.Monitoring.MonitoringService.MonitoringService(EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, EventStore.Core.TransactionLog.Checkpoint.ICheckpoint, System.String, System.TimeSpan, System.Net.IPEndPoint, EventStore.Core.Services.Monitoring.StatsStorage, System.Net.IPEndPoint, System.Net.IPEndPoint)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 63
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 64
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -132,15 +127,15 @@ items:
     - id: dbPath
       type: System.String
     - id: statsCollectionPeriod
-      type: TimeSpan
+      type: System.TimeSpan
     - id: nodeEndpoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: statsStorage
       type: EventStore.Core.Services.Monitoring.StatsStorage
     - id: tcpEndpoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: tcpSecureEndpoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public Sub New(monitoringQueue As IQueuedHandler, statsCollectionBus As IPublisher, mainBus As IPublisher, writerCheckpoint As ICheckpoint, dbPath As String, statsCollectionPeriod As TimeSpan, nodeEndpoint As IPEndPoint, statsStorage As StatsStorage, tcpEndpoint As IPEndPoint, tcpSecureEndpoint As IPEndPoint)
   overload: EventStore.Core.Services.Monitoring.MonitoringService.#ctor*
   modifiers.csharp:
@@ -159,13 +154,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 96
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 97
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -194,13 +185,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.OnTimerTick(System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OnTimerTick
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 101
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 102
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -227,13 +214,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 165
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 192
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -262,13 +245,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 183
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 210
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -297,13 +276,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShutdown)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 192
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 219
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -332,13 +307,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 207
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 234
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -367,13 +338,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshStats)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 243
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 270
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -402,13 +369,9 @@ items:
   fullName: EventStore.Core.Services.Monitoring.MonitoringService.Handle(EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-    startLine: 268
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    startLine: 295
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
@@ -715,6 +678,285 @@ references:
     name: MonitoringMessage.GetFreshTcpConnectionStats
     nameWithType: MonitoringMessage.GetFreshTcpConnectionStats
     fullName: EventStore.Core.Messages.MonitoringMessage.GetFreshTcpConnectionStats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1124,11 +1366,13 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Services.Monitoring.MonitoringService.#ctor*
   commentId: Overload:EventStore.Core.Services.Monitoring.MonitoringService.#ctor
   name: MonitoringService
@@ -1159,11 +1403,13 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
 - uid: EventStore.Core.Services.Monitoring.StatsStorage
   commentId: T:EventStore.Core.Services.Monitoring.StatsStorage
   parent: EventStore.Core.Services.Monitoring
@@ -1175,6 +1421,12 @@ references:
   name: EventStore.Core.TransactionLog.Checkpoint
   nameWithType: EventStore.Core.TransactionLog.Checkpoint
   fullName: EventStore.Core.TransactionLog.Checkpoint
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Core.Services.Monitoring.MonitoringService.Handle*
   commentId: Overload:EventStore.Core.Services.Monitoring.MonitoringService.Handle
   name: Handle

@@ -6,12 +6,12 @@ items:
   parent: EventStore.Transport.Tcp.Framing
   children:
   - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.#ctor(System.Int32)
-  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(System.ArraySegment{System.Byte})
   - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.HeaderLength
-  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
   - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.Reset
-  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(ArraySegment{System.Byte})
-  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   langs:
   - csharp
   - vb
@@ -20,12 +20,8 @@ items:
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LengthPrefixMessageFramer
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Tcp
@@ -33,15 +29,22 @@ items:
   summary: "\nUses length-prefixed framing to encode outgoing messages and decode\nincoming messages, using internal state and raising a callback once \nfull message arrives.\n"
   example: []
   syntax:
-    content: 'public class LengthPrefixMessageFramer : object, IMessageFramer'
+    content: 'public class LengthPrefixMessageFramer : IMessageFramer'
     content.vb: >-
       Public Class LengthPrefixMessageFramer
-          Inherits Object
           Implements IMessageFramer
   inheritance:
   - System.Object
   implements:
   - EventStore.Transport.Tcp.Framing.IMessageFramer
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -66,21 +69,17 @@ items:
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.HeaderLength
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HeaderLength
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 14
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp.Framing
   syntax:
-    content: public const int HeaderLength = null
+    content: public const int HeaderLength = 4
     return:
       type: System.Int32
-    content.vb: Public Const HeaderLength As Integer = Nothing
+    content.vb: Public Const HeaderLength As Integer = 4
   modifiers.csharp:
   - public
   - const
@@ -99,12 +98,8 @@ items:
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.LengthPrefixMessageFramer(System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 27
   assemblies:
   - EventStore.Transport.Tcp
@@ -112,11 +107,11 @@ items:
   summary: "\nInitializes a new instance of the <xref href=\"EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
   example: []
   syntax:
-    content: public LengthPrefixMessageFramer(int maxPackageSize = null)
+    content: public LengthPrefixMessageFramer(int maxPackageSize = 67108864)
     parameters:
     - id: maxPackageSize
       type: System.Int32
-    content.vb: Public Sub New(maxPackageSize As Integer = Nothing)
+    content.vb: Public Sub New(maxPackageSize As Integer = 67108864)
   overload: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.#ctor*
   modifiers.csharp:
   - public
@@ -134,12 +129,8 @@ items:
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.Reset()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reset
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 32
   assemblies:
   - EventStore.Transport.Tcp
@@ -152,24 +143,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
-  id: UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  id: UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   parent: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer
   langs:
   - csharp
   - vb
   name: UnFrameData(IEnumerable<ArraySegment<Byte>>)
   nameWithType: LengthPrefixMessageFramer.UnFrameData(IEnumerable<ArraySegment<Byte>>)
-  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(IEnumerable<ArraySegment<System.Byte>>)
+  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnFrameData
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 39
   assemblies:
   - EventStore.Transport.Tcp
@@ -178,36 +165,32 @@ items:
     content: public void UnFrameData(IEnumerable<ArraySegment<byte>> data)
     parameters:
     - id: data
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
     content.vb: Public Sub UnFrameData(data As IEnumerable(Of ArraySegment(Of Byte)))
   overload: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData*
   implements:
-  - EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   nameWithType.vb: LengthPrefixMessageFramer.UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
-- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(ArraySegment{System.Byte})
-  id: UnFrameData(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
+  id: UnFrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer
   langs:
   - csharp
   - vb
   name: UnFrameData(ArraySegment<Byte>)
   nameWithType: LengthPrefixMessageFramer.UnFrameData(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnFrameData
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 48
   assemblies:
   - EventStore.Transport.Tcp
@@ -216,36 +199,32 @@ items:
     content: public void UnFrameData(ArraySegment<byte> data)
     parameters:
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
     content.vb: Public Sub UnFrameData(data As ArraySegment(Of Byte))
   overload: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData*
   implements:
-  - EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
   nameWithType.vb: LengthPrefixMessageFramer.UnFrameData(ArraySegment(Of Byte))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData(System.ArraySegment(Of System.Byte))
   name.vb: UnFrameData(ArraySegment(Of Byte))
-- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(ArraySegment{System.Byte})
-  id: FrameData(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(System.ArraySegment{System.Byte})
+  id: FrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer
   langs:
   - csharp
   - vb
   name: FrameData(ArraySegment<Byte>)
   nameWithType: LengthPrefixMessageFramer.FrameData(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FrameData
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 92
   assemblies:
   - EventStore.Transport.Tcp
@@ -254,38 +233,34 @@ items:
     content: public IEnumerable<ArraySegment<byte>> FrameData(ArraySegment<byte> data)
     parameters:
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
     return:
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
     content.vb: Public Function FrameData(data As ArraySegment(Of Byte)) As IEnumerable(Of ArraySegment(Of Byte))
   overload: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData*
   implements:
-  - EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment{System.Byte})
+  - EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment{System.Byte})
   nameWithType.vb: LengthPrefixMessageFramer.FrameData(ArraySegment(Of Byte))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData(System.ArraySegment(Of System.Byte))
   name.vb: FrameData(ArraySegment(Of Byte))
-- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
-  id: RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+- uid: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
+  id: RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
   parent: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer
   langs:
   - csharp
   - vb
   name: RegisterMessageArrivedCallback(Action<ArraySegment<Byte>>)
   nameWithType: LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action<ArraySegment<Byte>>)
-  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action<ArraySegment<System.Byte>>)
+  fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(System.Action<System.ArraySegment<System.Byte>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RegisterMessageArrivedCallback
-    path: ../EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/Framing/LengthPrefixMessageFramer.cs
     startLine: 100
   assemblies:
   - EventStore.Transport.Tcp
@@ -294,17 +269,17 @@ items:
     content: public void RegisterMessageArrivedCallback(Action<ArraySegment<byte>> handler)
     parameters:
     - id: handler
-      type: Action{ArraySegment{System.Byte}}
+      type: System.Action{System.ArraySegment{System.Byte}}
     content.vb: Public Sub RegisterMessageArrivedCallback(handler As Action(Of ArraySegment(Of Byte)))
   overload: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback*
   implements:
-  - EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+  - EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
   nameWithType.vb: LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action(Of ArraySegment(Of Byte)))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(Action(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback(System.Action(Of System.ArraySegment(Of System.Byte)))
   name.vb: RegisterMessageArrivedCallback(Action(Of ArraySegment(Of Byte)))
 references:
 - uid: EventStore.Transport.Tcp.Framing
@@ -325,6 +300,285 @@ references:
   name: IMessageFramer
   nameWithType: IMessageFramer
   fullName: EventStore.Transport.Tcp.Framing.IMessageFramer
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -717,36 +971,36 @@ references:
   name: UnFrameData
   nameWithType: LengthPrefixMessageFramer.UnFrameData
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.UnFrameData
-- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   parent: EventStore.Transport.Tcp.Framing.IMessageFramer
   isExternal: true
   name: UnFrameData(IEnumerable<ArraySegment<Byte>>)
   nameWithType: IMessageFramer.UnFrameData(IEnumerable<ArraySegment<Byte>>)
-  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable<ArraySegment<System.Byte>>)
+  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>)
   nameWithType.vb: IMessageFramer.UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
-  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
     name: UnFrameData
     nameWithType: IMessageFramer.UnFrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -766,25 +1020,25 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
     name: UnFrameData
     nameWithType: IMessageFramer.UnFrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -803,28 +1057,29 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable{ArraySegment{System.Byte}}
-  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ArraySegment<Byte>>
   nameWithType: IEnumerable<ArraySegment<Byte>>
-  fullName: IEnumerable<ArraySegment<System.Byte>>
+  fullName: System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>
   nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
-  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))
   name.vb: IEnumerable(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -841,18 +1096,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -868,66 +1123,73 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment{System.Byte})
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Framing.IMessageFramer
   isExternal: true
   name: UnFrameData(ArraySegment<Byte>)
   nameWithType: IMessageFramer.UnFrameData(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment<System.Byte>)
   nameWithType.vb: IMessageFramer.UnFrameData(ArraySegment(Of Byte))
-  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment(Of System.Byte))
   name.vb: UnFrameData(ArraySegment(Of Byte))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
     name: UnFrameData
     nameWithType: IMessageFramer.UnFrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -944,17 +1206,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData(System.ArraySegment{System.Byte})
     name: UnFrameData
     nameWithType: IMessageFramer.UnFrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.UnFrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -970,20 +1232,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -997,10 +1260,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1013,41 +1276,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment`1
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
   isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1056,28 +1320,28 @@ references:
   name: FrameData
   nameWithType: LengthPrefixMessageFramer.FrameData
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.FrameData
-- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment{System.Byte})
+- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Transport.Tcp.Framing.IMessageFramer
   isExternal: true
   name: FrameData(ArraySegment<Byte>)
   nameWithType: IMessageFramer.FrameData(ArraySegment<Byte>)
-  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment<System.Byte>)
   nameWithType.vb: IMessageFramer.FrameData(ArraySegment(Of Byte))
-  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment(Of System.Byte))
   name.vb: FrameData(ArraySegment(Of Byte))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment{System.Byte})
     name: FrameData
     nameWithType: IMessageFramer.FrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1094,17 +1358,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(ArraySegment{System.Byte})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData(System.ArraySegment{System.Byte})
     name: FrameData
     nameWithType: IMessageFramer.FrameData
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.FrameData
   - name: (
     nameWithType: (
     fullName: (
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1125,36 +1389,36 @@ references:
   name: RegisterMessageArrivedCallback
   nameWithType: LengthPrefixMessageFramer.RegisterMessageArrivedCallback
   fullName: EventStore.Transport.Tcp.Framing.LengthPrefixMessageFramer.RegisterMessageArrivedCallback
-- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+- uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
   parent: EventStore.Transport.Tcp.Framing.IMessageFramer
   isExternal: true
   name: RegisterMessageArrivedCallback(Action<ArraySegment<Byte>>)
   nameWithType: IMessageFramer.RegisterMessageArrivedCallback(Action<ArraySegment<Byte>>)
-  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action<ArraySegment<System.Byte>>)
+  fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action<System.ArraySegment<System.Byte>>)
   nameWithType.vb: IMessageFramer.RegisterMessageArrivedCallback(Action(Of ArraySegment(Of Byte)))
-  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action(Of System.ArraySegment(Of System.Byte)))
   name.vb: RegisterMessageArrivedCallback(Action(Of ArraySegment(Of Byte)))
   spec.csharp:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
     name: RegisterMessageArrivedCallback
     nameWithType: IMessageFramer.RegisterMessageArrivedCallback
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1174,25 +1438,25 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(Action{ArraySegment{System.Byte}})
+  - uid: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback(System.Action{System.ArraySegment{System.Byte}})
     name: RegisterMessageArrivedCallback
     nameWithType: IMessageFramer.RegisterMessageArrivedCallback
     fullName: EventStore.Transport.Tcp.Framing.IMessageFramer.RegisterMessageArrivedCallback
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1211,28 +1475,29 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action{ArraySegment{System.Byte}}
-  commentId: '!:Action{ArraySegment{System.Byte}}'
-  definition: Action`1
+- uid: System.Action{System.ArraySegment{System.Byte}}
+  commentId: T:System.Action{System.ArraySegment{System.Byte}}
+  parent: System
+  definition: System.Action`1
   name: Action<ArraySegment<Byte>>
   nameWithType: Action<ArraySegment<Byte>>
-  fullName: Action<ArraySegment<System.Byte>>
+  fullName: System.Action<System.ArraySegment<System.Byte>>
   nameWithType.vb: Action(Of ArraySegment(Of Byte))
-  fullName.vb: Action(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Action(Of System.ArraySegment(Of System.Byte))
   name.vb: Action(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1249,18 +1514,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1276,41 +1541,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

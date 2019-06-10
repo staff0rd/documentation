@@ -5,7 +5,7 @@ items:
   id: RequestForwardingService
   parent: EventStore.Core.Services
   children:
-  - EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,TimeSpan)
+  - EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,System.TimeSpan)
   - EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
   - EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.NotHandled)
   - EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.TransactionCommitCompleted)
@@ -22,21 +22,16 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestForwardingService
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services
   syntax:
-    content: 'public class RequestForwardingService : object, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.RequestForwardingTimerTick>, IHandle<ClientMessage.NotHandled>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<ClientMessage.TransactionStartCompleted>, IHandle<ClientMessage.TransactionWriteCompleted>, IHandle<ClientMessage.TransactionCommitCompleted>, IHandle<ClientMessage.DeleteStreamCompleted>'
+    content: 'public class RequestForwardingService : IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.RequestForwardingTimerTick>, IHandle<ClientMessage.NotHandled>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<ClientMessage.TransactionStartCompleted>, IHandle<ClientMessage.TransactionWriteCompleted>, IHandle<ClientMessage.TransactionCommitCompleted>, IHandle<ClientMessage.DeleteStreamCompleted>'
     content.vb: >-
       Public Class RequestForwardingService
-          Inherits Object
           Implements IHandle(Of SystemMessage.SystemStart), IHandle(Of SystemMessage.RequestForwardingTimerTick), IHandle(Of ClientMessage.NotHandled), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of ClientMessage.TransactionStartCompleted), IHandle(Of ClientMessage.TransactionWriteCompleted), IHandle(Of ClientMessage.TransactionCommitCompleted), IHandle(Of ClientMessage.DeleteStreamCompleted)
   inheritance:
   - System.Object
@@ -49,6 +44,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.TransactionWriteCompleted}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.TransactionCommitCompleted}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -61,24 +64,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,TimeSpan)
-  commentId: M:EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,TimeSpan)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,TimeSpan)'
+- uid: EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,System.TimeSpan)
+  commentId: M:EventStore.Core.Services.RequestForwardingService.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,System.TimeSpan)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Services.VNode.MessageForwardingProxy,System.TimeSpan)'
   parent: EventStore.Core.Services.RequestForwardingService
   langs:
   - csharp
   - vb
   name: RequestForwardingService(IPublisher, MessageForwardingProxy, TimeSpan)
   nameWithType: RequestForwardingService.RequestForwardingService(IPublisher, MessageForwardingProxy, TimeSpan)
-  fullName: EventStore.Core.Services.RequestForwardingService.RequestForwardingService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.VNode.MessageForwardingProxy, TimeSpan)
+  fullName: EventStore.Core.Services.RequestForwardingService.RequestForwardingService(EventStore.Core.Bus.IPublisher, EventStore.Core.Services.VNode.MessageForwardingProxy, System.TimeSpan)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 22
   assemblies:
   - EventStore.Core
@@ -91,7 +90,7 @@ items:
     - id: forwardingProxy
       type: EventStore.Core.Services.VNode.MessageForwardingProxy
     - id: tickInterval
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Sub New(bus As IPublisher, forwardingProxy As MessageForwardingProxy, tickInterval As TimeSpan)
   overload: EventStore.Core.Services.RequestForwardingService.#ctor*
   modifiers.csharp:
@@ -110,12 +109,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 35
   assemblies:
   - EventStore.Core
@@ -145,12 +140,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.SystemMessage.RequestForwardingTimerTick)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 39
   assemblies:
   - EventStore.Core
@@ -180,12 +171,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.NotHandled)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 44
   assemblies:
   - EventStore.Core
@@ -215,12 +202,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 50
   assemblies:
   - EventStore.Core
@@ -250,12 +233,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.TransactionStartCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -285,12 +264,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.TransactionWriteCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 60
   assemblies:
   - EventStore.Core
@@ -320,12 +295,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.TransactionCommitCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 65
   assemblies:
   - EventStore.Core
@@ -355,12 +326,8 @@ items:
   fullName: EventStore.Core.Services.RequestForwardingService.Handle(EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/RequestForwardingService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/RequestForwardingService.cs
     startLine: 70
   assemblies:
   - EventStore.Core
@@ -708,6 +675,285 @@ references:
     name: ClientMessage.DeleteStreamCompleted
     nameWithType: ClientMessage.DeleteStreamCompleted
     fullName: EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -1134,11 +1380,13 @@ references:
   name: MessageForwardingProxy
   nameWithType: MessageForwardingProxy
   fullName: EventStore.Core.Services.VNode.MessageForwardingProxy
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Services.VNode
   commentId: N:EventStore.Core.Services.VNode
   name: EventStore.Core.Services.VNode

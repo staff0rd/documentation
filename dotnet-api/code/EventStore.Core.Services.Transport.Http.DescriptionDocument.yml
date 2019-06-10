@@ -21,23 +21,25 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DescriptionDocument
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 401
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: 'public class DescriptionDocument : object'
-    content.vb: >-
-      Public Class DescriptionDocument
-          Inherits Object
+    content: public class DescriptionDocument
+    content.vb: Public Class DescriptionDocument
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -62,12 +64,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.Title
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Title
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 402
   assemblies:
   - EventStore.Core
@@ -93,12 +91,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.Description
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Description
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 403
   assemblies:
   - EventStore.Core
@@ -124,21 +118,29 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.Links
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Links
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 404
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: public Links Links
+    content: >-
+      [JsonProperty("_links")]
+
+      public Links Links
     return:
       type: EventStore.Core.Services.Transport.Http.Links
-    content.vb: Public Links As Links
+    content.vb: >-
+      <JsonProperty("_links")>
+
+      Public Links As Links
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: _links
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -155,12 +157,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.SetTitle(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetTitle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 406
   assemblies:
   - EventStore.Core
@@ -188,12 +186,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.SetDescription(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetDescription
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 410
   assemblies:
   - EventStore.Core
@@ -221,12 +215,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.SetSelf(System.String, System.String[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetSelf
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 414
   assemblies:
   - EventStore.Core
@@ -259,12 +249,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.AddStreamSubscription(System.String, System.String[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddStreamSubscription
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 418
   assemblies:
   - EventStore.Core
@@ -297,12 +283,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.DescriptionDocument.SetStream(System.String, System.String[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/Convert.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetStream
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/Convert.cs
     startLine: 424
   assemblies:
   - EventStore.Core
@@ -336,6 +318,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json

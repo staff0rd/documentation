@@ -30,29 +30,52 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UpdatePersistentSubscription
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 746
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: 'public class UpdatePersistentSubscription : object'
+    content: >-
+      [Serializable]
+
+      [ProtoContract(Name = "UpdatePersistentSubscription")]
+
+      public class UpdatePersistentSubscription
     content.vb: >-
+      <Serializable>
+
+      <ProtoContract(Name:="UpdatePersistentSubscription")>
+
       Public Class UpdatePersistentSubscription
-          Inherits Object
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  - type: ProtoBuf.ProtoContractAttribute
+    ctor: ProtoBuf.ProtoContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Name
+      type: System.String
+      value: UpdatePersistentSubscription
   modifiers.csharp:
   - public
   - class
@@ -71,21 +94,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.SubscriptionGroupName
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscriptionGroupName
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 750
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly string SubscriptionGroupName
+    content: >-
+      [ProtoMember(1, IsRequired = true, Name = "subscription_group_name", DataFormat = DataFormat.Default)]
+
+      public readonly string SubscriptionGroupName
     return:
       type: System.String
-    content.vb: Public ReadOnly SubscriptionGroupName As String
+    content.vb: >-
+      <ProtoMember(1, IsRequired:=True, Name:="subscription_group_name", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly SubscriptionGroupName As String
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: subscription_group_name
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -104,21 +145,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.EventStreamId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStreamId
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 753
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly string EventStreamId
+    content: >-
+      [ProtoMember(2, IsRequired = true, Name = "event_stream_id", DataFormat = DataFormat.Default)]
+
+      public readonly string EventStreamId
     return:
       type: System.String
-    content.vb: Public ReadOnly EventStreamId As String
+    content.vb: >-
+      <ProtoMember(2, IsRequired:=True, Name:="event_stream_id", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly EventStreamId As String
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 2
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: event_stream_id
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -137,21 +196,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.ResolveLinkTos
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ResolveLinkTos
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 756
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly bool ResolveLinkTos
+    content: >-
+      [ProtoMember(3, IsRequired = true, Name = "resolve_link_tos", DataFormat = DataFormat.Default)]
+
+      public readonly bool ResolveLinkTos
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly ResolveLinkTos As Boolean
+    content.vb: >-
+      <ProtoMember(3, IsRequired:=True, Name:="resolve_link_tos", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly ResolveLinkTos As Boolean
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 3
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: resolve_link_tos
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -170,21 +247,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.StartFrom
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartFrom
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 759
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly long StartFrom
+    content: >-
+      [ProtoMember(4, IsRequired = true, Name = "start_from", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly long StartFrom
     return:
       type: System.Int64
-    content.vb: Public ReadOnly StartFrom As Long
+    content.vb: >-
+      <ProtoMember(4, IsRequired:=True, Name:="start_from", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly StartFrom As Long
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 4
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: start_from
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -203,21 +298,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.MessageTimeoutMilliseconds
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MessageTimeoutMilliseconds
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 762
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int MessageTimeoutMilliseconds
+    content: >-
+      [ProtoMember(5, IsRequired = true, Name = "message_timeout_milliseconds", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int MessageTimeoutMilliseconds
     return:
       type: System.Int32
-    content.vb: Public ReadOnly MessageTimeoutMilliseconds As Integer
+    content.vb: >-
+      <ProtoMember(5, IsRequired:=True, Name:="message_timeout_milliseconds", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly MessageTimeoutMilliseconds As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 5
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: message_timeout_milliseconds
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -236,21 +349,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.RecordStatistics
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RecordStatistics
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 765
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly bool RecordStatistics
+    content: >-
+      [ProtoMember(6, IsRequired = true, Name = "record_statistics", DataFormat = DataFormat.Default)]
+
+      public readonly bool RecordStatistics
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly RecordStatistics As Boolean
+    content.vb: >-
+      <ProtoMember(6, IsRequired:=True, Name:="record_statistics", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly RecordStatistics As Boolean
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 6
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: record_statistics
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -269,21 +400,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.LiveBufferSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LiveBufferSize
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 768
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int LiveBufferSize
+    content: >-
+      [ProtoMember(7, IsRequired = true, Name = "live_buffer_size", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int LiveBufferSize
     return:
       type: System.Int32
-    content.vb: Public ReadOnly LiveBufferSize As Integer
+    content.vb: >-
+      <ProtoMember(7, IsRequired:=True, Name:="live_buffer_size", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly LiveBufferSize As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 7
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: live_buffer_size
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -302,21 +451,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.ReadBatchSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadBatchSize
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 771
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int ReadBatchSize
+    content: >-
+      [ProtoMember(8, IsRequired = true, Name = "read_batch_size", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int ReadBatchSize
     return:
       type: System.Int32
-    content.vb: Public ReadOnly ReadBatchSize As Integer
+    content.vb: >-
+      <ProtoMember(8, IsRequired:=True, Name:="read_batch_size", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly ReadBatchSize As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 8
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: read_batch_size
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -335,21 +502,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.BufferSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BufferSize
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 774
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int BufferSize
+    content: >-
+      [ProtoMember(9, IsRequired = true, Name = "buffer_size", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int BufferSize
     return:
       type: System.Int32
-    content.vb: Public ReadOnly BufferSize As Integer
+    content.vb: >-
+      <ProtoMember(9, IsRequired:=True, Name:="buffer_size", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly BufferSize As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 9
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: buffer_size
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -368,21 +553,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.MaxRetryCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxRetryCount
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 777
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int MaxRetryCount
+    content: >-
+      [ProtoMember(10, IsRequired = true, Name = "max_retry_count", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int MaxRetryCount
     return:
       type: System.Int32
-    content.vb: Public ReadOnly MaxRetryCount As Integer
+    content.vb: >-
+      <ProtoMember(10, IsRequired:=True, Name:="max_retry_count", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly MaxRetryCount As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 10
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: max_retry_count
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -401,21 +604,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.PreferRoundRobin
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PreferRoundRobin
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 780
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly bool PreferRoundRobin
+    content: >-
+      [ProtoMember(11, IsRequired = true, Name = "prefer_round_robin", DataFormat = DataFormat.Default)]
+
+      public readonly bool PreferRoundRobin
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly PreferRoundRobin As Boolean
+    content.vb: >-
+      <ProtoMember(11, IsRequired:=True, Name:="prefer_round_robin", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly PreferRoundRobin As Boolean
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 11
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: prefer_round_robin
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -434,21 +655,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.CheckpointAfterTime
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointAfterTime
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 783
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int CheckpointAfterTime
+    content: >-
+      [ProtoMember(12, IsRequired = true, Name = "checkpoint_after_time", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int CheckpointAfterTime
     return:
       type: System.Int32
-    content.vb: Public ReadOnly CheckpointAfterTime As Integer
+    content.vb: >-
+      <ProtoMember(12, IsRequired:=True, Name:="checkpoint_after_time", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly CheckpointAfterTime As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 12
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: checkpoint_after_time
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -467,21 +706,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.CheckpointMaxCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointMaxCount
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 786
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int CheckpointMaxCount
+    content: >-
+      [ProtoMember(13, IsRequired = true, Name = "checkpoint_max_count", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int CheckpointMaxCount
     return:
       type: System.Int32
-    content.vb: Public ReadOnly CheckpointMaxCount As Integer
+    content.vb: >-
+      <ProtoMember(13, IsRequired:=True, Name:="checkpoint_max_count", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly CheckpointMaxCount As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 13
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: checkpoint_max_count
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -500,21 +757,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.CheckpointMinCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointMinCount
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 789
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int CheckpointMinCount
+    content: >-
+      [ProtoMember(14, IsRequired = true, Name = "checkpoint_min_count", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int CheckpointMinCount
     return:
       type: System.Int32
-    content.vb: Public ReadOnly CheckpointMinCount As Integer
+    content.vb: >-
+      <ProtoMember(14, IsRequired:=True, Name:="checkpoint_min_count", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly CheckpointMinCount As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 14
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: checkpoint_min_count
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -533,21 +808,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.SubscriberMaxCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscriberMaxCount
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 792
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly int SubscriberMaxCount
+    content: >-
+      [ProtoMember(15, IsRequired = true, Name = "subscriber_max_count", DataFormat = DataFormat.TwosComplement)]
+
+      public readonly int SubscriberMaxCount
     return:
       type: System.Int32
-    content.vb: Public ReadOnly SubscriberMaxCount As Integer
+    content.vb: >-
+      <ProtoMember(15, IsRequired:=True, Name:="subscriber_max_count", DataFormat:=DataFormat.TwosComplement)>
+
+      Public ReadOnly SubscriberMaxCount As Integer
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 15
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: true
+    - name: Name
+      type: System.String
+      value: subscriber_max_count
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 2
   modifiers.csharp:
   - public
   - readonly
@@ -566,21 +859,39 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.NamedConsumerStrategy
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NamedConsumerStrategy
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 795
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public readonly string NamedConsumerStrategy
+    content: >-
+      [ProtoMember(16, IsRequired = false, Name = "named_consumer_strategy", DataFormat = DataFormat.Default)]
+
+      public readonly string NamedConsumerStrategy
     return:
       type: System.String
-    content.vb: Public ReadOnly NamedConsumerStrategy As String
+    content.vb: >-
+      <ProtoMember(16, IsRequired:=False, Name:="named_consumer_strategy", DataFormat:=DataFormat.Default)>
+
+      Public ReadOnly NamedConsumerStrategy As String
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 16
+    namedArguments:
+    - name: IsRequired
+      type: System.Boolean
+      value: false
+    - name: Name
+      type: System.String
+      value: named_consumer_strategy
+    - name: DataFormat
+      type: ProtoBuf.DataFormat
+      value: 0
   modifiers.csharp:
   - public
   - readonly
@@ -599,12 +910,8 @@ items:
   fullName: EventStore.Core.Messages.TcpClientMessageDto.UpdatePersistentSubscription.UpdatePersistentSubscription(System.String, System.String, System.Boolean, System.Int64, System.Int32, System.Boolean, System.Int32, System.Int32, System.Int32, System.Int32, System.Boolean, System.Int32, System.Int32, System.Int32, System.Int32, System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messages/TcpClientMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/TcpClientMessageDto.cs
     startLine: 799
   assemblies:
   - EventStore.Core
@@ -663,6 +970,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json

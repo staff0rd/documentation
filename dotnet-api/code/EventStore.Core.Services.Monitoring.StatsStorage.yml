@@ -17,23 +17,32 @@ items:
   fullName: EventStore.Core.Services.Monitoring.StatsStorage
   type: Enum
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsStorage
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 18
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: 'public enum StatsStorage : int'
-    content.vb: Public Enum StatsStorage As Integer
+    content: >-
+      [Flags]
+
+      public enum StatsStorage
+    content.vb: >-
+      <Flags>
+
+      Public Enum StatsStorage
   extensionMethods:
+  - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  - System.Object.EventStore.Common.Utils.Json.ToJson
+  - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Services.Monitoring.StatsStorage.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   - EventStore.Core.Services.Monitoring.StatsStorage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Services.Monitoring.StatsStorage.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - enum
@@ -52,21 +61,16 @@ items:
   fullName: EventStore.Core.Services.Monitoring.StatsStorage.None
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: None
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 20
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: None = null
+    content: None = 0
     return:
       type: EventStore.Core.Services.Monitoring.StatsStorage
-    content.vb: None = Nothing
   modifiers.csharp:
   - public
   - const
@@ -85,21 +89,16 @@ items:
   fullName: EventStore.Core.Services.Monitoring.StatsStorage.Stream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stream
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 21
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: Stream = null
+    content: Stream = 1
     return:
       type: EventStore.Core.Services.Monitoring.StatsStorage
-    content.vb: Stream = Nothing
   modifiers.csharp:
   - public
   - const
@@ -118,21 +117,16 @@ items:
   fullName: EventStore.Core.Services.Monitoring.StatsStorage.File
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: File
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: File = null
+    content: File = 2
     return:
       type: EventStore.Core.Services.Monitoring.StatsStorage
-    content.vb: File = Nothing
   modifiers.csharp:
   - public
   - const
@@ -151,21 +145,16 @@ items:
   fullName: EventStore.Core.Services.Monitoring.StatsStorage.StreamAndFile
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/Monitoring/MonitoringService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StreamAndFile
-    path: ../EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Monitoring/MonitoringService.cs
     startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Monitoring
   syntax:
-    content: StreamAndFile = null
+    content: StreamAndFile = 3
     return:
       type: EventStore.Core.Services.Monitoring.StatsStorage
-    content.vb: StreamAndFile = Nothing
   modifiers.csharp:
   - public
   - const
@@ -178,6 +167,93 @@ references:
   name: EventStore.Core.Services.Monitoring
   nameWithType: EventStore.Core.Services.Monitoring
   fullName: EventStore.Core.Services.Monitoring
+- uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  name: ToJsonBytes()
+  nameWithType: Json.ToJsonBytes()
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToJson
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToJson(System.Object)
+  name: ToJson()
+  nameWithType: Json.ToJson()
+  fullName: EventStore.Common.Utils.Json.ToJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  parent: EventStore.Common.Utils.Json
+  definition: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  name: ToCanonicalJson()
+  nameWithType: Json.ToCanonicalJson()
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson()
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Monitoring.StatsStorage.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
   parent: EventStore.Projections.Core.Utils.EnumExtensions
@@ -271,6 +347,126 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  isExternal: true
+  name: ToJsonBytes(Object)
+  nameWithType: Json.ToJsonBytes(Object)
+  fullName: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
+    name: ToJsonBytes
+    nameWithType: Json.ToJsonBytes
+    fullName: EventStore.Common.Utils.Json.ToJsonBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json
+  commentId: T:EventStore.Common.Utils.Json
+  parent: EventStore.Common.Utils
+  name: Json
+  nameWithType: Json
+  fullName: EventStore.Common.Utils.Json
+- uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToJson(System.Object)
+  isExternal: true
+  name: ToJson(Object)
+  nameWithType: Json.ToJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToJson(System.Object)
+    name: ToJson
+    nameWithType: Json.ToJson
+    fullName: EventStore.Common.Utils.Json.ToJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  commentId: M:EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  isExternal: true
+  name: ToCanonicalJson(Object)
+  nameWithType: Json.ToCanonicalJson(Object)
+  fullName: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+  spec.csharp:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Common.Utils.Json.ToCanonicalJson(System.Object)
+    name: ToCanonicalJson
+    nameWithType: Json.ToCanonicalJson
+    fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -394,6 +590,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Common.Utils
+  commentId: N:EventStore.Common.Utils
+  name: EventStore.Common.Utils
+  nameWithType: EventStore.Common.Utils
+  fullName: EventStore.Common.Utils
 - uid: EventStore.Projections.Core.Utils
   commentId: N:EventStore.Projections.Core.Utils
   name: EventStore.Projections.Core.Utils

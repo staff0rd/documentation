@@ -5,7 +5,7 @@ items:
   id: EventFilter
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
+  - EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,System.Collections.Generic.HashSet{System.String})
   - EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
   - EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
   - EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
@@ -19,21 +19,15 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventFilter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 3
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public abstract class EventFilter : object'
-    content.vb: >-
-      Public MustInherit Class EventFilter
-          Inherits Object
+    content: public abstract class EventFilter
+    content.vb: Public MustInherit Class EventFilter
   inheritance:
   - System.Object
   derivedClasses:
@@ -43,6 +37,14 @@ items:
   - EventStore.Projections.Core.Services.Processing.MultiStreamEventFilter
   - EventStore.Projections.Core.Services.Processing.StreamEventFilter
   - EventStore.Projections.Core.Services.Processing.TransactionFileEventFilter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -57,24 +59,20 @@ items:
   - Public
   - MustInherit
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
-  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
-  id: '#ctor(System.Boolean,System.Boolean,HashSet{System.String})'
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,System.Collections.Generic.HashSet{System.String})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,System.Collections.Generic.HashSet{System.String})
+  id: '#ctor(System.Boolean,System.Boolean,System.Collections.Generic.HashSet{System.String})'
   parent: EventStore.Projections.Core.Services.Processing.EventFilter
   langs:
   - csharp
   - vb
   name: EventFilter(Boolean, Boolean, HashSet<String>)
   nameWithType: EventFilter.EventFilter(Boolean, Boolean, HashSet<String>)
-  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, HashSet<System.String>)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, System.Collections.Generic.HashSet<System.String>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 16
   assemblies:
   - EventStore.Projections.Core
@@ -91,7 +89,7 @@ items:
       type: System.Boolean
       description: "indicates whether non-link stream tombstone or \nmetastream stream deleted events should be included. Links resolved into metastream \nstream deleted events are not restricted"
     - id: events
-      type: HashSet{System.String}
+      type: System.Collections.Generic.HashSet{System.String}
       description: ''
     content.vb: Protected Sub New(allEvents As Boolean, includeDeletedStreamEvents As Boolean, events As HashSet(Of String))
   overload: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor*
@@ -100,7 +98,7 @@ items:
   - protected
   modifiers.vb:
   - Protected
-  fullName.vb: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, HashSet(Of System.String))
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, System.Collections.Generic.HashSet(Of System.String))
   name.vb: EventFilter(Boolean, Boolean, HashSet(Of String))
 - uid: EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
   commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
@@ -114,12 +112,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean, System.String, System.String, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Passes
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 22
   assemblies:
   - EventStore.Projections.Core
@@ -155,12 +149,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DeletedNotificationPasses
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 29
   assemblies:
   - EventStore.Projections.Core
@@ -192,12 +182,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource(System.Boolean, System.String, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PassesSource
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 30
   assemblies:
   - EventStore.Projections.Core
@@ -233,12 +219,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetCategory
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 31
   assemblies:
   - EventStore.Projections.Core
@@ -270,12 +252,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PassesDeleteNotification
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
     startLine: 33
   assemblies:
   - EventStore.Projections.Core
@@ -306,6 +284,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -683,20 +940,21 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: HashSet{System.String}
-  commentId: '!:HashSet{System.String}'
-  definition: HashSet`1
+- uid: System.Collections.Generic.HashSet{System.String}
+  commentId: T:System.Collections.Generic.HashSet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
   name: HashSet<String>
   nameWithType: HashSet<String>
-  fullName: HashSet<System.String>
+  fullName: System.Collections.Generic.HashSet<System.String>
   nameWithType.vb: HashSet(Of String)
-  fullName.vb: HashSet(Of System.String)
+  fullName.vb: System.Collections.Generic.HashSet(Of System.String)
   name.vb: HashSet(Of String)
   spec.csharp:
-  - uid: HashSet`1
+  - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     nameWithType: HashSet
-    fullName: HashSet
+    fullName: System.Collections.Generic.HashSet
     isExternal: true
   - name: <
     nameWithType: <
@@ -710,10 +968,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: HashSet`1
+  - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     nameWithType: HashSet
-    fullName: HashSet
+    fullName: System.Collections.Generic.HashSet
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -726,44 +984,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: HashSet`1
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
   isExternal: true
-  name: HashSet<>
-  nameWithType: HashSet<>
-  fullName: HashSet<>
-  nameWithType.vb: HashSet(Of )
-  fullName.vb: HashSet(Of )
-  name.vb: HashSet(Of )
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
   spec.csharp:
-  - uid: HashSet`1
+  - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     nameWithType: HashSet
-    fullName: HashSet
+    fullName: System.Collections.Generic.HashSet
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: HashSet`1
+  - uid: System.Collections.Generic.HashSet`1
     name: HashSet
     nameWithType: HashSet
-    fullName: HashSet
+    fullName: System.Collections.Generic.HashSet
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Projections.Core.Services.Processing.EventFilter.Passes*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.Passes
   name: Passes

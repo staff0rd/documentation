@@ -5,7 +5,7 @@ items:
   id: QueuedHandlerPulse
   parent: EventStore.Core.Bus
   children:
-  - EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{TimeSpan},System.Nullable{TimeSpan},System.String)
+  - EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)
   - EventStore.Core.Bus.QueuedHandlerPulse.GetStatistics
   - EventStore.Core.Bus.QueuedHandlerPulse.Handle(EventStore.Core.Messaging.Message)
   - EventStore.Core.Bus.QueuedHandlerPulse.MessageCount
@@ -22,12 +22,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: QueuedHandlerPulse
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 16
   assemblies:
   - EventStore.Core
@@ -35,10 +31,9 @@ items:
   summary: "\nLightweight in-memory queue with a separate thread in which it passes messages\nto the consumer. It also tracks statistics about the message processing to help\nin identifying bottlenecks\n"
   example: []
   syntax:
-    content: 'public class QueuedHandlerPulse : object, IQueuedHandler, IHandle<Message>, IPublisher, IMonitoredQueue, IThreadSafePublisher'
+    content: 'public class QueuedHandlerPulse : IQueuedHandler, IHandle<Message>, IPublisher, IMonitoredQueue, IThreadSafePublisher'
     content.vb: >-
       Public Class QueuedHandlerPulse
-          Inherits Object
           Implements IQueuedHandler, IHandle(Of Message), IPublisher, IMonitoredQueue, IThreadSafePublisher
   inheritance:
   - System.Object
@@ -48,10 +43,20 @@ items:
   - EventStore.Core.Bus.IPublisher
   - EventStore.Core.Bus.IMonitoredQueue
   - EventStore.Core.Bus.IThreadSafePublisher
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
   - EventStore.Core.Bus.QueuedHandlerPulse.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Bus.QueuedHandlerPulse.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -72,12 +77,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.MessageCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MessageCount
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 20
   assemblies:
   - EventStore.Core
@@ -107,12 +108,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.Name
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Name
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -133,30 +130,26 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{TimeSpan},System.Nullable{TimeSpan},System.String)
-  commentId: M:EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{TimeSpan},System.Nullable{TimeSpan},System.String)
-  id: '#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{TimeSpan},System.Nullable{TimeSpan},System.String)'
+- uid: EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)
+  commentId: M:EventStore.Core.Bus.QueuedHandlerPulse.#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)
+  id: '#ctor(EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message},System.String,System.Boolean,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.String)'
   parent: EventStore.Core.Bus.QueuedHandlerPulse
   langs:
   - csharp
   - vb
   name: QueuedHandlerPulse(IHandle<Message>, String, Boolean, Nullable<TimeSpan>, Nullable<TimeSpan>, String)
   nameWithType: QueuedHandlerPulse.QueuedHandlerPulse(IHandle<Message>, String, Boolean, Nullable<TimeSpan>, Nullable<TimeSpan>, String)
-  fullName: EventStore.Core.Bus.QueuedHandlerPulse.QueuedHandlerPulse(EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>, System.String, System.Boolean, System.Nullable<TimeSpan>, System.Nullable<TimeSpan>, System.String)
+  fullName: EventStore.Core.Bus.QueuedHandlerPulse.QueuedHandlerPulse(EventStore.Core.Bus.IHandle<EventStore.Core.Messaging.Message>, System.String, System.Boolean, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>, System.String)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 49
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: public QueuedHandlerPulse(IHandle<Message> consumer, string name, bool watchSlowMsg = true, TimeSpan? slowMsgThreshold = null, TimeSpan? threadStopWaitTimeout = null, string groupName = null)
+    content: public QueuedHandlerPulse(IHandle<Message> consumer, string name, bool watchSlowMsg = true, TimeSpan? slowMsgThreshold = default(TimeSpan? ), TimeSpan? threadStopWaitTimeout = default(TimeSpan? ), string groupName = null)
     parameters:
     - id: consumer
       type: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
@@ -165,9 +158,9 @@ items:
     - id: watchSlowMsg
       type: System.Boolean
     - id: slowMsgThreshold
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     - id: threadStopWaitTimeout
-      type: System.Nullable{TimeSpan}
+      type: System.Nullable{System.TimeSpan}
     - id: groupName
       type: System.String
     content.vb: Public Sub New(consumer As IHandle(Of Message), name As String, watchSlowMsg As Boolean = True, slowMsgThreshold As TimeSpan? = Nothing, threadStopWaitTimeout As TimeSpan? = Nothing, groupName As String = Nothing)
@@ -177,7 +170,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Bus.QueuedHandlerPulse.QueuedHandlerPulse(EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message), System.String, System.Boolean, System.Nullable(Of TimeSpan), System.Nullable(Of TimeSpan), System.String)
+  fullName.vb: EventStore.Core.Bus.QueuedHandlerPulse.QueuedHandlerPulse(EventStore.Core.Bus.IHandle(Of EventStore.Core.Messaging.Message), System.String, System.Boolean, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan), System.String)
   name.vb: QueuedHandlerPulse(IHandle(Of Message), String, Boolean, Nullable(Of TimeSpan), Nullable(Of TimeSpan), String)
 - uid: EventStore.Core.Bus.QueuedHandlerPulse.Start
   commentId: M:EventStore.Core.Bus.QueuedHandlerPulse.Start
@@ -191,12 +184,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.Start()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 67
   assemblies:
   - EventStore.Core
@@ -204,7 +193,7 @@ items:
   syntax:
     content: public Task Start()
     return:
-      type: Task
+      type: System.Threading.Tasks.Task
     content.vb: Public Function Start As Task
   overload: EventStore.Core.Bus.QueuedHandlerPulse.Start*
   implements:
@@ -225,12 +214,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 80
   assemblies:
   - EventStore.Core
@@ -257,12 +242,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.RequestStop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RequestStop
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 86
   assemblies:
   - EventStore.Core
@@ -289,12 +270,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.Publish(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 160
   assemblies:
   - EventStore.Core
@@ -324,12 +301,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.Handle(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 173
   assemblies:
   - EventStore.Core
@@ -359,12 +332,8 @@ items:
   fullName: EventStore.Core.Bus.QueuedHandlerPulse.GetStatistics()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/QueuedHandlerPulse.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
-    path: ../EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/QueuedHandlerPulse.cs
     startLine: 177
   assemblies:
   - EventStore.Core
@@ -459,6 +428,285 @@ references:
   name: IThreadSafePublisher
   nameWithType: IThreadSafePublisher
   fullName: EventStore.Core.Bus.IThreadSafePublisher
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -540,6 +788,70 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, Message>()
+  nameWithType: HandleExtensions.WidenFrom<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: WidenFrom(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom<TInput, Message>
+    nameWithType: HandleExtensions.WidenFrom<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom(Of TInput, Message)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, Message>()
+  nameWithType: HandleExtensions.NarrowTo<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: NarrowTo(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo<TInput, Message>
+    nameWithType: HandleExtensions.NarrowTo<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo(Of TInput, Message)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)
   - name: (
     nameWithType: (
     fullName: (
@@ -772,6 +1084,124 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom<TInput, TOutput>
+    nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom(Of TInput, TOutput)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions
+  commentId: T:EventStore.Core.Bus.HandleExtensions
+  parent: EventStore.Core.Bus
+  name: HandleExtensions
+  nameWithType: HandleExtensions
+  fullName: EventStore.Core.Bus.HandleExtensions
+- uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo<TInput, TOutput>
+    nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo(Of TInput, TOutput)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   name: Serialize<T>(T)
@@ -908,14 +1338,15 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: System.Nullable{TimeSpan}
-  commentId: '!:System.Nullable{TimeSpan}'
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
   definition: System.Nullable`1
   name: Nullable<TimeSpan>
   nameWithType: Nullable<TimeSpan>
-  fullName: System.Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
   nameWithType.vb: Nullable(Of TimeSpan)
-  fullName.vb: System.Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
   name.vb: Nullable(Of TimeSpan)
   spec.csharp:
   - uid: System.Nullable`1
@@ -926,10 +1357,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -943,10 +1374,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: TimeSpan
+  - uid: System.TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: TimeSpan
+    fullName: System.TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -1023,11 +1454,19 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Task
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: EventStore.Core.Bus.QueuedHandlerPulse.Stop*
   commentId: Overload:EventStore.Core.Bus.QueuedHandlerPulse.Stop
   name: Stop

@@ -5,8 +5,8 @@ items:
   id: TcpService
   parent: EventStore.Core.Services.Transport.Tcp
   children:
-  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
-  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
+  - EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
   - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
   - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   - EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
@@ -18,21 +18,16 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpService
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 22
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Tcp
   syntax:
-    content: 'public class TcpService : object, IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.BecomeShuttingDown>'
+    content: 'public class TcpService : IHandle<SystemMessage.SystemInit>, IHandle<SystemMessage.SystemStart>, IHandle<SystemMessage.BecomeShuttingDown>'
     content.vb: >-
       Public Class TcpService
-          Inherits Object
           Implements IHandle(Of SystemMessage.SystemInit), IHandle(Of SystemMessage.SystemStart), IHandle(Of SystemMessage.BecomeShuttingDown)
   inheritance:
   - System.Object
@@ -40,6 +35,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemInit}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemStart}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeShuttingDown}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -52,24 +55,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)'
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher,System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)'
   parent: EventStore.Core.Services.Transport.Tcp.TcpService
   langs:
   - csharp
   - vb
   name: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, ITcpDispatcher, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
   nameWithType: TcpService.TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, ITcpDispatcher, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, System.Net.IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher, System.TimeSpan, System.TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, System.Security.Cryptography.X509Certificates.X509Certificate, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -80,7 +79,7 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: serverEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: networkSendQueue
       type: EventStore.Core.Bus.IPublisher
     - id: serviceType
@@ -90,13 +89,13 @@ items:
     - id: dispatcher
       type: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
     - id: heartbeatInterval
-      type: TimeSpan
+      type: System.TimeSpan
     - id: heartbeatTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: authProvider
       type: EventStore.Core.Authentication.IAuthenticationProvider
     - id: certificate
-      type: X509Certificate
+      type: System.Security.Cryptography.X509Certificates.X509Certificate
     - id: connectionPendingSendBytesThreshold
       type: System.Int32
     content.vb: Public Sub New(publisher As IPublisher, serverEndPoint As IPEndPoint, networkSendQueue As IPublisher, serviceType As TcpServiceType, securityType As TcpSecurityType, dispatcher As ITcpDispatcher, heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, authProvider As IAuthenticationProvider, certificate As X509Certificate, connectionPendingSendBytesThreshold As Integer)
@@ -105,24 +104,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
-  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},TimeSpan,TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,X509Certificate,System.Int32)'
+- uid: EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
+  commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Net.IPEndPoint,EventStore.Core.Bus.IPublisher,EventStore.Core.Services.Transport.Tcp.TcpServiceType,EventStore.Core.Services.Transport.Tcp.TcpSecurityType,System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher},System.TimeSpan,System.TimeSpan,EventStore.Core.Authentication.IAuthenticationProvider,System.Security.Cryptography.X509Certificates.X509Certificate,System.Int32)'
   parent: EventStore.Core.Services.Transport.Tcp.TcpService
   langs:
   - csharp
   - vb
   name: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func<Guid, IPEndPoint, ITcpDispatcher>, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
   nameWithType: TcpService.TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func<Guid, IPEndPoint, ITcpDispatcher>, TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
-  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, Func<Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>, TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  fullName: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, System.Net.IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, System.Func<System.Guid, System.Net.IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>, System.TimeSpan, System.TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, System.Security.Cryptography.X509Certificates.X509Certificate, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -133,7 +128,7 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: serverEndPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     - id: networkSendQueue
       type: EventStore.Core.Bus.IPublisher
     - id: serviceType
@@ -141,15 +136,15 @@ items:
     - id: securityType
       type: EventStore.Core.Services.Transport.Tcp.TcpSecurityType
     - id: dispatcherFactory
-      type: Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
+      type: System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
     - id: heartbeatInterval
-      type: TimeSpan
+      type: System.TimeSpan
     - id: heartbeatTimeout
-      type: TimeSpan
+      type: System.TimeSpan
     - id: authProvider
       type: EventStore.Core.Authentication.IAuthenticationProvider
     - id: certificate
-      type: X509Certificate
+      type: System.Security.Cryptography.X509Certificates.X509Certificate
     - id: connectionPendingSendBytesThreshold
       type: System.Int32
     content.vb: Public Sub New(publisher As IPublisher, serverEndPoint As IPEndPoint, networkSendQueue As IPublisher, serviceType As TcpServiceType, securityType As TcpSecurityType, dispatcherFactory As Func(Of Guid, IPEndPoint, ITcpDispatcher), heartbeatInterval As TimeSpan, heartbeatTimeout As TimeSpan, authProvider As IAuthenticationProvider, certificate As X509Certificate, connectionPendingSendBytesThreshold As Integer)
@@ -159,7 +154,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, Func(Of Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher), TimeSpan, TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, X509Certificate, System.Int32)
+  fullName.vb: EventStore.Core.Services.Transport.Tcp.TcpService.TcpService(EventStore.Core.Bus.IPublisher, System.Net.IPEndPoint, EventStore.Core.Bus.IPublisher, EventStore.Core.Services.Transport.Tcp.TcpServiceType, EventStore.Core.Services.Transport.Tcp.TcpSecurityType, System.Func(Of System.Guid, System.Net.IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher), System.TimeSpan, System.TimeSpan, EventStore.Core.Authentication.IAuthenticationProvider, System.Security.Cryptography.X509Certificates.X509Certificate, System.Int32)
   name.vb: TcpService(IPublisher, IPEndPoint, IPublisher, TcpServiceType, TcpSecurityType, Func(Of Guid, IPEndPoint, ITcpDispatcher), TimeSpan, TimeSpan, IAuthenticationProvider, X509Certificate, Int32)
 - uid: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   commentId: M:EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
@@ -173,12 +168,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemInit)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 88
   assemblies:
   - EventStore.Core
@@ -208,12 +199,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.SystemStart)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 96
   assemblies:
   - EventStore.Core
@@ -243,12 +230,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Tcp.TcpService.Handle(EventStore.Core.Messages.SystemMessage.BecomeShuttingDown)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Tcp/TcpService.cs
     startLine: 99
   assemblies:
   - EventStore.Core
@@ -396,6 +379,285 @@ references:
     name: SystemMessage.BecomeShuttingDown
     nameWithType: SystemMessage.BecomeShuttingDown
     fullName: EventStore.Core.Messages.SystemMessage.BecomeShuttingDown
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -811,11 +1073,13 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
 - uid: EventStore.Core.Services.Transport.Tcp.TcpServiceType
   commentId: T:EventStore.Core.Services.Transport.Tcp.TcpServiceType
   parent: EventStore.Core.Services.Transport.Tcp
@@ -834,22 +1098,26 @@ references:
   name: ITcpDispatcher
   nameWithType: ITcpDispatcher
   fullName: EventStore.Core.Services.Transport.Tcp.ITcpDispatcher
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Core.Authentication.IAuthenticationProvider
   commentId: T:EventStore.Core.Authentication.IAuthenticationProvider
   parent: EventStore.Core.Authentication
   name: IAuthenticationProvider
   nameWithType: IAuthenticationProvider
   fullName: EventStore.Core.Authentication.IAuthenticationProvider
-- uid: X509Certificate
+- uid: System.Security.Cryptography.X509Certificates.X509Certificate
+  commentId: T:System.Security.Cryptography.X509Certificates.X509Certificate
+  parent: System.Security.Cryptography.X509Certificates
   isExternal: true
   name: X509Certificate
   nameWithType: X509Certificate
-  fullName: X509Certificate
+  fullName: System.Security.Cryptography.X509Certificates.X509Certificate
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -857,41 +1125,54 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.Core.Authentication
   commentId: N:EventStore.Core.Authentication
   name: EventStore.Core.Authentication
   nameWithType: EventStore.Core.Authentication
   fullName: EventStore.Core.Authentication
-- uid: Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
-  commentId: '!:Func{Guid,IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}'
-  definition: Func`3
+- uid: System.Security.Cryptography.X509Certificates
+  commentId: N:System.Security.Cryptography.X509Certificates
+  isExternal: true
+  name: System.Security.Cryptography.X509Certificates
+  nameWithType: System.Security.Cryptography.X509Certificates
+  fullName: System.Security.Cryptography.X509Certificates
+- uid: System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
+  commentId: T:System.Func{System.Guid,System.Net.IPEndPoint,EventStore.Core.Services.Transport.Tcp.ITcpDispatcher}
+  parent: System
+  definition: System.Func`3
   name: Func<Guid, IPEndPoint, ITcpDispatcher>
   nameWithType: Func<Guid, IPEndPoint, ITcpDispatcher>
-  fullName: Func<Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>
+  fullName: System.Func<System.Guid, System.Net.IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher>
   nameWithType.vb: Func(Of Guid, IPEndPoint, ITcpDispatcher)
-  fullName.vb: Func(Of Guid, IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher)
+  fullName.vb: System.Func(Of System.Guid, System.Net.IPEndPoint, EventStore.Core.Services.Transport.Tcp.ITcpDispatcher)
   name.vb: Func(Of Guid, IPEndPoint, ITcpDispatcher)
   spec.csharp:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -904,26 +1185,26 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -935,65 +1216,66 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`3
+- uid: System.Func`3
+  commentId: T:System.Func`3
   isExternal: true
-  name: Func<, , >
-  nameWithType: Func<, , >
-  fullName: Func<, , >
-  nameWithType.vb: Func(Of , , )
-  fullName.vb: Func(Of , , )
-  name.vb: Func(Of , , )
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
   spec.csharp:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )

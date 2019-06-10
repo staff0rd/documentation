@@ -5,8 +5,8 @@ items:
   id: NLogValueFormatter
   parent: EventStore.Common.Log
   children:
-  - EventStore.Common.Log.NLogValueFormatter.#ctor(IValueFormatter,System.Boolean)
-  - EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,CaptureType,IFormatProvider,StringBuilder)
+  - EventStore.Common.Log.NLogValueFormatter.#ctor(NLog.IValueFormatter,System.Boolean)
+  - EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
   langs:
   - csharp
   - vb
@@ -15,12 +15,8 @@ items:
   fullName: EventStore.Common.Log.NLogValueFormatter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Common/Log/NLogValueFormatter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NLogValueFormatter
-    path: ../EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
     startLine: 9
   assemblies:
   - EventStore.Common
@@ -29,9 +25,19 @@ items:
     content: 'public class NLogValueFormatter : IValueFormatter'
     content.vb: >-
       Public Class NLogValueFormatter
-          Inherits IValueFormatter
+          Implements IValueFormatter
   inheritance:
   - System.Object
+  implements:
+  - NLog.IValueFormatter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -44,24 +50,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Common.Log.NLogValueFormatter.#ctor(IValueFormatter,System.Boolean)
-  commentId: M:EventStore.Common.Log.NLogValueFormatter.#ctor(IValueFormatter,System.Boolean)
-  id: '#ctor(IValueFormatter,System.Boolean)'
+- uid: EventStore.Common.Log.NLogValueFormatter.#ctor(NLog.IValueFormatter,System.Boolean)
+  commentId: M:EventStore.Common.Log.NLogValueFormatter.#ctor(NLog.IValueFormatter,System.Boolean)
+  id: '#ctor(NLog.IValueFormatter,System.Boolean)'
   parent: EventStore.Common.Log.NLogValueFormatter
   langs:
   - csharp
   - vb
   name: NLogValueFormatter(IValueFormatter, Boolean)
   nameWithType: NLogValueFormatter.NLogValueFormatter(IValueFormatter, Boolean)
-  fullName: EventStore.Common.Log.NLogValueFormatter.NLogValueFormatter(IValueFormatter, System.Boolean)
+  fullName: EventStore.Common.Log.NLogValueFormatter.NLogValueFormatter(NLog.IValueFormatter, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Common/Log/NLogValueFormatter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
     startLine: 13
   assemblies:
   - EventStore.Common
@@ -70,7 +72,7 @@ items:
     content: public NLogValueFormatter(IValueFormatter originalFormatter, bool isStructured)
     parameters:
     - id: originalFormatter
-      type: IValueFormatter
+      type: NLog.IValueFormatter
     - id: isStructured
       type: System.Boolean
     content.vb: Public Sub New(originalFormatter As IValueFormatter, isStructured As Boolean)
@@ -79,24 +81,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,CaptureType,IFormatProvider,StringBuilder)
-  commentId: M:EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,CaptureType,IFormatProvider,StringBuilder)
-  id: FormatValue(System.Object,System.String,CaptureType,IFormatProvider,StringBuilder)
+- uid: EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+  commentId: M:EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+  id: FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
   parent: EventStore.Common.Log.NLogValueFormatter
   langs:
   - csharp
   - vb
   name: FormatValue(Object, String, CaptureType, IFormatProvider, StringBuilder)
   nameWithType: NLogValueFormatter.FormatValue(Object, String, CaptureType, IFormatProvider, StringBuilder)
-  fullName: EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object, System.String, CaptureType, IFormatProvider, StringBuilder)
+  fullName: EventStore.Common.Log.NLogValueFormatter.FormatValue(System.Object, System.String, NLog.MessageTemplates.CaptureType, System.IFormatProvider, System.Text.StringBuilder)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Common/Log/NLogValueFormatter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FormatValue
-    path: ../EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Common/Log/NLogValueFormatter.cs
     startLine: 18
   assemblies:
   - EventStore.Common
@@ -109,15 +107,17 @@ items:
     - id: format
       type: System.String
     - id: captureType
-      type: CaptureType
+      type: NLog.MessageTemplates.CaptureType
     - id: formatProvider
-      type: IFormatProvider
+      type: System.IFormatProvider
     - id: builder
-      type: StringBuilder
+      type: System.Text.StringBuilder
     return:
       type: System.Boolean
     content.vb: Public Function FormatValue(value As Object, format As String, captureType As CaptureType, formatProvider As IFormatProvider, builder As StringBuilder) As Boolean
   overload: EventStore.Common.Log.NLogValueFormatter.FormatValue*
+  implements:
+  - NLog.IValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -135,6 +135,292 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: NLog.IValueFormatter
+  commentId: T:NLog.IValueFormatter
+  parent: NLog
+  isExternal: true
+  name: IValueFormatter
+  nameWithType: IValueFormatter
+  fullName: NLog.IValueFormatter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -292,6 +578,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NLog
+  commentId: N:NLog
+  isExternal: true
+  name: NLog
+  nameWithType: NLog
+  fullName: NLog
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -505,12 +797,6 @@ references:
   name: NLogValueFormatter
   nameWithType: NLogValueFormatter.NLogValueFormatter
   fullName: EventStore.Common.Log.NLogValueFormatter.NLogValueFormatter
-- uid: IValueFormatter
-  commentId: '!:IValueFormatter'
-  isExternal: true
-  name: IValueFormatter
-  nameWithType: IValueFormatter
-  fullName: IValueFormatter
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -523,6 +809,111 @@ references:
   name: FormatValue
   nameWithType: NLogValueFormatter.FormatValue
   fullName: EventStore.Common.Log.NLogValueFormatter.FormatValue
+- uid: NLog.IValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+  commentId: M:NLog.IValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+  parent: NLog.IValueFormatter
+  isExternal: true
+  name: FormatValue(Object, String, CaptureType, IFormatProvider, StringBuilder)
+  nameWithType: IValueFormatter.FormatValue(Object, String, CaptureType, IFormatProvider, StringBuilder)
+  fullName: NLog.IValueFormatter.FormatValue(System.Object, System.String, NLog.MessageTemplates.CaptureType, System.IFormatProvider, System.Text.StringBuilder)
+  spec.csharp:
+  - uid: NLog.IValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+    name: FormatValue
+    nameWithType: IValueFormatter.FormatValue
+    fullName: NLog.IValueFormatter.FormatValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: NLog.MessageTemplates.CaptureType
+    name: CaptureType
+    nameWithType: CaptureType
+    fullName: NLog.MessageTemplates.CaptureType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IFormatProvider
+    name: IFormatProvider
+    nameWithType: IFormatProvider
+    fullName: System.IFormatProvider
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    nameWithType: StringBuilder
+    fullName: System.Text.StringBuilder
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NLog.IValueFormatter.FormatValue(System.Object,System.String,NLog.MessageTemplates.CaptureType,System.IFormatProvider,System.Text.StringBuilder)
+    name: FormatValue
+    nameWithType: IValueFormatter.FormatValue
+    fullName: NLog.IValueFormatter.FormatValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: NLog.MessageTemplates.CaptureType
+    name: CaptureType
+    nameWithType: CaptureType
+    fullName: NLog.MessageTemplates.CaptureType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IFormatProvider
+    name: IFormatProvider
+    nameWithType: IFormatProvider
+    fullName: System.IFormatProvider
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    nameWithType: StringBuilder
+    fullName: System.Text.StringBuilder
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -530,20 +921,36 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: CaptureType
-  commentId: '!:CaptureType'
+- uid: NLog.MessageTemplates.CaptureType
+  commentId: T:NLog.MessageTemplates.CaptureType
+  parent: NLog.MessageTemplates
   isExternal: true
   name: CaptureType
   nameWithType: CaptureType
-  fullName: CaptureType
-- uid: IFormatProvider
-  commentId: '!:IFormatProvider'
+  fullName: NLog.MessageTemplates.CaptureType
+- uid: System.IFormatProvider
+  commentId: T:System.IFormatProvider
+  parent: System
   isExternal: true
   name: IFormatProvider
   nameWithType: IFormatProvider
-  fullName: IFormatProvider
-- uid: StringBuilder
+  fullName: System.IFormatProvider
+- uid: System.Text.StringBuilder
+  commentId: T:System.Text.StringBuilder
+  parent: System.Text
   isExternal: true
   name: StringBuilder
   nameWithType: StringBuilder
-  fullName: StringBuilder
+  fullName: System.Text.StringBuilder
+- uid: NLog.MessageTemplates
+  commentId: N:NLog.MessageTemplates
+  isExternal: true
+  name: NLog.MessageTemplates
+  nameWithType: NLog.MessageTemplates
+  fullName: NLog.MessageTemplates
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text

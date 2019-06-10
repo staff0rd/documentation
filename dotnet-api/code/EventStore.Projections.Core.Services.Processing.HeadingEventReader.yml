@@ -9,10 +9,10 @@ items:
   - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
   - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
   - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
-  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
+  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(System.Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
   - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Stop
-  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
-  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(Guid)
+  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(System.Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
+  - EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(System.Guid)
   langs:
   - csharp
   - vb
@@ -21,23 +21,25 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HeadingEventReader
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class HeadingEventReader : object'
-    content.vb: >-
-      Public Class HeadingEventReader
-          Inherits Object
+    content: public class HeadingEventReader
+    content.vb: Public Class HeadingEventReader
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -62,12 +64,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.HeadingEventReader(System.Int32, EventStore.Core.Bus.IPublisher)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 71
   assemblies:
   - EventStore.Projections.Core
@@ -97,12 +95,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 76
   assemblies:
   - EventStore.Projections.Core
@@ -132,12 +126,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 90
   assemblies:
   - EventStore.Projections.Core
@@ -167,12 +157,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 103
   assemblies:
   - EventStore.Projections.Core
@@ -190,24 +176,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
-  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
-  id: Start(Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
+- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(System.Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
+  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(System.Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
+  id: Start(System.Guid,EventStore.Projections.Core.Services.Processing.IEventReader)
   parent: EventStore.Projections.Core.Services.Processing.HeadingEventReader
   langs:
   - csharp
   - vb
   name: Start(Guid, IEventReader)
   nameWithType: HeadingEventReader.Start(Guid, IEventReader)
-  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(Guid, EventStore.Projections.Core.Services.Processing.IEventReader)
+  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start(System.Guid, EventStore.Projections.Core.Services.Processing.IEventReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 130
   assemblies:
   - EventStore.Projections.Core
@@ -216,7 +198,7 @@ items:
     content: public void Start(Guid eventReaderId, IEventReader eventReader)
     parameters:
     - id: eventReaderId
-      type: Guid
+      type: System.Guid
     - id: eventReader
       type: EventStore.Projections.Core.Services.Processing.IEventReader
     content.vb: Public Sub Start(eventReaderId As Guid, eventReader As IEventReader)
@@ -237,12 +219,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 140
   assemblies:
   - EventStore.Projections.Core
@@ -255,24 +233,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
-  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
-  id: TrySubscribe(Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
+- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(System.Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(System.Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
+  id: TrySubscribe(System.Guid,EventStore.Projections.Core.Services.Processing.IReaderSubscription,System.Int64)
   parent: EventStore.Projections.Core.Services.Processing.HeadingEventReader
   langs:
   - csharp
   - vb
   name: TrySubscribe(Guid, IReaderSubscription, Int64)
   nameWithType: HeadingEventReader.TrySubscribe(Guid, IReaderSubscription, Int64)
-  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(Guid, EventStore.Projections.Core.Services.Processing.IReaderSubscription, System.Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.TrySubscribe(System.Guid, EventStore.Projections.Core.Services.Processing.IReaderSubscription, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TrySubscribe
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 147
   assemblies:
   - EventStore.Projections.Core
@@ -281,7 +255,7 @@ items:
     content: public bool TrySubscribe(Guid projectionId, IReaderSubscription readerSubscription, long fromTransactionFilePosition)
     parameters:
     - id: projectionId
-      type: Guid
+      type: System.Guid
     - id: readerSubscription
       type: EventStore.Projections.Core.Services.Processing.IReaderSubscription
     - id: fromTransactionFilePosition
@@ -294,24 +268,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(Guid)
-  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(Guid)
-  id: Unsubscribe(Guid)
+- uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(System.Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(System.Guid)
+  id: Unsubscribe(System.Guid)
   parent: EventStore.Projections.Core.Services.Processing.HeadingEventReader
   langs:
   - csharp
   - vb
   name: Unsubscribe(Guid)
   nameWithType: HeadingEventReader.Unsubscribe(Guid)
-  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Unsubscribe
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/HeadingEventReader.cs
     startLine: 165
   assemblies:
   - EventStore.Projections.Core
@@ -320,7 +290,7 @@ items:
     content: public void Unsubscribe(Guid projectionId)
     parameters:
     - id: projectionId
-      type: Guid
+      type: System.Guid
     content.vb: Public Sub Unsubscribe(projectionId As Guid)
   overload: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Unsubscribe*
   modifiers.csharp:
@@ -340,6 +310,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -768,11 +1017,13 @@ references:
   name: Start
   nameWithType: HeadingEventReader.Start
   fullName: EventStore.Projections.Core.Services.Processing.HeadingEventReader.Start
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Projections.Core.Services.Processing.IEventReader
   commentId: T:EventStore.Projections.Core.Services.Processing.IEventReader
   parent: EventStore.Projections.Core.Services.Processing

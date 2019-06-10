@@ -7,7 +7,7 @@ items:
   children:
   - EventStore.Core.DataStructures.NoLRUCache`2.Clear
   - EventStore.Core.DataStructures.NoLRUCache`2.Put(`0,`1)
-  - EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  - EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
   - EventStore.Core.DataStructures.NoLRUCache`2.TryGet(`0,`1@)
   langs:
   - csharp
@@ -17,29 +17,32 @@ items:
   fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/DataStructures/NoLRUCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NoLRUCache
-    path: ../EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
     startLine: 3
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.DataStructures
   syntax:
-    content: 'public class NoLRUCache<TKey, TValue> : object, ILRUCache<TKey, TValue>'
+    content: 'public class NoLRUCache<TKey, TValue> : ILRUCache<TKey, TValue>'
     typeParameters:
     - id: TKey
     - id: TValue
     content.vb: >-
       Public Class NoLRUCache(Of TKey, TValue)
-          Inherits Object
           Implements ILRUCache(Of TKey, TValue)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -67,12 +70,8 @@ items:
   fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>.Clear()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/DataStructures/NoLRUCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Clear
-    path: ../EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
     startLine: 4
   assemblies:
   - EventStore.Core
@@ -101,12 +100,8 @@ items:
   fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>.TryGet(TKey, out TValue)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/DataStructures/NoLRUCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryGet
-    path: ../EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
     startLine: 7
   assemblies:
   - EventStore.Core
@@ -143,12 +138,8 @@ items:
   fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>.Put(TKey, TValue)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/DataStructures/NoLRUCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Put
-    path: ../EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
     startLine: 12
   assemblies:
   - EventStore.Core
@@ -172,24 +163,20 @@ items:
   modifiers.vb:
   - Public
   fullName.vb: EventStore.Core.DataStructures.NoLRUCache(Of TKey, TValue).Put(TKey, TValue)
-- uid: EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
-  commentId: M:EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
-  id: Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+- uid: EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
+  commentId: M:EventStore.Core.DataStructures.NoLRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
+  id: Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
   parent: EventStore.Core.DataStructures.NoLRUCache`2
   langs:
   - csharp
   - vb
   name: Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
   nameWithType: NoLRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
-  fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
+  fullName: EventStore.Core.DataStructures.NoLRUCache<TKey, TValue>.Put<T>(TKey, T, System.Func<TKey, T, TValue>, System.Func<TKey, TValue, T, TValue>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/DataStructures/NoLRUCache.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Put
-    path: ../EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/DataStructures/NoLRUCache.cs
     startLine: 16
   assemblies:
   - EventStore.Core
@@ -202,9 +189,9 @@ items:
     - id: userData
       type: '{T}'
     - id: addFactory
-      type: Func{{TKey},{T},{TValue}}
+      type: System.Func{{TKey},{T},{TValue}}
     - id: updateFactory
-      type: Func{{TKey},{TValue},{T},{TValue}}
+      type: System.Func{{TKey},{TValue},{T},{TValue}}
     typeParameters:
     - id: T
     return:
@@ -212,13 +199,13 @@ items:
     content.vb: Public Function Put(Of T)(key As TKey, userData As T, addFactory As Func(Of TKey, T, TValue), updateFactory As Func(Of TKey, TValue, T, TValue)) As TValue
   overload: EventStore.Core.DataStructures.NoLRUCache`2.Put*
   implements:
-  - EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}.Put``1({TKey},{T},Func{{TKey},{T},{TValue}},Func{{TKey},{TValue},{T},{TValue}})
+  - EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}.Put``1({TKey},{T},System.Func{{TKey},{T},{TValue}},System.Func{{TKey},{TValue},{T},{TValue}})
   nameWithType.vb: NoLRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.DataStructures.NoLRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
+  fullName.vb: EventStore.Core.DataStructures.NoLRUCache(Of TKey, TValue).Put(Of T)(TKey, T, System.Func(Of TKey, T, TValue), System.Func(Of TKey, TValue, T, TValue))
   name.vb: Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
 references:
 - uid: EventStore.Core.DataStructures
@@ -280,6 +267,285 @@ references:
   - name: TValue
     nameWithType: TValue
     fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -996,18 +1262,18 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}.Put``1({TKey},{T},Func{{TKey},{T},{TValue}},Func{{TKey},{TValue},{T},{TValue}})
-  commentId: M:EventStore.Core.DataStructures.ILRUCache{`0,`1}.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+- uid: EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}.Put``1({TKey},{T},System.Func{{TKey},{T},{TValue}},System.Func{{TKey},{TValue},{T},{TValue}})
+  commentId: M:EventStore.Core.DataStructures.ILRUCache{`0,`1}.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
   parent: EventStore.Core.DataStructures.ILRUCache{{TKey},{TValue}}
-  definition: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  definition: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
   name: Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
   nameWithType: ILRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
-  fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
+  fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>(TKey, T, System.Func<TKey, T, TValue>, System.Func<TKey, TValue, T, TValue>)
   nameWithType.vb: ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
-  fullName.vb: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
+  fullName.vb: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, System.Func(Of TKey, T, TValue), System.Func(Of TKey, TValue, T, TValue))
   name.vb: Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
   spec.csharp:
-  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
     name: Put<T>
     nameWithType: ILRUCache<TKey, TValue>.Put<T>
     fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>
@@ -1026,10 +1292,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1055,10 +1321,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1091,7 +1357,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
     name: Put(Of T)
     nameWithType: ILRUCache(Of TKey, TValue).Put(Of T)
     fullName: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)
@@ -1110,10 +1376,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1139,10 +1405,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1180,20 +1446,21 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: Func{{TKey},{T},{TValue}}
-  commentId: '!:Func{`0,``0,`1}'
-  definition: Func`3
+- uid: System.Func{{TKey},{T},{TValue}}
+  commentId: T:System.Func{`0,``0,`1}
+  parent: System
+  definition: System.Func`3
   name: Func<TKey, T, TValue>
   nameWithType: Func<TKey, T, TValue>
-  fullName: Func<TKey, T, TValue>
+  fullName: System.Func<TKey, T, TValue>
   nameWithType.vb: Func(Of TKey, T, TValue)
-  fullName.vb: Func(Of TKey, T, TValue)
+  fullName.vb: System.Func(Of TKey, T, TValue)
   name.vb: Func(Of TKey, T, TValue)
   spec.csharp:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1217,10 +1484,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1243,20 +1510,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func{{TKey},{TValue},{T},{TValue}}
-  commentId: '!:Func{`0,`1,``0,`1}'
-  definition: Func`4
+- uid: System.Func{{TKey},{TValue},{T},{TValue}}
+  commentId: T:System.Func{`0,`1,``0,`1}
+  parent: System
+  definition: System.Func`4
   name: Func<TKey, TValue, T, TValue>
   nameWithType: Func<TKey, TValue, T, TValue>
-  fullName: Func<TKey, TValue, T, TValue>
+  fullName: System.Func<TKey, TValue, T, TValue>
   nameWithType.vb: Func(Of TKey, TValue, T, TValue)
-  fullName.vb: Func(Of TKey, TValue, T, TValue)
+  fullName.vb: System.Func(Of TKey, TValue, T, TValue)
   name.vb: Func(Of TKey, TValue, T, TValue)
   spec.csharp:
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1286,10 +1554,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1318,17 +1586,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
-  commentId: M:EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+- uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
+  commentId: M:EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
   isExternal: true
   name: Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
   nameWithType: ILRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
-  fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>(TKey, T, Func<TKey, T, TValue>, Func<TKey, TValue, T, TValue>)
+  fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>(TKey, T, System.Func<TKey, T, TValue>, System.Func<TKey, TValue, T, TValue>)
   nameWithType.vb: ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
-  fullName.vb: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
+  fullName.vb: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)(TKey, T, System.Func(Of TKey, T, TValue), System.Func(Of TKey, TValue, T, TValue))
   name.vb: Put(Of T)(TKey, T, Func(Of TKey, T, TValue), Func(Of TKey, TValue, T, TValue))
   spec.csharp:
-  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
     name: Put<T>
     nameWithType: ILRUCache<TKey, TValue>.Put<T>
     fullName: EventStore.Core.DataStructures.ILRUCache<TKey, TValue>.Put<T>
@@ -1347,10 +1615,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1376,10 +1644,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -1412,7 +1680,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,Func{`0,``0,`1},Func{`0,`1,``0,`1})
+  - uid: EventStore.Core.DataStructures.ILRUCache`2.Put``1(`0,``0,System.Func{`0,``0,`1},System.Func{`0,`1,``0,`1})
     name: Put(Of T)
     nameWithType: ILRUCache(Of TKey, TValue).Put(Of T)
     fullName: EventStore.Core.DataStructures.ILRUCache(Of TKey, TValue).Put(Of T)
@@ -1431,10 +1699,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1460,10 +1728,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1499,139 +1767,141 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: Func`3
+- uid: System.Func`3
+  commentId: T:System.Func`3
   isExternal: true
-  name: Func<, , >
-  nameWithType: Func<, , >
-  fullName: Func<, , >
-  nameWithType.vb: Func(Of , , )
-  fullName.vb: Func(Of , , )
-  name.vb: Func(Of , , )
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
   spec.csharp:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`3
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`4
+- uid: System.Func`4
+  commentId: T:System.Func`4
   isExternal: true
-  name: Func<, , , >
-  nameWithType: Func<, , , >
-  fullName: Func<, , , >
-  nameWithType.vb: Func(Of , , , )
-  fullName.vb: Func(Of , , , )
-  name.vb: Func(Of , , , )
+  name: Func<T1, T2, T3, TResult>
+  nameWithType: Func<T1, T2, T3, TResult>
+  fullName: System.Func<T1, T2, T3, TResult>
+  nameWithType.vb: Func(Of T1, T2, T3, TResult)
+  fullName.vb: System.Func(Of T1, T2, T3, TResult)
+  name.vb: Func(Of T1, T2, T3, TResult)
   spec.csharp:
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T3
+    nameWithType: T3
+    fullName: T3
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`4
+  - uid: System.Func`4
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T1
+    nameWithType: T1
+    fullName: T1
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T3
+    nameWithType: T3
+    fullName: T3
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )

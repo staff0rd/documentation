@@ -5,9 +5,9 @@ items:
   id: CheckpointTagJsonConverter
   parent: EventStore.Projections.Core.Services.Processing
   children:
-  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(Type)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(System.Type)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  - EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
   langs:
   - csharp
   - vb
@@ -16,12 +16,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointTagJsonConverter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 780
   assemblies:
   - EventStore.Projections.Core
@@ -33,6 +29,17 @@ items:
           Inherits JsonConverter
   inheritance:
   - System.Object
+  - Newtonsoft.Json.JsonConverter
+  inheritedMembers:
+  - Newtonsoft.Json.JsonConverter.CanRead
+  - Newtonsoft.Json.JsonConverter.CanWrite
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -45,24 +52,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  id: WriteJson(JsonWriter,System.Object,JsonSerializer)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  id: WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter
   langs:
   - csharp
   - vb
   name: WriteJson(JsonWriter, Object, JsonSerializer)
   nameWithType: CheckpointTagJsonConverter.WriteJson(JsonWriter, Object, JsonSerializer)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(JsonWriter, System.Object, JsonSerializer)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteJson
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 781
   assemblies:
   - EventStore.Projections.Core
@@ -71,12 +74,13 @@ items:
     content: public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     parameters:
     - id: writer
-      type: JsonWriter
+      type: Newtonsoft.Json.JsonWriter
     - id: value
       type: System.Object
     - id: serializer
-      type: JsonSerializer
+      type: Newtonsoft.Json.JsonSerializer
     content.vb: Public Overrides Sub WriteJson(writer As JsonWriter, value As Object, serializer As JsonSerializer)
+  overridden: Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson*
   modifiers.csharp:
   - public
@@ -84,24 +88,20 @@ items:
   modifiers.vb:
   - Public
   - Overrides
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  id: ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  id: ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter
   langs:
   - csharp
   - vb
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
   nameWithType: CheckpointTagJsonConverter.ReadJson(JsonReader, Type, Object, JsonSerializer)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadJson
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 786
   assemblies:
   - EventStore.Projections.Core
@@ -110,16 +110,17 @@ items:
     content: public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     parameters:
     - id: reader
-      type: JsonReader
+      type: Newtonsoft.Json.JsonReader
     - id: objectType
-      type: Type
+      type: System.Type
     - id: existingValue
       type: System.Object
     - id: serializer
-      type: JsonSerializer
+      type: Newtonsoft.Json.JsonSerializer
     return:
       type: System.Object
     content.vb: Public Overrides Function ReadJson(reader As JsonReader, objectType As Type, existingValue As Object, serializer As JsonSerializer) As Object
+  overridden: Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson*
   modifiers.csharp:
   - public
@@ -127,24 +128,20 @@ items:
   modifiers.vb:
   - Public
   - Overrides
-- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(Type)
-  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(Type)
-  id: CanConvert(Type)
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(System.Type)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(System.Type)
+  id: CanConvert(System.Type)
   parent: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter
   langs:
   - csharp
   - vb
   name: CanConvert(Type)
   nameWithType: CheckpointTagJsonConverter.CanConvert(Type)
-  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(Type)
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert(System.Type)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CanConvert
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CheckpointTag.cs
     startLine: 791
   assemblies:
   - EventStore.Projections.Core
@@ -153,10 +150,11 @@ items:
     content: public override bool CanConvert(Type objectType)
     parameters:
     - id: objectType
-      type: Type
+      type: System.Type
     return:
       type: System.Boolean
     content.vb: Public Overrides Function CanConvert(objectType As Type) As Boolean
+  overridden: Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
   overload: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert*
   modifiers.csharp:
   - public
@@ -177,6 +175,306 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Newtonsoft.Json.JsonConverter
+  commentId: T:Newtonsoft.Json.JsonConverter
+  parent: Newtonsoft.Json
+  isExternal: true
+  name: JsonConverter
+  nameWithType: JsonConverter
+  fullName: Newtonsoft.Json.JsonConverter
+- uid: Newtonsoft.Json.JsonConverter.CanRead
+  commentId: P:Newtonsoft.Json.JsonConverter.CanRead
+  parent: Newtonsoft.Json.JsonConverter
+  isExternal: true
+  name: CanRead
+  nameWithType: JsonConverter.CanRead
+  fullName: Newtonsoft.Json.JsonConverter.CanRead
+- uid: Newtonsoft.Json.JsonConverter.CanWrite
+  commentId: P:Newtonsoft.Json.JsonConverter.CanWrite
+  parent: Newtonsoft.Json.JsonConverter
+  isExternal: true
+  name: CanWrite
+  nameWithType: JsonConverter.CanWrite
+  fullName: Newtonsoft.Json.JsonConverter.CanWrite
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -334,6 +632,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Newtonsoft.Json
+  commentId: N:Newtonsoft.Json
+  isExternal: true
+  name: Newtonsoft.Json
+  nameWithType: Newtonsoft.Json
+  fullName: Newtonsoft.Json
 - uid: EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   isExternal: true
@@ -542,36 +846,247 @@ references:
   name: EventStore.Core.Services.Transport.Tcp
   nameWithType: EventStore.Core.Services.Transport.Tcp
   fullName: EventStore.Core.Services.Transport.Tcp
+- uid: Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  commentId: M:Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  parent: Newtonsoft.Json.JsonConverter
+  isExternal: true
+  name: WriteJson(JsonWriter, Object, JsonSerializer)
+  nameWithType: JsonConverter.WriteJson(JsonWriter, Object, JsonSerializer)
+  fullName: Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  spec.csharp:
+  - uid: Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+    name: WriteJson
+    nameWithType: JsonConverter.WriteJson
+    fullName: Newtonsoft.Json.JsonConverter.WriteJson
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Newtonsoft.Json.JsonWriter
+    name: JsonWriter
+    nameWithType: JsonWriter
+    fullName: Newtonsoft.Json.JsonWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Newtonsoft.Json.JsonSerializer
+    name: JsonSerializer
+    nameWithType: JsonSerializer
+    fullName: Newtonsoft.Json.JsonSerializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+    name: WriteJson
+    nameWithType: JsonConverter.WriteJson
+    fullName: Newtonsoft.Json.JsonConverter.WriteJson
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Newtonsoft.Json.JsonWriter
+    name: JsonWriter
+    nameWithType: JsonWriter
+    fullName: Newtonsoft.Json.JsonWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Newtonsoft.Json.JsonSerializer
+    name: JsonSerializer
+    nameWithType: JsonSerializer
+    fullName: Newtonsoft.Json.JsonSerializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson
   name: WriteJson
   nameWithType: CheckpointTagJsonConverter.WriteJson
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.WriteJson
-- uid: JsonWriter
+- uid: Newtonsoft.Json.JsonWriter
+  commentId: T:Newtonsoft.Json.JsonWriter
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonWriter
   nameWithType: JsonWriter
-  fullName: JsonWriter
-- uid: JsonSerializer
+  fullName: Newtonsoft.Json.JsonWriter
+- uid: Newtonsoft.Json.JsonSerializer
+  commentId: T:Newtonsoft.Json.JsonSerializer
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonSerializer
   nameWithType: JsonSerializer
-  fullName: JsonSerializer
+  fullName: Newtonsoft.Json.JsonSerializer
+- uid: Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  commentId: M:Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  parent: Newtonsoft.Json.JsonConverter
+  isExternal: true
+  name: ReadJson(JsonReader, Type, Object, JsonSerializer)
+  nameWithType: JsonConverter.ReadJson(JsonReader, Type, Object, JsonSerializer)
+  fullName: Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  spec.csharp:
+  - uid: Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+    name: ReadJson
+    nameWithType: JsonConverter.ReadJson
+    fullName: Newtonsoft.Json.JsonConverter.ReadJson
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Newtonsoft.Json.JsonReader
+    name: JsonReader
+    nameWithType: JsonReader
+    fullName: Newtonsoft.Json.JsonReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Newtonsoft.Json.JsonSerializer
+    name: JsonSerializer
+    nameWithType: JsonSerializer
+    fullName: Newtonsoft.Json.JsonSerializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+    name: ReadJson
+    nameWithType: JsonConverter.ReadJson
+    fullName: Newtonsoft.Json.JsonConverter.ReadJson
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Newtonsoft.Json.JsonReader
+    name: JsonReader
+    nameWithType: JsonReader
+    fullName: Newtonsoft.Json.JsonReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Newtonsoft.Json.JsonSerializer
+    name: JsonSerializer
+    nameWithType: JsonSerializer
+    fullName: Newtonsoft.Json.JsonSerializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson
   name: ReadJson
   nameWithType: CheckpointTagJsonConverter.ReadJson
   fullName: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.ReadJson
-- uid: JsonReader
+- uid: Newtonsoft.Json.JsonReader
+  commentId: T:Newtonsoft.Json.JsonReader
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonReader
   nameWithType: JsonReader
-  fullName: JsonReader
-- uid: Type
+  fullName: Newtonsoft.Json.JsonReader
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
   isExternal: true
   name: Type
   nameWithType: Type
-  fullName: Type
+  fullName: System.Type
+- uid: Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
+  commentId: M:Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
+  parent: Newtonsoft.Json.JsonConverter
+  isExternal: true
+  name: CanConvert(Type)
+  nameWithType: JsonConverter.CanConvert(Type)
+  fullName: Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
+  spec.csharp:
+  - uid: Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
+    name: CanConvert
+    nameWithType: JsonConverter.CanConvert
+    fullName: Newtonsoft.Json.JsonConverter.CanConvert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Newtonsoft.Json.JsonConverter.CanConvert(System.Type)
+    name: CanConvert
+    nameWithType: JsonConverter.CanConvert
+    fullName: Newtonsoft.Json.JsonConverter.CanConvert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter.CanConvert
   name: CanConvert

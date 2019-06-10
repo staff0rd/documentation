@@ -5,7 +5,7 @@ items:
   id: TcpStats
   parent: EventStore.Transport.Tcp
   children:
-  - EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,TimeSpan)
+  - EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.TimeSpan)
   - EventStore.Transport.Tcp.TcpStats.Connections
   - EventStore.Transport.Tcp.TcpStats.InSend
   - EventStore.Transport.Tcp.TcpStats.MeasureTime
@@ -25,23 +25,25 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TcpStats
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
     startLine: 3
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
   syntax:
-    content: 'public class TcpStats : object'
-    content.vb: >-
-      Public Class TcpStats
-          Inherits Object
+    content: public class TcpStats
+    content.vb: Public Class TcpStats
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -66,16 +68,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.Connections
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Connections
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 4
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 7
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nNumber of TCP connections to Event Store\n"
+  example: []
   syntax:
     content: public readonly int Connections
     return:
@@ -99,16 +99,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.SentBytesTotal
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SentBytesTotal
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 5
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 11
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nTotal bytes sent from TCP connections\n"
+  example: []
   syntax:
     content: public readonly long SentBytesTotal
     return:
@@ -132,16 +130,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.ReceivedBytesTotal
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceivedBytesTotal
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 6
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 15
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nTotal bytes received by TCP connections\n"
+  example: []
   syntax:
     content: public readonly long ReceivedBytesTotal
     return:
@@ -165,16 +161,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.SentBytesSinceLastRun
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SentBytesSinceLastRun
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 7
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 19
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nTotal bytes sent to TCP connections since last run\n"
+  example: []
   syntax:
     content: public readonly long SentBytesSinceLastRun
     return:
@@ -198,16 +192,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.ReceivedBytesSinceLastRun
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceivedBytesSinceLastRun
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 8
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 23
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nTotal bytes received by TCP connections since last run\n"
+  example: []
   syntax:
     content: public readonly long ReceivedBytesSinceLastRun
     return:
@@ -231,16 +223,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.SendingSpeed
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SendingSpeed
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 9
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 27
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nSending speed in bytes per second\n"
+  example: []
   syntax:
     content: public readonly double SendingSpeed
     return:
@@ -264,16 +254,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.ReceivingSpeed
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReceivingSpeed
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 10
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 31
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nReceiving speed in bytes per second.\n"
+  example: []
   syntax:
     content: public readonly double ReceivingSpeed
     return:
@@ -297,16 +285,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.PendingSend
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 11
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 35
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nNumber of bytes waiting to be sent to connections\n"
+  example: []
   syntax:
     content: public readonly long PendingSend
     return:
@@ -330,16 +316,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.InSend
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InSend
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 12
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 39
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nNumber of bytes sent to connections but not yet acknowledged by the receiving party\n"
+  example: []
   syntax:
     content: public readonly long InSend
     return:
@@ -363,16 +347,14 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.PendingReceived
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingReceived
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 13
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 43
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nNumber of bytes waiting to be received by connections\n"
+  example: []
   syntax:
     content: public readonly long PendingReceived
     return:
@@ -396,20 +378,18 @@ items:
   fullName: EventStore.Transport.Tcp.TcpStats.MeasureTime
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MeasureTime
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 14
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 47
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
+  summary: "\nTime elapsed since last stats read\n"
+  example: []
   syntax:
     content: public readonly TimeSpan MeasureTime
     return:
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public ReadOnly MeasureTime As TimeSpan
   modifiers.csharp:
   - public
@@ -417,25 +397,21 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,TimeSpan)
-  commentId: M:EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,TimeSpan)
-  id: '#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,TimeSpan)'
+- uid: EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.TimeSpan)
+  commentId: M:EventStore.Transport.Tcp.TcpStats.#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.TimeSpan)
+  id: '#ctor(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.TimeSpan)'
   parent: EventStore.Transport.Tcp.TcpStats
   langs:
   - csharp
   - vb
   name: TcpStats(Int32, Int64, Int64, Int64, Int64, Int64, Int64, Int64, TimeSpan)
   nameWithType: TcpStats.TcpStats(Int32, Int64, Int64, Int64, Int64, Int64, Int64, Int64, TimeSpan)
-  fullName: EventStore.Transport.Tcp.TcpStats.TcpStats(System.Int32, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, TimeSpan)
+  fullName: EventStore.Transport.Tcp.TcpStats.TcpStats(System.Int32, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, System.Int64, System.TimeSpan)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Tcp/TcpStats.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
-    startLine: 16
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Tcp/TcpStats.cs
+    startLine: 49
   assemblies:
   - EventStore.Transport.Tcp
   namespace: EventStore.Transport.Tcp
@@ -459,7 +435,7 @@ items:
     - id: pendingReceived
       type: System.Int64
     - id: measureTime
-      type: TimeSpan
+      type: System.TimeSpan
     content.vb: Public Sub New(connections As Integer, sentBytesTotal As Long, receivedBytesTotal As Long, sentBytesSinceLastRunSinceLastRun As Long, receivedBytesSinceLastRun As Long, pendingSend As Long, inSend As Long, pendingReceived As Long, measureTime As TimeSpan)
   overload: EventStore.Transport.Tcp.TcpStats.#ctor*
   modifiers.csharp:
@@ -479,6 +455,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -865,11 +1120,13 @@ references:
   name: Double
   nameWithType: Double
   fullName: System.Double
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: EventStore.Transport.Tcp.TcpStats.#ctor*
   commentId: Overload:EventStore.Transport.Tcp.TcpStats.#ctor
   name: TcpStats

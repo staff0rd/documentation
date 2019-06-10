@@ -6,10 +6,10 @@ items:
   parent: EventStore.Transport.Http
   children:
   - EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single)
-  - EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,Encoding)
+  - EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,System.Text.Encoding)
   - EventStore.Transport.Http.MediaType.Encoding
   - EventStore.Transport.Http.MediaType.EncodingSpecified
-  - EventStore.Transport.Http.MediaType.Matches(System.String,Encoding)
+  - EventStore.Transport.Http.MediaType.Matches(System.String,System.Text.Encoding)
   - EventStore.Transport.Http.MediaType.Parse(System.String)
   - EventStore.Transport.Http.MediaType.Priority
   - EventStore.Transport.Http.MediaType.Range
@@ -25,23 +25,25 @@ items:
   fullName: EventStore.Transport.Http.MediaType
   type: Class
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MediaType
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 6
   assemblies:
   - EventStore.Transport.Http
   namespace: EventStore.Transport.Http
   syntax:
-    content: 'public class MediaType : object'
-    content.vb: >-
-      Public Class MediaType
-          Inherits Object
+    content: public class MediaType
+    content.vb: Public Class MediaType
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -66,12 +68,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Range
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Range
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 7
   assemblies:
   - EventStore.Transport.Http
@@ -99,12 +97,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Type
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Type
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 8
   assemblies:
   - EventStore.Transport.Http
@@ -132,12 +126,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Subtype
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Subtype
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 9
   assemblies:
   - EventStore.Transport.Http
@@ -165,12 +155,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Priority
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Priority
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 10
   assemblies:
   - EventStore.Transport.Http
@@ -198,12 +184,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.EncodingSpecified
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EncodingSpecified
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 11
   assemblies:
   - EventStore.Transport.Http
@@ -231,12 +213,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Encoding
   type: Field
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Encoding
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 12
   assemblies:
   - EventStore.Transport.Http
@@ -244,7 +222,7 @@ items:
   syntax:
     content: public readonly Encoding Encoding
     return:
-      type: Encoding
+      type: System.Text.Encoding
     content.vb: Public ReadOnly Encoding As Encoding
   modifiers.csharp:
   - public
@@ -252,24 +230,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,Encoding)
-  commentId: M:EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,Encoding)
-  id: '#ctor(System.String,System.String,System.String,System.Single,System.Boolean,Encoding)'
+- uid: EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,System.Text.Encoding)
+  commentId: M:EventStore.Transport.Http.MediaType.#ctor(System.String,System.String,System.String,System.Single,System.Boolean,System.Text.Encoding)
+  id: '#ctor(System.String,System.String,System.String,System.Single,System.Boolean,System.Text.Encoding)'
   parent: EventStore.Transport.Http.MediaType
   langs:
   - csharp
   - vb
   name: MediaType(String, String, String, Single, Boolean, Encoding)
   nameWithType: MediaType.MediaType(String, String, String, Single, Boolean, Encoding)
-  fullName: EventStore.Transport.Http.MediaType.MediaType(System.String, System.String, System.String, System.Single, System.Boolean, Encoding)
+  fullName: EventStore.Transport.Http.MediaType.MediaType(System.String, System.String, System.String, System.Single, System.Boolean, System.Text.Encoding)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 14
   assemblies:
   - EventStore.Transport.Http
@@ -288,7 +262,7 @@ items:
     - id: encodingSpecified
       type: System.Boolean
     - id: encoding
-      type: Encoding
+      type: System.Text.Encoding
     content.vb: Public Sub New(range As String, type As String, subtype As String, priority As Single, encodingSpecified As Boolean, encoding As Encoding)
   overload: EventStore.Transport.Http.MediaType.#ctor*
   modifiers.csharp:
@@ -307,12 +281,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.MediaType(System.String, System.String, System.String, System.Single)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 24
   assemblies:
   - EventStore.Transport.Http
@@ -334,24 +304,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Transport.Http.MediaType.Matches(System.String,Encoding)
-  commentId: M:EventStore.Transport.Http.MediaType.Matches(System.String,Encoding)
-  id: Matches(System.String,Encoding)
+- uid: EventStore.Transport.Http.MediaType.Matches(System.String,System.Text.Encoding)
+  commentId: M:EventStore.Transport.Http.MediaType.Matches(System.String,System.Text.Encoding)
+  id: Matches(System.String,System.Text.Encoding)
   parent: EventStore.Transport.Http.MediaType
   langs:
   - csharp
   - vb
   name: Matches(String, Encoding)
   nameWithType: MediaType.Matches(String, Encoding)
-  fullName: EventStore.Transport.Http.MediaType.Matches(System.String, Encoding)
+  fullName: EventStore.Transport.Http.MediaType.Matches(System.String, System.Text.Encoding)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Matches
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 28
   assemblies:
   - EventStore.Transport.Http
@@ -362,7 +328,7 @@ items:
     - id: mediaRange
       type: System.String
     - id: encoding
-      type: Encoding
+      type: System.Text.Encoding
     return:
       type: System.Boolean
     content.vb: Public Function Matches(mediaRange As String, encoding As Encoding) As Boolean
@@ -383,12 +349,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.TryParse(System.String, out EventStore.Transport.Http.MediaType)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryParse
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 35
   assemblies:
   - EventStore.Transport.Http
@@ -425,12 +387,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.TryParse(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryParse
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 39
   assemblies:
   - EventStore.Transport.Http
@@ -462,12 +420,8 @@ items:
   fullName: EventStore.Transport.Http.MediaType.Parse(System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Transport.Http/MediaType.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Parse
-    path: ../EventStore/src/EventStore.Transport.Http/MediaType.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Transport.Http/MediaType.cs
     startLine: 44
   assemblies:
   - EventStore.Transport.Http
@@ -500,6 +454,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -873,6 +1106,8 @@ references:
   nameWithType: String
   fullName: System.String
 - uid: System.Single
+  commentId: T:System.Single
+  parent: System
   isExternal: true
   name: Single
   nameWithType: Single
@@ -884,11 +1119,19 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: Encoding
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
   isExternal: true
   name: Encoding
   nameWithType: Encoding
-  fullName: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
 - uid: EventStore.Transport.Http.MediaType.#ctor*
   commentId: Overload:EventStore.Transport.Http.MediaType.#ctor
   name: MediaType

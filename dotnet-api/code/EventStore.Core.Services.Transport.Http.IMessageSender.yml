@@ -5,7 +5,7 @@ items:
   id: IMessageSender
   parent: EventStore.Core.Services.Transport.Http
   children:
-  - EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+  - EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   langs:
   - csharp
   - vb
@@ -14,12 +14,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.IMessageSender
   type: Interface
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IMessageSender
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 32
   assemblies:
   - EventStore.Core
@@ -39,24 +35,20 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
-  commentId: M:EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
-  id: Send(EventStore.Core.Messaging.Message,IPEndPoint)
+- uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
+  id: Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   parent: EventStore.Core.Services.Transport.Http.IMessageSender
   langs:
   - csharp
   - vb
   name: Send(Message, IPEndPoint)
   nameWithType: IMessageSender.Send(Message, IPEndPoint)
-  fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message, System.Net.IPEndPoint)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Send
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 33
   assemblies:
   - EventStore.Core
@@ -67,7 +59,7 @@ items:
     - id: message
       type: EventStore.Core.Messaging.Message
     - id: endPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Sub Send(message As Message, endPoint As IPEndPoint)
   overload: EventStore.Core.Services.Transport.Http.IMessageSender.Send*
 references:
@@ -446,13 +438,21 @@ references:
   name: Message
   nameWithType: Message
   fullName: EventStore.Core.Messaging.Message
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
 - uid: EventStore.Core.Messaging
   commentId: N:EventStore.Core.Messaging
   name: EventStore.Core.Messaging
   nameWithType: EventStore.Core.Messaging
   fullName: EventStore.Core.Messaging
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net

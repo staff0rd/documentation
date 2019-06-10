@@ -6,7 +6,7 @@ items:
   parent: EventStore.Core.Services.Transport.Http
   children:
   - EventStore.Core.Services.Transport.Http.MessageSender`1.#ctor(EventStore.Core.Services.Transport.Http.ISender{`0})
-  - EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+  - EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   langs:
   - csharp
   - vb
@@ -15,28 +15,31 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.MessageSender<T>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MessageSender
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 36
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.Transport.Http
   syntax:
-    content: 'public class MessageSender<T> : object, IMessageSender where T : Message'
+    content: 'public class MessageSender<T> : IMessageSender where T : Message'
     typeParameters:
     - id: T
     content.vb: >-
       Public Class MessageSender(Of T As Message)
-          Inherits Object
           Implements IMessageSender
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Services.Transport.Http.IMessageSender
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -64,12 +67,8 @@ items:
   fullName: EventStore.Core.Services.Transport.Http.MessageSender<T>.MessageSender(EventStore.Core.Services.Transport.Http.ISender<T>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 40
   assemblies:
   - EventStore.Core
@@ -88,24 +87,20 @@ items:
   - Public
   fullName.vb: EventStore.Core.Services.Transport.Http.MessageSender(Of T).MessageSender(EventStore.Core.Services.Transport.Http.ISender(Of T))
   name.vb: MessageSender(ISender(Of T))
-- uid: EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,IPEndPoint)
-  commentId: M:EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,IPEndPoint)
-  id: Send(EventStore.Core.Messaging.Message,IPEndPoint)
+- uid: EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.MessageSender`1.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
+  id: Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   parent: EventStore.Core.Services.Transport.Http.MessageSender`1
   langs:
   - csharp
   - vb
   name: Send(Message, IPEndPoint)
   nameWithType: MessageSender<T>.Send(Message, IPEndPoint)
-  fullName: EventStore.Core.Services.Transport.Http.MessageSender<T>.Send(EventStore.Core.Messaging.Message, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.MessageSender<T>.Send(EventStore.Core.Messaging.Message, System.Net.IPEndPoint)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Send
-    path: ../EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/Transport/Http/HttpMessagePipe.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -116,17 +111,17 @@ items:
     - id: message
       type: EventStore.Core.Messaging.Message
     - id: endPoint
-      type: IPEndPoint
+      type: System.Net.IPEndPoint
     content.vb: Public Sub Send(message As Message, endPoint As IPEndPoint)
   overload: EventStore.Core.Services.Transport.Http.MessageSender`1.Send*
   implements:
-  - EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+  - EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   nameWithType.vb: MessageSender(Of T).Send(Message, IPEndPoint)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.Transport.Http.MessageSender(Of T).Send(EventStore.Core.Messaging.Message, IPEndPoint)
+  fullName.vb: EventStore.Core.Services.Transport.Http.MessageSender(Of T).Send(EventStore.Core.Messaging.Message, System.Net.IPEndPoint)
 references:
 - uid: EventStore.Core.Services.Transport.Http
   commentId: N:EventStore.Core.Services.Transport.Http
@@ -146,6 +141,285 @@ references:
   name: IMessageSender
   nameWithType: IMessageSender
   fullName: EventStore.Core.Services.Transport.Http.IMessageSender
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -599,15 +873,15 @@ references:
   fullName: EventStore.Core.Services.Transport.Http.MessageSender<T>.Send
   nameWithType.vb: MessageSender(Of T).Send
   fullName.vb: EventStore.Core.Services.Transport.Http.MessageSender(Of T).Send
-- uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
-  commentId: M:EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+- uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
+  commentId: M:EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
   parent: EventStore.Core.Services.Transport.Http.IMessageSender
   isExternal: true
   name: Send(Message, IPEndPoint)
   nameWithType: IMessageSender.Send(Message, IPEndPoint)
-  fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message, IPEndPoint)
+  fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message, System.Net.IPEndPoint)
   spec.csharp:
-  - uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+  - uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
     name: Send
     nameWithType: IMessageSender.Send
     fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send
@@ -621,16 +895,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,IPEndPoint)
+  - uid: EventStore.Core.Services.Transport.Http.IMessageSender.Send(EventStore.Core.Messaging.Message,System.Net.IPEndPoint)
     name: Send
     nameWithType: IMessageSender.Send
     fullName: EventStore.Core.Services.Transport.Http.IMessageSender.Send
@@ -644,10 +918,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: )
     nameWithType: )
@@ -658,13 +932,21 @@ references:
   name: Message
   nameWithType: Message
   fullName: EventStore.Core.Messaging.Message
-- uid: IPEndPoint
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: IPEndPoint
+  fullName: System.Net.IPEndPoint
 - uid: EventStore.Core.Messaging
   commentId: N:EventStore.Core.Messaging
   name: EventStore.Core.Messaging
   nameWithType: EventStore.Core.Messaging
   fullName: EventStore.Core.Messaging
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net

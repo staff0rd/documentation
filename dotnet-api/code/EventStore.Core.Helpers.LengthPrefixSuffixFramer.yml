@@ -5,12 +5,12 @@ items:
   id: LengthPrefixSuffixFramer
   parent: EventStore.Core.Helpers
   children:
-  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(Action{BinaryReader},System.Int32)
-  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(ArraySegment{System.Byte})
+  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(System.Action{System.IO.BinaryReader},System.Int32)
+  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(System.ArraySegment{System.Byte})
   - EventStore.Core.Helpers.LengthPrefixSuffixFramer.HasData
   - EventStore.Core.Helpers.LengthPrefixSuffixFramer.Reset
-  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(ArraySegment{System.Byte})
-  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.ArraySegment{System.Byte})
+  - EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   langs:
   - csharp
   - vb
@@ -19,23 +19,25 @@ items:
   fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LengthPrefixSuffixFramer
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Helpers
   syntax:
-    content: 'public class LengthPrefixSuffixFramer : object'
-    content.vb: >-
-      Public Class LengthPrefixSuffixFramer
-          Inherits Object
+    content: public class LengthPrefixSuffixFramer
+    content.vb: Public Class LengthPrefixSuffixFramer
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -60,12 +62,8 @@ items:
   fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.HasData
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HasData
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 14
   assemblies:
   - EventStore.Core
@@ -83,43 +81,39 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(Action{BinaryReader},System.Int32)
-  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(Action{BinaryReader},System.Int32)
-  id: '#ctor(Action{BinaryReader},System.Int32)'
+- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(System.Action{System.IO.BinaryReader},System.Int32)
+  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor(System.Action{System.IO.BinaryReader},System.Int32)
+  id: '#ctor(System.Action{System.IO.BinaryReader},System.Int32)'
   parent: EventStore.Core.Helpers.LengthPrefixSuffixFramer
   langs:
   - csharp
   - vb
   name: LengthPrefixSuffixFramer(Action<BinaryReader>, Int32)
   nameWithType: LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(Action<BinaryReader>, Int32)
-  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(Action<BinaryReader>, System.Int32)
+  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(System.Action<System.IO.BinaryReader>, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Helpers
   syntax:
-    content: public LengthPrefixSuffixFramer(Action<BinaryReader> packageHandler, int maxPackageSize = null)
+    content: public LengthPrefixSuffixFramer(Action<BinaryReader> packageHandler, int maxPackageSize = 16777216)
     parameters:
     - id: packageHandler
-      type: Action{BinaryReader}
+      type: System.Action{System.IO.BinaryReader}
     - id: maxPackageSize
       type: System.Int32
-    content.vb: Public Sub New(packageHandler As Action(Of BinaryReader), maxPackageSize As Integer = Nothing)
+    content.vb: Public Sub New(packageHandler As Action(Of BinaryReader), maxPackageSize As Integer = 16777216)
   overload: EventStore.Core.Helpers.LengthPrefixSuffixFramer.#ctor*
   nameWithType.vb: LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(Action(Of BinaryReader), Int32)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(Action(Of BinaryReader), System.Int32)
+  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.LengthPrefixSuffixFramer(System.Action(Of System.IO.BinaryReader), System.Int32)
   name.vb: LengthPrefixSuffixFramer(Action(Of BinaryReader), Int32)
 - uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.Reset
   commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.Reset
@@ -133,12 +127,8 @@ items:
   fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.Reset()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reset
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 39
   assemblies:
   - EventStore.Core
@@ -151,24 +141,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(IEnumerable{ArraySegment{System.Byte}})
-  id: UnFrameData(IEnumerable{ArraySegment{System.Byte}})
+- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  id: UnFrameData(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   parent: EventStore.Core.Helpers.LengthPrefixSuffixFramer
   langs:
   - csharp
   - vb
   name: UnFrameData(IEnumerable<ArraySegment<Byte>>)
   nameWithType: LengthPrefixSuffixFramer.UnFrameData(IEnumerable<ArraySegment<Byte>>)
-  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(IEnumerable<ArraySegment<System.Byte>>)
+  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnFrameData
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -177,7 +163,7 @@ items:
     content: public void UnFrameData(IEnumerable<ArraySegment<byte>> data)
     parameters:
     - id: data
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
     content.vb: Public Sub UnFrameData(data As IEnumerable(Of ArraySegment(Of Byte)))
   overload: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData*
   nameWithType.vb: LengthPrefixSuffixFramer.UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
@@ -185,26 +171,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: UnFrameData(IEnumerable(Of ArraySegment(Of Byte)))
-- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(ArraySegment{System.Byte})
-  id: UnFrameData(ArraySegment{System.Byte})
+- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.ArraySegment{System.Byte})
+  id: UnFrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Core.Helpers.LengthPrefixSuffixFramer
   langs:
   - csharp
   - vb
   name: UnFrameData(ArraySegment<Byte>)
   nameWithType: LengthPrefixSuffixFramer.UnFrameData(ArraySegment<Byte>)
-  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnFrameData
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 53
   assemblies:
   - EventStore.Core
@@ -213,7 +195,7 @@ items:
     content: public void UnFrameData(ArraySegment<byte> data)
     parameters:
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
     content.vb: Public Sub UnFrameData(data As ArraySegment(Of Byte))
   overload: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData*
   nameWithType.vb: LengthPrefixSuffixFramer.UnFrameData(ArraySegment(Of Byte))
@@ -221,26 +203,22 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData(System.ArraySegment(Of System.Byte))
   name.vb: UnFrameData(ArraySegment(Of Byte))
-- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(ArraySegment{System.Byte})
-  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(ArraySegment{System.Byte})
-  id: FrameData(ArraySegment{System.Byte})
+- uid: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(System.ArraySegment{System.Byte})
+  id: FrameData(System.ArraySegment{System.Byte})
   parent: EventStore.Core.Helpers.LengthPrefixSuffixFramer
   langs:
   - csharp
   - vb
   name: FrameData(ArraySegment<Byte>)
   nameWithType: LengthPrefixSuffixFramer.FrameData(ArraySegment<Byte>)
-  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(ArraySegment<System.Byte>)
+  fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FrameData
-    path: ../EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Helpers/LengthPrefixSuffixFramer.cs
     startLine: 108
   assemblies:
   - EventStore.Core
@@ -249,9 +227,9 @@ items:
     content: public IEnumerable<ArraySegment<byte>> FrameData(ArraySegment<byte> data)
     parameters:
     - id: data
-      type: ArraySegment{System.Byte}
+      type: System.ArraySegment{System.Byte}
     return:
-      type: IEnumerable{ArraySegment{System.Byte}}
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
     content.vb: Public Function FrameData(data As ArraySegment(Of Byte)) As IEnumerable(Of ArraySegment(Of Byte))
   overload: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData*
   nameWithType.vb: LengthPrefixSuffixFramer.FrameData(ArraySegment(Of Byte))
@@ -259,7 +237,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.Core.Helpers.LengthPrefixSuffixFramer.FrameData(System.ArraySegment(Of System.Byte))
   name.vb: FrameData(ArraySegment(Of Byte))
 references:
 - uid: EventStore.Core.Helpers
@@ -274,6 +252,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -656,45 +913,46 @@ references:
   name: LengthPrefixSuffixFramer
   nameWithType: LengthPrefixSuffixFramer.LengthPrefixSuffixFramer
   fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.LengthPrefixSuffixFramer
-- uid: Action{BinaryReader}
-  commentId: '!:Action{BinaryReader}'
-  definition: Action`1
+- uid: System.Action{System.IO.BinaryReader}
+  commentId: T:System.Action{System.IO.BinaryReader}
+  parent: System
+  definition: System.Action`1
   name: Action<BinaryReader>
   nameWithType: Action<BinaryReader>
-  fullName: Action<BinaryReader>
+  fullName: System.Action<System.IO.BinaryReader>
   nameWithType.vb: Action(Of BinaryReader)
-  fullName.vb: Action(Of BinaryReader)
+  fullName.vb: System.Action(Of System.IO.BinaryReader)
   name.vb: Action(Of BinaryReader)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: BinaryReader
+  - uid: System.IO.BinaryReader
     name: BinaryReader
     nameWithType: BinaryReader
-    fullName: BinaryReader
+    fullName: System.IO.BinaryReader
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: BinaryReader
+  - uid: System.IO.BinaryReader
     name: BinaryReader
     nameWithType: BinaryReader
-    fullName: BinaryReader
+    fullName: System.IO.BinaryReader
     isExternal: true
   - name: )
     nameWithType: )
@@ -706,41 +964,42 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Action`1
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  name: Action<>
-  nameWithType: Action<>
-  fullName: Action<>
-  nameWithType.vb: Action(Of )
-  fullName.vb: Action(Of )
-  name.vb: Action(Of )
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Action`1
+  - uid: System.Action`1
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -754,28 +1013,29 @@ references:
   name: UnFrameData
   nameWithType: LengthPrefixSuffixFramer.UnFrameData
   fullName: EventStore.Core.Helpers.LengthPrefixSuffixFramer.UnFrameData
-- uid: IEnumerable{ArraySegment{System.Byte}}
-  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ArraySegment<Byte>>
   nameWithType: IEnumerable<ArraySegment<Byte>>
-  fullName: IEnumerable<ArraySegment<System.Byte>>
+  fullName: System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>
   nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
-  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))
   name.vb: IEnumerable(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -792,18 +1052,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -819,58 +1079,66 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -884,10 +1152,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -900,41 +1168,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment`1
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
   isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

@@ -9,8 +9,8 @@ items:
   - EventStore.BufferManagement.BufferManager.#ctor(System.Int32,System.Int32,System.Int32)
   - EventStore.BufferManagement.BufferManager.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)
   - EventStore.BufferManagement.BufferManager.AvailableBuffers
-  - EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment{System.Byte})
-  - EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable{ArraySegment{System.Byte}})
+  - EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment{System.Byte})
+  - EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   - EventStore.BufferManagement.BufferManager.CheckOut
   - EventStore.BufferManagement.BufferManager.CheckOut(System.Int32)
   - EventStore.BufferManagement.BufferManager.ChunkSize
@@ -27,12 +27,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BufferManager
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 22
   assemblies:
   - EventStore.BufferManagement
@@ -41,12 +37,18 @@ items:
   remarks: "\nWhen used in an async call a buffer is pinned. Large numbers of pinned buffers\ncause problem with the GC (in particular it causes heap fragmentation).\nThis class maintains a set of large segments and gives clients pieces of these\nsegments that they can use for their buffers. The alternative to this would be to\ncreate many small arrays which it then maintained. This methodology should be slightly\nbetter than the many small array methodology because in creating only a few very\nlarge objects it will force these objects to be placed on the LOH. Since the\nobjects are on the LOH they are at this time not subject to compacting which would\nrequire an update of all GC roots as would be the case with lots of smaller arrays\nthat were in the normal heap.\n"
   example: []
   syntax:
-    content: 'public class BufferManager : object'
-    content.vb: >-
-      Public Class BufferManager
-          Inherits Object
+    content: public class BufferManager
+    content.vb: Public Class BufferManager
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -71,12 +73,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.Default
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Default
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 43
   assemblies:
   - EventStore.BufferManagement
@@ -112,12 +110,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.SetDefaultBufferManager(EventStore.BufferManagement.BufferManager)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetDefaultBufferManager
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 56
   assemblies:
   - EventStore.BufferManagement
@@ -150,12 +144,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.ChunkSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkSize
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 62
   assemblies:
   - EventStore.BufferManagement
@@ -185,12 +175,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.SegmentsCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SegmentsCount
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 66
   assemblies:
   - EventStore.BufferManagement
@@ -220,12 +206,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.SegmentChunksCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SegmentChunksCount
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 70
   assemblies:
   - EventStore.BufferManagement
@@ -255,12 +237,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.AvailableBuffers
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AvailableBuffers
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 77
   assemblies:
   - EventStore.BufferManagement
@@ -292,12 +270,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.TotalBufferSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TotalBufferSize
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 84
   assemblies:
   - EventStore.BufferManagement
@@ -329,12 +303,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.BufferManager(System.Int32, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 93
   assemblies:
   - EventStore.BufferManagement
@@ -368,12 +338,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.BufferManager(System.Int32, System.Int32, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 103
   assemblies:
   - EventStore.BufferManagement
@@ -410,12 +376,8 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.BufferManager(System.Int32, System.Int32, System.Int32, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 114
   assemblies:
   - EventStore.BufferManagement
@@ -455,24 +417,20 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.CheckOut()
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckOut
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 168
   assemblies:
   - EventStore.BufferManagement
   namespace: EventStore.BufferManagement
   summary: "\nChecks out a buffer from the manager\n"
-  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manager by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment%7bSystem.Byte%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
+  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manager by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment%7bSystem.Byte%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
   example: []
   syntax:
     content: public ArraySegment<byte> CheckOut()
     return:
-      type: ArraySegment{System.Byte}
-      description: A <see cref="!:ArraySegment&lt;T>"></see> that can be used as a buffer
+      type: System.ArraySegment{System.Byte}
+      description: A <xref href="System.ArraySegment%601" data-throw-if-not-resolved="false"></xref> that can be used as a buffer
     content.vb: Public Function CheckOut As ArraySegment(Of Byte)
   overload: EventStore.BufferManagement.BufferManager.CheckOut*
   modifiers.csharp:
@@ -491,18 +449,14 @@ items:
   fullName: EventStore.BufferManagement.BufferManager.CheckOut(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckOut
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 189
   assemblies:
   - EventStore.BufferManagement
   namespace: EventStore.BufferManagement
   summary: "\nChecks out a buffer from the manager\n"
-  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable%7bArraySegment%7bSystem.Byte%7d%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
+  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable%7bSystem.ArraySegment%7bSystem.Byte%7d%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
   example: []
   syntax:
     content: public IEnumerable<ArraySegment<byte>> CheckOut(int toGet)
@@ -510,45 +464,41 @@ items:
     - id: toGet
       type: System.Int32
     return:
-      type: IEnumerable{ArraySegment{System.Byte}}
-      description: A <see cref="!:ArraySegment&lt;T>"></see> that can be used as a buffer
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+      description: A <xref href="System.ArraySegment%601" data-throw-if-not-resolved="false"></xref> that can be used as a buffer
     content.vb: Public Function CheckOut(toGet As Integer) As IEnumerable(Of ArraySegment(Of Byte))
   overload: EventStore.BufferManagement.BufferManager.CheckOut*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment{System.Byte})
-  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment{System.Byte})
-  id: CheckIn(ArraySegment{System.Byte})
+- uid: EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment{System.Byte})
+  id: CheckIn(System.ArraySegment{System.Byte})
   parent: EventStore.BufferManagement.BufferManager
   langs:
   - csharp
   - vb
   name: CheckIn(ArraySegment<Byte>)
   nameWithType: BufferManager.CheckIn(ArraySegment<Byte>)
-  fullName: EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment<System.Byte>)
+  fullName: EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment<System.Byte>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckIn
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 226
   assemblies:
   - EventStore.BufferManagement
   namespace: EventStore.BufferManagement
   summary: "\nReturns a buffer to the control of the manager\n"
-  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment%7bSystem.Byte%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
+  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment%7bSystem.Byte%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
   example: []
   syntax:
     content: public void CheckIn(ArraySegment<byte> buffer)
     parameters:
     - id: buffer
-      type: ArraySegment{System.Byte}
-      description: The <see cref="!:ArraySegment&lt;T>"></see> to return to the cache
+      type: System.ArraySegment{System.Byte}
+      description: The <xref href="System.ArraySegment%601" data-throw-if-not-resolved="false"></xref> to return to the cache
     content.vb: Public Sub CheckIn(buffer As ArraySegment(Of Byte))
   overload: EventStore.BufferManagement.BufferManager.CheckIn*
   nameWithType.vb: BufferManager.CheckIn(ArraySegment(Of Byte))
@@ -556,39 +506,35 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment(Of System.Byte))
+  fullName.vb: EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment(Of System.Byte))
   name.vb: CheckIn(ArraySegment(Of Byte))
-- uid: EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable{ArraySegment{System.Byte}})
-  id: CheckIn(IEnumerable{ArraySegment{System.Byte}})
+- uid: EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  id: CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   parent: EventStore.BufferManagement.BufferManager
   langs:
   - csharp
   - vb
   name: CheckIn(IEnumerable<ArraySegment<Byte>>)
   nameWithType: BufferManager.CheckIn(IEnumerable<ArraySegment<Byte>>)
-  fullName: EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable<ArraySegment<System.Byte>>)
+  fullName: EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.BufferManagement/BufferManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckIn
-    path: ../EventStore/src/EventStore.BufferManagement/BufferManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.BufferManagement/BufferManager.cs
     startLine: 239
   assemblies:
   - EventStore.BufferManagement
   namespace: EventStore.BufferManagement
   summary: "\nReturns a set of buffers to the control of the manager\n"
-  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable%7bArraySegment%7bSystem.Byte%7d%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
+  remarks: "\nIt is the client&apos;s responsibility to return the buffer to the manger by\ncalling <xref href=\"EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable%7bSystem.ArraySegment%7bSystem.Byte%7d%7d)\" data-throw-if-not-resolved=\"false\"></xref> on the buffer\n"
   example: []
   syntax:
     content: public void CheckIn(IEnumerable<ArraySegment<byte>> buffersToReturn)
     parameters:
     - id: buffersToReturn
-      type: IEnumerable{ArraySegment{System.Byte}}
-      description: The <see cref="!:ArraySegment&lt;T>"></see> to return to the cache
+      type: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+      description: The <xref href="System.ArraySegment%601" data-throw-if-not-resolved="false"></xref> to return to the cache
     content.vb: Public Sub CheckIn(buffersToReturn As IEnumerable(Of ArraySegment(Of Byte)))
   overload: EventStore.BufferManagement.BufferManager.CheckIn*
   nameWithType.vb: BufferManager.CheckIn(IEnumerable(Of ArraySegment(Of Byte)))
@@ -596,7 +542,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable(Of ArraySegment(Of System.Byte)))
+  fullName.vb: EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte)))
   name.vb: CheckIn(IEnumerable(Of ArraySegment(Of Byte)))
 references:
 - uid: EventStore.BufferManagement
@@ -611,6 +557,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1036,28 +1261,68 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment{System.Byte})
-  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(ArraySegment{System.Byte})
+- uid: EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment{System.Byte})
+  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(System.ArraySegment{System.Byte})
   isExternal: true
+- uid: System.ArraySegment`1
+  commentId: T:System.ArraySegment`1
+  isExternal: true
+  name: ArraySegment<T>
+  nameWithType: ArraySegment<T>
+  fullName: System.ArraySegment<T>
+  nameWithType.vb: ArraySegment(Of T)
+  fullName.vb: System.ArraySegment(Of T)
+  name.vb: ArraySegment(Of T)
+  spec.csharp:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.BufferManagement.BufferManager.CheckOut*
   commentId: Overload:EventStore.BufferManagement.BufferManager.CheckOut
   name: CheckOut
   nameWithType: BufferManager.CheckOut
   fullName: EventStore.BufferManagement.BufferManager.CheckOut
-- uid: ArraySegment{System.Byte}
-  commentId: '!:ArraySegment{System.Byte}'
-  definition: ArraySegment`1
+- uid: System.ArraySegment{System.Byte}
+  commentId: T:System.ArraySegment{System.Byte}
+  parent: System
+  definition: System.ArraySegment`1
   name: ArraySegment<Byte>
   nameWithType: ArraySegment<Byte>
-  fullName: ArraySegment<System.Byte>
+  fullName: System.ArraySegment<System.Byte>
   nameWithType.vb: ArraySegment(Of Byte)
-  fullName.vb: ArraySegment(Of System.Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
   name.vb: ArraySegment(Of Byte)
   spec.csharp:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1071,10 +1336,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1087,69 +1352,32 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ArraySegment`1
+- uid: EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
+  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}})
   isExternal: true
-  name: ArraySegment<>
-  nameWithType: ArraySegment<>
-  fullName: ArraySegment<>
-  nameWithType.vb: ArraySegment(Of )
-  fullName.vb: ArraySegment(Of )
-  name.vb: ArraySegment(Of )
-  spec.csharp:
-  - uid: ArraySegment`1
-    name: ArraySegment
-    nameWithType: ArraySegment
-    fullName: ArraySegment
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: ArraySegment`1
-    name: ArraySegment
-    nameWithType: ArraySegment
-    fullName: ArraySegment
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable{ArraySegment{System.Byte}})
-  commentId: M:EventStore.BufferManagement.BufferManager.CheckIn(IEnumerable{ArraySegment{System.Byte}})
-  isExternal: true
-- uid: IEnumerable{ArraySegment{System.Byte}}
-  commentId: '!:IEnumerable{ArraySegment{System.Byte}}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ArraySegment{System.Byte}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ArraySegment<Byte>>
   nameWithType: IEnumerable<ArraySegment<Byte>>
-  fullName: IEnumerable<ArraySegment<System.Byte>>
+  fullName: System.Collections.Generic.IEnumerable<System.ArraySegment<System.Byte>>
   nameWithType.vb: IEnumerable(Of ArraySegment(Of Byte))
-  fullName.vb: IEnumerable(Of ArraySegment(Of System.Byte))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.ArraySegment(Of System.Byte))
   name.vb: IEnumerable(Of ArraySegment(Of Byte))
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: <
     nameWithType: <
@@ -1166,18 +1394,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: ArraySegment`1
+  - uid: System.ArraySegment`1
     name: ArraySegment
     nameWithType: ArraySegment
-    fullName: ArraySegment
+    fullName: System.ArraySegment
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1193,44 +1421,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.BufferManagement.BufferManager.CheckIn*
   commentId: Overload:EventStore.BufferManagement.BufferManager.CheckIn
   name: CheckIn

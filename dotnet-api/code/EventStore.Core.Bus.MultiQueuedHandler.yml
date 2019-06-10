@@ -5,9 +5,9 @@ items:
   id: MultiQueuedHandler
   parent: EventStore.Core.Bus
   children:
-  - EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],Func{EventStore.Core.Messaging.Message,System.Int32})
+  - EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],System.Func{EventStore.Core.Messaging.Message,System.Int32})
   - EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.QueuedHandler[])
-  - EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},Func{EventStore.Core.Messaging.Message,System.Int32})
+  - EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},System.Func{EventStore.Core.Messaging.Message,System.Int32})
   - EventStore.Core.Bus.MultiQueuedHandler.Handle(EventStore.Core.Messaging.Message)
   - EventStore.Core.Bus.MultiQueuedHandler.Publish(EventStore.Core.Messaging.Message)
   - EventStore.Core.Bus.MultiQueuedHandler.PublishToAll(EventStore.Core.Messaging.Message)
@@ -22,21 +22,16 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MultiQueuedHandler
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 9
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Bus
   syntax:
-    content: 'public class MultiQueuedHandler : object, IHandle<Message>, IPublisher, IThreadSafePublisher'
+    content: 'public class MultiQueuedHandler : IHandle<Message>, IPublisher, IThreadSafePublisher'
     content.vb: >-
       Public Class MultiQueuedHandler
-          Inherits Object
           Implements IHandle(Of Message), IPublisher, IThreadSafePublisher
   inheritance:
   - System.Object
@@ -44,10 +39,20 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}
   - EventStore.Core.Bus.IPublisher
   - EventStore.Core.Bus.IThreadSafePublisher
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  - EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
   - EventStore.Core.Bus.MultiQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Bus.MultiQueuedHandler.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
   modifiers.csharp:
@@ -68,12 +73,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Queues
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Queues
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -89,24 +90,20 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},Func{EventStore.Core.Messaging.Message,System.Int32})
-  commentId: M:EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},Func{EventStore.Core.Messaging.Message,System.Int32})
-  id: '#ctor(System.Int32,Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},Func{EventStore.Core.Messaging.Message,System.Int32})'
+- uid: EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},System.Func{EventStore.Core.Messaging.Message,System.Int32})
+  commentId: M:EventStore.Core.Bus.MultiQueuedHandler.#ctor(System.Int32,System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},System.Func{EventStore.Core.Messaging.Message,System.Int32})
+  id: '#ctor(System.Int32,System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler},System.Func{EventStore.Core.Messaging.Message,System.Int32})'
   parent: EventStore.Core.Bus.MultiQueuedHandler
   langs:
   - csharp
   - vb
   name: MultiQueuedHandler(Int32, Func<Int32, IQueuedHandler>, Func<Message, Int32>)
   nameWithType: MultiQueuedHandler.MultiQueuedHandler(Int32, Func<Int32, IQueuedHandler>, Func<Message, Int32>)
-  fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(System.Int32, Func<System.Int32, EventStore.Core.Bus.IQueuedHandler>, Func<EventStore.Core.Messaging.Message, System.Int32>)
+  fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(System.Int32, System.Func<System.Int32, EventStore.Core.Bus.IQueuedHandler>, System.Func<EventStore.Core.Messaging.Message, System.Int32>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 15
   assemblies:
   - EventStore.Core
@@ -117,9 +114,9 @@ items:
     - id: queueCount
       type: System.Int32
     - id: queueFactory
-      type: Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}
+      type: System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}
     - id: queueHash
-      type: Func{EventStore.Core.Messaging.Message,System.Int32}
+      type: System.Func{EventStore.Core.Messaging.Message,System.Int32}
     content.vb: Public Sub New(queueCount As Integer, queueFactory As Func(Of Integer, IQueuedHandler), queueHash As Func(Of Message, Integer) = Nothing)
   overload: EventStore.Core.Bus.MultiQueuedHandler.#ctor*
   nameWithType.vb: MultiQueuedHandler.MultiQueuedHandler(Int32, Func(Of Int32, IQueuedHandler), Func(Of Message, Int32))
@@ -127,7 +124,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(System.Int32, Func(Of System.Int32, EventStore.Core.Bus.IQueuedHandler), Func(Of EventStore.Core.Messaging.Message, System.Int32))
+  fullName.vb: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(System.Int32, System.Func(Of System.Int32, EventStore.Core.Bus.IQueuedHandler), System.Func(Of EventStore.Core.Messaging.Message, System.Int32))
   name.vb: MultiQueuedHandler(Int32, Func(Of Int32, IQueuedHandler), Func(Of Message, Int32))
 - uid: EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.QueuedHandler[])
   commentId: M:EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.QueuedHandler[])
@@ -141,12 +138,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.QueuedHandler[])
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 30
   assemblies:
   - EventStore.Core
@@ -165,24 +158,20 @@ items:
   - Public
   fullName.vb: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.QueuedHandler())
   name.vb: MultiQueuedHandler(QueuedHandler())
-- uid: EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],Func{EventStore.Core.Messaging.Message,System.Int32})
-  commentId: M:EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],Func{EventStore.Core.Messaging.Message,System.Int32})
-  id: '#ctor(EventStore.Core.Bus.IQueuedHandler[],Func{EventStore.Core.Messaging.Message,System.Int32})'
+- uid: EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],System.Func{EventStore.Core.Messaging.Message,System.Int32})
+  commentId: M:EventStore.Core.Bus.MultiQueuedHandler.#ctor(EventStore.Core.Bus.IQueuedHandler[],System.Func{EventStore.Core.Messaging.Message,System.Int32})
+  id: '#ctor(EventStore.Core.Bus.IQueuedHandler[],System.Func{EventStore.Core.Messaging.Message,System.Int32})'
   parent: EventStore.Core.Bus.MultiQueuedHandler
   langs:
   - csharp
   - vb
   name: MultiQueuedHandler(IQueuedHandler[], Func<Message, Int32>)
   nameWithType: MultiQueuedHandler.MultiQueuedHandler(IQueuedHandler[], Func<Message, Int32>)
-  fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.IQueuedHandler[], Func<EventStore.Core.Messaging.Message, System.Int32>)
+  fullName: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.IQueuedHandler[], System.Func<EventStore.Core.Messaging.Message, System.Int32>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 34
   assemblies:
   - EventStore.Core
@@ -193,7 +182,7 @@ items:
     - id: queues
       type: EventStore.Core.Bus.IQueuedHandler[]
     - id: queueHash
-      type: Func{EventStore.Core.Messaging.Message,System.Int32}
+      type: System.Func{EventStore.Core.Messaging.Message,System.Int32}
     content.vb: Public Sub New(queues As IQueuedHandler(), queueHash As Func(Of Message, Integer))
   overload: EventStore.Core.Bus.MultiQueuedHandler.#ctor*
   nameWithType.vb: MultiQueuedHandler.MultiQueuedHandler(IQueuedHandler(), Func(Of Message, Int32))
@@ -201,7 +190,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.IQueuedHandler(), Func(Of EventStore.Core.Messaging.Message, System.Int32))
+  fullName.vb: EventStore.Core.Bus.MultiQueuedHandler.MultiQueuedHandler(EventStore.Core.Bus.IQueuedHandler(), System.Func(Of EventStore.Core.Messaging.Message, System.Int32))
   name.vb: MultiQueuedHandler(IQueuedHandler(), Func(Of Message, Int32))
 - uid: EventStore.Core.Bus.MultiQueuedHandler.Start
   commentId: M:EventStore.Core.Bus.MultiQueuedHandler.Start
@@ -215,12 +204,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Start()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Start
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 46
   assemblies:
   - EventStore.Core
@@ -228,7 +213,7 @@ items:
   syntax:
     content: public IEnumerable<Task> Start()
     return:
-      type: IEnumerable{Task}
+      type: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
     content.vb: Public Function Start As IEnumerable(Of Task)
   overload: EventStore.Core.Bus.MultiQueuedHandler.Start*
   modifiers.csharp:
@@ -247,12 +232,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Stop()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Stop
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -277,12 +258,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Handle(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 65
   assemblies:
   - EventStore.Core
@@ -312,12 +289,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Publish(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 69
   assemblies:
   - EventStore.Core
@@ -347,12 +320,8 @@ items:
   fullName: EventStore.Core.Bus.MultiQueuedHandler.PublishToAll(EventStore.Core.Messaging.Message)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Bus/MultiQueuedHandler.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishToAll
-    path: ../EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Bus/MultiQueuedHandler.cs
     startLine: 76
   assemblies:
   - EventStore.Core
@@ -433,6 +402,285 @@ references:
   name: IThreadSafePublisher
   nameWithType: IThreadSafePublisher
   fullName: EventStore.Core.Bus.IThreadSafePublisher
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -514,6 +762,70 @@ references:
     name: ToCanonicalJson
     nameWithType: Json.ToCanonicalJson
     fullName: EventStore.Common.Utils.Json.ToCanonicalJson
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, Message>()
+  nameWithType: HandleExtensions.WidenFrom<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: WidenFrom(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom<TInput, Message>
+    nameWithType: HandleExtensions.WidenFrom<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2
+    name: WidenFrom(Of TInput, Message)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, EventStore.Core.Messaging.Message)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messaging.Message}.EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  parent: EventStore.Core.Bus.HandleExtensions
+  definition: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, Message>()
+  nameWithType: HandleExtensions.NarrowTo<TInput, Message>()
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>()
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, Message)()
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)()
+  name.vb: NarrowTo(Of TInput, Message)()
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo<TInput, Message>
+    nameWithType: HandleExtensions.NarrowTo<TInput, Message>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, EventStore.Core.Messaging.Message>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2
+    name: NarrowTo(Of TInput, Message)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, Message)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, EventStore.Core.Messaging.Message)
   - name: (
     nameWithType: (
     fullName: (
@@ -746,6 +1058,124 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+  name: WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: WidenFrom(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom<TInput, TOutput>
+    nameWithType: HandleExtensions.WidenFrom<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.WidenFrom``2(EventStore.Core.Bus.IHandle{``1})
+    name: WidenFrom(Of TInput, TOutput)
+    nameWithType: HandleExtensions.WidenFrom(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.WidenFrom(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.HandleExtensions
+  commentId: T:EventStore.Core.Bus.HandleExtensions
+  parent: EventStore.Core.Bus
+  name: HandleExtensions
+  nameWithType: HandleExtensions
+  fullName: EventStore.Core.Bus.HandleExtensions
+- uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  commentId: M:EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+  name: NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>(IHandle<TOutput>)
+  fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>(EventStore.Core.Bus.IHandle<TOutput>)
+  nameWithType.vb: HandleExtensions.NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  fullName.vb: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)(EventStore.Core.Bus.IHandle(Of TOutput))
+  name.vb: NarrowTo(Of TInput, TOutput)(IHandle(Of TOutput))
+  spec.csharp:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo<TInput, TOutput>
+    nameWithType: HandleExtensions.NarrowTo<TInput, TOutput>
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo<TInput, TOutput>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.HandleExtensions.NarrowTo``2(EventStore.Core.Bus.IHandle{``1})
+    name: NarrowTo(Of TInput, TOutput)
+    nameWithType: HandleExtensions.NarrowTo(Of TInput, TOutput)
+    fullName: EventStore.Core.Bus.HandleExtensions.NarrowTo(Of TInput, TOutput)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOutput
+    nameWithType: TOutput
+    fullName: TOutput
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   commentId: M:EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1(``0)
   name: Serialize<T>(T)
@@ -870,20 +1300,21 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}
-  commentId: '!:Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}'
-  definition: Func`2
+- uid: System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}
+  commentId: T:System.Func{System.Int32,EventStore.Core.Bus.IQueuedHandler}
+  parent: System
+  definition: System.Func`2
   name: Func<Int32, IQueuedHandler>
   nameWithType: Func<Int32, IQueuedHandler>
-  fullName: Func<System.Int32, EventStore.Core.Bus.IQueuedHandler>
+  fullName: System.Func<System.Int32, EventStore.Core.Bus.IQueuedHandler>
   nameWithType.vb: Func(Of Int32, IQueuedHandler)
-  fullName.vb: Func(Of System.Int32, EventStore.Core.Bus.IQueuedHandler)
+  fullName.vb: System.Func(Of System.Int32, EventStore.Core.Bus.IQueuedHandler)
   name.vb: Func(Of Int32, IQueuedHandler)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -904,10 +1335,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -927,20 +1358,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func{EventStore.Core.Messaging.Message,System.Int32}
-  commentId: '!:Func{EventStore.Core.Messaging.Message,System.Int32}'
-  definition: Func`2
+- uid: System.Func{EventStore.Core.Messaging.Message,System.Int32}
+  commentId: T:System.Func{EventStore.Core.Messaging.Message,System.Int32}
+  parent: System
+  definition: System.Func`2
   name: Func<Message, Int32>
   nameWithType: Func<Message, Int32>
-  fullName: Func<EventStore.Core.Messaging.Message, System.Int32>
+  fullName: System.Func<EventStore.Core.Messaging.Message, System.Int32>
   nameWithType.vb: Func(Of Message, Int32)
-  fullName.vb: Func(Of EventStore.Core.Messaging.Message, System.Int32)
+  fullName.vb: System.Func(Of EventStore.Core.Messaging.Message, System.Int32)
   name.vb: Func(Of Message, Int32)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -961,10 +1393,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -984,53 +1416,54 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func`2
+- uid: System.Func`2
+  commentId: T:System.Func`2
   isExternal: true
-  name: Func<, >
-  nameWithType: Func<, >
-  fullName: Func<, >
-  nameWithType.vb: Func(Of , )
-  fullName.vb: Func(Of , )
-  name.vb: Func(Of , )
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
@@ -1063,87 +1496,95 @@ references:
   name: Start
   nameWithType: MultiQueuedHandler.Start
   fullName: EventStore.Core.Bus.MultiQueuedHandler.Start
-- uid: IEnumerable{Task}
-  commentId: '!:IEnumerable{Task}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<Task>
   nameWithType: IEnumerable<Task>
-  fullName: IEnumerable<Task>
+  fullName: System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task>
   nameWithType.vb: IEnumerable(Of Task)
-  fullName.vb: IEnumerable(Of Task)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Threading.Tasks.Task)
   name.vb: IEnumerable(Of Task)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Task
+  - uid: System.Threading.Tasks.Task
     name: Task
     nameWithType: Task
-    fullName: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Bus.MultiQueuedHandler.Stop*
   commentId: Overload:EventStore.Core.Bus.MultiQueuedHandler.Stop
   name: Stop

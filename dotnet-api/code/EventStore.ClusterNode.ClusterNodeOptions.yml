@@ -113,26 +113,29 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions
   type: Class
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterNodeOptions
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 7
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: 'public class ClusterNodeOptions : object, IOptions'
+    content: 'public class ClusterNodeOptions : IOptions'
     content.vb: >-
       Public Class ClusterNodeOptions
-          Inherits Object
           Implements IOptions
   inheritance:
   - System.Object
   implements:
   - EventStore.Common.Options.IOptions
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -157,25 +160,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Help
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Help
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 8
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool Help { get; set; }
+    content: >-
+      [ArgDescription("Show help.", "Application Options")]
+
+      public bool Help { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property Help As Boolean
+    content.vb: >-
+      <ArgDescription("Show help.", "Application Options")>
+
+      Public Property Help As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Help*
   implements:
   - EventStore.Common.Options.IOptions.Help
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Show help.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -194,25 +207,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Version
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Version
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 11
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool Version { get; set; }
+    content: >-
+      [ArgDescription("Show version.", "Application Options")]
+
+      public bool Version { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property Version As Boolean
+    content.vb: >-
+      <ArgDescription("Show version.", "Application Options")>
+
+      Public Property Version As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Version*
   implements:
   - EventStore.Common.Options.IOptions.Version
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Show version.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -231,25 +254,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Log
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Log
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 14
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string Log { get; set; }
+    content: >-
+      [ArgDescription("Path where to keep log files.", "Application Options")]
+
+      public string Log { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Log As String
+    content.vb: >-
+      <ArgDescription("Path where to keep log files.", "Application Options")>
+
+      Public Property Log As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Log*
   implements:
   - EventStore.Common.Options.IOptions.Log
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Path where to keep log files.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -268,25 +301,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Config
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Config
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 17
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string Config { get; set; }
+    content: >-
+      [ArgDescription("Configuration files.", "Application Options")]
+
+      public string Config { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Config As String
+    content.vb: >-
+      <ArgDescription("Configuration files.", "Application Options")>
+
+      Public Property Config As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Config*
   implements:
   - EventStore.Common.Options.IOptions.Config
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Configuration files.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -305,25 +348,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Defines
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Defines
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 20
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string[] Defines { get; set; }
+    content: >-
+      [ArgDescription("Run-time conditionals.", "Application Options")]
+
+      public string[] Defines { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property Defines As String()
+    content.vb: >-
+      <ArgDescription("Run-time conditionals.", "Application Options")>
+
+      Public Property Defines As String()
   overload: EventStore.ClusterNode.ClusterNodeOptions.Defines*
   implements:
   - EventStore.Common.Options.IOptions.Defines
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Run-time conditionals.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -342,25 +395,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.WhatIf
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WhatIf
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 23
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool WhatIf { get; set; }
+    content: >-
+      [ArgDescription("Print effective configuration to console and then exit.", "Application Options")]
+
+      public bool WhatIf { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property WhatIf As Boolean
+    content.vb: >-
+      <ArgDescription("Print effective configuration to console and then exit.", "Application Options")>
+
+      Public Property WhatIf As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.WhatIf*
   implements:
   - EventStore.Common.Options.IOptions.WhatIf
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Print effective configuration to console and then exit.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -379,23 +442,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.StartStandardProjections
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StartStandardProjections
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 26
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool StartStandardProjections { get; set; }
+    content: >-
+      [ArgDescription("Start the built in system projections.", "Application Options")]
+
+      public bool StartStandardProjections { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property StartStandardProjections As Boolean
+    content.vb: >-
+      <ArgDescription("Start the built in system projections.", "Application Options")>
+
+      Public Property StartStandardProjections As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.StartStandardProjections*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Start the built in system projections.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -414,23 +487,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.DisableHTTPCaching
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableHTTPCaching
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 29
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool DisableHTTPCaching { get; set; }
+    content: >-
+      [ArgDescription("Disable HTTP caching.", "Application Options")]
+
+      public bool DisableHTTPCaching { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property DisableHTTPCaching As Boolean
+    content.vb: >-
+      <ArgDescription("Disable HTTP caching.", "Application Options")>
+
+      Public Property DisableHTTPCaching As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.DisableHTTPCaching*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Disable HTTP caching.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -449,23 +532,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MonoMinThreadpoolSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MonoMinThreadpoolSize
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 32
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int MonoMinThreadpoolSize { get; set; }
+    content: >-
+      [ArgDescription("Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults.", "Application Options")]
+
+      public int MonoMinThreadpoolSize { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property MonoMinThreadpoolSize As Integer
+    content.vb: >-
+      <ArgDescription("Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults.", "Application Options")>
+
+      Public Property MonoMinThreadpoolSize As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.MonoMinThreadpoolSize*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Minimum number of worker threads when running under mono. Set to 0 to leave machine defaults.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -484,23 +577,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntIp
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntIp
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 35
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public IPAddress IntIp { get; set; }
+    content: >-
+      [ArgDescription("Internal IP Address.", "Interface Options")]
+
+      public IPAddress IntIp { get; set; }
     parameters: []
     return:
-      type: IPAddress
-    content.vb: Public Property IntIp As IPAddress
+      type: System.Net.IPAddress
+    content.vb: >-
+      <ArgDescription("Internal IP Address.", "Interface Options")>
+
+      Public Property IntIp As IPAddress
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntIp*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Internal IP Address.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -519,23 +622,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtIp
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtIp
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 38
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public IPAddress ExtIp { get; set; }
+    content: >-
+      [ArgDescription("External IP Address.", "Interface Options")]
+
+      public IPAddress ExtIp { get; set; }
     parameters: []
     return:
-      type: IPAddress
-    content.vb: Public Property ExtIp As IPAddress
+      type: System.Net.IPAddress
+    content.vb: >-
+      <ArgDescription("External IP Address.", "Interface Options")>
+
+      Public Property ExtIp As IPAddress
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtIp*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: External IP Address.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -554,23 +667,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 41
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntHttpPort { get; set; }
+    content: >-
+      [ArgDescription("Internal HTTP Port.", "Interface Options")]
+
+      public int IntHttpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntHttpPort As Integer
+    content.vb: >-
+      <ArgDescription("Internal HTTP Port.", "Interface Options")>
+
+      Public Property IntHttpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Internal HTTP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -589,23 +712,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 44
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtHttpPort { get; set; }
+    content: >-
+      [ArgDescription("External HTTP Port.", "Interface Options")]
+
+      public int ExtHttpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtHttpPort As Integer
+    content.vb: >-
+      <ArgDescription("External HTTP Port.", "Interface Options")>
+
+      Public Property ExtHttpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: External HTTP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -624,23 +757,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntTcpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 47
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntTcpPort { get; set; }
+    content: >-
+      [ArgDescription("Internal TCP Port.", "Interface Options")]
+
+      public int IntTcpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntTcpPort As Integer
+    content.vb: >-
+      <ArgDescription("Internal TCP Port.", "Interface Options")>
+
+      Public Property IntTcpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntTcpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Internal TCP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -659,23 +802,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntSecureTcpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntSecureTcpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 50
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntSecureTcpPort { get; set; }
+    content: >-
+      [ArgDescription("Internal Secure TCP Port.", "Interface Options")]
+
+      public int IntSecureTcpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntSecureTcpPort As Integer
+    content.vb: >-
+      <ArgDescription("Internal Secure TCP Port.", "Interface Options")>
+
+      Public Property IntSecureTcpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntSecureTcpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Internal Secure TCP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -694,23 +847,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 53
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtTcpPort { get; set; }
+    content: >-
+      [ArgDescription("External TCP Port.", "Interface Options")]
+
+      public int ExtTcpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtTcpPort As Integer
+    content.vb: >-
+      <ArgDescription("External TCP Port.", "Interface Options")>
+
+      Public Property ExtTcpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: External TCP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -729,23 +892,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtSecureTcpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtSecureTcpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 56
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtSecureTcpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise Secure External Tcp Port As.", "Interface Options")]
+
+      public int ExtSecureTcpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtSecureTcpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise Secure External Tcp Port As.", "Interface Options")>
+
+      Public Property ExtSecureTcpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtSecureTcpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise Secure External Tcp Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -764,23 +937,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtSecureTcpPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtSecureTcpPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 59
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtSecureTcpPort { get; set; }
+    content: >-
+      [ArgDescription("External Secure TCP Port.", "Interface Options")]
+
+      public int ExtSecureTcpPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtSecureTcpPort As Integer
+    content.vb: >-
+      <ArgDescription("External Secure TCP Port.", "Interface Options")>
+
+      Public Property ExtSecureTcpPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtSecureTcpPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: External Secure TCP Port.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -799,23 +982,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtIpAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtIpAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 62
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public IPAddress ExtIpAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise External Tcp Address As.", "Interface Options")]
+
+      public IPAddress ExtIpAdvertiseAs { get; set; }
     parameters: []
     return:
-      type: IPAddress
-    content.vb: Public Property ExtIpAdvertiseAs As IPAddress
+      type: System.Net.IPAddress
+    content.vb: >-
+      <ArgDescription("Advertise External Tcp Address As.", "Interface Options")>
+
+      Public Property ExtIpAdvertiseAs As IPAddress
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtIpAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise External Tcp Address As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -834,23 +1027,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 65
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtTcpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise External Tcp Port As.", "Interface Options")]
+
+      public int ExtTcpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtTcpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise External Tcp Port As.", "Interface Options")>
+
+      Public Property ExtTcpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise External Tcp Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -869,23 +1072,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 68
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtHttpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise External Http Port As.", "Interface Options")]
+
+      public int ExtHttpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtHttpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise External Http Port As.", "Interface Options")>
+
+      Public Property ExtHttpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise External Http Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -904,23 +1117,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntIpAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntIpAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 71
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public IPAddress IntIpAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise Internal Tcp Address As.", "Interface Options")]
+
+      public IPAddress IntIpAdvertiseAs { get; set; }
     parameters: []
     return:
-      type: IPAddress
-    content.vb: Public Property IntIpAdvertiseAs As IPAddress
+      type: System.Net.IPAddress
+    content.vb: >-
+      <ArgDescription("Advertise Internal Tcp Address As.", "Interface Options")>
+
+      Public Property IntIpAdvertiseAs As IPAddress
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntIpAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise Internal Tcp Address As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -939,23 +1162,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntSecureTcpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntSecureTcpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 74
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntSecureTcpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise Secure Internal Tcp Port As.", "Interface Options")]
+
+      public int IntSecureTcpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntSecureTcpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise Secure Internal Tcp Port As.", "Interface Options")>
+
+      Public Property IntSecureTcpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntSecureTcpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise Secure Internal Tcp Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -974,23 +1207,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntTcpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 77
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntTcpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise Internal Tcp Port As.", "Interface Options")]
+
+      public int IntTcpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntTcpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise Internal Tcp Port As.", "Interface Options")>
+
+      Public Property IntTcpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntTcpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise Internal Tcp Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1009,23 +1252,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPortAdvertiseAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPortAdvertiseAs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 80
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntHttpPortAdvertiseAs { get; set; }
+    content: >-
+      [ArgDescription("Advertise Internal Http Port As.", "Interface Options")]
+
+      public int IntHttpPortAdvertiseAs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntHttpPortAdvertiseAs As Integer
+    content.vb: >-
+      <ArgDescription("Advertise Internal Http Port As.", "Interface Options")>
+
+      Public Property IntHttpPortAdvertiseAs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPortAdvertiseAs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Advertise Internal Http Port As.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1044,23 +1297,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntTcpHeartbeatTimeout
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpHeartbeatTimeout
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 83
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntTcpHeartbeatTimeout { get; set; }
+    content: >-
+      [ArgDescription("Heartbeat timeout for internal TCP sockets", "Interface Options")]
+
+      public int IntTcpHeartbeatTimeout { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntTcpHeartbeatTimeout As Integer
+    content.vb: >-
+      <ArgDescription("Heartbeat timeout for internal TCP sockets", "Interface Options")>
+
+      Public Property IntTcpHeartbeatTimeout As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntTcpHeartbeatTimeout*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Heartbeat timeout for internal TCP sockets
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1079,23 +1342,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpHeartbeatTimeout
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpHeartbeatTimeout
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 86
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtTcpHeartbeatTimeout { get; set; }
+    content: >-
+      [ArgDescription("Heartbeat timeout for external TCP sockets", "Interface Options")]
+
+      public int ExtTcpHeartbeatTimeout { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtTcpHeartbeatTimeout As Integer
+    content.vb: >-
+      <ArgDescription("Heartbeat timeout for external TCP sockets", "Interface Options")>
+
+      Public Property ExtTcpHeartbeatTimeout As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpHeartbeatTimeout*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Heartbeat timeout for external TCP sockets
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1114,23 +1387,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntTcpHeartbeatInterval
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntTcpHeartbeatInterval
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 89
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IntTcpHeartbeatInterval { get; set; }
+    content: >-
+      [ArgDescription("Heartbeat interval for internal TCP sockets", "Interface Options")]
+
+      public int IntTcpHeartbeatInterval { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IntTcpHeartbeatInterval As Integer
+    content.vb: >-
+      <ArgDescription("Heartbeat interval for internal TCP sockets", "Interface Options")>
+
+      Public Property IntTcpHeartbeatInterval As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntTcpHeartbeatInterval*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Heartbeat interval for internal TCP sockets
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1149,23 +1432,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpHeartbeatInterval
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtTcpHeartbeatInterval
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 92
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ExtTcpHeartbeatInterval { get; set; }
+    content: >-
+      [ArgDescription("Heartbeat interval for external TCP sockets", "Interface Options")]
+
+      public int ExtTcpHeartbeatInterval { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ExtTcpHeartbeatInterval As Integer
+    content.vb: >-
+      <ArgDescription("Heartbeat interval for external TCP sockets", "Interface Options")>
+
+      Public Property ExtTcpHeartbeatInterval As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtTcpHeartbeatInterval*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Heartbeat interval for external TCP sockets
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1184,23 +1477,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipOnSingleNode
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipOnSingleNode
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 95
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool GossipOnSingleNode { get; set; }
+    content: >-
+      [ArgDescription("When enabled tells a single node to run gossip as if it is a cluster", "Interface Options")]
+
+      public bool GossipOnSingleNode { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property GossipOnSingleNode As Boolean
+    content.vb: >-
+      <ArgDescription("When enabled tells a single node to run gossip as if it is a cluster", "Interface Options")>
+
+      Public Property GossipOnSingleNode As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipOnSingleNode*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: When enabled tells a single node to run gossip as if it is a cluster
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1219,23 +1522,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ConnectionPendingSendBytesThreshold
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ConnectionPendingSendBytesThreshold
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 98
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ConnectionPendingSendBytesThreshold { get; set; }
+    content: >-
+      [ArgDescription("The maximum number of pending send bytes allowed before a connection is closed.", "Interface Options")]
+
+      public int ConnectionPendingSendBytesThreshold { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ConnectionPendingSendBytesThreshold As Integer
+    content.vb: >-
+      <ArgDescription("The maximum number of pending send bytes allowed before a connection is closed.", "Interface Options")>
+
+      Public Property ConnectionPendingSendBytesThreshold As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ConnectionPendingSendBytesThreshold*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The maximum number of pending send bytes allowed before a connection is closed.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1254,25 +1567,35 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Force
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Force
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 102
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool Force { get; set; }
+    content: >-
+      [ArgDescription("Force the Event Store to run in possibly harmful environments such as with Boehm GC.", "Application Options")]
+
+      public bool Force { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property Force As Boolean
+    content.vb: >-
+      <ArgDescription("Force the Event Store to run in possibly harmful environments such as with Boehm GC.", "Application Options")>
+
+      Public Property Force As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Force*
   implements:
   - EventStore.Common.Options.IOptions.Force
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Force the Event Store to run in possibly harmful environments such as with Boehm GC.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -1291,23 +1614,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ClusterSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterSize
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 105
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ClusterSize { get; set; }
+    content: >-
+      [ArgDescription("The number of nodes in the cluster.", "Cluster Options")]
+
+      public int ClusterSize { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ClusterSize As Integer
+    content.vb: >-
+      <ArgDescription("The number of nodes in the cluster.", "Cluster Options")>
+
+      Public Property ClusterSize As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ClusterSize*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of nodes in the cluster.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1326,23 +1659,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.NodePriority
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NodePriority
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 108
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int NodePriority { get; set; }
+    content: >-
+      [ArgDescription("The node priority used during master election", "Cluster Options")]
+
+      public int NodePriority { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property NodePriority As Integer
+    content.vb: >-
+      <ArgDescription("The node priority used during master election", "Cluster Options")>
+
+      Public Property NodePriority As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.NodePriority*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The node priority used during master election
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1361,23 +1704,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MinFlushDelayMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MinFlushDelayMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 111
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public double MinFlushDelayMs { get; set; }
+    content: >-
+      [ArgDescription("The minimum flush delay in milliseconds.", "Database Options")]
+
+      public double MinFlushDelayMs { get; set; }
     parameters: []
     return:
       type: System.Double
-    content.vb: Public Property MinFlushDelayMs As Double
+    content.vb: >-
+      <ArgDescription("The minimum flush delay in milliseconds.", "Database Options")>
+
+      Public Property MinFlushDelayMs As Double
   overload: EventStore.ClusterNode.ClusterNodeOptions.MinFlushDelayMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The minimum flush delay in milliseconds.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1396,23 +1749,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CommitCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitCount
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 114
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int CommitCount { get; set; }
+    content: >-
+      [ArgDescription("The number of nodes which must acknowledge commits before acknowledging to a client.", "Cluster Options")]
+
+      public int CommitCount { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property CommitCount As Integer
+    content.vb: >-
+      <ArgDescription("The number of nodes which must acknowledge commits before acknowledging to a client.", "Cluster Options")>
+
+      Public Property CommitCount As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.CommitCount*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of nodes which must acknowledge commits before acknowledging to a client.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1431,23 +1794,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.PrepareCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareCount
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 117
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int PrepareCount { get; set; }
+    content: >-
+      [ArgDescription("The number of nodes which must acknowledge prepares.", "Cluster Options")]
+
+      public int PrepareCount { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property PrepareCount As Integer
+    content.vb: >-
+      <ArgDescription("The number of nodes which must acknowledge prepares.", "Cluster Options")>
+
+      Public Property PrepareCount As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.PrepareCount*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of nodes which must acknowledge prepares.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1466,23 +1839,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.AdminOnExt
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AdminOnExt
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 120
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool AdminOnExt { get; set; }
+    content: >-
+      [ArgDescription("Whether or not to run the admin ui on the external HTTP endpoint", "Interface Options")]
+
+      public bool AdminOnExt { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property AdminOnExt As Boolean
+    content.vb: >-
+      <ArgDescription("Whether or not to run the admin ui on the external HTTP endpoint", "Interface Options")>
+
+      Public Property AdminOnExt As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.AdminOnExt*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether or not to run the admin ui on the external HTTP endpoint
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1501,23 +1884,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.StatsOnExt
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsOnExt
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 123
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool StatsOnExt { get; set; }
+    content: >-
+      [ArgDescription("Whether or not to accept statistics requests on the external HTTP endpoint, needed if you use admin ui", "Interface Options")]
+
+      public bool StatsOnExt { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property StatsOnExt As Boolean
+    content.vb: >-
+      <ArgDescription("Whether or not to accept statistics requests on the external HTTP endpoint, needed if you use admin ui", "Interface Options")>
+
+      Public Property StatsOnExt As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.StatsOnExt*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether or not to accept statistics requests on the external HTTP endpoint, needed if you use admin ui
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1536,23 +1929,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipOnExt
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipOnExt
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 126
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool GossipOnExt { get; set; }
+    content: >-
+      [ArgDescription("Whether or not to accept gossip requests on the external HTTP endpoint", "Interface Options")]
+
+      public bool GossipOnExt { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property GossipOnExt As Boolean
+    content.vb: >-
+      <ArgDescription("Whether or not to accept gossip requests on the external HTTP endpoint", "Interface Options")>
+
+      Public Property GossipOnExt As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipOnExt*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether or not to accept gossip requests on the external HTTP endpoint
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -1571,23 +1974,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.DisableScavengeMerging
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableScavengeMerging
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 129
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool DisableScavengeMerging { get; set; }
+    content: >-
+      [ArgDescription("Disables the merging of chunks when scavenge is running", "Database Options")]
+
+      public bool DisableScavengeMerging { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property DisableScavengeMerging As Boolean
+    content.vb: >-
+      <ArgDescription("Disables the merging of chunks when scavenge is running", "Database Options")>
+
+      Public Property DisableScavengeMerging As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.DisableScavengeMerging*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Disables the merging of chunks when scavenge is running
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1606,23 +2019,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ScavengeHistoryMaxAge
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ScavengeHistoryMaxAge
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 132
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ScavengeHistoryMaxAge { get; set; }
+    content: >-
+      [ArgDescription("The number of days to keep scavenge history", "Database Options")]
+
+      public int ScavengeHistoryMaxAge { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ScavengeHistoryMaxAge As Integer
+    content.vb: >-
+      <ArgDescription("The number of days to keep scavenge history", "Database Options")>
+
+      Public Property ScavengeHistoryMaxAge As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ScavengeHistoryMaxAge*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of days to keep scavenge history
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1641,23 +2064,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.DiscoverViaDns
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DiscoverViaDns
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 135
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool DiscoverViaDns { get; set; }
+    content: >-
+      [ArgDescription("Whether to use DNS lookup to discover other cluster nodes.", "Cluster Options")]
+
+      public bool DiscoverViaDns { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property DiscoverViaDns As Boolean
+    content.vb: >-
+      <ArgDescription("Whether to use DNS lookup to discover other cluster nodes.", "Cluster Options")>
+
+      Public Property DiscoverViaDns As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.DiscoverViaDns*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether to use DNS lookup to discover other cluster nodes.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1676,23 +2109,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ClusterDns
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterDns
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 138
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string ClusterDns { get; set; }
+    content: >-
+      [ArgDescription("DNS name from which other nodes can be discovered.", "Cluster Options")]
+
+      public string ClusterDns { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property ClusterDns As String
+    content.vb: >-
+      <ArgDescription("DNS name from which other nodes can be discovered.", "Cluster Options")>
+
+      Public Property ClusterDns As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.ClusterDns*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: DNS name from which other nodes can be discovered.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1711,23 +2154,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ClusterGossipPort
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClusterGossipPort
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 141
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ClusterGossipPort { get; set; }
+    content: >-
+      [ArgDescription("The port on which cluster nodes' managers are running.", "Cluster Options")]
+
+      public int ClusterGossipPort { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ClusterGossipPort As Integer
+    content.vb: >-
+      <ArgDescription("The port on which cluster nodes' managers are running.", "Cluster Options")>
+
+      Public Property ClusterGossipPort As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ClusterGossipPort*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The port on which cluster nodes' managers are running.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1746,23 +2199,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipSeed
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipSeed
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 144
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public IPEndPoint[] GossipSeed { get; set; }
+    content: >-
+      [ArgDescription("Endpoints for other cluster nodes from which to seed gossip", "Cluster Options")]
+
+      public IPEndPoint[] GossipSeed { get; set; }
     parameters: []
     return:
-      type: IPEndPoint[]
-    content.vb: Public Property GossipSeed As IPEndPoint()
+      type: System.Net.IPEndPoint[]
+    content.vb: >-
+      <ArgDescription("Endpoints for other cluster nodes from which to seed gossip", "Cluster Options")>
+
+      Public Property GossipSeed As IPEndPoint()
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipSeed*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Endpoints for other cluster nodes from which to seed gossip
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -1781,23 +2244,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.StatsPeriodSec
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StatsPeriodSec
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 147
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int StatsPeriodSec { get; set; }
+    content: >-
+      [ArgDescription("The number of seconds between statistics gathers.", "Application Options")]
+
+      public int StatsPeriodSec { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property StatsPeriodSec As Integer
+    content.vb: >-
+      <ArgDescription("The number of seconds between statistics gathers.", "Application Options")>
+
+      Public Property StatsPeriodSec As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.StatsPeriodSec*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of seconds between statistics gathers.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -1816,23 +2289,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CachedChunks
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CachedChunks
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 150
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int CachedChunks { get; set; }
+    content: >-
+      [ArgDescription("The number of chunks to cache in unmanaged memory.", "Database Options")]
+
+      public int CachedChunks { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property CachedChunks As Integer
+    content.vb: >-
+      <ArgDescription("The number of chunks to cache in unmanaged memory.", "Database Options")>
+
+      Public Property CachedChunks As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.CachedChunks*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of chunks to cache in unmanaged memory.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1851,23 +2334,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ReaderThreadsCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReaderThreadsCount
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 153
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ReaderThreadsCount { get; set; }
+    content: >-
+      [ArgDescription("The number of reader threads to use for processing reads.", "Database Options")]
+
+      public int ReaderThreadsCount { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ReaderThreadsCount As Integer
+    content.vb: >-
+      <ArgDescription("The number of reader threads to use for processing reads.", "Database Options")>
+
+      Public Property ReaderThreadsCount As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ReaderThreadsCount*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of reader threads to use for processing reads.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1886,23 +2379,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ChunksCacheSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunksCacheSize
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 156
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public long ChunksCacheSize { get; set; }
+    content: >-
+      [ArgDescription("The amount of unmanaged memory to use for caching chunks in bytes.", "Database Options")]
+
+      public long ChunksCacheSize { get; set; }
     parameters: []
     return:
       type: System.Int64
-    content.vb: Public Property ChunksCacheSize As Long
+    content.vb: >-
+      <ArgDescription("The amount of unmanaged memory to use for caching chunks in bytes.", "Database Options")>
+
+      Public Property ChunksCacheSize As Long
   overload: EventStore.ClusterNode.ClusterNodeOptions.ChunksCacheSize*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The amount of unmanaged memory to use for caching chunks in bytes.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1921,23 +2424,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MaxMemTableSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxMemTableSize
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 159
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int MaxMemTableSize { get; set; }
+    content: >-
+      [ArgDescription("Adjusts the maximum size of a mem table.", "Database Options")]
+
+      public int MaxMemTableSize { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property MaxMemTableSize As Integer
+    content.vb: >-
+      <ArgDescription("Adjusts the maximum size of a mem table.", "Database Options")>
+
+      Public Property MaxMemTableSize As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.MaxMemTableSize*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Adjusts the maximum size of a mem table.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1956,23 +2469,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.HashCollisionReadLimit
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HashCollisionReadLimit
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 162
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int HashCollisionReadLimit { get; set; }
+    content: >-
+      [ArgDescription("The number of events to read per candidate in the case of a hash collision", "Database Options")]
+
+      public int HashCollisionReadLimit { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property HashCollisionReadLimit As Integer
+    content.vb: >-
+      <ArgDescription("The number of events to read per candidate in the case of a hash collision", "Database Options")>
+
+      Public Property HashCollisionReadLimit As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.HashCollisionReadLimit*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of events to read per candidate in the case of a hash collision
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -1991,23 +2514,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Db
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Db
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 165
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string Db { get; set; }
+    content: >-
+      [ArgDescription("The path the db should be loaded/saved to.", "Database Options")]
+
+      public string Db { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Db As String
+    content.vb: >-
+      <ArgDescription("The path the db should be loaded/saved to.", "Database Options")>
+
+      Public Property Db As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Db*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The path the db should be loaded/saved to.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2026,23 +2559,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Index
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Index
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 168
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string Index { get; set; }
+    content: >-
+      [ArgDescription("The path the index should be loaded/saved to.", "Database Options")]
+
+      public string Index { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Index As String
+    content.vb: >-
+      <ArgDescription("The path the index should be loaded/saved to.", "Database Options")>
+
+      Public Property Index As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.Index*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The path the index should be loaded/saved to.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2061,23 +2604,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MemDb
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MemDb
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 171
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool MemDb { get; set; }
+    content: >-
+      [ArgDescription("Keep everything in memory, no directories or files are created.", "Database Options")]
+
+      public bool MemDb { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property MemDb As Boolean
+    content.vb: >-
+      <ArgDescription("Keep everything in memory, no directories or files are created.", "Database Options")>
+
+      Public Property MemDb As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.MemDb*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Keep everything in memory, no directories or files are created.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2096,23 +2649,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.SkipDbVerify
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipDbVerify
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 174
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool SkipDbVerify { get; set; }
+    content: >-
+      [ArgDescription("Bypasses the checking of file hashes of database during startup (allows for faster startup).", "Database Options")]
+
+      public bool SkipDbVerify { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property SkipDbVerify As Boolean
+    content.vb: >-
+      <ArgDescription("Bypasses the checking of file hashes of database during startup (allows for faster startup).", "Database Options")>
+
+      Public Property SkipDbVerify As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.SkipDbVerify*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Bypasses the checking of file hashes of database during startup (allows for faster startup).
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2131,23 +2694,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.WriteThrough
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteThrough
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 177
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool WriteThrough { get; set; }
+    content: >-
+      [ArgDescription("Enables Write Through when writing to the file system, this bypasses filesystem caches.", "Database Options")]
+
+      public bool WriteThrough { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property WriteThrough As Boolean
+    content.vb: >-
+      <ArgDescription("Enables Write Through when writing to the file system, this bypasses filesystem caches.", "Database Options")>
+
+      Public Property WriteThrough As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.WriteThrough*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enables Write Through when writing to the file system, this bypasses filesystem caches.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2166,23 +2739,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.Unbuffered
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Unbuffered
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 180
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool Unbuffered { get; set; }
+    content: >-
+      [ArgDescription("Enables Unbuffered/DirectIO when writing to the file system, this bypasses filesystem caches.", "Database Options")]
+
+      public bool Unbuffered { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property Unbuffered As Boolean
+    content.vb: >-
+      <ArgDescription("Enables Unbuffered/DirectIO when writing to the file system, this bypasses filesystem caches.", "Database Options")>
+
+      Public Property Unbuffered As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.Unbuffered*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enables Unbuffered/DirectIO when writing to the file system, this bypasses filesystem caches.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2201,23 +2784,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ChunkInitialReaderCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkInitialReaderCount
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 183
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ChunkInitialReaderCount { get; set; }
+    content: >-
+      [ArgDescription("The initial number of readers to start when opening a TFChunk", "Database Options")]
+
+      public int ChunkInitialReaderCount { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ChunkInitialReaderCount As Integer
+    content.vb: >-
+      <ArgDescription("The initial number of readers to start when opening a TFChunk", "Database Options")>
+
+      Public Property ChunkInitialReaderCount As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ChunkInitialReaderCount*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The initial number of readers to start when opening a TFChunk
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -2236,23 +2829,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.RunProjections
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RunProjections
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 187
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public ProjectionType RunProjections { get; set; }
+    content: >-
+      [ArgDescription("Enables the running of projections. System runs built-in projections, All runs user projections.", "Projections Options")]
+
+      public ProjectionType RunProjections { get; set; }
     parameters: []
     return:
       type: EventStore.Common.Options.ProjectionType
-    content.vb: Public Property RunProjections As ProjectionType
+    content.vb: >-
+      <ArgDescription("Enables the running of projections. System runs built-in projections, All runs user projections.", "Projections Options")>
+
+      Public Property RunProjections As ProjectionType
   overload: EventStore.ClusterNode.ClusterNodeOptions.RunProjections*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enables the running of projections. System runs built-in projections, All runs user projections.
+    - type: System.String
+      value: Projections Options
   modifiers.csharp:
   - public
   - get
@@ -2271,23 +2874,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ProjectionThreads
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionThreads
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 190
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ProjectionThreads { get; set; }
+    content: >-
+      [ArgDescription("The number of threads to use for projections.", "Projections Options")]
+
+      public int ProjectionThreads { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ProjectionThreads As Integer
+    content.vb: >-
+      <ArgDescription("The number of threads to use for projections.", "Projections Options")>
+
+      Public Property ProjectionThreads As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ProjectionThreads*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of threads to use for projections.
+    - type: System.String
+      value: Projections Options
   modifiers.csharp:
   - public
   - get
@@ -2306,23 +2919,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.WorkerThreads
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WorkerThreads
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 193
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int WorkerThreads { get; set; }
+    content: >-
+      [ArgDescription("The number of threads to use for pool of worker services.", "Application Options")]
+
+      public int WorkerThreads { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property WorkerThreads As Integer
+    content.vb: >-
+      <ArgDescription("The number of threads to use for pool of worker services.", "Application Options")>
+
+      Public Property WorkerThreads As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.WorkerThreads*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of threads to use for pool of worker services.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -2341,23 +2964,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ProjectionsQueryExpiry
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionsQueryExpiry
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 196
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int ProjectionsQueryExpiry { get; set; }
+    content: >-
+      [ArgDescription("The number of minutes a query can be idle before it expires", "Projections Options")]
+
+      public int ProjectionsQueryExpiry { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property ProjectionsQueryExpiry As Integer
+    content.vb: >-
+      <ArgDescription("The number of minutes a query can be idle before it expires", "Projections Options")>
+
+      Public Property ProjectionsQueryExpiry As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.ProjectionsQueryExpiry*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The number of minutes a query can be idle before it expires
+    - type: System.String
+      value: Projections Options
   modifiers.csharp:
   - public
   - get
@@ -2376,23 +3009,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FaultOutOfOrderProjections
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 199
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool FaultOutOfOrderProjections { get; set; }
+    content: >-
+      [ArgDescription("Fault the projection if the Event number that was expected in the stream differs from what is received. This may happen if events have been deleted or expired", "Projections Options")]
+
+      public bool FaultOutOfOrderProjections { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property FaultOutOfOrderProjections As Boolean
+    content.vb: >-
+      <ArgDescription("Fault the projection if the Event number that was expected in the stream differs from what is received. This may happen if events have been deleted or expired", "Projections Options")>
+
+      Public Property FaultOutOfOrderProjections As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.FaultOutOfOrderProjections*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Fault the projection if the Event number that was expected in the stream differs from what is received. This may happen if events have been deleted or expired
+    - type: System.String
+      value: Projections Options
   modifiers.csharp:
   - public
   - get
@@ -2411,23 +3054,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPrefixes
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IntHttpPrefixes
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 202
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string[] IntHttpPrefixes { get; set; }
+    content: >-
+      [ArgDescription("The prefixes that the internal HTTP server should respond to.", "Interface Options")]
+
+      public string[] IntHttpPrefixes { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property IntHttpPrefixes As String()
+    content.vb: >-
+      <ArgDescription("The prefixes that the internal HTTP server should respond to.", "Interface Options")>
+
+      Public Property IntHttpPrefixes As String()
   overload: EventStore.ClusterNode.ClusterNodeOptions.IntHttpPrefixes*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The prefixes that the internal HTTP server should respond to.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2446,23 +3099,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPrefixes
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExtHttpPrefixes
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 205
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string[] ExtHttpPrefixes { get; set; }
+    content: >-
+      [ArgDescription("The prefixes that the external HTTP server should respond to.", "Interface Options")]
+
+      public string[] ExtHttpPrefixes { get; set; }
     parameters: []
     return:
       type: System.String[]
-    content.vb: Public Property ExtHttpPrefixes As String()
+    content.vb: >-
+      <ArgDescription("The prefixes that the external HTTP server should respond to.", "Interface Options")>
+
+      Public Property ExtHttpPrefixes As String()
   overload: EventStore.ClusterNode.ClusterNodeOptions.ExtHttpPrefixes*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The prefixes that the external HTTP server should respond to.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2481,23 +3144,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.EnableTrustedAuth
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnableTrustedAuth
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 208
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool EnableTrustedAuth { get; set; }
+    content: >-
+      [ArgDescription("Enables trusted authentication by an intermediary in the HTTP", "Interface Options")]
+
+      public bool EnableTrustedAuth { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property EnableTrustedAuth As Boolean
+    content.vb: >-
+      <ArgDescription("Enables trusted authentication by an intermediary in the HTTP", "Interface Options")>
+
+      Public Property EnableTrustedAuth As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.EnableTrustedAuth*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enables trusted authentication by an intermediary in the HTTP
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2516,23 +3189,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.AddInterfacePrefixes
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddInterfacePrefixes
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 211
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool AddInterfacePrefixes { get; set; }
+    content: >-
+      [ArgDescription("Add interface prefixes", "Interface Options")]
+
+      public bool AddInterfacePrefixes { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property AddInterfacePrefixes As Boolean
+    content.vb: >-
+      <ArgDescription("Add interface prefixes", "Interface Options")>
+
+      Public Property AddInterfacePrefixes As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.AddInterfacePrefixes*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Add interface prefixes
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2551,23 +3234,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificateStoreLocation
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateStoreLocation
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 214
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificateStoreLocation { get; set; }
+    content: >-
+      [ArgDescription("The certificate store location name.", "Certificate Options")]
+
+      public string CertificateStoreLocation { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificateStoreLocation As String
+    content.vb: >-
+      <ArgDescription("The certificate store location name.", "Certificate Options")>
+
+      Public Property CertificateStoreLocation As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificateStoreLocation*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The certificate store location name.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2586,23 +3279,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificateStoreName
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateStoreName
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 217
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificateStoreName { get; set; }
+    content: >-
+      [ArgDescription("The certificate store name.", "Certificate Options")]
+
+      public string CertificateStoreName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificateStoreName As String
+    content.vb: >-
+      <ArgDescription("The certificate store name.", "Certificate Options")>
+
+      Public Property CertificateStoreName As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificateStoreName*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The certificate store name.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2621,23 +3324,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificateSubjectName
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateSubjectName
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 220
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificateSubjectName { get; set; }
+    content: >-
+      [ArgDescription("The certificate subject name.", "Certificate Options")]
+
+      public string CertificateSubjectName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificateSubjectName As String
+    content.vb: >-
+      <ArgDescription("The certificate subject name.", "Certificate Options")>
+
+      Public Property CertificateSubjectName As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificateSubjectName*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The certificate subject name.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2656,23 +3369,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificateThumbprint
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateThumbprint
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 223
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificateThumbprint { get; set; }
+    content: >-
+      [ArgDescription("The certificate fingerprint/thumbprint.", "Certificate Options")]
+
+      public string CertificateThumbprint { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificateThumbprint As String
+    content.vb: >-
+      <ArgDescription("The certificate fingerprint/thumbprint.", "Certificate Options")>
+
+      Public Property CertificateThumbprint As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificateThumbprint*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The certificate fingerprint/thumbprint.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2691,23 +3414,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificateFile
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificateFile
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 226
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificateFile { get; set; }
+    content: >-
+      [ArgDescription("The path to certificate file.", "Certificate Options")]
+
+      public string CertificateFile { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificateFile As String
+    content.vb: >-
+      <ArgDescription("The path to certificate file.", "Certificate Options")>
+
+      Public Property CertificateFile As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificateFile*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The path to certificate file.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2726,23 +3459,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CertificatePassword
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CertificatePassword
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 229
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string CertificatePassword { get; set; }
+    content: >-
+      [ArgDescription("The password to certificate in file.", "Certificate Options")]
+
+      public string CertificatePassword { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property CertificatePassword As String
+    content.vb: >-
+      <ArgDescription("The password to certificate in file.", "Certificate Options")>
+
+      Public Property CertificatePassword As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.CertificatePassword*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The password to certificate in file.
+    - type: System.String
+      value: Certificate Options
   modifiers.csharp:
   - public
   - get
@@ -2761,23 +3504,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.UseInternalSsl
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UseInternalSsl
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 232
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool UseInternalSsl { get; set; }
+    content: >-
+      [ArgDescription("Whether to use secure internal communication.", "Interface Options")]
+
+      public bool UseInternalSsl { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property UseInternalSsl As Boolean
+    content.vb: >-
+      <ArgDescription("Whether to use secure internal communication.", "Interface Options")>
+
+      Public Property UseInternalSsl As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.UseInternalSsl*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether to use secure internal communication.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2796,23 +3549,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.DisableInsecureTCP
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DisableInsecureTCP
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 235
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool DisableInsecureTCP { get; set; }
+    content: >-
+      [ArgDescription("Whether to disable insecure TCP communication", "Interface Options")]
+
+      public bool DisableInsecureTCP { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property DisableInsecureTCP As Boolean
+    content.vb: >-
+      <ArgDescription("Whether to disable insecure TCP communication", "Interface Options")>
+
+      Public Property DisableInsecureTCP As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.DisableInsecureTCP*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether to disable insecure TCP communication
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2831,23 +3594,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.SslTargetHost
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SslTargetHost
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 238
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string SslTargetHost { get; set; }
+    content: >-
+      [ArgDescription("Target host of server's SSL certificate.", "Interface Options")]
+
+      public string SslTargetHost { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property SslTargetHost As String
+    content.vb: >-
+      <ArgDescription("Target host of server's SSL certificate.", "Interface Options")>
+
+      Public Property SslTargetHost As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.SslTargetHost*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Target host of server's SSL certificate.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2866,23 +3639,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.SslValidateServer
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SslValidateServer
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 241
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool SslValidateServer { get; set; }
+    content: >-
+      [ArgDescription("Whether to validate that server's certificate is trusted.", "Interface Options")]
+
+      public bool SslValidateServer { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property SslValidateServer As Boolean
+    content.vb: >-
+      <ArgDescription("Whether to validate that server's certificate is trusted.", "Interface Options")>
+
+      Public Property SslValidateServer As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.SslValidateServer*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Whether to validate that server's certificate is trusted.
+    - type: System.String
+      value: Interface Options
   modifiers.csharp:
   - public
   - get
@@ -2901,23 +3684,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.AuthenticationType
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AuthenticationType
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 244
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string AuthenticationType { get; set; }
+    content: >-
+      [ArgDescription("The type of authentication to use.", "Authentication Options")]
+
+      public string AuthenticationType { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property AuthenticationType As String
+    content.vb: >-
+      <ArgDescription("The type of authentication to use.", "Authentication Options")>
+
+      Public Property AuthenticationType As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.AuthenticationType*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The type of authentication to use.
+    - type: System.String
+      value: Authentication Options
   modifiers.csharp:
   - public
   - get
@@ -2936,23 +3729,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.AuthenticationConfig
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AuthenticationConfig
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 247
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public string AuthenticationConfig { get; set; }
+    content: >-
+      [ArgDescription("Path to the configuration file for authentication configuration (if applicable).", "Authentication Options")]
+
+      public string AuthenticationConfig { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property AuthenticationConfig As String
+    content.vb: >-
+      <ArgDescription("Path to the configuration file for authentication configuration (if applicable).", "Authentication Options")>
+
+      Public Property AuthenticationConfig As String
   overload: EventStore.ClusterNode.ClusterNodeOptions.AuthenticationConfig*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Path to the configuration file for authentication configuration (if applicable).
+    - type: System.String
+      value: Authentication Options
   modifiers.csharp:
   - public
   - get
@@ -2971,23 +3774,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.PrepareTimeoutMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PrepareTimeoutMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 250
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int PrepareTimeoutMs { get; set; }
+    content: >-
+      [ArgDescription("Prepare timeout (in milliseconds).", "Database Options")]
+
+      public int PrepareTimeoutMs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property PrepareTimeoutMs As Integer
+    content.vb: >-
+      <ArgDescription("Prepare timeout (in milliseconds).", "Database Options")>
+
+      Public Property PrepareTimeoutMs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.PrepareTimeoutMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Prepare timeout (in milliseconds).
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3006,23 +3819,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.CommitTimeoutMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CommitTimeoutMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 253
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int CommitTimeoutMs { get; set; }
+    content: >-
+      [ArgDescription("Commit timeout (in milliseconds).", "Database Options")]
+
+      public int CommitTimeoutMs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property CommitTimeoutMs As Integer
+    content.vb: >-
+      <ArgDescription("Commit timeout (in milliseconds).", "Database Options")>
+
+      Public Property CommitTimeoutMs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.CommitTimeoutMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Commit timeout (in milliseconds).
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3041,23 +3864,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.UnsafeDisableFlushToDisk
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnsafeDisableFlushToDisk
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 256
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool UnsafeDisableFlushToDisk { get; set; }
+    content: >-
+      [ArgDescription("Disable flushing to disk.  (UNSAFE: on power off)", "Database Options")]
+
+      public bool UnsafeDisableFlushToDisk { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property UnsafeDisableFlushToDisk As Boolean
+    content.vb: >-
+      <ArgDescription("Disable flushing to disk.  (UNSAFE: on power off)", "Database Options")>
+
+      Public Property UnsafeDisableFlushToDisk As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.UnsafeDisableFlushToDisk*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: 'Disable flushing to disk.  (UNSAFE: on power off)'
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3076,23 +3909,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.BetterOrdering
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: BetterOrdering
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 259
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool BetterOrdering { get; set; }
+    content: >-
+      [ArgDescription("Enable Queue affinity on reads during write process to try to get better ordering.", "Database Options")]
+
+      public bool BetterOrdering { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property BetterOrdering As Boolean
+    content.vb: >-
+      <ArgDescription("Enable Queue affinity on reads during write process to try to get better ordering.", "Database Options")>
+
+      Public Property BetterOrdering As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.BetterOrdering*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enable Queue affinity on reads during write process to try to get better ordering.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3111,23 +3954,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.UnsafeIgnoreHardDelete
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnsafeIgnoreHardDelete
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 262
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool UnsafeIgnoreHardDelete { get; set; }
+    content: >-
+      [ArgDescription("Disables Hard Deletes (UNSAFE: use to remove hard deletes)", "Database Options")]
+
+      public bool UnsafeIgnoreHardDelete { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property UnsafeIgnoreHardDelete As Boolean
+    content.vb: >-
+      <ArgDescription("Disables Hard Deletes (UNSAFE: use to remove hard deletes)", "Database Options")>
+
+      Public Property UnsafeIgnoreHardDelete As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.UnsafeIgnoreHardDelete*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: 'Disables Hard Deletes (UNSAFE: use to remove hard deletes)'
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3146,23 +3999,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.SkipIndexVerify
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipIndexVerify
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 265
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool SkipIndexVerify { get; set; }
+    content: >-
+      [ArgDescription("Bypasses the checking of file hashes of indexes during startup and after index merges (allows for faster startup and less disk pressure after merges).", "Database Options")]
+
+      public bool SkipIndexVerify { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property SkipIndexVerify As Boolean
+    content.vb: >-
+      <ArgDescription("Bypasses the checking of file hashes of indexes during startup and after index merges (allows for faster startup and less disk pressure after merges).", "Database Options")>
+
+      Public Property SkipIndexVerify As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.SkipIndexVerify*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Bypasses the checking of file hashes of indexes during startup and after index merges (allows for faster startup and less disk pressure after merges).
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3181,23 +4044,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IndexCacheDepth
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IndexCacheDepth
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 268
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int IndexCacheDepth { get; set; }
+    content: >-
+      [ArgDescription("Sets the depth to cache for the mid point cache in index.", "Database Options")]
+
+      public int IndexCacheDepth { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property IndexCacheDepth As Integer
+    content.vb: >-
+      <ArgDescription("Sets the depth to cache for the mid point cache in index.", "Database Options")>
+
+      Public Property IndexCacheDepth As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.IndexCacheDepth*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Sets the depth to cache for the mid point cache in index.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3216,23 +4089,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.OptimizeIndexMerge
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OptimizeIndexMerge
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 271
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool OptimizeIndexMerge { get; set; }
+    content: >-
+      [ArgDescription("Makes index merges faster and reduces disk pressure during merges.", "Database Options")]
+
+      public bool OptimizeIndexMerge { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property OptimizeIndexMerge As Boolean
+    content.vb: >-
+      <ArgDescription("Makes index merges faster and reduces disk pressure during merges.", "Database Options")>
+
+      Public Property OptimizeIndexMerge As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.OptimizeIndexMerge*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Makes index merges faster and reduces disk pressure during merges.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3251,23 +4134,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipIntervalMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipIntervalMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 274
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int GossipIntervalMs { get; set; }
+    content: >-
+      [ArgDescription("The interval, in ms, nodes should try to gossip with each other.", "Cluster Options")]
+
+      public int GossipIntervalMs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property GossipIntervalMs As Integer
+    content.vb: >-
+      <ArgDescription("The interval, in ms, nodes should try to gossip with each other.", "Cluster Options")>
+
+      Public Property GossipIntervalMs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipIntervalMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The interval, in ms, nodes should try to gossip with each other.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -3286,23 +4179,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipAllowedDifferenceMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipAllowedDifferenceMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 277
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int GossipAllowedDifferenceMs { get; set; }
+    content: >-
+      [ArgDescription("The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected.", "Cluster Options")]
+
+      public int GossipAllowedDifferenceMs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property GossipAllowedDifferenceMs As Integer
+    content.vb: >-
+      <ArgDescription("The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected.", "Cluster Options")>
+
+      Public Property GossipAllowedDifferenceMs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipAllowedDifferenceMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The amount of drift, in ms, between clocks on nodes allowed before gossip is rejected.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -3321,23 +4224,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipTimeoutMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GossipTimeoutMs
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 280
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int GossipTimeoutMs { get; set; }
+    content: >-
+      [ArgDescription("The timeout, in ms, on gossip to another node.", "Cluster Options")]
+
+      public int GossipTimeoutMs { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property GossipTimeoutMs As Integer
+    content.vb: >-
+      <ArgDescription("The timeout, in ms, on gossip to another node.", "Cluster Options")>
+
+      Public Property GossipTimeoutMs As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.GossipTimeoutMs*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: The timeout, in ms, on gossip to another node.
+    - type: System.String
+      value: Cluster Options
   modifiers.csharp:
   - public
   - get
@@ -3356,23 +4269,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.EnableHistograms
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EnableHistograms
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 283
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool EnableHistograms { get; set; }
+    content: >-
+      [ArgDescription("Enables the tracking of various histograms in the backend, typically only used for debugging etc", "Application Options")]
+
+      public bool EnableHistograms { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property EnableHistograms As Boolean
+    content.vb: >-
+      <ArgDescription("Enables the tracking of various histograms in the backend, typically only used for debugging etc", "Application Options")>
+
+      Public Property EnableHistograms As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.EnableHistograms*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enables the tracking of various histograms in the backend, typically only used for debugging etc
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -3391,23 +4314,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.LogHttpRequests
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogHttpRequests
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 286
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool LogHttpRequests { get; set; }
+    content: >-
+      [ArgDescription("Log Http Requests and Responses before processing them.", "Application Options")]
+
+      public bool LogHttpRequests { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property LogHttpRequests As Boolean
+    content.vb: >-
+      <ArgDescription("Log Http Requests and Responses before processing them.", "Application Options")>
+
+      Public Property LogHttpRequests As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.LogHttpRequests*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Log Http Requests and Responses before processing them.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -3426,23 +4359,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.AlwaysKeepScavenged
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AlwaysKeepScavenged
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 289
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool AlwaysKeepScavenged { get; set; }
+    content: >-
+      [ArgDescription("Always keeps the newer chunks from a scavenge operation.", "Database Options")]
+
+      public bool AlwaysKeepScavenged { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property AlwaysKeepScavenged As Boolean
+    content.vb: >-
+      <ArgDescription("Always keeps the newer chunks from a scavenge operation.", "Database Options")>
+
+      Public Property AlwaysKeepScavenged As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.AlwaysKeepScavenged*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Always keeps the newer chunks from a scavenge operation.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3461,23 +4404,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.SkipIndexScanOnReads
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SkipIndexScanOnReads
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 292
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool SkipIndexScanOnReads { get; set; }
+    content: >-
+      [ArgDescription("Skip Index Scan on Reads. This skips the index scan which was used to stop reading duplicates.", "Application Options")]
+
+      public bool SkipIndexScanOnReads { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property SkipIndexScanOnReads As Boolean
+    content.vb: >-
+      <ArgDescription("Skip Index Scan on Reads. This skips the index scan which was used to stop reading duplicates.", "Application Options")>
+
+      Public Property SkipIndexScanOnReads As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.SkipIndexScanOnReads*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Skip Index Scan on Reads. This skips the index scan which was used to stop reading duplicates.
+    - type: System.String
+      value: Application Options
   modifiers.csharp:
   - public
   - get
@@ -3496,23 +4449,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ReduceFileCachePressure
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReduceFileCachePressure
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 295
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool ReduceFileCachePressure { get; set; }
+    content: >-
+      [ArgDescription("Change the way the DB files are opened to reduce their stickiness in the system file cache.", "Database Options")]
+
+      public bool ReduceFileCachePressure { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property ReduceFileCachePressure As Boolean
+    content.vb: >-
+      <ArgDescription("Change the way the DB files are opened to reduce their stickiness in the system file cache.", "Database Options")>
+
+      Public Property ReduceFileCachePressure As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.ReduceFileCachePressure*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Change the way the DB files are opened to reduce their stickiness in the system file cache.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3531,23 +4494,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InitializationThreads
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 298
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int InitializationThreads { get; set; }
+    content: >-
+      [ArgDescription("Number of threads to be used to initialize the database. Will be capped at host processor count.", "Database Options")]
+
+      public int InitializationThreads { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property InitializationThreads As Integer
+    content.vb: >-
+      <ArgDescription("Number of threads to be used to initialize the database. Will be capped at host processor count.", "Database Options")>
+
+      Public Property InitializationThreads As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.InitializationThreads*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Number of threads to be used to initialize the database. Will be capped at host processor count.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3566,23 +4539,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StructuredLog
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 301
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public bool StructuredLog { get; set; }
+    content: >-
+      [ArgDescription("Enable structured logging.", "Database Options")]
+
+      public bool StructuredLog { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property StructuredLog As Boolean
+    content.vb: >-
+      <ArgDescription("Enable structured logging.", "Database Options")>
+
+      Public Property StructuredLog As Boolean
   overload: EventStore.ClusterNode.ClusterNodeOptions.StructuredLog*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Enable structured logging.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3601,23 +4584,33 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel
   type: Property
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxAutoMergeIndexLevel
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 304
   assemblies:
   - EventStore.ClusterNode
   namespace: EventStore.ClusterNode
   syntax:
-    content: public int MaxAutoMergeIndexLevel { get; set; }
+    content: >-
+      [ArgDescription("During large Index Merge operations, writes may be slowed down. Set this to the maximum index file level for which automatic merges should happen.  Merging indexes above this level should be done manually.", "Database Options")]
+
+      public int MaxAutoMergeIndexLevel { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property MaxAutoMergeIndexLevel As Integer
+    content.vb: >-
+      <ArgDescription("During large Index Merge operations, writes may be slowed down. Set this to the maximum index file level for which automatic merges should happen.  Merging indexes above this level should be done manually.", "Database Options")>
+
+      Public Property MaxAutoMergeIndexLevel As Integer
   overload: EventStore.ClusterNode.ClusterNodeOptions.MaxAutoMergeIndexLevel*
+  attributes:
+  - type: EventStore.Rags.ArgDescriptionAttribute
+    ctor: EventStore.Rags.ArgDescriptionAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: During large Index Merge operations, writes may be slowed down. Set this to the maximum index file level for which automatic merges should happen.  Merging indexes above this level should be done manually.
+    - type: System.String
+      value: Database Options
   modifiers.csharp:
   - public
   - get
@@ -3636,12 +4629,8 @@ items:
   fullName: EventStore.ClusterNode.ClusterNodeOptions.ClusterNodeOptions()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.ClusterNode/ClusterNodeOptions.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClusterNode/ClusterNodeOptions.cs
     startLine: 307
   assemblies:
   - EventStore.ClusterNode
@@ -3673,6 +4662,285 @@ references:
   name: IOptions
   nameWithType: IOptions
   fullName: EventStore.Common.Options.IOptions
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -4176,11 +5444,19 @@ references:
   name: IntIp
   nameWithType: ClusterNodeOptions.IntIp
   fullName: EventStore.ClusterNode.ClusterNodeOptions.IntIp
-- uid: IPAddress
+- uid: System.Net.IPAddress
+  commentId: T:System.Net.IPAddress
+  parent: System.Net
   isExternal: true
   name: IPAddress
   nameWithType: IPAddress
-  fullName: IPAddress
+  fullName: System.Net.IPAddress
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
 - uid: EventStore.ClusterNode.ClusterNodeOptions.ExtIp*
   commentId: Overload:EventStore.ClusterNode.ClusterNodeOptions.ExtIp
   name: ExtIp
@@ -4374,28 +5650,28 @@ references:
   name: GossipSeed
   nameWithType: ClusterNodeOptions.GossipSeed
   fullName: EventStore.ClusterNode.ClusterNodeOptions.GossipSeed
-- uid: IPEndPoint[]
+- uid: System.Net.IPEndPoint[]
   isExternal: true
   name: IPEndPoint[]
   nameWithType: IPEndPoint[]
-  fullName: IPEndPoint[]
+  fullName: System.Net.IPEndPoint[]
   nameWithType.vb: IPEndPoint()
-  fullName.vb: IPEndPoint()
+  fullName.vb: System.Net.IPEndPoint()
   name.vb: IPEndPoint()
   spec.csharp:
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: '[]'
     nameWithType: '[]'
     fullName: '[]'
   spec.vb:
-  - uid: IPEndPoint
+  - uid: System.Net.IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: IPEndPoint
+    fullName: System.Net.IPEndPoint
     isExternal: true
   - name: ()
     nameWithType: ()

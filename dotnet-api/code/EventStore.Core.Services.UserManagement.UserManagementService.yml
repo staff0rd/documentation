@@ -29,21 +29,16 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UserManagementService
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 13
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: 'public class UserManagementService : object, IHandle<UserManagementMessage.Get>, IHandle<UserManagementMessage.GetAll>, IHandle<UserManagementMessage.Create>, IHandle<UserManagementMessage.Update>, IHandle<UserManagementMessage.Enable>, IHandle<UserManagementMessage.Disable>, IHandle<UserManagementMessage.ResetPassword>, IHandle<UserManagementMessage.ChangePassword>, IHandle<UserManagementMessage.Delete>, IHandle<SystemMessage.BecomeMaster>'
+    content: 'public class UserManagementService : IHandle<UserManagementMessage.Get>, IHandle<UserManagementMessage.GetAll>, IHandle<UserManagementMessage.Create>, IHandle<UserManagementMessage.Update>, IHandle<UserManagementMessage.Enable>, IHandle<UserManagementMessage.Disable>, IHandle<UserManagementMessage.ResetPassword>, IHandle<UserManagementMessage.ChangePassword>, IHandle<UserManagementMessage.Delete>, IHandle<SystemMessage.BecomeMaster>'
     content.vb: >-
       Public Class UserManagementService
-          Inherits Object
           Implements IHandle(Of UserManagementMessage.Get), IHandle(Of UserManagementMessage.GetAll), IHandle(Of UserManagementMessage.Create), IHandle(Of UserManagementMessage.Update), IHandle(Of UserManagementMessage.Enable), IHandle(Of UserManagementMessage.Disable), IHandle(Of UserManagementMessage.ResetPassword), IHandle(Of UserManagementMessage.ChangePassword), IHandle(Of UserManagementMessage.Delete), IHandle(Of SystemMessage.BecomeMaster)
   inheritance:
   - System.Object
@@ -58,6 +53,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.ChangePassword}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.UserManagementMessage.Delete}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.BecomeMaster}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -82,21 +85,17 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.UserUpdated
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UserUpdated
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 23
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: public const string UserUpdated = null
+    content: public const string UserUpdated = "$UserUpdated"
     return:
       type: System.String
-    content.vb: Public Const UserUpdated As String = Nothing
+    content.vb: Public Const UserUpdated As String = "$UserUpdated"
   modifiers.csharp:
   - public
   - const
@@ -115,21 +114,17 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.PasswordChanged
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PasswordChanged
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 24
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: public const string PasswordChanged = null
+    content: public const string PasswordChanged = "$PasswordChanged"
     return:
       type: System.String
-    content.vb: Public Const PasswordChanged As String = Nothing
+    content.vb: Public Const PasswordChanged As String = "$PasswordChanged"
   modifiers.csharp:
   - public
   - const
@@ -148,21 +143,17 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.UserPasswordNotificationsStreamId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UserPasswordNotificationsStreamId
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 25
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: public const string UserPasswordNotificationsStreamId = null
+    content: public const string UserPasswordNotificationsStreamId = "$users-password-notifications"
     return:
       type: System.String
-    content.vb: Public Const UserPasswordNotificationsStreamId As String = Nothing
+    content.vb: Public Const UserPasswordNotificationsStreamId As String = "$users-password-notifications"
   modifiers.csharp:
   - public
   - const
@@ -181,21 +172,17 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.UsersStream
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UsersStream
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 26
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: public const string UsersStream = null
+    content: public const string UsersStream = "$Users"
     return:
       type: System.String
-    content.vb: Public Const UsersStream As String = Nothing
+    content.vb: Public Const UsersStream As String = "$Users"
   modifiers.csharp:
   - public
   - const
@@ -214,21 +201,17 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.UsersStreamType
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UsersStreamType
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.UserManagement
   syntax:
-    content: public const string UsersStreamType = null
+    content: public const string UsersStreamType = "$User"
     return:
       type: System.String
-    content.vb: Public Const UsersStreamType As String = Nothing
+    content.vb: Public Const UsersStreamType As String = "$User"
   modifiers.csharp:
   - public
   - const
@@ -247,12 +230,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.UserManagementService(EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Core.Authentication.PasswordHashAlgorithm, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 35
   assemblies:
   - EventStore.Core
@@ -286,12 +265,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Create)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 52
   assemblies:
   - EventStore.Core
@@ -321,12 +296,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Update)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 79
   assemblies:
   - EventStore.Core
@@ -356,12 +327,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Enable)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 90
   assemblies:
   - EventStore.Core
@@ -391,12 +358,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Disable)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 99
   assemblies:
   - EventStore.Core
@@ -426,12 +389,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.ResetPassword)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 108
   assemblies:
   - EventStore.Core
@@ -461,12 +420,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.ChangePassword)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 120
   assemblies:
   - EventStore.Core
@@ -496,12 +451,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Delete)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 134
   assemblies:
   - EventStore.Core
@@ -531,12 +482,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.Get)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 150
   assemblies:
   - EventStore.Core
@@ -566,12 +513,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.UserManagementMessage.GetAll)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 176
   assemblies:
   - EventStore.Core
@@ -601,12 +544,8 @@ items:
   fullName: EventStore.Core.Services.UserManagement.UserManagementService.Handle(EventStore.Core.Messages.SystemMessage.BecomeMaster)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/UserManagement/UserManagementService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/UserManagement/UserManagementService.cs
     startLine: 186
   assemblies:
   - EventStore.Core
@@ -1034,6 +973,285 @@ references:
     name: SystemMessage.BecomeMaster
     nameWithType: SystemMessage.BecomeMaster
     fullName: EventStore.Core.Messages.SystemMessage.BecomeMaster
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )

@@ -5,7 +5,7 @@ items:
   id: ProjectionManagerMessageDispatcher
   parent: EventStore.Projections.Core.Services.Management
   children:
-  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher})
   - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
   - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
   - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
@@ -18,21 +18,16 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionManagerMessageDispatcher
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 9
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
   syntax:
-    content: 'public class ProjectionManagerMessageDispatcher : object, IHandle<PartitionProcessingResultBase>, IHandle<ReaderSubscriptionManagement.SpoolStreamReading>, IHandle<CoreProjectionManagementControlMessage>, IHandle<PartitionProcessingResultOutputBase>'
+    content: 'public class ProjectionManagerMessageDispatcher : IHandle<PartitionProcessingResultBase>, IHandle<ReaderSubscriptionManagement.SpoolStreamReading>, IHandle<CoreProjectionManagementControlMessage>, IHandle<PartitionProcessingResultOutputBase>'
     content.vb: >-
       Public Class ProjectionManagerMessageDispatcher
-          Inherits Object
           Implements IHandle(Of PartitionProcessingResultBase), IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading), IHandle(Of CoreProjectionManagementControlMessage), IHandle(Of PartitionProcessingResultOutputBase)
   inheritance:
   - System.Object
@@ -41,6 +36,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -53,24 +56,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
-  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
-  id: '#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})'
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher})
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher})
+  id: '#ctor(System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher})'
   parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
   langs:
   - csharp
   - vb
   name: ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher>)
   nameWithType: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher>)
-  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary<Guid, EventStore.Core.Bus.IPublisher>)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(System.Collections.Generic.IDictionary<System.Guid, EventStore.Core.Bus.IPublisher>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 17
   assemblies:
   - EventStore.Projections.Core
@@ -79,7 +78,7 @@ items:
     content: public ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher> queueMap)
     parameters:
     - id: queueMap
-      type: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
+      type: System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
     content.vb: Public Sub New(queueMap As IDictionary(Of Guid, IPublisher))
   overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor*
   nameWithType.vb: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary(Of Guid, IPublisher))
@@ -87,7 +86,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary(Of Guid, EventStore.Core.Bus.IPublisher))
+  fullName.vb: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(System.Collections.Generic.IDictionary(Of System.Guid, EventStore.Core.Bus.IPublisher))
   name.vb: ProjectionManagerMessageDispatcher(IDictionary(Of Guid, IPublisher))
 - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
   commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
@@ -101,12 +100,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 21
   assemblies:
   - EventStore.Projections.Core
@@ -136,12 +131,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 25
   assemblies:
   - EventStore.Projections.Core
@@ -171,12 +162,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 35
   assemblies:
   - EventStore.Projections.Core
@@ -206,12 +193,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
     startLine: 47
   assemblies:
   - EventStore.Projections.Core
@@ -399,6 +382,285 @@ references:
     name: PartitionProcessingResultOutputBase
     nameWithType: PartitionProcessingResultOutputBase
     fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -813,28 +1075,29 @@ references:
   name: ProjectionManagerMessageDispatcher
   nameWithType: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher
-- uid: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
-  commentId: '!:IDictionary{Guid,EventStore.Core.Bus.IPublisher}'
-  definition: IDictionary`2
+- uid: System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
+  commentId: T:System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
   name: IDictionary<Guid, IPublisher>
   nameWithType: IDictionary<Guid, IPublisher>
-  fullName: IDictionary<Guid, EventStore.Core.Bus.IPublisher>
+  fullName: System.Collections.Generic.IDictionary<System.Guid, EventStore.Core.Bus.IPublisher>
   nameWithType.vb: IDictionary(Of Guid, IPublisher)
-  fullName.vb: IDictionary(Of Guid, EventStore.Core.Bus.IPublisher)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.Guid, EventStore.Core.Bus.IPublisher)
   name.vb: IDictionary(Of Guid, IPublisher)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -847,18 +1110,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -870,56 +1133,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IDictionary`2
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  name: IDictionary<, >
-  nameWithType: IDictionary<, >
-  fullName: IDictionary<, >
-  nameWithType.vb: IDictionary(Of , )
-  fullName.vb: IDictionary(Of , )
-  name.vb: IDictionary(Of , )
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
   commentId: Overload:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle
   name: Handle

@@ -7,7 +7,7 @@ items:
   children:
   - EventStore.Core.Services.TimerService.RealTimer.#ctor
   - EventStore.Core.Services.TimerService.RealTimer.Dispose
-  - EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,Action)
+  - EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,System.Action)
   langs:
   - csharp
   - vb
@@ -16,27 +16,30 @@ items:
   fullName: EventStore.Core.Services.TimerService.RealTimer
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/RealTimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RealTimer
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
     startLine: 4
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.TimerService
   syntax:
-    content: 'public class RealTimer : object, ITimer, IDisposable'
+    content: 'public class RealTimer : ITimer, IDisposable'
     content.vb: >-
       Public Class RealTimer
-          Inherits Object
           Implements ITimer, IDisposable
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Services.TimerService.ITimer
-  - IDisposable
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -61,12 +64,8 @@ items:
   fullName: EventStore.Core.Services.TimerService.RealTimer.RealTimer()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/RealTimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
     startLine: 8
   assemblies:
   - EventStore.Core
@@ -79,24 +78,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,Action)
-  commentId: M:EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,Action)
-  id: FireIn(System.Int32,Action)
+- uid: EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,System.Action)
+  commentId: M:EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32,System.Action)
+  id: FireIn(System.Int32,System.Action)
   parent: EventStore.Core.Services.TimerService.RealTimer
   langs:
   - csharp
   - vb
   name: FireIn(Int32, Action)
   nameWithType: RealTimer.FireIn(Int32, Action)
-  fullName: EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32, Action)
+  fullName: EventStore.Core.Services.TimerService.RealTimer.FireIn(System.Int32, System.Action)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/RealTimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FireIn
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
     startLine: 17
   assemblies:
   - EventStore.Core
@@ -107,11 +102,11 @@ items:
     - id: milliseconds
       type: System.Int32
     - id: callback
-      type: Action
+      type: System.Action
     content.vb: Public Sub FireIn(milliseconds As Integer, callback As Action)
   overload: EventStore.Core.Services.TimerService.RealTimer.FireIn*
   implements:
-  - EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
+  - EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -128,12 +123,8 @@ items:
   fullName: EventStore.Core.Services.TimerService.RealTimer.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/TimerService/RealTimer.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/TimerService/RealTimer.cs
     startLine: 23
   assemblies:
   - EventStore.Core
@@ -142,6 +133,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Core.Services.TimerService.RealTimer.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -165,11 +158,292 @@ references:
   name: ITimer
   nameWithType: ITimer
   fullName: EventStore.Core.Services.TimerService.ITimer
-- uid: IDisposable
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
   isExternal: true
   name: IDisposable
   nameWithType: IDisposable
-  fullName: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -545,15 +819,15 @@ references:
   name: FireIn
   nameWithType: RealTimer.FireIn
   fullName: EventStore.Core.Services.TimerService.RealTimer.FireIn
-- uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
-  commentId: M:EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
+- uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
+  commentId: M:EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
   parent: EventStore.Core.Services.TimerService.ITimer
   isExternal: true
   name: FireIn(Int32, Action)
   nameWithType: ITimer.FireIn(Int32, Action)
-  fullName: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32, Action)
+  fullName: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32, System.Action)
   spec.csharp:
-  - uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
+  - uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
     name: FireIn
     nameWithType: ITimer.FireIn
     fullName: EventStore.Core.Services.TimerService.ITimer.FireIn
@@ -568,16 +842,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,Action)
+  - uid: EventStore.Core.Services.TimerService.ITimer.FireIn(System.Int32,System.Action)
     name: FireIn
     nameWithType: ITimer.FireIn
     fullName: EventStore.Core.Services.TimerService.ITimer.FireIn
@@ -592,10 +866,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Action
+  - uid: System.Action
     name: Action
     nameWithType: Action
-    fullName: Action
+    fullName: System.Action
     isExternal: true
   - name: )
     nameWithType: )
@@ -607,13 +881,46 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
-- uid: Action
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
   isExternal: true
   name: Action
   nameWithType: Action
-  fullName: Action
+  fullName: System.Action
 - uid: EventStore.Core.Services.TimerService.RealTimer.Dispose*
   commentId: Overload:EventStore.Core.Services.TimerService.RealTimer.Dispose
   name: Dispose
   nameWithType: RealTimer.Dispose
   fullName: EventStore.Core.Services.TimerService.RealTimer.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

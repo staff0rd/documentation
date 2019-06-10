@@ -5,7 +5,7 @@ items:
   id: FeedReaderService
   parent: EventStore.Projections.Core.EventReaders.Feeds
   children:
-  - EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
+  - EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
   - EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.Handle(EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage)
   langs:
   - csharp
@@ -15,26 +15,29 @@ items:
   fullName: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FeedReaderService
-    path: ../EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
     startLine: 8
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.EventReaders.Feeds
   syntax:
-    content: 'public class FeedReaderService : object, IHandle<FeedReaderMessage.ReadPage>'
+    content: 'public class FeedReaderService : IHandle<FeedReaderMessage.ReadPage>'
     content.vb: >-
       Public Class FeedReaderService
-          Inherits Object
           Implements IHandle(Of FeedReaderMessage.ReadPage)
   inheritance:
   - System.Object
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -47,24 +50,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
-  commentId: M:EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
-  id: '#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)'
+- uid: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
+  commentId: M:EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)
+  id: '#ctor(EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase},EventStore.Core.Services.TimerService.ITimeProvider)'
   parent: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService
   langs:
   - csharp
   - vb
   name: FeedReaderService(PublishSubscribeDispatcher<Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase>, ITimeProvider)
   nameWithType: FeedReaderService.FeedReaderService(PublishSubscribeDispatcher<Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase>, ITimeProvider)
-  fullName: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.FeedReaderService(EventStore.Projections.Core.Services.PublishSubscribeDispatcher<Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase>, EventStore.Core.Services.TimerService.ITimeProvider)
+  fullName: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.FeedReaderService(EventStore.Projections.Core.Services.PublishSubscribeDispatcher<System.Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase>, EventStore.Core.Services.TimerService.ITimeProvider)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
     startLine: 17
   assemblies:
   - EventStore.Projections.Core
@@ -73,7 +72,7 @@ items:
     content: public FeedReaderService(PublishSubscribeDispatcher<Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase> subscriptionDispatcher, ITimeProvider timeProvider)
     parameters:
     - id: subscriptionDispatcher
-      type: EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
+      type: EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
     - id: timeProvider
       type: EventStore.Core.Services.TimerService.ITimeProvider
     content.vb: Public Sub New(subscriptionDispatcher As PublishSubscribeDispatcher(Of Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase), timeProvider As ITimeProvider)
@@ -83,7 +82,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.FeedReaderService(EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase), EventStore.Core.Services.TimerService.ITimeProvider)
+  fullName.vb: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.FeedReaderService(EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of System.Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase), EventStore.Core.Services.TimerService.ITimeProvider)
   name.vb: FeedReaderService(PublishSubscribeDispatcher(Of Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase), ITimeProvider)
 - uid: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.Handle(EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage)
   commentId: M:EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.Handle(EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage)
@@ -97,12 +96,8 @@ items:
   fullName: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.Handle(EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/EventReaders/Feeds/FeedReaderService.cs
     startLine: 27
   assemblies:
   - EventStore.Projections.Core
@@ -170,6 +165,285 @@ references:
     name: FeedReaderMessage.ReadPage
     nameWithType: FeedReaderMessage.ReadPage
     fullName: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )
@@ -584,15 +858,15 @@ references:
   name: FeedReaderService
   nameWithType: FeedReaderService.FeedReaderService
   fullName: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService.FeedReaderService
-- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
-  commentId: T:EventStore.Projections.Core.Services.PublishSubscribeDispatcher{Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
+  commentId: T:EventStore.Projections.Core.Services.PublishSubscribeDispatcher{System.Guid,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe,EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage,EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase}
   parent: EventStore.Projections.Core.Services
   definition: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
   name: PublishSubscribeDispatcher<Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase>
   nameWithType: PublishSubscribeDispatcher<Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase>
-  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase>
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<System.Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase>
   nameWithType.vb: PublishSubscribeDispatcher(Of Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase)
-  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase)
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of System.Guid, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe, EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase)
   name.vb: PublishSubscribeDispatcher(Of Guid, ReaderSubscriptionManagement.Subscribe, ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage, EventReaderSubscriptionMessageBase)
   spec.csharp:
   - uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
@@ -602,10 +876,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -639,10 +913,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '

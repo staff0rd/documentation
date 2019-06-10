@@ -6,8 +6,8 @@ items:
   parent: EventStore.Core.Services.PersistentSubscription
   children:
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.#ctor(EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionParams)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(Guid,Guid[])
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(Guid,Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(System.Guid,System.Guid[])
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(System.Guid,System.Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddMessageAsProcessing(EventStore.Core.Data.ResolvedEvent,EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionClient)
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.ClientCount
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.Delete
@@ -20,12 +20,12 @@ items:
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HasClients
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HasReachedMaxClientCount
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.InitAsNew
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid,Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(DateTime)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(System.Guid,System.Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(System.DateTime)
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyLiveSubscriptionMessage(EventStore.Core.Data.ResolvedEvent)
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.OutstandingMessageCount
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(Guid)
-  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(Guid,System.Boolean)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(System.Guid)
+  - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(System.Guid,System.Boolean)
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.ResolveLinkTos
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetryAllParkedMessages
   - EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetrySingleMessage(EventStore.Core.Data.ResolvedEvent)
@@ -42,23 +42,25 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PersistentSubscription
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 13
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
   syntax:
-    content: 'public class PersistentSubscription : object'
-    content.vb: >-
-      Public Class PersistentSubscription
-          Inherits Object
+    content: public class PersistentSubscription
+    content.vb: Public Class PersistentSubscription
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -83,12 +85,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.SubscriptionId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscriptionId
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 16
   assemblies:
   - EventStore.Core
@@ -118,12 +116,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.EventStreamId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EventStreamId
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 20
   assemblies:
   - EventStore.Core
@@ -153,12 +147,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GroupName
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GroupName
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 24
   assemblies:
   - EventStore.Core
@@ -188,12 +178,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.ResolveLinkTos
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ResolveLinkTos
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 28
   assemblies:
   - EventStore.Core
@@ -223,12 +209,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HasClients
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HasClients
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 45
   assemblies:
   - EventStore.Core
@@ -258,12 +240,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.ClientCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ClientCount
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 49
   assemblies:
   - EventStore.Core
@@ -293,12 +271,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HasReachedMaxClientCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HasReachedMaxClientCount
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 53
   assemblies:
   - EventStore.Core
@@ -328,12 +302,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.State
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: State
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 57
   assemblies:
   - EventStore.Core
@@ -363,12 +333,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.OutstandingMessageCount
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OutstandingMessageCount
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 61
   assemblies:
   - EventStore.Core
@@ -398,12 +364,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.PersistentSubscription(EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionParams)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 65
   assemblies:
   - EventStore.Core
@@ -431,12 +393,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.InitAsNew()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: InitAsNew
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 82
   assemblies:
   - EventStore.Core
@@ -461,12 +419,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.TryReadingNewBatch()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadingNewBatch
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 113
   assemblies:
   - EventStore.Core
@@ -491,12 +445,8 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HandleReadCompleted(EventStore.Core.Data.ResolvedEvent[], System.Int64, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HandleReadCompleted
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
     startLine: 142
   assemblies:
   - EventStore.Core
@@ -531,13 +481,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyLiveSubscriptionMessage(EventStore.Core.Data.ResolvedEvent)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyLiveSubscriptionMessage
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 193
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 194
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -564,13 +510,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetNextNOrLessMessages(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetNextNOrLessMessages
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 210
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 211
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -580,32 +522,28 @@ items:
     - id: count
       type: System.Int32
     return:
-      type: IEnumerable{EventStore.Core.Data.ResolvedEvent}
+      type: System.Collections.Generic.IEnumerable{EventStore.Core.Data.ResolvedEvent}
     content.vb: Public Function GetNextNOrLessMessages(count As Integer) As IEnumerable(Of ResolvedEvent)
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetNextNOrLessMessages*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(Guid,Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(Guid,Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
-  id: AddClient(Guid,Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(System.Guid,System.Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(System.Guid,System.Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
+  id: AddClient(System.Guid,System.Guid,EventStore.Core.Messaging.IEnvelope,System.Int32,System.String,System.String)
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: AddClient(Guid, Guid, IEnvelope, Int32, String, String)
   nameWithType: PersistentSubscription.AddClient(Guid, Guid, IEnvelope, Int32, String, String)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(Guid, Guid, EventStore.Core.Messaging.IEnvelope, System.Int32, System.String, System.String)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient(System.Guid, System.Guid, EventStore.Core.Messaging.IEnvelope, System.Int32, System.String, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddClient
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 230
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 231
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -613,9 +551,9 @@ items:
     content: public void AddClient(Guid correlationId, Guid connectionId, IEnvelope envelope, int maxInFlight, string user, string from)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: connectionId
-      type: Guid
+      type: System.Guid
     - id: envelope
       type: EventStore.Core.Messaging.IEnvelope
     - id: maxInFlight
@@ -642,13 +580,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.Shutdown()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Shutdown
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 240
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 241
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -660,25 +594,21 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(Guid)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(Guid)
-  id: RemoveClientByConnectionId(Guid)
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(System.Guid)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(System.Guid)
+  id: RemoveClientByConnectionId(System.Guid)
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: RemoveClientByConnectionId(Guid)
   nameWithType: PersistentSubscription.RemoveClientByConnectionId(Guid)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(Guid)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId(System.Guid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoveClientByConnectionId
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 246
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 247
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -686,32 +616,28 @@ items:
     content: public void RemoveClientByConnectionId(Guid connectionId)
     parameters:
     - id: connectionId
-      type: Guid
+      type: System.Guid
     content.vb: Public Sub RemoveClientByConnectionId(connectionId As Guid)
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByConnectionId*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(Guid,System.Boolean)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(Guid,System.Boolean)
-  id: RemoveClientByCorrelationId(Guid,System.Boolean)
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(System.Guid,System.Boolean)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(System.Guid,System.Boolean)
+  id: RemoveClientByCorrelationId(System.Guid,System.Boolean)
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: RemoveClientByCorrelationId(Guid, Boolean)
   nameWithType: PersistentSubscription.RemoveClientByCorrelationId(Guid, Boolean)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(Guid, System.Boolean)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RemoveClientByCorrelationId(System.Guid, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RemoveClientByCorrelationId
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 258
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 259
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -719,7 +645,7 @@ items:
     content: public void RemoveClientByCorrelationId(Guid correlationId, bool sendDropNotification)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: sendDropNotification
       type: System.Boolean
     content.vb: Public Sub RemoveClientByCorrelationId(correlationId As Guid, sendDropNotification As Boolean)
@@ -740,13 +666,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.TryMarkCheckpoint(System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryMarkCheckpoint
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 270
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 271
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -773,13 +695,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddMessageAsProcessing(EventStore.Core.Data.ResolvedEvent, EventStore.Core.Services.PersistentSubscription.PersistentSubscriptionClient)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AddMessageAsProcessing
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 295
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 296
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -796,25 +714,21 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(Guid,Guid[])
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(Guid,Guid[])
-  id: AcknowledgeMessagesProcessed(Guid,Guid[])
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(System.Guid,System.Guid[])
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(System.Guid,System.Guid[])
+  id: AcknowledgeMessagesProcessed(System.Guid,System.Guid[])
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: AcknowledgeMessagesProcessed(Guid, Guid[])
   nameWithType: PersistentSubscription.AcknowledgeMessagesProcessed(Guid, Guid[])
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(Guid, Guid[])
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(System.Guid, System.Guid[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AcknowledgeMessagesProcessed
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 304
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 305
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -822,9 +736,9 @@ items:
     content: public void AcknowledgeMessagesProcessed(Guid correlationId, Guid[] processedEventIds)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: processedEventIds
-      type: Guid[]
+      type: System.Guid[]
     content.vb: Public Sub AcknowledgeMessagesProcessed(correlationId As Guid, processedEventIds As Guid())
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed*
   nameWithType.vb: PersistentSubscription.AcknowledgeMessagesProcessed(Guid, Guid())
@@ -832,27 +746,23 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(Guid, Guid())
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed(System.Guid, System.Guid())
   name.vb: AcknowledgeMessagesProcessed(Guid, Guid())
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid,Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid,Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
-  id: NotAcknowledgeMessagesProcessed(Guid,Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(System.Guid,System.Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(System.Guid,System.Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
+  id: NotAcknowledgeMessagesProcessed(System.Guid,System.Guid[],EventStore.Core.Services.PersistentSubscription.NakAction,System.String)
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: NotAcknowledgeMessagesProcessed(Guid, Guid[], NakAction, String)
   nameWithType: PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid, Guid[], NakAction, String)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid, Guid[], EventStore.Core.Services.PersistentSubscription.NakAction, System.String)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(System.Guid, System.Guid[], EventStore.Core.Services.PersistentSubscription.NakAction, System.String)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotAcknowledgeMessagesProcessed
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 313
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 314
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -860,9 +770,9 @@ items:
     content: public void NotAcknowledgeMessagesProcessed(Guid correlationId, Guid[] processedEventIds, NakAction action, string reason)
     parameters:
     - id: correlationId
-      type: Guid
+      type: System.Guid
     - id: processedEventIds
-      type: Guid[]
+      type: System.Guid[]
     - id: action
       type: EventStore.Core.Services.PersistentSubscription.NakAction
     - id: reason
@@ -874,7 +784,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(Guid, Guid(), EventStore.Core.Services.PersistentSubscription.NakAction, System.String)
+  fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotAcknowledgeMessagesProcessed(System.Guid, System.Guid(), EventStore.Core.Services.PersistentSubscription.NakAction, System.String)
   name.vb: NotAcknowledgeMessagesProcessed(Guid, Guid(), NakAction, String)
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetryAllParkedMessages
   commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetryAllParkedMessages
@@ -888,13 +798,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetryAllParkedMessages()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RetryAllParkedMessages
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 384
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 385
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -918,13 +824,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HandleParkedReadCompleted(EventStore.Core.Data.ResolvedEvent[], System.Int64, System.Boolean, System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: HandleParkedReadCompleted
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 410
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 411
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -948,25 +850,21 @@ items:
   - Public
   fullName.vb: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.HandleParkedReadCompleted(EventStore.Core.Data.ResolvedEvent(), System.Int64, System.Boolean, System.Int64)
   name.vb: HandleParkedReadCompleted(ResolvedEvent(), Int64, Boolean, Int64)
-- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(DateTime)
-  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(DateTime)
-  id: NotifyClockTick(DateTime)
+- uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(System.DateTime)
+  commentId: M:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(System.DateTime)
+  id: NotifyClockTick(System.DateTime)
   parent: EventStore.Core.Services.PersistentSubscription.PersistentSubscription
   langs:
   - csharp
   - vb
   name: NotifyClockTick(DateTime)
   nameWithType: PersistentSubscription.NotifyClockTick(DateTime)
-  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(DateTime)
+  fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick(System.DateTime)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: NotifyClockTick
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 464
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 465
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -974,8 +872,8 @@ items:
     content: public void NotifyClockTick(DateTime time)
     parameters:
     - id: time
-      type: DateTime
-    content.vb: Public Sub NotifyClockTick(time As DateTime)
+      type: System.DateTime
+    content.vb: Public Sub NotifyClockTick(time As Date)
   overload: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick*
   modifiers.csharp:
   - public
@@ -993,13 +891,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetStatistics()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetStatistics
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 497
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 498
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -1025,13 +919,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.RetrySingleMessage(EventStore.Core.Data.ResolvedEvent)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RetrySingleMessage
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 501
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 502
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -1058,13 +948,9 @@ items:
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.Delete()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Delete
-    path: ../EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
-    startLine: 505
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Services/PersistentSubscription/PersistentSubscription.cs
+    startLine: 506
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Services.PersistentSubscription
@@ -1089,6 +975,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1604,20 +1769,21 @@ references:
   name: GetNextNOrLessMessages
   nameWithType: PersistentSubscription.GetNextNOrLessMessages
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetNextNOrLessMessages
-- uid: IEnumerable{EventStore.Core.Data.ResolvedEvent}
-  commentId: '!:IEnumerable{EventStore.Core.Data.ResolvedEvent}'
-  definition: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable{EventStore.Core.Data.ResolvedEvent}
+  commentId: T:System.Collections.Generic.IEnumerable{EventStore.Core.Data.ResolvedEvent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<ResolvedEvent>
   nameWithType: IEnumerable<ResolvedEvent>
-  fullName: IEnumerable<EventStore.Core.Data.ResolvedEvent>
+  fullName: System.Collections.Generic.IEnumerable<EventStore.Core.Data.ResolvedEvent>
   nameWithType.vb: IEnumerable(Of ResolvedEvent)
-  fullName.vb: IEnumerable(Of EventStore.Core.Data.ResolvedEvent)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EventStore.Core.Data.ResolvedEvent)
   name.vb: IEnumerable(Of ResolvedEvent)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -1630,10 +1796,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1645,54 +1811,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IEnumerable`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  name: IEnumerable<>
-  nameWithType: IEnumerable<>
-  fullName: IEnumerable<>
-  nameWithType.vb: IEnumerable(Of )
-  fullName.vb: IEnumerable(Of )
-  name.vb: IEnumerable(Of )
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IEnumerable`1
+  - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient*
   commentId: Overload:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient
   name: AddClient
   nameWithType: PersistentSubscription.AddClient
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AddClient
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid
 - uid: EventStore.Core.Messaging.IEnvelope
   commentId: T:EventStore.Core.Messaging.IEnvelope
   parent: EventStore.Core.Messaging
@@ -1740,28 +1915,28 @@ references:
   name: AcknowledgeMessagesProcessed
   nameWithType: PersistentSubscription.AcknowledgeMessagesProcessed
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.AcknowledgeMessagesProcessed
-- uid: Guid[]
+- uid: System.Guid[]
   isExternal: true
   name: Guid[]
   nameWithType: Guid[]
-  fullName: Guid[]
+  fullName: System.Guid[]
   nameWithType.vb: Guid()
-  fullName.vb: Guid()
+  fullName.vb: System.Guid()
   name.vb: Guid()
   spec.csharp:
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: '[]'
     nameWithType: '[]'
     fullName: '[]'
   spec.vb:
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ()
     nameWithType: ()
@@ -1792,11 +1967,13 @@ references:
   name: NotifyClockTick
   nameWithType: PersistentSubscription.NotifyClockTick
   fullName: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.NotifyClockTick
-- uid: DateTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
   isExternal: true
   name: DateTime
   nameWithType: DateTime
-  fullName: DateTime
+  fullName: System.DateTime
 - uid: EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetStatistics*
   commentId: Overload:EventStore.Core.Services.PersistentSubscription.PersistentSubscription.GetStatistics
   name: GetStatistics

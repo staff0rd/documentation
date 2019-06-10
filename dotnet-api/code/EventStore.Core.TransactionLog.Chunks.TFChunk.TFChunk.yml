@@ -11,7 +11,7 @@ items:
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ChunkHeader
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Complete
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw
-  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
+  - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateNew(System.String,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateWithHeader(System.String,EventStore.Core.TransactionLog.Chunks.ChunkHeader,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean)
   - EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CurrentChunkVersion
@@ -55,12 +55,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunkReadSide.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TFChunk
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunkReadSide.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunkReadSide.cs
     startLine: 10
   assemblies:
   - EventStore.Core
@@ -69,9 +65,18 @@ items:
     content: 'public class TFChunk : IDisposable'
     content.vb: >-
       Public Class TFChunk
-          Inherits IDisposable
+          Implements IDisposable
   inheritance:
   - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -96,21 +101,17 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CurrentChunkVersion
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CurrentChunkVersion
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 27
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
   syntax:
-    content: public const byte CurrentChunkVersion = null
+    content: public const byte CurrentChunkVersion = 3
     return:
       type: System.Byte
-    content.vb: Public Const CurrentChunkVersion As Byte = Nothing
+    content.vb: Public Const CurrentChunkVersion As Byte = 3
   modifiers.csharp:
   - public
   - const
@@ -129,21 +130,17 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.WriteBufferSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WriteBufferSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 28
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
   syntax:
-    content: public const int WriteBufferSize = null
+    content: public const int WriteBufferSize = 8192
     return:
       type: System.Int32
-    content.vb: Public Const WriteBufferSize As Integer = Nothing
+    content.vb: Public Const WriteBufferSize As Integer = 8192
   modifiers.csharp:
   - public
   - const
@@ -162,21 +159,17 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ReadBufferSize
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReadBufferSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 29
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.TransactionLog.Chunks.TFChunk
   syntax:
-    content: public const int ReadBufferSize = null
+    content: public const int ReadBufferSize = 8192
     return:
       type: System.Int32
-    content.vb: Public Const ReadBufferSize As Integer = Nothing
+    content.vb: Public Const ReadBufferSize As Integer = 8192
   modifiers.csharp:
   - public
   - const
@@ -195,12 +188,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.IsReadOnly
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsReadOnly
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 33
   assemblies:
   - EventStore.Core
@@ -230,12 +219,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.IsCached
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsCached
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 37
   assemblies:
   - EventStore.Core
@@ -265,12 +250,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.LogicalDataSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogicalDataSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 42
   assemblies:
   - EventStore.Core
@@ -300,12 +281,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.PhysicalDataSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PhysicalDataSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 47
   assemblies:
   - EventStore.Core
@@ -335,12 +312,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FileName
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FileName
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 51
   assemblies:
   - EventStore.Core
@@ -370,12 +343,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FileSize
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FileSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 55
   assemblies:
   - EventStore.Core
@@ -405,12 +374,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ChunkHeader
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkHeader
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 59
   assemblies:
   - EventStore.Core
@@ -440,12 +405,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ChunkFooter
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkFooter
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 63
   assemblies:
   - EventStore.Core
@@ -475,12 +436,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MidpointsDepth
   type: Field
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MidpointsDepth
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 67
   assemblies:
   - EventStore.Core
@@ -508,12 +465,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.RawWriterPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RawWriterPosition
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 69
   assemblies:
   - EventStore.Core
@@ -543,12 +496,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Finalize()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Finalize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 135
   assemblies:
   - EventStore.Core
@@ -573,12 +522,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromCompletedFile(System.String, System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromCompletedFile
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 139
   assemblies:
   - EventStore.Core
@@ -620,12 +565,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.FromOngoingFile(System.String, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: FromOngoingFile
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 153
   assemblies:
   - EventStore.Core
@@ -669,12 +610,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateNew(System.String, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateNew
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 172
   assemblies:
   - EventStore.Core
@@ -724,12 +661,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CreateWithHeader(System.String, EventStore.Core.TransactionLog.Chunks.ChunkHeader, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Boolean)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateWithHeader
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 189
   assemblies:
   - EventStore.Core
@@ -775,12 +708,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.VerifyFileHash()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: VerifyFileHash
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 509
   assemblies:
   - EventStore.Core
@@ -805,12 +734,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CacheInMemory()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CacheInMemory
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 581
   assemblies:
   - EventStore.Core
@@ -835,12 +760,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.UnCacheFromMemory()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: UnCacheFromMemory
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 668
   assemblies:
   - EventStore.Core
@@ -865,12 +786,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ExistsAt(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ExistsAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 688
   assemblies:
   - EventStore.Core
@@ -900,12 +817,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.OptimizeExistsAt()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: OptimizeExistsAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 692
   assemblies:
   - EventStore.Core
@@ -930,12 +843,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.DeOptimizeExistsAt()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: DeOptimizeExistsAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 697
   assemblies:
   - EventStore.Core
@@ -960,12 +869,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadAt(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadAt
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 702
   assemblies:
   - EventStore.Core
@@ -995,12 +900,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadFirst()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadFirst
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 706
   assemblies:
   - EventStore.Core
@@ -1027,12 +928,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadClosestForward(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadClosestForward
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 710
   assemblies:
   - EventStore.Core
@@ -1062,12 +959,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadLast()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadLast
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 714
   assemblies:
   - EventStore.Core
@@ -1094,12 +987,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryReadClosestBackward(System.Int64)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryReadClosestBackward
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 718
   assemblies:
   - EventStore.Core
@@ -1129,12 +1018,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryAppend(EventStore.Core.TransactionLog.LogRecords.LogRecord)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryAppend
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 722
   assemblies:
   - EventStore.Core
@@ -1164,12 +1049,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.TryAppendRawData(System.Byte[])
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TryAppendRawData
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 757
   assemblies:
   - EventStore.Core
@@ -1202,12 +1083,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Flush()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Flush
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 778
   assemblies:
   - EventStore.Core
@@ -1232,12 +1109,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Complete()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Complete
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 786
   assemblies:
   - EventStore.Core
@@ -1250,24 +1123,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
-  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
-  id: CompleteScavenge(ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
+  commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
+  id: CompleteScavenge(System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap})
   parent: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk
   langs:
   - csharp
   - vb
   name: CompleteScavenge(ICollection<PosMap>)
   nameWithType: TFChunk.CompleteScavenge(ICollection<PosMap>)
-  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(ICollection<EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap>)
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(System.Collections.Generic.ICollection<EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap>)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompleteScavenge
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 792
   assemblies:
   - EventStore.Core
@@ -1276,7 +1145,7 @@ items:
     content: public void CompleteScavenge(ICollection<PosMap> mapping)
     parameters:
     - id: mapping
-      type: ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}
+      type: System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}
     content.vb: Public Sub CompleteScavenge(mapping As ICollection(Of PosMap))
   overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge*
   nameWithType.vb: TFChunk.CompleteScavenge(ICollection(Of PosMap))
@@ -1284,7 +1153,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(ICollection(Of EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap))
+  fullName.vb: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge(System.Collections.Generic.ICollection(Of EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap))
   name.vb: CompleteScavenge(ICollection(Of PosMap))
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw
   commentId: M:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw
@@ -1298,12 +1167,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CompleteRaw
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 812
   assemblies:
   - EventStore.Core
@@ -1328,12 +1193,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 917
   assemblies:
   - EventStore.Core
@@ -1342,6 +1203,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1358,12 +1221,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MarkForDeletion()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MarkForDeletion
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 923
   assemblies:
   - EventStore.Core
@@ -1388,12 +1247,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.GetAlignedSize(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetAlignedSize
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 961
   assemblies:
   - EventStore.Core
@@ -1425,12 +1280,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.WaitForDestroy(System.Int32)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: WaitForDestroy
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 995
   assemblies:
   - EventStore.Core
@@ -1458,12 +1309,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.AcquireReader()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: AcquireReader
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 1046
   assemblies:
   - EventStore.Core
@@ -1490,12 +1337,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ReleaseReader(EventStore.Core.TransactionLog.Chunks.TFChunkBulkReader)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ReleaseReader
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 1069
   assemblies:
   - EventStore.Core
@@ -1523,12 +1366,8 @@ items:
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ToString()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ToString
-    path: ../EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/TransactionLog/Chunks/TFChunk/TFChunk.cs
     startLine: 1077
   assemblies:
   - EventStore.Core
@@ -1538,6 +1377,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ToString*
   modifiers.csharp:
   - public
@@ -1558,6 +1398,261 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -2185,20 +2280,21 @@ references:
   name: CompleteScavenge
   nameWithType: TFChunk.CompleteScavenge
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteScavenge
-- uid: ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}
-  commentId: '!:ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}'
-  definition: ICollection`1
+- uid: System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}
+  commentId: T:System.Collections.Generic.ICollection{EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
   name: ICollection<PosMap>
   nameWithType: ICollection<PosMap>
-  fullName: ICollection<EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap>
+  fullName: System.Collections.Generic.ICollection<EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap>
   nameWithType.vb: ICollection(Of PosMap)
-  fullName.vb: ICollection(Of EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap)
+  fullName.vb: System.Collections.Generic.ICollection(Of EventStore.Core.TransactionLog.Chunks.TFChunk.PosMap)
   name.vb: ICollection(Of PosMap)
   spec.csharp:
-  - uid: ICollection`1
+  - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     nameWithType: ICollection
-    fullName: ICollection
+    fullName: System.Collections.Generic.ICollection
     isExternal: true
   - name: <
     nameWithType: <
@@ -2211,10 +2307,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ICollection`1
+  - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     nameWithType: ICollection
-    fullName: ICollection
+    fullName: System.Collections.Generic.ICollection
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2226,45 +2322,51 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ICollection`1
-  commentId: '!:ICollection`1'
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
   isExternal: true
-  name: ICollection<>
-  nameWithType: ICollection<>
-  fullName: ICollection<>
-  nameWithType.vb: ICollection(Of )
-  fullName.vb: ICollection(Of )
-  name.vb: ICollection(Of )
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
   spec.csharp:
-  - uid: ICollection`1
+  - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     nameWithType: ICollection
-    fullName: ICollection
+    fullName: System.Collections.Generic.ICollection
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: ICollection`1
+  - uid: System.Collections.Generic.ICollection`1
     name: ICollection
     nameWithType: ICollection
-    fullName: ICollection
+    fullName: System.Collections.Generic.ICollection
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.CompleteRaw
   name: CompleteRaw
@@ -2275,6 +2377,37 @@ references:
   name: Dispose
   nameWithType: TFChunk.Dispose
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MarkForDeletion*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.MarkForDeletion
   name: MarkForDeletion
@@ -2306,6 +2439,37 @@ references:
   name: ReleaseReader
   nameWithType: TFChunk.ReleaseReader
   fullName: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ReleaseReader
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ToString*
   commentId: Overload:EventStore.Core.TransactionLog.Chunks.TFChunk.TFChunk.ToString
   name: ToString

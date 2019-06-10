@@ -5,7 +5,7 @@ items:
   id: ProjectionConfig
   parent: EventStore.Projections.Core.Services
   children:
-  - EventStore.Projections.Core.Services.ProjectionConfig.#ctor(IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  - EventStore.Projections.Core.Services.ProjectionConfig.#ctor(System.Security.Principal.IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
   - EventStore.Projections.Core.Services.ProjectionConfig.CheckpointAfterMs
   - EventStore.Projections.Core.Services.ProjectionConfig.CheckpointHandledThreshold
   - EventStore.Projections.Core.Services.ProjectionConfig.CheckpointsEnabled
@@ -29,23 +29,25 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionConfig
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 5
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services
   syntax:
-    content: 'public class ProjectionConfig : object'
-    content.vb: >-
-      Public Class ProjectionConfig
-          Inherits Object
+    content: public class ProjectionConfig
+    content.vb: Public Class ProjectionConfig
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -58,24 +60,20 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.Projections.Core.Services.ProjectionConfig.#ctor(IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
-  commentId: M:EventStore.Projections.Core.Services.ProjectionConfig.#ctor(IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
-  id: '#ctor(IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)'
+- uid: EventStore.Projections.Core.Services.ProjectionConfig.#ctor(System.Security.Principal.IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  commentId: M:EventStore.Projections.Core.Services.ProjectionConfig.#ctor(System.Security.Principal.IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)
+  id: '#ctor(System.Security.Principal.IPrincipal,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)'
   parent: EventStore.Projections.Core.Services.ProjectionConfig
   langs:
   - csharp
   - vb
   name: ProjectionConfig(IPrincipal, Int32, Int32, Int32, Int32, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Int32, Int32)
   nameWithType: ProjectionConfig.ProjectionConfig(IPrincipal, Int32, Int32, Int32, Int32, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Int32, Int32)
-  fullName: EventStore.Projections.Core.Services.ProjectionConfig.ProjectionConfig(IPrincipal, System.Int32, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
+  fullName: EventStore.Projections.Core.Services.ProjectionConfig.ProjectionConfig(System.Security.Principal.IPrincipal, System.Int32, System.Int32, System.Int32, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Int32)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 20
   assemblies:
   - EventStore.Projections.Core
@@ -84,7 +82,7 @@ items:
     content: public ProjectionConfig(IPrincipal runAs, int checkpointHandledThreshold, int checkpointUnhandledBytesThreshold, int pendingEventsThreshold, int maxWriteBatchLength, bool emitEventEnabled, bool checkpointsEnabled, bool createTempStreams, bool stopOnEof, bool isSlaveProjection, bool trackEmittedStreams, int checkpointAfterMs, int maximumAllowedWritesInFlight)
     parameters:
     - id: runAs
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     - id: checkpointHandledThreshold
       type: System.Int32
     - id: checkpointUnhandledBytesThreshold
@@ -127,12 +125,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.CheckpointHandledThreshold
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointHandledThreshold
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 57
   assemblies:
   - EventStore.Projections.Core
@@ -162,12 +156,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.CheckpointUnhandledBytesThreshold
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointUnhandledBytesThreshold
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 61
   assemblies:
   - EventStore.Projections.Core
@@ -197,12 +187,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.MaxWriteBatchLength
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaxWriteBatchLength
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 65
   assemblies:
   - EventStore.Projections.Core
@@ -232,12 +218,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.EmitEventEnabled
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: EmitEventEnabled
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 69
   assemblies:
   - EventStore.Projections.Core
@@ -267,12 +249,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.CheckpointsEnabled
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointsEnabled
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 73
   assemblies:
   - EventStore.Projections.Core
@@ -302,12 +280,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.PendingEventsThreshold
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PendingEventsThreshold
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 77
   assemblies:
   - EventStore.Projections.Core
@@ -337,12 +311,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.CreateTempStreams
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateTempStreams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 81
   assemblies:
   - EventStore.Projections.Core
@@ -372,12 +342,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.StopOnEof
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: StopOnEof
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 85
   assemblies:
   - EventStore.Projections.Core
@@ -407,12 +373,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.RunAs
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: RunAs
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 89
   assemblies:
   - EventStore.Projections.Core
@@ -421,7 +383,7 @@ items:
     content: public IPrincipal RunAs { get; }
     parameters: []
     return:
-      type: IPrincipal
+      type: System.Security.Principal.IPrincipal
     content.vb: Public ReadOnly Property RunAs As IPrincipal
   overload: EventStore.Projections.Core.Services.ProjectionConfig.RunAs*
   modifiers.csharp:
@@ -442,12 +404,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.IsSlaveProjection
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsSlaveProjection
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 93
   assemblies:
   - EventStore.Projections.Core
@@ -477,12 +435,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.TrackEmittedStreams
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: TrackEmittedStreams
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 97
   assemblies:
   - EventStore.Projections.Core
@@ -512,12 +466,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.CheckpointAfterMs
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CheckpointAfterMs
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 101
   assemblies:
   - EventStore.Projections.Core
@@ -547,12 +497,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.MaximumAllowedWritesInFlight
   type: Property
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MaximumAllowedWritesInFlight
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 105
   assemblies:
   - EventStore.Projections.Core
@@ -582,12 +528,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.GetTest()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: GetTest
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 109
   assemblies:
   - EventStore.Projections.Core
@@ -616,12 +558,8 @@ items:
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.SetIsSlave()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/ProjectionConfig.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SetIsSlave
-    path: ../EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/ProjectionConfig.cs
     startLine: 114
   assemblies:
   - EventStore.Projections.Core
@@ -649,6 +587,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -1019,11 +1236,13 @@ references:
   name: ProjectionConfig
   nameWithType: ProjectionConfig.ProjectionConfig
   fullName: EventStore.Projections.Core.Services.ProjectionConfig.ProjectionConfig
-- uid: IPrincipal
+- uid: System.Security.Principal.IPrincipal
+  commentId: T:System.Security.Principal.IPrincipal
+  parent: System.Security.Principal
   isExternal: true
   name: IPrincipal
   nameWithType: IPrincipal
-  fullName: IPrincipal
+  fullName: System.Security.Principal.IPrincipal
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1038,6 +1257,12 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.Security.Principal
+  commentId: N:System.Security.Principal
+  isExternal: true
+  name: System.Security.Principal
+  nameWithType: System.Security.Principal
+  fullName: System.Security.Principal
 - uid: EventStore.Projections.Core.Services.ProjectionConfig.CheckpointHandledThreshold*
   commentId: Overload:EventStore.Projections.Core.Services.ProjectionConfig.CheckpointHandledThreshold
   name: CheckpointHandledThreshold

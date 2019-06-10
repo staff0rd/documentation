@@ -6,7 +6,7 @@ items:
   parent: EventStore.Projections.Core.Services.Management
   children:
   - EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.#ctor(EventStore.Core.Helpers.IODispatcher)
-  - EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
+  - EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
   - EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.Reset
   langs:
   - csharp
@@ -16,26 +16,29 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MultiStreamMessageWriter
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
     startLine: 12
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
   syntax:
-    content: 'public sealed class MultiStreamMessageWriter : object, IMultiStreamMessageWriter'
+    content: 'public sealed class MultiStreamMessageWriter : IMultiStreamMessageWriter'
     content.vb: >-
       Public NotInheritable Class MultiStreamMessageWriter
-          Inherits Object
           Implements IMultiStreamMessageWriter
   inheritance:
   - System.Object
   implements:
   - EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -62,12 +65,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.MultiStreamMessageWriter(EventStore.Core.Helpers.IODispatcher)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
     startLine: 19
   assemblies:
   - EventStore.Projections.Core
@@ -95,12 +94,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.Reset()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Reset
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
     startLine: 24
   assemblies:
   - EventStore.Projections.Core
@@ -115,24 +110,20 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
-  commentId: M:EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
-  id: PublishResponse(System.String,Guid,System.Object)
+- uid: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
+  commentId: M:EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
+  id: PublishResponse(System.String,System.Guid,System.Object)
   parent: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter
   langs:
   - csharp
   - vb
   name: PublishResponse(String, Guid, Object)
   nameWithType: MultiStreamMessageWriter.PublishResponse(String, Guid, Object)
-  fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String, Guid, System.Object)
+  fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse(System.String, System.Guid, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishResponse
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/MultiStreamMessageWriter.cs
     startLine: 31
   assemblies:
   - EventStore.Projections.Core
@@ -143,13 +134,13 @@ items:
     - id: command
       type: System.String
     - id: workerId
-      type: Guid
+      type: System.Guid
     - id: body
       type: System.Object
     content.vb: Public Sub PublishResponse(command As String, workerId As Guid, body As Object)
   overload: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse*
   implements:
-  - EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
+  - EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -173,6 +164,285 @@ references:
   name: IMultiStreamMessageWriter
   nameWithType: IMultiStreamMessageWriter
   fullName: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -592,15 +862,15 @@ references:
   name: PublishResponse
   nameWithType: MultiStreamMessageWriter.PublishResponse
   fullName: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter.PublishResponse
-- uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
-  commentId: M:EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
+- uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
+  commentId: M:EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
   parent: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter
   isExternal: true
   name: PublishResponse(String, Guid, Object)
   nameWithType: IMultiStreamMessageWriter.PublishResponse(String, Guid, Object)
-  fullName: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String, Guid, System.Object)
+  fullName: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String, System.Guid, System.Object)
   spec.csharp:
-  - uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
+  - uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
     name: PublishResponse
     nameWithType: IMultiStreamMessageWriter.PublishResponse
     fullName: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse
@@ -615,10 +885,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -632,7 +902,7 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,Guid,System.Object)
+  - uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse(System.String,System.Guid,System.Object)
     name: PublishResponse
     nameWithType: IMultiStreamMessageWriter.PublishResponse
     fullName: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter.PublishResponse
@@ -647,10 +917,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -670,8 +940,10 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: Guid
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: Guid
+  fullName: System.Guid

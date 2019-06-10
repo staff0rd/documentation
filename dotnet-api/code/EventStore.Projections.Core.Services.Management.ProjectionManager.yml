@@ -5,7 +5,7 @@ items:
   id: ProjectionManager
   parent: EventStore.Projections.Core.Services.Management
   children:
-  - EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,IDictionary{Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean)
+  - EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,System.TimeSpan,System.Boolean)
   - EventStore.Projections.Core.Services.Management.ProjectionManager.Dispose
   - EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
   - EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted)
@@ -52,12 +52,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionManager
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 19
   assemblies:
   - EventStore.Projections.Core
@@ -66,11 +62,11 @@ items:
     content: 'public class ProjectionManager : IDisposable, IHandle<SystemMessage.StateChangeMessage>, IHandle<SystemMessage.SystemCoreReady>, IHandle<SystemMessage.EpochWritten>, IHandle<ClientMessage.ReadStreamEventsBackwardCompleted>, IHandle<ClientMessage.ReadStreamEventsForwardCompleted>, IHandle<ClientMessage.WriteEventsCompleted>, IHandle<ClientMessage.DeleteStreamCompleted>, IHandle<ProjectionManagementMessage.Command.Post>, IHandle<ProjectionManagementMessage.Command.UpdateQuery>, IHandle<ProjectionManagementMessage.Command.GetQuery>, IHandle<ProjectionManagementMessage.Command.Delete>, IHandle<ProjectionManagementMessage.Command.GetStatistics>, IHandle<ProjectionManagementMessage.Command.GetState>, IHandle<ProjectionManagementMessage.Command.GetResult>, IHandle<ProjectionManagementMessage.Command.Disable>, IHandle<ProjectionManagementMessage.Command.Enable>, IHandle<ProjectionManagementMessage.Command.Abort>, IHandle<ProjectionManagementMessage.Command.SetRunAs>, IHandle<ProjectionManagementMessage.Command.Reset>, IHandle<ProjectionManagementMessage.Command.StartSlaveProjections>, IHandle<ProjectionManagementMessage.Command.GetConfig>, IHandle<ProjectionManagementMessage.Command.UpdateConfig>, IHandle<ProjectionManagementMessage.Internal.CleanupExpired>, IHandle<ProjectionManagementMessage.Internal.Deleted>, IHandle<CoreProjectionStatusMessage.Started>, IHandle<CoreProjectionStatusMessage.Stopped>, IHandle<CoreProjectionStatusMessage.Faulted>, IHandle<CoreProjectionStatusMessage.Prepared>, IHandle<CoreProjectionStatusMessage.StateReport>, IHandle<CoreProjectionStatusMessage.ResultReport>, IHandle<CoreProjectionStatusMessage.StatisticsReport>, IHandle<CoreProjectionManagementMessage.SlaveProjectionReaderAssigned>, IHandle<ProjectionManagementMessage.RegisterSystemProjection>, IHandle<CoreProjectionStatusMessage.ProjectionWorkerStarted>, IHandle<ProjectionManagementMessage.ReaderReady>'
     content.vb: >-
       Public Class ProjectionManager
-          Inherits IDisposable
-          Implements IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.SystemCoreReady), IHandle(Of SystemMessage.EpochWritten), IHandle(Of ClientMessage.ReadStreamEventsBackwardCompleted), IHandle(Of ClientMessage.ReadStreamEventsForwardCompleted), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of ClientMessage.DeleteStreamCompleted), IHandle(Of ProjectionManagementMessage.Command.Post), IHandle(Of ProjectionManagementMessage.Command.UpdateQuery), IHandle(Of ProjectionManagementMessage.Command.GetQuery), IHandle(Of ProjectionManagementMessage.Command.Delete), IHandle(Of ProjectionManagementMessage.Command.GetStatistics), IHandle(Of ProjectionManagementMessage.Command.GetState), IHandle(Of ProjectionManagementMessage.Command.GetResult), IHandle(Of ProjectionManagementMessage.Command.Disable), IHandle(Of ProjectionManagementMessage.Command.Enable), IHandle(Of ProjectionManagementMessage.Command.Abort), IHandle(Of ProjectionManagementMessage.Command.SetRunAs), IHandle(Of ProjectionManagementMessage.Command.Reset), IHandle(Of ProjectionManagementMessage.Command.StartSlaveProjections), IHandle(Of ProjectionManagementMessage.Command.GetConfig), IHandle(Of ProjectionManagementMessage.Command.UpdateConfig), IHandle(Of ProjectionManagementMessage.Internal.CleanupExpired), IHandle(Of ProjectionManagementMessage.Internal.Deleted), IHandle(Of CoreProjectionStatusMessage.Started), IHandle(Of CoreProjectionStatusMessage.Stopped), IHandle(Of CoreProjectionStatusMessage.Faulted), IHandle(Of CoreProjectionStatusMessage.Prepared), IHandle(Of CoreProjectionStatusMessage.StateReport), IHandle(Of CoreProjectionStatusMessage.ResultReport), IHandle(Of CoreProjectionStatusMessage.StatisticsReport), IHandle(Of CoreProjectionManagementMessage.SlaveProjectionReaderAssigned), IHandle(Of ProjectionManagementMessage.RegisterSystemProjection), IHandle(Of CoreProjectionStatusMessage.ProjectionWorkerStarted), IHandle(Of ProjectionManagementMessage.ReaderReady)
+          Implements IDisposable, IHandle(Of SystemMessage.StateChangeMessage), IHandle(Of SystemMessage.SystemCoreReady), IHandle(Of SystemMessage.EpochWritten), IHandle(Of ClientMessage.ReadStreamEventsBackwardCompleted), IHandle(Of ClientMessage.ReadStreamEventsForwardCompleted), IHandle(Of ClientMessage.WriteEventsCompleted), IHandle(Of ClientMessage.DeleteStreamCompleted), IHandle(Of ProjectionManagementMessage.Command.Post), IHandle(Of ProjectionManagementMessage.Command.UpdateQuery), IHandle(Of ProjectionManagementMessage.Command.GetQuery), IHandle(Of ProjectionManagementMessage.Command.Delete), IHandle(Of ProjectionManagementMessage.Command.GetStatistics), IHandle(Of ProjectionManagementMessage.Command.GetState), IHandle(Of ProjectionManagementMessage.Command.GetResult), IHandle(Of ProjectionManagementMessage.Command.Disable), IHandle(Of ProjectionManagementMessage.Command.Enable), IHandle(Of ProjectionManagementMessage.Command.Abort), IHandle(Of ProjectionManagementMessage.Command.SetRunAs), IHandle(Of ProjectionManagementMessage.Command.Reset), IHandle(Of ProjectionManagementMessage.Command.StartSlaveProjections), IHandle(Of ProjectionManagementMessage.Command.GetConfig), IHandle(Of ProjectionManagementMessage.Command.UpdateConfig), IHandle(Of ProjectionManagementMessage.Internal.CleanupExpired), IHandle(Of ProjectionManagementMessage.Internal.Deleted), IHandle(Of CoreProjectionStatusMessage.Started), IHandle(Of CoreProjectionStatusMessage.Stopped), IHandle(Of CoreProjectionStatusMessage.Faulted), IHandle(Of CoreProjectionStatusMessage.Prepared), IHandle(Of CoreProjectionStatusMessage.StateReport), IHandle(Of CoreProjectionStatusMessage.ResultReport), IHandle(Of CoreProjectionStatusMessage.StatisticsReport), IHandle(Of CoreProjectionManagementMessage.SlaveProjectionReaderAssigned), IHandle(Of ProjectionManagementMessage.RegisterSystemProjection), IHandle(Of CoreProjectionStatusMessage.ProjectionWorkerStarted), IHandle(Of ProjectionManagementMessage.ReaderReady)
   inheritance:
   - System.Object
   implements:
+  - System.IDisposable
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.SystemCoreReady}
   - EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.EpochWritten}
@@ -106,6 +102,14 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.RegisterSystemProjection}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ProjectionWorkerStarted}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.ReaderReady}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -130,21 +134,17 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionQueryId
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionQueryId
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 56
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
   syntax:
-    content: public const int ProjectionQueryId = null
+    content: public const int ProjectionQueryId = -2
     return:
       type: System.Int32
-    content.vb: Public Const ProjectionQueryId As Integer = Nothing
+    content.vb: Public Const ProjectionQueryId As Integer = -2
   modifiers.csharp:
   - public
   - const
@@ -163,45 +163,37 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionCreationRetryCount
   type: Field
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ProjectionCreationRetryCount
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 57
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
   syntax:
-    content: public const int ProjectionCreationRetryCount = null
+    content: public const int ProjectionCreationRetryCount = 1
     return:
       type: System.Int32
-    content.vb: Public Const ProjectionCreationRetryCount As Integer = Nothing
+    content.vb: Public Const ProjectionCreationRetryCount As Integer = 1
   modifiers.csharp:
   - public
   - const
   modifiers.vb:
   - Public
   - Const
-- uid: EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,IDictionary{Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean)
-  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,IDictionary{Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean)
-  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,IDictionary{Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,TimeSpan,System.Boolean)'
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,System.TimeSpan,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManager.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,System.TimeSpan,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher},EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Common.Options.ProjectionType,EventStore.Core.Helpers.IODispatcher,System.TimeSpan,System.Boolean)'
   parent: EventStore.Projections.Core.Services.Management.ProjectionManager
   langs:
   - csharp
   - vb
   name: ProjectionManager(IPublisher, IPublisher, IDictionary<Guid, IPublisher>, ITimeProvider, ProjectionType, IODispatcher, TimeSpan, Boolean)
   nameWithType: ProjectionManager.ProjectionManager(IPublisher, IPublisher, IDictionary<Guid, IPublisher>, ITimeProvider, ProjectionType, IODispatcher, TimeSpan, Boolean)
-  fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionManager(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, IDictionary<Guid, EventStore.Core.Bus.IPublisher>, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Common.Options.ProjectionType, EventStore.Core.Helpers.IODispatcher, TimeSpan, System.Boolean)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionManager(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, System.Collections.Generic.IDictionary<System.Guid, EventStore.Core.Bus.IPublisher>, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Common.Options.ProjectionType, EventStore.Core.Helpers.IODispatcher, System.TimeSpan, System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 107
   assemblies:
   - EventStore.Projections.Core
@@ -214,7 +206,7 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: queueMap
-      type: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
+      type: System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
     - id: timeProvider
       type: EventStore.Core.Services.TimerService.ITimeProvider
     - id: runProjections
@@ -222,7 +214,7 @@ items:
     - id: ioDispatcher
       type: EventStore.Core.Helpers.IODispatcher
     - id: projectionQueryExpiry
-      type: TimeSpan
+      type: System.TimeSpan
     - id: initializeSystemProjections
       type: System.Boolean
     content.vb: Public Sub New(inputQueue As IPublisher, publisher As IPublisher, queueMap As IDictionary(Of Guid, IPublisher), timeProvider As ITimeProvider, runProjections As ProjectionType, ioDispatcher As IODispatcher, projectionQueryExpiry As TimeSpan, initializeSystemProjections As Boolean = True)
@@ -232,7 +224,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionManager(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, IDictionary(Of Guid, EventStore.Core.Bus.IPublisher), EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Common.Options.ProjectionType, EventStore.Core.Helpers.IODispatcher, TimeSpan, System.Boolean)
+  fullName.vb: EventStore.Projections.Core.Services.Management.ProjectionManager.ProjectionManager(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, System.Collections.Generic.IDictionary(Of System.Guid, EventStore.Core.Bus.IPublisher), EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Common.Options.ProjectionType, EventStore.Core.Helpers.IODispatcher, System.TimeSpan, System.Boolean)
   name.vb: ProjectionManager(IPublisher, IPublisher, IDictionary(Of Guid, IPublisher), ITimeProvider, ProjectionType, IODispatcher, TimeSpan, Boolean)
 - uid: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.ReaderReady)
   commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.ReaderReady)
@@ -246,12 +238,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.ReaderReady)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 185
   assemblies:
   - EventStore.Projections.Core
@@ -281,12 +269,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 217
   assemblies:
   - EventStore.Projections.Core
@@ -316,12 +300,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 242
   assemblies:
   - EventStore.Projections.Core
@@ -351,12 +331,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 273
   assemblies:
   - EventStore.Projections.Core
@@ -386,12 +362,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 286
   assemblies:
   - EventStore.Projections.Core
@@ -421,12 +393,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 304
   assemblies:
   - EventStore.Projections.Core
@@ -456,12 +424,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 319
   assemblies:
   - EventStore.Projections.Core
@@ -491,12 +455,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 335
   assemblies:
   - EventStore.Projections.Core
@@ -526,12 +486,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 350
   assemblies:
   - EventStore.Projections.Core
@@ -561,12 +517,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 369
   assemblies:
   - EventStore.Projections.Core
@@ -596,12 +548,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetStatistics)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 385
   assemblies:
   - EventStore.Projections.Core
@@ -631,12 +579,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 409
   assemblies:
   - EventStore.Projections.Core
@@ -666,12 +610,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 419
   assemblies:
   - EventStore.Projections.Core
@@ -701,12 +641,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 429
   assemblies:
   - EventStore.Projections.Core
@@ -736,12 +672,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 442
   assemblies:
   - EventStore.Projections.Core
@@ -771,12 +703,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 460
   assemblies:
   - EventStore.Projections.Core
@@ -806,12 +734,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 471
   assemblies:
   - EventStore.Projections.Core
@@ -841,12 +765,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 479
   assemblies:
   - EventStore.Projections.Core
@@ -876,12 +796,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 487
   assemblies:
   - EventStore.Projections.Core
@@ -911,12 +827,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 495
   assemblies:
   - EventStore.Projections.Core
@@ -946,12 +858,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 503
   assemblies:
   - EventStore.Projections.Core
@@ -981,12 +889,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 507
   assemblies:
   - EventStore.Projections.Core
@@ -1016,12 +920,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 511
   assemblies:
   - EventStore.Projections.Core
@@ -1051,12 +951,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.SlaveProjectionReaderAssigned)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 519
   assemblies:
   - EventStore.Projections.Core
@@ -1086,12 +982,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsBackwardCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 526
   assemblies:
   - EventStore.Projections.Core
@@ -1121,12 +1013,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 530
   assemblies:
   - EventStore.Projections.Core
@@ -1156,12 +1044,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.WriteEventsCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 534
   assemblies:
   - EventStore.Projections.Core
@@ -1191,12 +1075,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.ClientMessage.DeleteStreamCompleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 538
   assemblies:
   - EventStore.Projections.Core
@@ -1226,12 +1106,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.SystemMessage.SystemCoreReady)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 547
   assemblies:
   - EventStore.Projections.Core
@@ -1261,12 +1137,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.SystemMessage.StateChangeMessage)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 552
   assemblies:
   - EventStore.Projections.Core
@@ -1296,12 +1168,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Core.Messages.SystemMessage.EpochWritten)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 560
   assemblies:
   - EventStore.Projections.Core
@@ -1331,12 +1199,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.Deleted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 586
   assemblies:
   - EventStore.Projections.Core
@@ -1366,12 +1230,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.RegisterSystemProjection)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 610
   assemblies:
   - EventStore.Projections.Core
@@ -1401,12 +1261,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Dispose()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Dispose
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 628
   assemblies:
   - EventStore.Projections.Core
@@ -1415,6 +1271,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: EventStore.Projections.Core.Services.Management.ProjectionManager.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1431,12 +1289,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 1113
   assemblies:
   - EventStore.Projections.Core
@@ -1466,12 +1320,8 @@ items:
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ProjectionWorkerStarted)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManager.cs
     startLine: 1217
   assemblies:
   - EventStore.Projections.Core
@@ -1502,6 +1352,13 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   commentId: T:EventStore.Core.Bus.IHandle{EventStore.Core.Messages.SystemMessage.StateChangeMessage}
   parent: EventStore.Core.Bus
@@ -2902,6 +2759,285 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -3326,28 +3462,29 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
-  commentId: '!:IDictionary{Guid,EventStore.Core.Bus.IPublisher}'
-  definition: IDictionary`2
+- uid: System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
+  commentId: T:System.Collections.Generic.IDictionary{System.Guid,EventStore.Core.Bus.IPublisher}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
   name: IDictionary<Guid, IPublisher>
   nameWithType: IDictionary<Guid, IPublisher>
-  fullName: IDictionary<Guid, EventStore.Core.Bus.IPublisher>
+  fullName: System.Collections.Generic.IDictionary<System.Guid, EventStore.Core.Bus.IPublisher>
   nameWithType.vb: IDictionary(Of Guid, IPublisher)
-  fullName.vb: IDictionary(Of Guid, EventStore.Core.Bus.IPublisher)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.Guid, EventStore.Core.Bus.IPublisher)
   name.vb: IDictionary(Of Guid, IPublisher)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -3360,18 +3497,18 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Guid
+  - uid: System.Guid
     name: Guid
     nameWithType: Guid
-    fullName: Guid
+    fullName: System.Guid
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -3401,11 +3538,13 @@ references:
   name: IODispatcher
   nameWithType: IODispatcher
   fullName: EventStore.Core.Helpers.IODispatcher
-- uid: TimeSpan
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: TimeSpan
+  fullName: System.TimeSpan
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -3413,56 +3552,63 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: IDictionary`2
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  name: IDictionary<, >
-  nameWithType: IDictionary<, >
-  fullName: IDictionary<, >
-  nameWithType.vb: IDictionary(Of , )
-  fullName.vb: IDictionary(Of , )
-  name.vb: IDictionary(Of , )
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IDictionary`2
+  - uid: System.Collections.Generic.IDictionary`2
     name: IDictionary
     nameWithType: IDictionary
-    fullName: IDictionary
+    fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: EventStore.Core.Services.TimerService
   commentId: N:EventStore.Core.Services.TimerService
   name: EventStore.Core.Services.TimerService
@@ -5018,6 +5164,37 @@ references:
   name: Dispose
   nameWithType: ProjectionManager.Dispose
   fullName: EventStore.Projections.Core.Services.Management.ProjectionManager.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections)
   commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections)
   parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections}

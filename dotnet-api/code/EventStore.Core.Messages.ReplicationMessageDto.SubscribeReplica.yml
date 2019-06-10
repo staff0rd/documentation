@@ -23,29 +23,41 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica
   type: Class
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscribeReplica
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 59
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: 'public class SubscribeReplica : object'
+    content: >-
+      [ProtoContract]
+
+      public class SubscribeReplica
     content.vb: >-
+      <ProtoContract>
+
       Public Class SubscribeReplica
-          Inherits Object
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
   - System.Object.EventStore.Common.Utils.Json.ToCanonicalJson
   - EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.Serialize``1
   - EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.EventStore.Core.Services.Transport.Tcp.ProtobufExtensions.SerializeToArray``1
+  attributes:
+  - type: ProtoBuf.ProtoContractAttribute
+    ctor: ProtoBuf.ProtoContractAttribute.#ctor
+    arguments: []
   modifiers.csharp:
   - public
   - class
@@ -64,23 +76,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.LogPosition
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LogPosition
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 61
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public long LogPosition { get; set; }
+    content: >-
+      [ProtoMember(1)]
+
+      public long LogPosition { get; set; }
     parameters: []
     return:
       type: System.Int64
-    content.vb: Public Property LogPosition As Long
+    content.vb: >-
+      <ProtoMember(1)>
+
+      Public Property LogPosition As Long
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.LogPosition*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
   modifiers.csharp:
   - public
   - get
@@ -99,23 +119,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.ChunkId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: ChunkId
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 63
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public byte[] ChunkId { get; set; }
+    content: >-
+      [ProtoMember(2)]
+
+      public byte[] ChunkId { get; set; }
     parameters: []
     return:
       type: System.Byte[]
-    content.vb: Public Property ChunkId As Byte()
+    content.vb: >-
+      <ProtoMember(2)>
+
+      Public Property ChunkId As Byte()
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.ChunkId*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 2
   modifiers.csharp:
   - public
   - get
@@ -134,23 +162,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.LastEpochs
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: LastEpochs
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 65
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public ReplicationMessageDto.Epoch[] LastEpochs { get; set; }
+    content: >-
+      [ProtoMember(3)]
+
+      public ReplicationMessageDto.Epoch[] LastEpochs { get; set; }
     parameters: []
     return:
       type: EventStore.Core.Messages.ReplicationMessageDto.Epoch[]
-    content.vb: Public Property LastEpochs As ReplicationMessageDto.Epoch()
+    content.vb: >-
+      <ProtoMember(3)>
+
+      Public Property LastEpochs As ReplicationMessageDto.Epoch()
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.LastEpochs*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 3
   modifiers.csharp:
   - public
   - get
@@ -169,23 +205,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.Ip
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Ip
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 67
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public byte[] Ip { get; set; }
+    content: >-
+      [ProtoMember(4)]
+
+      public byte[] Ip { get; set; }
     parameters: []
     return:
       type: System.Byte[]
-    content.vb: Public Property Ip As Byte()
+    content.vb: >-
+      <ProtoMember(4)>
+
+      Public Property Ip As Byte()
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.Ip*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 4
   modifiers.csharp:
   - public
   - get
@@ -204,23 +248,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.Port
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Port
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 69
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public int Port { get; set; }
+    content: >-
+      [ProtoMember(5)]
+
+      public int Port { get; set; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property Port As Integer
+    content.vb: >-
+      <ProtoMember(5)>
+
+      Public Property Port As Integer
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.Port*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 5
   modifiers.csharp:
   - public
   - get
@@ -239,23 +291,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.MasterId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: MasterId
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 71
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public byte[] MasterId { get; set; }
+    content: >-
+      [ProtoMember(6)]
+
+      public byte[] MasterId { get; set; }
     parameters: []
     return:
       type: System.Byte[]
-    content.vb: Public Property MasterId As Byte()
+    content.vb: >-
+      <ProtoMember(6)>
+
+      Public Property MasterId As Byte()
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.MasterId*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 6
   modifiers.csharp:
   - public
   - get
@@ -274,23 +334,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.SubscriptionId
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: SubscriptionId
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 73
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public byte[] SubscriptionId { get; set; }
+    content: >-
+      [ProtoMember(7)]
+
+      public byte[] SubscriptionId { get; set; }
     parameters: []
     return:
       type: System.Byte[]
-    content.vb: Public Property SubscriptionId As Byte()
+    content.vb: >-
+      <ProtoMember(7)>
+
+      Public Property SubscriptionId As Byte()
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.SubscriptionId*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 7
   modifiers.csharp:
   - public
   - get
@@ -309,23 +377,31 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.IsPromotable
   type: Property
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: IsPromotable
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 75
   assemblies:
   - EventStore.Core
   namespace: EventStore.Core.Messages
   syntax:
-    content: public bool IsPromotable { get; set; }
+    content: >-
+      [ProtoMember(8)]
+
+      public bool IsPromotable { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property IsPromotable As Boolean
+    content.vb: >-
+      <ProtoMember(8)>
+
+      Public Property IsPromotable As Boolean
   overload: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.IsPromotable*
+  attributes:
+  - type: ProtoBuf.ProtoMemberAttribute
+    ctor: ProtoBuf.ProtoMemberAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 8
   modifiers.csharp:
   - public
   - get
@@ -344,12 +420,8 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.SubscribeReplica()
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 77
   assemblies:
   - EventStore.Core
@@ -374,12 +446,8 @@ items:
   fullName: EventStore.Core.Messages.ReplicationMessageDto.SubscribeReplica.SubscribeReplica(System.Int64, System.Byte[], EventStore.Core.Messages.ReplicationMessageDto.Epoch[], System.Byte[], System.Int32, System.Byte[], System.Byte[], System.Boolean)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Core/Messages/ReplicationMessageDto.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Core/Messages/ReplicationMessageDto.cs
     startLine: 80
   assemblies:
   - EventStore.Core
@@ -425,6 +493,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json

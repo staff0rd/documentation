@@ -5,7 +5,7 @@ items:
   id: PublishSubscribeDispatcher`4
   parent: EventStore.Projections.Core.Services
   children:
-  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`1,`0},System.Func{`3,`0})
   - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel(`0)
   - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll
   - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber``1
@@ -23,31 +23,35 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
   type: Class
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishSubscribeDispatcher
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 7
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services
   syntax:
-    content: 'public class PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase> : object where TSubscribeRequest : Message where TControlMessageBase : Message where TResponseBase : Message'
+    content: >-
+      public class PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
+          where TSubscribeRequest : Message where TControlMessageBase : Message where TResponseBase : Message
     typeParameters:
     - id: TGuid
     - id: TSubscribeRequest
     - id: TControlMessageBase
     - id: TResponseBase
-    content.vb: >-
-      Public Class PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest As Message, TControlMessageBase As Message, TResponseBase As Message)
-          Inherits Object
+    content.vb: Public Class PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest As Message, TControlMessageBase As Message, TResponseBase As Message)
   inheritance:
   - System.Object
   derivedClasses:
   - EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
   - EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
   extensionMethods:
   - System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   - System.Object.EventStore.Common.Utils.Json.ToJson
@@ -63,24 +67,20 @@ items:
   - Class
   fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
   name.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
-- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
-  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
-  id: '#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})'
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`1,`0},System.Func{`3,`0})
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,System.Func{`1,`0},System.Func{`3,`0})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Func{`1,`0},System.Func{`3,`0})'
   parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
   langs:
   - csharp
   - vb
   name: PublishSubscribeDispatcher(IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
   nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher(IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
-  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, System.Func<TSubscribeRequest, TGuid>, System.Func<TResponseBase, TGuid>)
   type: Constructor
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: .ctor
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 19
   assemblies:
   - EventStore.Projections.Core
@@ -91,9 +91,9 @@ items:
     - id: publisher
       type: EventStore.Core.Bus.IPublisher
     - id: getRequestCorrelationId
-      type: Func{{TSubscribeRequest},{TGuid}}
+      type: System.Func{{TSubscribeRequest},{TGuid}}
     - id: getResponseCorrelationId
-      type: Func{{TResponseBase},{TGuid}}
+      type: System.Func{{TResponseBase},{TGuid}}
     content.vb: Public Sub New(publisher As IPublisher, getRequestCorrelationId As Func(Of TSubscribeRequest, TGuid), getResponseCorrelationId As Func(Of TResponseBase, TGuid))
   overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor*
   nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher(IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
@@ -101,7 +101,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, System.Func(Of TSubscribeRequest, TGuid), System.Func(Of TResponseBase, TGuid))
   name.vb: PublishSubscribeDispatcher(IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
 - uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(`1,System.Object)
   commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(`1,System.Object)
@@ -115,12 +115,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(TSubscribeRequest, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishSubscribe
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 27
   assemblies:
   - EventStore.Projections.Core
@@ -154,12 +150,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(EventStore.Core.Bus.IPublisher, TSubscribeRequest, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: PublishSubscribe
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 31
   assemblies:
   - EventStore.Projections.Core
@@ -195,12 +187,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(TControlMessageBase)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 45
   assemblies:
   - EventStore.Projections.Core
@@ -230,12 +218,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(EventStore.Core.Bus.IPublisher, TControlMessageBase)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Publish
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 49
   assemblies:
   - EventStore.Projections.Core
@@ -267,12 +251,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Cancel(TGuid)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Cancel
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 54
   assemblies:
   - EventStore.Projections.Core
@@ -302,12 +282,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CancelAll()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CancelAll
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 59
   assemblies:
   - EventStore.Projections.Core
@@ -334,12 +310,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CreateSubscriber<T>()
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: CreateSubscriber
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 64
   assemblies:
   - EventStore.Projections.Core
@@ -373,12 +345,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Handle<T>(T)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Handle
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 82
   assemblies:
   - EventStore.Projections.Core
@@ -415,12 +383,8 @@ items:
   fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Subscribed(TGuid, System.Object)
   type: Method
   source:
-    remote:
-      path: src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
-      branch: master
-      repo: git@github.com:ChrisChinchilla/EventStore.git
     id: Subscribed
-    path: ../EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
     startLine: 97
   assemblies:
   - EventStore.Projections.Core
@@ -453,6 +417,285 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Object.EventStore.Common.Utils.Json.ToJsonBytes
   commentId: M:EventStore.Common.Utils.Json.ToJsonBytes(System.Object)
   parent: EventStore.Common.Utils.Json
@@ -831,20 +1074,21 @@ references:
   name: IPublisher
   nameWithType: IPublisher
   fullName: EventStore.Core.Bus.IPublisher
-- uid: Func{{TSubscribeRequest},{TGuid}}
-  commentId: '!:Func{`1,`0}'
-  definition: Func`2
+- uid: System.Func{{TSubscribeRequest},{TGuid}}
+  commentId: T:System.Func{`1,`0}
+  parent: System
+  definition: System.Func`2
   name: Func<TSubscribeRequest, TGuid>
   nameWithType: Func<TSubscribeRequest, TGuid>
-  fullName: Func<TSubscribeRequest, TGuid>
+  fullName: System.Func<TSubscribeRequest, TGuid>
   nameWithType.vb: Func(Of TSubscribeRequest, TGuid)
-  fullName.vb: Func(Of TSubscribeRequest, TGuid)
+  fullName.vb: System.Func(Of TSubscribeRequest, TGuid)
   name.vb: Func(Of TSubscribeRequest, TGuid)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -862,10 +1106,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -882,20 +1126,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Func{{TResponseBase},{TGuid}}
-  commentId: '!:Func{`3,`0}'
-  definition: Func`2
+- uid: System.Func{{TResponseBase},{TGuid}}
+  commentId: T:System.Func{`3,`0}
+  parent: System
+  definition: System.Func`2
   name: Func<TResponseBase, TGuid>
   nameWithType: Func<TResponseBase, TGuid>
-  fullName: Func<TResponseBase, TGuid>
+  fullName: System.Func<TResponseBase, TGuid>
   nameWithType.vb: Func(Of TResponseBase, TGuid)
-  fullName.vb: Func(Of TResponseBase, TGuid)
+  fullName.vb: System.Func(Of TResponseBase, TGuid)
   name.vb: Func(Of TResponseBase, TGuid)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
@@ -913,10 +1158,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -938,53 +1183,54 @@ references:
   name: EventStore.Core.Bus
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
-- uid: Func`2
+- uid: System.Func`2
+  commentId: T:System.Func`2
   isExternal: true
-  name: Func<, >
-  nameWithType: Func<, >
-  fullName: Func<, >
-  nameWithType.vb: Func(Of , )
-  fullName.vb: Func(Of , )
-  name.vb: Func(Of , )
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
   spec.csharp:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: Func`2
+  - uid: System.Func`2
     name: Func
     nameWithType: Func
-    fullName: Func
+    fullName: System.Func
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )
