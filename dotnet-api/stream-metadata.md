@@ -6,12 +6,6 @@ outputFileName: index.html
 
 Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
-A common use of this information is to store associated details about an event that is not part of the event. Examples of these are:
-
--   "which user wrote the event?"
--   "Which application server were they talking to?"
--   "From what IP address did the request come from?"
-
 This information is not part of the actual event but is metadata associated with the event. Event Store stores stream metadata as JSON, and you can access it over the HTTP APIs.
 
 ## Methods

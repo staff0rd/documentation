@@ -173,11 +173,17 @@ When creating a persistent subscription, the settings allow for different consum
 > [!NOTE]
 > HTTP clients bypass the consumer strategy which means it ignores any ordering or pinning.
 
-| Strategy Name        | Description                                                                                                                                                         |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RoundRobin (default) | Distributes events to all clients evenly. If the client bufferSize is reached the client is ignored until events are acknowledged/not acknowledged.                 |
-| DispatchToSingle     | Distributes events to a single client until the bufferSize is reached. After which the next client is selected in a round robin style, and the process is repeated. |
-| Pinned               | For use with an indexing projection such as the system $by_category projection.                                                                                     |
+### RoundRobin (default)
+
+Distributes events to all clients evenly. If the client bufferSize is reached the client is ignored until events are acknowledged/not acknowledged.                 |
+
+### DispatchToSingle
+
+Distributes events to a single client until the bufferSize is reached. After which the next client is selected in a round robin style, and the process is repeated.
+
+### Pinned
+
+For use with an indexing projection such as the system `$by_category` projection.
 
 Event Store inspects event for its source stream id, hashing the id to one of 1024 buckets assigned to individual clients. When a client disconnects it's buckets are assigned to other clients. When a client connects, it is assigned some of the existing buckets. This naively attempts to maintain a balanced workload.
 
