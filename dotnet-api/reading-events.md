@@ -34,6 +34,12 @@ Task<StreamEventsSlice> ReadStreamEventsBackwardAsync(string stream, long start,
 Task<AllEventsSlice> ReadAllEventsForwardAsync(Position position, int maxCount, bool resolveLinkTos);
 ```
 
+### Read all events forwards with filters
+
+```csharp
+Task<AllEventsSlice> ReadAllEventsForwardFilteredAsync(Position position, int maxCount, int maxSearchWindow, bool resolveLinkTos, string allowedEventStypes);
+```
+
 ### Read all events backwards
 
 ```csharp
@@ -181,5 +187,32 @@ do
     nextSliceStart = currentSlice.NextPosition;
 
     allEvents.AddRange(currentSlice.Events);
+} while (!currentSlice.IsEndOfStream);
+```
+
+## Read all events filtered
+
+Event Store allows you to read filtered events across all streams using the `ReadAllEventsForwardFilteredAsync` method. This works the same way as the `ReadAllEventsForwardAsync` method, but with two additional parameters.
+
+The string parameter `allowedEventTypes` specificies which event types you to read. You can repeat the parameter and it can contain regex.
+
+The `maxSearchWindow` parameter is the maximum number of events Event Store looks for while attempting to fill the window of `maxCount` events to return to the client. The server stops when either the window is full, or it reaches the `maxSearchWindow`.
+
+### Example: Read 100 specific events forward from start to end
+
+```csharp
+var filteredEvents = new List<ResolvedEvent>();
+
+FilteredEventsSlice currentSlice;
+var nextSliceStart = Position.Start;
+
+do
+{
+    currentSlice =
+        connection.ReadAllEventsForwardFilteredAsync(nextSliceStart, 200, 100 false, "register-event").Result;
+
+    nextSliceStart = currentSlice.NextPosition;
+
+    filteredEvents.AddRange(currentSlice.Events);
 } while (!currentSlice.IsEndOfStream);
 ```
