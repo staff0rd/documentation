@@ -25,24 +25,23 @@ Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc42
 
 [!code-http[getting-started-read-stream-response](~/code-examples/getting-started/read-stream.sh?range=3-)]
 
----
+* * *
 
 ### [.NET Client API](#tab/tabid-dotnet-client)
 
 To use the .NET API, use the following method passing the stream name, the start point in the stream, the number of events to read and whether to follow links to the event data:
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?range=104-106)]
+[!code-csharp[getting-started-read-stream-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=104-106)]
 
-> [!NEXT]
-> [Read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
+> [!NEXT][read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
 
 ### [JVM Client](#tab/tabid-jvm-client)
 
 To use the JVM client, use the following method passing the stream name, the start point in the stream, and whether to follow links to the event data:
 
-[!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
+[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/ReadEventExample.java?start=21&end=29)]
 
----
+* * *
 
 ## Read a Single Event
 
@@ -59,21 +58,21 @@ The feed has a single item inside of it, the one you posted in [part 1](~/gettin
 
 [!code-http[getting-started-read-event-response](~/code-examples/getting-started/read-event.sh?range=3-)]
 
----
+* * *
 
 ### [.NET Client API](#tab/tabid-dotnet-read-event)
 
 To use the .NET API, use the following method passing the stream name, the event you want to read and wether to return the event data:
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?start=108&end=109)]
+[!code-csharp[getting-started-read-stream-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?start=108&end=109)]
 
 ### [JVM Client](#tab/tabid-jvm-read-event)
 
 To use the Java client, use the following method passing the stream name, the event you want to read and if you want to also return the event data:
 
-[!code-java[getting-started-read](~/code-examples/jvm-client/ReadEventExample.java?start=21&end=29)]
+[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/ReadEventExample.java?start=21&end=29)]
 
----
+* * *
 
 ## Paginating through Events
 
@@ -95,16 +94,16 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 
 ### [.NET API](#tab/tabid-create-sub-dotnet)
 
-[!code-csharp[getting-started-read-stream-request](~/code-examples/dotnet-client/Program.cs?range=119-133)]
+[!code-csharp[getting-started-read-stream-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=119-133)]
 
 > [!NEXT]
 > Find more details on the parameters used in the example above, read the API documentation for [`PersistentSubscriptionSettings`](xref:EventStore.ClientAPI.PersistentSubscriptionSettings), [`CreatePersistentSubscriptionAsync`](xref:EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync*) and [`ConnectToPersistentSubscription`](xref:EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync*)
 
 ### [JVM Client API](#tab/tabid-create-sub-java)
 
-[!code-java[getting-started-read](~/code-examples/jvm-client/SubscriptionExample.java?start=15&end=35)]
+[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/SubscriptionExample.java?start=15&end=35)]
 
----
+* * *
 
 <!-- TODO: The dotnet example has reading events as they are added to subscription, HTTP does not, expand? -->
 
@@ -141,4 +140,4 @@ This subscription supports the "[competing consumers](https://docs.microsoft.com
 
 In this second part of our getting started guide you learned how to read events from a stream and subscribe to changes. The next part covers projections, used to give you continuous queries of your data.
 
-- [Step 3 - Projections](~/getting-started/projections.md)
+-   [Step 3 - Projections](~/getting-started/projections.md)

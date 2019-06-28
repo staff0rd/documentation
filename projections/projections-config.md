@@ -26,7 +26,7 @@ You change the configuration of a projection by setting the relevant key and val
 
 <!-- TODO: Further explanation here -->
 
-[!code-csharp[getting-started-projections-create-projection-dotnet](~/code-examples/dotnet-client/Program.cs?range=119-123)]
+[!code-csharp[getting-started-projections-create-projection-dotnet](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=119-123)]
 
 <!-- ## [JVM Client](#tab/tabid-7) -->
 

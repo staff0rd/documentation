@@ -26,7 +26,23 @@ Finally, if you would like to improve the theme for the documentation site, then
 
 ### Running DocFX Locally
 
-You can generate the site locally and test your changes. Follow the instructions [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) to install DocFX and dependencies, then run:
+It is possible to clone this repository, and build and serve using the command below, but components are missing, DocFX generates a couple of warnings about missing content, and uses the default theme.
+
+To have everything you need to fully generate the site, clone the following repositories into the same parent directory as the documentation repository:
+
+-   [The core code base, DocFX generates documentation from code comments](https://github.com/EventStore/EventStore)
+-   [The eventstore.org website, which hosts the rendered documentation](https://github.com/EventStore/eventstore.org)
+-   [The documentation template](https://github.com/EventStore/es-docs-template)
+-   [The Java application used in code samples](https://github.com/EventStore/EventStore.Samples.Java)
+    [The .NET application used in code examples](https://github.com/EventStore/EventStore.Samples.Dotnet)
+
+Follow the instructions [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) to install DocFX and dependencies, then run the command below to generate documentation from code comments:
+
+```bash
+docfx metadata docfx.json
+```
+
+And the command below to generate the rest of the site and serve:
 
 ```bash
 docfx build docfx.json --serve

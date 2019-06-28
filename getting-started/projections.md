@@ -65,7 +65,7 @@ eventstore --run-projections=none
 > [!NOTE]
 > To use the default database location on macOS you need to use `sudo`, or you can change the location with the `--db` parameter.
 
----
+* * *
 
 You then see new tabs enabled in the Admin UI with the 4 system projections in a `Stopped` state:
 
@@ -85,16 +85,16 @@ The response is a list of all known projections and useful information about the
 
 [!code-json[getting-started-projections-get-all-response](~/code-examples/getting-started/list-all-projections.json)]
 
----
+* * *
 
 ## Add Sample Data
 
 Download the following files that contain sample data used throughout this step of the getting started guide.
 
-- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json)
-- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json)
-- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json)
-- [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json)
+-   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1164.json)
+-   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1165.json)
+-   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1166.json)
+-   [shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json](~/code-examples/getting-started/shoppingCart-b989fe21-9469-4017-8d71-9820b8dd1167.json)
 
 Add the sample data to four different streams:
 
@@ -104,13 +104,13 @@ Add the sample data to four different streams:
 
 ### [.NET API](#tab/tabid-net-api)
 
-[!code-csharp[getting-started-projections-add-sample-data](~/code-examples/dotnet-client/Program.cs?range=142-144,147-148)]
+[!code-csharp[getting-started-projections-add-sample-data](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=142-144,147-148)]
 
 ### [JVM Client](#tab/tabid-jvm-api)
 
-[!code-java[getting-started-write-multiple](~/code-examples/jvm-client/WriteMultipleEventsExample.java?start=41&end=74)]
+[!code-java[getting-started-write-multiple](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteMultipleEventsExample.java?start=41&end=74)]
 
----
+* * *
 
 > [!NOTE]
 > While it's not the fastest method, you can also use the Admin UI for creating the streams, and all the tasks in this step, as we saw in [step 1](~/getting-started/index.md).
@@ -144,11 +144,11 @@ And to use the HTTP or .NET API:
 
 ### [.NET API](#tab/tabid-create-proj-net)
 
-[!code-csharp[getting-started-projections-create-projection-dotnet](~/code-examples/dotnet-client/Program.cs?range=26-27,165)]
+[!code-csharp[getting-started-projections-create-projection-dotnet](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=26-27,165)]
 
 > [!NEXT][read here](~/dotnet-api/projections.md) for more information on creating projections with the .NET API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
 
----
+* * *
 
 ## Querying for the state of the projection
 
@@ -160,13 +160,13 @@ Now the projection is running, you can query the state of the projection. As thi
 
 ### [.NET API](#tab/tabid-get-state-dotnet)
 
-[!code-csharp[getting-started-projections-add-sample-data](~/code-examples/dotnet-client/Program.cs?range=167-168)]
+[!code-csharp[getting-started-projections-add-sample-data](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=167-168)]
 
 ### [Response](#tab/tabid-9)
 
 [!code-json[getting-started-projections-query-state-response](~/code-examples/getting-started/query-state.json)]
 
----
+* * *
 
 ## Writing to Streams from Projections
 
@@ -188,9 +188,9 @@ To update the projection, edit the projection definition in the Admin UI, or iss
 
 ### [.NET API](#tab/tabid-update-proj-dotnet)
 
-[!code-csharp[getting-started-projections-update](~/code-examples/dotnet-client/Program.cs?range=192)]
+[!code-csharp[getting-started-projections-update](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=192)]
 
----
+* * *
 
 Then reset the projection you created above:
 
@@ -200,13 +200,13 @@ Then reset the projection you created above:
 
 ### [.NET API](#tab/tabid-reset-dotnet)
 
-[!code-csharp[getting-started-projections-reset](~/code-examples/dotnet-client/Program.cs?range=193-193)]
+[!code-csharp[getting-started-projections-reset](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=193-193)]
 
 ### [Response](#tab/tabid-11)
 
 [!code-json[getting-started-projections-reset-response](~/code-examples/getting-started/reset-projection.json)]
 
----
+* * *
 
 You can now read the events in the result stream by issuing a read request.
 
@@ -216,13 +216,13 @@ You can now read the events in the result stream by issuing a read request.
 
 ### [.NET API](#tab/tabid-read-stream-dotnet)
 
-[!code-csharp[getting-started-projections-state](~/code-examples/dotnet-client/Program.cs?range=195-198)]
+[!code-csharp[getting-started-projections-state](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=195-198)]
 
 ### [Response](#tab/tabid-13)
 
 [!code-json[getting-started-projections-read-projection-events-response](~/code-examples/getting-started/read-projection-events.json)]
 
----
+* * *
 
 ## Configure Projection Properties
 
@@ -238,9 +238,9 @@ Then send the update to the projection:
 
 ### [.NET API](#tab/tabid-update-proj-config-dotnet)
 
-[!code-csharp[getting-started-projections-config-update](~/code-examples/dotnet-client/Program.cs?range=218)]
+[!code-csharp[getting-started-projections-config-update](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=218)]
 
----
+* * *
 
 > [!TIP]
 > You can find all the options available in the [user defined projections guide](~/projections/user-defined-projections.md).
@@ -253,9 +253,9 @@ Now you can read the result as above, but use the new stream name:
 
 ### [.NET API](#tab/tabid-read-projection-events-renamed-dotnet)
 
-[!code-csharp[getting-started-projections-state](~/code-examples/dotnet-client/Program.cs?range=220-223)]
+[!code-csharp[getting-started-projections-state](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=220-223)]
 
----
+* * *
 
 ## The Number of items per shopping cart
 
@@ -269,9 +269,9 @@ Event Store has a built-in `$by_category` projection that lets you select events
 
 ### [.NET API](#tab/tabid-enablebycategory-dotnet)
 
-[!code-csharp[getting-started-projections-enable](~/code-examples/dotnet-client/Program.cs?range=231)]
+[!code-csharp[getting-started-projections-enable](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=231)]
 
----
+* * *
 
 The projection links events from existing streams to new streams by splitting the stream name by a separator. You can configure the projection to specify the position of where to split the stream `id` and provide a separator.
 
@@ -297,9 +297,9 @@ Create the projection with the following request:
 
 ### [.NET API](#tab/tabid-projections-count-per-stream-dotnet)
 
-[!code-csharp[getting-started-projections-count-per-stream](~/code-examples/dotnet-client/Program.cs?range=248)]
+[!code-csharp[getting-started-projections-count-per-stream](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=248)]
 
----
+* * *
 
 #### Querying for the state of the projection by partition
 
@@ -311,16 +311,16 @@ Querying for the state of the projection is different due to the partitioning of
 
 ### [.NET API](#tab/tabid-read-partition-dotnet)
 
-[!code-csharp[getting-started-projections-read-state-partition-request](~/code-examples/dotnet-client/Program.cs?range=250-251)]
+[!code-csharp[getting-started-projections-read-state-partition-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=250-251)]
 
 ### [Response](#tab/tabid-15)
 
 [!code-json[getting-started-projections-read-state-partition-response](~/code-examples/getting-started/read-state-partition.json)]
 
----
+* * *
 
 ## Next Step
 
 In this third part of our getting started guide you learned about projections. The next, and final part covers which API or SDK to use, and when.
 
-- [Step 4 - Which API or SDK](~/getting-started/which-api-sdk.md)
+-   [Step 4 - Which API or SDK](~/getting-started/which-api-sdk.md)

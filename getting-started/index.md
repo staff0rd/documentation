@@ -50,7 +50,7 @@ And require it in your code:
 import eventstore.*;
 ```
 
----
+* * *
 
 ## Connecting to Event Store
 
@@ -67,19 +67,19 @@ To use a client API, you use port `1113` and create a connection:
 
 When using the .NET client, you also need to give the connection a name.
 
-[!code-csharp[getting-started-connection](~/code-examples/dotnet-client/Program.cs?start=32&end=33)]
+[!code-csharp[getting-started-connection](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?start=32&end=33)]
 
 > [!NEXT]
-> In this example we used the [`EventStoreConnection.Create()`](<#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)>) overloaded method but [others are available](#EventStore.ClientAPI.EventStoreConnection).
+> In this example we used the [`EventStoreConnection.Create()`](#EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)) overloaded method but [others are available](#EventStore.ClientAPI.EventStoreConnection).
 
 ### [JVM Client](#tab/tabid-jvm-client-connect)
 
-[!code-java[getting-started-connection](~/code-examples/jvm-client//WriteEventExample.java?start=17&end=22)]
+[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample//WriteEventExample.java?start=17&end=22)]
 
 > [!NOTE]
 > For our JVM examples we use [akka](https://akka.io), a toolkit for building highly concurrent and distributed JVM applications.
 
----
+* * *
 
 ## Writing Events to an Event Stream
 
@@ -103,7 +103,7 @@ Use the following cURL command, passing the name of the stream and the events to
 
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
-
+>
 > [!NOTE]
 > You can also post events to the HTTP API as XML, by changing the `Content-Type` header to `XML`.
 
@@ -111,7 +111,7 @@ Use the following cURL command, passing the name of the stream and the events to
 
 To use the .NET API, use the following method, passing the name of the stream, the version, and the events to write:
 
-[!code-csharp[getting-started-write-event-request](~/code-examples/dotnet-client/Program.cs?range=95)]
+[!code-csharp[getting-started-write-event-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=95)]
 
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
@@ -120,12 +120,12 @@ To use the .NET API, use the following method, passing the name of the stream, t
 
 To use the JVM Client, use the following method, passing the name of the stream, the version, and the events to write:
 
-[!code-java[getting-started-connection](~/code-examples/jvm-client/WriteEventExample.java?start=23&end=36)]
+[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteEventExample.java?start=23&end=36)]
 
----
+* * *
 
 ## Next Step
 
 In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.
 
-- [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)
+-   [Step 2 - Read events from a stream and subscribe to changes](~/getting-started/reading-subscribing-events.md)
