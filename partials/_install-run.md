@@ -5,10 +5,10 @@
 
 ### [Windows](#tab/tabid-1)
 
-The prerequisites for Installing on Windows are:
+The prerequisites for installing on Windows are:
 
 -   NET Framework 4.0+
--   Windows platform SDK with compilers (v7.1) or Visual C++ installed (Only required for a full build)
+-   Windows platform SDK with compilers (v7.1) or Visual C++ installed (only required for a full build)
 
 Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore-oss) available that you can install with the following command:
 
@@ -16,19 +16,21 @@ Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore
 choco install eventstore-oss
 ```
 
-You can also [download](https://eventstore.org/downloads/) a binary, unzip the archive and run from the folder location with an administrator console:
+You can also [download](https://eventstore.org/downloads/) a binary, unzip the archive and run from the folder location with an administrator console.
+
+The following command starts Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs](~/server/index.md).
 
 ```powershell
 EventStore.ClusterNode.exe --db ./db --log ./logs
 ```
-
-This command starts Event Store with the database stored at the path _./db_ and the logs in _./logs_. You can view further command line arguments in the [server docs](~/server/index.md).
 
 Event Store runs in an administration context because it starts an HTTP server through `http.sys`. For permanent or production instances you need to provide an ACL such as:
 
 ```powershell
 netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 ```
+
+For more information, refer to Microsoft's `add urlacl` [documentation](https://docs.microsoft.com/en-us/windows/win32/http/add-urlacl).
 
 ### [Linux](#tab/tabid-2)
 

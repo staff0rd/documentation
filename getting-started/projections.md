@@ -6,13 +6,15 @@ outputFileName: index.html
 
 [!include[<Getting Started Intro>](~/getting-started/_intro.md)]
 
+[!include[<Projections>](~/partials/_projections-intro.md)]
+
 When running a projection, you can choose whether the query should run and give you all results present or whether the query should continue running into the future finding new results as they happen and updating its result set.
 
-## Setting up Projections
+## Setting up projections
 
 You enable projections with the command line argument `--run-projections`. For example, the command below enables all projection modes (system and user-defined):
 
-> [!TIP][read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
+> [!TIP][Read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
 
 #### [Windows](#tab/tabid-1)
 
@@ -67,7 +69,7 @@ eventstore --run-projections=none
 
 * * *
 
-You then see new tabs enabled in the Admin UI with the 4 system projections in a `Stopped` state:
+You then see new tabs enabled in the Admin UI with the four system projections in a `Stopped` state:
 
 ![Projections tab](~/images/projections-menu-item.png)
 
@@ -87,7 +89,7 @@ The response is a list of all known projections and useful information about the
 
 * * *
 
-## Add Sample Data
+## Add sample data
 
 Download the following files that contain sample data used throughout this step of the getting started guide.
 
@@ -122,7 +124,7 @@ Add the sample data to four different streams:
 
 The projection counts the number of 'XBox One S's that customers added to their shopping carts.
 
-A Projection starts with a selector, in this case `fromAll()`. Another possibility is `fromCategory({category})` which this step discusses later, but for now, `fromAll` should do.
+A projection starts with a selector, in this case `fromAll()`. Another possibility is `fromCategory({category})` which this step discusses later, but for now, `fromAll` should do.
 
 The second part of a projection is a set of filters. There is a special filter called `$init` that sets up an initial state. You want to start a counter from 0 and each time Event Store observes an `ItemAdded` event for an 'Xbox One S,' increment the counter.
 
@@ -168,11 +170,11 @@ Now the projection is running, you can query the state of the projection. As thi
 
 * * *
 
-## Writing to Streams from Projections
+## Writing to streams from projections
 
 The above gives you the correct result but requires you to poll for the state of a projection. What if you wanted Event Store to notify you about state updates via subscriptions?
 
-### Output State
+### Output state
 
 Update the projection to output the state to a stream by calling the `outputState()` method on the projection which by default produces a `$projections-{projection-name}-result` stream.
 
@@ -224,7 +226,7 @@ You can now read the events in the result stream by issuing a read request.
 
 * * *
 
-## Configure Projection Properties
+## Configure projection properties
 
 You can configure properties of the projection by updating values of the `options` object. For example, the following projection changes the name of the results stream, you can download it as a file [here](~/code-examples/getting-started/update-projection-options.json):
 
@@ -257,7 +259,7 @@ Now you can read the result as above, but use the new stream name:
 
 * * *
 
-## The Number of items per shopping cart
+## The number of items per shopping cart
 
 The example in this step so far relied on a global state for the projection, but what if you wanted a count of the number of items in the shopping cart per shopping cart.
 
@@ -319,7 +321,7 @@ Querying for the state of the projection is different due to the partitioning of
 
 * * *
 
-## Next Step
+## Next step
 
 In this third part of our getting started guide you learned about projections. The next, and final part covers which API or SDK to use, and when.
 

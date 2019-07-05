@@ -10,7 +10,7 @@ This first step covers installation and running Event Store, and writing your fi
 
 [!include[<Getting Started Install and run>](~/partials/_install-run.md)]
 
-## Interacting with an Event Store Server
+## Interacting with an Event Store server
 
 There are three ways to interact with Event Store:
 
@@ -20,7 +20,9 @@ There are three ways to interact with Event Store:
 
 ### [.NET Client](#tab/tabid-dotnet-client)
 
-[Install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method, add it to your project:
+[Install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method
+
+Add it to your project:
 
 ```shell
 dotnet add package EventStore.Client
@@ -81,13 +83,13 @@ When using the .NET client, you also need to give the connection a name.
 
 * * *
 
-## Writing Events to an Event Stream
+## Writing events to an Event Stream
 
 Event Store operates on a concept of Event Streams, and the first operation we look at is how to write to a stream. If you are Event Sourcing a domain model, a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, so create as many as you need.
 
 If you post to a stream that doesn't exist, Event Store creates it before adding the events.
 
-You can write events using the Admin UI by clicking the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and clicking the _Add_ button at the bottom of the page.
+You can write events using the Admin UI by selecting the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and selecting the _Add_ button at the bottom of the page.
 
 ![Creating an event with the Admin UI interface](~/images/getting-started-add-event.gif)
 
@@ -124,7 +126,7 @@ To use the JVM Client, use the following method, passing the name of the stream,
 
 * * *
 
-## Next Step
+## Next step
 
 In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.
 
