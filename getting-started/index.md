@@ -20,7 +20,7 @@ There are three ways to interact with Event Store:
 
 ### [.NET Client](#tab/tabid-dotnet-client)
 
-[Install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method
+[Install the .NET client API](https://www.nuget.org/packages/EventStore.Client) using your preferred method
 
 Add it to your project:
 
