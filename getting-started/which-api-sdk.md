@@ -45,7 +45,7 @@ Event Store also offers an HTTP-based interface, based specifically on the [Atom
 -   [Ruby](https://github.com/arkency/http_eventstore)
 -   [Go](https://github.com/jetbasrawi/go.geteventstore)
 
-If you have a client to add, click the 'Improve this Doc' link on the top right of the page to submit a pull request. 
+If you have a client to add, click the 'Improve this Doc' link on the top right of the page to submit a pull request.
 
 ## Which to use?
 

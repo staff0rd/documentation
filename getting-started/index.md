@@ -105,7 +105,7 @@ Use the following cURL command, passing the name of the stream and the events to
 
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
->
+
 > [!NOTE]
 > You can also post events to the HTTP API as XML, by changing the `Content-Type` header to `XML`.
 
