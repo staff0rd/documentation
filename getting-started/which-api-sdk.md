@@ -27,7 +27,7 @@ Event Store offers a low-level protocol in the form of an asynchronous TCP proto
 -   [Elixir](https://github.com/exponentially/extreme)
 -   [Java 8](https://github.com/msemys/esjc)
 -   [Maven plugin](https://github.com/fuinorg/event-store-maven-plugin)
--   [Rust](https://gitlab.com/YoEight/eventstore-rs)
+-   [Rust](https://github.com/YoEight/eventstore-rs)
 -   [Go](https://github.com/jdextraze/go-gesclient)
 
 ## HTTP
