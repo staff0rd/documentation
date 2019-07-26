@@ -10,11 +10,13 @@ Event Store provides two default users, `$ops` and `$admin`.
 
 `$admin` has full access to everything in Event Store. It can read and write to protected streams, which is any stream that starts with \$, such as `$projections-master`. Protected streams are usually system streams, for example, `$projections-master` manages some of the projections' states. The `$admin` user can also run operational commands, such as scavenges and shutdowns on Event Store.
 
-`$ops` can run operational commands like the `$admin` user, but cannot read protected streams.
+An `$ops` user can do everything that an `$admin` can do except manage users and read from system streams (except for `$scavenges` and `$scavenges-streams`).
 
 ## New Users
 
-New users created in Event Store are standard users. They can't read protected streams or perform operations. If you add a user into the `$ops` or `$admins` group, they have the same level of access as those users.
+New users created in Event Store are standard non-authenticated users. Non-authenticated users are allowed `GET` access to the `/info`, `/ping`, `/stats`, `/elections`, and `/gossip` system streams.
+
+`POST` access to the `/elections` and `/gossip` system streams is only allowed on the internal HTTP service.
 
 By default, any user can read any non-protected stream unless there is an ACL preventing that.
 
