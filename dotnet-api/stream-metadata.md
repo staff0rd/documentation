@@ -77,7 +77,7 @@ This returns a `RawStreamMetadataResult`. The fields on this result are:
 | `byte[] Metadata`        | The raw data of the metadata JSON                                                                 |
 
 > [!NOTE]
-> If you enabled [enabled security](~/dot-net/connecting-to-server.md#security), reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
+> If you enabled [enabled security](~/dotnet-api/connecting-to-a-server.md), reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 
 ## Writing Metadata
 

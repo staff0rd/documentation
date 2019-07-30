@@ -1,0 +1,1091 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.UserManagement.UsersManager
+  commentId: T:EventStore.ClientAPI.UserManagement.UsersManager
+  id: UsersManager
+  parent: EventStore.ClientAPI.UserManagement
+  children:
+  - EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.IPEndPoint,System.TimeSpan)
+  - EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync(System.String,System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String,System.String,System.String[],System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync(System.String,System.String,System.String[],EventStore.ClientAPI.SystemData.UserCredentials)
+  langs:
+  - csharp
+  - vb
+  name: UsersManager
+  nameWithType: UsersManager
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager
+  type: Class
+  source:
+    id: UsersManager
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 12
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nAPI for managing users in Event Store through C# code. Communicates\nwith Event Store over the RESTful API. All methods in this class are asynchronous.\n"
+  example: []
+  syntax:
+    content: public class UsersManager
+    content.vb: Public Class UsersManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.IPEndPoint,System.TimeSpan)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.IPEndPoint,System.TimeSpan)
+  id: '#ctor(EventStore.ClientAPI.ILogger,System.Net.IPEndPoint,System.TimeSpan)'
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: UsersManager(ILogger, IPEndPoint, TimeSpan)
+  nameWithType: UsersManager.UsersManager(ILogger, IPEndPoint, TimeSpan)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UsersManager(EventStore.ClientAPI.ILogger, System.Net.IPEndPoint, System.TimeSpan)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 23
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.UserManagement.UsersManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public UsersManager(ILogger log, IPEndPoint httpEndPoint, TimeSpan operationTimeout)
+    parameters:
+    - id: log
+      type: EventStore.ClientAPI.ILogger
+      description: An instance of <xref href="EventStore.ClientAPI.ILogger" data-throw-if-not-resolved="false"></xref> to use for logging.
+    - id: httpEndPoint
+      type: System.Net.IPEndPoint
+      description: HTTP endpoint of an Event Store server.
+    - id: operationTimeout
+      type: System.TimeSpan
+      description: ''
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As IPEndPoint, operationTimeout As TimeSpan)
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: EnableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: EnableAsync(String, UserCredentials)
+  nameWithType: UsersManager.EnableAsync(String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync(System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: EnableAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 37
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nEnables a user\n"
+  example: []
+  syntax:
+    content: public Task EnableAsync(string login, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login of the user to enable.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to enable a user.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function EnableAsync(login As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: DisableAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: DisableAsync(String, UserCredentials)
+  nameWithType: UsersManager.DisableAsync(String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync(System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: DisableAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 48
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nDisables a user\n"
+  example: []
+  syntax:
+    content: public Task DisableAsync(string login, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login of the user to disable.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to disable a user.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function DisableAsync(login As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: DeleteUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: DeleteUserAsync(String, UserCredentials)
+  nameWithType: UsersManager.DeleteUserAsync(String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync(System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: DeleteUserAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 59
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nDeletes a user.\n"
+  example: []
+  syntax:
+    content: public Task DeleteUserAsync(string login, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login of the user.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to delete a user.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function DeleteUserAsync(login As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ListAllAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: ListAllAsync(UserCredentials)
+  nameWithType: UsersManager.ListAllAsync(UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: ListAllAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 69
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nLists all users.\n"
+  example: []
+  syntax:
+    content: public Task<List<UserDetails>> ListAllAsync(UserCredentials userCredentials = null)
+    parameters:
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.UserManagement.UserDetails}}
+      description: String of JSON containing user full names and logins.
+    content.vb: Public Function ListAllAsync(userCredentials As UserCredentials = Nothing) As Task(Of List(Of UserDetails))
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  id: GetCurrentUserAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentUserAsync(UserCredentials)
+  nameWithType: UsersManager.GetCurrentUserAsync(UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync(EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: GetCurrentUserAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 78
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nGets the current users details\n"
+  example: []
+  syntax:
+    content: public Task<UserDetails> GetCurrentUserAsync(UserCredentials userCredentials)
+    parameters:
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task{EventStore.ClientAPI.UserManagement.UserDetails}
+      description: A <xref href="EventStore.ClientAPI.UserManagement.UserDetails" data-throw-if-not-resolved="false"></xref> object for the currently logged in user.
+    content.vb: Public Function GetCurrentUserAsync(userCredentials As UserCredentials) As Task(Of UserDetails)
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: GetUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: GetUserAsync(String, UserCredentials)
+  nameWithType: UsersManager.GetUserAsync(String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync(System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: GetUserAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 88
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nGets a users details.\n"
+  example: []
+  syntax:
+    content: public Task<UserDetails> GetUserAsync(string login, UserCredentials userCredentials)
+    parameters:
+    - id: login
+      type: System.String
+      description: the login for the user who&apos;s details should be retrieved.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task{EventStore.ClientAPI.UserManagement.UserDetails}
+      description: A <xref href="EventStore.ClientAPI.UserManagement.UserDetails" data-throw-if-not-resolved="false"></xref> object for the user
+    content.vb: Public Function GetUserAsync(login As String, userCredentials As UserCredentials) As Task(Of UserDetails)
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String,System.String,System.String[],System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String,System.String,System.String[],System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: CreateUserAsync(System.String,System.String,System.String[],System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: CreateUserAsync(String, String, String[], String, UserCredentials)
+  nameWithType: UsersManager.CreateUserAsync(String, String, String[], String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String, System.String, System.String[], System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: CreateUserAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 102
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nCreate a new user.\n"
+  example: []
+  syntax:
+    content: public Task CreateUserAsync(string login, string fullName, string[] groups, string password, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login name of the new user.
+    - id: fullName
+      type: System.String
+      description: The full name of the new user.
+    - id: groups
+      type: System.String[]
+      description: The groups the new user should be a member of.
+    - id: password
+      type: System.String
+      description: The new users password.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function CreateUserAsync(login As String, fullName As String, groups As String(), password As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync*
+  nameWithType.vb: UsersManager.CreateUserAsync(String, String, String(), String, UserCredentials)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String, System.String, System.String(), System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  name.vb: CreateUserAsync(String, String, String(), String, UserCredentials)
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync(System.String,System.String,System.String[],EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync(System.String,System.String,System.String[],EventStore.ClientAPI.SystemData.UserCredentials)
+  id: UpdateUserAsync(System.String,System.String,System.String[],EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserAsync(String, String, String[], UserCredentials)
+  nameWithType: UsersManager.UpdateUserAsync(String, String, String[], UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync(System.String, System.String, System.String[], EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: UpdateUserAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 120
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nUpdate an existing user.\n"
+  example: []
+  syntax:
+    content: public Task UpdateUserAsync(string login, string fullName, string[] groups, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login name of the user to update.
+    - id: fullName
+      type: System.String
+      description: The full name of the user being updated.
+    - id: groups
+      type: System.String[]
+      description: The groups the updated user should be a member of.
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function UpdateUserAsync(login As String, fullName As String, groups As String(), userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync*
+  nameWithType.vb: UsersManager.UpdateUserAsync(String, String, String(), UserCredentials)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync(System.String, System.String, System.String(), EventStore.ClientAPI.SystemData.UserCredentials)
+  name.vb: UpdateUserAsync(String, String, String(), UserCredentials)
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync(System.String,System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync(System.String,System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ChangePasswordAsync(System.String,System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: ChangePasswordAsync(String, String, String, UserCredentials)
+  nameWithType: UsersManager.ChangePasswordAsync(String, String, String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync(System.String, System.String, System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: ChangePasswordAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 137
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nChange a users password.\n"
+  example: []
+  syntax:
+    content: public Task ChangePasswordAsync(string login, string oldPassword, string newPassword, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login of the user who&apos;s password should be changed
+    - id: oldPassword
+      type: System.String
+      description: The users old password.
+    - id: newPassword
+      type: System.String
+      description: The users new password
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function ChangePasswordAsync(login As String, oldPassword As String, newPassword As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ResetPasswordAsync(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.UserManagement.UsersManager
+  langs:
+  - csharp
+  - vb
+  name: ResetPasswordAsync(String, String, UserCredentials)
+  nameWithType: UsersManager.ResetPasswordAsync(String, String, UserCredentials)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync(System.String, System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: ResetPasswordAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
+    startLine: 153
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.UserManagement
+  summary: "\nReset a users password.\n"
+  example: []
+  syntax:
+    content: public Task ResetPasswordAsync(string login, string newPassword, UserCredentials userCredentials = null)
+    parameters:
+    - id: login
+      type: System.String
+      description: The login of the user who&apos;s password should be reset.
+    - id: newPassword
+      type: System.String
+      description: The users new password
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function ResetPasswordAsync(login As String, newPassword As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.ClientAPI.UserManagement
+  commentId: N:EventStore.ClientAPI.UserManagement
+  name: EventStore.ClientAPI.UserManagement
+  nameWithType: EventStore.ClientAPI.UserManagement
+  fullName: EventStore.ClientAPI.UserManagement
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EventStore.ClientAPI.UserManagement.UsersManager
+  commentId: T:EventStore.ClientAPI.UserManagement.UsersManager
+  name: UsersManager
+  nameWithType: UsersManager
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager
+- uid: EventStore.ClientAPI.ILogger
+  commentId: T:EventStore.ClientAPI.ILogger
+  parent: EventStore.ClientAPI
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.ClientAPI.ILogger
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.#ctor*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.#ctor
+  name: UsersManager
+  nameWithType: UsersManager.UsersManager
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UsersManager
+- uid: System.Net.IPEndPoint
+  commentId: T:System.Net.IPEndPoint
+  parent: System.Net
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync
+  name: EnableAsync
+  nameWithType: UsersManager.EnableAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI.SystemData.UserCredentials
+  commentId: T:EventStore.ClientAPI.SystemData.UserCredentials
+  parent: EventStore.ClientAPI.SystemData
+  name: UserCredentials
+  nameWithType: UserCredentials
+  fullName: EventStore.ClientAPI.SystemData.UserCredentials
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: EventStore.ClientAPI.SystemData
+  commentId: N:EventStore.ClientAPI.SystemData
+  name: EventStore.ClientAPI.SystemData
+  nameWithType: EventStore.ClientAPI.SystemData
+  fullName: EventStore.ClientAPI.SystemData
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync
+  name: DisableAsync
+  nameWithType: UsersManager.DisableAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.DisableAsync
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync
+  name: DeleteUserAsync
+  nameWithType: UsersManager.DeleteUserAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync
+  name: ListAllAsync
+  nameWithType: UsersManager.ListAllAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ListAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.UserManagement.UserDetails}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.UserManagement.UserDetails}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<List<UserDetails>>
+  nameWithType: Task<List<UserDetails>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<EventStore.ClientAPI.UserManagement.UserDetails>>
+  nameWithType.vb: Task(Of List(Of UserDetails))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of EventStore.ClientAPI.UserManagement.UserDetails))
+  name.vb: Task(Of List(Of UserDetails))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.UserManagement.UserDetails
+    name: UserDetails
+    nameWithType: UserDetails
+    fullName: EventStore.ClientAPI.UserManagement.UserDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.UserManagement.UserDetails
+    name: UserDetails
+    nameWithType: UserDetails
+    fullName: EventStore.ClientAPI.UserManagement.UserDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.UserManagement.UserDetails
+  commentId: T:EventStore.ClientAPI.UserManagement.UserDetails
+  name: UserDetails
+  nameWithType: UserDetails
+  fullName: EventStore.ClientAPI.UserManagement.UserDetails
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync
+  name: GetCurrentUserAsync
+  nameWithType: UsersManager.GetCurrentUserAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.GetCurrentUserAsync
+- uid: System.Threading.Tasks.Task{EventStore.ClientAPI.UserManagement.UserDetails}
+  commentId: T:System.Threading.Tasks.Task{EventStore.ClientAPI.UserManagement.UserDetails}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<UserDetails>
+  nameWithType: Task<UserDetails>
+  fullName: System.Threading.Tasks.Task<EventStore.ClientAPI.UserManagement.UserDetails>
+  nameWithType.vb: Task(Of UserDetails)
+  fullName.vb: System.Threading.Tasks.Task(Of EventStore.ClientAPI.UserManagement.UserDetails)
+  name.vb: Task(Of UserDetails)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.UserManagement.UserDetails
+    name: UserDetails
+    nameWithType: UserDetails
+    fullName: EventStore.ClientAPI.UserManagement.UserDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.UserManagement.UserDetails
+    name: UserDetails
+    nameWithType: UserDetails
+    fullName: EventStore.ClientAPI.UserManagement.UserDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync
+  name: GetUserAsync
+  nameWithType: UsersManager.GetUserAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.GetUserAsync
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync
+  name: CreateUserAsync
+  nameWithType: UsersManager.CreateUserAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync
+  name: UpdateUserAsync
+  nameWithType: UsersManager.UpdateUserAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UpdateUserAsync
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync
+  name: ChangePasswordAsync
+  nameWithType: UsersManager.ChangePasswordAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync*
+  commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync
+  name: ResetPasswordAsync
+  nameWithType: UsersManager.ResetPasswordAsync
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.ResetPasswordAsync

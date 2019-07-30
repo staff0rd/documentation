@@ -33,7 +33,8 @@ To use the .NET API, use the following method passing the stream name, the start
 
 [!code-csharp[getting-started-read-stream-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=104-106)]
 
-> [!NEXT][read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
+> [!NEXT]
+> [Read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
 
 ### [JVM Client](#tab/tabid-jvm-client)
 

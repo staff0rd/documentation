@@ -1,0 +1,773 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  commentId: T:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  id: PersistentSubscriptionsManager
+  parent: EventStore.ClientAPI.PersistentSubscriptions
+  children:
+  - EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.String)
+  - EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  langs:
+  - csharp
+  - vb
+  name: PersistentSubscriptionsManager
+  nameWithType: PersistentSubscriptionsManager
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  type: Class
+  source:
+    id: PersistentSubscriptionsManager
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 13
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nAPI for managing persistent subscriptions in Event Store through C# code. Communicates\nwith Event Store over the RESTful API.\n"
+  example: []
+  syntax:
+    content: public class PersistentSubscriptionsManager
+    content.vb: Public Class PersistentSubscriptionsManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.String)
+  commentId: M:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.String)
+  id: '#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.String)'
+  parent: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  langs:
+  - csharp
+  - vb
+  name: PersistentSubscriptionsManager(ILogger, EndPoint, TimeSpan, String)
+  nameWithType: PersistentSubscriptionsManager.PersistentSubscriptionsManager(ILogger, EndPoint, TimeSpan, String)
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.PersistentSubscriptionsManager(EventStore.ClientAPI.ILogger, System.Net.EndPoint, System.TimeSpan, System.String)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 25
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public PersistentSubscriptionsManager(ILogger log, EndPoint httpEndPoint, TimeSpan operationTimeout, string httpSchema = "http")
+    parameters:
+    - id: log
+      type: EventStore.ClientAPI.ILogger
+      description: An instance of <xref href="EventStore.ClientAPI.ILogger" data-throw-if-not-resolved="false"></xref> to use for logging.
+    - id: httpEndPoint
+      type: System.Net.EndPoint
+      description: HTTP endpoint of an Event Store server.
+    - id: operationTimeout
+      type: System.TimeSpan
+      description: ''
+    - id: httpSchema
+      type: System.String
+      description: HTTP endpoint schema http|https.
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, operationTimeout As TimeSpan, httpSchema As String = "http")
+  overload: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: Describe(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  langs:
+  - csharp
+  - vb
+  name: Describe(String, String, UserCredentials)
+  nameWithType: PersistentSubscriptionsManager.Describe(String, String, UserCredentials)
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe(System.String, System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: Describe
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 42
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nGets the details of the persistent subscription <code data-dev-comment-type=\"paramref\" class=\"paramref\">subscriptionName</code> on <code data-dev-comment-type=\"paramref\" class=\"paramref\">stream</code>.\n"
+  example: []
+  syntax:
+    content: public Task<PersistentSubscriptionDetails> Describe(string stream, string subscriptionName, UserCredentials userCredentials = null)
+    parameters:
+    - id: stream
+      type: System.String
+      description: ''
+    - id: subscriptionName
+      type: System.String
+      description: ''
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to read from the subscriptions endpoint
+    return:
+      type: System.Threading.Tasks.Task{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}
+      description: A PersistentSubscriptionDetails object representing the persistent subscription <code data-dev-comment-type="paramref" class="paramref">subscriptionName</code> on <code data-dev-comment-type="paramref" class="paramref">stream</code>.
+    content.vb: Public Function Describe(stream As String, subscriptionName As String, userCredentials As UserCredentials = Nothing) As Task(Of PersistentSubscriptionDetails)
+  overload: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ReplayParkedMessages(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  langs:
+  - csharp
+  - vb
+  name: ReplayParkedMessages(String, String, UserCredentials)
+  nameWithType: PersistentSubscriptionsManager.ReplayParkedMessages(String, String, UserCredentials)
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages(System.String, System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: ReplayParkedMessages
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 56
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nReplays all parked messages for a particular persistent subscription <code data-dev-comment-type=\"paramref\" class=\"paramref\">subscriptionName</code> on <code data-dev-comment-type=\"paramref\" class=\"paramref\">stream</code>. \n"
+  example: []
+  syntax:
+    content: public Task ReplayParkedMessages(string stream, string subscriptionName, UserCredentials userCredentials = null)
+    parameters:
+    - id: stream
+      type: System.String
+      description: ''
+    - id: subscriptionName
+      type: System.String
+      description: ''
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for a user with permission to replay parked messages.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the operation.
+    content.vb: Public Function ReplayParkedMessages(stream As String, subscriptionName As String, userCredentials As UserCredentials = Nothing) As Task
+  overload: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: List(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  langs:
+  - csharp
+  - vb
+  name: List(String, UserCredentials)
+  nameWithType: PersistentSubscriptionsManager.List(String, UserCredentials)
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(System.String, EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: List
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 69
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nAsynchronously lists all persistent subscriptions subscribed to <code data-dev-comment-type=\"paramref\" class=\"paramref\">stream</code>.\n"
+  example: []
+  syntax:
+    content: public Task<List<PersistentSubscriptionDetails>> List(string stream, UserCredentials userCredentials = null)
+    parameters:
+    - id: stream
+      type: System.String
+      description: ''
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}}
+      description: List of all the PersistentSubscriptionDetails items containing persistent subscription details on <code data-dev-comment-type="paramref" class="paramref">stream</code>.
+    content.vb: Public Function List(stream As String, userCredentials As UserCredentials = Nothing) As Task(Of List(Of PersistentSubscriptionDetails))
+  overload: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(EventStore.ClientAPI.SystemData.UserCredentials)
+  id: List(EventStore.ClientAPI.SystemData.UserCredentials)
+  parent: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  langs:
+  - csharp
+  - vb
+  name: List(UserCredentials)
+  nameWithType: PersistentSubscriptionsManager.List(UserCredentials)
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List(EventStore.ClientAPI.SystemData.UserCredentials)
+  type: Method
+  source:
+    id: List
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/PersistentSubscriptions/PersistentSubscriptionsManager.cs
+    startLine: 80
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI.PersistentSubscriptions
+  summary: "\nAsynchronously lists all persistent subscriptions.\n"
+  example: []
+  syntax:
+    content: public Task<List<PersistentSubscriptionDetails>> List(UserCredentials userCredentials = null)
+    parameters:
+    - id: userCredentials
+      type: EventStore.ClientAPI.SystemData.UserCredentials
+      description: Credentials for the operation.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}}
+      description: List of all the PersistentSubscriptionDetails items containing persistent subscription details.
+    content.vb: Public Function List(userCredentials As UserCredentials = Nothing) As Task(Of List(Of PersistentSubscriptionDetails))
+  overload: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.ClientAPI.PersistentSubscriptions
+  commentId: N:EventStore.ClientAPI.PersistentSubscriptions
+  name: EventStore.ClientAPI.PersistentSubscriptions
+  nameWithType: EventStore.ClientAPI.PersistentSubscriptions
+  fullName: EventStore.ClientAPI.PersistentSubscriptions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  commentId: T:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+  name: PersistentSubscriptionsManager
+  nameWithType: PersistentSubscriptionsManager
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager
+- uid: EventStore.ClientAPI.ILogger
+  commentId: T:EventStore.ClientAPI.ILogger
+  parent: EventStore.ClientAPI
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.ClientAPI.ILogger
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor*
+  commentId: Overload:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.#ctor
+  name: PersistentSubscriptionsManager
+  nameWithType: PersistentSubscriptionsManager.PersistentSubscriptionsManager
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.PersistentSubscriptionsManager
+- uid: System.Net.EndPoint
+  commentId: T:System.Net.EndPoint
+  parent: System.Net
+  isExternal: true
+  name: EndPoint
+  nameWithType: EndPoint
+  fullName: System.Net.EndPoint
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe*
+  commentId: Overload:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe
+  name: Describe
+  nameWithType: PersistentSubscriptionsManager.Describe
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.Describe
+- uid: EventStore.ClientAPI.SystemData.UserCredentials
+  commentId: T:EventStore.ClientAPI.SystemData.UserCredentials
+  parent: EventStore.ClientAPI.SystemData
+  name: UserCredentials
+  nameWithType: UserCredentials
+  fullName: EventStore.ClientAPI.SystemData.UserCredentials
+- uid: System.Threading.Tasks.Task{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}
+  commentId: T:System.Threading.Tasks.Task{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<PersistentSubscriptionDetails>
+  nameWithType: Task<PersistentSubscriptionDetails>
+  fullName: System.Threading.Tasks.Task<EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails>
+  nameWithType.vb: Task(Of PersistentSubscriptionDetails)
+  fullName.vb: System.Threading.Tasks.Task(Of EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails)
+  name.vb: Task(Of PersistentSubscriptionDetails)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+    name: PersistentSubscriptionDetails
+    nameWithType: PersistentSubscriptionDetails
+    fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+    name: PersistentSubscriptionDetails
+    nameWithType: PersistentSubscriptionDetails
+    fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.SystemData
+  commentId: N:EventStore.ClientAPI.SystemData
+  name: EventStore.ClientAPI.SystemData
+  nameWithType: EventStore.ClientAPI.SystemData
+  fullName: EventStore.ClientAPI.SystemData
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages*
+  commentId: Overload:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages
+  name: ReplayParkedMessages
+  nameWithType: PersistentSubscriptionsManager.ReplayParkedMessages
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.ReplayParkedMessages
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List*
+  commentId: Overload:EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List
+  name: List
+  nameWithType: PersistentSubscriptionsManager.List
+  fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionsManager.List
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<List<PersistentSubscriptionDetails>>
+  nameWithType: Task<List<PersistentSubscriptionDetails>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails>>
+  nameWithType.vb: Task(Of List(Of PersistentSubscriptionDetails))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails))
+  name.vb: Task(Of List(Of PersistentSubscriptionDetails))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+    name: PersistentSubscriptionDetails
+    nameWithType: PersistentSubscriptionDetails
+    fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+    name: PersistentSubscriptionDetails
+    nameWithType: PersistentSubscriptionDetails
+    fullName: EventStore.ClientAPI.PersistentSubscriptions.PersistentSubscriptionDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )

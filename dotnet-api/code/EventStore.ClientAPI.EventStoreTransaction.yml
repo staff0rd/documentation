@@ -1,0 +1,816 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.ClientAPI.EventStoreTransaction
+  commentId: T:EventStore.ClientAPI.EventStoreTransaction
+  id: EventStoreTransaction
+  parent: EventStore.ClientAPI
+  children:
+  - EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  - EventStore.ClientAPI.EventStoreTransaction.Dispose
+  - EventStore.ClientAPI.EventStoreTransaction.Rollback
+  - EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  - EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  - EventStore.ClientAPI.EventStoreTransaction.WriteAsync(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})
+  langs:
+  - csharp
+  - vb
+  name: EventStoreTransaction
+  nameWithType: EventStoreTransaction
+  fullName: EventStore.ClientAPI.EventStoreTransaction
+  type: Class
+  source:
+    id: EventStoreTransaction
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 11
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nRepresents a multi-request transaction with the Event Store\n"
+  example: []
+  syntax:
+    content: 'public class EventStoreTransaction : IDisposable'
+    content.vb: >-
+      Public Class EventStoreTransaction
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  commentId: F:EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  id: TransactionId
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: TransactionId
+  nameWithType: EventStoreTransaction.TransactionId
+  fullName: EventStore.ClientAPI.EventStoreTransaction.TransactionId
+  type: Field
+  source:
+    id: TransactionId
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 16
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nThe ID of the transaction. This can be used to recover\na transaction later.\n"
+  example: []
+  syntax:
+    content: public readonly long TransactionId
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly TransactionId As Long
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  id: CommitAsync
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: CommitAsync()
+  nameWithType: EventStoreTransaction.CommitAsync()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.CommitAsync()
+  type: Method
+  source:
+    id: CommitAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 42
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nAsynchronously commits this transaction\n"
+  example: []
+  syntax:
+    content: public Task<WriteResult> CommitAsync()
+    return:
+      type: System.Threading.Tasks.Task{EventStore.ClientAPI.WriteResult}
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that returns expected version for following write requests
+    content.vb: Public Function CommitAsync As Task(Of WriteResult)
+  overload: EventStore.ClientAPI.EventStoreTransaction.CommitAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  id: WriteAsync(EventStore.ClientAPI.EventData[])
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(EventData[])
+  nameWithType: EventStoreTransaction.WriteAsync(EventData[])
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData[])
+  type: Method
+  source:
+    id: WriteAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 54
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWrites to a transaction in the event store asynchronously\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(params EventData[] events)
+    parameters:
+    - id: events
+      type: EventStore.ClientAPI.EventData[]
+      description: The events to write
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> allowing the caller to control the async operation
+    content.vb: Public Function WriteAsync(ParamArray events As EventData()) As Task
+  overload: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  nameWithType.vb: EventStoreTransaction.WriteAsync(EventData())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(EventStore.ClientAPI.EventData())
+  name.vb: WriteAsync(EventData())
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.WriteAsync(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})
+  id: WriteAsync(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData})
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(IEnumerable<EventData>)
+  nameWithType: EventStoreTransaction.WriteAsync(IEnumerable<EventData>)
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(System.Collections.Generic.IEnumerable<EventStore.ClientAPI.EventData>)
+  type: Method
+  source:
+    id: WriteAsync
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 63
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWrites to a transaction in the event store asynchronously\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(IEnumerable<EventData> events)
+    parameters:
+    - id: events
+      type: System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData}
+      description: The events to write
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> allowing the caller to control the async operation
+    content.vb: Public Function WriteAsync(events As IEnumerable(Of EventData)) As Task
+  overload: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  nameWithType.vb: EventStoreTransaction.WriteAsync(IEnumerable(Of EventData))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.EventStoreTransaction.WriteAsync(System.Collections.Generic.IEnumerable(Of EventStore.ClientAPI.EventData))
+  name.vb: WriteAsync(IEnumerable(Of EventData))
+- uid: EventStore.ClientAPI.EventStoreTransaction.Rollback
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.Rollback
+  id: Rollback
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: Rollback()
+  nameWithType: EventStoreTransaction.Rollback()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Rollback()
+  type: Method
+  source:
+    id: Rollback
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 72
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nRollsback this transaction.\n"
+  example: []
+  syntax:
+    content: public void Rollback()
+    content.vb: Public Sub Rollback
+  overload: EventStore.ClientAPI.EventStoreTransaction.Rollback*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.ClientAPI.EventStoreTransaction.Dispose
+  commentId: M:EventStore.ClientAPI.EventStoreTransaction.Dispose
+  id: Dispose
+  parent: EventStore.ClientAPI.EventStoreTransaction
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: EventStoreTransaction.Dispose()
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Dispose()
+  type: Method
+  source:
+    id: Dispose
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/EventStoreTransaction.cs
+    startLine: 80
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nDisposes this transaction rolling it back if not already committed\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: EventStore.ClientAPI.EventStoreTransaction.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.ClientAPI
+  commentId: N:EventStore.ClientAPI
+  name: EventStore.ClientAPI
+  nameWithType: EventStore.ClientAPI
+  fullName: EventStore.ClientAPI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: EventStore.ClientAPI.EventStoreTransaction.CommitAsync*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+  name: CommitAsync
+  nameWithType: EventStoreTransaction.CommitAsync
+  fullName: EventStore.ClientAPI.EventStoreTransaction.CommitAsync
+- uid: System.Threading.Tasks.Task{EventStore.ClientAPI.WriteResult}
+  commentId: T:System.Threading.Tasks.Task{EventStore.ClientAPI.WriteResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<WriteResult>
+  nameWithType: Task<WriteResult>
+  fullName: System.Threading.Tasks.Task<EventStore.ClientAPI.WriteResult>
+  nameWithType.vb: Task(Of WriteResult)
+  fullName.vb: System.Threading.Tasks.Task(Of EventStore.ClientAPI.WriteResult)
+  name.vb: Task(Of WriteResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.WriteResult
+    name: WriteResult
+    nameWithType: WriteResult
+    fullName: EventStore.ClientAPI.WriteResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.WriteResult
+    name: WriteResult
+    nameWithType: WriteResult
+    fullName: EventStore.ClientAPI.WriteResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.ClientAPI.EventStoreTransaction.WriteAsync*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.WriteAsync
+  name: WriteAsync
+  nameWithType: EventStoreTransaction.WriteAsync
+  fullName: EventStore.ClientAPI.EventStoreTransaction.WriteAsync
+- uid: EventStore.ClientAPI.EventData[]
+  isExternal: true
+  name: EventData[]
+  nameWithType: EventData[]
+  fullName: EventStore.ClientAPI.EventData[]
+  nameWithType.vb: EventData()
+  fullName.vb: EventStore.ClientAPI.EventData()
+  name.vb: EventData()
+  spec.csharp:
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData}
+  commentId: T:System.Collections.Generic.IEnumerable{EventStore.ClientAPI.EventData}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<EventData>
+  nameWithType: IEnumerable<EventData>
+  fullName: System.Collections.Generic.IEnumerable<EventStore.ClientAPI.EventData>
+  nameWithType.vb: IEnumerable(Of EventData)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of EventStore.ClientAPI.EventData)
+  name.vb: IEnumerable(Of EventData)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.ClientAPI.EventData
+    name: EventData
+    nameWithType: EventData
+    fullName: EventStore.ClientAPI.EventData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: EventStore.ClientAPI.EventStoreTransaction.Rollback*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.Rollback
+  name: Rollback
+  nameWithType: EventStoreTransaction.Rollback
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Rollback
+- uid: EventStore.ClientAPI.EventStoreTransaction.Dispose*
+  commentId: Overload:EventStore.ClientAPI.EventStoreTransaction.Dispose
+  name: Dispose
+  nameWithType: EventStoreTransaction.Dispose
+  fullName: EventStore.ClientAPI.EventStoreTransaction.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

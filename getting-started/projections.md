@@ -12,7 +12,8 @@ When running a projection, you can choose whether the query should run and give 
 
 You enable projections with the command line argument `--run-projections`. For example, the command below enables all projection modes (system and user-defined):
 
-> [!TIP][read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
+> [!TIP]
+> [Read this guide](~/server/command-line-arguments.md#projections-options) for all the possible parameter values.
 
 #### [Windows](#tab/tabid-1)
 
@@ -140,13 +141,15 @@ And to use the HTTP or .NET API:
 
 [!code-bash[getting-started-projections-create-projection](~/code-examples/getting-started/create-projection.sh)]
 
-> [!NEXT][read here](~/projections/api.md) for more information on creating projections with the HTTP API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
+> [!NEXT]
+> [Read here](~/projections/api.md) for more information on creating projections with the HTTP API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
 
 ### [.NET API](#tab/tabid-create-proj-net)
 
 [!code-csharp[getting-started-projections-create-projection-dotnet](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=26-27,165)]
 
-> [!NEXT][read here](~/dotnet-api/projections.md) for more information on creating projections with the .NET API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
+> [!NEXT]
+> [Read here](~/dotnet-api/projections.md) for more information on creating projections with the .NET API and the parameters available, or [our projections section](~/projections/index.md) for details on projection syntax.
 
 * * *
 

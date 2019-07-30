@@ -17,7 +17,7 @@ All operations are handled fully asynchronously, returning either a `Task` or a 
 
 ## Quick Start
 
-The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](~/dotnet-api/connecting-to-a-server.md), [Reading Events](~/dotnet-api/reading-events.md) and [Writing to a Stream](~/dotnet-api/writing-to-a-stream.md)
+The code below shows how to connect to an Event Store server, write to a stream, and read back the events. For more detailed information, read the full pages for [Connecting to a Server](~/dotnet-api/connecting-to-a-server.md), [Reading Events](~/dotnet-api/reading-events.md) and [Writing to a Stream](~/dotnet-api/streams.md)
 
 ```csharp
 var connection =
