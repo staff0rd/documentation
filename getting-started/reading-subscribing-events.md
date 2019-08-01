@@ -8,7 +8,7 @@ outputFileName: index.html
 
 This second step covers reading events from a stream and subscribing to changes to events in a stream.
 
-## Read a Stream of Events
+## Read a stream of events
 
 Event Store exposes all streams as [atom feeds](http://tools.ietf.org/html/rfc4287), and you can read data from the stream by navigating to the _head URI_ of the stream <http://127.0.0.1:2113/streams/<STREAM_ID>> with cURL, or click the _Stream Browser_ tab in the Admin UI and you see the stream you created in step 1.
 
@@ -44,9 +44,9 @@ To use the JVM client, use the following method passing the stream name, the sta
 
 * * *
 
-## Read a Single Event
+## Read a single event
 
-The feed has a single item inside of it, the one you posted in [part 1](~/getting-started/index.md). You can see details of the event in the _Stream Browser_ tab in the Admin UI by clicking a stream to see its events, and then clicking an event. Or with cURL, issue a `GET` to the `alternate` URI value from the response above.
+The feed has a single item inside of it, the one you posted in [part 1](~/getting-started/index.md). You can see details of the event in the _Stream Browser_ tab in the Admin UI by selecting a stream to see its events, and then selecting an event. Or with cURL, issue a `GET` to the `alternate` URI value from the response above.
 
 ### [Request](#tab/tabid-8)
 
@@ -75,13 +75,13 @@ To use the Java client, use the following method passing the stream name, the ev
 
 * * *
 
-## Paginating through Events
+## Paginating through events
 
 For longer feeds of events than this example, you need to paginate through the feed, reading a certain number of events at a time.
 
 You can use the HTTP API [to paginate](~/http-api/reading-streams.md#feed-paging) through the feed using _previous_ and _next_ links within the stream. Or you can [use a read method](~/dotnet-api/reading-events.md#example-read-an-entire-stream-forwards-from-start-to-end) of the .NET API (and JVM client), to loop through events a certain number at a time.
 
-## Subscribing to Receive Stream Updates
+## Subscribing to receive stream updates
 
 A common operation is to subscribe to a stream and receive notifications for changes. As new events arrive, you continue following them.
 
@@ -110,9 +110,11 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 
 <!-- TODO: And write more events, then what etc -->
 
-There are three types of subscription patterns, useful in different situations.
+### Subscription types
 
-### Volatile Subscriptions
+There are three types of subscription patterns, useful in different situations
+
+#### Volatile subscriptions
 
 This subscription calls a given function for events written after establishing the subscription. They are useful when you need notification of new events with minimal latency, but where it's not necessary to process every event.
 
@@ -120,7 +122,7 @@ This subscription calls a given function for events written after establishing t
 
 For example, if a stream has 100 events in it when a subscriber connects, the subscriber can expect to see event number 101 onwards until the time the subscription is closed or dropped.
 
-### Catch-Up Subscriptions
+#### Catch-up subscriptions
 
 This subscription specifies a starting point, in the form of an event number or transaction file position. You call the function for events from the starting point until the end of the stream, and then for subsequently written events.
 
@@ -128,7 +130,7 @@ This subscription specifies a starting point, in the form of an event number or 
 
 For example, if you specify a starting point of 50 when a stream has 100 events, the subscriber can expect to see events 51 through 100, and then any events are subsequently written until you drop or close the subscription.
 
-### Persistent Subscriptions
+#### Persistent subscriptions
 
 > [!NOTE]
 > Persistent subscriptions exist in version 3.2.0 and above of Event Store.
@@ -137,7 +139,7 @@ This subscription supports the "[competing consumers](https://docs.microsoft.com
 
 <!-- TODO: Example needed? -->
 
-## Next Step
+## Next step
 
 In this second part of our getting started guide you learned how to read events from a stream and subscribe to changes. The next part covers projections, used to give you continuous queries of your data.
 

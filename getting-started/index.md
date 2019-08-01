@@ -10,7 +10,7 @@ This first step covers installation and running Event Store, and writing your fi
 
 [!include[<Getting Started Install and run>](~/partials/_install-run.md)]
 
-## Interacting with an Event Store Server
+## Interacting with an Event Store server
 
 There are three ways to interact with Event Store:
 
@@ -20,7 +20,9 @@ There are three ways to interact with Event Store:
 
 ### [.NET Client](#tab/tabid-dotnet-client)
 
-[Install the .NET Core client API](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/) using your preferred method, add it to your project:
+[Install the .NET client API](https://www.nuget.org/packages/EventStore.Client) using your preferred method.
+
+Add it to your project:
 
 ```shell
 dotnet add package EventStore.Client
@@ -81,7 +83,7 @@ When using the .NET client, you also need to give the connection a name.
 
 * * *
 
-## Writing Events to an Event Stream
+## Writing events to an Event Stream
 
 Event Store operates on a concept of Event Streams, and the first operation we look at is how to write to a stream. If you are Event Sourcing a domain model, a stream equates to an aggregate function. Event Store can handle hundreds of millions of streams, so create as many as you need.
 
@@ -103,7 +105,7 @@ Use the following cURL command, passing the name of the stream and the events to
 
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the HTTP API.
->
+
 > [!NOTE]
 > You can also post events to the HTTP API as XML, by changing the `Content-Type` header to `XML`.
 
@@ -124,7 +126,7 @@ To use the JVM Client, use the following method, passing the name of the stream,
 
 * * *
 
-## Next Step
+## Next step
 
 In this first part of our getting started guide you learned how to install and run Event Store and write your first event. The next part covers reading events from a stream.
 
