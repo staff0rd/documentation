@@ -53,7 +53,7 @@ You can then check if the 'tiller-deploy-xxxx' pod is running
 kubectl -n kube-system get pod
 ```
 
-## Deploy Event Store Cluster with Helm
+## Deploy Event Store cluster with Helm
 
 It is possible to specify a lot of options to customise your Event Store deployment. The setting used in this guide is "Persistent Volume", that allows you to deploy a [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/). This Claim is an abstraction that requires Kubernetes to set up one persistent volume per each Event Store node and assign an id to it. These volumes are then reused by the cluster, for example, we want to upgrade the version of the Cluster and retain the data. If we don’t specify an existing volume then the volumes are dynamically created.
 

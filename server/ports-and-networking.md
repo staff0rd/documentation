@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Ports and networking
 
-## Single Node
+## Single node
 
 If you run Event Store as a single node, it only uses two ports. The first port is the external HTTP port, and the default value is `2113`. Event Store uses this port for both the client HTTP APIs and for the management HTTP interface.
 
@@ -14,7 +14,7 @@ Event Store in Windows tries to add access via `http.sys` automatically for the 
 
 You should ensure that these ports are open and allowed via a firewall.
 
-## Cluster Node
+## Cluster node
 
 When running in cluster mode the networking for Event Store is more complex. Cluster mode requires 4 ports to run. The ports are for internal HTTP, internal TCP, external HTTP, and external TCP.
 
@@ -32,7 +32,7 @@ You configure the internal TCP and HTTP ports in the same way as the external. A
 
 When setting up a cluster the nodes must be able to reach each other over both the internal HTTP channel and the internal TCP channel. You should ensure that these ports are open on firewalls on the machines and between the machines.
 
-## Heartbeat Timeouts
+## Heartbeat timeouts
 
 Event Store uses heartbeats over all TCP connections to discover dead clients and nodes. Setting heartbeat timeouts requires thought. Set them too short and you receive false positives, set them too long and discovery of dead clients and nodes is slower.
 
@@ -48,7 +48,7 @@ Different environments need different values for these settings. While low numbe
 > [!TIP]
 > If in doubt, choose higher numbers. This adds a small period of time to discover a dead client or node and is better than the alternative, which is false positives.
 
-## Advertise As
+## Advertise as
 
 Due to NAT, or other reasons a node may not be bound to the address it is reachable from other nodes. For example, the machine has an IP address of 192.168.1.13, but the node is visible to other nodes as 10.114.12.112.
 

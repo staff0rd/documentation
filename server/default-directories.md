@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Default Directories
+# Default directories
 
 The default directories used by Event Store vary by platform to fit with the common practices each platform.
 

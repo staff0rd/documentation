@@ -18,7 +18,7 @@ There are three ways to interact with Event Store:
 2.  [With the HTTP API](~/http-api/index.md).
 3.  With a Client API, which you need to install first. Our documentation covers the [.NET Core client API](~/dotnet-api/index.md) and the [JVM client](https://github.com/EventStore/EventStore.JVM) but [others](~/getting-started/which-api-sdk.md) are available.
 
-### [.NET Client](#tab/tabid-dotnet-client)
+### [.NET client](#tab/tabid-dotnet-client)
 
 [Install the .NET client API](https://www.nuget.org/packages/EventStore.Client) using your preferred method.
 
@@ -34,7 +34,7 @@ And require it in your code:
 using EventStore.ClientAPI;
 ```
 
-### [JVM Client](#tab/tabid-jvm-client)
+### [JVM client](#tab/tabid-jvm-client)
 
 [Add the JVM client](https://github.com/EventStore/EventStore.JVM#setup) using Maven:
 
@@ -65,7 +65,7 @@ If you want to use the Admin UI or the HTTP API, then you use port `2113`. For e
 
 To use a client API, you use port `1113` and create a connection:
 
-### [.NET Client](#tab/tabid-dotnet-client-connect)
+### [.NET client](#tab/tabid-dotnet-client-connect)
 
 When using the .NET client, you also need to give the connection a name.
 
@@ -74,7 +74,7 @@ When using the .NET client, you also need to give the connection a name.
 > [!NEXT]
 > In this example we used the [`EventStoreConnection.Create()`](xref:EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)) overloaded method but [others are available](xref:EventStore.ClientAPI.EventStoreConnection).
 
-### [JVM Client](#tab/tabid-jvm-client-connect)
+### [JVM client](#tab/tabid-jvm-client-connect)
 
 [!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample//WriteEventExample.java?start=17&end=22)]
 
@@ -118,7 +118,7 @@ To use the .NET API, use the following method, passing the name of the stream, t
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
 
-### [JVM Client](#tab/tabid-6)
+### [JVM client](#tab/tabid-6)
 
 To use the JVM Client, use the following method, passing the name of the stream, the version, and the events to write:
 

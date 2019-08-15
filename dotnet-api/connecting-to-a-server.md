@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Connecting to a Server
+# Connecting to a server
 
 ## EventStoreConnection
 
@@ -15,7 +15,7 @@ To get maximum performance from the connection we recommend that you use it asyn
 > [!NOTE]
 > The `Create` methods have changed since version 3.0.2 as connection strings are now supported. The old mechanisms will still work but are marked obsolete and will be removed in the future.
 
-## Creating a Connection
+## Creating a connection
 
 The `EventStoreConnection` classes uses the static `Create` methods to create a new connection. All method overloads allow you to optionally specify a name for the connection, which the connection returns when it raises events (see [Connection Events](#connection-events)).
 
@@ -45,15 +45,15 @@ With the URI based mechanism you can pass a domain name and the client will reso
 > [!NOTE]
 > The client performs a blocking DNS call for single node. If you are worried about blocking DNS due to network issues etc., you should resolve the DNS yourself and pass in an IP address.
 
-## Customising Connection Settings
+## Customising connection settings
 
-### Connection String
+### Connection string
 
 Many of the overloads accept a connection string that you can use to control settings of the connection. A benefit to having these as a connection string instead of using the fluent API is that you can change them between environments without recompiling (i.e. a single node in `dev` and a cluster in `production`).
 
 The connection string format should look familiar to those who have used connection strings in the past. It consists of a series of key/value pairs separated by semicolons.
 
-You can set the following values using the connection string.
+You can set the following values using the connection string:
 
 <!-- TODO: Moved, to check and what about ConnectTo? -->
 
@@ -82,7 +82,7 @@ You can set the following values using the connection string.
 | GossipSeeds                 | Comma separated list of ip:port               | A list of seeds to try to discover from                              |
 | ConnectTo                   | A URI in format described above to connect to | The URI to connect to                                                |
 
-> [!INFO]
+> [!NOTE]
 > You can also use spacing instead of camel casing in your connection string.
 
 ```csharp
@@ -142,7 +142,7 @@ The .NET API can log information to different destinations. By default logging i
 
 By default information about connection, disconnection and errors are logged, however it can be useful to have more information about specific operations as they are occuring.
 
-### User Credentials
+### User credentials
 
 Event Store supports [Access Control Lists](~/server/users-and-access-control-lists.md) that restrict permissions for a stream based on users and groups. `EventStoreConnection` allows you to supply credentials for each operation, however it is often more convenient to set default credentials for all operations on the connection.
 
@@ -171,7 +171,7 @@ Uses an SSL-encrypted connection where `targetHost` is the name specified on the
 > [!WARNING]
 > In production systems where credentials are sent from the client to Event Store, you should always use SSL encryption and you should set `validateServer` to `true`.
 
-### Node Preference
+### Node preference
 
 When connecting to an Event Store HA cluster you can specify that operations are performed on any node, or only on the node that is the master.
 
@@ -180,7 +180,7 @@ When connecting to an Event Store HA cluster you can specify that operations are
 | `PerformOnMasterOnly()` | Require the master to serve all write and read requests (Default).                                         |
 | `PerformOnAnyNode()`    | Allow for writes to be forwarded and read requests to be served locally if the current node is not master. |
 
-### Handling Failures
+### Handling failures
 
 The following methods on the `ConnectionSettingsBuilder` allow you to change the way the connection handles operation failures and connection issues.
 
@@ -207,11 +207,11 @@ The following methods on the `ConnectionSettingsBuilder` allow you to change the
 | `LimitOperationsQueueTo (int limit)`                    | Sets the limit for number of outstanding operations (Default: 5000).     |
 | `FailOnNoServerResponse()`                              | Marks that no response from server should cause an error on the request. |
 
-## Cluster Settings
+## Cluster settings
 
 When connecting to an Event Store HA cluster you must pass an instance of `ClusterSettings` as well as the usual `ConnectionSettings`. Primarily yu use this to tell the `EventStoreConnection` how to discover all the nodes in the cluster. A connection to a cluster will automatically handle reconnecting to a new node if the current connection fails.
 
-### Using DNS Discovery
+### Using DNS discovery
 
 DNS discovery uses a single DNS entry with several records listing all node IP addresses. The `EventStoreConnection` will then use a well known port to gossip with the nodes.
 
@@ -229,7 +229,7 @@ Use `ClusterSettings.Create().DiscoverClusterViaDns()` followed by:
 > [!NOTE]
 > If you are using the commercial edition of Event Store HA with Manager nodes in place, the gossip port should be the port number of the external HTTP port on which the managers are running. If you are using the open source edition of Event Store HA the gossip port should be the External HTTP port that the nodes are running on. If you cannot use a well-known port for this across all nodes you can instead use gossip seed discovery and set the `IPEndPoint` of some seed nodes instead.
 
-### Connecting Using Gossip Seeds
+### Connecting using gossip seeds
 
 The second supported method for node discovery uses a hardcoded set of `IPEndPoint`s as gossip seeds.
 
@@ -244,9 +244,9 @@ Use `ClusterSettings.Create().DiscoverClusterViaGossipSeeds()` followed by:
 | `SetMaxDiscoverAttempts(int maxDiscoverAttempts)`         | Sets the maximum number of attempts for discovery (Default: 10).                      |
 | `SetGossipTimeout(TimeSpan timeout)`                      | Sets the period after which gossip times out if none is received (Default: 1 second). |
 
-## Connection Events
+## Connection events
 
-`EventStoreConnection` exposes events that your application can use to be notifed of changes to the status of the connection.
+`EventStoreConnection` exposes events that your application can use to be notified of changes to the status of the connection.
 
 <!-- TODO: Not moved. -->
 

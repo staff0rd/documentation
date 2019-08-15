@@ -10,7 +10,7 @@ Event Store provides a native interface of AtomPub over HTTP. AtomPub is a RESTf
 
 Event Store is fully compatible with the [1.0 version of the Atom Protocol](http://tools.ietf.org/html/rfc4287). Event Store adds extensions to the protocol, such as headers for control and custom `rel` links.
 
-### Existing Implementations
+### Existing implementations
 
 Many environments have already implemented the AtomPub protocol, which simplifies the process.
 
@@ -29,9 +29,9 @@ Many environments have already implemented the AtomPub protocol, which simplifie
 > [!NOTE]
 > These are not officially supported by Event Store.
 
-### Content Types
+### Content types
 
-The preferred way of determining which content type responses Event Store serves is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, e.g., `?format=xml`.
+The preferred way of determining which content type responses Event Store serves is to set the `Accept` header on the request. As some clients do not deal well with HTTP headers when caching, appending a format parameter to the URL is also supported, for example, `?format=xml`.
 
 The accepted content types for POST requests are:
 

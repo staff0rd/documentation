@@ -5,7 +5,7 @@ commercial: true
 
 <!-- TODO: How much of this is also relevant to OSS? -->
 
-# Setting up a Cluster with Manager Nodes
+# Setting up a cluster with manager nodes
 
 High availability Event Store allows you to run more than one node as a cluster. There are two modes available for clustering:
 
@@ -16,7 +16,7 @@ This document covers setting up Event Store with manager nodes and database node
 
 [!include[<Node number>](~/partials/_cluster-size.md)]
 
-## Manager Nodes
+## Manager nodes
 
 Each physical (or virtual) machine in an Event Store cluster typically runs one manager node and one database node. It's also possible to have multiple database nodes per physical machine, running under one manager node.
 
@@ -27,7 +27,7 @@ Manager nodes have a number of responsibilities:
 -   They provide a known endpoint for clients to connect to and discover cluster information.
 -   When running on Windows, manager nodes run as Windows services.
 
-## Configuring Nodes
+## Configuring nodes
 
 Each database or manager node [can have a variety of configuration sources](~/server/command-line-arguments.md). Each source has a priority and determines running configuration by evaluating each source and applying the option from the source with the highest priority.
 
@@ -40,7 +40,7 @@ From lowest to highest priority, the sources of configuration are:
 
 You can check the configuration of a node by passing the `-WhatIf` flag to the process.
 
-## Typical Deployment Topologies
+## Typical deployment topologies
 
 Event Store clusters follow a "shared nothing" philosophy, meaning that clustering requires no shared disks for clustering to work. Instead, several database nodes store your data to ensure it isn't lost in case of a drive failure or a node crashing.
 
@@ -50,7 +50,7 @@ A typical deployment topology consists of three physical machines, each running 
 
 ## Cluster gossip
 
-Event Store uses a quorum-based replication model. When working normally, a cluster has one database node known as a _master_, and the remaining nodes are _slaves_. The master node is responsible for coordinating writes while it is the master. Database nodes use a consensus algorithm to determine which database node should be master and which should be slaves. Event Store bases the decision as to which node should be the master on a number of factors ([some of which are configurable](~/server/command-line-arguments.md#cluster-options)).
+Event Store uses a quorum-based replication model. When working normally, a cluster has one database node known as a master, and the remaining nodes are slaves. The master node is responsible for coordinating writes while it is the master. Database nodes use a consensus algorithm to determine which database node should be master and which should be slaves. Event Store bases the decision as to which node should be the master on a number of factors ([some of which are configurable](~/server/command-line-arguments.md#cluster-options)).
 
 For database nodes to have this information available to them, the nodes gossip with other nodes in the cluster. Gossip runs over the internal (and optionally the external) HTTP interfaces of database nodes, and over both internal and external interfaces of manager nodes.
 
@@ -68,7 +68,7 @@ The preferred method is via a DNS entry. To set this up, create a DNS entry for 
 
 <!-- TODO: Should this be more practical? -->
 
-## Example 1 - A Three-Machine Cluster
+## Example 1 - a three-machine cluster
 
 This example shows the configuration for a three node cluster, running in the typical setup of one manager node and one database node per physical machine, with cluster discovery via DNS. Each machine has one network interface, therefore uses different ports for the internal and external traffic. All nodes, in this case, are running Windows, so the manager nodes run as Windows services.
 
@@ -114,7 +114,7 @@ Name: cluster.eventstore.local
 Address:  192.168.1.13
 ```
 
-### Database Node Configuration
+### Database node configuration
 
 All three nodes are similar in configuration.
 
@@ -147,7 +147,7 @@ ClusterSize: 3
 
 For each following node, the IP Addresses change, as does the gossip seed, since it is the manager running on the same physical machine as each node.
 
-### Manager Configuration
+### Manager configuration
 
 Again, all three nodes are similar in configuration.
 
@@ -177,7 +177,7 @@ WatchdogConfig: c:\EventStore-Config\watchdog.esconfig
 Log: d:\manager-log
 ```
 
-### Watchdog Configuration
+### Watchdog configuration
 
 The watchdog configuration file details which database nodes the manager is responsible for starting and supervising. Unlike the other configuration files, the manager configuration uses a custom format instead of YAML. Each node for which the manager is responsible has one line in the file, which starts with a `#` symbol and then details the command line options given to the database node when it starts it. Under normal circumstances, this is the path to the database node's configuration file.
 
@@ -193,7 +193,7 @@ With configuration files for each node written, you can now deploy Event Store a
 
 In this example, Event Store is deployed on each node in \_c:\\EventStore-HA-v\_, and the configuration files for that node are deployed into \_C:\\EventStore-Config\_. No installation process is necessary, you unzip the packaged distribution into your preferred location.
 
-### Adding HTTP ACL entries for HTTP servers (Windows-Specific)
+### Adding HTTP ACL entries for HTTP servers (Windows-specific)
 
 <!-- TODO: Check this -->
 
@@ -215,7 +215,7 @@ netsh http add urlacl url=http://192.168.1.11:30777/ user="NT AUTHORITY\LOCAL SE
 netsh http add urlacl url=http://192.168.1.11:30778/ user="NT AUTHORITY\LOCAL SERVICE"
 ```
 
-### Configure the Manager Node as a service (Windows-Specific)
+### Configure the manager node as a service (Windows-specific)
 
 You can install manager nodes as a Windows service so they can start on boot rather than running in interactive mode. Each manager service is given an instance name, which becomes the name of the service (and part of the description for easy identification). The service is installed by default with a startup type of "Automatic (Delayed Start)".
 

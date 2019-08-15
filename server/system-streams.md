@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# System Stream and Event Types
+# System stream and event types
 
 ## `$persistentSubscriptionConfig`
 

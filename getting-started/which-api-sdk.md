@@ -10,12 +10,12 @@ This getting started guide shows you how to get started with Event Store using t
 
 Event Store offers a low-level protocol in the form of an asynchronous TCP protocol that exchanges protobuf objects. At present this protocol has adapters for .NET and the JVM.
 
-### Event Store Supported Clients
+### Event Store supported clients
 
 -   [.NET Client](http://www.nuget.org/packages/EventStore.Client)
 -   [JVM Client](https://github.com/EventStore/EventStore.JVM)
 
-### Community Developed Clients
+### Community developed clients
 
 - [.NET Core](https://www.nuget.org/packages/EventStore.ClientAPI.NetCore/)
 -   [Node.js](https://www.npmjs.com/package/event-store-client)
@@ -34,11 +34,11 @@ Event Store offers a low-level protocol in the form of an asynchronous TCP proto
 
 Event Store also offers an HTTP-based interface, based specifically on the [AtomPub protocol](http://tools.ietf.org/html/rfc5023). As it operates over HTTP, this is less efficient, but nearly every environment supports it.
 
-### Event Store Supported Clients
+### Event Store supported clients
 
 -   [HTTP API](~/http-api/index.md)
 
-### Community Developed Clients
+### Community developed clients
 
 -   [PHP](https://github.com/dbellettini/php-eventstore-client)
 -   [Python](https://github.com/madedotcom/atomicpuppy)
@@ -68,7 +68,7 @@ Most platforms have good existing tooling for Atom including feed readers. None 
 > [!NOTE]
 > Our recommendation would be to use AtomPub as your primary protocol unless you have low subscriber SLAs or need higher throughput on reads and writes than Atom can offer. This is due to the open nature and ease of use of the Atom protocol. Often in integration scenarios, these are more important than raw performance.
 
-## Next Step
+## Next step
 
 Congratulations! You've reached the end of our getting started guide, what's next?
 

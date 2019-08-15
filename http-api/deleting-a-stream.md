@@ -3,7 +3,7 @@ outputFileName: index.html
 sinceVersion: 2.0.1
 ---
 
-# Deleting a Stream
+# Deleting a stream
 
 ## Soft deleting
 
@@ -80,10 +80,10 @@ If you try to recreate the stream as in the above example you also receive a `41
 
 ### [Request](#tab/tabid-13)
 
-[!code-bash[http-api-recreate-request](~/code-examples/http-api/write-event-append.sh?start=1&end=1)]
+[!code-bash[http-api-recreate-request](~/code-examples/http-api/write-event-append-deleted.sh?start=1&end=1)]
 
 ### [Response](#tab/tabid-14)
 
-[!code-json[http-api-recreate-response](~/code-examples/http-api/write-event-append.sh?range=3-)]
+[!code-json[http-api-recreate-response](~/code-examples/http-api/write-event-append-deleted.sh?range=3-)]
 
 * * *

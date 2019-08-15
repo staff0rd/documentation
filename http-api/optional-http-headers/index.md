@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Optional HTTP Headers
+# Optional HTTP headers
 
 <!-- TODO: Can Swagger replace this? And sub files -->
 

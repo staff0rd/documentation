@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Cluster Node Roles
+# Cluster node roles
 
 Every node in an Event Store cluster can have one of three roles.
 
@@ -27,7 +27,7 @@ You can control which clones the cluster promotes with the `NodePriority` [comma
 > [!NOTE]
 > Changing `NodePriority` doesn't guarantee that the cluster won't promote the clone. It's only one of the criteria that the Election Service considers.
 
-## Non Promotable Clone
+## Non-promotable clone
 
 If you want the cluster to never promote a node with the `Clone` role, set the `--is-promotable` [command line option](~/server/command-line-arguments.md) to `false` when starting a clone node. The node never acknowledges any writes and is never part of the quorum until you change the option to `true`.
 

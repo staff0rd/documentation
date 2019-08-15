@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Reading Events
+# Reading events
 
 You can use the client API to read events from a stream starting from either end of the stream. There is a method for each direction and one for reading a single event.
 
@@ -41,7 +41,7 @@ Task<AllEventsSlice> ReadAllEventsBackwardAsync(Position position, int maxCount,
 ```
 
 > [!NOTE]
-> These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the `EventStoreConnection` are used ([See Connecting to a Server - User Credentials](~/dotnet-api/connecting-to-a-server.md#user-credentials)).
+> These methods also have an optional parameter which allows you to specify the `UserCredentials` to use for the request. If you don't supply any, the default credentials for the `EventStoreConnection` are used ([see Connecting to a server - user credentials](~/dotnet-api/connecting-to-a-server.md#user-credentials)).
 
 ## StreamEventsSlice
 

@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Impedance Mismatch
+# Impedance mismatch
 
 Using events as a storage mechanism offers different properties when compared to a typical relational model, as the impedance mismatch that exists between a typical relational model and the object oriented domain model is analyzed. Scott Ambler describes the problem in an essay on agiledata.org as:
 

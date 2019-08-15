@@ -87,7 +87,7 @@ To access the dashboard you can now use the `browse` command. This command is a 
 az aks browse -n {clustername} -g {groupname}
 ```
 
-#### Deploy Event Store Cluster with Helm
+#### Deploy Event Store cluster with Helm
 
 Helm is the package manager for Kubernetes. After you've created a new Kubernetes cluster you need to configure Helm for your local helm CLI to connect to a configured service account on the server side. The service account used by Helm is called Tiller. Give Tiller access to the cluster and initialise it with the following commands:
 

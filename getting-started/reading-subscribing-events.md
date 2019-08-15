@@ -36,7 +36,7 @@ To use the .NET API, use the following method passing the stream name, the start
 > [!NEXT]
 > [Read this guide](~/dotnet-api/reading-events.md) for more information on how to read events with the .NET API.
 
-### [JVM Client](#tab/tabid-jvm-client)
+### [JVM client](#tab/tabid-jvm-client)
 
 To use the JVM client, use the following method passing the stream name, the start point in the stream, and whether to follow links to the event data:
 
@@ -61,13 +61,13 @@ The feed has a single item inside of it, the one you posted in [part 1](~/gettin
 
 * * *
 
-### [.NET Client API](#tab/tabid-dotnet-read-event)
+### [.NET client API](#tab/tabid-dotnet-read-event)
 
 To use the .NET API, use the following method passing the stream name, the event you want to read and wether to return the event data:
 
 [!code-csharp[getting-started-read-stream-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?start=108&end=109)]
 
-### [JVM Client](#tab/tabid-jvm-read-event)
+### [JVM client](#tab/tabid-jvm-read-event)
 
 To use the Java client, use the following method passing the stream name, the event you want to read and if you want to also return the event data:
 
@@ -100,7 +100,7 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 > [!NEXT]
 > Find more details on the parameters used in the example above, read the API documentation for [`PersistentSubscriptionSettings`](xref:EventStore.ClientAPI.PersistentSubscriptionSettings), [`CreatePersistentSubscriptionAsync`](xref:EventStore.ClientAPI.IEventStoreConnection.CreatePersistentSubscriptionAsync*) and [`ConnectToPersistentSubscription`](xref:EventStore.ClientAPI.IEventStoreConnection.ConnectToPersistentSubscriptionAsync*)
 
-### [JVM Client API](#tab/tabid-create-sub-java)
+### [JVM client API](#tab/tabid-create-sub-java)
 
 [!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/SubscriptionExample.java?start=15&end=35)]
 

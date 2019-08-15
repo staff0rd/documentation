@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Setting up a Cluster using only Database Nodes (OSS)
+# Setting up a cluster using only database nodes (OSS)
 
 <!-- TODO: Needs Linux instructions -->
 
@@ -15,7 +15,7 @@ This document covers setting up Event Store with only database nodes.
 
 [!include[<Node number>](~/partials/_cluster-size.md)]
 
-## Running on the Same Machine
+## Running on the same machine
 
 To start, set up three nodes running on a single machine. Run each of the commands below in its own console window. You either need admin privileges or have ACLs setup with IIS if running under Windows. Unix-like operating systems need no configuration. Replace "127.0.0.1" with whatever IP address you want to run on.
 
@@ -27,9 +27,9 @@ EventStore.ClusterNode.exe --mem-db --log .\logs\log3 --int-ip 127.0.0.1 --ext-i
 
 You should now have three nodes running together in a cluster. If you kill one of the nodes, it continues running. This binds to the loopback interface. To access Event Store from outside your machine, specify a different IP address for the `--ext-ip` parameter.
 
-## Running on Separate Machines
+## Running on separate machines
 
-Most important is to understand the "gossip seeds". You are instructing seed locations for when the node first starts and needs to begin gossiping. Any node can be a seed. By giving each node the other nodes you ensure that there is always another node to gossip with if a quorum can be built. If you wanted to move this to run on three machines you would change the IPs on the command line to something such as:
+Most important is to understand the "gossip seeds". You are instructing seed locations for when the node first starts and needs to begin gossiping. Any node can be a seed. By giving each node the other nodes you ensure that there is always another node to gossip with, if a quorum can be built. If you want to move this to run on three machines, change the IPs on the command line to something like this:
 
 ```powershell
 EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log1 --int-ip 192.168.0.1 --ext-ip 192.168.0.1 --int-tcp-port=1111 --ext-tcp-port=1112 --int-http-port=2113 --ext-http-port=2114 --cluster-size=3 --discover-via-dns=false --gossip-seed=192.168.0.2:2113,192.168.0.3:2113
@@ -50,17 +50,17 @@ EventStore.ClusterNode.exe --mem-db --log c:\dbs\cluster\log3 --int-ip 192.168.0
 > [!NOTE]
 > You can also use the method above for HTTP clients to avoid using a load balancer and fall back to round robin DNS for many deployments.
 
-## Internal vs. External Networks
+## Internal vs. external networks
 
 You can optionally segregate all Event Store communications to different networks. For example, internal networks for tasks like replication, and external networks for communication between clients. You can place these communications on segregated networks which is often a good idea for both performance and security purposes.
 
 To setup an internal network, use the command line parameters provided above, but prefixed with `int-`. All communications channels also support enabling SSL for the connections.
 
-## HTTP Clients
+## HTTP clients
 
 If you want to use the HTTP API, [then you should add a load balancer](~/server/setting-up-varnish-in-linux.md) in front of the three nodes. It does not matter which node receives a request as the requests the node are forwarded to the request internally. With this setup, you can lose any one machine with no data loss.
 
-## Native TCP Clients
+## Native TCP clients
 
 You can connect to the cluster using the native TCP interface. The client APIs support switching between nodes internally. As such if you have a master failover the connection automatically handle retries on another node.
 

@@ -109,7 +109,7 @@ Add the sample data to four different streams:
 
 [!code-csharp[getting-started-projections-add-sample-data](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=142-144,147-148)]
 
-### [JVM Client](#tab/tabid-jvm-api)
+### [JVM client](#tab/tabid-jvm-api)
 
 [!code-java[getting-started-write-multiple](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteMultipleEventsExample.java?start=41&end=74)]
 
@@ -233,7 +233,7 @@ You can now read the events in the result stream by issuing a read request.
 
 You can configure properties of the projection by updating values of the `options` object. For example, the following projection changes the name of the results stream, you can download it as a file [here](~/code-examples/getting-started/update-projection-options.json):
 
-[!code-json[getting-started-projections-update-options](~/code-examples/getting-started/update-projection-options.json)]
+[!code-json[getting-started-projections-update-options](~/code-examples/getting-started/update-projection-options.json?highlight=2)]
 
 Then send the update to the projection:
 
@@ -288,7 +288,7 @@ By default, the category splits the stream `id` by a dash. The category is the f
 | shoppingCart-v1-54 | shoppingCart                           |
 | shoppingCart       | _No category as there is no separator_ |
 
-You want to define a projection that produces a count per stream for a category, but the state needs to be per stream. To do so, use `$by_category` and it's `fromCategory` API method.
+You want to define a projection that produces a count per stream for a category, but the state needs to be per stream. To do so, use `$by_category` and its `fromCategory` API method.
 
 Below is the projection, you can download the file [here](~/code-examples/getting-started/shopping-cart-counter.json):
 

@@ -2,13 +2,12 @@
 outputFileName: index.html
 ---
 
-# Projections Management
+# Projections management
 
 The Event Store Client API includes helper methods that use the HTTP API to allow you to manage projections. This document describes the methods found in the `ProjectionsManager` class. All methods in this class are asynchronous.
 
-## Methods
 
-### Enable a Projection
+## Enable a projection
 
 Enables an existing projection by name. You must have access to a projection to enable it.
 
@@ -16,7 +15,7 @@ Enables an existing projection by name. You must have access to a projection to 
 public Task EnableAsync(string name, UserCredentials userCredentials = null)
 ```
 
-### Disable a Projection
+## Disable a projection
 
 Disables an existing projection by name. You must have access to a projection to disable it.
 
@@ -24,7 +23,7 @@ Disables an existing projection by name. You must have access to a projection to
 public Task DisableAsync(string name, UserCredentials userCredentials = null)
 ```
 
-### Abort a Projection
+## Abort a projection
 
 Aborts an existing projection by name. You must have access to a projection to abort it.
 
@@ -32,7 +31,7 @@ Aborts an existing projection by name. You must have access to a projection to a
 public Task AbortAsync(string name, UserCredentials userCredentials = null)
 ```
 
-### Create a One-Time Projection
+## Create a one-time projection
 
 Creates a projection that runs until the end of the log and then stops. The query parameter contains the JavaScript you want created as a one time projection.
 
@@ -40,7 +39,7 @@ Creates a projection that runs until the end of the log and then stops. The quer
 public Task CreateOneTimeAsync(string query, UserCredentials userCredentials = null)
 ```
 
-### Create a Continuous Projection
+## Create a continuous projection
 
 Creates a projection that runs until the end of the log and then continues running. The query parameter contains the JavaScript you want created as a one time projection. Continuous projections have explicit names and you can enable or disable them via this name.
 
@@ -48,7 +47,7 @@ Creates a projection that runs until the end of the log and then continues runni
 public Task CreateContinuousAsync(string name, string query, UserCredentials userCredentials = null)
 ```
 
-### List all Projections
+## List all projections
 
 Returns a list of all projections.
 
@@ -56,7 +55,7 @@ Returns a list of all projections.
 public Task<List<ProjectionDetails>> ListAllAsync(UserCredentials userCredentials = null)
 ```
 
-### List One-Time Projections
+## List one-time projections
 
 Returns a list of all One-Time Projections.
 
@@ -64,7 +63,7 @@ Returns a list of all One-Time Projections.
 public Task<List<ProjectionDetails>> ListOneTimeAsync(UserCredentials userCredentials = null)
 ```
 
-### Get Statistics on a Projection
+## Get statistics on a projection
 
 Returns the statistics associated with a named projection.
 
@@ -72,7 +71,7 @@ Returns the statistics associated with a named projection.
 public Task<string> GetStatisticsAsync(string name, UserCredentials userCredentials = null)
 ```
 
-### Delete Projection
+## Delete projection
 
 Deletes a named projection. You must have access to a projection to delete it.
 
@@ -80,7 +79,7 @@ Deletes a named projection. You must have access to a projection to delete it.
 public Task DeleteAsync(string name, UserCredentials userCredentials = null)
 ```
 
-### Get State
+## Get state
 
 Retrieves the state of a projection.
 
@@ -88,7 +87,7 @@ Retrieves the state of a projection.
 public Task<string> GetState(string name, UserCredentials userCredentials = null)
 ```
 
-### Get Partition State
+## Get partition state
 
 Retrieves the state of the projection via the given partition.
 
@@ -96,7 +95,7 @@ Retrieves the state of the projection via the given partition.
 public Task<string> GetPartitionStateAsync(string name, string partition, UserCredentials userCredentials = null)
 ```
 
-### Get Result
+## Get result
 
 Retrieves the result of the projection.
 
@@ -104,7 +103,7 @@ Retrieves the result of the projection.
 public Task<string> GetResult(string name, UserCredentials userCredentials = null)
 ```
 
-### Get Partition Result
+## Get partition result
 
 Retrieves the result of the projection via the given partition.
 

@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# User Defined Projections
+# User defined projections
 
 <!-- TODO: Again refactor to shopping cart? -->
 
@@ -35,7 +35,7 @@ fromStream('account-1')
 
 <!-- TODO: Show example output, see above comment -->
 
-## User Defined Projections API
+## User defined projections API
 
 ### Options
 

@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Stats and Debug Information
+# Stats and debug information
 
 Event Store has a lot of debug and statistics information available about a cluster you can find with the following request:
 

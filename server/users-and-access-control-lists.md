@@ -2,9 +2,9 @@
 outputFileName: index.html
 ---
 
-# Users and Access Control Lists
+# Users and access control lists
 
-## Default Users
+## Default users
 
 Event Store provides two default users, `$ops` and `$admin`.
 
@@ -12,7 +12,7 @@ Event Store provides two default users, `$ops` and `$admin`.
 
 An `$ops` user can do everything that an `$admin` can do except manage users and read from system streams (except for `$scavenges` and `$scavenges-streams`).
 
-## New Users
+## New users
 
 New users created in Event Store are standard non-authenticated users. Non-authenticated users are allowed `GET` access to the `/info`, `/ping`, `/stats`, `/elections`, and `/gossip` system streams.
 
@@ -51,7 +51,7 @@ You can update these fields with either a single string or an array of strings r
 
 ### Example
 
-The ACL below would give `writer` read and write permission on the stream, while `reader` would have read permission on the stream. Only users in the `$admins` group would be able to delete the stream or read and write the metadata.
+The ACL below gives `writer` read and write permission on the stream, while `reader` has read permission on the stream. Only users in the `$admins` group can delete the stream or read and write the metadata.
 
 ### [HTTP API](#tab/tabid-http)
 
@@ -116,7 +116,7 @@ conn.SetStreamMetadataAsync(streamName, ExpectedVersion.Any, metadata, adminCred
 }
 ```
 
-This default ACL would give `ouro` and `$admins` create and write permissions on all streams, while everyone else can read from them. Be careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically override it.
+This default ACL gives `ouro` and `$admins` create and write permissions on all streams, while everyone else can read from them. Be careful allowing default access to system streams to non-admins as they would also have access to `$settings` unless you specifically override it.
 
 ### [Request](#tab/tabid-1)
 
@@ -125,7 +125,7 @@ This default ACL would give `ouro` and `$admins` create and write permissions on
 [!code-bash[http-api-update-metadata-request](~/code-examples/server/update-default-acl.sh?start=1&end=1)]
 
 > [!WARNING]
-> You should not copy/paste the UUID in the command line above but generate a new one or not provide one (you will be redirected to a URI with one as described in writing events in the HTTP API).
+> You should not copy/paste the UUID in the command line above but generate a new one or not provide one (you will be redirected to a URI with one as described in [writing events](~/http-api/creating-writing-a-stream.md#writing-a-single-event) in the HTTP API).
 
 ### [Response](#tab/tabid-2)
 

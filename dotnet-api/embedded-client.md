@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Embedded Client
+# Embedded client
 
 ## EmbeddedVNodeBuilder
 
@@ -79,7 +79,7 @@ LogManager.Init(logComponentName, logDirectory, logConfigurationDirectory);
 
 The following options are available when building an Embedded Node.
 
-### Application Options
+### Application options
 
 | Method                                  | Description                                                                                |
 | --------------------------------------- | ------------------------------------------------------------------------------------------ |

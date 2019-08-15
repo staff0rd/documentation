@@ -2,39 +2,13 @@
 outputFileName: index.html
 ---
 
-# Stream Metadata
+# Stream metadata
 
 Every stream in Event Store has metadata associated with it. Internally, the metadata includes information such as the ACL of the stream and the maximum count and age for the events in the stream. Client code can also put information into stream metadata for use with projections or through the client API.
 
 This information is not part of the actual event but is metadata associated with the event. Event Store stores stream metadata as JSON, and you can access it over the HTTP APIs.
 
-## Methods
-
-### Read Stream Metadata
-
-<!-- TODO: Link or embed to ref docs -->
-
-```csharp
-Task<StreamMetadataResult> GetStreamMetadataAsync(string stream, UserCredentials userCredentials = null)
-```
-
-```csharp
-Task<RawStreamMetadataResult> GetStreamMetadataAsRawBytesAsync(string stream, UserCredentials userCredentials = null)
-```
-
-### Write Stream Metadata
-
-<!-- TODO: Link or embed to ref docs -->
-
-```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, StreamMetadata metadata, UserCredentials userCredentials = null)
-```
-
-```csharp
-Task<WriteResult> SetStreamMetadataAsync(string stream, long expectedMetastreamVersion, byte[] metadata, UserCredentials userCredentials = null)
-```
-
-## Read Stream Metadata
+## Read stream metadata
 
 To read stream metadata over the .NET API you can use methods found on the `EventStoreConnection`. You can use the `GetStreamMetadata` methods in two ways. The first is to return a fluent interface over the stream metadata, and the second is to return you the raw JSON of the stream metadata.
 
@@ -79,7 +53,7 @@ This returns a `RawStreamMetadataResult`. The fields on this result are:
 > [!NOTE]
 > If you enabled [enabled security](~/dotnet-api/connecting-to-a-server.md), reading metadata may require that you pass credentials. By default it is only allowed for admins though you can change this via default ACLs. If you do not pass credentials and they are required you will receive an `AccessedDeniedException`.
 
-## Writing Metadata
+## Writing metadata
 
 You can write metadata in both a typed and a raw mechanism. When writing it is generally easier to use the typed mechanism. Both writing mechanisms support an `expectedVersion` which works the same as on any stream and you can use to control concurrency, read [Expected Version](~/dotnet-api/optimistic-concurrency-and-idempotence.md) for further details.
 

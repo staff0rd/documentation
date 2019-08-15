@@ -79,7 +79,7 @@ When posting to either the stream or to the returned redirect, clients must incl
 
 ### [Response](#tab/tabid-8)
 
-[!code-json[http-api-write-event-no-type-response](~/code-examples/http-api/write-event-no-type.sh?range=3-)]
+[!code-json[http-api-write-event-no-type-response](~/code-examples/http-api/write-event-no-type.sh?start=3&end=12&highlight=1)]
 
 * * *
 
@@ -105,7 +105,7 @@ When you write multiple events in a single post, Event Store treats them transac
 
 ### Appending events
 
-To append events, issue a `POST` request to the same resource again and edit the `eventId`:
+To append events, issue a `POST` request to the same resource with a new `eventId`:
 
 [!code-json[http-api-append-event](~/code-examples/http-api/event-append.json)]
 
@@ -168,7 +168,7 @@ If you now write to the stream with the incorrect version, you receive an HTTP s
 
 ### [Response](#tab/tabid-18)
 
-[!code-json[http-api-write-event-wrong-version-response](~/code-examples/http-api/write-event-wrong-version.sh?range=3-)]
+[!code-json[http-api-write-event-wrong-version-response](~/code-examples/http-api/write-event-wrong-version.sh?start=3&end=13&highlight=1)]
 
 * * *
 

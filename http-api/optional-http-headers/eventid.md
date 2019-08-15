@@ -3,7 +3,7 @@ outputFileName: index.html
 sinceVersion: 3.0.0
 ---
 
-# Optional HTTP Headers: EventID
+# Optional HTTP headers: EventID
 
 When you write to a stream and don't use the `application/vnd.eventstore.events+json/+xml` media type, you need to specify an event ID with the event you post. This is not required with the custom media type as it is specified within the format (there is an `EventId` on each entry in the format). Event Store uses `EventId` for impotency.
 

@@ -13,7 +13,7 @@ Event Store is a database that supports the concept of Event Sourcing, which is 
 
 Production systems often rely on storing their current state to process transactions, but this has not always been the case. Before the general acceptance of relational database management systems (RDBMS) as the center of system architectures many did not store the current state. This was especially true in high performance, mission critical, and highly secure systems. If you look at the inner workings of an RDBMS you will find that most do not themselves work by managing current state.
 
-### What is an Event?
+### What is an event?
 
 An event is something that happened in the past, and so you should represent events as verbs in the past tense such as `CustomerRelocated`, `CargoShipped`, or `InventoryLossageRecorded`. If you are taking a [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design) approach, it's imperative that events are verbs in the past tense, as they are part of the Ubiquitous Language.
 
@@ -36,7 +36,7 @@ public class InventoryItemDeactivated {
 }
 ```
 
-### Other Definitions of Domain Events
+### Other definitions of domain events
 
 There is a concept related to a Domain Event defined in [Streamlined Object Modeling](http://www.streamlinedmodeling.com) (SOM). The term “Domain Event” is often used in SOM when discussing “The Event Principle”.
 
@@ -64,7 +64,7 @@ Linguistically the command/event separation makes more sense here as the command
 
 These are the problems that led to the separation of the concepts of Commands and Events. This separation makes the language much clearer and although subtle, it tends to lead developers towards a clearer understanding of context based solely on the language used. Dual definitions of a concept force the developer to recognize and distinguish context. This weight can translate into both ramp up time for new developers on a project and another thing a member of the team needs to remember. Anytime a team member needs to remember something to distinguish context there is a higher probability that they will overlook it or mistaken for another context. Being explicit in the language and avoiding dual definitions helps make things clearer both for domain experts, the developers, and anyone who may be consuming the API.
 
-## Further Reading
+## Further reading
 
 -   [DDD CQRS Video](https://www.youtube.com/watch?v=whCk1Q87_ZI)
 -   [Event Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html)

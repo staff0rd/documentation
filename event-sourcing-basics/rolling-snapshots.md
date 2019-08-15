@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Rolling Snapshots
+# Rolling snapshots
 
 A rolling snapshot is a projection of the current state of an aggregate at a given point. It represents the state when all events to that point have been replayed. You use rolling snapshots as a heuristic to prevent the need to load all events for the entire history of an aggregate. One way of processing events in the event stream is to replay the events from the beginning of time until the end of the event stream.
 

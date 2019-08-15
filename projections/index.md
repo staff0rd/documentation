@@ -2,11 +2,11 @@
 outputFileName: index.html
 ---
 
-# Introduction to Projections
+# Introduction to projections
 
 [!include[<Projections>](~/partials/_projections-intro.md)]
 
-## Business Case Examples
+## Business case examples
 
 For example. You are looking for how many Twitter users said "happy" within 5 minutes of the word "foo coffee shop" and within 2 minutes of saying "london".
 
@@ -18,15 +18,15 @@ You can use projections in nearly all examples of near real-time complex event p
 
 It's important to remember the types of problems that projections help to solve. Many problems are not a good fit for projections and are better served by hosting another read model populated by a [catchup subscription](~/getting-started/reading-subscribing-events.md#catch-up-subscriptions).
 
-## Continuous Querying
+## Continuous querying
 
 Projections support the concept of continuous queries. When running a projection you can choose whether the query should run and give you all results present, or whether the query should continue running into the future finding new results as they happen and updating its result set.
 
 In the medical example above the doctor could leave the query running to be notified of any new patients that meet the criteria. The output of all queries is a stream, this stream can be listened to like any other stream.
 
-## Types of Projections
+## Types of projections
 
-There are 2 types of projections in Event Store:
+There are two types of projections in Event Store:
 
 - [Built in (system) projections](~/projections/system-projections.md) written in C#.
 - [User-defined JavaScript projections](~/projections/user-defined-projections.md) which you create via the API or the admin UI.

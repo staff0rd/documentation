@@ -4,9 +4,9 @@ outputFileName: index.html
 
 <!-- TODO: retrofit to shopping cart examples? -->
 
-# System Projections
+# System projections
 
-Event Store ships with 4 built in projections.
+Event Store ships with four built in projections.
 
 -   By Category (`$by_category`)
 -   By Event Type (`$by_event_type`)
@@ -14,7 +14,7 @@ Event Store ships with 4 built in projections.
 -   Stream by Category (`$stream_by_category`)
 -   Streams (`$streams`)
 
-## Enabling System Projections
+## Enabling system projections
 
 When you start Event Store from a fresh database, these projections are present but disabled and querying their statuses returns `Stopped`. You can enable a projection by issuing a request which switches the status of the projection from `Stopped` to `Running`.
 
@@ -30,7 +30,7 @@ curl -i -X POST "http://{event-store-ip}:{ext-http-port}/projection/{projection-
 
 * * *
 
-## By Category
+## By category
 
 The `$by_category` (_http://127.0.0.1:2113/projection/$by_category_) projection links existing events from streams to a new stream with a `$ce-` prefix (a category) by splitting a stream `id` by a configurable separator.
 
@@ -49,13 +49,13 @@ If the body of the projection is `last` and `-`, for a stream id of `shopping-ca
 
 The use case of this project is subscribing to all events within a category.
 
-## By Event Type
+## By event type
 
 The `$by_event_type` (_http://127.0.0.1:2113/projection/$by_event_type_) projection links existing events from streams to a new stream with a stream id in the format `$et-{event-type}`.
 
 You cannot configure this projection.
 
-## By Correlation ID
+## By correlation ID
 
 The `$by_correlation_id` (_http://127.0.0.1:2113/projection/$by_correlation_id_) projection links existing events from projections to a new stream with a stream id in the format `$bc-<correlation id>`.
 
@@ -65,7 +65,7 @@ The projection takes one parameter, a JSON string as a projection source:
 {"correlationIdProperty":"$myCorrelationId"}
 ```
 
-## Stream By Category
+## Stream by category
 
 The `$stream_by_category` (_http://127.0.0.1:2113/projection/$by_category_) projection links existing events from streams to a new stream with a `$category` prefix by splitting a stream `id` by a configurable separator.
 

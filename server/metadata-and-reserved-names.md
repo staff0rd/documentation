@@ -2,13 +2,13 @@
 outputFileName: index.html
 ---
 
-# Metadata and Reserved Names
+# Metadata and reserved names
 
-## Stream Metadata
+## Stream metadata
 
 Every stream in Event Store has metadata associated with it. Event Store allows you to change some values in the metadata, and you can write your own data into stream metadata that you can refer to in your code.
 
-### Reserved Names
+### Reserved names
 
 All internal data used by Event Store is prefixed with a `$` character (for example `$maxCount` on a stream's metadata). Because of this you should not use names with a `$` prefix as event names, metadata keys, or stream names, except where detailed below.
 
@@ -75,7 +75,7 @@ Security access control lists are also included in the `$acl` section of the str
 
 You can find more details on access control lists can [here](users-and-access-control-lists.md).
 
-## Event Metadata
+## Event metadata
 
 Every event in Event Store has metadata associated with it. Event Store allows you to change some values in the metadata, and you can write your own data into event metadata that you can refer to in your code.
 

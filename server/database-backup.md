@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Database Backup
+# Database backup
 
 Backing up an Event Store database is straightforward, but relies on you carrying out the steps below in the correct order.
 
@@ -33,7 +33,7 @@ Event Store keep most data in _chunk files_, named `chunkX.Y`, where X is the ch
 
 It's only necessary to keep the file whose name has the highest `Y` for each `X`, as well as the checkpoint files and the index directory (to avoid expensive index rebuilding).
 
-## Other Options
+## Other options
 
 There are many other options available for backing up an Event Store database. For example, you can set up a durable subscription that writes all events to another storage mechanism such as a key/value or column store. These methods would require a manual set up for restoring back to a cluster group.
 

@@ -3,7 +3,7 @@ outputFileName: index.html
 sinceVersion: 4.0.2
 ---
 
-# Configuring Projections
+# Configuring projections
 
 <!-- TODO: And how do you change them? UI, .NET, HTTP etc -->
 
@@ -40,7 +40,7 @@ These options control how projections write events.
 
 In busy systems, projections can put a lot of extra pressure on the master node. This is especially true for Event Store servers that also have persistent subscriptions running, which only the master node can process. If you see a lot of commit timeouts and slow writes from your projections and other clients, then start with these settings.
 
-### Emit Enabled
+### Emit enabled
 
 The `emit` boolean setting determines whether a projection can emit events and any projection that calls `emit()` or `linkTo()` requires it. If this option is not set and a projection attempts to emit events, you see an error message like the following:
 
@@ -52,7 +52,7 @@ The `emit` boolean setting determines whether a projection can emit events and a
 
 Event Store disables this setting by default, and is usually set when you create the projection and if you need the projection to emit events.
 
-### Track Emitted Streams
+### Track emitted streams
 
 The `trackemittedstreams` boolean setting enables tracking of a projection's emitted streams. It only has an affect if the projection has `EmitEnabled` enabled.
 
@@ -63,7 +63,7 @@ Tracking emitted streams enables you to delete a projection and all the streams 
 > [!TIP]
 > Between Event Store versions 3.8.0 and 4.0.2, this option was enabled by default when a projection was created through the UI. If you have any projections created during this time frame, it's worth checking whether this option is enabled.
 
-### Max Allowed Writes in Flight
+### Max allowed writes in flight
 
 <!-- TODO: Why is this not in the GUI for new projection? -->
 
@@ -78,7 +78,7 @@ By default, projections try to perform writes as quickly as they come. This can 
 
 By default, this is unbounded, allowing a projection to write as fast as it can.
 
-### Max Write Batch Length
+### Max write batch length
 
 <!-- TODO: Why is this not in the GUI for new projection? -->
 
@@ -93,20 +93,20 @@ Checkpoints store how far along a projection is in the streams it is processing 
 
 We recommend you try other methods of improving projections before changing these values, as checkpoints are an important part of running projections.
 
-### Checkpoint After Ms
+### Checkpoint after Ms
 
 The `CheckpointAfterMs` setting prevents a new checkpoint from being written within a certain time frame from the previous one.
 The setting is to keep a projection from writing too many checkpoints too quickly, something that can happen in a busy system.
 
 The default setting is 0 seconds, which means there is no limit to how quickly checkpoints can be written.
 
-### Checkpoint Handled Threshold
+### Checkpoint handled threshold
 
 The `CheckpointHandledThreshold` setting controls the number of events that a projection can handle before attempting to write a checkpoint. An event is considered handled if it actually passed through the projection's filter. If the projection is set to checkpoint every 4,000 events, but it only reads from the `foo` stream, the projection only checkpoints every 4,000 `foo` events.
 
 The default setting is 4,000 events.
 
-### Checkpoint Unhandled Bytes Threshold
+### Checkpoint unhandled bytes threshold
 
 The `CheckpointUnhandledBytesThreshold` setting specifies the number of bytes a projection can process before attempting to write a checkpoint. Unhandled bytes are the events that are not processed by the projection itself.
 
@@ -116,7 +116,7 @@ The default setting is 10mb.
 
 ## Processing options
 
-### Pending Events Threshold
+### Pending events threshold
 
 The `PendingEventsThreshold` setting determines the number of events that can be pending before the projection is paused.
 Pausing the projection stops the projection from reading, allowing it to finish with the current events that are waiting to be processed. Once the pending queue has drained to half the threshold, the projection starts reading again.

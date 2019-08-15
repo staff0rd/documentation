@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Reading Streams and Events
+# Reading streams and events
 
 ## Reading a stream
 
@@ -14,7 +14,7 @@ Event Store exposes streams as a resource located at _http(s)://{yourdomain.com}
 
 ### [Response](#tab/tabid-2)
 
-[!code-http[getting-started-read-stream-response](~/code-examples/getting-started/read-stream.sh?range=3-)]
+[!code-http[getting-started-read-stream-response](~/code-examples/getting-started/read-stream.sh?start=3&end=67&highlight=9)]
 
 ---
 
@@ -45,7 +45,7 @@ The non-atom version of the event has fewer details about the event.
 
 ---
 
-## Feed Paging
+## Feed paging
 
 The next step in understanding how to read a stream is the `first`/`last`/`previous`/`next` links within a stream. Event Store supplies these links so you can read through a stream, and they follow the pattern defined in [RFC 5005](http://tools.ietf.org/html/rfc5005).
 
@@ -117,12 +117,12 @@ You then follow `previous` links until you are back to the head of the stream, w
 > [!NOTE]
 > All links except the head link are fully cacheable as you can see in the HTTP header `Cache-Control: max-age=31536000, public`. This is important when discussing intermediaries and performance as you commonly replay a stream from storage. You should **never** bookmark links aside from the head of the stream resource, and always follow links. We may in the future change how internal links work, and bookmarking links other than the head may break.
 
-## Reading All Events
+## Reading all events
 
 [!include[<Reading all events>](~/partials/_all-events.md)]
 
 > [!NOTE]
-> To access the `$all` stream, you must use admin details, find more information on the [security](~/http-api/security.md) page.
+> To access the `$all` stream, you must use admin details. Find more information on the [security](~/http-api/security.md) page.
 
 ### [Request](#tab/tabid-13)
 
@@ -134,7 +134,7 @@ You then follow `previous` links until you are back to the head of the stream, w
 
 ---
 
-## Conditional Gets
+## Conditional GETs
 
 The head link supports conditional `GET`s with the use of [ETAGS](http://en.wikipedia.org/wiki/HTTP_ETag), a well-known HTTP construct. You can include the ETAG of your last request and issue a conditional `GET` to the server. If nothing has changed, it won't return the full feed. For example the earlier request has an ETAG:
 
@@ -156,25 +156,25 @@ You can use this in your next request when polling the stream for changes by put
 
 ### [Response](#tab/tabid-18)
 
-[!code-http[http-api-etag-response](~/code-examples/http-api/request-etag.sh?range=3-)]
+[!code-http[http-api-etag-response](~/code-examples/http-api/request-etag.sh?start=3&end=12&highlight=1)]
 
 ---
 
 > [!NOTE]
 > You create Etags using the version of the stream and the media type of the stream you are reading. You can't read an Etag from a stream in one media type and use it with another media type.
 
-## Embedding Data into Streams in JSON format
+## Embedding data into streams in JSON format
 
 So far in this guide, the feeds returned have contained links that refer to the actual event data. This is normally a preferable mechanism for several reasons:
 
-- They can be in a different media type than the feed, and you can negotiate them separately from the feed itself (e.g., the feed in JSON, the event in XML). You can cache the event data separately from the feed, and you can point it to different feeds. If you use a `linkTo()` in your [projection](~/projections/index.md) this is what happens in your atom feeds.
+- They can be in a different media type than the feed, and you can negotiate them separately from the feed itself (for example, the feed in JSON, the event in XML). You can cache the event data separately from the feed, and you can point it to different feeds. If you use a `linkTo()` in your [projection](~/projections/index.md) this is what happens in your atom feeds.
 - If you are using JSON, you can embed the events into the atom feed events. This can help cut down on the number of requests in some situations, but the messages are larger.
 
 There are ways of embedding events and further metadata into your stream by using the `embed=` parameter.
 
 ### Rich embed mode
 
-The `rich` embed mode returns more properties about the event (`eventtype`, `streamid`, `position`, etc.) as you can see in the following request.
+The `rich` embed mode returns more properties about the event (`eventtype`, `streamid`, `position`, and so on) as you can see in the following request.
 
 ### [Request](#tab/tabid-19)
 
@@ -182,7 +182,7 @@ The `rich` embed mode returns more properties about the event (`eventtype`, `str
 
 ### [Response](#tab/tabid-20)
 
-[!code-http[getting-started-read-stream-rich-response](~/code-examples/http-api/read-stream-rich.sh?range=3-)]
+[!code-http[getting-started-read-stream-rich-response](~/code-examples/http-api/read-stream-rich.sh?start=3&end=76)]
 
 ---
 
@@ -207,7 +207,7 @@ Two other modes are variants of `body`:
 - `PrettyBody` tries to reformat the JSON to make it "pretty to read".
 - `TryHarder` works harder to try to parse and reformat the JSON from an event to return it in the feed. These do not include further information and are focused on how the feed looks.
 
-## Embedding Data into Streams in XML format
+## Embedding data into streams in XML format
 
 The XML format embeds no additional data, as only JSON supports embedding.
 

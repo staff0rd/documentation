@@ -4,7 +4,7 @@ outputFileName: index.html
 
 <!-- TODO: Combine with CC pages? -->
 
-# Description Document
+# Description document
 
 With the addition of Competing Consumers, which is another way of reading streams, the need arose to expose these different methods to consumers.
 
@@ -15,7 +15,7 @@ The introduction of the description document has some benefits:
 
 ## Fetching the description document
 
-There are 3 ways in which Event Store returns the description document.
+There are three ways in which Event Store returns the description document.
 
 -   Attempting to read a stream with an unsupported media type.
 -   Attempting to read a stream with no accept header.

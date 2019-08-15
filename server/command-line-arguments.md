@@ -2,7 +2,7 @@
 outputFileName: index.html
 ---
 
-# Command Line Arguments
+# Command line arguments
 
 Event Store supports many configuration options. There are three distinct ways to set any parameter, all with their own advantages and disadvantages.
 
@@ -20,7 +20,7 @@ EventStore.ClusterNode.exe --log ~/logs
 
 While command line arguments are useful during development, they are not the preferred way to handle configuration in a production system.
 
-## Environment Variables
+## Environment variables
 
 You can set all arguments can also as environment variables. This mechanism is often used in UNIX based systems. For example:
 
@@ -30,7 +30,7 @@ log=~/logs
 
 You can reference another environment variable by setting the variable’s value to `${env:REFERENCED_ENV_VAR}`. For example, if you’re using Azure Service Fabric, some predefined environment variables exist. You can use `EVENTSTORE_EXT_IP={env:Fabric_NodeIPOrFQDN}` to reference the node's IP address.
 
-## YAML Files
+## YAML files
 
 The last way you can set arguments is to put them into one or more configuration files. To tell Event Store to use a different configuration file, you pass the file path on the command line with `--config=filename`, or use the `CONFIG` enivornment variable. The basic format of the YAML configuration file is as follows:
 
@@ -54,7 +54,7 @@ The order of precedence between multiple configuration sources is important as y
 
 Event Store supports the following parameters.
 
-### Application Options
+### Application options
 
 | Command line parameter                                                | Environment variable prefixed with `EVENTSTORE_` | Config file YAML         | Description                                                                                                       |
 | --------------------------------------------------------------------- | ------------------------------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
@@ -74,14 +74,14 @@ Event Store supports the following parameters.
 | -EnableHistograms<br/>--enable-histograms=VALUE<br/>                  | ENABLE_HISTOGRAMS                                | EnableHistograms         | Enables the tracking of various histograms in the backend, typically only used for debugging etc (Default: False) |
 | -LogHttpRequests<br/>--log-http-requests=VALUE<br/>                   | LOG_HTTP_REQUESTS                                | LogHttpRequests          | Log HTTP Requests and Responses before processing them. (Default: False)                                          |
 
-### Authentication Options
+### Authentication options
 
 | Command line parameter                                       | Environment variable prefixed with `EVENTSTORE_` | Config file YAML     | Description                                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------ | -------------------- | -------------------------------------------------------------------------------- |
 | -AuthenticationType<br/>--authentication-type=VALUE<br/>     | AUTHENTICATION_TYPE                              | AuthenticationType   | The type of authentication to use. (Default: internal)                           |
 | -AuthenticationConfig<br/>--authentication-config=VALUE<br/> | AUTHENTICATION_CONFIG                            | AuthenticationConfig | Path to the configuration file for authentication configuration (if applicable). |
 
-### Certificate Options
+### Certificate options
 
 | Command line parameter                                                | Environment variable prefixed with `EVENTSTORE_` | Config file YAML         | Description                             |
 | --------------------------------------------------------------------- | ------------------------------------------------ | ------------------------ | --------------------------------------- |
@@ -92,7 +92,7 @@ Event Store supports the following parameters.
 | -CertificateFile<br/>--certificate-file=VALUE<br/>                    | CERTIFICATE_FILE                                 | CertificateFile          | The path to certificate file.           |
 | -CertificatePassword<br/>--certificate-password=VALUE<br/>            | CERTIFICATE_PASSWORD                             | CertificatePassword      | The password to certificate in file.    |
 
-### Cluster Options
+### Cluster options
 
 | Command line parameter                                                   | Environment variable prefixed with `EVENTSTORE_` | Config file YAML          | Description                                                                                                                                     |
 | ------------------------------------------------------------------------ | ------------------------------------------------ | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,7 +115,7 @@ Event Store supports the following parameters.
 | -MaxAutoMergeIndexLevel<br/>--max-auto-merge-index-level=VALUE           | MAX_AUTO_MERGE_INDEX_LEVEL                       | MaxAutoMergeIndexLevel    | Maximum level of index file to merge automatically before manual merge. (Default: 1000)                 |
 | -OptimizeIndexMerge<br/>--optimize-index-merge=VALUE                     | OPTIMIZE_INDEX_MERGE                             | OptimizeIndexMerge        | Bypasses the checking of file hashes of indexes during startup and after index merges. (Default: False) |
 
-### Database Options
+### Database options
 
 | Command line parameter                                                  | Environment variable prefixed with `EVENTSTORE_` | Config file YAML         | Description                                                                                                      |
 | ----------------------------------------------------------------------- | ------------------------------------------------ | ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
@@ -141,7 +141,7 @@ Event Store supports the following parameters.
 | -IndexCacheDepth<br/>--index-cache-depth=VALUE<br/>                     | INDEX_CACHE_DEPTH                                | IndexCacheDepth          | Sets the depth to cache for the mid point cache in index. (Default: 16)                                          |
 | -AlwaysKeepScavenged<br/>--always-keep-scavenged=VALUE<br/>             | ALWAYS_KEEP_SCAVENGED                            | AlwaysKeepScavenged      | Always keeps the newer chunks from a scavenge operation. (Default: False)                                        |
 
-### Interface Options
+### Interface options
 
 | Command line parameter                                                                        | Environment variable prefixed with `EVENTSTORE_` | Config file YAML                    | Description                                                                                                            |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -180,7 +180,7 @@ Event Store supports the following parameters.
 | -ConnectionPendingSendBytesThreshold<br/>--connection-pending-send-bytes-threshold=VALUE<br/> | CONNECTION_PENDING_SEND_BYTES_THRESHOLD          | ConnectionPendingSendBytesThreshold | The maximum number of pending send bytes allowed before a connection is closed. (Default: 10485760)                    |
 | -FaultOutOfOrderProjections<br/>--fault-out-of-order-projections=VALUE<br/>                   | FAULT_OUT_OF_ORDER_PROJECTIONS                   | FaultOutOfOrderProjections          | Specify if a projection should be faulted when there is a discontinuity in event ordering (Default: True)              |
 
-### Projections Options
+### Projections options
 
 | Command line parameter                                 | Environment variable prefixed with `EVENTSTORE_` | Config file YAML  | Description                                                                                                                                      |
 | ------------------------------------------------------ | ------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |

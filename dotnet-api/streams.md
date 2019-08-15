@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Streams
 
-## Writing to a Stream
+## Writing to a stream
 
 You can use the client API to write one or more events to a stream atomically. You do this by appending the events to the stream in one operation, or by starting a transaction on the stream, writing events in one or more operations in that transaction, and then committing the transaction.
 
@@ -78,9 +78,9 @@ The parameters are:
 | `long expectedVersion`          | The version at which you expect the stream to be in order that an optimistic concurrency check can be performed. This should either be a positive integer, or one of the constants `ExpectedVersion.NoStream`, `ExpectedVersion.EmptyStream`, or to disable the check, `ExpectedVersion.Any`. See [here](optimistic-concurrency-and-idempotence.md) for a broader discussion of this. |
 | `IEnumerable<EventData> events` | The events to append. There is also an overload of each method which takes the events as a `params` array.                                                                                                                                                                                                                                                                            |
 
-## Deleting a Stream
+## Deleting a stream
 
-### Soft Delete
+### Soft delete
 
 ```csharp
 Task<DeleteResult> DeleteStreamAsync(string stream, long expectedVersion, UserCredentials userCredentials = null);

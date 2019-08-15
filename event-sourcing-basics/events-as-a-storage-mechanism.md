@@ -78,7 +78,7 @@ It is important to note the language in Figure 3. All of the verbs are in the pa
 
 What if logic has changed so that this item could no longer be added given the context? This is one of many examples where dual contexts between commands and events are required, there is a contextual difference between returning to a given state and attempting to transition to a new one.
 
-### There is no Delete
+### There is no delete
 
 A common question that arises is how to delete information. It is not possible, as previously, to jump into the time machine and say that an event never happened (e.g. delete a previous event). As such, it is necessary to model a delete explicitly as a new transaction as shown below. Further discussion on the business value of handling deletes in this mechanism can be found in "[Business Value of the Event Log](~/event-sourcing-basics/business-value-of-the-event-log.md)".
 

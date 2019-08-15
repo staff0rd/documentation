@@ -2,13 +2,11 @@
 outputFileName: index.html
 ---
 
-# User Management
+# User management
 
 The Event Store Client API includes helper methods that use the HTTP API to allow for the management of users. This document describes the methods found in the `UsersManager` class. All methods in this class are asynchronous.
 
-## Methods
-
-### Create a User
+## Create a user
 
 Creates a user, the credentials for this operation must be a member of the `$admins` group.
 
@@ -16,7 +14,7 @@ Creates a user, the credentials for this operation must be a member of the `$adm
 public Task CreateUserAsync(string login, string fullName, string[] groups, string password, UserCredentials userCredentials = null)
 ```
 
-### Disable a User
+## Disable a user
 
 Disables a user, the credentials for this operation must be a member of the `$admins` group.
 
@@ -24,7 +22,7 @@ Disables a user, the credentials for this operation must be a member of the `$ad
 public Task DisableAsync(string login, UserCredentials userCredentials = null)
 ```
 
-### Enable a User
+## Enable a User
 
 Enables a user, the credentials for this operation must be a member of the `$admins` group.
 
@@ -32,7 +30,7 @@ Enables a user, the credentials for this operation must be a member of the `$adm
 public Task EnableAsync(string login, UserCredentials userCredentials = null)
 ```
 
-### Delete a User
+## Delete a user
 
 Deletes (non-recoverable) a user, the credentials for this operation must be a member of the `$admins` group. If you prefer this action to be recoverable, disable the user as opposed to deleting the user.
 
@@ -40,7 +38,7 @@ Deletes (non-recoverable) a user, the credentials for this operation must be a m
 public Task DeleteUserAsync(string login, UserCredentials userCredentials = null)
 ```
 
-### List all Users
+## List all users
 
 Lists all users.
 
@@ -48,7 +46,7 @@ Lists all users.
 public Task<List<UserDetails>> ListAllAsync(UserCredentials userCredentials = null)
 ```
 
-### Get Details of User
+## Get details of user
 
 Return the details of the user supplied in user credentials (e.g. the user making the request).
 
@@ -56,19 +54,19 @@ Return the details of the user supplied in user credentials (e.g. the user makin
 public Task<UserDetails> GetCurrentUserAsync(UserCredentials userCredentials)
 ```
 
-### Get Details of Logged in User
+## Get details of logged in user
 
 ```csharp
 public Task<UserDetails> GetUserAsync(string login, UserCredentials userCredentials)
 ```
 
-### Update User Details
+### Update user details
 
 ```csharp
 public Task UpdateUserAsync(string login, string fullName, string[] groups, UserCredentials userCredentials = null)
 ```
 
-### Reset User Password
+### Reset user password
 
 Resets the password of a user. The credentials doing this operation must be part of the `$admins` group.
 

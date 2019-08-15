@@ -3,7 +3,7 @@ outputFileName: index.html
 sinceVersion: 3.9.0
 ---
 
-# Rebuilding Indexes
+# Rebuilding indexes
 
 As of version 3.9.0 all future indexes use 64-bit hashes instead of 32-bit hashes. Event Store automatically transitions your indexes from 32-bit to 64-bit by writing all new indexes as 64-bit indexes during the merge process.
 

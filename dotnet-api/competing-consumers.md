@@ -2,16 +2,15 @@
 outputFileName: index.html
 ---
 
-# Competing Consumers
+# Competing consumers
 
 This document explains how to use .NET API for setting up and consuming competing consumer subscription groups. For an overview of competing consumers and how they relate to other subscription types, please see the [overview document](~/getting-started/projections.md).
 
 > [!NOTE]
 > The Administration UI includes a _Competing Consumers_ section where a user can create, update, delete and view subscriptions and their statuses.
 
-# Methods
 
-## Creating a Persistent Subscription
+## Creating a persistent subscription
 
 Before interacting with a subscription group, you need to create one. You will receive an error if you attempt to create a subscription group more than once. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
@@ -19,7 +18,7 @@ Before interacting with a subscription group, you need to create one. You will r
 Task<PersistentSubscriptionCreateResult> CreatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
 ```
 
-## Updating a Persistent Subscription
+## Updating a persistent subscription
 
 You can edit the settings of an existing subscription while it is running. This action drops the current subscribers and resets the subscription internally. This requires [admin permissions](~/server/users-and-access-control-lists.md).
 
@@ -27,7 +26,7 @@ You can edit the settings of an existing subscription while it is running. This 
 Task<PersistentSubscriptionUpdateResult> UpdatePersistentSubscriptionAsync(string stream, string groupName, PersistentSubscriptionSettings settings, UserCredentials credentials);
 ```
 
-## Deleting a Persistent Subscription
+## Deleting a persistent subscription
 
 <!-- TODO: Explanation? -->
 
@@ -35,7 +34,7 @@ Task<PersistentSubscriptionUpdateResult> UpdatePersistentSubscriptionAsync(strin
 Task<PersistentSubscriptionDeleteResult> DeletePersistentSubscriptionAsync(string stream, string groupName, UserCredentials userCredentials = null);
 ```
 
-## Connecting to a Persistent Subscription
+## Connecting to a persistent subscription
 
 <!-- TODO: Explanation? -->
 
@@ -50,7 +49,7 @@ EventStorePersistentSubscription ConnectToPersistentSubscription(
    bool autoAck = true);
 ```
 
-## Persistent Subscription Settings
+## Persistent subscription settings
 
 Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` object as a parameter. The methods use this object to provide the settings for the persistent subscription. A fluent builder is available for these options that you can locate using the `Create()` method. The following table shows the options you can set on a persistent subscription.
 
@@ -73,7 +72,7 @@ Both the `Create` and `Update` methods take a `PersistentSubscriptionSettings` o
 | `WithBufferSizeOf(int count)`            | The number of messages to buffer when in paging mode.                                                             |
 | `WithExtraStatistics`                    | Tells the backend to measure timings on the clients so statistics contain histograms of them.                     |
 
-## Creating a Subscription Group
+## Creating a subscription group
 
 The first step of dealing with a subscription group is to create one. You will receive an error if you attempt to create a subscription group multiple times. You must have admin permissions to create a persistent subscription group.
 
@@ -97,7 +96,7 @@ _result = _conn.CreatePersistentSubscriptionAsync(_stream,
 | `PersistentSubscriptionSettings settings` | The settings to use when creating this subscription. |
 | `UserCredentials credentials`             | The user credentials to use for this operation.      |
 
-## Updating a Subscription Group
+## Updating a subscription group
 
 You can edit the settings of an existing subscription group while it is running, you don't need to delete and recreate it to change settings. When you update the subscription group, it resets itself internally dropping the connections and having them reconnect. You must have admin permissions to update a persistent subscription group.
 
@@ -121,7 +120,7 @@ _result = _conn.UpdatePersistentSubscriptionAsync(_stream,
 | `PersistentSubscriptionSettings settings` | The settings to use when updating this subscription. |
 | `UserCredentials credentials`             | The user credentials to use for this operation.      |
 
-## Deleting a Subscription Group
+## Deleting a subscription group
 
 Remove a subscription group with the delete operation. Like the creation of groups, you rarely do this in your runtime code and is undertaken by an administrator running a script.
 
@@ -137,7 +136,7 @@ var result = _conn.DeletePersistentSubscriptionAsync(stream,
 | `string groupName`            | The name of the subscription group to update.    |
 | `UserCredentials credentials` | The user credentials to use for this operation.  |
 
-## Connecting to a Subscription Group
+## Connecting to a subscription group
 
 Once you have created a subscription group, clients can connect to that subscription group. A subscription in your application should only have the connection in your code, you should assume that the subscription was created via the client API, the restful API, or manually in the UI.
 
@@ -166,7 +165,7 @@ Clients must acknowledge (or not acknowledge) messages in the competing consumer
 
 You can choose to not auto-ack messages. This can be useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call `Acknowledge,` and `NotAcknowledge` both take a `ResolvedEvent` (the one you processed) both also have overloads for passing and `IEnumerable<ResolvedEvent>`.
 
-## Consumer Strategies
+## Consumer strategies
 
 When creating a persistent subscription, the settings allow for different consumer strategies via the `WithNamedConsumerStrategy` method. Built-in strategies are defined in the enum `SystemConsumerStrategies`.
 

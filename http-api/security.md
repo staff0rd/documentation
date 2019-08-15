@@ -45,7 +45,7 @@ As you pass the username and password in the request we recommend you run Event 
 
 <!-- TODO: Does this need further explanation? Any more details anywhere? -->
 
-## Access Control Lists
+## Access control lists
 
 Alongside authentication, Event Store supports per stream configuration of Access Control Lists (ACL). To configure the ACL of a stream go to its head and look for the `metadata` relationship link to fetch the metadata for the stream.
 

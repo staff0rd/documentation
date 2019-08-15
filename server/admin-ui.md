@@ -16,13 +16,13 @@ The second half of the tab shows active connections to Event Store and informati
 
 Click the _Snapshot_ button in the top right to output a snapshot of all queue statistics at the time you clicked the button.
 
-## Stream Browser
+## Stream browser
 
 ![Web admin interface stream browser tab](~/assets/wai-stream-browser.png)
 
 The _Stream Browser_ tab gives an overview of recently created and changed streams, clicking on an individual stream shows details about the individual stream.
 
-### Event Stream 'streamname'
+### Event stream 'streamname'
 
 ![Web admin interface stream details](~/assets/wai-stream-details.png)
 
@@ -53,7 +53,7 @@ The _Projections_ tab shows system and user created projections defined in Event
 
 - _Disable All_: Disable all running projections.
 - _Enable All_: Enable all stopped projections.
-- _Include Queries_:
+- _Include Queries_: Toggle displaying queries in the Projections table.
 - _New Projection_: [Create a user-defined projection](~/projections/user-defined-projections.md) with the Admin UI.
 
 Clicking an individual projection shows further details.
@@ -77,7 +77,7 @@ The _Query_ tab a code editor field where you can create transient and short-liv
 
 ![Web admin interface query details](~/assets/wai-query-details.png)
 
-## Persistent Subscriptions
+## Persistent subscriptions
 
 The _Persistent Subscriptions_ tab shows an overview of [persistent subscriptions](~/getting-started/reading-subscribing-events.md#persistent-subscriptions) configured on streams. The button above the list do the following:
 
@@ -102,6 +102,6 @@ The _Admin_ tab shows sub systems enabled (currently only [projections](~/projec
 
 The _Users_ tab shows [the users defined in Event Store](~/server/users-and-access-control-lists.md), clicking an individual user shows a JSON representation of that users details.
 
-## Log Out
+## Log out
 
 Logs you out of the Admin UI interface.

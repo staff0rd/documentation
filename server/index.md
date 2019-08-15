@@ -12,7 +12,7 @@ We distribute an [open source version of Event Store](https://eventstore.org/dow
 
 ## Solving 503 errors from the Admin UI
 
-There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-a-httplistener-http-503-error) with the .NET `HTTPListener` class (which Event Store uses) and bad URL ACL registrations which can cause servers to return 503 errors for every request. If you see this, you can issue the following commands:
+There is a [known issue](http://stackoverflow.com/questions/8142396/what-causes-a-httplistener-http-503-error) with the .NET `HTTPListener` class (which Event Store uses) and bad URL ACL registrations, which can cause servers to return 503 errors for every request. If you see this, you can issue the following commands:
 
 ```posh
 netsh http show urlacl

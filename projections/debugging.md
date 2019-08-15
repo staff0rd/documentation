@@ -6,7 +6,7 @@ outputFileName: index.html
 
 [User projections you create in JavaScript](~/projections/user-defined-projections.md) have a bonus that debugging is easier via any browser that ships with debugging capabilities. The screenshots in this document show the use of Chrome, but we have tested debugging with all major browsers including Firefox, Edge and Safari.
 
-## Logging from within a Projection
+## Logging from within a projection
 
 For debugging purposes, projections includes a log method which, when called, sends messages to the configured Event Store logger (the default is `NLog`, to a file, and `stdout`).
 

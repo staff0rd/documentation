@@ -2,13 +2,13 @@
 outputFileName: index.html
 ---
 
-# Stream Metadata
+# Stream metadata
 
 By default streams you create in Event Store have no metadata associated with them. Internally, the metadata includes information such as the ACL of the stream, the maximum count and age for the events in the stream. Client code can also add information into stream metadata for use with projections or the client API.
 
 Stream metadata is stored internally as JSON, and you can access it over the HTTP API.
 
-## Reading Stream Metadata
+## Reading stream metadata
 
 To read the metadata, issue a `GET` request to the attached metadata resource, which is typically of the form:
 
@@ -50,7 +50,7 @@ If you have security enabled, reading metadata may require that you pass credent
 
 * * *
 
-## Writing Metadata
+## Writing metadata
 
 To update the metadata for a stream, issue a `POST` request to the metadata resource.
 
