@@ -19,7 +19,7 @@ items:
   source:
     id: ExpectedVersion
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -60,7 +60,7 @@ items:
   source:
     id: Any
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -91,7 +91,7 @@ items:
   source:
     id: NoStream
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -122,17 +122,29 @@ items:
   source:
     id: EmptyStream
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
   summary: "\nThe stream should exist but be empty when writing. If it does not exist or is not empty treat that as a concurrency problem.\n"
   example: []
   syntax:
-    content: public const int EmptyStream = -1
+    content: >-
+      [Obsolete("ExpectedVersion.EmptyStream has been deprecated. Use ExpectedVersion.NoStream instead")]
+
+      public const int EmptyStream = -1
     return:
       type: System.Int32
-    content.vb: Public Const EmptyStream As Integer = -1
+    content.vb: >-
+      <Obsolete("ExpectedVersion.EmptyStream has been deprecated. Use ExpectedVersion.NoStream instead")>
+
+      Public Const EmptyStream As Integer = -1
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ExpectedVersion.EmptyStream has been deprecated. Use ExpectedVersion.NoStream instead
   modifiers.csharp:
   - public
   - const
@@ -153,7 +165,7 @@ items:
   source:
     id: StreamExists
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ExpectedVersion.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
