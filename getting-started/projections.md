@@ -137,7 +137,7 @@ You create a projection by calling the projection API and providing it with the 
 
 ![Creating a projection with the Event Store Admin UI](~/assets/getting-started-create-projection.png)
 
-And to use the HTTP or .NET API:
+To use the HTTP or .NET API, pass the projection JSON file as a parameter of your request, along with any other settings:
 
 ### [HTTP API](#tab/tabid-create-proj-bash)
 

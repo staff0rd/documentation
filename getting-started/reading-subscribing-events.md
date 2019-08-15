@@ -85,9 +85,19 @@ You can use the HTTP API [to paginate](~/http-api/reading-streams.md#feed-paging
 
 A common operation is to subscribe to a stream and receive notifications for changes. As new events arrive, you continue following them.
 
-You can create subscriptions and watch events as they arrive under the _Persistent Subscriptions_ tab, or use an API method:
+You can create subscriptions and watch events as they arrive under the _Persistent Subscriptions_ tab, or use an API method.
+
+### Create subscription in the admin UI
+
+1. Click _Persistent Subscriptions_
+2. Enter a name for this subscription group (this can be any value you choose).
+3. Enter the name of the stream you want to subscribe to.
+4. Configure the other options. You can find more information about the options in the [.NET API PersistentSubscriptionSettings object](xref:EventStore.ClientAPI.PersistentSubscriptionSettings).
+5. Click _Create_ to create the new subscription.
 
 ![Subscriptions in the Admin UI](~/images/getting-started-subscriptions.png)
+
+### Create a subscription programmatically
 
 ### [HTTP API](#tab/tabid-create-sub-http)
 

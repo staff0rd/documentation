@@ -59,11 +59,21 @@ In all other cases you can run the Event Store binary or use our _run-node.sh_ s
 
 ### [Docker](#tab/tabid-3)
 
-Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/) available for any platform that supports Docker:
+Event Store has a Docker image available for any platform that supports Docker.
+
+Pull the Docker image:
+
+```bash
+docker pull eventstore/eventstore
+```
+
+Run the container:
 
 ```bash
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 ```
+
+Refer to the [image overview](https://hub.docker.com/r/eventstore/eventstore/) for more information.
 
 ### [Kubernetes](#tab/tabid-k8)
 

@@ -89,6 +89,8 @@ Event Store operates on a concept of Event Streams, and the first operation we l
 
 If you post to a stream that doesn't exist, Event Store creates it before adding the events.
 
+### Writing events using the admin UI
+
 You can write events using the Admin UI by clicking the _Stream Browser_ tab, the _Add Event_ button, filling in the form with relevant values and clicking the _Add_ button at the bottom of the page.
 
 ![Creating an event with the Admin UI interface](~/images/getting-started-add-event.gif)
@@ -96,6 +98,8 @@ You can write events using the Admin UI by clicking the _Stream Browser_ tab, th
 Open a text editor, copy and paste the following event definition, and save it as _event.json_.
 
 [!code-json[getting-started-write-event-json](~/code-examples/getting-started/event.json "The contents of event.json")]
+
+### Writing events programmatically
 
 ### [HTTP API](#tab/tabid-4)
 
