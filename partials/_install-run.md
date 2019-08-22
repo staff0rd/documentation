@@ -8,7 +8,6 @@
 The prerequisites for installing on Windows are:
 
 -   NET Framework 4.0+
--   Windows platform SDK with compilers (v7.1) or Visual C++ installed (only required for a full build)
 
 Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore-oss) available that you can install with the following command:
 
@@ -32,9 +31,11 @@ netsh http add urlacl url=http://+:2113/ user=DOMAIN\username
 
 For more information, refer to Microsoft's `add urlacl` [documentation](https://docs.microsoft.com/en-us/windows/win32/http/add-urlacl).
 
+To build Event Store from source, refer to the [Event Store README](https://github.com/EventStore/EventStore#windows).
+
 ### [Linux](#tab/tabid-2)
 
-The prerequisites for Installing on Linux are:
+The prerequisites for installing on Linux are:
 
 -   We recommend [Mono 5.16.0](https://www.mono-project.com/download/stable/), but other versions may also work.
 
@@ -98,5 +99,7 @@ brew cask install eventstore
 ```
 
 In each case you can run Event Store with the `eventstore` command, and stop it with `Ctrl+c`. To use the default database location you need to use `sudo`, or you can change the location with the `--db` parameter.
+
+To build Event Store from source, refer to the [Event Store README](https://github.com/EventStore/EventStore#mac-os-x).
 
 * * *
