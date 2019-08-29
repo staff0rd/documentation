@@ -49,6 +49,9 @@ sudo systemctl start eventstore
 
 When you install the Event Store package, the service doesn't start by default. This is to allow you to change the configuration, located at _/etc/eventstore/eventstore.conf_ and to prevent creating a default database.
 
+>[!TIP]
+> To start Event Store on port 80 as a service, refer to [Configuring your installation](~/server/configuring.md#start-as-a-service-on-a-custom-port)
+
 In all other cases you can run the Event Store binary or use our _run-node.sh_ shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store, which is necessary if you are planning to use projections.
 
 ```bash
