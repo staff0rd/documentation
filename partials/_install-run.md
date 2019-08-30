@@ -52,13 +52,7 @@ When you install the Event Store package, the service doesn't start by default. 
 >[!TIP]
 > To start Event Store on port 80 as a service, refer to [Configuring your installation](~/server/configuring.md#start-as-a-service-on-a-custom-port)
 
-In all other cases you can run the Event Store binary or use our _run-node.sh_ shell script which exports the environment variable `LD_LIBRARY_PATH` to include the installation path of Event Store, which is necessary if you are planning to use projections.
-
-```bash
-./run-node.sh --db ./ESData
-```
-
-> [!NOTE]
+> [!TIP]
 > We recommend that when using Linux you set the 'open file limit' to a high number. The precise value depends on your use case, but at least between `30,000` and `60,000`.
 
 ### [Docker](#tab/tabid-3)
