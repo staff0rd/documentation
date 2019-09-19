@@ -5,9 +5,10 @@ items:
   id: GossipSeed
   parent: EventStore.ClientAPI
   children:
-  - EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String)
+  - EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String,System.Boolean)
   - EventStore.ClientAPI.GossipSeed.EndPoint
   - EventStore.ClientAPI.GossipSeed.HostHeader
+  - EventStore.ClientAPI.GossipSeed.SeedOverTls
   langs:
   - csharp
   - vb
@@ -74,6 +75,37 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: EventStore.ClientAPI.GossipSeed.SeedOverTls
+  commentId: F:EventStore.ClientAPI.GossipSeed.SeedOverTls
+  id: SeedOverTls
+  parent: EventStore.ClientAPI.GossipSeed
+  langs:
+  - csharp
+  - vb
+  name: SeedOverTls
+  nameWithType: GossipSeed.SeedOverTls
+  fullName: EventStore.ClientAPI.GossipSeed.SeedOverTls
+  type: Field
+  source:
+    id: SeedOverTls
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
+    startLine: 19
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nIf Gossip should be requested\n"
+  example: []
+  syntax:
+    content: public readonly bool SeedOverTls
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly SeedOverTls As Boolean
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: EventStore.ClientAPI.GossipSeed.HostHeader
   commentId: F:EventStore.ClientAPI.GossipSeed.HostHeader
   id: HostHeader
@@ -88,7 +120,7 @@ items:
   source:
     id: HostHeader
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 19
+    startLine: 24
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -105,28 +137,28 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String)
-  commentId: M:EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String)
-  id: '#ctor(System.Net.IPEndPoint,System.String)'
+- uid: EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String,System.Boolean)
+  commentId: M:EventStore.ClientAPI.GossipSeed.#ctor(System.Net.IPEndPoint,System.String,System.Boolean)
+  id: '#ctor(System.Net.IPEndPoint,System.String,System.Boolean)'
   parent: EventStore.ClientAPI.GossipSeed
   langs:
   - csharp
   - vb
-  name: GossipSeed(IPEndPoint, String)
-  nameWithType: GossipSeed.GossipSeed(IPEndPoint, String)
-  fullName: EventStore.ClientAPI.GossipSeed.GossipSeed(System.Net.IPEndPoint, System.String)
+  name: GossipSeed(IPEndPoint, String, Boolean)
+  nameWithType: GossipSeed.GossipSeed(IPEndPoint, String, Boolean)
+  fullName: EventStore.ClientAPI.GossipSeed.GossipSeed(System.Net.IPEndPoint, System.String, System.Boolean)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
   summary: "\nCreates a new <xref href=\"EventStore.ClientAPI.GossipSeed\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: public GossipSeed(IPEndPoint endPoint, string hostHeader = "")
+    content: public GossipSeed(IPEndPoint endPoint, string hostHeader = "", bool seedOverTls = false)
     parameters:
     - id: endPoint
       type: System.Net.IPEndPoint
@@ -134,7 +166,10 @@ items:
     - id: hostHeader
       type: System.String
       description: The host header to be sent when requesting gossip. Defaults to String.Empty
-    content.vb: Public Sub New(endPoint As IPEndPoint, hostHeader As String = "")
+    - id: seedOverTls
+      type: System.Boolean
+      description: Specifies that eventstore should use https when connecting to gossip
+    content.vb: Public Sub New(endPoint As IPEndPoint, hostHeader As String = "", seedOverTls As Boolean = False)
   overload: EventStore.ClientAPI.GossipSeed.#ctor*
   modifiers.csharp:
   - public
@@ -451,6 +486,13 @@ references:
   name: System.Net
   nameWithType: System.Net
   fullName: System.Net
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: System.String
   commentId: T:System.String
   parent: System

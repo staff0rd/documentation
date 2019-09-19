@@ -24,6 +24,7 @@ items:
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetClusterGossipPort(System.Int32)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetDefaultUserCredentials(EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
+  - EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipTimeout(System.TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetHeartbeatInterval(System.TimeSpan)
@@ -34,6 +35,7 @@ items:
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetReconnectionDelayTo(System.TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.SetTimeoutCheckPeriodTo(System.TimeSpan)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.UseConsoleLogger
+  - EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient(EventStore.ClientAPI.Transport.Http.IHttpClient)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomLogger(EventStore.ClientAPI.ILogger)
   - EventStore.ClientAPI.ConnectionSettingsBuilder.UseDebugLogger
   - EventStore.ClientAPI.ConnectionSettingsBuilder.UseFileLogger(System.String)
@@ -49,7 +51,7 @@ items:
   source:
     id: ConnectionSettingsBuilder
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -74,6 +76,37 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient(EventStore.ClientAPI.Transport.Http.IHttpClient)
+  commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient(EventStore.ClientAPI.Transport.Http.IHttpClient)
+  id: UseCustomHttpClient(EventStore.ClientAPI.Transport.Http.IHttpClient)
+  parent: EventStore.ClientAPI.ConnectionSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: UseCustomHttpClient(IHttpClient)
+  nameWithType: ConnectionSettingsBuilder.UseCustomHttpClient(IHttpClient)
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient(EventStore.ClientAPI.Transport.Http.IHttpClient)
+  type: Method
+  source:
+    id: UseCustomHttpClient
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+    startLine: 49
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  syntax:
+    content: public ConnectionSettingsBuilder UseCustomHttpClient(IHttpClient client)
+    parameters:
+    - id: client
+      type: EventStore.ClientAPI.Transport.Http.IHttpClient
+    return:
+      type: EventStore.ClientAPI.ConnectionSettingsBuilder
+    content.vb: Public Function UseCustomHttpClient(client As IHttpClient) As ConnectionSettingsBuilder
+  overload: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomLogger(EventStore.ClientAPI.ILogger)
   commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomLogger(EventStore.ClientAPI.ILogger)
   id: UseCustomLogger(EventStore.ClientAPI.ILogger)
@@ -88,7 +121,7 @@ items:
   source:
     id: UseCustomLogger
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 52
+    startLine: 59
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -123,7 +156,7 @@ items:
   source:
     id: UseConsoleLogger
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 61
+    startLine: 68
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -153,7 +186,7 @@ items:
   source:
     id: UseDebugLogger
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 70
+    startLine: 77
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -183,7 +216,7 @@ items:
   source:
     id: UseFileLogger
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 79
+    startLine: 86
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -216,7 +249,7 @@ items:
   source:
     id: EnableVerboseLogging
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 88
+    startLine: 95
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -247,7 +280,7 @@ items:
   source:
     id: LimitOperationsQueueTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 98
+    startLine: 105
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -282,7 +315,7 @@ items:
   source:
     id: LimitConcurrentOperationsTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 110
+    startLine: 117
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -317,7 +350,7 @@ items:
   source:
     id: LimitAttemptsForOperationTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 122
+    startLine: 129
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -352,7 +385,7 @@ items:
   source:
     id: LimitRetriesForOperationTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 134
+    startLine: 141
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -387,7 +420,7 @@ items:
   source:
     id: KeepRetrying
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 145
+    startLine: 152
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -418,7 +451,7 @@ items:
   source:
     id: LimitReconnectionsTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 155
+    startLine: 162
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -453,7 +486,7 @@ items:
   source:
     id: KeepReconnecting
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 166
+    startLine: 173
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -484,7 +517,7 @@ items:
   source:
     id: PerformOnMasterOnly
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 175
+    startLine: 182
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -515,7 +548,7 @@ items:
   source:
     id: PerformOnAnyNode
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 184
+    startLine: 191
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -546,7 +579,7 @@ items:
   source:
     id: SetReconnectionDelayTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 194
+    startLine: 201
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -581,7 +614,7 @@ items:
   source:
     id: SetQueueTimeoutTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 204
+    startLine: 211
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -616,7 +649,7 @@ items:
   source:
     id: SetOperationTimeoutTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 214
+    startLine: 221
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -651,7 +684,7 @@ items:
   source:
     id: SetTimeoutCheckPeriodTo
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 224
+    startLine: 231
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -686,7 +719,7 @@ items:
   source:
     id: SetDefaultUserCredentials
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 235
+    startLine: 242
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -721,7 +754,7 @@ items:
   source:
     id: UseSslConnection
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 246
+    startLine: 253
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -759,7 +792,7 @@ items:
   source:
     id: FailOnNoServerResponse
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 258
+    startLine: 265
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -790,7 +823,7 @@ items:
   source:
     id: SetHeartbeatInterval
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 268
+    startLine: 275
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -825,7 +858,7 @@ items:
   source:
     id: SetHeartbeatTimeout
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 278
+    startLine: 285
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -860,7 +893,7 @@ items:
   source:
     id: WithConnectionTimeoutOf
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 288
+    startLine: 295
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -895,7 +928,7 @@ items:
   source:
     id: SetClusterDns
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 299
+    startLine: 306
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -934,7 +967,7 @@ items:
   source:
     id: SetMaxDiscoverAttempts
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 311
+    startLine: 318
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -973,7 +1006,7 @@ items:
   source:
     id: SetGossipTimeout
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 325
+    startLine: 332
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1008,11 +1041,11 @@ items:
   source:
     id: PreferRandomNode
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 334
+    startLine: 341
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
-  summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes. \n"
+  summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes.\n"
   example: []
   syntax:
     content: public ConnectionSettingsBuilder PreferRandomNode()
@@ -1039,11 +1072,11 @@ items:
   source:
     id: PreferSlaveNode
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 343
+    startLine: 350
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
-  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes. \n"
+  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes.\n"
   example: []
   syntax:
     content: public ConnectionSettingsBuilder PreferSlaveNode()
@@ -1070,7 +1103,7 @@ items:
   source:
     id: SetClusterGossipPort
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 362
+    startLine: 369
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1105,7 +1138,7 @@ items:
   source:
     id: SetGossipSeedEndPoints
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 382
+    startLine: 389
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1133,6 +1166,51 @@ items:
   - Public
   fullName.vb: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint())
   name.vb: SetGossipSeedEndPoints(IPEndPoint())
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  id: SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  parent: EventStore.ClientAPI.ConnectionSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: SetGossipSeedEndPoints(Boolean, IPEndPoint[])
+  nameWithType: ConnectionSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint[])
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint[])
+  type: Method
+  source:
+    id: SetGossipSeedEndPoints
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
+    startLine: 408
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nSets gossip seed endpoints for the client.\n\n<div class=\"NOTE\"><h5>note</h5><p>\nThis should be the external HTTP endpoint of the server, as it is required\nfor the client to exchange gossip with the server. The standard port is 2113.\n</p></div>\n\nIf the server requires a specific Host header to be sent as part of the gossip\nrequest, use the overload of this method taking <xref href=\"EventStore.ClientAPI.GossipSeed\" data-throw-if-not-resolved=\"false\"></xref> instead.\n"
+  example: []
+  syntax:
+    content: public ConnectionSettingsBuilder SetGossipSeedEndPoints(bool seedOverTls, params IPEndPoint[] gossipSeeds)
+    parameters:
+    - id: seedOverTls
+      type: System.Boolean
+      description: Specifies that eventstore should use https when connecting to gossip
+    - id: gossipSeeds
+      type: System.Net.IPEndPoint[]
+      description: <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref>s representing the endpoints of nodes from which to seed gossip.
+    return:
+      type: EventStore.ClientAPI.ConnectionSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.ClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
+    content.vb: Public Function SetGossipSeedEndPoints(seedOverTls As Boolean, ParamArray gossipSeeds As IPEndPoint()) As ConnectionSettingsBuilder
+  overload: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: If no gossip seeds are specified.
+  nameWithType.vb: ConnectionSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint())
+  name.vb: SetGossipSeedEndPoints(Boolean, IPEndPoint())
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   commentId: M:EventStore.ClientAPI.ConnectionSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   id: SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
@@ -1147,7 +1225,7 @@ items:
   source:
     id: SetGossipSeedEndPoints
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 397
+    startLine: 423
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1189,7 +1267,7 @@ items:
   source:
     id: op_Implicit
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 411
+    startLine: 437
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1229,7 +1307,7 @@ items:
   source:
     id: Build
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/ConnectionSettingsBuilder.cs
-    startLine: 419
+    startLine: 445
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -1543,6 +1621,28 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient*
+  commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient
+  name: UseCustomHttpClient
+  nameWithType: ConnectionSettingsBuilder.UseCustomHttpClient
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomHttpClient
+- uid: EventStore.ClientAPI.Transport.Http.IHttpClient
+  commentId: T:EventStore.ClientAPI.Transport.Http.IHttpClient
+  parent: EventStore.ClientAPI.Transport.Http
+  name: IHttpClient
+  nameWithType: IHttpClient
+  fullName: EventStore.ClientAPI.Transport.Http.IHttpClient
+- uid: EventStore.ClientAPI.ConnectionSettingsBuilder
+  commentId: T:EventStore.ClientAPI.ConnectionSettingsBuilder
+  parent: EventStore.ClientAPI
+  name: ConnectionSettingsBuilder
+  nameWithType: ConnectionSettingsBuilder
+  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder
+- uid: EventStore.ClientAPI.Transport.Http
+  commentId: N:EventStore.ClientAPI.Transport.Http
+  name: EventStore.ClientAPI.Transport.Http
+  nameWithType: EventStore.ClientAPI.Transport.Http
+  fullName: EventStore.ClientAPI.Transport.Http
 - uid: EventStore.ClientAPI.ILogger
   commentId: T:EventStore.ClientAPI.ILogger
   parent: EventStore.ClientAPI
@@ -1554,12 +1654,6 @@ references:
   name: UseCustomLogger
   nameWithType: ConnectionSettingsBuilder.UseCustomLogger
   fullName: EventStore.ClientAPI.ConnectionSettingsBuilder.UseCustomLogger
-- uid: EventStore.ClientAPI.ConnectionSettingsBuilder
-  commentId: T:EventStore.ClientAPI.ConnectionSettingsBuilder
-  parent: EventStore.ClientAPI
-  name: ConnectionSettingsBuilder
-  nameWithType: ConnectionSettingsBuilder
-  fullName: EventStore.ClientAPI.ConnectionSettingsBuilder
 - uid: EventStore.ClientAPI.ConnectionSettingsBuilder.UseConsoleLogger*
   commentId: Overload:EventStore.ClientAPI.ConnectionSettingsBuilder.UseConsoleLogger
   name: UseConsoleLogger

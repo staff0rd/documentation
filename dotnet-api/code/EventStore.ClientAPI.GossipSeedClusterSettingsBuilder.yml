@@ -11,6 +11,7 @@ items:
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferRandomNode
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(System.TimeSpan)
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts(System.Int32)
@@ -63,7 +64,7 @@ items:
   source:
     id: SetGossipSeedEndPoints
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -91,6 +92,51 @@ items:
   - Public
   fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint())
   name.vb: SetGossipSeedEndPoints(IPEndPoint())
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  id: SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+  parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+  langs:
+  - csharp
+  - vb
+  name: SetGossipSeedEndPoints(Boolean, IPEndPoint[])
+  nameWithType: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint[])
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint[])
+  type: Method
+  source:
+    id: SetGossipSeedEndPoints
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
+    startLine: 45
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nSets gossip seed endpoints for the client.\nTODO: This was a note.\nThis should be the external HTTP endpoint of the server, as it is required\nfor the client to exchange gossip with the server. The standard port is 2113.\n\nIf the server requires a specific Host header to be sent as part of the gossip\nrequest, use the overload of this method taking <xref href=\"EventStore.ClientAPI.GossipSeed\" data-throw-if-not-resolved=\"false\"></xref> instead.\n"
+  example: []
+  syntax:
+    content: public GossipSeedClusterSettingsBuilder SetGossipSeedEndPoints(bool tlsTerminatedEndpoints, params IPEndPoint[] gossipSeeds)
+    parameters:
+    - id: tlsTerminatedEndpoints
+      type: System.Boolean
+      description: Specifies that eventstore should use https when connecting to gossip
+    - id: gossipSeeds
+      type: System.Net.IPEndPoint[]
+      description: <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref>s representing the endpoints of nodes from which to seed gossip.
+    return:
+      type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
+      description: A <xref href="EventStore.ClientAPI.ClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
+    content.vb: Public Function SetGossipSeedEndPoints(tlsTerminatedEndpoints As Boolean, ParamArray gossipSeeds As IPEndPoint()) As GossipSeedClusterSettingsBuilder
+  overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: If no gossip seeds are specified.
+  nameWithType.vb: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint())
+  name.vb: SetGossipSeedEndPoints(Boolean, IPEndPoint())
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   id: SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
@@ -105,7 +151,7 @@ items:
   source:
     id: SetGossipSeedEndPoints
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 42
+    startLine: 60
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -147,7 +193,7 @@ items:
   source:
     id: KeepDiscovering
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 53
+    startLine: 71
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -178,7 +224,7 @@ items:
   source:
     id: SetMaxDiscoverAttempts
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 64
+    startLine: 82
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -217,7 +263,7 @@ items:
   source:
     id: SetGossipTimeout
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 78
+    startLine: 96
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -252,11 +298,11 @@ items:
   source:
     id: PreferRandomNode
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 87
+    startLine: 105
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
-  summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes. \n"
+  summary: "\nWhether to randomly choose a node that&apos;s alive from the known nodes.\n"
   example: []
   syntax:
     content: public GossipSeedClusterSettingsBuilder PreferRandomNode()
@@ -283,11 +329,11 @@ items:
   source:
     id: PreferSlaveNode
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 96
+    startLine: 114
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
-  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes. \n"
+  summary: "\nWhether to prioritize choosing a slave node that&apos;s alive from the known nodes.\n"
   example: []
   syntax:
     content: public GossipSeedClusterSettingsBuilder PreferSlaveNode()
@@ -314,7 +360,7 @@ items:
   source:
     id: op_Implicit
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 106
+    startLine: 124
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -354,7 +400,7 @@ items:
   source:
     id: Build
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeedClusterSettingsBuilder.cs
-    startLine: 113
+    startLine: 131
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -738,6 +784,13 @@ references:
   name: System.Net
   nameWithType: System.Net
   fullName: System.Net
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: EventStore.ClientAPI.GossipSeed[]
   isExternal: true
   name: GossipSeed[]
