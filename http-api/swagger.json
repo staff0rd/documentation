@@ -2372,7 +2372,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "A list of stats",
+            "schema": {
+              "$ref": "#/definitions/Stats"
+            }
           },
           "404": {
             "description": "Not found"
@@ -2845,50 +2848,374 @@
           }
         }
       }
+    },
+    "Stats": {
+      "properties": {
+        "proc": {
+          "type": "object",
+          "description": "Stats on the currently active process",
+          "properties": {
+            "startTime": {
+              "type": "string",
+              "description": "Time the associated process started"
+            },
+            "id": {
+              "type": "integer",
+              "description": "Id of the associated process"
+            },
+            "mem": {
+              "type": "integer",
+              "description": "Virtual memory used by the associated process"
+            },
+            "cpu": {
+              "type": "number",
+              "description": "CPU usage of the process"
+            },
+            "cpuScaled": {
+              "type": "number",
+              "description": "CPU usage of the process scaled by logical processor count"
+            },
+            "threadsCount": {
+              "type": "integer",
+              "description": "Number of threads used by process"
+            },
+            "contentionsRate": {
+              "type": "number",
+              "description": "The rate at which threads in the process attempt to acquire a managed lock unsuccessfully"
+            },
+            "thrownExceptionsRate": {
+              "type": "number",
+              "description": "Number of exceptions thrown per second"
+            },
+            "gc": {
+              "type": "object",
+              "description": "Stats on garbage collection",
+              "properties": {
+                "allocationSpeed": {
+                  "type": "number",
+                  "description": "Memory allocation speed"
+                },
+                "gen0ItemsCount": {
+                  "type": "number",
+                  "description": "Number of generation 0 garbage collections"
+                },
+                "gen0Size": {
+                  "type": "number",
+                  "description": "Generation 0 heap size"
+                },
+                "gen1ItemsCount": {
+                  "type": "number",
+                  "description": "Number of generation 1 garbage collections"
+                },
+                "gen1Size": {
+                  "type": "number",
+                  "description": "Generation 1 heap size"
+                },
+                "gen2ItemsCount": {
+                  "type": "number",
+                  "description": "Number of generation 2 garbage collections"
+                },
+                "gen2Size": {
+                  "type": "number",
+                  "description": "Generation 2 heap size"
+                },
+                "largeHeapSize": {
+                  "type": "number",
+                  "description": "Large object heap size"
+                },
+                "timeInGc": {
+                  "type": "number",
+                  "description": "Percentage of time in garbage collection"
+                },
+                "totalBytesInHeaps": {
+                  "type": "number",
+                  "description": "Total bytes in all heaps"
+                }
+              }
+            },
+            "diskIo": {
+              "type": "object",
+              "description": "Disk input and output stats",
+              "properties": {
+                "readBytes": {
+                  "type": "number",
+                  "description": "The number of bytes read by Event Store since server start"
+                },
+                "writtenBytes": {
+                  "type": "number",
+                  "description": "The number of bytes written by Event Store since server start"
+                },
+                "readOps": {
+                  "type": "number",
+                  "description": "The number of read operations by Event Store since server start"
+                },
+                "writeOps": {
+                  "type": "number",
+                  "description": "The number of write operations by Event Store since server start"
+                }
+              }
+            },
+            "tcp": {
+              "type": "object",
+              "description": "TCP connection stats",
+              "properties": {
+                "connections": {
+                  "type": "integer",
+                  "description": "Number of TCP connections to Event Store"
+                },
+                "receivingSpeed": {
+                  "type": "string",
+                  "description": "Receiving speed in bytes per second"
+                },
+                "sendingSpeed": {
+                  "type": "number",
+                  "description": "Sending speed in bytes per second"
+                },
+                "inSend": {
+                  "type": "number",
+                  "description": "Number of bytes sent to connections but not yet acknowledged by the receiving party"
+                },
+                "measureTime": {
+                  "type": "number",
+                  "description": "Time elapsed since last stats read"
+                },
+                "pendingReceived": {
+                  "type": "number",
+                  "description": "Number of bytes waiting to be received by connections"
+                },
+                "pendingSend": {
+                  "type": "number",
+                  "description": "Number of bytes waiting to be sent to connections"
+                },
+                "receivedBytesSinceLastRun": {
+                  "type": "number",
+                  "description": "Total bytes received by TCP connections since last run"
+                },
+                "receivedBytesTotal": {
+                  "type": "number",
+                  "description": "Total bytes received by TCP connections"
+                },
+                "sentBytesSinceLastRun": {
+                  "type": "number",
+                  "description": "Total bytes sent to TCP connections since last run"
+                },
+                "sentBytesTotal": {
+                  "type": "number",
+                  "description": "Total bytes sent from TCP connections"
+                }
+              }
+            }
+          }
+        },
+        "sys": {
+          "type": "object",
+          "description": "System usage stats",
+          "properties": {
+            "cpu": {
+              "type": "number",
+              "description": "Total CPU usage in percentage"
+            },
+            "freeMem": {
+              "type": "number",
+              "description": "Free memory in bytes"
+            },
+            "drive": {
+              "type": "object",
+              "description": "Drive usage stats",
+              "properties": {
+                "driveName": {
+                  "type": "object",
+                  "description": "Drive path",
+                  "properties": {
+                    "availableBytes": {
+                      "type": "number",
+                      "description": "Remaining bytes of space available to Event Store"
+                    },
+                    "totalBytes": {
+                      "type": "number",
+                      "description": "Total bytes of space available to Event Store"
+                    },
+                    "usage": {
+                      "type": "number",
+                      "description": "Percentage usage of space used by Event Store"
+                    },
+                    "usedBytes": {
+                      "type": "number",
+                      "description": "Total bytes of space used by Event Store"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "es": {
+          "type": "object",
+          "description": "",
+          "properties": {
+            "checksum": {
+              "type": "number",
+              "description": ""
+            },
+            "checksumNonFlushed": {
+              "type": "number",
+              "description": ""
+            },
+            "queue": {
+              "type": "object",
+              "description": "Multiple queue instance stats",
+              "properties": {
+                "queueName": {
+                  "type": "string",
+                  "description": "Queue name"
+                },
+                "groupName": {
+                  "type": "string",
+                  "description": "Group queue is a member of"
+                },
+                "avgItemsPerSecond": {
+                  "type": "integer",
+                  "description": "The average number of items processed per second by the queue"
+                },
+                "avgProcessingTime": {
+                  "type": "number",
+                  "description": "Average number of items processed per second"
+                },
+                "currentIdleTime": {
+                  "type": "string",
+                  "description": "Time elapsed since queue went idle"
+                },
+                "currentItemProcessingTime": {
+                  "type": "string",
+                  "description": "Time elapsed processing the current item"
+                },
+                "idleTimePercent": {
+                  "type": "number",
+                  "description": "Percentage of time queue spent idle"
+                },
+                "length": {
+                  "type": "integer",
+                  "description": "Number of items in the queue"
+                },
+                "lengthCurrentTryPeak": {
+                  "type": "number",
+                  "description": "The highest number of items in the queue within the past 100ms"
+                },
+                "lengthLifetimePeak": {
+                  "type": "number",
+                  "description": "The highest number of items in the queue"
+                },
+                "totalItemsProcessed": {
+                  "type": "number",
+                  "description": "The total number of items processed by the queue"
+                },
+                "inProgressMessage": {
+                  "type": "string",
+                  "description": "Current message type queue is processing"
+                },
+                "lastProcessedMessage": {
+                  "type": "string",
+                  "description": "Last message type processed"
+                }
+              }
+            },
+            "writer": {
+              "type": "object",
+              "description": "Storage writing stats",
+              "properties": {
+                "lastFlushSize": {
+                  "type": "number",
+                  "description": "Last flush size"
+                },
+                "lastFlushDelayMs": {
+                  "type": "number",
+                  "description": "Last flush delay in ms"
+                },
+                "meanFlushSize": {
+                  "type": "number",
+                  "description": "Average flush size"
+                },
+                "meanFlushDelayMs": {
+                  "type": "number",
+                  "description": "Average flush delay in ms"
+                },
+                "maxFlushSize": {
+                  "type": "number",
+                  "description": "Max flush size"
+                },
+                "maxFlushDelayMs": {
+                  "type": "number",
+                  "description": "Max flush delay in ms"
+                },
+                "queuedFlushMessages": {
+                  "type": "integer",
+                  "description": "Queued flush messages"
+                }
+              }
+            },
+            "readIndex": {
+              "type": "object",
+              "description": "",
+              "properties": {
+                "cachedRecord": {
+                  "type": "number",
+                  "description": "Number of cached record reads"
+                },
+                "notCachedRecord": {
+                  "type": "number",
+                  "description": "Number of uncached record reads"
+                },
+                "cachedStreamInfo": {
+                  "type": "number",
+                  "description": ""
+                },
+                "notCachedStreamInfo": {
+                  "type": "number",
+                  "description": ""
+                },
+                "cachedTransInfo": {
+                  "type": "number",
+                  "description": ""
+                },
+                "notCachedTransInfo": {
+                  "type": "number",
+                  "description": ""
+                },
+                "hashCollisions": {
+                  "type": "number",
+                  "description": ""
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "tags": [
     {
       "name": "Streams",
-      "description": "Endpoints for Stream operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Stream operations"
     },
     {
       "name": "Subscriptions",
-      "description": "Endpoints for Subscription operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Subscription operations"
     },
     {
       "name": "Projections",
-      "description": "Endpoints for Projection operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Projection operations"
     },
     {
       "name": "Admin",
-      "description": "Endpoints for Admin operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Admin operations"
     },
     {
       "name": "Info",
-      "description": "Endpoints for Info operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for Info operations"
     },
     {
       "name": "Users",
-      "description": "Endpoints for User operations",
-      "externalDocs": {
-        "url": "http://docs.my-api.com/pet-operations.htm"
-      }
+      "description": "Endpoints for User operations"
     },
     {
       "name": "Stats",
