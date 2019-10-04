@@ -12,4 +12,4 @@ If you're familiar with event sourcing and want to know how to test Event Store,
 
 ## Already using Event Store?
 
-If you're already using Event Store, then welcome back and hopefully you can find what you need under the other sub-sections you can see in the left hand navigation menu, you can also try using the search box in the top navigation bar. If there's still something missing, then [create an issue on GitHub](https://github.com/EventStore/docs.geteventstore.com/issues/new), use the 'Improve this Doc' link on the top right on any documentation page to make a pull request, or contact [docs@eventstore.org](email:docs@eventstore.org).
+If you're already using Event Store, then welcome back and hopefully you can find what you need under the other sub-sections you can see in the left hand navigation menu, you can also try using the search box in the top navigation bar. If there's still something missing, then [create an issue on GitHub](https://github.com/EventStore/documentation/issues/new), use the 'Improve this Doc' link on the top right on any documentation page to make a pull request, or contact [docs@eventstore.org](email:docs@eventstore.org).

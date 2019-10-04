@@ -14,7 +14,7 @@ This is the bulk of documentation, and where you mostly likely want to contribut
 
 ### HTTP API Spec
 
-In additions to conceptual docs on the HTTP API, the documentation includes an [OpenAPI spec file](https://github.com/EventStore/docs.geteventstore.com/blob/master/http-api/swagger.yaml) that [DocFX renders to HTML](https://dotnet.github.io/docfx/tutorial/intro_rest_api_documentation.html) when building the site. Any contributions to that file are welcome, read the [OpenAPI spec](https://swagger.io/docs/specification/about/) for more details on the format of that file.
+In additions to conceptual docs on the HTTP API, the documentation includes an [OpenAPI spec file](https://github.com/EventStore/documentation/blob/master/http-api/swagger.json) that [DocFX renders to HTML](https://dotnet.github.io/docfx/tutorial/intro_rest_api_documentation.html) when building the site. Any contributions to that file are welcome, read the [OpenAPI spec](https://swagger.io/docs/specification/about/) for more details on the format of that file.
 
 ### Code Documentation
 
