@@ -4,7 +4,7 @@ outputFileName: index.html
 
 # Stream metadata
 
-By default streams you create in Event Store have no metadata associated with them. Internally, the metadata includes information such as the ACL of the stream, the maximum count and age for the events in the stream. Client code can also add information into stream metadata for use with projections or the client API.
+Every stream in Event Store has metadata stream associated with it, prefixed by `$$`, so the metadata stream from a stream called `foo` is `$$foo`. Internally, the metadata includes information such as the ACL of the stream, the maximum count and age for the events in the stream. Client code can also add information into stream metadata for use with projections or the client API.
 
 Stream metadata is stored internally as JSON, and you can access it over the HTTP API.
 

@@ -6,7 +6,7 @@ outputFileName: index.html
 
 ## Stream metadata
 
-Every stream in Event Store has metadata associated with it. Event Store allows you to change some values in the metadata, and you can write your own data into stream metadata that you can refer to in your code.
+Every stream in Event Store has metadata stream associated with it, prefixed by `$$`, so the metadata stream from a stream called `foo` is `$$foo`. Event Store allows you to change some values in the metadata, and you can write your own data into stream metadata that you can refer to in your code.
 
 ### Reserved names
 
