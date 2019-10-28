@@ -318,7 +318,7 @@ Each handler is provided with the current state of the projection as well as the
     </thead>
     <tbody>
          <tr>
-            <td><code>`emit(streamId, eventName, eventBody, metadata)`</code></td>
+            <td><code>`emit(streamId, eventType, eventBody, metadata)`</code></td>
             <td>Writes an event to the designated stream</td>
             <td>
             </td>
