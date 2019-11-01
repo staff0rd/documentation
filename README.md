@@ -12,7 +12,7 @@ The Event Store documentation consists of different components, and the document
 
 This is the bulk of documentation, and where you mostly likely want to contribute. It uses 'DocFX flavored Markdown'. It is similar to standard or GitHub Flavored Markdown, but adds features useful for documentation you can find details of [here](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-2%2Ctabid-b).
 
-### HTTP API Spec
+### HTTP API Spe
 
 In additions to conceptual docs on the HTTP API, the documentation includes an [OpenAPI spec file](https://github.com/EventStore/documentation/blob/master/http-api/swagger.json) that [DocFX renders to HTML](https://dotnet.github.io/docfx/tutorial/intro_rest_api_documentation.html) when building the site. Any contributions to that file are welcome, read the [OpenAPI spec](https://swagger.io/docs/specification/about/) for more details on the format of that file.
 
