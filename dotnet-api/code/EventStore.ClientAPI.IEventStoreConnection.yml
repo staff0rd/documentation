@@ -63,6 +63,7 @@ items:
     content: 'public interface IEventStoreConnection : IDisposable'
     content.vb: >-
       Public Interface IEventStoreConnection
+
           Inherits IDisposable
   inheritedMembers:
   - System.IDisposable.Dispose
@@ -879,7 +880,7 @@ items:
     you attempt to connect to a group that does not exist you will be given an exception.
   example: []
   syntax:
-    content: EventStorePersistentSubscriptionBase ConnectToPersistentSubscription(string stream, string groupName, Func<EventStorePersistentSubscriptionBase, ResolvedEvent, int? , Task> eventAppeared, Action<EventStorePersistentSubscriptionBase, SubscriptionDropReason, Exception> subscriptionDropped = null, UserCredentials userCredentials = null, int bufferSize = 10, bool autoAck = true)
+    content: EventStorePersistentSubscriptionBase ConnectToPersistentSubscription(string stream, string groupName, Func<EventStorePersistentSubscriptionBase, ResolvedEvent, int?, Task> eventAppeared, Action<EventStorePersistentSubscriptionBase, SubscriptionDropReason, Exception> subscriptionDropped = null, UserCredentials userCredentials = null, int bufferSize = 10, bool autoAck = true)
     parameters:
     - id: stream
       type: System.String
@@ -944,7 +945,7 @@ items:
     you attempt to connect to a group that does not exist you will be given an exception.
   example: []
   syntax:
-    content: Task<EventStorePersistentSubscriptionBase> ConnectToPersistentSubscriptionAsync(string stream, string groupName, Func<EventStorePersistentSubscriptionBase, ResolvedEvent, int? , Task> eventAppeared, Action<EventStorePersistentSubscriptionBase, SubscriptionDropReason, Exception> subscriptionDropped = null, UserCredentials userCredentials = null, int bufferSize = 10, bool autoAck = true)
+    content: Task<EventStorePersistentSubscriptionBase> ConnectToPersistentSubscriptionAsync(string stream, string groupName, Func<EventStorePersistentSubscriptionBase, ResolvedEvent, int?, Task> eventAppeared, Action<EventStorePersistentSubscriptionBase, SubscriptionDropReason, Exception> subscriptionDropped = null, UserCredentials userCredentials = null, int bufferSize = 10, bool autoAck = true)
     parameters:
     - id: stream
       type: System.String
