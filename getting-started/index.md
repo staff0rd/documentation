@@ -42,15 +42,13 @@ using EventStore.ClientAPI;
 <dependency>
     <groupId>com.geteventstore</groupId>
     <artifactId>eventstore-client_2.12</artifactId>
-    <version>5.0.8</version>
+    <version>7.0.2</version>
 </dependency>
 ```
 
-And require it in your code:
+And import it in your code.
 
-```java
-import eventstore.*;
-```
+<!-- TODO: Add more detail -->
 
 * * *
 
@@ -76,7 +74,7 @@ When using the .NET client, you also need to give the connection a name.
 
 ### [JVM client](#tab/tabid-jvm-client-connect)
 
-[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample//WriteEventExample.java?start=17&end=22)]
+[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample//WriteEventExample.java?start=14&end=15)]
 
 > [!NOTE]
 > For our JVM examples we use [akka](https://akka.io), a toolkit for building highly concurrent and distributed JVM applications.
@@ -124,9 +122,9 @@ To use the .NET API, use the following method, passing the name of the stream, t
 
 ### [JVM client](#tab/tabid-6)
 
-To use the JVM Client, use the following method, passing the name of the stream, the version, and the events to write:
+To use the JVM Client, use the following method, passing the name of the stream, the version, and the events to write. You also need an Akka `AbstractActor` to return the response from Event Store:
 
-[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteEventExample.java?start=23&end=36)]
+[!code-java[getting-started-connection](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteEventExample.java?start=18&end=41)]
 
 * * *
 

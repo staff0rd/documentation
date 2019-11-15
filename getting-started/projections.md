@@ -111,7 +111,7 @@ Add the sample data to four different streams:
 
 ### [JVM client](#tab/tabid-jvm-api)
 
-[!code-java[getting-started-write-multiple](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteMultipleEventsExample.java?start=41&end=74)]
+[!code-java[getting-started-write-multiple](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/WriteMultipleEventsExample.java?start=46&end=79])]
 
 * * *
 

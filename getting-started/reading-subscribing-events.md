@@ -40,7 +40,7 @@ To use the .NET API, use the following method passing the stream name, the start
 
 To use the JVM client, use the following method passing the stream name, the start point in the stream, and whether to follow links to the event data:
 
-[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/ReadEventExample.java?start=21&end=29)]
+[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/ReadMultipleEventsExample.java?start=21&end=28)]
 
 * * *
 
@@ -112,7 +112,7 @@ You can create subscriptions and watch events as they arrive under the _Persiste
 
 ### [JVM client API](#tab/tabid-create-sub-java)
 
-[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/SubscriptionExample.java?start=15&end=35)]
+[!code-java[getting-started-read](../../EventStore.Samples.Java/src/main/java/org/eventstore/sample/SubscriptionExample.java?start=13&end=33)]
 
 * * *
 
