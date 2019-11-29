@@ -1,0 +1,394 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventFilter
+  id: EventFilter
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
+  - EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
+  - EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
+  - EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification(System.String)
+  - EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource(System.Boolean,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: EventFilter
+  nameWithType: EventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter
+  type: Class
+  source:
+    id: EventFilter
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 3
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public abstract class EventFilter : object'
+    content.vb: >-
+      Public MustInherit Class EventFilter
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Projections.Core.Services.Processing.BypassingEventFilter
+  - EventStore.Projections.Core.Services.Processing.CategoryEventFilter
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventFilter
+  - EventStore.Projections.Core.Services.Processing.MultiStreamEventFilter
+  - EventStore.Projections.Core.Services.Processing.StreamEventFilter
+  - EventStore.Projections.Core.Services.Processing.TransactionFileEventFilter
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.#ctor(System.Boolean,System.Boolean,HashSet{System.String})
+  id: '#ctor(System.Boolean,System.Boolean,HashSet{System.String})'
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: EventFilter(Boolean, Boolean, HashSet<String>)
+  nameWithType: EventFilter.EventFilter(Boolean, Boolean, HashSet<String>)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, HashSet<System.String>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected EventFilter(bool allEvents, bool includeDeletedStreamEvents, HashSet<string> events)
+    parameters:
+    - id: allEvents
+      type: System.Boolean
+      description: ''
+    - id: includeDeletedStreamEvents
+      type: System.Boolean
+      description: "indicates whether non-link stream tombstone or \nmetastream stream deleted events should be included. Links resolved into metastream \nstream deleted events are not restricted"
+    - id: events
+      type: HashSet{System.String}
+      description: ''
+    content.vb: Protected Sub New(allEvents As Boolean, includeDeletedStreamEvents As Boolean, events As HashSet(Of String))
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor*
+  nameWithType.vb: EventFilter.EventFilter(Boolean, Boolean, HashSet(Of String))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter(System.Boolean, System.Boolean, HashSet(Of System.String))
+  name.vb: EventFilter(Boolean, Boolean, HashSet(Of String))
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean,System.String,System.String,System.Boolean)
+  id: Passes(System.Boolean,System.String,System.String,System.Boolean)
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: Passes(Boolean, String, String, Boolean)
+  nameWithType: EventFilter.Passes(Boolean, String, String, Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.Passes(System.Boolean, System.String, System.String, System.Boolean)
+  type: Method
+  source:
+    id: Passes
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool Passes(bool resolvedFromLinkTo, string eventStreamId, string eventName, bool isStreamDeletedEvent = false)
+    parameters:
+    - id: resolvedFromLinkTo
+      type: System.Boolean
+    - id: eventStreamId
+      type: System.String
+    - id: eventName
+      type: System.String
+    - id: isStreamDeletedEvent
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function Passes(resolvedFromLinkTo As Boolean, eventStreamId As String, eventName As String, isStreamDeletedEvent As Boolean = False) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.Passes*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
+  id: DeletedNotificationPasses(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: DeletedNotificationPasses(String)
+  nameWithType: EventFilter.DeletedNotificationPasses(String)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses(System.String)
+  type: Method
+  source:
+    id: DeletedNotificationPasses
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected abstract bool DeletedNotificationPasses(string positionStreamId)
+    parameters:
+    - id: positionStreamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected MustOverride Function DeletedNotificationPasses(positionStreamId As String) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource(System.Boolean,System.String,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource(System.Boolean,System.String,System.String)
+  id: PassesSource(System.Boolean,System.String,System.String)
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: PassesSource(Boolean, String, String)
+  nameWithType: EventFilter.PassesSource(Boolean, String, String)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource(System.Boolean, System.String, System.String)
+  type: Method
+  source:
+    id: PassesSource
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 30
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool PassesSource(bool resolvedFromLinkTo, string positionStreamId, string eventType)
+    parameters:
+    - id: resolvedFromLinkTo
+      type: System.Boolean
+    - id: positionStreamId
+      type: System.String
+    - id: eventType
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function PassesSource(resolvedFromLinkTo As Boolean, positionStreamId As String, eventType As String) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
+  id: GetCategory(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: GetCategory(String)
+  nameWithType: EventFilter.GetCategory(String)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory(System.String)
+  type: Method
+  source:
+    id: GetCategory
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract string GetCategory(string positionStreamId)
+    parameters:
+    - id: positionStreamId
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public MustOverride Function GetCategory(positionStreamId As String) As String
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification(System.String)
+  id: PassesDeleteNotification(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.EventFilter
+  langs:
+  - csharp
+  - vb
+  name: PassesDeleteNotification(String)
+  nameWithType: EventFilter.PassesDeleteNotification(String)
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification(System.String)
+  type: Method
+  source:
+    id: PassesDeleteNotification
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventFilter.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool PassesDeleteNotification(string positionStreamId)
+    parameters:
+    - id: positionStreamId
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function PassesDeleteNotification(positionStreamId As String) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.#ctor
+  name: EventFilter
+  nameWithType: EventFilter.EventFilter
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.EventFilter
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: HashSet{System.String}
+  commentId: '!:HashSet{System.String}'
+  definition: HashSet`1
+  name: HashSet<String>
+  nameWithType: HashSet<String>
+  fullName: HashSet<System.String>
+  nameWithType.vb: HashSet(Of String)
+  fullName.vb: HashSet(Of System.String)
+  name.vb: HashSet(Of String)
+  spec.csharp:
+  - uid: HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: HashSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: HashSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: HashSet`1
+  isExternal: true
+  name: HashSet<>
+  nameWithType: HashSet<>
+  fullName: HashSet<>
+  nameWithType.vb: HashSet(Of )
+  fullName.vb: HashSet(Of )
+  name.vb: HashSet(Of )
+  spec.csharp:
+  - uid: HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: HashSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: HashSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.Passes*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.Passes
+  name: Passes
+  nameWithType: EventFilter.Passes
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.Passes
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses
+  name: DeletedNotificationPasses
+  nameWithType: EventFilter.DeletedNotificationPasses
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.DeletedNotificationPasses
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource
+  name: PassesSource
+  nameWithType: EventFilter.PassesSource
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesSource
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory
+  name: GetCategory
+  nameWithType: EventFilter.GetCategory
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.GetCategory
+- uid: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification
+  name: PassesDeleteNotification
+  nameWithType: EventFilter.PassesDeleteNotification
+  fullName: EventStore.Projections.Core.Services.Processing.EventFilter.PassesDeleteNotification

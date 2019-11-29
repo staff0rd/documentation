@@ -232,3 +232,824 @@
     name: UserDetails
   - uid: EventStore.ClientAPI.UserManagement.UsersManager
     name: UsersManager
+- uid: EventStore.Projections.Core
+  name: EventStore.Projections.Core
+  items:
+  - uid: EventStore.Projections.Core.ProjectionCoreWorkersNode
+    name: ProjectionCoreWorkersNode
+  - uid: EventStore.Projections.Core.ProjectionManagerNode
+    name: ProjectionManagerNode
+  - uid: EventStore.Projections.Core.ProjectionsStandardComponents
+    name: ProjectionsStandardComponents
+  - uid: EventStore.Projections.Core.ProjectionsSubsystem
+    name: ProjectionsSubsystem
+  - uid: EventStore.Projections.Core.ProjectionWorkerNode
+    name: ProjectionWorkerNode
+- uid: EventStore.Projections.Core.Common
+  name: EventStore.Projections.Core.Common
+  items:
+  - uid: EventStore.Projections.Core.Common.AllowedWritesInFlight
+    name: AllowedWritesInFlight
+  - uid: EventStore.Projections.Core.Common.ProjectionConsts
+    name: ProjectionConsts
+- uid: EventStore.Projections.Core.EventReaders.Feeds
+  name: EventStore.Projections.Core.EventReaders.Feeds
+  items:
+  - uid: EventStore.Projections.Core.EventReaders.Feeds.FeedReader
+    name: FeedReader
+  - uid: EventStore.Projections.Core.EventReaders.Feeds.FeedReaderService
+    name: FeedReaderService
+- uid: EventStore.Projections.Core.Messages
+  name: EventStore.Projections.Core.Messages
+  items:
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionCheckpointWriterMessage
+    name: CoreProjectionCheckpointWriterMessage
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionCheckpointWriterMessage.CheckpointWritten
+    name: CoreProjectionCheckpointWriterMessage.CheckpointWritten
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionCheckpointWriterMessage.RestartRequested
+    name: CoreProjectionCheckpointWriterMessage.RestartRequested
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    name: CoreProjectionManagementControlMessage
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage
+    name: CoreProjectionManagementMessage
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.CreateAndPrepare
+    name: CoreProjectionManagementMessage.CreateAndPrepare
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.CreateAndPrepareSlave
+    name: CoreProjectionManagementMessage.CreateAndPrepareSlave
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.CreatePrepared
+    name: CoreProjectionManagementMessage.CreatePrepared
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Dispose
+    name: CoreProjectionManagementMessage.Dispose
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetResult
+    name: CoreProjectionManagementMessage.GetResult
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.GetState
+    name: CoreProjectionManagementMessage.GetState
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Kill
+    name: CoreProjectionManagementMessage.Kill
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.LoadStopped
+    name: CoreProjectionManagementMessage.LoadStopped
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.SlaveProjectionReaderAssigned
+    name: CoreProjectionManagementMessage.SlaveProjectionReaderAssigned
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Start
+    name: CoreProjectionManagementMessage.Start
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Stop
+    name: CoreProjectionManagementMessage.Stop
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementMessageBase
+    name: CoreProjectionManagementMessageBase
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage
+    name: CoreProjectionStatusMessage
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.CoreProjectionStatusMessageBase
+    name: CoreProjectionStatusMessage.CoreProjectionStatusMessageBase
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.DataReportBase
+    name: CoreProjectionStatusMessage.DataReportBase
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Faulted
+    name: CoreProjectionStatusMessage.Faulted
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Prepared
+    name: CoreProjectionStatusMessage.Prepared
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ProjectionWorkerStarted
+    name: CoreProjectionStatusMessage.ProjectionWorkerStarted
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ResultReport
+    name: CoreProjectionStatusMessage.ResultReport
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Started
+    name: CoreProjectionStatusMessage.Started
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
+    name: CoreProjectionStatusMessage.StateReport
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
+    name: CoreProjectionStatusMessage.StatisticsReport
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+    name: CoreProjectionStatusMessage.Stopped
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage
+    name: EventReaderSubscriptionMessage
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CheckpointSuggested
+    name: EventReaderSubscriptionMessage.CheckpointSuggested
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
+    name: EventReaderSubscriptionMessage.CommittedEventReceived
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.EofReached
+    name: EventReaderSubscriptionMessage.EofReached
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.Failed
+    name: EventReaderSubscriptionMessage.Failed
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.NotAuthorized
+    name: EventReaderSubscriptionMessage.NotAuthorized
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.PartitionDeleted
+    name: EventReaderSubscriptionMessage.PartitionDeleted
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.PartitionEofReached
+    name: EventReaderSubscriptionMessage.PartitionEofReached
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.PartitionMeasured
+    name: EventReaderSubscriptionMessage.PartitionMeasured
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.ProgressChanged
+    name: EventReaderSubscriptionMessage.ProgressChanged
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.ReaderAssignedReader
+    name: EventReaderSubscriptionMessage.ReaderAssignedReader
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.SubscriptionStarted
+    name: EventReaderSubscriptionMessage.SubscriptionStarted
+  - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessageBase
+    name: EventReaderSubscriptionMessageBase
+  - uid: EventStore.Projections.Core.Messages.ICoreProjection
+    name: ICoreProjection
+  - uid: EventStore.Projections.Core.Messages.IEmittedStreamContainer
+    name: IEmittedStreamContainer
+  - uid: EventStore.Projections.Core.Messages.IProjectionCheckpointManager
+    name: IProjectionCheckpointManager
+  - uid: EventStore.Projections.Core.Messages.IQuerySources
+    name: IQuerySources
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage
+    name: ProjectionCoreServiceMessage
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
+    name: ProjectionCoreServiceMessage.Connected
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick
+    name: ProjectionCoreServiceMessage.CoreTick
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore
+    name: ProjectionCoreServiceMessage.StartCore
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
+    name: ProjectionCoreServiceMessage.StopCore
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
+    name: ProjectionCoreServiceMessage.SubComponentStarted
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped
+    name: ProjectionCoreServiceMessage.SubComponentStopped
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage
+    name: ProjectionManagementMessage
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command
+    name: ProjectionManagementMessage.Command
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Abort
+    name: ProjectionManagementMessage.Command.Abort
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage
+    name: ProjectionManagementMessage.Command.ControlMessage
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Delete
+    name: ProjectionManagementMessage.Command.Delete
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Disable
+    name: ProjectionManagementMessage.Command.Disable
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Enable
+    name: ProjectionManagementMessage.Command.Enable
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetConfig
+    name: ProjectionManagementMessage.Command.GetConfig
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetQuery
+    name: ProjectionManagementMessage.Command.GetQuery
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetResult
+    name: ProjectionManagementMessage.Command.GetResult
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
+    name: ProjectionManagementMessage.Command.GetState
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetStatistics
+    name: ProjectionManagementMessage.Command.GetStatistics
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
+    name: ProjectionManagementMessage.Command.Post
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
+    name: ProjectionManagementMessage.Command.Reset
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
+    name: ProjectionManagementMessage.Command.SetRunAs
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs.SetRemove
+    name: ProjectionManagementMessage.Command.SetRunAs.SetRemove
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections
+    name: ProjectionManagementMessage.Command.StartSlaveProjections
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateConfig
+    name: ProjectionManagementMessage.Command.UpdateConfig
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.UpdateQuery
+    name: ProjectionManagementMessage.Command.UpdateQuery
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Conflict
+    name: ProjectionManagementMessage.Conflict
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal
+    name: ProjectionManagementMessage.Internal
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.CleanupExpired
+    name: ProjectionManagementMessage.Internal.CleanupExpired
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.Deleted
+    name: ProjectionManagementMessage.Internal.Deleted
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.ReadTimeout
+    name: ProjectionManagementMessage.Internal.ReadTimeout
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Internal.RegularTimeout
+    name: ProjectionManagementMessage.Internal.RegularTimeout
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.NotAuthorized
+    name: ProjectionManagementMessage.NotAuthorized
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.NotFound
+    name: ProjectionManagementMessage.NotFound
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.OperationFailed
+    name: ProjectionManagementMessage.OperationFailed
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionConfig
+    name: ProjectionManagementMessage.ProjectionConfig
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionDataBase
+    name: ProjectionManagementMessage.ProjectionDataBase
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery
+    name: ProjectionManagementMessage.ProjectionQuery
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionResult
+    name: ProjectionManagementMessage.ProjectionResult
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionState
+    name: ProjectionManagementMessage.ProjectionState
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ReaderReady
+    name: ProjectionManagementMessage.ReaderReady
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RegisterSystemProjection
+    name: ProjectionManagementMessage.RegisterSystemProjection
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RequestSystemProjections
+    name: ProjectionManagementMessage.RequestSystemProjections
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.RunAs
+    name: ProjectionManagementMessage.RunAs
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted
+    name: ProjectionManagementMessage.SlaveProjectionsStarted
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting
+    name: ProjectionManagementMessage.Starting
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Statistics
+    name: ProjectionManagementMessage.Statistics
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Updated
+    name: ProjectionManagementMessage.Updated
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesDefinition
+    name: QuerySourcesDefinition
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesDefinitionOptions
+    name: QuerySourcesDefinitionOptions
+  - uid: EventStore.Projections.Core.Messages.QuerySourcesExtensions
+    name: QuerySourcesExtensions
+  - uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage
+    name: ReaderCoreServiceMessage
+  - uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.ReaderTick
+    name: ReaderCoreServiceMessage.ReaderTick
+  - uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader
+    name: ReaderCoreServiceMessage.StartReader
+  - uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader
+    name: ReaderCoreServiceMessage.StopReader
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement
+    name: ReaderSubscriptionManagement
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.CompleteSpooledStreamReading
+    name: ReaderSubscriptionManagement.CompleteSpooledStreamReading
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Pause
+    name: ReaderSubscriptionManagement.Pause
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage
+    name: ReaderSubscriptionManagement.ReaderSubscriptionManagementMessage
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Resume
+    name: ReaderSubscriptionManagement.Resume
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    name: ReaderSubscriptionManagement.SpoolStreamReading
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReadingCore
+    name: ReaderSubscriptionManagement.SpoolStreamReadingCore
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Subscribe
+    name: ReaderSubscriptionManagement.Subscribe
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.Unsubscribe
+    name: ReaderSubscriptionManagement.Unsubscribe
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage
+    name: ReaderSubscriptionMessage
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    name: ReaderSubscriptionMessage.CommittedEventDistributed
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderEof
+    name: ReaderSubscriptionMessage.EventReaderEof
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderIdle
+    name: ReaderSubscriptionMessage.EventReaderIdle
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderNotAuthorized
+    name: ReaderSubscriptionMessage.EventReaderNotAuthorized
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    name: ReaderSubscriptionMessage.EventReaderPartitionEof
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionMeasured
+    name: ReaderSubscriptionMessage.EventReaderPartitionMeasured
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderStarting
+    name: ReaderSubscriptionMessage.EventReaderStarting
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.Faulted
+    name: ReaderSubscriptionMessage.Faulted
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.SubscriptionMessage
+    name: ReaderSubscriptionMessage.SubscriptionMessage
+  - uid: EventStore.Projections.Core.Messages.SlaveProjectionCommunicationChannel
+    name: SlaveProjectionCommunicationChannel
+  - uid: EventStore.Projections.Core.Messages.SlaveProjectionCommunicationChannels
+    name: SlaveProjectionCommunicationChannels
+  - uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions
+    name: SlaveProjectionDefinitions
+  - uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.Definition
+    name: SlaveProjectionDefinitions.Definition
+  - uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+    name: SlaveProjectionDefinitions.SlaveProjectionRequestedNumber
+- uid: EventStore.Projections.Core.Messages.EventReaders.Feeds
+  name: EventStore.Projections.Core.Messages.EventReaders.Feeds
+  items:
+  - uid: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage
+    name: FeedReaderMessage
+  - uid: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.FeedPage
+    name: FeedReaderMessage.FeedPage
+  - uid: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.FeedPage.ErrorStatus
+    name: FeedReaderMessage.FeedPage.ErrorStatus
+  - uid: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.FeedReaderMessageBase
+    name: FeedReaderMessage.FeedReaderMessageBase
+  - uid: EventStore.Projections.Core.Messages.EventReaders.Feeds.FeedReaderMessage.ReadPage
+    name: FeedReaderMessage.ReadPage
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  name: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  items:
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasured
+    name: PartitionMeasured
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionMeasuredOutput
+    name: PartitionMeasuredOutput
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingProgress
+    name: PartitionProcessingProgress
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingProgressOutput
+    name: PartitionProcessingProgressOutput
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResult
+    name: PartitionProcessingResult
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    name: PartitionProcessingResultBase
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutput
+    name: PartitionProcessingResultOutput
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    name: PartitionProcessingResultOutputBase
+- uid: EventStore.Projections.Core.Messages.Persisted.Commands
+  name: EventStore.Projections.Core.Messages.Persisted.Commands
+  items:
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.CreateAndPrepareCommand
+    name: CreateAndPrepareCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.CreateAndPrepareSlaveCommand
+    name: CreateAndPrepareSlaveCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.CreatePreparedCommand
+    name: CreatePreparedCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.DisposeCommand
+    name: DisposeCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.GetResultCommand
+    name: GetResultCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.GetStateCommand
+    name: GetStateCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.KillCommand
+    name: KillCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.LoadStoppedCommand
+    name: LoadStoppedCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.PersistedProjectionConfig
+    name: PersistedProjectionConfig
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.PersistedProjectionVersion
+    name: PersistedProjectionVersion
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.SlaveProjectionsStartedResponse
+    name: SlaveProjectionsStartedResponse
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.SpoolStreamReadingCommand
+    name: SpoolStreamReadingCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.StartCommand
+    name: StartCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Commands.StopCommand
+    name: StopCommand
+- uid: EventStore.Projections.Core.Messages.Persisted.Responses
+  name: EventStore.Projections.Core.Messages.Persisted.Responses
+  items:
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.AbortCommand
+    name: AbortCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.DeleteCommand
+    name: DeleteCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.DisableCommand
+    name: DisableCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.EnableCommand
+    name: EnableCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Faulted
+    name: Faulted
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.GetQueryCommand
+    name: GetQueryCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.GetResultCommand
+    name: GetResultCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.GetStateCommand
+    name: GetStateCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.GetStatisticsCommand
+    name: GetStatisticsCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.PostCommand
+    name: PostCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Prepared
+    name: Prepared
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.ProjectionWorkerStarted
+    name: ProjectionWorkerStarted
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.ResetCommand
+    name: ResetCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.ResultReport
+    name: ResultReport
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.SetRunAsCommand
+    name: SetRunAsCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.SlaveProjectionReaderAssigned
+    name: SlaveProjectionReaderAssigned
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Started
+    name: Started
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.StartSlaveProjectionsCommand
+    name: StartSlaveProjectionsCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.StateReport
+    name: StateReport
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.StatisticsReport
+    name: StatisticsReport
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Stopped
+    name: Stopped
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.UpdateQueryCommand
+    name: UpdateQueryCommand
+- uid: EventStore.Projections.Core.Messages.Persisted.Responses.Slave
+  name: EventStore.Projections.Core.Messages.Persisted.Responses.Slave
+  items:
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Slave.PartitionMeasuredResponse
+    name: PartitionMeasuredResponse
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Slave.PartitionProcessingProgressResponse
+    name: PartitionProcessingProgressResponse
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Slave.PartitionProcessingResultResponse
+    name: PartitionProcessingResultResponse
+- uid: EventStore.Projections.Core.Messaging
+  name: EventStore.Projections.Core.Messaging
+  items:
+  - uid: EventStore.Projections.Core.Messaging.UnwrapEnvelopeHandler
+    name: UnwrapEnvelopeHandler
+  - uid: EventStore.Projections.Core.Messaging.UnwrapEnvelopeMessage
+    name: UnwrapEnvelopeMessage
+- uid: EventStore.Projections.Core.Services
+  name: EventStore.Projections.Core.Services
+  items:
+  - uid: EventStore.Projections.Core.Services.IProjectionCheckpointHandler
+    name: IProjectionCheckpointHandler
+  - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
+    name: IProjectionStateHandler
+  - uid: EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
+    name: ISingletonTimeoutScheduler
+  - uid: EventStore.Projections.Core.Services.ISourceDefinitionSource
+    name: ISourceDefinitionSource
+  - uid: EventStore.Projections.Core.Services.ProjectionConfig
+    name: ProjectionConfig
+  - uid: EventStore.Projections.Core.Services.ProjectionEventTypes
+    name: ProjectionEventTypes
+  - uid: EventStore.Projections.Core.Services.ProjectionMode
+    name: ProjectionMode
+  - uid: EventStore.Projections.Core.Services.ProjectionStateHandlerTestExtensions
+    name: ProjectionStateHandlerTestExtensions
+  - uid: EventStore.Projections.Core.Services.ProjectionStatistics
+    name: ProjectionStatistics
+  - uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+    name: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
+    name.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
+  - uid: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+    name: ReaderSubscriptionDispatcher
+  - uid: EventStore.Projections.Core.Services.ReadWrite
+    name: ReadWrite
+  - uid: EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher
+    name: SpooledStreamReadingDispatcher
+- uid: EventStore.Projections.Core.Services.Http
+  name: EventStore.Projections.Core.Services.Http
+  items:
+  - uid: EventStore.Projections.Core.Services.Http.ProjectionsController
+    name: ProjectionsController
+  - uid: EventStore.Projections.Core.Services.Http.ProjectionsController.ProjectionConfigData
+    name: ProjectionsController.ProjectionConfigData
+  - uid: EventStore.Projections.Core.Services.Http.ProjectionsController.ReadEventsBody
+    name: ProjectionsController.ReadEventsBody
+  - uid: EventStore.Projections.Core.Services.Http.ProjectionsStatisticsHttpFormatted
+    name: ProjectionsStatisticsHttpFormatted
+  - uid: EventStore.Projections.Core.Services.Http.ProjectionStatisticsHttpFormatted
+    name: ProjectionStatisticsHttpFormatted
+- uid: EventStore.Projections.Core.Services.Management
+  name: EventStore.Projections.Core.Services.Management
+  items:
+  - uid: EventStore.Projections.Core.Services.Management.IMultiStreamMessageWriter
+    name: IMultiStreamMessageWriter
+  - uid: EventStore.Projections.Core.Services.Management.IResponseWriter
+    name: IResponseWriter
+  - uid: EventStore.Projections.Core.Services.Management.ManagedProjection
+    name: ManagedProjection
+  - uid: EventStore.Projections.Core.Services.Management.ManagedProjection.PersistedState
+    name: ManagedProjection.PersistedState
+  - uid: EventStore.Projections.Core.Services.Management.ManagedProjectionState
+    name: ManagedProjectionState
+  - uid: EventStore.Projections.Core.Services.Management.MasterCoreProjectionResponseReader
+    name: MasterCoreProjectionResponseReader
+  - uid: EventStore.Projections.Core.Services.Management.MultiStreamMessageWriter
+    name: MultiStreamMessageWriter
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionCoreCoordinator
+    name: ProjectionCoreCoordinator
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter
+    name: ProjectionCoreResponseWriter
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManager
+    name: ProjectionManager
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManager.NewProjectionInitializer
+    name: ProjectionManager.NewProjectionInitializer
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerCommandWriter
+    name: ProjectionManagerCommandWriter
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+    name: ProjectionManagerMessageDispatcher
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerResponseReader
+    name: ProjectionManagerResponseReader
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionStateHandlerFactory
+    name: ProjectionStateHandlerFactory
+  - uid: EventStore.Projections.Core.Services.Management.ResponseWriter
+    name: ResponseWriter
+  - uid: EventStore.Projections.Core.Services.Management.SerializedRunAs
+    name: SerializedRunAs
+  - uid: EventStore.Projections.Core.Services.Management.SlaveProjectionResponseWriter
+    name: SlaveProjectionResponseWriter
+  - uid: EventStore.Projections.Core.Services.Management.TimeoutScheduler
+    name: TimeoutScheduler
+- uid: EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  items:
+  - uid: EventStore.Projections.Core.Services.Processing.AllStreamsCatalogEventReader
+    name: AllStreamsCatalogEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.ByHandleStatePartitionSelector
+    name: ByHandleStatePartitionSelector
+  - uid: EventStore.Projections.Core.Services.Processing.BypassingEventFilter
+    name: BypassingEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.ByPositionStreamStatePartitionSelector
+    name: ByPositionStreamStatePartitionSelector
+  - uid: EventStore.Projections.Core.Services.Processing.ByStreamCatalogEventReader
+    name: ByStreamCatalogEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.ByStreamStatePartitionSelector
+    name: ByStreamStatePartitionSelector
+  - uid: EventStore.Projections.Core.Services.Processing.CatalogStreamPositionTagger
+    name: CatalogStreamPositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.CategoryEventFilter
+    name: CategoryEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointSuggestedWorkItem
+    name: CheckpointSuggestedWorkItem
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagExtensions
+    name: CheckpointTagExtensions
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagJsonConverter
+    name: CheckpointTagJsonConverter
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTagVersion
+    name: CheckpointTagVersion
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointWorkItemBase
+    name: CheckpointWorkItemBase
+  - uid: EventStore.Projections.Core.Services.Processing.ContinuousProjectionProcessingStrategy
+    name: ContinuousProjectionProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjection
+    name: CoreProjection
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointManager
+    name: CoreProjectionCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointReader
+    name: CoreProjectionCheckpointReader
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+    name: CoreProjectionCheckpointWriter
+  - uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+    name: CoreProjectionQueue
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultCheckpointManager
+    name: DefaultCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.DefaultProjectionProcessingStrategy
+    name: DefaultProjectionProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+    name: EmittedDataEvent
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent
+    name: EmittedEvent
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedLinkTo
+    name: EmittedLinkTo
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedLinkToWithRecategorization
+    name: EmittedLinkToWithRecategorization
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStream
+    name: EmittedStream
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration
+    name: EmittedStream.WriterConfiguration
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStream.WriterConfiguration.StreamMetadata
+    name: EmittedStream.WriterConfiguration.StreamMetadata
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStreamsDeleter
+    name: EmittedStreamsDeleter
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStreamsTracker
+    name: EmittedStreamsTracker
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedStreamsWriter
+    name: EmittedStreamsWriter
+  - uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventFilter
+    name: EventByTypeIndexEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+    name: EventByTypeIndexEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexPositionTagger
+    name: EventByTypeIndexPositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.EventFilter
+    name: EventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    name: EventProcessedResult
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessingProjectionProcessingPhase
+    name: EventProcessingProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader
+    name: EventReader
+  - uid: EventStore.Projections.Core.Services.Processing.EventReaderBasedProjectionProcessingStrategy
+    name: EventReaderBasedProjectionProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.EventReaderCoreService
+    name: EventReaderCoreService
+  - uid: EventStore.Projections.Core.Services.Processing.EventReorderingReaderSubscription
+    name: EventReorderingReaderSubscription
+  - uid: EventStore.Projections.Core.Services.Processing.EventSubscriptionBasedProjectionProcessingPhase
+    name: EventSubscriptionBasedProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.ExternallyFedByStreamEventReader
+    name: ExternallyFedByStreamEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.ExternallyFedReaderStrategy
+    name: ExternallyFedReaderStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.ExtraMetaData
+    name: ExtraMetaData
+  - uid: EventStore.Projections.Core.Services.Processing.HeadingEventReader
+    name: HeadingEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointManager
+    name: ICoreProjectionCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionCheckpointReader
+    name: ICoreProjectionCheckpointReader
+  - uid: EventStore.Projections.Core.Services.Processing.ICoreProjectionForProcessingPhase
+    name: ICoreProjectionForProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedEventWriter
+    name: IEmittedEventWriter
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsDeleter
+    name: IEmittedStreamsDeleter
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsTracker
+    name: IEmittedStreamsTracker
+  - uid: EventStore.Projections.Core.Services.Processing.IEmittedStreamsWriter
+    name: IEmittedStreamsWriter
+  - uid: EventStore.Projections.Core.Services.Processing.IEventProcessingProjectionPhase
+    name: IEventProcessingProjectionPhase
+  - uid: EventStore.Projections.Core.Services.Processing.IEventReader
+    name: IEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.IEventWriter
+    name: IEventWriter
+  - uid: EventStore.Projections.Core.Services.Processing.IProgressResultWriter
+    name: IProgressResultWriter
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseCheckpointManager
+    name: IProjectionPhaseCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseCompleter
+    name: IProjectionPhaseCompleter
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionPhaseStateManager
+    name: IProjectionPhaseStateManager
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
+    name: IProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderStrategy
+    name: IReaderStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.IReaderSubscription
+    name: IReaderSubscription
+  - uid: EventStore.Projections.Core.Services.Processing.IResultEventEmitter
+    name: IResultEventEmitter
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter
+    name: IResultWriter
+  - uid: EventStore.Projections.Core.Services.Processing.ISpoolStreamWorkItemContainer
+    name: ISpoolStreamWorkItemContainer
+  - uid: EventStore.Projections.Core.Services.Processing.MultiStreamEventFilter
+    name: MultiStreamEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.MultiStreamEventReader
+    name: MultiStreamEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.MultiStreamMultiOutputCheckpointManager
+    name: MultiStreamMultiOutputCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.MultiStreamPositionTagger
+    name: MultiStreamPositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.NoopCheckpointManager
+    name: NoopCheckpointManager
+  - uid: EventStore.Projections.Core.Services.Processing.NoopResultEventEmitter
+    name: NoopResultEventEmitter
+  - uid: EventStore.Projections.Core.Services.Processing.NoopStatePartitionSelector
+    name: NoopStatePartitionSelector
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer
+    name: ParallelProcessingLoadBalancer
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.TaskState
+    name: ParallelProcessingLoadBalancer.TaskState
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelProcessingLoadBalancer.WorkerState
+    name: ParallelProcessingLoadBalancer.WorkerState
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelQueryAllStreamsMasterReaderStrategy
+    name: ParallelQueryAllStreamsMasterReaderStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterProjectionProcessingPhase
+    name: ParallelQueryMasterProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelQueryMasterReaderStrategy
+    name: ParallelQueryMasterReaderStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.ParallelQueryProcessingStrategy
+    name: ParallelQueryProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.PartitionState
+    name: PartitionState
+  - uid: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+    name: PartitionStateCache
+  - uid: EventStore.Projections.Core.Services.Processing.PartitionStateUpdateManager
+    name: PartitionStateUpdateManager
+  - uid: EventStore.Projections.Core.Services.Processing.PhasePositionTagger
+    name: PhasePositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.PhaseState
+    name: PhaseState
+  - uid: EventStore.Projections.Core.Services.Processing.PositionTagger
+    name: PositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.PositionTracker
+    name: PositionTracker
+  - uid: EventStore.Projections.Core.Services.Processing.PreparePositionTagger
+    name: PreparePositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.PreTaggedPositionTagger
+    name: PreTaggedPositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.ProcessingStrategySelector
+    name: ProcessingStrategySelector
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionCheckpoint
+    name: ProjectionCheckpoint
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService
+    name: ProjectionCoreService
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader
+    name: ProjectionCoreServiceCommandReader
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+    name: ProjectionNamesBuilder
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder.StandardProjections
+    name: ProjectionNamesBuilder.StandardProjections
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig
+    name: ProjectionOutputConfig
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+    name: ProjectionProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition
+    name: ProjectionSourceDefinition
+  - uid: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+    name: ProjectionVersion
+  - uid: EventStore.Projections.Core.Services.Processing.QueryProcessingStrategy
+    name: QueryProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.QuerySourceOptions
+    name: QuerySourceOptions
+  - uid: EventStore.Projections.Core.Services.Processing.QueuedEmittedStreamsWriter
+    name: QueuedEmittedStreamsWriter
+  - uid: EventStore.Projections.Core.Services.Processing.ReaderStrategy
+    name: ReaderStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.ReaderSubscription
+    name: ReaderSubscription
+  - uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionBase
+    name: ReaderSubscriptionBase
+  - uid: EventStore.Projections.Core.Services.Processing.ReaderSubscriptionOptions
+    name: ReaderSubscriptionOptions
+  - uid: EventStore.Projections.Core.Services.Processing.RequestResponseQueueForwarder
+    name: RequestResponseQueueForwarder
+  - uid: EventStore.Projections.Core.Services.Processing.ResolvedEvent
+    name: ResolvedEvent
+  - uid: EventStore.Projections.Core.Services.Processing.ResultEventEmitter
+    name: ResultEventEmitter
+  - uid: EventStore.Projections.Core.Services.Processing.ResultWriter
+    name: ResultWriter
+  - uid: EventStore.Projections.Core.Services.Processing.SlaveQueryProcessingStrategy
+    name: SlaveQueryProcessingStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+    name: SlaveResultWriter
+  - uid: EventStore.Projections.Core.Services.Processing.SourceDefinitionBuilder
+    name: SourceDefinitionBuilder
+  - uid: EventStore.Projections.Core.Services.Processing.SpoolStreamProcessingWorkItem
+    name: SpoolStreamProcessingWorkItem
+  - uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+    name: StagedProcessingQueue
+  - uid: EventStore.Projections.Core.Services.Processing.StagedTask
+    name: StagedTask
+  - uid: EventStore.Projections.Core.Services.Processing.StatePartitionSelector
+    name: StatePartitionSelector
+  - uid: EventStore.Projections.Core.Services.Processing.StreamEventFilter
+    name: StreamEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.StreamEventReader
+    name: StreamEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.StreamPositionTagger
+    name: StreamPositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.TaggedResolvedEvent
+    name: TaggedResolvedEvent
+  - uid: EventStore.Projections.Core.Services.Processing.TransactionFileEventFilter
+    name: TransactionFileEventFilter
+  - uid: EventStore.Projections.Core.Services.Processing.TransactionFileEventReader
+    name: TransactionFileEventReader
+  - uid: EventStore.Projections.Core.Services.Processing.TransactionFilePositionTagger
+    name: TransactionFilePositionTagger
+  - uid: EventStore.Projections.Core.Services.Processing.WorkItem
+    name: WorkItem
+  - uid: EventStore.Projections.Core.Services.Processing.WorkLoadEstimationStrategy
+    name: WorkLoadEstimationStrategy
+  - uid: EventStore.Projections.Core.Services.Processing.WriteQueryEofProjectionProcessingPhase
+    name: WriteQueryEofProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.WriteQueryResultProjectionProcessingPhase
+    name: WriteQueryResultProjectionProcessingPhase
+  - uid: EventStore.Projections.Core.Services.Processing.WriteQueryResultProjectionProcessingPhaseBase
+    name: WriteQueryResultProjectionProcessingPhaseBase
+- uid: EventStore.Projections.Core.Services.v8
+  name: EventStore.Projections.Core.Services.v8
+  items:
+  - uid: EventStore.Projections.Core.Services.v8.DefaultV8ProjectionStateHandler
+    name: DefaultV8ProjectionStateHandler
+  - uid: EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler
+    name: V8ProjectionStateHandler
+  - uid: EventStore.Projections.Core.Services.v8.V8ProjectionStateHandler.EmittedEventJsonContract
+    name: V8ProjectionStateHandler.EmittedEventJsonContract
+- uid: EventStore.Projections.Core.Standard
+  name: EventStore.Projections.Core.Standard
+  items:
+  - uid: EventStore.Projections.Core.Standard.ByCorrelationId
+    name: ByCorrelationId
+  - uid: EventStore.Projections.Core.Standard.CategorizeEventsByStreamPath
+    name: CategorizeEventsByStreamPath
+  - uid: EventStore.Projections.Core.Standard.CategorizeStreamByPath
+    name: CategorizeStreamByPath
+  - uid: EventStore.Projections.Core.Standard.IndexEventsByEventType
+    name: IndexEventsByEventType
+  - uid: EventStore.Projections.Core.Standard.IndexStreams
+    name: IndexStreams
+  - uid: EventStore.Projections.Core.Standard.StreamCategoryExtractor
+    name: StreamCategoryExtractor
+  - uid: EventStore.Projections.Core.Standard.StreamCategoryExtractorByFirstSeparator
+    name: StreamCategoryExtractorByFirstSeparator
+  - uid: EventStore.Projections.Core.Standard.StreamCategoryExtractorByLastSeparator
+    name: StreamCategoryExtractorByLastSeparator
+  - uid: EventStore.Projections.Core.Standard.StreamDeletedHelper
+    name: StreamDeletedHelper
+  - uid: EventStore.Projections.Core.Standard.StubHandler
+    name: StubHandler
+- uid: EventStore.Projections.Core.Utils
+  name: EventStore.Projections.Core.Utils
+  items:
+  - uid: EventStore.Projections.Core.Utils.EncodingExtensions
+    name: EncodingExtensions
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions
+    name: EnumExtensions
+  - uid: EventStore.Projections.Core.Utils.Logging
+    name: Logging
+- uid: EventStore.Projections.Core.v8
+  name: EventStore.Projections.Core.v8
+  items:
+  - uid: EventStore.Projections.Core.v8.Js1
+    name: Js1
+  - uid: EventStore.Projections.Core.v8.Js1.CommandHandlerRegisteredDelegate
+    name: Js1.CommandHandlerRegisteredDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.EnterCancellableRegionDelegate
+    name: Js1.EnterCancellableRegionDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.ExitCancellableRegionDelegate
+    name: Js1.ExitCancellableRegionDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.LoadModuleDelegate
+    name: Js1.LoadModuleDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.LogDelegate
+    name: Js1.LogDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.ReportErrorDelegate
+    name: Js1.ReportErrorDelegate
+  - uid: EventStore.Projections.Core.v8.Js1.ReverseCommandHandlerDelegate
+    name: Js1.ReverseCommandHandlerDelegate
+  - uid: EventStore.Projections.Core.v8.Js1Exception
+    name: Js1Exception
+  - uid: EventStore.Projections.Core.v8.PreludeScript
+    name: PreludeScript
+  - uid: EventStore.Projections.Core.v8.QueryScript
+    name: QueryScript

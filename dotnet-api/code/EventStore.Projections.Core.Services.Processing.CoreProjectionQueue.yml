@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  commentId: T:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  id: CoreProjectionQueue
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask(EventStore.Projections.Core.Services.Processing.WorkItem)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask(EventStore.Projections.Core.Services.Processing.WorkItem,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnsureTickPending
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning(System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed(Guid)
+  - EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed
+  langs:
+  - csharp
+  - vb
+  name: CoreProjectionQueue
+  nameWithType: CoreProjectionQueue
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  type: Class
+  source:
+    id: CoreProjectionQueue
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class CoreProjectionQueue : object'
+    content.vb: >-
+      Public Class CoreProjectionQueue
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnsureTickPending
+  commentId: E:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnsureTickPending
+  id: EnsureTickPending
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: EnsureTickPending
+  nameWithType: CoreProjectionQueue.EnsureTickPending
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnsureTickPending
+  type: Event
+  source:
+    id: EnsureTickPending
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public event Action EnsureTickPending
+    return:
+      type: Action
+    content.vb: Public Event EnsureTickPending As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,System.Int32,System.Boolean)'
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: CoreProjectionQueue(IPublisher, Int32, Boolean)
+  nameWithType: CoreProjectionQueue.CoreProjectionQueue(IPublisher, Int32, Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.CoreProjectionQueue(EventStore.Core.Bus.IPublisher, System.Int32, System.Boolean)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public CoreProjectionQueue(IPublisher publisher, int pendingEventsThreshold, bool orderedPartitionProcessing)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: pendingEventsThreshold
+      type: System.Int32
+    - id: orderedPartitionProcessing
+      type: System.Boolean
+    content.vb: Public Sub New(publisher As IPublisher, pendingEventsThreshold As Integer, orderedPartitionProcessing As Boolean)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+  commentId: P:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+  id: IsRunning
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: IsRunning
+  nameWithType: CoreProjectionQueue.IsRunning
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+  type: Property
+  source:
+    id: IsRunning
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 40
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool IsRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsRunning As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent
+  id: ProcessEvent
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: ProcessEvent()
+  nameWithType: CoreProjectionQueue.ProcessEvent()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent()
+  type: Method
+  source:
+    id: ProcessEvent
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool ProcessEvent()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ProcessEvent As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount
+  id: GetBufferedEventCount
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: GetBufferedEventCount()
+  nameWithType: CoreProjectionQueue.GetBufferedEventCount()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount()
+  type: Method
+  source:
+    id: GetBufferedEventCount
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 55
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public int GetBufferedEventCount()
+    return:
+      type: System.Int32
+    content.vb: Public Function GetBufferedEventCount As Integer
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask(EventStore.Projections.Core.Services.Processing.WorkItem,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask(EventStore.Projections.Core.Services.Processing.WorkItem,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean)
+  id: EnqueueTask(EventStore.Projections.Core.Services.Processing.WorkItem,EventStore.Projections.Core.Services.Processing.CheckpointTag,System.Boolean)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: EnqueueTask(WorkItem, CheckpointTag, Boolean)
+  nameWithType: CoreProjectionQueue.EnqueueTask(WorkItem, CheckpointTag, Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask(EventStore.Projections.Core.Services.Processing.WorkItem, EventStore.Projections.Core.Services.Processing.CheckpointTag, System.Boolean)
+  type: Method
+  source:
+    id: EnqueueTask
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void EnqueueTask(WorkItem workItem, CheckpointTag workItemCheckpointTag, bool allowCurrentPosition = false)
+    parameters:
+    - id: workItem
+      type: EventStore.Projections.Core.Services.Processing.WorkItem
+    - id: workItemCheckpointTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: allowCurrentPosition
+      type: System.Boolean
+    content.vb: Public Sub EnqueueTask(workItem As WorkItem, workItemCheckpointTag As CheckpointTag, allowCurrentPosition As Boolean = False)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask(EventStore.Projections.Core.Services.Processing.WorkItem)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask(EventStore.Projections.Core.Services.Processing.WorkItem)
+  id: EnqueueOutOfOrderTask(EventStore.Projections.Core.Services.Processing.WorkItem)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: EnqueueOutOfOrderTask(WorkItem)
+  nameWithType: CoreProjectionQueue.EnqueueOutOfOrderTask(WorkItem)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask(EventStore.Projections.Core.Services.Processing.WorkItem)
+  type: Method
+  source:
+    id: EnqueueOutOfOrderTask
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 67
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void EnqueueOutOfOrderTask(WorkItem workItem)
+    parameters:
+    - id: workItem
+      type: EventStore.Projections.Core.Services.Processing.WorkItem
+    content.vb: Public Sub EnqueueOutOfOrderTask(workItem As WorkItem)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  id: InitializeQueue(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: InitializeQueue(CheckpointTag)
+  nameWithType: CoreProjectionQueue.InitializeQueue(CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  type: Method
+  source:
+    id: InitializeQueue
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 76
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void InitializeQueue(CheckpointTag startingPosition)
+    parameters:
+    - id: startingPosition
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public Sub InitializeQueue(startingPosition As CheckpointTag)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus
+  id: GetStatus
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: GetStatus()
+  nameWithType: CoreProjectionQueue.GetStatus()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus()
+  type: Method
+  source:
+    id: GetStatus
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 87
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public string GetStatus()
+    return:
+      type: System.String
+    content.vb: Public Function GetStatus As String
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed
+  id: Unsubscribed
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: Unsubscribed()
+  nameWithType: CoreProjectionQueue.Unsubscribed()
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed()
+  type: Method
+  source:
+    id: Unsubscribed
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 136
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Unsubscribed()
+    content.vb: Public Sub Unsubscribed
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed(Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed(Guid)
+  id: Subscribed(Guid)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: Subscribed(Guid)
+  nameWithType: CoreProjectionQueue.Subscribed(Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed(Guid)
+  type: Method
+  source:
+    id: Subscribed
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 140
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Subscribed(Guid currentSubscriptionId)
+    parameters:
+    - id: currentSubscriptionId
+      type: Guid
+    content.vb: Public Sub Subscribed(currentSubscriptionId As Guid)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning(System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning(System.Boolean)
+  id: SetIsRunning(System.Boolean)
+  parent: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue
+  langs:
+  - csharp
+  - vb
+  name: SetIsRunning(Boolean)
+  nameWithType: CoreProjectionQueue.SetIsRunning(Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning(System.Boolean)
+  type: Method
+  source:
+    id: SetIsRunning
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/CoreProjectionQueue.cs
+    startLine: 148
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void SetIsRunning(bool isRunning)
+    parameters:
+    - id: isRunning
+      type: System.Boolean
+    content.vb: Public Sub SetIsRunning(isRunning As Boolean)
+  overload: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Action
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: Action
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.#ctor
+  name: CoreProjectionQueue
+  nameWithType: CoreProjectionQueue.CoreProjectionQueue
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.CoreProjectionQueue
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+  name: IsRunning
+  nameWithType: CoreProjectionQueue.IsRunning
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.IsRunning
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent
+  name: ProcessEvent
+  nameWithType: CoreProjectionQueue.ProcessEvent
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.ProcessEvent
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount
+  name: GetBufferedEventCount
+  nameWithType: CoreProjectionQueue.GetBufferedEventCount
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetBufferedEventCount
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask
+  name: EnqueueTask
+  nameWithType: CoreProjectionQueue.EnqueueTask
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueTask
+- uid: EventStore.Projections.Core.Services.Processing.WorkItem
+  commentId: T:EventStore.Projections.Core.Services.Processing.WorkItem
+  parent: EventStore.Projections.Core.Services.Processing
+  name: WorkItem
+  nameWithType: WorkItem
+  fullName: EventStore.Projections.Core.Services.Processing.WorkItem
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask
+  name: EnqueueOutOfOrderTask
+  nameWithType: CoreProjectionQueue.EnqueueOutOfOrderTask
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.EnqueueOutOfOrderTask
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue
+  name: InitializeQueue
+  nameWithType: CoreProjectionQueue.InitializeQueue
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.InitializeQueue
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus
+  name: GetStatus
+  nameWithType: CoreProjectionQueue.GetStatus
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.GetStatus
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed
+  name: Unsubscribed
+  nameWithType: CoreProjectionQueue.Unsubscribed
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Unsubscribed
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed
+  name: Subscribed
+  nameWithType: CoreProjectionQueue.Subscribed
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.Subscribed
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning
+  name: SetIsRunning
+  nameWithType: CoreProjectionQueue.SetIsRunning
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionQueue.SetIsRunning

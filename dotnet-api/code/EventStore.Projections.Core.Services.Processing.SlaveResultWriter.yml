@@ -1,0 +1,800 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  commentId: T:EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  id: SlaveResultWriter
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor(Guid,EventStore.Core.Bus.IPublisher,Guid)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress(Guid,System.Single)
+  - EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  langs:
+  - csharp
+  - vb
+  name: SlaveResultWriter
+  nameWithType: SlaveResultWriter
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  type: Class
+  source:
+    id: SlaveResultWriter
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 5
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class SlaveResultWriter : object, IResultWriter'
+    content.vb: >-
+      Public Class SlaveResultWriter
+
+          Inherits Object
+
+          Implements IResultWriter
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor(Guid,EventStore.Core.Bus.IPublisher,Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor(Guid,EventStore.Core.Bus.IPublisher,Guid)
+  id: '#ctor(Guid,EventStore.Core.Bus.IPublisher,Guid)'
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: SlaveResultWriter(Guid, IPublisher, Guid)
+  nameWithType: SlaveResultWriter.SlaveResultWriter(Guid, IPublisher, Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.SlaveResultWriter(Guid, EventStore.Core.Bus.IPublisher, Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public SlaveResultWriter(Guid workerId, IPublisher publisher, Guid masterCoreProjectionId)
+    parameters:
+    - id: workerId
+      type: Guid
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: masterCoreProjectionId
+      type: Guid
+    content.vb: Public Sub New(workerId As Guid, publisher As IPublisher, masterCoreProjectionId As Guid)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  id: WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
+  nameWithType: SlaveResultWriter.WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult(Guid, System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, System.String)
+  type: Method
+  source:
+    id: WriteEofResult
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void WriteEofResult(Guid subscriptionId, string partition, string resultBody, CheckpointTag causedBy, Guid causedByGuid, string correlationId)
+    parameters:
+    - id: subscriptionId
+      type: Guid
+    - id: partition
+      type: System.String
+    - id: resultBody
+      type: System.String
+    - id: causedBy
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: causedByGuid
+      type: Guid
+    - id: correlationId
+      type: System.String
+    content.vb: Public Sub WriteEofResult(subscriptionId As Guid, partition As String, resultBody As String, causedBy As CheckpointTag, causedByGuid As Guid, correlationId As String)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  id: WritePartitionMeasured(Guid,System.String,System.Int64)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: WritePartitionMeasured(Guid, String, Int64)
+  nameWithType: SlaveResultWriter.WritePartitionMeasured(Guid, String, Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured(Guid, System.String, System.Int64)
+  type: Method
+  source:
+    id: WritePartitionMeasured
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void WritePartitionMeasured(Guid subscriptionId, string partition, long size)
+    parameters:
+    - id: subscriptionId
+      type: Guid
+    - id: partition
+      type: System.String
+    - id: size
+      type: System.Int64
+    content.vb: Public Sub WritePartitionMeasured(subscriptionId As Guid, partition As String, size As Long)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  id: WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteRunningResult(EventProcessedResult)
+  nameWithType: SlaveResultWriter.WriteRunningResult(EventProcessedResult)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  type: Method
+  source:
+    id: WriteRunningResult
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void WriteRunningResult(EventProcessedResult result)
+    parameters:
+    - id: result
+      type: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    content.vb: Public Sub WriteRunningResult(result As EventProcessedResult)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  id: AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: AccountPartition(EventProcessedResult)
+  nameWithType: SlaveResultWriter.AccountPartition(EventProcessedResult)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  type: Method
+  source:
+    id: AccountPartition
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 40
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void AccountPartition(EventProcessedResult result)
+    parameters:
+    - id: result
+      type: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    content.vb: Public Sub AccountPartition(result As EventProcessedResult)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  id: EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: EventsEmitted(EmittedEventEnvelope[], Guid, String)
+  nameWithType: SlaveResultWriter.EventsEmitted(EmittedEventEnvelope[], Guid, String)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], Guid, System.String)
+  type: Method
+  source:
+    id: EventsEmitted
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 44
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void EventsEmitted(EmittedEventEnvelope[] scheduledWrites, Guid causedBy, string correlationId)
+    parameters:
+    - id: scheduledWrites
+      type: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+    - id: causedBy
+      type: Guid
+    - id: correlationId
+      type: System.String
+    content.vb: Public Sub EventsEmitted(scheduledWrites As EmittedEventEnvelope(), causedBy As Guid, correlationId As String)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  nameWithType.vb: SlaveResultWriter.EventsEmitted(EmittedEventEnvelope(), Guid, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), Guid, System.String)
+  name.vb: EventsEmitted(EmittedEventEnvelope(), Guid, String)
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress(Guid,System.Single)
+  commentId: M:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress(Guid,System.Single)
+  id: WriteProgress(Guid,System.Single)
+  parent: EventStore.Projections.Core.Services.Processing.SlaveResultWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteProgress(Guid, Single)
+  nameWithType: SlaveResultWriter.WriteProgress(Guid, Single)
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress(Guid, System.Single)
+  type: Method
+  source:
+    id: WriteProgress
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/SlaveResultWriter.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void WriteProgress(Guid subscriptionId, float progress)
+    parameters:
+    - id: subscriptionId
+      type: Guid
+    - id: progress
+      type: System.Single
+    content.vb: Public Sub WriteProgress(subscriptionId As Guid, progress As Single)
+  overload: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress*
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter
+  commentId: T:EventStore.Projections.Core.Services.Processing.IResultWriter
+  parent: EventStore.Projections.Core.Services.Processing
+  name: IResultWriter
+  nameWithType: IResultWriter
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.#ctor
+  name: SlaveResultWriter
+  nameWithType: SlaveResultWriter.SlaveResultWriter
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.SlaveResultWriter
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult
+  name: WriteEofResult
+  nameWithType: SlaveResultWriter.WriteEofResult
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteEofResult
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  isExternal: true
+  name: WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
+  nameWithType: IResultWriter.WriteEofResult(Guid, String, String, CheckpointTag, Guid, String)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid, System.String, System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag, Guid, System.String)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+    name: WriteEofResult
+    nameWithType: IResultWriter.WriteEofResult
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult(Guid,System.String,System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag,Guid,System.String)
+    name: WriteEofResult
+    nameWithType: IResultWriter.WriteEofResult
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteEofResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured
+  name: WritePartitionMeasured
+  nameWithType: SlaveResultWriter.WritePartitionMeasured
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WritePartitionMeasured
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  isExternal: true
+  name: WritePartitionMeasured(Guid, String, Int64)
+  nameWithType: IResultWriter.WritePartitionMeasured(Guid, String, Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid, System.String, System.Int64)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+    name: WritePartitionMeasured
+    nameWithType: IResultWriter.WritePartitionMeasured
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured(Guid,System.String,System.Int64)
+    name: WritePartitionMeasured
+    nameWithType: IResultWriter.WritePartitionMeasured
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WritePartitionMeasured
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult
+  name: WriteRunningResult
+  nameWithType: SlaveResultWriter.WriteRunningResult
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteRunningResult
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  name: WriteRunningResult(EventProcessedResult)
+  nameWithType: IResultWriter.WriteRunningResult(EventProcessedResult)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+    name: WriteRunningResult
+    nameWithType: IResultWriter.WriteRunningResult
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    name: EventProcessedResult
+    nameWithType: EventProcessedResult
+    fullName: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+    name: WriteRunningResult
+    nameWithType: IResultWriter.WriteRunningResult
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteRunningResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    name: EventProcessedResult
+    nameWithType: EventProcessedResult
+    fullName: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  parent: EventStore.Projections.Core.Services.Processing
+  name: EventProcessedResult
+  nameWithType: EventProcessedResult
+  fullName: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition
+  name: AccountPartition
+  nameWithType: SlaveResultWriter.AccountPartition
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.AccountPartition
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  name: AccountPartition(EventProcessedResult)
+  nameWithType: IResultWriter.AccountPartition(EventProcessedResult)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+    name: AccountPartition
+    nameWithType: IResultWriter.AccountPartition
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    name: EventProcessedResult
+    nameWithType: EventProcessedResult
+    fullName: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition(EventStore.Projections.Core.Services.Processing.EventProcessedResult)
+    name: AccountPartition
+    nameWithType: IResultWriter.AccountPartition
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.AccountPartition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+    name: EventProcessedResult
+    nameWithType: EventProcessedResult
+    fullName: EventStore.Projections.Core.Services.Processing.EventProcessedResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted
+  name: EventsEmitted
+  nameWithType: SlaveResultWriter.EventsEmitted
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.EventsEmitted
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  isExternal: true
+  name: EventsEmitted(EmittedEventEnvelope[], Guid, String)
+  nameWithType: IResultWriter.EventsEmitted(EmittedEventEnvelope[], Guid, String)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[], Guid, System.String)
+  nameWithType.vb: IResultWriter.EventsEmitted(EmittedEventEnvelope(), Guid, String)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope(), Guid, System.String)
+  name.vb: EventsEmitted(EmittedEventEnvelope(), Guid, String)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+    name: EventsEmitted
+    nameWithType: IResultWriter.EventsEmitted
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted(EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[],Guid,System.String)
+    name: EventsEmitted
+    nameWithType: IResultWriter.EventsEmitted
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.EventsEmitted
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+  isExternal: true
+  name: EmittedEventEnvelope[]
+  nameWithType: EmittedEventEnvelope[]
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope[]
+  nameWithType.vb: EmittedEventEnvelope()
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope()
+  name.vb: EmittedEventEnvelope()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+    name: EmittedEventEnvelope
+    nameWithType: EmittedEventEnvelope
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEventEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress
+  name: WriteProgress
+  nameWithType: SlaveResultWriter.WriteProgress
+  fullName: EventStore.Projections.Core.Services.Processing.SlaveResultWriter.WriteProgress
+- uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+  commentId: M:EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+  parent: EventStore.Projections.Core.Services.Processing.IResultWriter
+  isExternal: true
+  name: WriteProgress(Guid, Single)
+  nameWithType: IResultWriter.WriteProgress(Guid, Single)
+  fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid, System.Single)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+    name: WriteProgress
+    nameWithType: IResultWriter.WriteProgress
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress(Guid,System.Single)
+    name: WriteProgress
+    nameWithType: IResultWriter.WriteProgress
+    fullName: EventStore.Projections.Core.Services.Processing.IResultWriter.WriteProgress
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Single
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single

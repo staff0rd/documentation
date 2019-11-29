@@ -26,8 +26,10 @@ items:
   summary: "\nEnumeration representing the status of a single event read operation.\n"
   example: []
   syntax:
-    content: public enum EventReadStatus
-    content.vb: Public Enum EventReadStatus
+    content: 'public enum EventReadStatus : int'
+    content.vb: Public Enum EventReadStatus As Integer
+  extensionMethods:
+  - EventStore.ClientAPI.EventReadStatus.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   modifiers.csharp:
   - public
   - enum
@@ -55,9 +57,10 @@ items:
   summary: "\nThe read operation was successful.\n"
   example: []
   syntax:
-    content: Success = 0
+    content: Success = null
     return:
       type: EventStore.ClientAPI.EventReadStatus
+    content.vb: Success = Nothing
   modifiers.csharp:
   - public
   - const
@@ -85,9 +88,10 @@ items:
   summary: "\nThe event was not found.\n"
   example: []
   syntax:
-    content: NotFound = 1
+    content: NotFound = null
     return:
       type: EventStore.ClientAPI.EventReadStatus
+    content.vb: NotFound = Nothing
   modifiers.csharp:
   - public
   - const
@@ -115,9 +119,10 @@ items:
   summary: "\nThe stream was not found.\n"
   example: []
   syntax:
-    content: NoStream = 2
+    content: NoStream = null
     return:
       type: EventStore.ClientAPI.EventReadStatus
+    content.vb: NoStream = Nothing
   modifiers.csharp:
   - public
   - const
@@ -145,9 +150,10 @@ items:
   summary: "\nThe stream previously existed but was deleted.\n"
   example: []
   syntax:
-    content: StreamDeleted = 3
+    content: StreamDeleted = null
     return:
       type: EventStore.ClientAPI.EventReadStatus
+    content.vb: StreamDeleted = Nothing
   modifiers.csharp:
   - public
   - const
@@ -160,6 +166,85 @@ references:
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
+- uid: EventStore.ClientAPI.EventReadStatus.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<EventReadStatus>()
+  nameWithType: EnumExtensions.EnumValueName<EventReadStatus>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.EventReadStatus>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of EventReadStatus)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.EventReadStatus)()
+  name.vb: EnumValueName(Of EventReadStatus)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<EventReadStatus>
+    nameWithType: EnumExtensions.EnumValueName<EventReadStatus>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.EventReadStatus>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of EventReadStatus)
+    nameWithType: EnumExtensions.EnumValueName(Of EventReadStatus)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.EventReadStatus)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
 - uid: EventStore.ClientAPI.EventReadStatus
   commentId: T:EventStore.ClientAPI.EventReadStatus
   parent: EventStore.ClientAPI

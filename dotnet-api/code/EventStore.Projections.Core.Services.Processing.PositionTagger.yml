@@ -1,0 +1,429 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger
+  commentId: T:EventStore.Projections.Core.Services.Processing.PositionTagger
+  id: PositionTagger
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor(System.Int32)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag
+  - EventStore.Projections.Core.Services.Processing.PositionTagger.Phase
+  langs:
+  - csharp
+  - vb
+  name: PositionTagger
+  nameWithType: PositionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger
+  type: Class
+  source:
+    id: PositionTagger
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 3
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public abstract class PositionTagger : object'
+    content.vb: >-
+      Public MustInherit Class PositionTagger
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Projections.Core.Services.Processing.CatalogStreamPositionTagger
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexPositionTagger
+  - EventStore.Projections.Core.Services.Processing.MultiStreamPositionTagger
+  - EventStore.Projections.Core.Services.Processing.PhasePositionTagger
+  - EventStore.Projections.Core.Services.Processing.PreparePositionTagger
+  - EventStore.Projections.Core.Services.Processing.PreTaggedPositionTagger
+  - EventStore.Projections.Core.Services.Processing.StreamPositionTagger
+  - EventStore.Projections.Core.Services.Processing.TransactionFilePositionTagger
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.Phase
+  commentId: F:EventStore.Projections.Core.Services.Processing.PositionTagger.Phase
+  id: Phase
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: Phase
+  nameWithType: PositionTagger.Phase
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.Phase
+  type: Field
+  source:
+    id: Phase
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 4
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public readonly int Phase
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Phase As Integer
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor(System.Int32)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: PositionTagger(Int32)
+  nameWithType: PositionTagger.PositionTagger(Int32)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.PositionTagger(System.Int32)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 6
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public PositionTagger(int phase)
+    parameters:
+    - id: phase
+      type: System.Int32
+    content.vb: Public Sub New(phase As Integer)
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  id: IsMessageAfterCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: IsMessageAfterCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType: PositionTagger.IsMessageAfterCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  type: Method
+  source:
+    id: IsMessageAfterCheckpointTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool IsMessageAfterCheckpointTag(CheckpointTag previous, ReaderSubscriptionMessage.CommittedEventDistributed committedEvent)
+    parameters:
+    - id: previous
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: committedEvent
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function IsMessageAfterCheckpointTag(previous As CheckpointTag, committedEvent As ReaderSubscriptionMessage.CommittedEventDistributed) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  id: MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.CommittedEventDistributed)
+  nameWithType: PositionTagger.MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.CommittedEventDistributed)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed)
+  type: Method
+  source:
+    id: MakeCheckpointTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 13
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract CheckpointTag MakeCheckpointTag(CheckpointTag previous, ReaderSubscriptionMessage.CommittedEventDistributed committedEvent)
+    parameters:
+    - id: previous
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: committedEvent
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public MustOverride Function MakeCheckpointTag(previous As CheckpointTag, committedEvent As ReaderSubscriptionMessage.CommittedEventDistributed) As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  id: MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.EventReaderPartitionEof)
+  nameWithType: PositionTagger.MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.EventReaderPartitionEof)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof)
+  type: Method
+  source:
+    id: MakeCheckpointTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 16
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract CheckpointTag MakeCheckpointTag(CheckpointTag previous, ReaderSubscriptionMessage.EventReaderPartitionEof partitionEof)
+    parameters:
+    - id: previous
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: partitionEof
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public MustOverride Function MakeCheckpointTag(previous As CheckpointTag, partitionEof As ReaderSubscriptionMessage.EventReaderPartitionEof) As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  id: MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  nameWithType: PositionTagger.MakeCheckpointTag(CheckpointTag, ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag(EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted)
+  type: Method
+  source:
+    id: MakeCheckpointTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract CheckpointTag MakeCheckpointTag(CheckpointTag previous, ReaderSubscriptionMessage.EventReaderPartitionDeleted partitionDeleted)
+    parameters:
+    - id: previous
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: partitionDeleted
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public MustOverride Function MakeCheckpointTag(previous As CheckpointTag, partitionDeleted As ReaderSubscriptionMessage.EventReaderPartitionDeleted) As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag
+  id: MakeZeroCheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: MakeZeroCheckpointTag()
+  nameWithType: PositionTagger.MakeZeroCheckpointTag()
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag()
+  type: Method
+  source:
+    id: MakeZeroCheckpointTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 22
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract CheckpointTag MakeZeroCheckpointTag()
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public MustOverride Function MakeZeroCheckpointTag As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  id: IsCompatible(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: IsCompatible(CheckpointTag)
+  nameWithType: PositionTagger.IsCompatible(CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  type: Method
+  source:
+    id: IsCompatible
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool IsCompatible(CheckpointTag checkpointTag)
+    parameters:
+    - id: checkpointTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function IsCompatible(checkpointTag As CheckpointTag) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  id: AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.PositionTagger
+  langs:
+  - csharp
+  - vb
+  name: AdjustTag(CheckpointTag)
+  nameWithType: PositionTagger.AdjustTag(CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag(EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  type: Method
+  source:
+    id: AdjustTag
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/PositionTagger.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract CheckpointTag AdjustTag(CheckpointTag tag)
+    parameters:
+    - id: tag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    content.vb: Public MustOverride Function AdjustTag(tag As CheckpointTag) As CheckpointTag
+  overload: EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.#ctor
+  name: PositionTagger
+  nameWithType: PositionTagger.PositionTagger
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.PositionTagger
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag
+  name: IsMessageAfterCheckpointTag
+  nameWithType: PositionTagger.IsMessageAfterCheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.IsMessageAfterCheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+  parent: EventStore.Projections.Core.Messages
+  name: ReaderSubscriptionMessage.CommittedEventDistributed
+  nameWithType: ReaderSubscriptionMessage.CommittedEventDistributed
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.CommittedEventDistributed
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag
+  name: MakeCheckpointTag
+  nameWithType: PositionTagger.MakeCheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeCheckpointTag
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+  parent: EventStore.Projections.Core.Messages
+  name: ReaderSubscriptionMessage.EventReaderPartitionEof
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionEof
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionEof
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  parent: EventStore.Projections.Core.Messages
+  name: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  nameWithType: ReaderSubscriptionMessage.EventReaderPartitionDeleted
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionMessage.EventReaderPartitionDeleted
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag
+  name: MakeZeroCheckpointTag
+  nameWithType: PositionTagger.MakeZeroCheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.MakeZeroCheckpointTag
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible
+  name: IsCompatible
+  nameWithType: PositionTagger.IsCompatible
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.IsCompatible
+- uid: EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag
+  name: AdjustTag
+  nameWithType: PositionTagger.AdjustTag
+  fullName: EventStore.Projections.Core.Services.Processing.PositionTagger.AdjustTag

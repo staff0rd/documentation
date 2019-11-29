@@ -27,8 +27,10 @@ items:
   summary: "\nActions to be taken by server in the case of a client NAK\n"
   example: []
   syntax:
-    content: public enum PersistentSubscriptionNakEventAction
-    content.vb: Public Enum PersistentSubscriptionNakEventAction
+    content: 'public enum PersistentSubscriptionNakEventAction : int'
+    content.vb: Public Enum PersistentSubscriptionNakEventAction As Integer
+  extensionMethods:
+  - EventStore.ClientAPI.PersistentSubscriptionNakEventAction.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   modifiers.csharp:
   - public
   - enum
@@ -56,9 +58,10 @@ items:
   summary: "\nClient unknown on action. Let server decide\n"
   example: []
   syntax:
-    content: Unknown = 0
+    content: Unknown = null
     return:
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
+    content.vb: Unknown = Nothing
   modifiers.csharp:
   - public
   - const
@@ -86,9 +89,10 @@ items:
   summary: "\nPark message do not resend. Put on poison queue\n"
   example: []
   syntax:
-    content: Park = 1
+    content: Park = null
     return:
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
+    content.vb: Park = Nothing
   modifiers.csharp:
   - public
   - const
@@ -116,9 +120,10 @@ items:
   summary: "\nExplicitly retry the message.\n"
   example: []
   syntax:
-    content: Retry = 2
+    content: Retry = null
     return:
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
+    content.vb: Retry = Nothing
   modifiers.csharp:
   - public
   - const
@@ -146,9 +151,10 @@ items:
   summary: "\nSkip this message do not resend do not put in poison queue\n"
   example: []
   syntax:
-    content: Skip = 3
+    content: Skip = null
     return:
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
+    content.vb: Skip = Nothing
   modifiers.csharp:
   - public
   - const
@@ -176,9 +182,10 @@ items:
   summary: "\nStop the subscription.\n"
   example: []
   syntax:
-    content: Stop = 4
+    content: Stop = null
     return:
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
+    content.vb: Stop = Nothing
   modifiers.csharp:
   - public
   - const
@@ -191,6 +198,85 @@ references:
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
+- uid: EventStore.ClientAPI.PersistentSubscriptionNakEventAction.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<PersistentSubscriptionNakEventAction>()
+  nameWithType: EnumExtensions.EnumValueName<PersistentSubscriptionNakEventAction>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.PersistentSubscriptionNakEventAction>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of PersistentSubscriptionNakEventAction)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.PersistentSubscriptionNakEventAction)()
+  name.vb: EnumValueName(Of PersistentSubscriptionNakEventAction)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<PersistentSubscriptionNakEventAction>
+    nameWithType: EnumExtensions.EnumValueName<PersistentSubscriptionNakEventAction>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.PersistentSubscriptionNakEventAction>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of PersistentSubscriptionNakEventAction)
+    nameWithType: EnumExtensions.EnumValueName(Of PersistentSubscriptionNakEventAction)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.PersistentSubscriptionNakEventAction)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
 - uid: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
   commentId: T:EventStore.ClientAPI.PersistentSubscriptionNakEventAction
   parent: EventStore.ClientAPI

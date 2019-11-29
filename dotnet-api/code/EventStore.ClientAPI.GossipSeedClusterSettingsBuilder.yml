@@ -11,9 +11,9 @@ items:
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferRandomNode
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.PreferSlaveNode
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
-  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
-  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
-  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(System.TimeSpan)
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,IPEndPoint[])
+  - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts(System.Int32)
   langs:
   - csharp
@@ -32,34 +32,28 @@ items:
   summary: "\nFluent builder used to configure <xref href=\"EventStore.ClientAPI.ClusterSettings\" data-throw-if-not-resolved=\"false\"></xref> for connecting to a cluster\nusing gossip seeds.\n"
   example: []
   syntax:
-    content: public class GossipSeedClusterSettingsBuilder
-    content.vb: Public Class GossipSeedClusterSettingsBuilder
+    content: 'public class GossipSeedClusterSettingsBuilder : object'
+    content.vb: >-
+      Public Class GossipSeedClusterSettingsBuilder
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
-  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
-  id: SetGossipSeedEndPoints(System.Net.IPEndPoint[])
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
+  id: SetGossipSeedEndPoints(IPEndPoint[])
   parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
   langs:
   - csharp
   - vb
   name: SetGossipSeedEndPoints(IPEndPoint[])
   nameWithType: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
-  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint[])
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint[])
   type: Method
   source:
     id: SetGossipSeedEndPoints
@@ -74,34 +68,30 @@ items:
     content: public GossipSeedClusterSettingsBuilder SetGossipSeedEndPoints(params IPEndPoint[] gossipSeeds)
     parameters:
     - id: gossipSeeds
-      type: System.Net.IPEndPoint[]
-      description: <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref>s representing the endpoints of nodes from which to seed gossip.
+      type: IPEndPoint[]
+      description: <see cref="!:IPEndPoint"></see>s representing the endpoints of nodes from which to seed gossip.
     return:
       type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
       description: A <xref href="EventStore.ClientAPI.ClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function SetGossipSeedEndPoints(ParamArray gossipSeeds As IPEndPoint()) As GossipSeedClusterSettingsBuilder
   overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: If no gossip seeds are specified.
   nameWithType.vb: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Net.IPEndPoint())
+  fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(IPEndPoint())
   name.vb: SetGossipSeedEndPoints(IPEndPoint())
-- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
-  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
-  id: SetGossipSeedEndPoints(System.Boolean,System.Net.IPEndPoint[])
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,IPEndPoint[])
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean,IPEndPoint[])
+  id: SetGossipSeedEndPoints(System.Boolean,IPEndPoint[])
   parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
   langs:
   - csharp
   - vb
   name: SetGossipSeedEndPoints(Boolean, IPEndPoint[])
   nameWithType: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint[])
-  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint[])
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, IPEndPoint[])
   type: Method
   source:
     id: SetGossipSeedEndPoints
@@ -119,23 +109,19 @@ items:
       type: System.Boolean
       description: Specifies that eventstore should use https when connecting to gossip
     - id: gossipSeeds
-      type: System.Net.IPEndPoint[]
-      description: <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref>s representing the endpoints of nodes from which to seed gossip.
+      type: IPEndPoint[]
+      description: <see cref="!:IPEndPoint"></see>s representing the endpoints of nodes from which to seed gossip.
     return:
       type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
       description: A <xref href="EventStore.ClientAPI.ClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function SetGossipSeedEndPoints(tlsTerminatedEndpoints As Boolean, ParamArray gossipSeeds As IPEndPoint()) As GossipSeedClusterSettingsBuilder
   overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: If no gossip seeds are specified.
   nameWithType.vb: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(Boolean, IPEndPoint())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, System.Net.IPEndPoint())
+  fullName.vb: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(System.Boolean, IPEndPoint())
   name.vb: SetGossipSeedEndPoints(Boolean, IPEndPoint())
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
   commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(EventStore.ClientAPI.GossipSeed[])
@@ -168,10 +154,6 @@ items:
       description: A <xref href="EventStore.ClientAPI.ClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function SetGossipSeedEndPoints(ParamArray gossipSeeds As GossipSeed()) As GossipSeedClusterSettingsBuilder
   overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: If no gossip seeds are specified.
   nameWithType.vb: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints(GossipSeed())
   modifiers.csharp:
   - public
@@ -241,24 +223,20 @@ items:
       description: A <xref href="EventStore.ClientAPI.GossipSeedClusterSettingsBuilder" data-throw-if-not-resolved="false"></xref> for further configuration.
     content.vb: Public Function SetMaxDiscoverAttempts(maxDiscoverAttempts As Integer) As GossipSeedClusterSettingsBuilder
   overload: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts*
-  exceptions:
-  - type: System.ArgumentOutOfRangeException
-    commentId: T:System.ArgumentOutOfRangeException
-    description: If <code data-dev-comment-type="paramref" class="paramref">maxDiscoverAttempts</code> is less than or equal to 0.
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(System.TimeSpan)
-  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(System.TimeSpan)
-  id: SetGossipTimeout(System.TimeSpan)
+- uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
+  commentId: M:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
+  id: SetGossipTimeout(TimeSpan)
   parent: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
   langs:
   - csharp
   - vb
   name: SetGossipTimeout(TimeSpan)
   nameWithType: GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
-  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(System.TimeSpan)
+  fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout(TimeSpan)
   type: Method
   source:
     id: SetGossipTimeout
@@ -273,7 +251,7 @@ items:
     content: public GossipSeedClusterSettingsBuilder SetGossipTimeout(TimeSpan timeout)
     parameters:
     - id: timeout
-      type: System.TimeSpan
+      type: TimeSpan
       description: The period after which gossip times out if none is received.
     return:
       type: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
@@ -429,345 +407,48 @@ references:
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.ClientAPI.GossipSeed
   commentId: T:EventStore.ClientAPI.GossipSeed
   name: GossipSeed
   nameWithType: GossipSeed
   fullName: EventStore.ClientAPI.GossipSeed
-- uid: System.Net.IPEndPoint
-  commentId: T:System.Net.IPEndPoint
-  parent: System.Net
-  isExternal: true
-  name: IPEndPoint
-  nameWithType: IPEndPoint
-  fullName: System.Net.IPEndPoint
 - uid: EventStore.ClientAPI.ClusterSettingsBuilder
   commentId: T:EventStore.ClientAPI.ClusterSettingsBuilder
   parent: EventStore.ClientAPI
   name: ClusterSettingsBuilder
   nameWithType: ClusterSettingsBuilder
   fullName: EventStore.ClientAPI.ClusterSettingsBuilder
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints*
   commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints
   name: SetGossipSeedEndPoints
   nameWithType: GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipSeedEndPoints
-- uid: System.Net.IPEndPoint[]
+- uid: IPEndPoint[]
   isExternal: true
   name: IPEndPoint[]
   nameWithType: IPEndPoint[]
-  fullName: System.Net.IPEndPoint[]
+  fullName: IPEndPoint[]
   nameWithType.vb: IPEndPoint()
-  fullName.vb: System.Net.IPEndPoint()
+  fullName.vb: IPEndPoint()
   name.vb: IPEndPoint()
   spec.csharp:
-  - uid: System.Net.IPEndPoint
+  - uid: IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: System.Net.IPEndPoint
+    fullName: IPEndPoint
     isExternal: true
   - name: '[]'
     nameWithType: '[]'
     fullName: '[]'
   spec.vb:
-  - uid: System.Net.IPEndPoint
+  - uid: IPEndPoint
     name: IPEndPoint
     nameWithType: IPEndPoint
-    fullName: System.Net.IPEndPoint
+    fullName: IPEndPoint
     isExternal: true
   - name: ()
     nameWithType: ()
@@ -778,15 +459,7 @@ references:
   name: GossipSeedClusterSettingsBuilder
   nameWithType: GossipSeedClusterSettingsBuilder
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
-- uid: System.Net
-  commentId: N:System.Net
-  isExternal: true
-  name: System.Net
-  nameWithType: System.Net
-  fullName: System.Net
 - uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -820,17 +493,12 @@ references:
   name: KeepDiscovering
   nameWithType: GossipSeedClusterSettingsBuilder.KeepDiscovering
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.KeepDiscovering
-- uid: System.ArgumentOutOfRangeException
-  commentId: T:System.ArgumentOutOfRangeException
-  isExternal: true
 - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts*
   commentId: Overload:EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts
   name: SetMaxDiscoverAttempts
   nameWithType: GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetMaxDiscoverAttempts
 - uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -840,13 +508,11 @@ references:
   name: SetGossipTimeout
   nameWithType: GossipSeedClusterSettingsBuilder.SetGossipTimeout
   fullName: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder.SetGossipTimeout
-- uid: System.TimeSpan
-  commentId: T:System.TimeSpan
-  parent: System
+- uid: TimeSpan
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: System.TimeSpan
+  fullName: TimeSpan
 - uid: EventStore.ClientAPI.DnsClusterSettingsBuilder
   commentId: T:EventStore.ClientAPI.DnsClusterSettingsBuilder
   parent: EventStore.ClientAPI

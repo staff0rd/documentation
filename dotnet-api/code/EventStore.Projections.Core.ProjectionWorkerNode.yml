@@ -1,0 +1,290 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.ProjectionWorkerNode
+  commentId: T:EventStore.Projections.Core.ProjectionWorkerNode
+  id: ProjectionWorkerNode
+  parent: EventStore.Projections.Core
+  children:
+  - EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
+  - EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+  - EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging(EventStore.Core.Bus.IBus)
+  - EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+  langs:
+  - csharp
+  - vb
+  name: ProjectionWorkerNode
+  nameWithType: ProjectionWorkerNode
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode
+  type: Class
+  source:
+    id: ProjectionWorkerNode
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: 'public class ProjectionWorkerNode : object'
+    content.vb: >-
+      Public Class ProjectionWorkerNode
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
+  commentId: M:EventStore.Projections.Core.ProjectionWorkerNode.#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)
+  id: '#ctor(Guid,EventStore.Core.TransactionLog.Chunks.TFChunkDb,EventStore.Core.Bus.IQueuedHandler,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler,EventStore.Common.Options.ProjectionType,System.Boolean)'
+  parent: EventStore.Projections.Core.ProjectionWorkerNode
+  langs:
+  - csharp
+  - vb
+  name: ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType, Boolean)
+  nameWithType: ProjectionWorkerNode.ProjectionWorkerNode(Guid, TFChunkDb, IQueuedHandler, ITimeProvider, ISingletonTimeoutScheduler, ProjectionType, Boolean)
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.ProjectionWorkerNode(Guid, EventStore.Core.TransactionLog.Chunks.TFChunkDb, EventStore.Core.Bus.IQueuedHandler, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Projections.Core.Services.ISingletonTimeoutScheduler, EventStore.Common.Options.ProjectionType, System.Boolean)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
+    startLine: 33
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public ProjectionWorkerNode(Guid workerId, TFChunkDb db, IQueuedHandler inputQueue, ITimeProvider timeProvider, ISingletonTimeoutScheduler timeoutScheduler, ProjectionType runProjections, bool faultOutOfOrderProjections)
+    parameters:
+    - id: workerId
+      type: Guid
+    - id: db
+      type: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+    - id: inputQueue
+      type: EventStore.Core.Bus.IQueuedHandler
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    - id: timeoutScheduler
+      type: EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
+    - id: runProjections
+      type: EventStore.Common.Options.ProjectionType
+    - id: faultOutOfOrderProjections
+      type: System.Boolean
+    content.vb: Public Sub New(workerId As Guid, db As TFChunkDb, inputQueue As IQueuedHandler, timeProvider As ITimeProvider, timeoutScheduler As ISingletonTimeoutScheduler, runProjections As ProjectionType, faultOutOfOrderProjections As Boolean)
+  overload: EventStore.Projections.Core.ProjectionWorkerNode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+  commentId: P:EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+  id: CoreOutput
+  parent: EventStore.Projections.Core.ProjectionWorkerNode
+  langs:
+  - csharp
+  - vb
+  name: CoreOutput
+  nameWithType: ProjectionWorkerNode.CoreOutput
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+  type: Property
+  source:
+    id: CoreOutput
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public InMemoryBus CoreOutput { get; }
+    parameters: []
+    return:
+      type: EventStore.Core.Bus.InMemoryBus
+    content.vb: Public ReadOnly Property CoreOutput As InMemoryBus
+  overload: EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+  commentId: P:EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+  id: SlaveProjectionResponseWriter
+  parent: EventStore.Projections.Core.ProjectionWorkerNode
+  langs:
+  - csharp
+  - vb
+  name: SlaveProjectionResponseWriter
+  nameWithType: ProjectionWorkerNode.SlaveProjectionResponseWriter
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+  type: Property
+  source:
+    id: SlaveProjectionResponseWriter
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
+    startLine: 88
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public SlaveProjectionResponseWriter SlaveProjectionResponseWriter { get; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.Management.SlaveProjectionResponseWriter
+    content.vb: Public ReadOnly Property SlaveProjectionResponseWriter As SlaveProjectionResponseWriter
+  overload: EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging(EventStore.Core.Bus.IBus)
+  commentId: M:EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging(EventStore.Core.Bus.IBus)
+  id: SetupMessaging(EventStore.Core.Bus.IBus)
+  parent: EventStore.Projections.Core.ProjectionWorkerNode
+  langs:
+  - csharp
+  - vb
+  name: SetupMessaging(IBus)
+  nameWithType: ProjectionWorkerNode.SetupMessaging(IBus)
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging(EventStore.Core.Bus.IBus)
+  type: Method
+  source:
+    id: SetupMessaging
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/ProjectionWorkerNode.cs
+    startLine: 92
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core
+  syntax:
+    content: public void SetupMessaging(IBus coreInputBus)
+    parameters:
+    - id: coreInputBus
+      type: EventStore.Core.Bus.IBus
+    content.vb: Public Sub SetupMessaging(coreInputBus As IBus)
+  overload: EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core
+  commentId: N:EventStore.Projections.Core
+  name: EventStore.Projections.Core
+  nameWithType: EventStore.Projections.Core
+  fullName: EventStore.Projections.Core
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.#ctor*
+  commentId: Overload:EventStore.Projections.Core.ProjectionWorkerNode.#ctor
+  name: ProjectionWorkerNode
+  nameWithType: ProjectionWorkerNode.ProjectionWorkerNode
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.ProjectionWorkerNode
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  commentId: T:EventStore.Core.TransactionLog.Chunks.TFChunkDb
+  parent: EventStore.Core.TransactionLog.Chunks
+  name: TFChunkDb
+  nameWithType: TFChunkDb
+  fullName: EventStore.Core.TransactionLog.Chunks.TFChunkDb
+- uid: EventStore.Core.Bus.IQueuedHandler
+  commentId: T:EventStore.Core.Bus.IQueuedHandler
+  parent: EventStore.Core.Bus
+  name: IQueuedHandler
+  nameWithType: IQueuedHandler
+  fullName: EventStore.Core.Bus.IQueuedHandler
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
+  commentId: T:EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
+  parent: EventStore.Projections.Core.Services
+  name: ISingletonTimeoutScheduler
+  nameWithType: ISingletonTimeoutScheduler
+  fullName: EventStore.Projections.Core.Services.ISingletonTimeoutScheduler
+- uid: EventStore.Common.Options.ProjectionType
+  commentId: T:EventStore.Common.Options.ProjectionType
+  parent: EventStore.Common.Options
+  name: ProjectionType
+  nameWithType: ProjectionType
+  fullName: EventStore.Common.Options.ProjectionType
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.TransactionLog.Chunks
+  commentId: N:EventStore.Core.TransactionLog.Chunks
+  name: EventStore.Core.TransactionLog.Chunks
+  nameWithType: EventStore.Core.TransactionLog.Chunks
+  fullName: EventStore.Core.TransactionLog.Chunks
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: EventStore.Common.Options
+  commentId: N:EventStore.Common.Options
+  name: EventStore.Common.Options
+  nameWithType: EventStore.Common.Options
+  fullName: EventStore.Common.Options
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput*
+  commentId: Overload:EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+  name: CoreOutput
+  nameWithType: ProjectionWorkerNode.CoreOutput
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.CoreOutput
+- uid: EventStore.Core.Bus.InMemoryBus
+  commentId: T:EventStore.Core.Bus.InMemoryBus
+  parent: EventStore.Core.Bus
+  name: InMemoryBus
+  nameWithType: InMemoryBus
+  fullName: EventStore.Core.Bus.InMemoryBus
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter*
+  commentId: Overload:EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+  name: SlaveProjectionResponseWriter
+  nameWithType: ProjectionWorkerNode.SlaveProjectionResponseWriter
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.SlaveProjectionResponseWriter
+- uid: EventStore.Projections.Core.Services.Management.SlaveProjectionResponseWriter
+  commentId: T:EventStore.Projections.Core.Services.Management.SlaveProjectionResponseWriter
+  parent: EventStore.Projections.Core.Services.Management
+  name: SlaveProjectionResponseWriter
+  nameWithType: SlaveProjectionResponseWriter
+  fullName: EventStore.Projections.Core.Services.Management.SlaveProjectionResponseWriter
+- uid: EventStore.Projections.Core.Services.Management
+  commentId: N:EventStore.Projections.Core.Services.Management
+  name: EventStore.Projections.Core.Services.Management
+  nameWithType: EventStore.Projections.Core.Services.Management
+  fullName: EventStore.Projections.Core.Services.Management
+- uid: EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging*
+  commentId: Overload:EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging
+  name: SetupMessaging
+  nameWithType: ProjectionWorkerNode.SetupMessaging
+  fullName: EventStore.Projections.Core.ProjectionWorkerNode.SetupMessaging
+- uid: EventStore.Core.Bus.IBus
+  commentId: T:EventStore.Core.Bus.IBus
+  parent: EventStore.Core.Bus
+  name: IBus
+  nameWithType: IBus
+  fullName: EventStore.Core.Bus.IBus

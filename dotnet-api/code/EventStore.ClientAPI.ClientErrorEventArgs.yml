@@ -5,7 +5,7 @@ items:
   id: ClientErrorEventArgs
   parent: EventStore.ClientAPI
   children:
-  - EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,System.Exception)
+  - EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,Exception)
   - EventStore.ClientAPI.ClientErrorEventArgs.Connection
   - EventStore.ClientAPI.ClientErrorEventArgs.Exception
   langs:
@@ -28,20 +28,9 @@ items:
     content: 'public class ClientErrorEventArgs : EventArgs'
     content.vb: >-
       Public Class ClientErrorEventArgs
-
           Inherits EventArgs
   inheritance:
   - System.Object
-  - System.EventArgs
-  inheritedMembers:
-  - System.EventArgs.Empty
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -72,7 +61,7 @@ items:
     content: public Exception Exception { get; }
     parameters: []
     return:
-      type: System.Exception
+      type: Exception
     content.vb: Public ReadOnly Property Exception As Exception
   overload: EventStore.ClientAPI.ClientErrorEventArgs.Exception*
   modifiers.csharp:
@@ -114,16 +103,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,System.Exception)
-  commentId: M:EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,System.Exception)
-  id: '#ctor(EventStore.ClientAPI.IEventStoreConnection,System.Exception)'
+- uid: EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,Exception)
+  commentId: M:EventStore.ClientAPI.ClientErrorEventArgs.#ctor(EventStore.ClientAPI.IEventStoreConnection,Exception)
+  id: '#ctor(EventStore.ClientAPI.IEventStoreConnection,Exception)'
   parent: EventStore.ClientAPI.ClientErrorEventArgs
   langs:
   - csharp
   - vb
   name: ClientErrorEventArgs(IEventStoreConnection, Exception)
   nameWithType: ClientErrorEventArgs.ClientErrorEventArgs(IEventStoreConnection, Exception)
-  fullName: EventStore.ClientAPI.ClientErrorEventArgs.ClientErrorEventArgs(EventStore.ClientAPI.IEventStoreConnection, System.Exception)
+  fullName: EventStore.ClientAPI.ClientErrorEventArgs.ClientErrorEventArgs(EventStore.ClientAPI.IEventStoreConnection, Exception)
   type: Constructor
   source:
     id: .ctor
@@ -141,7 +130,7 @@ items:
       type: EventStore.ClientAPI.IEventStoreConnection
       description: The <xref href="EventStore.ClientAPI.IEventStoreConnection" data-throw-if-not-resolved="false"></xref> responsible for raising the event.
     - id: exception
-      type: System.Exception
+      type: Exception
       description: The thrown exception, if one was raised.
     content.vb: Public Sub New(connection As IEventStoreConnection, exception As Exception)
   overload: EventStore.ClientAPI.ClientErrorEventArgs.#ctor*
@@ -162,323 +151,20 @@ references:
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.EventArgs
-  commentId: T:System.EventArgs
-  parent: System
-  isExternal: true
-  name: EventArgs
-  nameWithType: EventArgs
-  fullName: System.EventArgs
-- uid: System.EventArgs.Empty
-  commentId: F:System.EventArgs.Empty
-  parent: System.EventArgs
-  isExternal: true
-  name: Empty
-  nameWithType: EventArgs.Empty
-  fullName: System.EventArgs.Empty
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.ClientAPI.ClientErrorEventArgs.Exception*
   commentId: Overload:EventStore.ClientAPI.ClientErrorEventArgs.Exception
   name: Exception
   nameWithType: ClientErrorEventArgs.Exception
   fullName: EventStore.ClientAPI.ClientErrorEventArgs.Exception
-- uid: System.Exception
-  commentId: T:System.Exception
-  parent: System
+- uid: Exception
   isExternal: true
   name: Exception
   nameWithType: Exception
-  fullName: System.Exception
+  fullName: Exception
 - uid: EventStore.ClientAPI.ClientErrorEventArgs.Connection*
   commentId: Overload:EventStore.ClientAPI.ClientErrorEventArgs.Connection
   name: Connection

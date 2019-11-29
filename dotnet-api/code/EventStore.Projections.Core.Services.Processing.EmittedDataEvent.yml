@@ -1,0 +1,766 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  commentId: T:EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  id: EmittedDataEvent
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor(System.String,Guid,System.String,System.Boolean,System.String,EventStore.Projections.Core.Services.Processing.ExtraMetaData,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+  - EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString
+  langs:
+  - csharp
+  - vb
+  name: EmittedDataEvent
+  nameWithType: EmittedDataEvent
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  type: Class
+  source:
+    id: EmittedDataEvent
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 4
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class EmittedDataEvent : EmittedEvent'
+    content.vb: >-
+      Public Class EmittedDataEvent
+
+          Inherits EmittedEvent
+  inheritance:
+  - System.Object
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent
+  inheritedMembers:
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.EventId
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.EventType
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.ExpectedTag
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  - EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor(System.String,Guid,System.String,System.Boolean,System.String,EventStore.Projections.Core.Services.Processing.ExtraMetaData,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor(System.String,Guid,System.String,System.Boolean,System.String,EventStore.Projections.Core.Services.Processing.ExtraMetaData,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})
+  id: '#ctor(System.String,Guid,System.String,System.Boolean,System.String,EventStore.Projections.Core.Services.Processing.ExtraMetaData,EventStore.Projections.Core.Services.Processing.CheckpointTag,EventStore.Projections.Core.Services.Processing.CheckpointTag,Action{System.Int64})'
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: EmittedDataEvent(String, Guid, String, Boolean, String, ExtraMetaData, CheckpointTag, CheckpointTag, Action<Int64>)
+  nameWithType: EmittedDataEvent.EmittedDataEvent(String, Guid, String, Boolean, String, ExtraMetaData, CheckpointTag, CheckpointTag, Action<Int64>)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.EmittedDataEvent(System.String, Guid, System.String, System.Boolean, System.String, EventStore.Projections.Core.Services.Processing.ExtraMetaData, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action<System.Int64>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public EmittedDataEvent(string streamId, Guid eventId, string eventType, bool isJson, string data, ExtraMetaData metadata, CheckpointTag causedByTag, CheckpointTag expectedTag, Action<long> onCommitted = null)
+    parameters:
+    - id: streamId
+      type: System.String
+    - id: eventId
+      type: Guid
+    - id: eventType
+      type: System.String
+    - id: isJson
+      type: System.Boolean
+    - id: data
+      type: System.String
+    - id: metadata
+      type: EventStore.Projections.Core.Services.Processing.ExtraMetaData
+    - id: causedByTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: expectedTag
+      type: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    - id: onCommitted
+      type: Action{System.Int64}
+    content.vb: Public Sub New(streamId As String, eventId As Guid, eventType As String, isJson As Boolean, data As String, metadata As ExtraMetaData, causedByTag As CheckpointTag, expectedTag As CheckpointTag, onCommitted As Action(Of Long) = Nothing)
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor*
+  nameWithType.vb: EmittedDataEvent.EmittedDataEvent(String, Guid, String, Boolean, String, ExtraMetaData, CheckpointTag, CheckpointTag, Action(Of Int64))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.EmittedDataEvent(System.String, Guid, System.String, System.Boolean, System.String, EventStore.Projections.Core.Services.Processing.ExtraMetaData, EventStore.Projections.Core.Services.Processing.CheckpointTag, EventStore.Projections.Core.Services.Processing.CheckpointTag, Action(Of System.Int64))
+  name.vb: EmittedDataEvent(String, Guid, String, Boolean, String, ExtraMetaData, CheckpointTag, CheckpointTag, Action(Of Int64))
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+  id: Data
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: EmittedDataEvent.Data
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+  type: Property
+  source:
+    id: Data
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override string Data { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Data As String
+  overridden: EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+  id: Metadata
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: Metadata
+  nameWithType: EmittedDataEvent.Metadata
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+  type: Property
+  source:
+    id: Metadata
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 24
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public ExtraMetaData Metadata { get; }
+    parameters: []
+    return:
+      type: EventStore.Projections.Core.Services.Processing.ExtraMetaData
+    content.vb: Public ReadOnly Property Metadata As ExtraMetaData
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+  id: IsJson
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: IsJson
+  nameWithType: EmittedDataEvent.IsJson
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+  type: Property
+  source:
+    id: IsJson
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override bool IsJson { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property IsJson As Boolean
+  overridden: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady
+  id: IsReady
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: IsReady()
+  nameWithType: EmittedDataEvent.IsReady()
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady()
+  type: Method
+  source:
+    id: IsReady
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 32
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override bool IsReady()
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function IsReady As Boolean
+  overridden: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData
+  id: ExtraMetaData
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: ExtraMetaData()
+  nameWithType: EmittedDataEvent.ExtraMetaData()
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData()
+  type: Method
+  source:
+    id: ExtraMetaData
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override IEnumerable<KeyValuePair<string, string>> ExtraMetaData()
+    return:
+      type: IEnumerable{KeyValuePair{System.String,System.String}}
+    content.vb: Public Overrides Function ExtraMetaData As IEnumerable(Of KeyValuePair(Of String, String))
+  overridden: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString
+  id: ToString
+  parent: EventStore.Projections.Core.Services.Processing.EmittedDataEvent
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: EmittedDataEvent.ToString()
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EmittedDataEvent.cs
+    startLine: 40
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  commentId: T:EventStore.Projections.Core.Services.Processing.EmittedEvent
+  parent: EventStore.Projections.Core.Services.Processing
+  name: EmittedEvent
+  nameWithType: EmittedEvent
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
+  commentId: F:EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: StreamId
+  nameWithType: EmittedEvent.StreamId
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.StreamId
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventId
+  commentId: F:EventStore.Projections.Core.Services.Processing.EmittedEvent.EventId
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: EventId
+  nameWithType: EmittedEvent.EventId
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventId
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventType
+  commentId: F:EventStore.Projections.Core.Services.Processing.EmittedEvent.EventType
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: EventType
+  nameWithType: EmittedEvent.EventType
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.EventType
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: CausedByTag
+  nameWithType: EmittedEvent.CausedByTag
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedByTag
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExpectedTag
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.ExpectedTag
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: ExpectedTag
+  nameWithType: EmittedEvent.ExpectedTag
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExpectedTag
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: OnCommitted
+  nameWithType: EmittedEvent.OnCommitted
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.OnCommitted
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: CausedBy
+  nameWithType: EmittedEvent.CausedBy
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CausedBy
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: CorrelationId
+  nameWithType: EmittedEvent.CorrelationId
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.CorrelationId
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  isExternal: true
+  name: SetCausedBy(Guid)
+  nameWithType: EmittedEvent.SetCausedBy(Guid)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+    name: SetCausedBy
+    nameWithType: EmittedEvent.SetCausedBy
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy(Guid)
+    name: SetCausedBy
+    nameWithType: EmittedEvent.SetCausedBy
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCausedBy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  isExternal: true
+  name: SetCorrelationId(String)
+  nameWithType: EmittedEvent.SetCorrelationId(String)
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+    name: SetCorrelationId
+    nameWithType: EmittedEvent.SetCorrelationId
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId(System.String)
+    name: SetCorrelationId
+    nameWithType: EmittedEvent.SetCorrelationId
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.SetCorrelationId
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.#ctor
+  name: EmittedDataEvent
+  nameWithType: EmittedDataEvent.EmittedDataEvent
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.EmittedDataEvent
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing.ExtraMetaData
+  commentId: T:EventStore.Projections.Core.Services.Processing.ExtraMetaData
+  parent: EventStore.Projections.Core.Services.Processing
+  name: ExtraMetaData
+  nameWithType: ExtraMetaData
+  fullName: EventStore.Projections.Core.Services.Processing.ExtraMetaData
+- uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  commentId: T:EventStore.Projections.Core.Services.Processing.CheckpointTag
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CheckpointTag
+  nameWithType: CheckpointTag
+  fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+- uid: Action{System.Int64}
+  commentId: '!:Action{System.Int64}'
+  definition: Action`1
+  name: Action<Int64>
+  nameWithType: Action<Int64>
+  fullName: Action<System.Int64>
+  nameWithType.vb: Action(Of Int64)
+  fullName.vb: Action(Of System.Int64)
+  name.vb: Action(Of Int64)
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: Data
+  nameWithType: EmittedEvent.Data
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.Data
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+  name: Data
+  nameWithType: EmittedDataEvent.Data
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Data
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+  name: Metadata
+  nameWithType: EmittedDataEvent.Metadata
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.Metadata
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
+  commentId: P:EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: IsJson
+  nameWithType: EmittedEvent.IsJson
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsJson
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+  name: IsJson
+  nameWithType: EmittedDataEvent.IsJson
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsJson
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: IsReady()
+  nameWithType: EmittedEvent.IsReady()
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+    name: IsReady
+    nameWithType: EmittedEvent.IsReady
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+    name: IsReady
+    nameWithType: EmittedEvent.IsReady
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.IsReady
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady
+  name: IsReady
+  nameWithType: EmittedDataEvent.IsReady
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.IsReady
+- uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+  commentId: M:EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+  parent: EventStore.Projections.Core.Services.Processing.EmittedEvent
+  name: ExtraMetaData()
+  nameWithType: EmittedEvent.ExtraMetaData()
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+    name: ExtraMetaData
+    nameWithType: EmittedEvent.ExtraMetaData
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+    name: ExtraMetaData
+    nameWithType: EmittedEvent.ExtraMetaData
+    fullName: EventStore.Projections.Core.Services.Processing.EmittedEvent.ExtraMetaData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData
+  name: ExtraMetaData
+  nameWithType: EmittedDataEvent.ExtraMetaData
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ExtraMetaData
+- uid: IEnumerable{KeyValuePair{System.String,System.String}}
+  commentId: '!:IEnumerable{KeyValuePair{System.String,System.String}}'
+  definition: IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, String>>
+  nameWithType: IEnumerable<KeyValuePair<String, String>>
+  fullName: IEnumerable<KeyValuePair<System.String, System.String>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  fullName.vb: IEnumerable(Of KeyValuePair(Of System.String, System.String))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString
+  name: ToString
+  nameWithType: EmittedDataEvent.ToString
+  fullName: EventStore.Projections.Core.Services.Processing.EmittedDataEvent.ToString

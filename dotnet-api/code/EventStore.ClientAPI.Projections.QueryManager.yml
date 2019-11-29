@@ -5,8 +5,8 @@ items:
   id: QueryManager
   parent: EventStore.ClientAPI.Projections
   children:
-  - EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  - EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  - EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
+  - EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
   langs:
   - csharp
   - vb
@@ -24,34 +24,28 @@ items:
   summary: "\nAPI for executing queries in the Event Store through C# code. Communicates\nwith the Event Store over the RESTful API.\n"
   example: []
   syntax:
-    content: public class QueryManager
-    content.vb: Public Class QueryManager
+    content: 'public class QueryManager : object'
+    content.vb: >-
+      Public Class QueryManager
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  commentId: M:EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  id: '#ctor(EventStore.ClientAPI.ILogger,System.Net.EndPoint,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)'
+- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
+  commentId: M:EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
+  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)'
   parent: EventStore.ClientAPI.Projections.QueryManager
   langs:
   - csharp
   - vb
   name: QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan, IHttpClient)
   nameWithType: QueryManager.QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan, IHttpClient)
-  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager(EventStore.ClientAPI.ILogger, System.Net.EndPoint, System.TimeSpan, System.TimeSpan, EventStore.ClientAPI.Transport.Http.IHttpClient)
+  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, TimeSpan, EventStore.ClientAPI.Transport.Http.IHttpClient)
   type: Constructor
   source:
     id: .ctor
@@ -69,13 +63,13 @@ items:
       type: EventStore.ClientAPI.ILogger
       description: An instance of <xref href="EventStore.ClientAPI.ILogger" data-throw-if-not-resolved="false"></xref> to use for logging.
     - id: httpEndPoint
-      type: System.Net.EndPoint
+      type: EndPoint
       description: HTTP endpoint of an Event Store server.
     - id: projectionOperationTimeout
-      type: System.TimeSpan
+      type: TimeSpan
       description: Timeout of projection API operations
     - id: queryTimeout
-      type: System.TimeSpan
+      type: TimeSpan
       description: Timeout of query execution
     - id: client
       type: EventStore.ClientAPI.Transport.Http.IHttpClient
@@ -86,16 +80,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
-  commentId: M:EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
-  id: ExecuteAsync(System.String,System.String,System.TimeSpan,System.TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+- uid: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  commentId: M:EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
+  id: ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
   parent: EventStore.ClientAPI.Projections.QueryManager
   langs:
   - csharp
   - vb
   name: ExecuteAsync(String, String, TimeSpan, TimeSpan, UserCredentials)
   nameWithType: QueryManager.ExecuteAsync(String, String, TimeSpan, TimeSpan, UserCredentials)
-  fullName: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String, System.String, System.TimeSpan, System.TimeSpan, EventStore.ClientAPI.SystemData.UserCredentials)
+  fullName: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String, System.String, TimeSpan, TimeSpan, EventStore.ClientAPI.SystemData.UserCredentials)
   type: Method
   source:
     id: ExecuteAsync
@@ -117,16 +111,16 @@ items:
       type: System.String
       description: The JavaScript source code for the query.
     - id: initialPollingDelay
-      type: System.TimeSpan
+      type: TimeSpan
       description: Initial time to wait between polling for projection status.
     - id: maximumPollingDelay
-      type: System.TimeSpan
+      type: TimeSpan
       description: Maximum time to wait between polling for projection status.
     - id: userCredentials
       type: EventStore.ClientAPI.SystemData.UserCredentials
       description: Credentials for a user with permission to create a query.
     return:
-      type: System.Threading.Tasks.Task{System.String}
+      type: Task{System.String}
       description: String of JSON containing query result.
     content.vb: Public Function ExecuteAsync(name As String, query As String, initialPollingDelay As TimeSpan, maximumPollingDelay As TimeSpan, userCredentials As UserCredentials = Nothing) As Task(Of String)
   overload: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync*
@@ -141,297 +135,10 @@ references:
   nameWithType: EventStore.ClientAPI.Projections
   fullName: EventStore.ClientAPI.Projections
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.ClientAPI.Projections.QueryManager
   commentId: T:EventStore.ClientAPI.Projections.QueryManager
   name: QueryManager
@@ -448,20 +155,16 @@ references:
   name: QueryManager
   nameWithType: QueryManager.QueryManager
   fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager
-- uid: System.Net.EndPoint
-  commentId: T:System.Net.EndPoint
-  parent: System.Net
+- uid: EndPoint
   isExternal: true
   name: EndPoint
   nameWithType: EndPoint
-  fullName: System.Net.EndPoint
-- uid: System.TimeSpan
-  commentId: T:System.TimeSpan
-  parent: System
+  fullName: EndPoint
+- uid: TimeSpan
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: System.TimeSpan
+  fullName: TimeSpan
 - uid: EventStore.ClientAPI.Transport.Http.IHttpClient
   commentId: T:EventStore.ClientAPI.Transport.Http.IHttpClient
   parent: EventStore.ClientAPI.Transport.Http
@@ -473,12 +176,6 @@ references:
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
-- uid: System.Net
-  commentId: N:System.Net
-  isExternal: true
-  name: System.Net
-  nameWithType: System.Net
-  fullName: System.Net
 - uid: EventStore.ClientAPI.Transport.Http
   commentId: N:EventStore.ClientAPI.Transport.Http
   name: EventStore.ClientAPI.Transport.Http
@@ -490,8 +187,6 @@ references:
   nameWithType: QueryManager.ExecuteAsync
   fullName: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -502,21 +197,20 @@ references:
   name: UserCredentials
   nameWithType: UserCredentials
   fullName: EventStore.ClientAPI.SystemData.UserCredentials
-- uid: System.Threading.Tasks.Task{System.String}
-  commentId: T:System.Threading.Tasks.Task{System.String}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
+- uid: Task{System.String}
+  commentId: '!:Task{System.String}'
+  definition: Task`1
   name: Task<String>
   nameWithType: Task<String>
-  fullName: System.Threading.Tasks.Task<System.String>
+  fullName: Task<System.String>
   nameWithType.vb: Task(Of String)
-  fullName.vb: System.Threading.Tasks.Task(Of System.String)
+  fullName.vb: Task(Of System.String)
   name.vb: Task(Of String)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
+  - uid: Task`1
     name: Task
     nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+    fullName: Task
     isExternal: true
   - name: <
     nameWithType: <
@@ -530,10 +224,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
+  - uid: Task`1
     name: Task
     nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+    fullName: Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -551,48 +245,41 @@ references:
   name: EventStore.ClientAPI.SystemData
   nameWithType: EventStore.ClientAPI.SystemData
   fullName: EventStore.ClientAPI.SystemData
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
+- uid: Task`1
   isExternal: true
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
+  - uid: Task`1
     name: Task
     nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+    fullName: Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
+  - uid: Task`1
     name: Task
     nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+    fullName: Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks

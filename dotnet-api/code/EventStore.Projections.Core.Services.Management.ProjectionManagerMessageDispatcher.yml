@@ -1,0 +1,757 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  commentId: T:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  id: ProjectionManagerMessageDispatcher
+  parent: EventStore.Projections.Core.Services.Management
+  children:
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  - EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  langs:
+  - csharp
+  - vb
+  name: ProjectionManagerMessageDispatcher
+  nameWithType: ProjectionManagerMessageDispatcher
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  type: Class
+  source:
+    id: ProjectionManagerMessageDispatcher
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: 'public class ProjectionManagerMessageDispatcher : object, IHandle<PartitionProcessingResultBase>, IHandle<ReaderSubscriptionManagement.SpoolStreamReading>, IHandle<CoreProjectionManagementControlMessage>, IHandle<PartitionProcessingResultOutputBase>'
+    content.vb: >-
+      Public Class ProjectionManagerMessageDispatcher
+
+          Inherits Object
+
+          Implements IHandle(Of PartitionProcessingResultBase), IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading), IHandle(Of CoreProjectionManagementControlMessage), IHandle(Of PartitionProcessingResultOutputBase)
+  inheritance:
+  - System.Object
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})
+  id: '#ctor(IDictionary{Guid,EventStore.Core.Bus.IPublisher})'
+  parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher>)
+  nameWithType: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher>)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary<Guid, EventStore.Core.Bus.IPublisher>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public ProjectionManagerMessageDispatcher(IDictionary<Guid, IPublisher> queueMap)
+    parameters:
+    - id: queueMap
+      type: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
+    content.vb: Public Sub New(queueMap As IDictionary(Of Guid, IPublisher))
+  overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor*
+  nameWithType.vb: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary(Of Guid, IPublisher))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher(IDictionary(Of Guid, EventStore.Core.Bus.IPublisher))
+  name.vb: ProjectionManagerMessageDispatcher(IDictionary(Of Guid, IPublisher))
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  id: Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Handle(PartitionProcessingResultBase)
+  nameWithType: ProjectionManagerMessageDispatcher.Handle(PartitionProcessingResultBase)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 21
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(PartitionProcessingResultBase message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    content.vb: Public Sub Handle(message As PartitionProcessingResultBase)
+  overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  id: Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Handle(ReaderSubscriptionManagement.SpoolStreamReading)
+  nameWithType: ProjectionManagerMessageDispatcher.Handle(ReaderSubscriptionManagement.SpoolStreamReading)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 25
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ReaderSubscriptionManagement.SpoolStreamReading message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    content.vb: Public Sub Handle(message As ReaderSubscriptionManagement.SpoolStreamReading)
+  overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionManagementControlMessage)
+  nameWithType: ProjectionManagerMessageDispatcher.Handle(CoreProjectionManagementControlMessage)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 35
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(CoreProjectionManagementControlMessage message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    content.vb: Public Sub Handle(message As CoreProjectionManagementControlMessage)
+  overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  id: Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  parent: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Handle(PartitionProcessingResultOutputBase)
+  nameWithType: ProjectionManagerMessageDispatcher.Handle(PartitionProcessingResultOutputBase)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionManagerMessageDispatcher.cs
+    startLine: 47
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(PartitionProcessingResultOutputBase message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    content.vb: Public Sub Handle(message As PartitionProcessingResultOutputBase)
+  overload: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Management
+  commentId: N:EventStore.Projections.Core.Services.Management
+  name: EventStore.Projections.Core.Services.Management
+  nameWithType: EventStore.Projections.Core.Services.Management
+  fullName: EventStore.Projections.Core.Services.Management
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<PartitionProcessingResultBase>
+  nameWithType: IHandle<PartitionProcessingResultBase>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase>
+  nameWithType.vb: IHandle(Of PartitionProcessingResultBase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  name.vb: IHandle(Of PartitionProcessingResultBase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    name: PartitionProcessingResultBase
+    nameWithType: PartitionProcessingResultBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    name: PartitionProcessingResultBase
+    nameWithType: PartitionProcessingResultBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ReaderSubscriptionManagement.SpoolStreamReading>
+  nameWithType: IHandle<ReaderSubscriptionManagement.SpoolStreamReading>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading>
+  nameWithType.vb: IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  name.vb: IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    name: ReaderSubscriptionManagement.SpoolStreamReading
+    nameWithType: ReaderSubscriptionManagement.SpoolStreamReading
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    name: ReaderSubscriptionManagement.SpoolStreamReading
+    nameWithType: ReaderSubscriptionManagement.SpoolStreamReading
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionManagementControlMessage>
+  nameWithType: IHandle<CoreProjectionManagementControlMessage>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage>
+  nameWithType.vb: IHandle(Of CoreProjectionManagementControlMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  name.vb: IHandle(Of CoreProjectionManagementControlMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    name: CoreProjectionManagementControlMessage
+    nameWithType: CoreProjectionManagementControlMessage
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    name: CoreProjectionManagementControlMessage
+    nameWithType: CoreProjectionManagementControlMessage
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<PartitionProcessingResultOutputBase>
+  nameWithType: IHandle<PartitionProcessingResultOutputBase>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase>
+  nameWithType.vb: IHandle(Of PartitionProcessingResultOutputBase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  name.vb: IHandle(Of PartitionProcessingResultOutputBase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    name: PartitionProcessingResultOutputBase
+    nameWithType: PartitionProcessingResultOutputBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    name: PartitionProcessingResultOutputBase
+    nameWithType: PartitionProcessingResultOutputBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.#ctor
+  name: ProjectionManagerMessageDispatcher
+  nameWithType: ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.ProjectionManagerMessageDispatcher
+- uid: IDictionary{Guid,EventStore.Core.Bus.IPublisher}
+  commentId: '!:IDictionary{Guid,EventStore.Core.Bus.IPublisher}'
+  definition: IDictionary`2
+  name: IDictionary<Guid, IPublisher>
+  nameWithType: IDictionary<Guid, IPublisher>
+  fullName: IDictionary<Guid, EventStore.Core.Bus.IPublisher>
+  nameWithType.vb: IDictionary(Of Guid, IPublisher)
+  fullName.vb: IDictionary(Of Guid, EventStore.Core.Bus.IPublisher)
+  name.vb: IDictionary(Of Guid, IPublisher)
+  spec.csharp:
+  - uid: IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Bus.IPublisher
+    name: IPublisher
+    nameWithType: IPublisher
+    fullName: EventStore.Core.Bus.IPublisher
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: Guid
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Core.Bus.IPublisher
+    name: IPublisher
+    nameWithType: IPublisher
+    fullName: EventStore.Core.Bus.IPublisher
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle*
+  commentId: Overload:EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle
+  name: Handle
+  nameWithType: ProjectionManagerMessageDispatcher.Handle
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher.Handle
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(PartitionProcessingResultBase)
+  nameWithType: IHandle<PartitionProcessingResultBase>.Handle(PartitionProcessingResultBase)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase>.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  nameWithType.vb: IHandle(Of PartitionProcessingResultBase).Handle(PartitionProcessingResultBase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase).Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<PartitionProcessingResultBase>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    name: PartitionProcessingResultBase
+    nameWithType: PartitionProcessingResultBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of PartitionProcessingResultBase).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+    name: PartitionProcessingResultBase
+    nameWithType: PartitionProcessingResultBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  commentId: T:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  name: PartitionProcessingResultBase
+  nameWithType: PartitionProcessingResultBase
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultBase
+- uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  commentId: M:EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(T)
+  nameWithType: IHandle<T>.Handle(T)
+  fullName: EventStore.Core.Bus.IHandle<T>.Handle(T)
+  nameWithType.vb: IHandle(Of T).Handle(T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T).Handle(T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<T>.Handle
+    fullName: EventStore.Core.Bus.IHandle<T>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of T).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of T).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  commentId: N:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  name: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  nameWithType: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ReaderSubscriptionManagement.SpoolStreamReading)
+  nameWithType: IHandle<ReaderSubscriptionManagement.SpoolStreamReading>.Handle(ReaderSubscriptionManagement.SpoolStreamReading)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading>.Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  nameWithType.vb: IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading).Handle(ReaderSubscriptionManagement.SpoolStreamReading)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading).Handle(EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ReaderSubscriptionManagement.SpoolStreamReading>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    name: ReaderSubscriptionManagement.SpoolStreamReading
+    nameWithType: ReaderSubscriptionManagement.SpoolStreamReading
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ReaderSubscriptionManagement.SpoolStreamReading).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+    name: ReaderSubscriptionManagement.SpoolStreamReading
+    nameWithType: ReaderSubscriptionManagement.SpoolStreamReading
+    fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  commentId: T:EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+  parent: EventStore.Projections.Core.Messages
+  name: ReaderSubscriptionManagement.SpoolStreamReading
+  nameWithType: ReaderSubscriptionManagement.SpoolStreamReading
+  fullName: EventStore.Projections.Core.Messages.ReaderSubscriptionManagement.SpoolStreamReading
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionManagementControlMessage)
+  nameWithType: IHandle<CoreProjectionManagementControlMessage>.Handle(CoreProjectionManagementControlMessage)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage>.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  nameWithType.vb: IHandle(Of CoreProjectionManagementControlMessage).Handle(CoreProjectionManagementControlMessage)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage).Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionManagementControlMessage>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    name: CoreProjectionManagementControlMessage
+    nameWithType: CoreProjectionManagementControlMessage
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionManagementControlMessage).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+    name: CoreProjectionManagementControlMessage
+    nameWithType: CoreProjectionManagementControlMessage
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+  parent: EventStore.Projections.Core.Messages
+  name: CoreProjectionManagementControlMessage
+  nameWithType: CoreProjectionManagementControlMessage
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionManagementControlMessage
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(PartitionProcessingResultOutputBase)
+  nameWithType: IHandle<PartitionProcessingResultOutputBase>.Handle(PartitionProcessingResultOutputBase)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase>.Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  nameWithType.vb: IHandle(Of PartitionProcessingResultOutputBase).Handle(PartitionProcessingResultOutputBase)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase).Handle(EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<PartitionProcessingResultOutputBase>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    name: PartitionProcessingResultOutputBase
+    nameWithType: PartitionProcessingResultOutputBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of PartitionProcessingResultOutputBase).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+    name: PartitionProcessingResultOutputBase
+    nameWithType: PartitionProcessingResultOutputBase
+    fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  commentId: T:EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase
+  parent: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages
+  name: PartitionProcessingResultOutputBase
+  nameWithType: PartitionProcessingResultOutputBase
+  fullName: EventStore.Projections.Core.Messages.ParallelQueryProcessingMessages.PartitionProcessingResultOutputBase

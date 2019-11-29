@@ -5,7 +5,7 @@ items:
   id: NodeEndPoints
   parent: EventStore.ClientAPI
   children:
-  - EventStore.ClientAPI.NodeEndPoints.#ctor(System.Net.IPEndPoint,System.Net.IPEndPoint)
+  - EventStore.ClientAPI.NodeEndPoints.#ctor(IPEndPoint,IPEndPoint)
   - EventStore.ClientAPI.NodeEndPoints.SecureTcpEndPoint
   - EventStore.ClientAPI.NodeEndPoints.TcpEndPoint
   - EventStore.ClientAPI.NodeEndPoints.ToString
@@ -28,12 +28,8 @@ items:
   syntax:
     content: public struct NodeEndPoints
     content.vb: Public Structure NodeEndPoints
-  inheritedMembers:
-  - System.ValueType.Equals(System.Object)
-  - System.ValueType.GetHashCode
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetType
-  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - EventStore.ClientAPI.NodeEndPoints.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   modifiers.csharp:
   - public
   - struct
@@ -63,7 +59,7 @@ items:
   syntax:
     content: public readonly IPEndPoint TcpEndPoint
     return:
-      type: System.Net.IPEndPoint
+      type: IPEndPoint
     content.vb: Public ReadOnly TcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -94,7 +90,7 @@ items:
   syntax:
     content: public readonly IPEndPoint SecureTcpEndPoint
     return:
-      type: System.Net.IPEndPoint
+      type: IPEndPoint
     content.vb: Public ReadOnly SecureTcpEndPoint As IPEndPoint
   modifiers.csharp:
   - public
@@ -102,16 +98,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.NodeEndPoints.#ctor(System.Net.IPEndPoint,System.Net.IPEndPoint)
-  commentId: M:EventStore.ClientAPI.NodeEndPoints.#ctor(System.Net.IPEndPoint,System.Net.IPEndPoint)
-  id: '#ctor(System.Net.IPEndPoint,System.Net.IPEndPoint)'
+- uid: EventStore.ClientAPI.NodeEndPoints.#ctor(IPEndPoint,IPEndPoint)
+  commentId: M:EventStore.ClientAPI.NodeEndPoints.#ctor(IPEndPoint,IPEndPoint)
+  id: '#ctor(IPEndPoint,IPEndPoint)'
   parent: EventStore.ClientAPI.NodeEndPoints
   langs:
   - csharp
   - vb
   name: NodeEndPoints(IPEndPoint, IPEndPoint)
   nameWithType: NodeEndPoints.NodeEndPoints(IPEndPoint, IPEndPoint)
-  fullName: EventStore.ClientAPI.NodeEndPoints.NodeEndPoints(System.Net.IPEndPoint, System.Net.IPEndPoint)
+  fullName: EventStore.ClientAPI.NodeEndPoints.NodeEndPoints(IPEndPoint, IPEndPoint)
   type: Constructor
   source:
     id: .ctor
@@ -126,10 +122,10 @@ items:
     content: public NodeEndPoints(IPEndPoint tcpEndPoint, IPEndPoint secureTcpEndPoint)
     parameters:
     - id: tcpEndPoint
-      type: System.Net.IPEndPoint
+      type: IPEndPoint
       description: The tcp endpoint of the node
     - id: secureTcpEndPoint
-      type: System.Net.IPEndPoint
+      type: IPEndPoint
       description: The ssl endpoint of the node
     content.vb: Public Sub New(tcpEndPoint As IPEndPoint, secureTcpEndPoint As IPEndPoint)
   overload: EventStore.ClientAPI.NodeEndPoints.#ctor*
@@ -162,7 +158,6 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
-  overridden: System.ValueType.ToString
   overload: EventStore.ClientAPI.NodeEndPoints.ToString*
   modifiers.csharp:
   - public
@@ -176,60 +171,21 @@ references:
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
-- uid: System.ValueType.Equals(System.Object)
-  commentId: M:System.ValueType.Equals(System.Object)
-  parent: System.ValueType
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: ValueType.Equals(Object)
-  fullName: System.ValueType.Equals(System.Object)
+- uid: EventStore.ClientAPI.NodeEndPoints.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<NodeEndPoints>()
+  nameWithType: EnumExtensions.EnumValueName<NodeEndPoints>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.NodeEndPoints>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of NodeEndPoints)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.NodeEndPoints)()
+  name.vb: EnumValueName(Of NodeEndPoints)()
   spec.csharp:
-  - uid: System.ValueType.Equals(System.Object)
-    name: Equals
-    nameWithType: ValueType.Equals
-    fullName: System.ValueType.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.ValueType.Equals(System.Object)
-    name: Equals
-    nameWithType: ValueType.Equals
-    fullName: System.ValueType.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.ValueType.GetHashCode
-  commentId: M:System.ValueType.GetHashCode
-  parent: System.ValueType
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: ValueType.GetHashCode()
-  fullName: System.ValueType.GetHashCode()
-  spec.csharp:
-  - uid: System.ValueType.GetHashCode
-    name: GetHashCode
-    nameWithType: ValueType.GetHashCode
-    fullName: System.ValueType.GetHashCode
-    isExternal: true
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<NodeEndPoints>
+    nameWithType: EnumExtensions.EnumValueName<NodeEndPoints>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.NodeEndPoints>
   - name: (
     nameWithType: (
     fullName: (
@@ -237,239 +193,79 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: System.ValueType.GetHashCode
-    name: GetHashCode
-    nameWithType: ValueType.GetHashCode
-    fullName: System.ValueType.GetHashCode
-    isExternal: true
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of NodeEndPoints)
+    nameWithType: EnumExtensions.EnumValueName(Of NodeEndPoints)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.NodeEndPoints)
   - name: (
     nameWithType: (
     fullName: (
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.ValueType
-  commentId: T:System.ValueType
-  parent: System
-  isExternal: true
-  name: ValueType
-  nameWithType: ValueType
-  fullName: System.ValueType
-- uid: System.Object
-  commentId: T:System.Object
-  parent: System
-  isExternal: true
-  name: Object
-  nameWithType: Object
-  fullName: System.Object
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: System.Net.IPEndPoint
-  commentId: T:System.Net.IPEndPoint
-  parent: System.Net
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
+- uid: IPEndPoint
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: System.Net.IPEndPoint
-- uid: System.Net
-  commentId: N:System.Net
-  isExternal: true
-  name: System.Net
-  nameWithType: System.Net
-  fullName: System.Net
+  fullName: IPEndPoint
 - uid: EventStore.ClientAPI.NodeEndPoints.#ctor*
   commentId: Overload:EventStore.ClientAPI.NodeEndPoints.#ctor
   name: NodeEndPoints
   nameWithType: NodeEndPoints.NodeEndPoints
   fullName: EventStore.ClientAPI.NodeEndPoints.NodeEndPoints
-- uid: System.ValueType.ToString
-  commentId: M:System.ValueType.ToString
-  parent: System.ValueType
-  isExternal: true
-  name: ToString()
-  nameWithType: ValueType.ToString()
-  fullName: System.ValueType.ToString()
-  spec.csharp:
-  - uid: System.ValueType.ToString
-    name: ToString
-    nameWithType: ValueType.ToString
-    fullName: System.ValueType.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.ValueType.ToString
-    name: ToString
-    nameWithType: ValueType.ToString
-    fullName: System.ValueType.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: EventStore.ClientAPI.NodeEndPoints.ToString*
   commentId: Overload:EventStore.ClientAPI.NodeEndPoints.ToString
   name: ToString
   nameWithType: NodeEndPoints.ToString
   fullName: EventStore.ClientAPI.NodeEndPoints.ToString
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String

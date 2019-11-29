@@ -7,13 +7,13 @@ items:
   children:
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.ClusterSettings,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,EventStore.ClientAPI.IEndPointDiscoverer,System.String)
-  - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Net.IPEndPoint,System.String)
+  - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,IPEndPoint,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.String)
-  - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Uri,System.String)
-  - EventStore.ClientAPI.EventStoreConnection.Create(System.Net.IPEndPoint,System.String)
+  - EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,Uri,System.String)
+  - EventStore.ClientAPI.EventStoreConnection.Create(IPEndPoint,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(System.String,EventStore.ClientAPI.ConnectionSettingsBuilder,System.String)
   - EventStore.ClientAPI.EventStoreConnection.Create(System.String,System.String)
-  - EventStore.ClientAPI.EventStoreConnection.Create(System.Uri,System.String)
+  - EventStore.ClientAPI.EventStoreConnection.Create(Uri,System.String)
   langs:
   - csharp
   - vb
@@ -31,18 +31,12 @@ items:
   summary: "\nContains factory methods for building connections to an Event Store server.\n"
   example: []
   syntax:
-    content: public static class EventStoreConnection
-    content.vb: Public Module EventStoreConnection
+    content: 'public static class EventStoreConnection : object'
+    content.vb: >-
+      Public Module EventStoreConnection
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - static
@@ -50,16 +44,16 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: EventStore.ClientAPI.EventStoreConnection.Create(System.Uri,System.String)
-  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(System.Uri,System.String)
-  id: Create(System.Uri,System.String)
+- uid: EventStore.ClientAPI.EventStoreConnection.Create(Uri,System.String)
+  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(Uri,System.String)
+  id: Create(Uri,System.String)
   parent: EventStore.ClientAPI.EventStoreConnection
   langs:
   - csharp
   - vb
   name: Create(Uri, String)
   nameWithType: EventStoreConnection.Create(Uri, String)
-  fullName: EventStore.ClientAPI.EventStoreConnection.Create(System.Uri, System.String)
+  fullName: EventStore.ClientAPI.EventStoreConnection.Create(Uri, System.String)
   type: Method
   source:
     id: Create
@@ -74,7 +68,7 @@ items:
     content: public static IEventStoreConnection Create(Uri uri, string connectionName = null)
     parameters:
     - id: uri
-      type: System.Uri
+      type: Uri
       description: The Uri to connect to. It can be tcp:// to point to a single node or discover:// to discover nodes
     - id: connectionName
       type: System.String
@@ -213,16 +207,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Uri,System.String)
-  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Uri,System.String)
-  id: Create(EventStore.ClientAPI.ConnectionSettings,System.Uri,System.String)
+- uid: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,Uri,System.String)
+  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,Uri,System.String)
+  id: Create(EventStore.ClientAPI.ConnectionSettings,Uri,System.String)
   parent: EventStore.ClientAPI.EventStoreConnection
   langs:
   - csharp
   - vb
   name: Create(ConnectionSettings, Uri, String)
   nameWithType: EventStoreConnection.Create(ConnectionSettings, Uri, String)
-  fullName: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings, System.Uri, System.String)
+  fullName: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings, Uri, System.String)
   type: Method
   source:
     id: Create
@@ -241,7 +235,7 @@ items:
       type: EventStore.ClientAPI.ConnectionSettings
       description: The <xref href="EventStore.ClientAPI.ConnectionSettings" data-throw-if-not-resolved="false"></xref> to apply to the new connection. If null the default settings will be used and the <code data-dev-comment-type="paramref" class="paramref">uri</code> must not be null
     - id: uri
-      type: System.Uri
+      type: Uri
       description: The Uri to connect to. It can be tcp:// to point to a single node or discover:// to discover nodes via dns or null to connect using the gossip seeds from the <code data-dev-comment-type="paramref" class="paramref">connectionSettings</code>
     - id: connectionName
       type: System.String
@@ -257,16 +251,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.ClientAPI.EventStoreConnection.Create(System.Net.IPEndPoint,System.String)
-  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(System.Net.IPEndPoint,System.String)
-  id: Create(System.Net.IPEndPoint,System.String)
+- uid: EventStore.ClientAPI.EventStoreConnection.Create(IPEndPoint,System.String)
+  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(IPEndPoint,System.String)
+  id: Create(IPEndPoint,System.String)
   parent: EventStore.ClientAPI.EventStoreConnection
   langs:
   - csharp
   - vb
   name: Create(IPEndPoint, String)
   nameWithType: EventStoreConnection.Create(IPEndPoint, String)
-  fullName: EventStore.ClientAPI.EventStoreConnection.Create(System.Net.IPEndPoint, System.String)
+  fullName: EventStore.ClientAPI.EventStoreConnection.Create(IPEndPoint, System.String)
   type: Method
   source:
     id: Create
@@ -281,8 +275,8 @@ items:
     content: public static IEventStoreConnection Create(IPEndPoint tcpEndPoint, string connectionName = null)
     parameters:
     - id: tcpEndPoint
-      type: System.Net.IPEndPoint
-      description: The <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref> to connect to.
+      type: IPEndPoint
+      description: The <see cref="!:IPEndPoint"></see> to connect to.
     - id: connectionName
       type: System.String
       description: Optional name of connection (will be generated automatically, if not provided)
@@ -297,16 +291,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Net.IPEndPoint,System.String)
-  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,System.Net.IPEndPoint,System.String)
-  id: Create(EventStore.ClientAPI.ConnectionSettings,System.Net.IPEndPoint,System.String)
+- uid: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,IPEndPoint,System.String)
+  commentId: M:EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings,IPEndPoint,System.String)
+  id: Create(EventStore.ClientAPI.ConnectionSettings,IPEndPoint,System.String)
   parent: EventStore.ClientAPI.EventStoreConnection
   langs:
   - csharp
   - vb
   name: Create(ConnectionSettings, IPEndPoint, String)
   nameWithType: EventStoreConnection.Create(ConnectionSettings, IPEndPoint, String)
-  fullName: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings, System.Net.IPEndPoint, System.String)
+  fullName: EventStore.ClientAPI.EventStoreConnection.Create(EventStore.ClientAPI.ConnectionSettings, IPEndPoint, System.String)
   type: Method
   source:
     id: Create
@@ -324,8 +318,8 @@ items:
       type: EventStore.ClientAPI.ConnectionSettings
       description: The <xref href="EventStore.ClientAPI.ConnectionSettings" data-throw-if-not-resolved="false"></xref> to apply to the new connection
     - id: tcpEndPoint
-      type: System.Net.IPEndPoint
-      description: The <xref href="System.Net.IPEndPoint" data-throw-if-not-resolved="false"></xref> to connect to.
+      type: IPEndPoint
+      description: The <see cref="!:IPEndPoint"></see> to connect to.
     - id: connectionName
       type: System.String
       description: Optional name of connection (will be generated automatically, if not provided)
@@ -433,297 +427,10 @@ references:
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.ClientAPI.IEventStoreConnection
   commentId: T:EventStore.ClientAPI.IEventStoreConnection
   parent: EventStore.ClientAPI
@@ -741,16 +448,12 @@ references:
   name: Create
   nameWithType: EventStoreConnection.Create
   fullName: EventStore.ClientAPI.EventStoreConnection.Create
-- uid: System.Uri
-  commentId: T:System.Uri
-  parent: System
+- uid: Uri
   isExternal: true
   name: Uri
   nameWithType: Uri
-  fullName: System.Uri
+  fullName: Uri
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -761,19 +464,11 @@ references:
   name: ConnectionSettingsBuilder
   nameWithType: ConnectionSettingsBuilder
   fullName: EventStore.ClientAPI.ConnectionSettingsBuilder
-- uid: System.Net.IPEndPoint
-  commentId: T:System.Net.IPEndPoint
-  parent: System.Net
+- uid: IPEndPoint
   isExternal: true
   name: IPEndPoint
   nameWithType: IPEndPoint
-  fullName: System.Net.IPEndPoint
-- uid: System.Net
-  commentId: N:System.Net
-  isExternal: true
-  name: System.Net
-  nameWithType: System.Net
-  fullName: System.Net
+  fullName: IPEndPoint
 - uid: EventStore.ClientAPI.ClusterSettings
   commentId: T:EventStore.ClientAPI.ClusterSettings
   parent: EventStore.ClientAPI

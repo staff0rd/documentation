@@ -1,0 +1,733 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  id: ProjectionProcessingStrategy
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor(System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,EventStore.Common.Log.ILogger)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof
+  - EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints
+  langs:
+  - csharp
+  - vb
+  name: ProjectionProcessingStrategy
+  nameWithType: ProjectionProcessingStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  type: Class
+  source:
+    id: ProjectionProcessingStrategy
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 9
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public abstract class ProjectionProcessingStrategy : object'
+    content.vb: >-
+      Public MustInherit Class ProjectionProcessingStrategy
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Projections.Core.Services.Processing.EventReaderBasedProjectionProcessingStrategy
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
+  commentId: F:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
+  id: _name
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: _name
+  nameWithType: ProjectionProcessingStrategy._name
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._name
+  type: Field
+  source:
+    id: _name
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 10
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly string _name
+    return:
+      type: System.String
+    content.vb: Protected ReadOnly _name As String
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
+  commentId: F:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
+  id: _projectionVersion
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: _projectionVersion
+  nameWithType: ProjectionProcessingStrategy._projectionVersion
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._projectionVersion
+  type: Field
+  source:
+    id: _projectionVersion
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 11
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly ProjectionVersion _projectionVersion
+    return:
+      type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+    content.vb: Protected ReadOnly _projectionVersion As ProjectionVersion
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
+  commentId: F:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
+  id: _logger
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: _logger
+  nameWithType: ProjectionProcessingStrategy._logger
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy._logger
+  type: Field
+  source:
+    id: _logger
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected readonly ILogger _logger
+    return:
+      type: EventStore.Common.Log.ILogger
+    content.vb: Protected ReadOnly _logger As ILogger
+  modifiers.csharp:
+  - protected
+  - readonly
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor(System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,EventStore.Common.Log.ILogger)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor(System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,EventStore.Common.Log.ILogger)
+  id: '#ctor(System.String,EventStore.Projections.Core.Services.Processing.ProjectionVersion,EventStore.Common.Log.ILogger)'
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: ProjectionProcessingStrategy(String, ProjectionVersion, ILogger)
+  nameWithType: ProjectionProcessingStrategy.ProjectionProcessingStrategy(String, ProjectionVersion, ILogger)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.ProjectionProcessingStrategy(System.String, EventStore.Projections.Core.Services.Processing.ProjectionVersion, EventStore.Common.Log.ILogger)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected ProjectionProcessingStrategy(string name, ProjectionVersion projectionVersion, ILogger logger)
+    parameters:
+    - id: name
+      type: System.String
+    - id: projectionVersion
+      type: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+    - id: logger
+      type: EventStore.Common.Log.ILogger
+    content.vb: Protected Sub New(name As String, projectionVersion As ProjectionVersion, logger As ILogger)
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  id: Create(Guid,EventStore.Core.Bus.IPublisher,Guid,IPrincipal,EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider)
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: Create(Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ITimeProvider)
+  nameWithType: ProjectionProcessingStrategy.Create(Guid, IPublisher, Guid, IPrincipal, IPublisher, IODispatcher, ReaderSubscriptionDispatcher, ITimeProvider)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create(Guid, EventStore.Core.Bus.IPublisher, Guid, IPrincipal, EventStore.Core.Bus.IPublisher, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher, EventStore.Core.Services.TimerService.ITimeProvider)
+  type: Method
+  source:
+    id: Create
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 20
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public CoreProjection Create(Guid projectionCorrelationId, IPublisher inputQueue, Guid workerId, IPrincipal runAs, IPublisher publisher, IODispatcher ioDispatcher, ReaderSubscriptionDispatcher subscriptionDispatcher, ITimeProvider timeProvider)
+    parameters:
+    - id: projectionCorrelationId
+      type: Guid
+    - id: inputQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: workerId
+      type: Guid
+    - id: runAs
+      type: IPrincipal
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: subscriptionDispatcher
+      type: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    return:
+      type: EventStore.Projections.Core.Services.Processing.CoreProjection
+    content.vb: Public Function Create(projectionCorrelationId As Guid, inputQueue As IPublisher, workerId As Guid, runAs As IPrincipal, publisher As IPublisher, ioDispatcher As IODispatcher, subscriptionDispatcher As ReaderSubscriptionDispatcher, timeProvider As ITimeProvider) As CoreProjection
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition
+  id: GetSourceDefinition
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetSourceDefinition()
+  nameWithType: ProjectionProcessingStrategy.GetSourceDefinition()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition()
+  type: Method
+  source:
+    id: GetSourceDefinition
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 64
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected abstract IQuerySources GetSourceDefinition()
+    return:
+      type: EventStore.Projections.Core.Messages.IQuerySources
+    content.vb: Protected MustOverride Function GetSourceDefinition As IQuerySources
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof
+  id: GetStopOnEof
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetStopOnEof()
+  nameWithType: ProjectionProcessingStrategy.GetStopOnEof()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof()
+  type: Method
+  source:
+    id: GetStopOnEof
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 66
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool GetStopOnEof()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function GetStopOnEof As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints
+  id: GetUseCheckpoints
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetUseCheckpoints()
+  nameWithType: ProjectionProcessingStrategy.GetUseCheckpoints()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints()
+  type: Method
+  source:
+    id: GetUseCheckpoints
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 67
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool GetUseCheckpoints()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function GetUseCheckpoints As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition
+  id: GetRequiresRootPartition
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetRequiresRootPartition()
+  nameWithType: ProjectionProcessingStrategy.GetRequiresRootPartition()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition()
+  type: Method
+  source:
+    id: GetRequiresRootPartition
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 68
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool GetRequiresRootPartition()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function GetRequiresRootPartition As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
+  id: GetProducesRunningResults
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetProducesRunningResults()
+  nameWithType: ProjectionProcessingStrategy.GetProducesRunningResults()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults()
+  type: Method
+  source:
+    id: GetProducesRunningResults
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 69
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool GetProducesRunningResults()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function GetProducesRunningResults As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
+  id: GetIsSlaveProjection
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetIsSlaveProjection()
+  nameWithType: ProjectionProcessingStrategy.GetIsSlaveProjection()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection()
+  type: Method
+  source:
+    id: GetIsSlaveProjection
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 70
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract bool GetIsSlaveProjection()
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function GetIsSlaveProjection As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
+  id: EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: EnrichStatistics(ProjectionStatistics)
+  nameWithType: ProjectionProcessingStrategy.EnrichStatistics(ProjectionStatistics)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics(EventStore.Projections.Core.Services.ProjectionStatistics)
+  type: Method
+  source:
+    id: EnrichStatistics
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 71
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract void EnrichStatistics(ProjectionStatistics info)
+    parameters:
+    - id: info
+      type: EventStore.Projections.Core.Services.ProjectionStatistics
+    content.vb: Public MustOverride Sub EnrichStatistics(info As ProjectionStatistics)
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  id: CreateProcessingPhases(EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,Guid,EventStore.Projections.Core.Services.Processing.PartitionStateCache,Action,EventStore.Projections.Core.Services.Processing.CoreProjection,EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: CreateProcessingPhases(IPublisher, IPublisher, Guid, PartitionStateCache, Action, CoreProjection, ProjectionNamesBuilder, ITimeProvider, IODispatcher, CoreProjectionCheckpointWriter)
+  nameWithType: ProjectionProcessingStrategy.CreateProcessingPhases(IPublisher, IPublisher, Guid, PartitionStateCache, Action, CoreProjection, ProjectionNamesBuilder, ITimeProvider, IODispatcher, CoreProjectionCheckpointWriter)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases(EventStore.Core.Bus.IPublisher, EventStore.Core.Bus.IPublisher, Guid, EventStore.Projections.Core.Services.Processing.PartitionStateCache, Action, EventStore.Projections.Core.Services.Processing.CoreProjection, EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder, EventStore.Core.Services.TimerService.ITimeProvider, EventStore.Core.Helpers.IODispatcher, EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter)
+  type: Method
+  source:
+    id: CreateProcessingPhases
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 73
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract IProjectionProcessingPhase[] CreateProcessingPhases(IPublisher publisher, IPublisher inputQueue, Guid projectionCorrelationId, PartitionStateCache partitionStateCache, Action updateStatistics, CoreProjection coreProjection, ProjectionNamesBuilder namingBuilder, ITimeProvider timeProvider, IODispatcher ioDispatcher, CoreProjectionCheckpointWriter coreProjectionCheckpointWriter)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: inputQueue
+      type: EventStore.Core.Bus.IPublisher
+    - id: projectionCorrelationId
+      type: Guid
+    - id: partitionStateCache
+      type: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+    - id: updateStatistics
+      type: Action
+    - id: coreProjection
+      type: EventStore.Projections.Core.Services.Processing.CoreProjection
+    - id: namingBuilder
+      type: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    - id: ioDispatcher
+      type: EventStore.Core.Helpers.IODispatcher
+    - id: coreProjectionCheckpointWriter
+      type: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+    return:
+      type: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase[]
+    content.vb: Public MustOverride Function CreateProcessingPhases(publisher As IPublisher, inputQueue As IPublisher, projectionCorrelationId As Guid, partitionStateCache As PartitionStateCache, updateStatistics As Action, coreProjection As CoreProjection, namingBuilder As ProjectionNamesBuilder, timeProvider As ITimeProvider, ioDispatcher As IODispatcher, coreProjectionCheckpointWriter As CoreProjectionCheckpointWriter) As IProjectionProcessingPhase()
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections
+  id: GetSlaveProjections
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetSlaveProjections()
+  nameWithType: ProjectionProcessingStrategy.GetSlaveProjections()
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections()
+  type: Method
+  source:
+    id: GetSlaveProjections
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionProcessingStrategy.cs
+    startLine: 85
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public abstract SlaveProjectionDefinitions GetSlaveProjections()
+    return:
+      type: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions
+    content.vb: Public MustOverride Function GetSlaveProjections As SlaveProjectionDefinitions
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionVersion
+  parent: EventStore.Projections.Core.Services.Processing
+  name: ProjectionVersion
+  nameWithType: ProjectionVersion
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionVersion
+- uid: EventStore.Common.Log.ILogger
+  commentId: T:EventStore.Common.Log.ILogger
+  parent: EventStore.Common.Log
+  name: ILogger
+  nameWithType: ILogger
+  fullName: EventStore.Common.Log.ILogger
+- uid: EventStore.Common.Log
+  commentId: N:EventStore.Common.Log
+  name: EventStore.Common.Log
+  nameWithType: EventStore.Common.Log
+  fullName: EventStore.Common.Log
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.#ctor
+  name: ProjectionProcessingStrategy
+  nameWithType: ProjectionProcessingStrategy.ProjectionProcessingStrategy
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.ProjectionProcessingStrategy
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create
+  name: Create
+  nameWithType: ProjectionProcessingStrategy.Create
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.Create
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: EventStore.Core.Helpers.IODispatcher
+  commentId: T:EventStore.Core.Helpers.IODispatcher
+  parent: EventStore.Core.Helpers
+  name: IODispatcher
+  nameWithType: IODispatcher
+  fullName: EventStore.Core.Helpers.IODispatcher
+- uid: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+  commentId: T:EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+  parent: EventStore.Projections.Core.Services
+  name: ReaderSubscriptionDispatcher
+  nameWithType: ReaderSubscriptionDispatcher
+  fullName: EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjection
+  commentId: T:EventStore.Projections.Core.Services.Processing.CoreProjection
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CoreProjection
+  nameWithType: CoreProjection
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjection
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Helpers
+  commentId: N:EventStore.Core.Helpers
+  name: EventStore.Core.Helpers
+  nameWithType: EventStore.Core.Helpers
+  fullName: EventStore.Core.Helpers
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition
+  name: GetSourceDefinition
+  nameWithType: ProjectionProcessingStrategy.GetSourceDefinition
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSourceDefinition
+- uid: EventStore.Projections.Core.Messages.IQuerySources
+  commentId: T:EventStore.Projections.Core.Messages.IQuerySources
+  parent: EventStore.Projections.Core.Messages
+  name: IQuerySources
+  nameWithType: IQuerySources
+  fullName: EventStore.Projections.Core.Messages.IQuerySources
+- uid: EventStore.Projections.Core.Messages
+  commentId: N:EventStore.Projections.Core.Messages
+  name: EventStore.Projections.Core.Messages
+  nameWithType: EventStore.Projections.Core.Messages
+  fullName: EventStore.Projections.Core.Messages
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof
+  name: GetStopOnEof
+  nameWithType: ProjectionProcessingStrategy.GetStopOnEof
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetStopOnEof
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints
+  name: GetUseCheckpoints
+  nameWithType: ProjectionProcessingStrategy.GetUseCheckpoints
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetUseCheckpoints
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition
+  name: GetRequiresRootPartition
+  nameWithType: ProjectionProcessingStrategy.GetRequiresRootPartition
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetRequiresRootPartition
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
+  name: GetProducesRunningResults
+  nameWithType: ProjectionProcessingStrategy.GetProducesRunningResults
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetProducesRunningResults
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
+  name: GetIsSlaveProjection
+  nameWithType: ProjectionProcessingStrategy.GetIsSlaveProjection
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetIsSlaveProjection
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics
+  name: EnrichStatistics
+  nameWithType: ProjectionProcessingStrategy.EnrichStatistics
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.EnrichStatistics
+- uid: EventStore.Projections.Core.Services.ProjectionStatistics
+  commentId: T:EventStore.Projections.Core.Services.ProjectionStatistics
+  parent: EventStore.Projections.Core.Services
+  name: ProjectionStatistics
+  nameWithType: ProjectionStatistics
+  fullName: EventStore.Projections.Core.Services.ProjectionStatistics
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases
+  name: CreateProcessingPhases
+  nameWithType: ProjectionProcessingStrategy.CreateProcessingPhases
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.CreateProcessingPhases
+- uid: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+  commentId: T:EventStore.Projections.Core.Services.Processing.PartitionStateCache
+  parent: EventStore.Projections.Core.Services.Processing
+  name: PartitionStateCache
+  nameWithType: PartitionStateCache
+  fullName: EventStore.Projections.Core.Services.Processing.PartitionStateCache
+- uid: Action
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: Action
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+  commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+  parent: EventStore.Projections.Core.Services.Processing
+  name: ProjectionNamesBuilder
+  nameWithType: ProjectionNamesBuilder
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionNamesBuilder
+- uid: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+  commentId: T:EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+  parent: EventStore.Projections.Core.Services.Processing
+  name: CoreProjectionCheckpointWriter
+  nameWithType: CoreProjectionCheckpointWriter
+  fullName: EventStore.Projections.Core.Services.Processing.CoreProjectionCheckpointWriter
+- uid: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase[]
+  isExternal: true
+  name: IProjectionProcessingPhase[]
+  nameWithType: IProjectionProcessingPhase[]
+  fullName: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase[]
+  nameWithType.vb: IProjectionProcessingPhase()
+  fullName.vb: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase()
+  name.vb: IProjectionProcessingPhase()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
+    name: IProjectionProcessingPhase
+    nameWithType: IProjectionProcessingPhase
+    fullName: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
+    name: IProjectionProcessingPhase
+    nameWithType: IProjectionProcessingPhase
+    fullName: EventStore.Projections.Core.Services.Processing.IProjectionProcessingPhase
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections
+  name: GetSlaveProjections
+  nameWithType: ProjectionProcessingStrategy.GetSlaveProjections
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionProcessingStrategy.GetSlaveProjections
+- uid: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions
+  commentId: T:EventStore.Projections.Core.Messages.SlaveProjectionDefinitions
+  parent: EventStore.Projections.Core.Messages
+  name: SlaveProjectionDefinitions
+  nameWithType: SlaveProjectionDefinitions
+  fullName: EventStore.Projections.Core.Messages.SlaveProjectionDefinitions

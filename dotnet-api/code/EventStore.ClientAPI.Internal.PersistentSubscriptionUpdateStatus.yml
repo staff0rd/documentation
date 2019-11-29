@@ -26,8 +26,10 @@ items:
   summary: "\nEnumeration representing the status of a single subscription create message.\n"
   example: []
   syntax:
-    content: public enum PersistentSubscriptionUpdateStatus
-    content.vb: Public Enum PersistentSubscriptionUpdateStatus
+    content: 'public enum PersistentSubscriptionUpdateStatus : int'
+    content.vb: Public Enum PersistentSubscriptionUpdateStatus As Integer
+  extensionMethods:
+  - EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
   modifiers.csharp:
   - public
   - enum
@@ -55,9 +57,10 @@ items:
   summary: "\nThe subscription was created successfully\n"
   example: []
   syntax:
-    content: Success = 0
+    content: Success = null
     return:
       type: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
+    content.vb: Success = Nothing
   modifiers.csharp:
   - public
   - const
@@ -85,9 +88,10 @@ items:
   summary: "\nThe subscription already exists\n"
   example: []
   syntax:
-    content: NotFound = 1
+    content: NotFound = null
     return:
       type: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
+    content.vb: NotFound = Nothing
   modifiers.csharp:
   - public
   - const
@@ -115,9 +119,10 @@ items:
   summary: "\nSome failure happened creating the subscription\n"
   example: []
   syntax:
-    content: Failure = 2
+    content: Failure = null
     return:
       type: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
+    content.vb: Failure = Nothing
   modifiers.csharp:
   - public
   - const
@@ -145,9 +150,10 @@ items:
   summary: "\nYou do not have permissions to update this subscription\n"
   example: []
   syntax:
-    content: AccessDenied = 3
+    content: AccessDenied = null
     return:
       type: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
+    content.vb: AccessDenied = Nothing
   modifiers.csharp:
   - public
   - const
@@ -160,6 +166,85 @@ references:
   name: EventStore.ClientAPI.Internal
   nameWithType: EventStore.ClientAPI.Internal
   fullName: EventStore.ClientAPI.Internal
+- uid: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus.EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  parent: EventStore.Projections.Core.Utils.EnumExtensions
+  definition: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<PersistentSubscriptionUpdateStatus>()
+  nameWithType: EnumExtensions.EnumValueName<PersistentSubscriptionUpdateStatus>()
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus>()
+  nameWithType.vb: EnumExtensions.EnumValueName(Of PersistentSubscriptionUpdateStatus)()
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus)()
+  name.vb: EnumValueName(Of PersistentSubscriptionUpdateStatus)()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName<PersistentSubscriptionUpdateStatus>
+    nameWithType: EnumExtensions.EnumValueName<PersistentSubscriptionUpdateStatus>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1
+    name: EnumValueName(Of PersistentSubscriptionUpdateStatus)
+    nameWithType: EnumExtensions.EnumValueName(Of PersistentSubscriptionUpdateStatus)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  commentId: M:EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+  name: EnumValueName<T>(T)
+  nameWithType: EnumExtensions.EnumValueName<T>(T)
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>(T)
+  nameWithType.vb: EnumExtensions.EnumValueName(Of T)(T)
+  fullName.vb: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)(T)
+  name.vb: EnumValueName(Of T)(T)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName<T>
+    nameWithType: EnumExtensions.EnumValueName<T>
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName``1(``0)
+    name: EnumValueName(Of T)
+    nameWithType: EnumExtensions.EnumValueName(Of T)
+    fullName: EventStore.Projections.Core.Utils.EnumExtensions.EnumValueName(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Utils.EnumExtensions
+  commentId: T:EventStore.Projections.Core.Utils.EnumExtensions
+  parent: EventStore.Projections.Core.Utils
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: EventStore.Projections.Core.Utils.EnumExtensions
+- uid: EventStore.Projections.Core.Utils
+  commentId: N:EventStore.Projections.Core.Utils
+  name: EventStore.Projections.Core.Utils
+  nameWithType: EventStore.Projections.Core.Utils
+  fullName: EventStore.Projections.Core.Utils
 - uid: EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
   commentId: T:EventStore.ClientAPI.Internal.PersistentSubscriptionUpdateStatus
   parent: EventStore.ClientAPI.Internal

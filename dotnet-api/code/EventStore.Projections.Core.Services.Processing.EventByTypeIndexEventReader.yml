@@ -1,0 +1,1081 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  id: EventByTypeIndexEventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.String[],System.Boolean,EventStore.Core.Data.TFPos,Dictionary{System.String,System.Int64},System.Boolean,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.MaxReadCount
+  - EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents
+  langs:
+  - csharp
+  - vb
+  name: EventByTypeIndexEventReader
+  nameWithType: EventByTypeIndexEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  type: Class
+  source:
+    id: EventByTypeIndexEventReader
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: 'public class EventByTypeIndexEventReader : EventReader, IEventReader, IDisposable'
+    content.vb: >-
+      Public Class EventByTypeIndexEventReader
+
+          Inherits EventReader
+
+          Implements IEventReader, IDisposable
+  inheritance:
+  - System.Object
+  - EventStore.Projections.Core.Services.Processing.EventReader
+  implements:
+  - EventStore.Projections.Core.Services.Processing.IEventReader
+  - IDisposable
+  inheritedMembers:
+  - EventStore.Projections.Core.Services.Processing.EventReader.EventReaderCorrelationId
+  - EventStore.Projections.Core.Services.Processing.EventReader._publisher
+  - EventStore.Projections.Core.Services.Processing.EventReader._stopOnEof
+  - EventStore.Projections.Core.Services.Processing.EventReader._disposed
+  - EventStore.Projections.Core.Services.Processing.EventReader.PauseRequested
+  - EventStore.Projections.Core.Services.Processing.EventReader.Paused
+  - EventStore.Projections.Core.Services.Processing.EventReader.ReadAs
+  - EventStore.Projections.Core.Services.Processing.EventReader.Resume
+  - EventStore.Projections.Core.Services.Processing.EventReader.Pause
+  - EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+  - EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int32},EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  - EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+  - EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  - EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+  - EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.MaxReadCount
+  commentId: F:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.MaxReadCount
+  id: MaxReadCount
+  parent: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  langs:
+  - csharp
+  - vb
+  name: MaxReadCount
+  nameWithType: EventByTypeIndexEventReader.MaxReadCount
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.MaxReadCount
+  type: Field
+  source:
+    id: MaxReadCount
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 18
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public const int MaxReadCount = null
+    return:
+      type: System.Int32
+    content.vb: Public Const MaxReadCount As Integer = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.String[],System.Boolean,EventStore.Core.Data.TFPos,Dictionary{System.String,System.Int64},System.Boolean,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor(EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.String[],System.Boolean,EventStore.Core.Data.TFPos,Dictionary{System.String,System.Int64},System.Boolean,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)
+  id: '#ctor(EventStore.Core.Bus.IPublisher,Guid,IPrincipal,System.String[],System.Boolean,EventStore.Core.Data.TFPos,Dictionary{System.String,System.Int64},System.Boolean,EventStore.Core.Services.TimerService.ITimeProvider,System.Boolean)'
+  parent: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  langs:
+  - csharp
+  - vb
+  name: EventByTypeIndexEventReader(IPublisher, Guid, IPrincipal, String[], Boolean, TFPos, Dictionary<String, Int64>, Boolean, ITimeProvider, Boolean)
+  nameWithType: EventByTypeIndexEventReader.EventByTypeIndexEventReader(IPublisher, Guid, IPrincipal, String[], Boolean, TFPos, Dictionary<String, Int64>, Boolean, ITimeProvider, Boolean)
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.EventByTypeIndexEventReader(EventStore.Core.Bus.IPublisher, Guid, IPrincipal, System.String[], System.Boolean, EventStore.Core.Data.TFPos, Dictionary<System.String, System.Int64>, System.Boolean, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 42
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public EventByTypeIndexEventReader(IPublisher publisher, Guid eventReaderCorrelationId, IPrincipal readAs, string[] eventTypes, bool includeDeletedStreamNotification, TFPos fromTfPosition, Dictionary<string, long> fromPositions, bool resolveLinkTos, ITimeProvider timeProvider, bool stopOnEof = false)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: eventReaderCorrelationId
+      type: Guid
+    - id: readAs
+      type: IPrincipal
+    - id: eventTypes
+      type: System.String[]
+    - id: includeDeletedStreamNotification
+      type: System.Boolean
+    - id: fromTfPosition
+      type: EventStore.Core.Data.TFPos
+    - id: fromPositions
+      type: Dictionary{System.String,System.Int64}
+    - id: resolveLinkTos
+      type: System.Boolean
+    - id: timeProvider
+      type: EventStore.Core.Services.TimerService.ITimeProvider
+    - id: stopOnEof
+      type: System.Boolean
+    content.vb: Public Sub New(publisher As IPublisher, eventReaderCorrelationId As Guid, readAs As IPrincipal, eventTypes As String(), includeDeletedStreamNotification As Boolean, fromTfPosition As TFPos, fromPositions As Dictionary(Of String, Long), resolveLinkTos As Boolean, timeProvider As ITimeProvider, stopOnEof As Boolean = False)
+  overload: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor*
+  nameWithType.vb: EventByTypeIndexEventReader.EventByTypeIndexEventReader(IPublisher, Guid, IPrincipal, String(), Boolean, TFPos, Dictionary(Of String, Int64), Boolean, ITimeProvider, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.EventByTypeIndexEventReader(EventStore.Core.Bus.IPublisher, Guid, IPrincipal, System.String(), System.Boolean, EventStore.Core.Data.TFPos, Dictionary(Of System.String, System.Int64), System.Boolean, EventStore.Core.Services.TimerService.ITimeProvider, System.Boolean)
+  name.vb: EventByTypeIndexEventReader(IPublisher, Guid, IPrincipal, String(), Boolean, TFPos, Dictionary(Of String, Int64), Boolean, ITimeProvider, Boolean)
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose
+  id: Dispose
+  parent: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: EventByTypeIndexEventReader.Dispose()
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose()
+  type: Method
+  source:
+    id: Dispose
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 84
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public override void Dispose()
+    content.vb: Public Overrides Sub Dispose
+  overridden: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+  overload: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents
+  id: RequestEvents
+  parent: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  langs:
+  - csharp
+  - vb
+  name: RequestEvents()
+  nameWithType: EventByTypeIndexEventReader.RequestEvents()
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents()
+  type: Method
+  source:
+    id: RequestEvents
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 89
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected override void RequestEvents()
+    content.vb: Protected Overrides Sub RequestEvents
+  overridden: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+  overload: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested
+  id: AreEventsRequested
+  parent: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader
+  langs:
+  - csharp
+  - vb
+  name: AreEventsRequested()
+  nameWithType: EventByTypeIndexEventReader.AreEventsRequested()
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested()
+  type: Method
+  source:
+    id: AreEventsRequested
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/EventByTypeIndexEventReader.cs
+    startLine: 95
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: protected override bool AreEventsRequested()
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function AreEventsRequested As Boolean
+  overridden: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+  overload: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.Processing.EventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.EventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  name: EventReader
+  nameWithType: EventReader
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader
+- uid: EventStore.Projections.Core.Services.Processing.IEventReader
+  commentId: T:EventStore.Projections.Core.Services.Processing.IEventReader
+  parent: EventStore.Projections.Core.Services.Processing
+  name: IEventReader
+  nameWithType: IEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.IEventReader
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.EventReaderCorrelationId
+  commentId: F:EventStore.Projections.Core.Services.Processing.EventReader.EventReaderCorrelationId
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: EventReaderCorrelationId
+  nameWithType: EventReader.EventReaderCorrelationId
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.EventReaderCorrelationId
+- uid: EventStore.Projections.Core.Services.Processing.EventReader._publisher
+  commentId: F:EventStore.Projections.Core.Services.Processing.EventReader._publisher
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: _publisher
+  nameWithType: EventReader._publisher
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader._publisher
+- uid: EventStore.Projections.Core.Services.Processing.EventReader._stopOnEof
+  commentId: F:EventStore.Projections.Core.Services.Processing.EventReader._stopOnEof
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: _stopOnEof
+  nameWithType: EventReader._stopOnEof
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader._stopOnEof
+- uid: EventStore.Projections.Core.Services.Processing.EventReader._disposed
+  commentId: F:EventStore.Projections.Core.Services.Processing.EventReader._disposed
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: _disposed
+  nameWithType: EventReader._disposed
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader._disposed
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.PauseRequested
+  commentId: P:EventStore.Projections.Core.Services.Processing.EventReader.PauseRequested
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: PauseRequested
+  nameWithType: EventReader.PauseRequested
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.PauseRequested
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.Paused
+  commentId: P:EventStore.Projections.Core.Services.Processing.EventReader.Paused
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: Paused
+  nameWithType: EventReader.Paused
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.Paused
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.ReadAs
+  commentId: P:EventStore.Projections.Core.Services.Processing.EventReader.ReadAs
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: ReadAs
+  nameWithType: EventReader.ReadAs
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.ReadAs
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.Resume
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.Resume
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: Resume()
+  nameWithType: EventReader.Resume()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.Resume()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Resume
+    name: Resume
+    nameWithType: EventReader.Resume
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Resume
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Resume
+    name: Resume
+    nameWithType: EventReader.Resume
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Resume
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.Pause
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.Pause
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: Pause()
+  nameWithType: EventReader.Pause()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.Pause()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Pause
+    name: Pause
+    nameWithType: EventReader.Pause
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Pause
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Pause
+    name: Pause
+    nameWithType: EventReader.Pause
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Pause
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: SendEof()
+  nameWithType: EventReader.SendEof()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendEof()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+    name: SendEof
+    nameWithType: EventReader.SendEof
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+    name: SendEof
+    nameWithType: EventReader.SendEof
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendEof
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  isExternal: true
+  name: SendPartitionEof(String, CheckpointTag)
+  nameWithType: EventReader.SendPartitionEof(String, CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String, EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+    name: SendPartitionEof
+    nameWithType: EventReader.SendPartitionEof
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof(System.String,EventStore.Projections.Core.Services.Processing.CheckpointTag)
+    name: SendPartitionEof
+    nameWithType: EventReader.SendPartitionEof
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionEof
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int32},EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int32},EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  isExternal: true
+  name: SendPartitionDeleted_WhenReadingDataStream(String, Nullable<Int64>, Nullable<TFPos>, Nullable<TFPos>, String, Nullable<Int32>, CheckpointTag)
+  nameWithType: EventReader.SendPartitionDeleted_WhenReadingDataStream(String, Nullable<Int64>, Nullable<TFPos>, Nullable<TFPos>, String, Nullable<Int32>, CheckpointTag)
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String, System.Nullable<System.Int64>, System.Nullable<EventStore.Core.Data.TFPos>, System.Nullable<EventStore.Core.Data.TFPos>, System.String, System.Nullable<System.Int32>, EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  nameWithType.vb: EventReader.SendPartitionDeleted_WhenReadingDataStream(String, Nullable(Of Int64), Nullable(Of TFPos), Nullable(Of TFPos), String, Nullable(Of Int32), CheckpointTag)
+  fullName.vb: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String, System.Nullable(Of System.Int64), System.Nullable(Of EventStore.Core.Data.TFPos), System.Nullable(Of EventStore.Core.Data.TFPos), System.String, System.Nullable(Of System.Int32), EventStore.Projections.Core.Services.Processing.CheckpointTag)
+  name.vb: SendPartitionDeleted_WhenReadingDataStream(String, Nullable(Of Int64), Nullable(Of TFPos), Nullable(Of TFPos), String, Nullable(Of Int32), CheckpointTag)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int32},EventStore.Projections.Core.Services.Processing.CheckpointTag)
+    name: SendPartitionDeleted_WhenReadingDataStream
+    nameWithType: EventReader.SendPartitionDeleted_WhenReadingDataStream
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream(System.String,System.Nullable{System.Int64},System.Nullable{EventStore.Core.Data.TFPos},System.Nullable{EventStore.Core.Data.TFPos},System.String,System.Nullable{System.Int32},EventStore.Projections.Core.Services.Processing.CheckpointTag)
+    name: SendPartitionDeleted_WhenReadingDataStream
+    nameWithType: EventReader.SendPartitionDeleted_WhenReadingDataStream
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendPartitionDeleted_WhenReadingDataStream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Core.Data.TFPos
+    name: TFPos
+    nameWithType: TFPos
+    fullName: EventStore.Core.Data.TFPos
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: EventStore.Projections.Core.Services.Processing.CheckpointTag
+    name: CheckpointTag
+    nameWithType: CheckpointTag
+    fullName: EventStore.Projections.Core.Services.Processing.CheckpointTag
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: SendNotAuthorized()
+  nameWithType: EventReader.SendNotAuthorized()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+    name: SendNotAuthorized
+    nameWithType: EventReader.SendNotAuthorized
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+    name: SendNotAuthorized
+    nameWithType: EventReader.SendNotAuthorized
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.SendNotAuthorized
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: GetLastCommitPositionFrom(ClientMessage.ReadStreamEventsForwardCompleted)
+  nameWithType: EventReader.GetLastCommitPositionFrom(ClientMessage.ReadStreamEventsForwardCompleted)
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+    name: GetLastCommitPositionFrom
+    nameWithType: EventReader.GetLastCommitPositionFrom
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom(EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted)
+    name: GetLastCommitPositionFrom
+    nameWithType: EventReader.GetLastCommitPositionFrom
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.GetLastCommitPositionFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+    name: ClientMessage.ReadStreamEventsForwardCompleted
+    nameWithType: ClientMessage.ReadStreamEventsForwardCompleted
+    fullName: EventStore.Core.Messages.ClientMessage.ReadStreamEventsForwardCompleted
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: PauseOrContinueProcessing()
+  nameWithType: EventReader.PauseOrContinueProcessing()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+    name: PauseOrContinueProcessing
+    nameWithType: EventReader.PauseOrContinueProcessing
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+    name: PauseOrContinueProcessing
+    nameWithType: EventReader.PauseOrContinueProcessing
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.PauseOrContinueProcessing
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  isExternal: true
+  name: NotifyIfStarting(Int64)
+  nameWithType: EventReader.NotifyIfStarting(Int64)
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+    name: NotifyIfStarting
+    nameWithType: EventReader.NotifyIfStarting
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting(System.Int64)
+    name: NotifyIfStarting
+    nameWithType: EventReader.NotifyIfStarting
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.NotifyIfStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.#ctor
+  name: EventByTypeIndexEventReader
+  nameWithType: EventByTypeIndexEventReader.EventByTypeIndexEventReader
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.EventByTypeIndexEventReader
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: IPrincipal
+  isExternal: true
+  name: IPrincipal
+  nameWithType: IPrincipal
+  fullName: IPrincipal
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Core.Data.TFPos
+  commentId: T:EventStore.Core.Data.TFPos
+  parent: EventStore.Core.Data
+  name: TFPos
+  nameWithType: TFPos
+  fullName: EventStore.Core.Data.TFPos
+- uid: Dictionary{System.String,System.Int64}
+  commentId: '!:Dictionary{System.String,System.Int64}'
+  definition: Dictionary`2
+  name: Dictionary<String, Int64>
+  nameWithType: Dictionary<String, Int64>
+  fullName: Dictionary<System.String, System.Int64>
+  nameWithType.vb: Dictionary(Of String, Int64)
+  fullName.vb: Dictionary(Of System.String, System.Int64)
+  name.vb: Dictionary(Of String, Int64)
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.TimerService.ITimeProvider
+  commentId: T:EventStore.Core.Services.TimerService.ITimeProvider
+  parent: EventStore.Core.Services.TimerService
+  name: ITimeProvider
+  nameWithType: ITimeProvider
+  fullName: EventStore.Core.Services.TimerService.ITimeProvider
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: EventStore.Core.Data
+  commentId: N:EventStore.Core.Data
+  name: EventStore.Core.Data
+  nameWithType: EventStore.Core.Data
+  fullName: EventStore.Core.Data
+- uid: Dictionary`2
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Services.TimerService
+  commentId: N:EventStore.Core.Services.TimerService
+  name: EventStore.Core.Services.TimerService
+  nameWithType: EventStore.Core.Services.TimerService
+  fullName: EventStore.Core.Services.TimerService
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: Dispose()
+  nameWithType: EventReader.Dispose()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.Dispose()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+    name: Dispose
+    nameWithType: EventReader.Dispose
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+    name: Dispose
+    nameWithType: EventReader.Dispose
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose
+  name: Dispose
+  nameWithType: EventByTypeIndexEventReader.Dispose
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.Dispose
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: RequestEvents()
+  nameWithType: EventReader.RequestEvents()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+    name: RequestEvents
+    nameWithType: EventReader.RequestEvents
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+    name: RequestEvents
+    nameWithType: EventReader.RequestEvents
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.RequestEvents
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents
+  name: RequestEvents
+  nameWithType: EventByTypeIndexEventReader.RequestEvents
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.RequestEvents
+- uid: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+  commentId: M:EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+  parent: EventStore.Projections.Core.Services.Processing.EventReader
+  name: AreEventsRequested()
+  nameWithType: EventReader.AreEventsRequested()
+  fullName: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested()
+  spec.csharp:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+    name: AreEventsRequested
+    nameWithType: EventReader.AreEventsRequested
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+    name: AreEventsRequested
+    nameWithType: EventReader.AreEventsRequested
+    fullName: EventStore.Projections.Core.Services.Processing.EventReader.AreEventsRequested
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested
+  name: AreEventsRequested
+  nameWithType: EventByTypeIndexEventReader.AreEventsRequested
+  fullName: EventStore.Projections.Core.Services.Processing.EventByTypeIndexEventReader.AreEventsRequested

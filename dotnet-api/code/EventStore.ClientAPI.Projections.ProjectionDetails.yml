@@ -5,7 +5,7 @@ items:
   id: ProjectionDetails
   parent: EventStore.ClientAPI.Projections
   children:
-  - EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.String,System.Int64,System.Int32,System.Int32)
+  - EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,Uri,Uri,Uri,Uri,Uri,Uri,System.String,System.Int64,System.Int32,System.Int32)
   - EventStore.ClientAPI.Projections.ProjectionDetails.BufferedEvents
   - EventStore.ClientAPI.Projections.ProjectionDetails.CheckpointStatus
   - EventStore.ClientAPI.Projections.ProjectionDetails.CoreProcessingTime
@@ -48,18 +48,12 @@ items:
   summary: "\nProvides the details for a projection.\n"
   example: []
   syntax:
-    content: public sealed class ProjectionDetails
-    content.vb: Public NotInheritable Class ProjectionDetails
+    content: 'public sealed class ProjectionDetails : object'
+    content.vb: >-
+      Public NotInheritable Class ProjectionDetails
+          Inherits Object
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -556,7 +550,7 @@ items:
   syntax:
     content: public readonly Uri StatusUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly StatusUrl As Uri
   modifiers.csharp:
   - public
@@ -587,7 +581,7 @@ items:
   syntax:
     content: public readonly Uri StateUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly StateUrl As Uri
   modifiers.csharp:
   - public
@@ -618,7 +612,7 @@ items:
   syntax:
     content: public readonly Uri ResultUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly ResultUrl As Uri
   modifiers.csharp:
   - public
@@ -649,7 +643,7 @@ items:
   syntax:
     content: public readonly Uri QueryUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly QueryUrl As Uri
   modifiers.csharp:
   - public
@@ -680,7 +674,7 @@ items:
   syntax:
     content: public readonly Uri EnableCommandUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly EnableCommandUrl As Uri
   modifiers.csharp:
   - public
@@ -711,7 +705,7 @@ items:
   syntax:
     content: public readonly Uri DisableCommandUrl
     return:
-      type: System.Uri
+      type: Uri
     content.vb: Public ReadOnly DisableCommandUrl As Uri
   modifiers.csharp:
   - public
@@ -843,16 +837,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.String,System.Int64,System.Int32,System.Int32)
-  commentId: M:EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.String,System.Int64,System.Int32,System.Int32)
-  id: '#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.Uri,System.String,System.Int64,System.Int32,System.Int32)'
+- uid: EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,Uri,Uri,Uri,Uri,Uri,Uri,System.String,System.Int64,System.Int32,System.Int32)
+  commentId: M:EventStore.ClientAPI.Projections.ProjectionDetails.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,Uri,Uri,Uri,Uri,Uri,Uri,System.String,System.Int64,System.Int32,System.Int32)
+  id: '#ctor(System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Single,System.String,System.Int64,Uri,Uri,Uri,Uri,Uri,Uri,System.String,System.Int64,System.Int32,System.Int32)'
   parent: EventStore.ClientAPI.Projections.ProjectionDetails
   langs:
   - csharp
   - vb
   name: ProjectionDetails(Int64, Int64, Int64, String, Int32, Int32, Int32, String, String, String, String, String, Single, String, Int64, Uri, Uri, Uri, Uri, Uri, Uri, String, Int64, Int32, Int32)
   nameWithType: ProjectionDetails.ProjectionDetails(Int64, Int64, Int64, String, Int32, Int32, Int32, String, String, String, String, String, Single, String, Int64, Uri, Uri, Uri, Uri, Uri, Uri, String, Int64, Int32, Int32)
-  fullName: EventStore.ClientAPI.Projections.ProjectionDetails.ProjectionDetails(System.Int64, System.Int64, System.Int64, System.String, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.Single, System.String, System.Int64, System.Uri, System.Uri, System.Uri, System.Uri, System.Uri, System.Uri, System.String, System.Int64, System.Int32, System.Int32)
+  fullName: EventStore.ClientAPI.Projections.ProjectionDetails.ProjectionDetails(System.Int64, System.Int64, System.Int64, System.String, System.Int32, System.Int32, System.Int32, System.String, System.String, System.String, System.String, System.String, System.Single, System.String, System.Int64, Uri, Uri, Uri, Uri, Uri, Uri, System.String, System.Int64, System.Int32, System.Int32)
   type: Constructor
   source:
     id: .ctor
@@ -912,22 +906,22 @@ items:
       type: System.Int64
       description: ''
     - id: statusUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: stateUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: resultUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: queryUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: enableCommandUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: disableCommandUrl
-      type: System.Uri
+      type: Uri
       description: ''
     - id: checkpointStatus
       type: System.String
@@ -954,332 +948,35 @@ references:
   nameWithType: EventStore.ClientAPI.Projections
   fullName: EventStore.ClientAPI.Projections
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: System.Int64
-  commentId: T:System.Int64
-  parent: System
   isExternal: true
   name: Int64
   nameWithType: Int64
   fullName: System.Int64
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
 - uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
 - uid: System.Single
-  commentId: T:System.Single
-  parent: System
   isExternal: true
   name: Single
   nameWithType: Single
   fullName: System.Single
-- uid: System.Uri
-  commentId: T:System.Uri
-  parent: System
+- uid: Uri
   isExternal: true
   name: Uri
   nameWithType: Uri
-  fullName: System.Uri
+  fullName: Uri
 - uid: EventStore.ClientAPI.Projections.ProjectionDetails
   commentId: T:EventStore.ClientAPI.Projections.ProjectionDetails
   name: ProjectionDetails

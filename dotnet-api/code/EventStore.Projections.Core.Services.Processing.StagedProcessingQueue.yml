@@ -1,0 +1,339 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  commentId: T:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  id: StagedProcessingQueue
+  parent: EventStore.Projections.Core.Services.Processing
+  children:
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor(System.Boolean[])
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue(EventStore.Projections.Core.Services.Processing.StagedTask)
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.EnsureTickPending
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+  - EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: StagedProcessingQueue
+  nameWithType: StagedProcessingQueue
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  type: Class
+  source:
+    id: StagedProcessingQueue
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  summary: "\nStaged processing queue allows queued processing of multi-step tasks.  The \nprocessing order allows multiple tasks to be processed at the same time with a constraint\na) ordered stage: all preceding tasks in the queue has already started processing at the given stage. \nb) unordered stage: no items with the same correlation_id are in the queue before current item\n\nFor instance:  multiple foreach sub-projections can request state to be loaded, then they can process\nit and store.  But no subprojection can process events prior to preceding projections has completed processing. \n"
+  example: []
+  syntax:
+    content: 'public class StagedProcessingQueue : object'
+    content.vb: >-
+      Public Class StagedProcessingQueue
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.EnsureTickPending
+  commentId: E:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.EnsureTickPending
+  id: EnsureTickPending
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: EnsureTickPending
+  nameWithType: StagedProcessingQueue.EnsureTickPending
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.EnsureTickPending
+  type: Event
+  source:
+    id: EnsureTickPending
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 53
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public event Action EnsureTickPending
+    return:
+      type: Action
+    content.vb: Public Event EnsureTickPending As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor(System.Boolean[])
+  commentId: M:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor(System.Boolean[])
+  id: '#ctor(System.Boolean[])'
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: StagedProcessingQueue(Boolean[])
+  nameWithType: StagedProcessingQueue.StagedProcessingQueue(Boolean[])
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.StagedProcessingQueue(System.Boolean[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 55
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public StagedProcessingQueue(bool[] orderedStage)
+    parameters:
+    - id: orderedStage
+      type: System.Boolean[]
+    content.vb: Public Sub New(orderedStage As Boolean())
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor*
+  nameWithType.vb: StagedProcessingQueue.StagedProcessingQueue(Boolean())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.StagedProcessingQueue(System.Boolean())
+  name.vb: StagedProcessingQueue(Boolean())
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+  commentId: P:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+  id: IsEmpty
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: IsEmpty
+  nameWithType: StagedProcessingQueue.IsEmpty
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+  type: Property
+  source:
+    id: IsEmpty
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 63
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool IsEmpty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEmpty As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+  commentId: P:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+  id: Count
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: StagedProcessingQueue.Count
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+  type: Property
+  source:
+    id: Count
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 67
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue(EventStore.Projections.Core.Services.Processing.StagedTask)
+  commentId: M:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue(EventStore.Projections.Core.Services.Processing.StagedTask)
+  id: Enqueue(EventStore.Projections.Core.Services.Processing.StagedTask)
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: Enqueue(StagedTask)
+  nameWithType: StagedProcessingQueue.Enqueue(StagedTask)
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue(EventStore.Projections.Core.Services.Processing.StagedTask)
+  type: Method
+  source:
+    id: Enqueue
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 71
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Enqueue(StagedTask stagedTask)
+    parameters:
+    - id: stagedTask
+      type: EventStore.Projections.Core.Services.Processing.StagedTask
+    content.vb: Public Sub Enqueue(stagedTask As StagedTask)
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process(System.Int32)
+  commentId: M:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process(System.Int32)
+  id: Process(System.Int32)
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: Process(Int32)
+  nameWithType: StagedProcessingQueue.Process(Int32)
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process(System.Int32)
+  type: Method
+  source:
+    id: Process
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 92
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public bool Process(int max = 1)
+    parameters:
+    - id: max
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function Process(max As Integer = 1) As Boolean
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize
+  commentId: M:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize
+  id: Initialize
+  parent: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: StagedProcessingQueue.Initialize()
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize()
+  type: Method
+  source:
+    id: Initialize
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/StagedProcessingQueue.cs
+    startLine: 245
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Initialize()
+    content.vb: Public Sub Initialize
+  overload: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: EventStore.Projections.Core.Services.Processing
+  commentId: N:EventStore.Projections.Core.Services.Processing
+  name: EventStore.Projections.Core.Services.Processing
+  nameWithType: EventStore.Projections.Core.Services.Processing
+  fullName: EventStore.Projections.Core.Services.Processing
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Action
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: Action
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.#ctor
+  name: StagedProcessingQueue
+  nameWithType: StagedProcessingQueue.StagedProcessingQueue
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.StagedProcessingQueue
+- uid: System.Boolean[]
+  isExternal: true
+  name: Boolean[]
+  nameWithType: Boolean[]
+  fullName: System.Boolean[]
+  nameWithType.vb: Boolean()
+  fullName.vb: System.Boolean()
+  name.vb: Boolean()
+  spec.csharp:
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+  name: IsEmpty
+  nameWithType: StagedProcessingQueue.IsEmpty
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.IsEmpty
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+  name: Count
+  nameWithType: StagedProcessingQueue.Count
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Count
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue
+  name: Enqueue
+  nameWithType: StagedProcessingQueue.Enqueue
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Enqueue
+- uid: EventStore.Projections.Core.Services.Processing.StagedTask
+  commentId: T:EventStore.Projections.Core.Services.Processing.StagedTask
+  parent: EventStore.Projections.Core.Services.Processing
+  name: StagedTask
+  nameWithType: StagedTask
+  fullName: EventStore.Projections.Core.Services.Processing.StagedTask
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process
+  name: Process
+  nameWithType: StagedProcessingQueue.Process
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Process
+- uid: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize*
+  commentId: Overload:EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize
+  name: Initialize
+  nameWithType: StagedProcessingQueue.Initialize
+  fullName: EventStore.Projections.Core.Services.Processing.StagedProcessingQueue.Initialize

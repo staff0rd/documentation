@@ -1,0 +1,744 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  commentId: T:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  id: PublishSubscribeDispatcher`4
+  parent: EventStore.Projections.Core.Services
+  children:
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel(`0)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber``1
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle``1(``0)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(`2)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(EventStore.Core.Bus.IPublisher,`2)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(`1,System.Object)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(EventStore.Core.Bus.IPublisher,`1,System.Object)
+  - EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed(`0,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>
+  type: Class
+  source:
+    id: PublishSubscribeDispatcher
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 7
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: 'public class PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase> : object where TSubscribeRequest : Message where TControlMessageBase : Message where TResponseBase : Message'
+    typeParameters:
+    - id: TGuid
+    - id: TSubscribeRequest
+    - id: TControlMessageBase
+    - id: TResponseBase
+    content.vb: >-
+      Public Class PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest As Message, TControlMessageBase As Message, TResponseBase As Message)
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher
+  - EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
+  name.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})
+  id: '#ctor(EventStore.Core.Bus.IPublisher,Func{`1,`0},Func{`3,`0})'
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: PublishSubscribeDispatcher(IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher(IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, Func<TSubscribeRequest, TGuid>, Func<TResponseBase, TGuid>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 19
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public PublishSubscribeDispatcher(IPublisher publisher, Func<TSubscribeRequest, TGuid> getRequestCorrelationId, Func<TResponseBase, TGuid> getResponseCorrelationId)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: getRequestCorrelationId
+      type: Func{{TSubscribeRequest},{TGuid}}
+    - id: getResponseCorrelationId
+      type: Func{{TResponseBase},{TGuid}}
+    content.vb: Public Sub New(publisher As IPublisher, getRequestCorrelationId As Func(Of TSubscribeRequest, TGuid), getResponseCorrelationId As Func(Of TResponseBase, TGuid))
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher(IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher(EventStore.Core.Bus.IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
+  name.vb: PublishSubscribeDispatcher(IPublisher, Func(Of TSubscribeRequest, TGuid), Func(Of TResponseBase, TGuid))
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(`1,System.Object)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(`1,System.Object)
+  id: PublishSubscribe(`1,System.Object)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: PublishSubscribe(TSubscribeRequest, Object)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(TSubscribeRequest, Object)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(TSubscribeRequest, System.Object)
+  type: Method
+  source:
+    id: PublishSubscribe
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public TGuid PublishSubscribe(TSubscribeRequest request, object subscriber)
+    parameters:
+    - id: request
+      type: '{TSubscribeRequest}'
+    - id: subscriber
+      type: System.Object
+    return:
+      type: '{TGuid}'
+    content.vb: Public Function PublishSubscribe(request As TSubscribeRequest, subscriber As Object) As TGuid
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe(TSubscribeRequest, Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe(TSubscribeRequest, System.Object)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(EventStore.Core.Bus.IPublisher,`1,System.Object)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe(EventStore.Core.Bus.IPublisher,`1,System.Object)
+  id: PublishSubscribe(EventStore.Core.Bus.IPublisher,`1,System.Object)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: PublishSubscribe(IPublisher, TSubscribeRequest, Object)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(IPublisher, TSubscribeRequest, Object)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe(EventStore.Core.Bus.IPublisher, TSubscribeRequest, System.Object)
+  type: Method
+  source:
+    id: PublishSubscribe
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 31
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public TGuid PublishSubscribe(IPublisher publisher, TSubscribeRequest request, object subscriber)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: request
+      type: '{TSubscribeRequest}'
+    - id: subscriber
+      type: System.Object
+    return:
+      type: '{TGuid}'
+    content.vb: Public Function PublishSubscribe(publisher As IPublisher, request As TSubscribeRequest, subscriber As Object) As TGuid
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe(IPublisher, TSubscribeRequest, Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe(EventStore.Core.Bus.IPublisher, TSubscribeRequest, System.Object)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(`2)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(`2)
+  id: Publish(`2)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: Publish(TControlMessageBase)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(TControlMessageBase)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(TControlMessageBase)
+  type: Method
+  source:
+    id: Publish
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 45
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public void Publish(TControlMessageBase request)
+    parameters:
+    - id: request
+      type: '{TControlMessageBase}'
+    content.vb: Public Sub Publish(request As TControlMessageBase)
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish(TControlMessageBase)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish(TControlMessageBase)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(EventStore.Core.Bus.IPublisher,`2)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish(EventStore.Core.Bus.IPublisher,`2)
+  id: Publish(EventStore.Core.Bus.IPublisher,`2)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: Publish(IPublisher, TControlMessageBase)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(IPublisher, TControlMessageBase)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish(EventStore.Core.Bus.IPublisher, TControlMessageBase)
+  type: Method
+  source:
+    id: Publish
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 49
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public void Publish(IPublisher publisher, TControlMessageBase request)
+    parameters:
+    - id: publisher
+      type: EventStore.Core.Bus.IPublisher
+    - id: request
+      type: '{TControlMessageBase}'
+    content.vb: Public Sub Publish(publisher As IPublisher, request As TControlMessageBase)
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish(IPublisher, TControlMessageBase)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish(EventStore.Core.Bus.IPublisher, TControlMessageBase)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel(`0)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel(`0)
+  id: Cancel(`0)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: Cancel(TGuid)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Cancel(TGuid)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Cancel(TGuid)
+  type: Method
+  source:
+    id: Cancel
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 54
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public void Cancel(TGuid requestId)
+    parameters:
+    - id: requestId
+      type: '{TGuid}'
+    content.vb: Public Sub Cancel(requestId As TGuid)
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Cancel(TGuid)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Cancel(TGuid)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll
+  id: CancelAll
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: CancelAll()
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CancelAll()
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CancelAll()
+  type: Method
+  source:
+    id: CancelAll
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 59
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public void CancelAll()
+    content.vb: Public Sub CancelAll
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CancelAll()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CancelAll()
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber``1
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber``1
+  id: CreateSubscriber``1
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: CreateSubscriber<T>()
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CreateSubscriber<T>()
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CreateSubscriber<T>()
+  type: Method
+  source:
+    id: CreateSubscriber
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 64
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: >-
+      public IHandle<T> CreateSubscriber<T>()
+
+          where T : TResponseBase
+    typeParameters:
+    - id: T
+    return:
+      type: EventStore.Core.Bus.IHandle{{T}}
+    content.vb: Public Function CreateSubscriber(Of T As TResponseBase) As IHandle(Of T)
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CreateSubscriber(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CreateSubscriber(Of T)()
+  name.vb: CreateSubscriber(Of T)()
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle``1(``0)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle``1(``0)
+  id: Handle``1(``0)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: Handle<T>(T)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Handle<T>(T)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Handle<T>(T)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 82
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: >-
+      public bool Handle<T>(T message)
+
+          where T : TResponseBase
+    parameters:
+    - id: message
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function Handle(Of T As TResponseBase)(message As T) As Boolean
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Handle(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Handle(Of T)(T)
+  name.vb: Handle(Of T)(T)
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed(`0,System.Object)
+  commentId: M:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed(`0,System.Object)
+  id: Subscribed(`0,System.Object)
+  parent: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4
+  langs:
+  - csharp
+  - vb
+  name: Subscribed(TGuid, Object)
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Subscribed(TGuid, Object)
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Subscribed(TGuid, System.Object)
+  type: Method
+  source:
+    id: Subscribed
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/PublishSubscribeDispatcher.cs
+    startLine: 97
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services
+  syntax:
+    content: public void Subscribed(TGuid correlationId, object subscriber)
+    parameters:
+    - id: correlationId
+      type: '{TGuid}'
+    - id: subscriber
+      type: System.Object
+    content.vb: Public Sub Subscribed(correlationId As TGuid, subscriber As Object)
+  overload: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed*
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Subscribed(TGuid, Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Subscribed(TGuid, System.Object)
+references:
+- uid: EventStore.Projections.Core.Services
+  commentId: N:EventStore.Projections.Core.Services
+  name: EventStore.Projections.Core.Services
+  nameWithType: EventStore.Projections.Core.Services
+  fullName: EventStore.Projections.Core.Services
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.#ctor
+  name: PublishSubscribeDispatcher
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribeDispatcher
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribeDispatcher
+- uid: EventStore.Core.Bus.IPublisher
+  commentId: T:EventStore.Core.Bus.IPublisher
+  parent: EventStore.Core.Bus
+  name: IPublisher
+  nameWithType: IPublisher
+  fullName: EventStore.Core.Bus.IPublisher
+- uid: Func{{TSubscribeRequest},{TGuid}}
+  commentId: '!:Func{`1,`0}'
+  definition: Func`2
+  name: Func<TSubscribeRequest, TGuid>
+  nameWithType: Func<TSubscribeRequest, TGuid>
+  fullName: Func<TSubscribeRequest, TGuid>
+  nameWithType.vb: Func(Of TSubscribeRequest, TGuid)
+  fullName.vb: Func(Of TSubscribeRequest, TGuid)
+  name.vb: Func(Of TSubscribeRequest, TGuid)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TSubscribeRequest
+    nameWithType: TSubscribeRequest
+    fullName: TSubscribeRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TGuid
+    nameWithType: TGuid
+    fullName: TGuid
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TSubscribeRequest
+    nameWithType: TSubscribeRequest
+    fullName: TSubscribeRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TGuid
+    nameWithType: TGuid
+    fullName: TGuid
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func{{TResponseBase},{TGuid}}
+  commentId: '!:Func{`3,`0}'
+  definition: Func`2
+  name: Func<TResponseBase, TGuid>
+  nameWithType: Func<TResponseBase, TGuid>
+  fullName: Func<TResponseBase, TGuid>
+  nameWithType.vb: Func(Of TResponseBase, TGuid)
+  fullName.vb: Func(Of TResponseBase, TGuid)
+  name.vb: Func(Of TResponseBase, TGuid)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponseBase
+    nameWithType: TResponseBase
+    fullName: TResponseBase
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TGuid
+    nameWithType: TGuid
+    fullName: TGuid
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponseBase
+    nameWithType: TResponseBase
+    fullName: TResponseBase
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TGuid
+    nameWithType: TGuid
+    fullName: TGuid
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus
+  commentId: N:EventStore.Core.Bus
+  name: EventStore.Core.Bus
+  nameWithType: EventStore.Core.Bus
+  fullName: EventStore.Core.Bus
+- uid: Func`2
+  isExternal: true
+  name: Func<, >
+  nameWithType: Func<, >
+  fullName: Func<, >
+  nameWithType.vb: Func(Of , )
+  fullName.vb: Func(Of , )
+  name.vb: Func(Of , )
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.PublishSubscribe
+  name: PublishSubscribe
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.PublishSubscribe
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).PublishSubscribe
+- uid: '{TSubscribeRequest}'
+  commentId: '!:TSubscribeRequest'
+  definition: TSubscribeRequest
+  name: TSubscribeRequest
+  nameWithType: TSubscribeRequest
+  fullName: TSubscribeRequest
+- uid: '{TGuid}'
+  commentId: '!:TGuid'
+  definition: TGuid
+  name: TGuid
+  nameWithType: TGuid
+  fullName: TGuid
+- uid: TSubscribeRequest
+  name: TSubscribeRequest
+  nameWithType: TSubscribeRequest
+  fullName: TSubscribeRequest
+- uid: TGuid
+  name: TGuid
+  nameWithType: TGuid
+  fullName: TGuid
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Publish
+  name: Publish
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Publish
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Publish
+- uid: '{TControlMessageBase}'
+  commentId: '!:TControlMessageBase'
+  definition: TControlMessageBase
+  name: TControlMessageBase
+  nameWithType: TControlMessageBase
+  fullName: TControlMessageBase
+- uid: TControlMessageBase
+  name: TControlMessageBase
+  nameWithType: TControlMessageBase
+  fullName: TControlMessageBase
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Cancel
+  name: Cancel
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Cancel
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Cancel
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Cancel
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Cancel
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CancelAll
+  name: CancelAll
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CancelAll
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CancelAll
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CancelAll
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CancelAll
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.CreateSubscriber
+  name: CreateSubscriber
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CreateSubscriber
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.CreateSubscriber
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CreateSubscriber
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).CreateSubscriber
+- uid: EventStore.Core.Bus.IHandle{{T}}
+  commentId: T:EventStore.Core.Bus.IHandle{``0}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle`1
+  commentId: T:EventStore.Core.Bus.IHandle`1
+  name: IHandle<T>
+  nameWithType: IHandle<T>
+  fullName: EventStore.Core.Bus.IHandle<T>
+  nameWithType.vb: IHandle(Of T)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of T)
+  name.vb: IHandle(Of T)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Handle
+  name: Handle
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Handle
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Handle
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Handle
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Handle
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed*
+  commentId: Overload:EventStore.Projections.Core.Services.PublishSubscribeDispatcher`4.Subscribed
+  name: Subscribed
+  nameWithType: PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Subscribed
+  fullName: EventStore.Projections.Core.Services.PublishSubscribeDispatcher<TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase>.Subscribed
+  nameWithType.vb: PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Subscribed
+  fullName.vb: EventStore.Projections.Core.Services.PublishSubscribeDispatcher(Of TGuid, TSubscribeRequest, TControlMessageBase, TResponseBase).Subscribed

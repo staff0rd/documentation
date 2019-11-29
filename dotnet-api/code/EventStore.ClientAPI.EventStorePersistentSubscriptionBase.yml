@@ -6,13 +6,13 @@ items:
   parent: EventStore.ClientAPI
   children:
   - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(EventStore.ClientAPI.ResolvedEvent)
-  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent})
-  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{System.Guid})
-  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Guid)
+  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(Guid)
+  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{EventStore.ClientAPI.ResolvedEvent})
+  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{Guid})
   - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.DefaultBufferSize
   - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(EventStore.ClientAPI.ResolvedEvent,EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
-  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
-  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(System.TimeSpan)
+  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
+  - EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(TimeSpan)
   langs:
   - csharp
   - vb
@@ -30,20 +30,14 @@ items:
   summary: "\nRepresents a persistent subscription connection.\n"
   example: []
   syntax:
-    content: public abstract class EventStorePersistentSubscriptionBase
-    content.vb: Public MustInherit Class EventStorePersistentSubscriptionBase
+    content: 'public abstract class EventStorePersistentSubscriptionBase : object'
+    content.vb: >-
+      Public MustInherit Class EventStorePersistentSubscriptionBase
+          Inherits Object
   inheritance:
   - System.Object
   derivedClasses:
   - EventStore.ClientAPI.EventStorePersistentSubscription
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - abstract
@@ -73,10 +67,10 @@ items:
   summary: "\nThe default buffer size for the persistent subscription\n"
   example: []
   syntax:
-    content: public const int DefaultBufferSize = 10
+    content: public const int DefaultBufferSize = null
     return:
       type: System.Int32
-    content.vb: Public Const DefaultBufferSize As Integer = 10
+    content.vb: Public Const DefaultBufferSize As Integer = Nothing
   modifiers.csharp:
   - public
   - const
@@ -116,16 +110,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent})
-  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent})
-  id: Acknowledge(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent})
+- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{EventStore.ClientAPI.ResolvedEvent})
+  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{EventStore.ClientAPI.ResolvedEvent})
+  id: Acknowledge(IEnumerable{EventStore.ClientAPI.ResolvedEvent})
   parent: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   langs:
   - csharp
   - vb
   name: Acknowledge(IEnumerable<ResolvedEvent>)
   nameWithType: EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable<ResolvedEvent>)
-  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable<EventStore.ClientAPI.ResolvedEvent>)
+  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable<EventStore.ClientAPI.ResolvedEvent>)
   type: Method
   source:
     id: Acknowledge
@@ -141,7 +135,7 @@ items:
     content: public void Acknowledge(IEnumerable<ResolvedEvent> events)
     parameters:
     - id: events
-      type: System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent}
+      type: IEnumerable{EventStore.ClientAPI.ResolvedEvent}
       description: The <xref href="EventStore.ClientAPI.ResolvedEvent" data-throw-if-not-resolved="false"></xref>s to acknowledge there should be less than 2000 to ack at a time.
     content.vb: Public Sub Acknowledge(events As IEnumerable(Of ResolvedEvent))
   overload: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge*
@@ -150,18 +144,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable(Of EventStore.ClientAPI.ResolvedEvent))
+  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable(Of EventStore.ClientAPI.ResolvedEvent))
   name.vb: Acknowledge(IEnumerable(Of ResolvedEvent))
-- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Guid)
-  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Guid)
-  id: Acknowledge(System.Guid)
+- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(Guid)
+  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(Guid)
+  id: Acknowledge(Guid)
   parent: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   langs:
   - csharp
   - vb
   name: Acknowledge(Guid)
   nameWithType: EventStorePersistentSubscriptionBase.Acknowledge(Guid)
-  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Guid)
+  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(Guid)
   type: Method
   source:
     id: Acknowledge
@@ -177,7 +171,7 @@ items:
     content: public void Acknowledge(Guid eventId)
     parameters:
     - id: eventId
-      type: System.Guid
+      type: Guid
       description: The <xref href="EventStore.ClientAPI.ResolvedEvent" data-throw-if-not-resolved="false"></xref> OriginalEvent.EventId to acknowledge
     content.vb: Public Sub Acknowledge(eventId As Guid)
   overload: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge*
@@ -185,16 +179,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{System.Guid})
-  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable{System.Guid})
-  id: Acknowledge(System.Collections.Generic.IEnumerable{System.Guid})
+- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{Guid})
+  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable{Guid})
+  id: Acknowledge(IEnumerable{Guid})
   parent: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   langs:
   - csharp
   - vb
   name: Acknowledge(IEnumerable<Guid>)
   nameWithType: EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable<Guid>)
-  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable<System.Guid>)
+  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable<Guid>)
   type: Method
   source:
     id: Acknowledge
@@ -210,7 +204,7 @@ items:
     content: public void Acknowledge(IEnumerable<Guid> events)
     parameters:
     - id: events
-      type: System.Collections.Generic.IEnumerable{System.Guid}
+      type: IEnumerable{Guid}
       description: The <xref href="EventStore.ClientAPI.ResolvedEvent" data-throw-if-not-resolved="false"></xref> OriginalEvent.EventIds to acknowledge there should be less than 2000 to ack at a time.
     content.vb: Public Sub Acknowledge(events As IEnumerable(Of Guid))
   overload: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge*
@@ -219,7 +213,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(System.Collections.Generic.IEnumerable(Of System.Guid))
+  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge(IEnumerable(Of Guid))
   name.vb: Acknowledge(IEnumerable(Of Guid))
 - uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(EventStore.ClientAPI.ResolvedEvent,EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
   commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(EventStore.ClientAPI.ResolvedEvent,EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
@@ -259,16 +253,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
-  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
-  id: Fail(System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
+- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
+  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
+  id: Fail(IEnumerable{EventStore.ClientAPI.ResolvedEvent},EventStore.ClientAPI.PersistentSubscriptionNakEventAction,System.String)
   parent: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   langs:
   - csharp
   - vb
   name: Fail(IEnumerable<ResolvedEvent>, PersistentSubscriptionNakEventAction, String)
   nameWithType: EventStorePersistentSubscriptionBase.Fail(IEnumerable<ResolvedEvent>, PersistentSubscriptionNakEventAction, String)
-  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(System.Collections.Generic.IEnumerable<EventStore.ClientAPI.ResolvedEvent>, EventStore.ClientAPI.PersistentSubscriptionNakEventAction, System.String)
+  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(IEnumerable<EventStore.ClientAPI.ResolvedEvent>, EventStore.ClientAPI.PersistentSubscriptionNakEventAction, System.String)
   type: Method
   source:
     id: Fail
@@ -283,7 +277,7 @@ items:
     content: public void Fail(IEnumerable<ResolvedEvent> events, PersistentSubscriptionNakEventAction action, string reason)
     parameters:
     - id: events
-      type: System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent}
+      type: IEnumerable{EventStore.ClientAPI.ResolvedEvent}
       description: The events to mark as failed
     - id: action
       type: EventStore.ClientAPI.PersistentSubscriptionNakEventAction
@@ -298,18 +292,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(System.Collections.Generic.IEnumerable(Of EventStore.ClientAPI.ResolvedEvent), EventStore.ClientAPI.PersistentSubscriptionNakEventAction, System.String)
+  fullName.vb: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail(IEnumerable(Of EventStore.ClientAPI.ResolvedEvent), EventStore.ClientAPI.PersistentSubscriptionNakEventAction, System.String)
   name.vb: Fail(IEnumerable(Of ResolvedEvent), PersistentSubscriptionNakEventAction, String)
-- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(System.TimeSpan)
-  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(System.TimeSpan)
-  id: Stop(System.TimeSpan)
+- uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(TimeSpan)
+  commentId: M:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(TimeSpan)
+  id: Stop(TimeSpan)
   parent: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
   langs:
   - csharp
   - vb
   name: Stop(TimeSpan)
   nameWithType: EventStorePersistentSubscriptionBase.Stop(TimeSpan)
-  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(System.TimeSpan)
+  fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop(TimeSpan)
   type: Method
   source:
     id: Stop
@@ -324,13 +318,10 @@ items:
     content: public void Stop(TimeSpan timeout)
     parameters:
     - id: timeout
-      type: System.TimeSpan
+      type: TimeSpan
       description: ''
     content.vb: Public Sub Stop(timeout As TimeSpan)
   overload: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop*
-  exceptions:
-  - type: System.TimeoutException
-    commentId: T:System.TimeoutException
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -342,300 +333,11 @@ references:
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
   isExternal: true
   name: Int32
   nameWithType: Int32
@@ -651,21 +353,20 @@ references:
   name: Acknowledge
   nameWithType: EventStorePersistentSubscriptionBase.Acknowledge
   fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Acknowledge
-- uid: System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent}
-  commentId: T:System.Collections.Generic.IEnumerable{EventStore.ClientAPI.ResolvedEvent}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
+- uid: IEnumerable{EventStore.ClientAPI.ResolvedEvent}
+  commentId: '!:IEnumerable{EventStore.ClientAPI.ResolvedEvent}'
+  definition: IEnumerable`1
   name: IEnumerable<ResolvedEvent>
   nameWithType: IEnumerable<ResolvedEvent>
-  fullName: System.Collections.Generic.IEnumerable<EventStore.ClientAPI.ResolvedEvent>
+  fullName: IEnumerable<EventStore.ClientAPI.ResolvedEvent>
   nameWithType.vb: IEnumerable(Of ResolvedEvent)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of EventStore.ClientAPI.ResolvedEvent)
+  fullName.vb: IEnumerable(Of EventStore.ClientAPI.ResolvedEvent)
   name.vb: IEnumerable(Of ResolvedEvent)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -678,10 +379,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -693,98 +394,88 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: IEnumerable`1
   isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-- uid: System.Guid
-  commentId: T:System.Guid
-  parent: System
+- uid: Guid
   isExternal: true
   name: Guid
   nameWithType: Guid
-  fullName: System.Guid
-- uid: System.Collections.Generic.IEnumerable{System.Guid}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Guid}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
+  fullName: Guid
+- uid: IEnumerable{Guid}
+  commentId: '!:IEnumerable{Guid}'
+  definition: IEnumerable`1
   name: IEnumerable<Guid>
   nameWithType: IEnumerable<Guid>
-  fullName: System.Collections.Generic.IEnumerable<System.Guid>
+  fullName: IEnumerable<Guid>
   nameWithType.vb: IEnumerable(Of Guid)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Guid)
+  fullName.vb: IEnumerable(Of Guid)
   name.vb: IEnumerable(Of Guid)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Guid
+  - uid: Guid
     name: Guid
     nameWithType: Guid
-    fullName: System.Guid
+    fullName: Guid
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
+  - uid: IEnumerable`1
     name: IEnumerable
     nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
+    fullName: IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Guid
+  - uid: Guid
     name: Guid
     nameWithType: Guid
-    fullName: System.Guid
+    fullName: Guid
     isExternal: true
   - name: )
     nameWithType: )
@@ -801,24 +492,17 @@ references:
   nameWithType: EventStorePersistentSubscriptionBase.Fail
   fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Fail
 - uid: System.String
-  commentId: T:System.String
-  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
-- uid: System.TimeoutException
-  commentId: T:System.TimeoutException
-  isExternal: true
 - uid: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop*
   commentId: Overload:EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop
   name: Stop
   nameWithType: EventStorePersistentSubscriptionBase.Stop
   fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase.Stop
-- uid: System.TimeSpan
-  commentId: T:System.TimeSpan
-  parent: System
+- uid: TimeSpan
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
-  fullName: System.TimeSpan
+  fullName: TimeSpan

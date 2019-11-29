@@ -28,7 +28,6 @@ items:
     content: 'public class EventStoreAllCatchUpSubscription : EventStoreCatchUpSubscription'
     content.vb: >-
       Public Class EventStoreAllCatchUpSubscription
-
           Inherits EventStoreCatchUpSubscription
   inheritance:
   - System.Object
@@ -43,15 +42,8 @@ items:
   - EventStore.ClientAPI.EventStoreCatchUpSubscription.EventAppeared
   - EventStore.ClientAPI.EventStoreCatchUpSubscription.Verbose
   - EventStore.ClientAPI.EventStoreCatchUpSubscription.ShouldStop
-  - EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
+  - EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
   - EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   modifiers.csharp:
   - public
   - class
@@ -130,7 +122,7 @@ items:
       type: System.Nullable{System.Int64}
       description: The event number to read until.
     return:
-      type: System.Threading.Tasks.Task
+      type: Task
       description: ''
     content.vb: Protected Overrides Function ReadEventsTillAsync(connection As IEventStoreConnection, resolveLinkTos As Boolean, userCredentials As UserCredentials, lastCommitPosition As Long?, lastEventNumber As Long?) As Task
   overridden: EventStore.ClientAPI.EventStoreCatchUpSubscription.ReadEventsTillAsync(EventStore.ClientAPI.IEventStoreConnection,System.Boolean,EventStore.ClientAPI.SystemData.UserCredentials,System.Nullable{System.Int64},System.Nullable{System.Int64})
@@ -171,7 +163,7 @@ items:
       type: EventStore.ClientAPI.ResolvedEvent
       description: The <xref href="EventStore.ClientAPI.ResolvedEvent" data-throw-if-not-resolved="false"></xref> to process.
     return:
-      type: System.Threading.Tasks.Task
+      type: Task
     content.vb: Protected Overrides Function TryProcessAsync(e As ResolvedEvent) As Task
   overridden: EventStore.ClientAPI.EventStoreCatchUpSubscription.TryProcessAsync(EventStore.ClientAPI.ResolvedEvent)
   overload: EventStore.ClientAPI.EventStoreAllCatchUpSubscription.TryProcessAsync*
@@ -188,8 +180,6 @@ references:
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
 - uid: System.Object
-  commentId: T:System.Object
-  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
@@ -254,41 +244,41 @@ references:
   name: ShouldStop
   nameWithType: EventStoreCatchUpSubscription.ShouldStop
   fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription.ShouldStop
-- uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
-  commentId: M:EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
+- uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
+  commentId: M:EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
   parent: EventStore.ClientAPI.EventStoreCatchUpSubscription
   isExternal: true
   name: Stop(TimeSpan)
   nameWithType: EventStoreCatchUpSubscription.Stop(TimeSpan)
-  fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
+  fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
   spec.csharp:
-  - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
+  - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
     name: Stop
     nameWithType: EventStoreCatchUpSubscription.Stop
     fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.TimeSpan
+  - uid: TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: System.TimeSpan
+    fullName: TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(System.TimeSpan)
+  - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop(TimeSpan)
     name: Stop
     nameWithType: EventStoreCatchUpSubscription.Stop
     fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription.Stop
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.TimeSpan
+  - uid: TimeSpan
     name: TimeSpan
     nameWithType: TimeSpan
-    fullName: System.TimeSpan
+    fullName: TimeSpan
     isExternal: true
   - name: )
     nameWithType: )
@@ -321,291 +311,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: EventStore.ClientAPI.EventStoreAllCatchUpSubscription.LastProcessedPosition*
   commentId: Overload:EventStore.ClientAPI.EventStoreAllCatchUpSubscription.LastProcessedPosition
   name: LastProcessedPosition
@@ -775,8 +480,6 @@ references:
   nameWithType: IEventStoreConnection
   fullName: EventStore.ClientAPI.IEventStoreConnection
 - uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
   isExternal: true
   name: Boolean
   nameWithType: Boolean
@@ -788,8 +491,7 @@ references:
   nameWithType: UserCredentials
   fullName: EventStore.ClientAPI.SystemData.UserCredentials
 - uid: System.Nullable{System.Int64}
-  commentId: T:System.Nullable{System.Int64}
-  parent: System
+  commentId: '!:System.Nullable{System.Int64}'
   definition: System.Nullable`1
   name: Nullable<Int64>
   nameWithType: Nullable<Int64>
@@ -831,27 +533,24 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
+- uid: Task
   isExternal: true
   name: Task
   nameWithType: Task
-  fullName: System.Threading.Tasks.Task
+  fullName: Task
 - uid: EventStore.ClientAPI.SystemData
   commentId: N:EventStore.ClientAPI.SystemData
   name: EventStore.ClientAPI.SystemData
   nameWithType: EventStore.ClientAPI.SystemData
   fullName: EventStore.ClientAPI.SystemData
 - uid: System.Nullable`1
-  commentId: T:System.Nullable`1
   isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
@@ -861,9 +560,9 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -876,18 +575,12 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
 - uid: EventStore.ClientAPI.ResolvedEvent
   commentId: T:EventStore.ClientAPI.ResolvedEvent
   parent: EventStore.ClientAPI
