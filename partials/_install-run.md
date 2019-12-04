@@ -9,7 +9,7 @@ The prerequisites for installing on Windows are:
 
 -   NET Framework 4.0+
 
-Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore-oss) available that you can install with the following command:
+Event Store has [Chocolatey packages](https://chocolatey.org/packages/eventstore-oss) available that you can install with the following command in an elevated terminal:
 
 ```powershell
 choco install eventstore-oss
