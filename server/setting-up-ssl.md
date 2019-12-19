@@ -93,9 +93,15 @@ sudo update-ca-certificates
 
 The mono framework has its own separate certificate store which you need to sync with the changes you made to Ubuntu's certificates.
 
-You first need to install `mono-devel`:
+You first need to install `mono-devel` version 5.16.0 :
 
 ```bash
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+# Update "bionic" to match your Ubuntu version
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic/snapshots/5.16.0 main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+
 sudo apt-get install mono-devel
 ```
 
