@@ -115,7 +115,7 @@ Use the following cURL command, passing the name of the stream and the events to
 
 To use the .NET API, use the following method, passing the name of the stream, the version, and the events to write:
 
-[!code-csharp[getting-started-write-event-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=95)]
+[!code-csharp[getting-started-write-event-request](../../EventStore.Samples.Dotnet/DocsExample/Program.cs?range=95-99)]
 
 > [!NEXT]
 > Read [this guide](~/http-api/creating-writing-a-stream.md) for more information on how to write events with the .NET API. We don't cover version checking in this guide, but you can read more in [the optimistic concurrency guide](~/dotnet-api/optimistic-concurrency-and-idempotence.md).
