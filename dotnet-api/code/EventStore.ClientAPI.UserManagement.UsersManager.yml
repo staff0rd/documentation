@@ -5,7 +5,7 @@ items:
   id: UsersManager
   parent: EventStore.ClientAPI.UserManagement
   children:
-  - EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.Boolean,EventStore.ClientAPI.Transport.Http.IHttpClient)
+  - EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan)
   - EventStore.ClientAPI.UserManagement.UsersManager.ChangePasswordAsync(System.String,System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.UserManagement.UsersManager.CreateUserAsync(System.String,System.String,System.String[],System.String,EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.UserManagement.UsersManager.DeleteUserAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
@@ -26,7 +26,7 @@ items:
   source:
     id: UsersManager
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -45,44 +45,39 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.Boolean,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.Boolean,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.Boolean,EventStore.ClientAPI.Transport.Http.IHttpClient)'
+- uid: EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan)
+  commentId: M:EventStore.ClientAPI.UserManagement.UsersManager.#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan)
+  id: '#ctor(EventStore.ClientAPI.ILogger,IPEndPoint,TimeSpan)'
   parent: EventStore.ClientAPI.UserManagement.UsersManager
   langs:
   - csharp
   - vb
-  name: UsersManager(ILogger, EndPoint, TimeSpan, Boolean, IHttpClient)
-  nameWithType: UsersManager.UsersManager(ILogger, EndPoint, TimeSpan, Boolean, IHttpClient)
-  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UsersManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, System.Boolean, EventStore.ClientAPI.Transport.Http.IHttpClient)
+  name: UsersManager(ILogger, IPEndPoint, TimeSpan)
+  nameWithType: UsersManager.UsersManager(ILogger, IPEndPoint, TimeSpan)
+  fullName: EventStore.ClientAPI.UserManagement.UsersManager.UsersManager(EventStore.ClientAPI.ILogger, IPEndPoint, TimeSpan)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 26
+    startLine: 23
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
   summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.UserManagement.UsersManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: public UsersManager(ILogger log, EndPoint httpEndPoint, TimeSpan operationTimeout, bool tlsTerminatedEndpoint = false, IHttpClient client = null)
+    content: public UsersManager(ILogger log, IPEndPoint httpEndPoint, TimeSpan operationTimeout)
     parameters:
     - id: log
       type: EventStore.ClientAPI.ILogger
       description: An instance of <xref href="EventStore.ClientAPI.ILogger" data-throw-if-not-resolved="false"></xref> to use for logging.
     - id: httpEndPoint
-      type: EndPoint
+      type: IPEndPoint
       description: HTTP endpoint of an Event Store server.
     - id: operationTimeout
       type: TimeSpan
       description: ''
-    - id: tlsTerminatedEndpoint
-      type: System.Boolean
-      description: ''
-    - id: client
-      type: EventStore.ClientAPI.Transport.Http.IHttpClient
-    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, operationTimeout As TimeSpan, tlsTerminatedEndpoint As Boolean = False, client As IHttpClient = Nothing)
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As IPEndPoint, operationTimeout As TimeSpan)
   overload: EventStore.ClientAPI.UserManagement.UsersManager.#ctor*
   modifiers.csharp:
   - public
@@ -102,7 +97,7 @@ items:
   source:
     id: EnableAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 41
+    startLine: 37
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -140,7 +135,7 @@ items:
   source:
     id: DisableAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 52
+    startLine: 48
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -178,7 +173,7 @@ items:
   source:
     id: DeleteUserAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 63
+    startLine: 59
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -216,7 +211,7 @@ items:
   source:
     id: ListAllAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 73
+    startLine: 69
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -251,7 +246,7 @@ items:
   source:
     id: GetCurrentUserAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 82
+    startLine: 78
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -286,7 +281,7 @@ items:
   source:
     id: GetUserAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 92
+    startLine: 88
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -324,7 +319,7 @@ items:
   source:
     id: CreateUserAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 106
+    startLine: 102
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -374,7 +369,7 @@ items:
   source:
     id: UpdateUserAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 124
+    startLine: 120
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -421,7 +416,7 @@ items:
   source:
     id: ChangePasswordAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 141
+    startLine: 137
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -465,7 +460,7 @@ items:
   source:
     id: ResetPasswordAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/UserManagement/UsersManager.cs
-    startLine: 157
+    startLine: 153
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.UserManagement
@@ -519,37 +514,21 @@ references:
   name: UsersManager
   nameWithType: UsersManager.UsersManager
   fullName: EventStore.ClientAPI.UserManagement.UsersManager.UsersManager
-- uid: EndPoint
+- uid: IPEndPoint
   isExternal: true
-  name: EndPoint
-  nameWithType: EndPoint
-  fullName: EndPoint
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: IPEndPoint
 - uid: TimeSpan
   isExternal: true
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
-- uid: System.Boolean
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
-- uid: EventStore.ClientAPI.Transport.Http.IHttpClient
-  commentId: T:EventStore.ClientAPI.Transport.Http.IHttpClient
-  parent: EventStore.ClientAPI.Transport.Http
-  name: IHttpClient
-  nameWithType: IHttpClient
-  fullName: EventStore.ClientAPI.Transport.Http.IHttpClient
 - uid: EventStore.ClientAPI
   commentId: N:EventStore.ClientAPI
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
-- uid: EventStore.ClientAPI.Transport.Http
-  commentId: N:EventStore.ClientAPI.Transport.Http
-  name: EventStore.ClientAPI.Transport.Http
-  nameWithType: EventStore.ClientAPI.Transport.Http
-  fullName: EventStore.ClientAPI.Transport.Http
 - uid: EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync*
   commentId: Overload:EventStore.ClientAPI.UserManagement.UsersManager.EnableAsync
   name: EnableAsync

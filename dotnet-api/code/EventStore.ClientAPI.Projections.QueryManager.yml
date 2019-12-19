@@ -5,7 +5,7 @@ items:
   id: QueryManager
   parent: EventStore.ClientAPI.Projections
   children:
-  - EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
+  - EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan)
   - EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync(System.String,System.String,TimeSpan,TimeSpan,EventStore.ClientAPI.SystemData.UserCredentials)
   langs:
   - csharp
@@ -17,7 +17,7 @@ items:
   source:
     id: QueryManager
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -36,28 +36,28 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  commentId: M:EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)
-  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan,EventStore.ClientAPI.Transport.Http.IHttpClient)'
+- uid: EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan)
+  commentId: M:EventStore.ClientAPI.Projections.QueryManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan)
+  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,TimeSpan)'
   parent: EventStore.ClientAPI.Projections.QueryManager
   langs:
   - csharp
   - vb
-  name: QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan, IHttpClient)
-  nameWithType: QueryManager.QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan, IHttpClient)
-  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, TimeSpan, EventStore.ClientAPI.Transport.Http.IHttpClient)
+  name: QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan)
+  nameWithType: QueryManager.QueryManager(ILogger, EndPoint, TimeSpan, TimeSpan)
+  fullName: EventStore.ClientAPI.Projections.QueryManager.QueryManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, TimeSpan)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
-    startLine: 26
+    startLine: 24
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
   summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.Projections.QueryManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: public QueryManager(ILogger log, EndPoint httpEndPoint, TimeSpan projectionOperationTimeout, TimeSpan queryTimeout, IHttpClient client = null)
+    content: public QueryManager(ILogger log, EndPoint httpEndPoint, TimeSpan projectionOperationTimeout, TimeSpan queryTimeout)
     parameters:
     - id: log
       type: EventStore.ClientAPI.ILogger
@@ -71,10 +71,7 @@ items:
     - id: queryTimeout
       type: TimeSpan
       description: Timeout of query execution
-    - id: client
-      type: EventStore.ClientAPI.Transport.Http.IHttpClient
-      description: Overrideable HTTP Client Handler
-    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, projectionOperationTimeout As TimeSpan, queryTimeout As TimeSpan, client As IHttpClient = Nothing)
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, projectionOperationTimeout As TimeSpan, queryTimeout As TimeSpan)
   overload: EventStore.ClientAPI.Projections.QueryManager.#ctor*
   modifiers.csharp:
   - public
@@ -94,7 +91,7 @@ items:
   source:
     id: ExecuteAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/QueryManager.cs
-    startLine: 44
+    startLine: 42
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -165,22 +162,11 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
-- uid: EventStore.ClientAPI.Transport.Http.IHttpClient
-  commentId: T:EventStore.ClientAPI.Transport.Http.IHttpClient
-  parent: EventStore.ClientAPI.Transport.Http
-  name: IHttpClient
-  nameWithType: IHttpClient
-  fullName: EventStore.ClientAPI.Transport.Http.IHttpClient
 - uid: EventStore.ClientAPI
   commentId: N:EventStore.ClientAPI
   name: EventStore.ClientAPI
   nameWithType: EventStore.ClientAPI
   fullName: EventStore.ClientAPI
-- uid: EventStore.ClientAPI.Transport.Http
-  commentId: N:EventStore.ClientAPI.Transport.Http
-  name: EventStore.ClientAPI.Transport.Http
-  nameWithType: EventStore.ClientAPI.Transport.Http
-  fullName: EventStore.ClientAPI.Transport.Http
 - uid: EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync*
   commentId: Overload:EventStore.ClientAPI.Projections.QueryManager.ExecuteAsync
   name: ExecuteAsync
