@@ -21,8 +21,9 @@ rsync -a /data/eventstore/db/*.0* /backup/eventstore/db/
 
 ## Restoring a database
 
-1.  Create a copy of _chaser.chk_ and call it _truncate.chk_.
+1.  Ensure your Event Store database is stopped. Restoring a database on running instance is not possible and in most cases will lead to data corruption.
 2.  Copy all files to the desired location.
+3.  Create a copy of _chaser.chk_ and call it _truncate.chk_ (which override already existing _truncate.chk_).
 
 > [!NOTE]
 > Many people do not rely on hot backups in a highly available cluster but instead increase their node counts to keep further copies of data.
