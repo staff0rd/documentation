@@ -6,7 +6,7 @@ items:
   parent: EventStore.Projections.Core.Messages
   children:
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.#ctor(Guid)
-  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.EpochId
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.InstanceCorrelationId
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.MsgTypeId
   langs:
   - csharp
@@ -18,7 +18,7 @@ items:
   source:
     id: Starting
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 945
+    startLine: 1017
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -54,7 +54,7 @@ items:
   source:
     id: MsgTypeId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 948
+    startLine: 1020
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -74,29 +74,29 @@ items:
   - Public
   - Overrides
   - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.EpochId
-  commentId: F:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.EpochId
-  id: EpochId
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.InstanceCorrelationId
+  commentId: F:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.InstanceCorrelationId
+  id: InstanceCorrelationId
   parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting
   langs:
   - csharp
   - vb
-  name: EpochId
-  nameWithType: ProjectionManagementMessage.Starting.EpochId
-  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.EpochId
+  name: InstanceCorrelationId
+  nameWithType: ProjectionManagementMessage.Starting.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.InstanceCorrelationId
   type: Field
   source:
-    id: EpochId
+    id: InstanceCorrelationId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 952
+    startLine: 1024
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public readonly Guid EpochId
+    content: public readonly Guid InstanceCorrelationId
     return:
       type: Guid
-    content.vb: Public ReadOnly EpochId As Guid
+    content.vb: Public ReadOnly InstanceCorrelationId As Guid
   modifiers.csharp:
   - public
   - readonly
@@ -117,16 +117,16 @@ items:
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 954
+    startLine: 1026
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public Starting(Guid epochId)
+    content: public Starting(Guid instanceCorrelationId)
     parameters:
-    - id: epochId
+    - id: instanceCorrelationId
       type: Guid
-    content.vb: Public Sub New(epochId As Guid)
+    content.vb: Public Sub New(instanceCorrelationId As Guid)
   overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting.#ctor*
   modifiers.csharp:
   - public

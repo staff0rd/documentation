@@ -22,11 +22,14 @@ items:
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.LoadStopped)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Start)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionManagementMessage.Stop)
+  - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore)
+  - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.SlaveProjectionsStarted)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Logger
+  - EventStore.Projections.Core.Services.Processing.ProjectionCoreService.SubComponentName
   langs:
   - csharp
   - vb
@@ -37,16 +40,16 @@ items:
   source:
     id: ProjectionCoreService
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
   syntax:
-    content: 'public class ProjectionCoreService : object, IHandle<ProjectionCoreServiceMessage.StartCore>, IHandle<ProjectionCoreServiceMessage.StopCore>, IHandle<ProjectionCoreServiceMessage.CoreTick>, IHandle<CoreProjectionManagementMessage.CreateAndPrepare>, IHandle<CoreProjectionManagementMessage.CreatePrepared>, IHandle<CoreProjectionManagementMessage.CreateAndPrepareSlave>, IHandle<CoreProjectionManagementMessage.Dispose>, IHandle<CoreProjectionManagementMessage.Start>, IHandle<CoreProjectionManagementMessage.LoadStopped>, IHandle<CoreProjectionManagementMessage.Stop>, IHandle<CoreProjectionManagementMessage.Kill>, IHandle<CoreProjectionManagementMessage.GetState>, IHandle<CoreProjectionManagementMessage.GetResult>, IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>, IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>, IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>, IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>, IHandle<CoreProjectionProcessingMessage.RestartRequested>, IHandle<CoreProjectionProcessingMessage.Failed>'
+    content: 'public class ProjectionCoreService : object, IHandle<ProjectionCoreServiceMessage.StartCore>, IHandle<ProjectionCoreServiceMessage.StopCore>, IHandle<ProjectionCoreServiceMessage.CoreTick>, IHandle<CoreProjectionManagementMessage.CreateAndPrepare>, IHandle<CoreProjectionManagementMessage.CreatePrepared>, IHandle<CoreProjectionManagementMessage.CreateAndPrepareSlave>, IHandle<CoreProjectionManagementMessage.Dispose>, IHandle<CoreProjectionManagementMessage.Start>, IHandle<CoreProjectionManagementMessage.LoadStopped>, IHandle<CoreProjectionManagementMessage.Stop>, IHandle<CoreProjectionManagementMessage.Kill>, IHandle<CoreProjectionManagementMessage.GetState>, IHandle<CoreProjectionManagementMessage.GetResult>, IHandle<ProjectionManagementMessage.SlaveProjectionsStarted>, IHandle<CoreProjectionProcessingMessage.CheckpointCompleted>, IHandle<CoreProjectionProcessingMessage.CheckpointLoaded>, IHandle<CoreProjectionProcessingMessage.PrerecordedEventsLoaded>, IHandle<CoreProjectionProcessingMessage.RestartRequested>, IHandle<CoreProjectionProcessingMessage.Failed>, IHandle<ProjectionCoreServiceMessage.StopCoreTimeout>, IHandle<CoreProjectionStatusMessage.Suspended>'
     content.vb: >-
       Public Class ProjectionCoreService
           Inherits Object
-          Implements IHandle(Of ProjectionCoreServiceMessage.StartCore), IHandle(Of ProjectionCoreServiceMessage.StopCore), IHandle(Of ProjectionCoreServiceMessage.CoreTick), IHandle(Of CoreProjectionManagementMessage.CreateAndPrepare), IHandle(Of CoreProjectionManagementMessage.CreatePrepared), IHandle(Of CoreProjectionManagementMessage.CreateAndPrepareSlave), IHandle(Of CoreProjectionManagementMessage.Dispose), IHandle(Of CoreProjectionManagementMessage.Start), IHandle(Of CoreProjectionManagementMessage.LoadStopped), IHandle(Of CoreProjectionManagementMessage.Stop), IHandle(Of CoreProjectionManagementMessage.Kill), IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted), IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted), IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IHandle(Of CoreProjectionProcessingMessage.RestartRequested), IHandle(Of CoreProjectionProcessingMessage.Failed)
+          Implements IHandle(Of ProjectionCoreServiceMessage.StartCore), IHandle(Of ProjectionCoreServiceMessage.StopCore), IHandle(Of ProjectionCoreServiceMessage.CoreTick), IHandle(Of CoreProjectionManagementMessage.CreateAndPrepare), IHandle(Of CoreProjectionManagementMessage.CreatePrepared), IHandle(Of CoreProjectionManagementMessage.CreateAndPrepareSlave), IHandle(Of CoreProjectionManagementMessage.Dispose), IHandle(Of CoreProjectionManagementMessage.Start), IHandle(Of CoreProjectionManagementMessage.LoadStopped), IHandle(Of CoreProjectionManagementMessage.Stop), IHandle(Of CoreProjectionManagementMessage.Kill), IHandle(Of CoreProjectionManagementMessage.GetState), IHandle(Of CoreProjectionManagementMessage.GetResult), IHandle(Of ProjectionManagementMessage.SlaveProjectionsStarted), IHandle(Of CoreProjectionProcessingMessage.CheckpointCompleted), IHandle(Of CoreProjectionProcessingMessage.CheckpointLoaded), IHandle(Of CoreProjectionProcessingMessage.PrerecordedEventsLoaded), IHandle(Of CoreProjectionProcessingMessage.RestartRequested), IHandle(Of CoreProjectionProcessingMessage.Failed), IHandle(Of ProjectionCoreServiceMessage.StopCoreTimeout), IHandle(Of CoreProjectionStatusMessage.Suspended)
   inheritance:
   - System.Object
   implements:
@@ -69,12 +72,43 @@ items:
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.PrerecordedEventsLoaded}
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.RestartRequested}
   - EventStore.Core.Bus.IHandle{CoreProjectionProcessingMessage.Failed}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.SubComponentName
+  commentId: F:EventStore.Projections.Core.Services.Processing.ProjectionCoreService.SubComponentName
+  id: SubComponentName
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionCoreService
+  langs:
+  - csharp
+  - vb
+  name: SubComponentName
+  nameWithType: ProjectionCoreService.SubComponentName
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.SubComponentName
+  type: Field
+  source:
+    id: SubComponentName
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
+    startLine: 36
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public const string SubComponentName = null
+    return:
+      type: System.String
+    content.vb: Public Const SubComponentName As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.#ctor(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler)
   commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionCoreService.#ctor(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler)
   id: '#ctor(Guid,EventStore.Core.Bus.IPublisher,EventStore.Core.Bus.IPublisher,EventStore.Projections.Core.Services.ReaderSubscriptionDispatcher,EventStore.Core.Services.TimerService.ITimeProvider,EventStore.Core.Helpers.IODispatcher,EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher,EventStore.Projections.Core.Services.ISingletonTimeoutScheduler)'
@@ -89,7 +123,7 @@ items:
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 51
+    startLine: 60
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -132,7 +166,7 @@ items:
   source:
     id: Logger
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 73
+    startLine: 82
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -163,7 +197,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 77
+    startLine: 86
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -194,7 +228,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 81
+    startLine: 91
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -207,6 +241,68 @@ items:
   overload: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle*
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionCoreService
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionCoreServiceMessage.StopCoreTimeout)
+  nameWithType: ProjectionCoreService.Handle(ProjectionCoreServiceMessage.StopCoreTimeout)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
+    startLine: 121
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(ProjectionCoreServiceMessage.StopCoreTimeout message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    content.vb: Public Sub Handle(message As ProjectionCoreServiceMessage.StopCoreTimeout)
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  id: Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionCoreService
+  langs:
+  - csharp
+  - vb
+  name: Handle(CoreProjectionStatusMessage.Suspended)
+  nameWithType: ProjectionCoreService.Handle(CoreProjectionStatusMessage.Suspended)
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
+    startLine: 127
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public void Handle(CoreProjectionStatusMessage.Suspended message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    content.vb: Public Sub Handle(message As CoreProjectionStatusMessage.Suspended)
+  overload: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -225,7 +321,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 101
+    startLine: 146
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -256,7 +352,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 105
+    startLine: 150
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -287,7 +383,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 141
+    startLine: 186
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -318,7 +414,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 169
+    startLine: 214
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -349,7 +445,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 212
+    startLine: 257
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -380,7 +476,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 220
+    startLine: 265
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -411,7 +507,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 225
+    startLine: 270
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -442,7 +538,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 230
+    startLine: 275
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -473,7 +569,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 235
+    startLine: 280
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -504,7 +600,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 240
+    startLine: 285
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -535,7 +631,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 246
+    startLine: 291
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -566,7 +662,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 252
+    startLine: 297
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -597,7 +693,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 258
+    startLine: 303
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -628,7 +724,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 264
+    startLine: 309
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -659,7 +755,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 270
+    startLine: 315
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -690,7 +786,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 276
+    startLine: 321
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -721,7 +817,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 282
+    startLine: 327
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -752,7 +848,7 @@ items:
   source:
     id: CreateStateHandler
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreService.cs
-    startLine: 288
+    startLine: 333
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -1548,6 +1644,86 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ProjectionCoreServiceMessage.StopCoreTimeout>
+  nameWithType: IHandle<ProjectionCoreServiceMessage.StopCoreTimeout>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout>
+  nameWithType.vb: IHandle(Of ProjectionCoreServiceMessage.StopCoreTimeout)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  name.vb: IHandle(Of ProjectionCoreServiceMessage.StopCoreTimeout)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    name: ProjectionCoreServiceMessage.StopCoreTimeout
+    nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+    fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    name: ProjectionCoreServiceMessage.StopCoreTimeout
+    nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+    fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<CoreProjectionStatusMessage.Suspended>
+  nameWithType: IHandle<CoreProjectionStatusMessage.Suspended>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended>
+  nameWithType.vb: IHandle(Of CoreProjectionStatusMessage.Suspended)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  name.vb: IHandle(Of CoreProjectionStatusMessage.Suspended)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    name: CoreProjectionStatusMessage.Suspended
+    nameWithType: CoreProjectionStatusMessage.Suspended
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    name: CoreProjectionStatusMessage.Suspended
+    nameWithType: CoreProjectionStatusMessage.Suspended
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Core.Bus.IHandle`1
   commentId: T:EventStore.Core.Bus.IHandle`1
   name: IHandle<T>
@@ -1589,6 +1765,11 @@ references:
   name: EventStore.Core.Bus
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.#ctor*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionCoreService.#ctor
   name: ProjectionCoreService
@@ -1801,6 +1982,96 @@ references:
   name: ProjectionCoreServiceMessage.StopCore
   nameWithType: ProjectionCoreServiceMessage.StopCore
   fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ProjectionCoreServiceMessage.StopCoreTimeout)
+  nameWithType: IHandle<ProjectionCoreServiceMessage.StopCoreTimeout>.Handle(ProjectionCoreServiceMessage.StopCoreTimeout)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout>.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  nameWithType.vb: IHandle(Of ProjectionCoreServiceMessage.StopCoreTimeout).Handle(ProjectionCoreServiceMessage.StopCoreTimeout)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout).Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ProjectionCoreServiceMessage.StopCoreTimeout>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    name: ProjectionCoreServiceMessage.StopCoreTimeout
+    nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+    fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ProjectionCoreServiceMessage.StopCoreTimeout).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    name: ProjectionCoreServiceMessage.StopCoreTimeout
+    nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+    fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionCoreServiceMessage.StopCoreTimeout
+  nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(CoreProjectionStatusMessage.Suspended)
+  nameWithType: IHandle<CoreProjectionStatusMessage.Suspended>.Handle(CoreProjectionStatusMessage.Suspended)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended>.Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  nameWithType.vb: IHandle(Of CoreProjectionStatusMessage.Suspended).Handle(CoreProjectionStatusMessage.Suspended)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended).Handle(EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<CoreProjectionStatusMessage.Suspended>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    name: CoreProjectionStatusMessage.Suspended
+    nameWithType: CoreProjectionStatusMessage.Suspended
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of CoreProjectionStatusMessage.Suspended).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    name: CoreProjectionStatusMessage.Suspended
+    nameWithType: CoreProjectionStatusMessage.Suspended
+    fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  parent: EventStore.Projections.Core.Messages
+  name: CoreProjectionStatusMessage.Suspended
+  nameWithType: CoreProjectionStatusMessage.Suspended
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
 - uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick)
   commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick}.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick)
   parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick}
@@ -2566,11 +2837,6 @@ references:
   name: CreateStateHandler
   nameWithType: ProjectionCoreService.CreateStateHandler
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionCoreService.CreateStateHandler
-- uid: System.String
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: EventStore.Projections.Core.Services.IProjectionStateHandler
   commentId: T:EventStore.Projections.Core.Services.IProjectionStateHandler
   parent: EventStore.Projections.Core.Services

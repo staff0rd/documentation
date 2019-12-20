@@ -8,6 +8,7 @@ items:
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.String)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore)
   - EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.Handle(EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore)
+  - EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.SubComponentName
   langs:
   - csharp
   - vb
@@ -39,6 +40,35 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.SubComponentName
+  commentId: F:EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.SubComponentName
+  id: SubComponentName
+  parent: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader
+  langs:
+  - csharp
+  - vb
+  name: SubComponentName
+  nameWithType: ProjectionCoreServiceCommandReader.SubComponentName
+  fullName: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.SubComponentName
+  type: Field
+  source:
+    id: SubComponentName
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreServiceCommandReader.cs
+    startLine: 17
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Processing
+  syntax:
+    content: public const string SubComponentName = null
+    return:
+      type: System.String
+    content.vb: Public Const SubComponentName As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.String)
   commentId: M:EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.String)
   id: '#ctor(EventStore.Core.Bus.IPublisher,EventStore.Core.Helpers.IODispatcher,System.String)'
@@ -53,7 +83,7 @@ items:
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreServiceCommandReader.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -86,7 +116,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreServiceCommandReader.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -117,7 +147,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Processing/ProjectionCoreServiceCommandReader.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Processing
@@ -266,6 +296,11 @@ references:
   name: EventStore.Core.Bus
   nameWithType: EventStore.Core.Bus
   fullName: EventStore.Core.Bus
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.#ctor*
   commentId: Overload:EventStore.Projections.Core.Services.Processing.ProjectionCoreServiceCommandReader.#ctor
   name: ProjectionCoreServiceCommandReader
@@ -283,11 +318,6 @@ references:
   name: IODispatcher
   nameWithType: IODispatcher
   fullName: EventStore.Core.Helpers.IODispatcher
-- uid: System.String
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: EventStore.Core.Helpers
   commentId: N:EventStore.Core.Helpers
   name: EventStore.Core.Helpers

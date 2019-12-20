@@ -5,7 +5,8 @@ items:
   id: ProjectionCoreServiceMessage.SubComponentStarted
   parent: EventStore.Projections.Core.Messages
   children:
-  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String)
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String,Guid)
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.MsgTypeId
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
   langs:
@@ -18,7 +19,7 @@ items:
   source:
     id: SubComponentStarted
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 64
+    startLine: 66
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -52,7 +53,7 @@ items:
   source:
     id: MsgTypeId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 67
+    startLine: 69
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -73,7 +74,7 @@ items:
   - Overrides
   - ReadOnly
 - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
-  commentId: F:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
   id: SubComponent
   parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
   langs:
@@ -82,49 +83,84 @@ items:
   name: SubComponent
   nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
   fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
-  type: Field
+  type: Property
   source:
     id: SubComponent
-    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 71
-  assemblies:
-  - EventStore.Projections.Core
-  namespace: EventStore.Projections.Core.Messages
-  syntax:
-    content: public readonly string SubComponent
-    return:
-      type: System.String
-    content.vb: Public ReadOnly SubComponent As String
-  modifiers.csharp:
-  - public
-  - readonly
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String)
-  commentId: M:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String)
-  id: '#ctor(System.String)'
-  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
-  langs:
-  - csharp
-  - vb
-  name: SubComponentStarted(String)
-  nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.SubComponentStarted(String)
-  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponentStarted(System.String)
-  type: Constructor
-  source:
-    id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
     startLine: 73
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public SubComponentStarted(string subComponent)
+    content: public string SubComponent { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SubComponent As String
+  overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  id: InstanceCorrelationId
+  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
+  langs:
+  - csharp
+  - vb
+  name: InstanceCorrelationId
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  type: Property
+  source:
+    id: InstanceCorrelationId
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
+    startLine: 74
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public Guid InstanceCorrelationId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property InstanceCorrelationId As Guid
+  overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String,Guid)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor(System.String,Guid)
+  id: '#ctor(System.String,Guid)'
+  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
+  langs:
+  - csharp
+  - vb
+  name: SubComponentStarted(String, Guid)
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.SubComponentStarted(String, Guid)
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponentStarted(System.String, Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
+    startLine: 76
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public SubComponentStarted(string subComponent, Guid instanceCorrelationId)
     parameters:
     - id: subComponent
       type: System.String
-    content.vb: Public Sub New(subComponent As String)
+    - id: instanceCorrelationId
+      type: Guid
+    content.vb: Public Sub New(subComponent As String, instanceCorrelationId As Guid)
   overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor*
   modifiers.csharp:
   - public
@@ -174,11 +210,26 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
+  name: SubComponent
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.SubComponent
 - uid: System.String
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  name: InstanceCorrelationId
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.InstanceCorrelationId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
 - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor*
   commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted.#ctor
   name: SubComponentStarted

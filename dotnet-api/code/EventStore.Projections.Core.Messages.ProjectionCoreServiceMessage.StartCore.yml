@@ -6,7 +6,7 @@ items:
   parent: EventStore.Projections.Core.Messages
   children:
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.#ctor(Guid)
-  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.EpochId
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.InstanceCorrelationId
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.MsgTypeId
   langs:
   - csharp
@@ -72,29 +72,29 @@ items:
   - Public
   - Overrides
   - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.EpochId
-  commentId: F:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.EpochId
-  id: EpochId
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.InstanceCorrelationId
+  commentId: F:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.InstanceCorrelationId
+  id: InstanceCorrelationId
   parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore
   langs:
   - csharp
   - vb
-  name: EpochId
-  nameWithType: ProjectionCoreServiceMessage.StartCore.EpochId
-  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.EpochId
+  name: InstanceCorrelationId
+  nameWithType: ProjectionCoreServiceMessage.StartCore.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.InstanceCorrelationId
   type: Field
   source:
-    id: EpochId
+    id: InstanceCorrelationId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
     startLine: 13
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public readonly Guid EpochId
+    content: public readonly Guid InstanceCorrelationId
     return:
       type: Guid
-    content.vb: Public ReadOnly EpochId As Guid
+    content.vb: Public ReadOnly InstanceCorrelationId As Guid
   modifiers.csharp:
   - public
   - readonly
@@ -120,11 +120,11 @@ items:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public StartCore(Guid epochId)
+    content: public StartCore(Guid instanceCorrelationId)
     parameters:
-    - id: epochId
+    - id: instanceCorrelationId
       type: Guid
-    content.vb: Public Sub New(epochId As Guid)
+    content.vb: Public Sub New(instanceCorrelationId As Guid)
   overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore.#ctor*
   modifiers.csharp:
   - public

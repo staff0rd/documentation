@@ -5,7 +5,7 @@ items:
   id: ProjectionsManager
   parent: EventStore.ClientAPI.Projections
   children:
-  - EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.String)
+  - EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,HttpMessageHandler,System.String)
   - EventStore.ClientAPI.Projections.ProjectionsManager.AbortAsync(System.String,EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.Projections.ProjectionsManager.CreateContinuousAsync(System.String,System.String,EventStore.ClientAPI.SystemData.UserCredentials)
   - EventStore.ClientAPI.Projections.ProjectionsManager.CreateContinuousAsync(System.String,System.String,System.Boolean,EventStore.ClientAPI.SystemData.UserCredentials)
@@ -40,7 +40,7 @@ items:
   source:
     id: ProjectionsManager
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -59,28 +59,28 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.String)
-  commentId: M:EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.String)
-  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,System.String)'
+- uid: EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,HttpMessageHandler,System.String)
+  commentId: M:EventStore.ClientAPI.Projections.ProjectionsManager.#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,HttpMessageHandler,System.String)
+  id: '#ctor(EventStore.ClientAPI.ILogger,EndPoint,TimeSpan,HttpMessageHandler,System.String)'
   parent: EventStore.ClientAPI.Projections.ProjectionsManager
   langs:
   - csharp
   - vb
-  name: ProjectionsManager(ILogger, EndPoint, TimeSpan, String)
-  nameWithType: ProjectionsManager.ProjectionsManager(ILogger, EndPoint, TimeSpan, String)
-  fullName: EventStore.ClientAPI.Projections.ProjectionsManager.ProjectionsManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, System.String)
+  name: ProjectionsManager(ILogger, EndPoint, TimeSpan, HttpMessageHandler, String)
+  nameWithType: ProjectionsManager.ProjectionsManager(ILogger, EndPoint, TimeSpan, HttpMessageHandler, String)
+  fullName: EventStore.ClientAPI.Projections.ProjectionsManager.ProjectionsManager(EventStore.ClientAPI.ILogger, EndPoint, TimeSpan, HttpMessageHandler, System.String)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
   summary: "\nCreates a new instance of <xref href=\"EventStore.ClientAPI.Projections.ProjectionsManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: public ProjectionsManager(ILogger log, EndPoint httpEndPoint, TimeSpan operationTimeout, string httpSchema = null)
+    content: public ProjectionsManager(ILogger log, EndPoint httpEndPoint, TimeSpan operationTimeout, HttpMessageHandler httpMessageHandler = null, string httpSchema = null)
     parameters:
     - id: log
       type: EventStore.ClientAPI.ILogger
@@ -91,10 +91,13 @@ items:
     - id: operationTimeout
       type: TimeSpan
       description: ''
+    - id: httpMessageHandler
+      type: HttpMessageHandler
+      description: ''
     - id: httpSchema
       type: System.String
       description: HTTP endpoint schema http|https.
-    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, operationTimeout As TimeSpan, httpSchema As String = Nothing)
+    content.vb: Public Sub New(log As ILogger, httpEndPoint As EndPoint, operationTimeout As TimeSpan, httpMessageHandler As HttpMessageHandler = Nothing, httpSchema As String = Nothing)
   overload: EventStore.ClientAPI.Projections.ProjectionsManager.#ctor*
   modifiers.csharp:
   - public
@@ -114,11 +117,11 @@ items:
   source:
     id: EnableAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
-  summary: "\nAsynchronously enables a projection \n"
+  summary: "\nAsynchronously enables a projection\n"
   example: []
   syntax:
     content: public Task EnableAsync(string name, UserCredentials userCredentials = null)
@@ -152,7 +155,7 @@ items:
   source:
     id: DisableAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 52
+    startLine: 54
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -190,7 +193,7 @@ items:
   source:
     id: AbortAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 63
+    startLine: 65
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -228,7 +231,7 @@ items:
   source:
     id: CreateOneTimeAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 73
+    startLine: 75
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -265,7 +268,7 @@ items:
   source:
     id: CreateTransientAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 84
+    startLine: 86
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -305,7 +308,7 @@ items:
   source:
     id: CreateContinuousAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 96
+    startLine: 98
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -345,7 +348,7 @@ items:
   source:
     id: CreateContinuousAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 107
+    startLine: 109
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -388,7 +391,7 @@ items:
   source:
     id: ListAllAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 121
+    startLine: 123
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -423,7 +426,7 @@ items:
   source:
     id: ListOneTimeAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 130
+    startLine: 132
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -458,7 +461,7 @@ items:
   source:
     id: ListContinuousAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 139
+    startLine: 141
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -493,7 +496,7 @@ items:
   source:
     id: GetStatusAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 149
+    startLine: 151
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -531,7 +534,7 @@ items:
   source:
     id: GetStateAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 160
+    startLine: 162
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -569,7 +572,7 @@ items:
   source:
     id: GetPartitionStateAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 172
+    startLine: 174
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -610,7 +613,7 @@ items:
   source:
     id: GetResultAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 185
+    startLine: 187
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -648,7 +651,7 @@ items:
   source:
     id: GetPartitionResultAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 197
+    startLine: 199
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -689,7 +692,7 @@ items:
   source:
     id: GetStatisticsAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 210
+    startLine: 212
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -727,7 +730,7 @@ items:
   source:
     id: GetQueryAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 221
+    startLine: 223
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -765,7 +768,7 @@ items:
   source:
     id: UpdateQueryAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 232
+    startLine: 234
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -805,7 +808,7 @@ items:
   source:
     id: UpdateQueryAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 246
+    startLine: 248
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -851,11 +854,11 @@ items:
   source:
     id: DeleteAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 261
+    startLine: 263
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
-  summary: "\nAsynchronously deletes a projection \n"
+  summary: "\nAsynchronously deletes a projection\n"
   example: []
   syntax:
     content: public Task DeleteAsync(string name, UserCredentials userCredentials = null)
@@ -889,11 +892,11 @@ items:
   source:
     id: DeleteAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 272
+    startLine: 274
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
-  summary: "\nAsynchronously deletes a projection \n"
+  summary: "\nAsynchronously deletes a projection\n"
   example: []
   syntax:
     content: public Task DeleteAsync(string name, bool deleteEmittedStreams, UserCredentials userCredentials = null)
@@ -930,7 +933,7 @@ items:
   source:
     id: ResetAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 283
+    startLine: 285
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -968,7 +971,7 @@ items:
   source:
     id: GetConfigAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 294
+    startLine: 296
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -1006,7 +1009,7 @@ items:
   source:
     id: UpdateConfigAsync
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/Projections/ProjectionsManager.cs
-    startLine: 305
+    startLine: 307
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI.Projections
@@ -1069,6 +1072,11 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: TimeSpan
+- uid: HttpMessageHandler
+  isExternal: true
+  name: HttpMessageHandler
+  nameWithType: HttpMessageHandler
+  fullName: HttpMessageHandler
 - uid: System.String
   isExternal: true
   name: String

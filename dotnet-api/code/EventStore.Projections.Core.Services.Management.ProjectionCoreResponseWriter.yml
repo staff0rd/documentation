@@ -24,6 +24,7 @@ items:
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState)
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetStatistics)
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post)
+  - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs)
   - EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections)
@@ -38,16 +39,16 @@ items:
   source:
     id: ProjectionCoreResponseWriter
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
   syntax:
-    content: 'public sealed class ProjectionCoreResponseWriter : object, IHandle<CoreProjectionStatusMessage.Faulted>, IHandle<CoreProjectionStatusMessage.Prepared>, IHandle<CoreProjectionManagementMessage.SlaveProjectionReaderAssigned>, IHandle<CoreProjectionStatusMessage.Started>, IHandle<CoreProjectionStatusMessage.StatisticsReport>, IHandle<CoreProjectionStatusMessage.Stopped>, IHandle<CoreProjectionStatusMessage.StateReport>, IHandle<CoreProjectionStatusMessage.ResultReport>, IHandle<ProjectionManagementMessage.Command.Abort>, IHandle<ProjectionManagementMessage.Command.Disable>, IHandle<ProjectionManagementMessage.Command.Enable>, IHandle<ProjectionManagementMessage.Command.GetQuery>, IHandle<ProjectionManagementMessage.Command.GetResult>, IHandle<ProjectionManagementMessage.Command.GetState>, IHandle<ProjectionManagementMessage.Command.GetStatistics>, IHandle<ProjectionManagementMessage.Command.Post>, IHandle<ProjectionManagementMessage.Command.Reset>, IHandle<ProjectionManagementMessage.Command.SetRunAs>, IHandle<ProjectionManagementMessage.Command.StartSlaveProjections>, IHandle<ProjectionManagementMessage.Command.UpdateQuery>, IHandle<ProjectionManagementMessage.Command.Delete>, IHandle<ProjectionCoreServiceMessage.StartCore>'
+    content: 'public sealed class ProjectionCoreResponseWriter : object, IHandle<CoreProjectionStatusMessage.Faulted>, IHandle<CoreProjectionStatusMessage.Prepared>, IHandle<CoreProjectionManagementMessage.SlaveProjectionReaderAssigned>, IHandle<CoreProjectionStatusMessage.Started>, IHandle<CoreProjectionStatusMessage.StatisticsReport>, IHandle<CoreProjectionStatusMessage.Stopped>, IHandle<CoreProjectionStatusMessage.StateReport>, IHandle<CoreProjectionStatusMessage.ResultReport>, IHandle<ProjectionManagementMessage.Command.Abort>, IHandle<ProjectionManagementMessage.Command.Disable>, IHandle<ProjectionManagementMessage.Command.Enable>, IHandle<ProjectionManagementMessage.Command.GetQuery>, IHandle<ProjectionManagementMessage.Command.GetResult>, IHandle<ProjectionManagementMessage.Command.GetState>, IHandle<ProjectionManagementMessage.Command.GetStatistics>, IHandle<ProjectionManagementMessage.Command.Post>, IHandle<ProjectionManagementMessage.Command.PostBatch>, IHandle<ProjectionManagementMessage.Command.Reset>, IHandle<ProjectionManagementMessage.Command.SetRunAs>, IHandle<ProjectionManagementMessage.Command.StartSlaveProjections>, IHandle<ProjectionManagementMessage.Command.UpdateQuery>, IHandle<ProjectionManagementMessage.Command.Delete>, IHandle<ProjectionCoreServiceMessage.StartCore>'
     content.vb: >-
       Public NotInheritable Class ProjectionCoreResponseWriter
           Inherits Object
-          Implements IHandle(Of CoreProjectionStatusMessage.Faulted), IHandle(Of CoreProjectionStatusMessage.Prepared), IHandle(Of CoreProjectionManagementMessage.SlaveProjectionReaderAssigned), IHandle(Of CoreProjectionStatusMessage.Started), IHandle(Of CoreProjectionStatusMessage.StatisticsReport), IHandle(Of CoreProjectionStatusMessage.Stopped), IHandle(Of CoreProjectionStatusMessage.StateReport), IHandle(Of CoreProjectionStatusMessage.ResultReport), IHandle(Of ProjectionManagementMessage.Command.Abort), IHandle(Of ProjectionManagementMessage.Command.Disable), IHandle(Of ProjectionManagementMessage.Command.Enable), IHandle(Of ProjectionManagementMessage.Command.GetQuery), IHandle(Of ProjectionManagementMessage.Command.GetResult), IHandle(Of ProjectionManagementMessage.Command.GetState), IHandle(Of ProjectionManagementMessage.Command.GetStatistics), IHandle(Of ProjectionManagementMessage.Command.Post), IHandle(Of ProjectionManagementMessage.Command.Reset), IHandle(Of ProjectionManagementMessage.Command.SetRunAs), IHandle(Of ProjectionManagementMessage.Command.StartSlaveProjections), IHandle(Of ProjectionManagementMessage.Command.UpdateQuery), IHandle(Of ProjectionManagementMessage.Command.Delete), IHandle(Of ProjectionCoreServiceMessage.StartCore)
+          Implements IHandle(Of CoreProjectionStatusMessage.Faulted), IHandle(Of CoreProjectionStatusMessage.Prepared), IHandle(Of CoreProjectionManagementMessage.SlaveProjectionReaderAssigned), IHandle(Of CoreProjectionStatusMessage.Started), IHandle(Of CoreProjectionStatusMessage.StatisticsReport), IHandle(Of CoreProjectionStatusMessage.Stopped), IHandle(Of CoreProjectionStatusMessage.StateReport), IHandle(Of CoreProjectionStatusMessage.ResultReport), IHandle(Of ProjectionManagementMessage.Command.Abort), IHandle(Of ProjectionManagementMessage.Command.Disable), IHandle(Of ProjectionManagementMessage.Command.Enable), IHandle(Of ProjectionManagementMessage.Command.GetQuery), IHandle(Of ProjectionManagementMessage.Command.GetResult), IHandle(Of ProjectionManagementMessage.Command.GetState), IHandle(Of ProjectionManagementMessage.Command.GetStatistics), IHandle(Of ProjectionManagementMessage.Command.Post), IHandle(Of ProjectionManagementMessage.Command.PostBatch), IHandle(Of ProjectionManagementMessage.Command.Reset), IHandle(Of ProjectionManagementMessage.Command.SetRunAs), IHandle(Of ProjectionManagementMessage.Command.StartSlaveProjections), IHandle(Of ProjectionManagementMessage.Command.UpdateQuery), IHandle(Of ProjectionManagementMessage.Command.Delete), IHandle(Of ProjectionCoreServiceMessage.StartCore)
   inheritance:
   - System.Object
   implements:
@@ -67,6 +68,7 @@ items:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetStatistics}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post}
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs}
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.StartSlaveProjections}
@@ -95,7 +97,7 @@ items:
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -124,7 +126,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -155,7 +157,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -186,7 +188,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -217,7 +219,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 53
+    startLine: 55
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -248,7 +250,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 61
+    startLine: 63
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -279,7 +281,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 66
+    startLine: 68
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -310,7 +312,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 74
+    startLine: 76
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -341,7 +343,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 80
+    startLine: 82
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -372,7 +374,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 91
+    startLine: 93
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -403,7 +405,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 102
+    startLine: 104
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -434,7 +436,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 110
+    startLine: 112
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -465,7 +467,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 118
+    startLine: 120
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -496,7 +498,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 126
+    startLine: 128
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -527,7 +529,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 134
+    startLine: 136
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -558,7 +560,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 142
+    startLine: 144
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -589,7 +591,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 150
+    startLine: 152
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -620,7 +622,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 159
+    startLine: 161
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -633,6 +635,37 @@ items:
   overload: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle*
   implements:
   - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  commentId: M:EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  id: Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  parent: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter
+  langs:
+  - csharp
+  - vb
+  name: Handle(ProjectionManagementMessage.Command.PostBatch)
+  nameWithType: ProjectionCoreResponseWriter.Handle(ProjectionManagementMessage.Command.PostBatch)
+  fullName: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  type: Method
+  source:
+    id: Handle
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
+    startLine: 177
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Services.Management
+  syntax:
+    content: public void Handle(ProjectionManagementMessage.Command.PostBatch message)
+    parameters:
+    - id: message
+      type: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    content.vb: Public Sub Handle(message As ProjectionManagementMessage.Command.PostBatch)
+  overload: EventStore.Projections.Core.Services.Management.ProjectionCoreResponseWriter.Handle*
+  implements:
+  - EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -651,7 +684,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 175
+    startLine: 200
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -682,7 +715,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 183
+    startLine: 208
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -713,7 +746,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 192
+    startLine: 217
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -744,7 +777,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 203
+    startLine: 228
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -775,7 +808,7 @@ items:
   source:
     id: Handle
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Services/Management/ProjectionCoreResponseWriter.cs
-    startLine: 214
+    startLine: 239
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Services.Management
@@ -1440,6 +1473,46 @@ references:
     name: ProjectionManagementMessage.Command.Post
     nameWithType: ProjectionManagementMessage.Command.Post
     fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}
+  commentId: T:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}
+  parent: EventStore.Core.Bus
+  definition: EventStore.Core.Bus.IHandle`1
+  name: IHandle<ProjectionManagementMessage.Command.PostBatch>
+  nameWithType: IHandle<ProjectionManagementMessage.Command.PostBatch>
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch>
+  nameWithType.vb: IHandle(Of ProjectionManagementMessage.Command.PostBatch)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  name.vb: IHandle(Of ProjectionManagementMessage.Command.PostBatch)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    name: ProjectionManagementMessage.Command.PostBatch
+    nameWithType: ProjectionManagementMessage.Command.PostBatch
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1
+    name: IHandle
+    nameWithType: IHandle
+    fullName: EventStore.Core.Bus.IHandle
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    name: ProjectionManagementMessage.Command.PostBatch
+    nameWithType: ProjectionManagementMessage.Command.PostBatch
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
   - name: )
     nameWithType: )
     fullName: )
@@ -2545,6 +2618,51 @@ references:
   name: ProjectionManagementMessage.Command.Post
   nameWithType: ProjectionManagementMessage.Command.Post
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
+- uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch}
+  definition: EventStore.Core.Bus.IHandle`1.Handle(`0)
+  name: Handle(ProjectionManagementMessage.Command.PostBatch)
+  nameWithType: IHandle<ProjectionManagementMessage.Command.PostBatch>.Handle(ProjectionManagementMessage.Command.PostBatch)
+  fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch>.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  nameWithType.vb: IHandle(Of ProjectionManagementMessage.Command.PostBatch).Handle(ProjectionManagementMessage.Command.PostBatch)
+  fullName.vb: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch).Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch)
+  spec.csharp:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle<ProjectionManagementMessage.Command.PostBatch>.Handle
+    fullName: EventStore.Core.Bus.IHandle<EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch>.Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    name: ProjectionManagementMessage.Command.PostBatch
+    nameWithType: ProjectionManagementMessage.Command.PostBatch
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: EventStore.Core.Bus.IHandle`1.Handle(`0)
+    name: Handle
+    nameWithType: IHandle(Of ProjectionManagementMessage.Command.PostBatch).Handle
+    fullName: EventStore.Core.Bus.IHandle(Of EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch).Handle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    name: ProjectionManagementMessage.Command.PostBatch
+    nameWithType: ProjectionManagementMessage.Command.PostBatch
+    fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionManagementMessage.Command.PostBatch
+  nameWithType: ProjectionManagementMessage.Command.PostBatch
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
 - uid: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
   commentId: M:EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset}.Handle(EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset)
   parent: EventStore.Core.Bus.IHandle{EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset}

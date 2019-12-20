@@ -5,8 +5,9 @@ items:
   id: ProjectionCoreServiceMessage.SubComponentStopped
   parent: EventStore.Projections.Core.Messages
   children:
-  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String)
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String,Guid)
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.MsgTypeId
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.SubComponent
   langs:
   - csharp
@@ -18,7 +19,7 @@ items:
   source:
     id: SubComponentStopped
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 78
+    startLine: 82
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -52,7 +53,7 @@ items:
   source:
     id: MsgTypeId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 81
+    startLine: 85
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -86,7 +87,7 @@ items:
   source:
     id: SubComponent
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 85
+    startLine: 89
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -101,30 +102,63 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String)
-  commentId: M:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String)
-  id: '#ctor(System.String)'
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  id: QueueId
   parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped
   langs:
   - csharp
   - vb
-  name: SubComponentStopped(String)
-  nameWithType: ProjectionCoreServiceMessage.SubComponentStopped.SubComponentStopped(String)
-  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.SubComponentStopped(System.String)
-  type: Constructor
+  name: QueueId
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  type: Property
   source:
-    id: .ctor
+    id: QueueId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
-    startLine: 87
+    startLine: 91
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public SubComponentStopped(string subComponent)
+    content: public Guid QueueId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property QueueId As Guid
+  overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String,Guid)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor(System.String,Guid)
+  id: '#ctor(System.String,Guid)'
+  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped
+  langs:
+  - csharp
+  - vb
+  name: SubComponentStopped(String, Guid)
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStopped.SubComponentStopped(String, Guid)
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.SubComponentStopped(System.String, Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
+    startLine: 93
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public SubComponentStopped(string subComponent, Guid queueId)
     parameters:
     - id: subComponent
       type: System.String
-    content.vb: Public Sub New(subComponent As String)
+    - id: queueId
+      type: Guid
+    content.vb: Public Sub New(subComponent As String, queueId As Guid)
   overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor*
   modifiers.csharp:
   - public
@@ -179,6 +213,16 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  name: QueueId
+  nameWithType: ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.QueueId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
 - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor*
   commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped.#ctor
   name: SubComponentStopped

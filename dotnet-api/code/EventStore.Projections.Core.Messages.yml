@@ -32,6 +32,7 @@ items:
   - EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StateReport
   - EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.StatisticsReport
   - EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
+  - EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
   - EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage
   - EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CheckpointSuggested
   - EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CommittedEventReceived
@@ -50,10 +51,10 @@ items:
   - EventStore.Projections.Core.Messages.IProjectionCheckpointManager
   - EventStore.Projections.Core.Messages.IQuerySources
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage
-  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage
@@ -69,6 +70,8 @@ items:
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetState
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.GetStatistics
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch.ProjectionPost
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs.SetRemove
@@ -97,6 +100,14 @@ items:
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Starting
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Statistics
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.Updated
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStarted
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStopped
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.InvalidSubsystemRestart
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.RestartSubsystem
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StartComponents
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StopComponents
+  - EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.SubsystemRestarting
   - EventStore.Projections.Core.Messages.QuerySourcesDefinition
   - EventStore.Projections.Core.Messages.QuerySourcesDefinitionOptions
   - EventStore.Projections.Core.Messages.QuerySourcesExtensions
@@ -298,6 +309,12 @@ references:
   name: CoreProjectionStatusMessage.ProjectionWorkerStarted
   nameWithType: CoreProjectionStatusMessage.ProjectionWorkerStarted
   fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.ProjectionWorkerStarted
+- uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+  parent: EventStore.Projections.Core.Messages
+  name: CoreProjectionStatusMessage.Suspended
+  nameWithType: CoreProjectionStatusMessage.Suspended
+  fullName: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
 - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
   commentId: T:EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
   parent: EventStore.Projections.Core.Messages
@@ -428,11 +445,12 @@ references:
   name: ProjectionCoreServiceMessage.StopCore
   nameWithType: ProjectionCoreServiceMessage.StopCore
   fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
-- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
-  commentId: T:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
-  name: ProjectionCoreServiceMessage.Connected
-  nameWithType: ProjectionCoreServiceMessage.Connected
-  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionCoreServiceMessage.StopCoreTimeout
+  nameWithType: ProjectionCoreServiceMessage.StopCoreTimeout
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
 - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick
   commentId: T:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick
   parent: EventStore.Projections.Core.Messages
@@ -467,6 +485,18 @@ references:
   name: ProjectionManagementMessage.Command.ControlMessage
   nameWithType: ProjectionManagementMessage.Command.ControlMessage
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.ControlMessage
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionManagementMessage.Command.PostBatch
+  nameWithType: ProjectionManagementMessage.Command.PostBatch
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch.ProjectionPost
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch.ProjectionPost
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionManagementMessage.Command.PostBatch.ProjectionPost
+  nameWithType: ProjectionManagementMessage.Command.PostBatch.ProjectionPost
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch.ProjectionPost
 - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
   commentId: T:EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
   parent: EventStore.Projections.Core.Messages
@@ -685,6 +715,51 @@ references:
   name: ProjectionManagementMessage.ProjectionConfig
   nameWithType: ProjectionManagementMessage.ProjectionConfig
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionConfig
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage
+  name: ProjectionSubsystemMessage
+  nameWithType: ProjectionSubsystemMessage
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.RestartSubsystem
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.RestartSubsystem
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionSubsystemMessage.RestartSubsystem
+  nameWithType: ProjectionSubsystemMessage.RestartSubsystem
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.RestartSubsystem
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.InvalidSubsystemRestart
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.InvalidSubsystemRestart
+  name: ProjectionSubsystemMessage.InvalidSubsystemRestart
+  nameWithType: ProjectionSubsystemMessage.InvalidSubsystemRestart
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.InvalidSubsystemRestart
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.SubsystemRestarting
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.SubsystemRestarting
+  name: ProjectionSubsystemMessage.SubsystemRestarting
+  nameWithType: ProjectionSubsystemMessage.SubsystemRestarting
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.SubsystemRestarting
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StartComponents
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StartComponents
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionSubsystemMessage.StartComponents
+  nameWithType: ProjectionSubsystemMessage.StartComponents
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StartComponents
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStarted
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStarted
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionSubsystemMessage.ComponentStarted
+  nameWithType: ProjectionSubsystemMessage.ComponentStarted
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStarted
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StopComponents
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StopComponents
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionSubsystemMessage.StopComponents
+  nameWithType: ProjectionSubsystemMessage.StopComponents
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StopComponents
+- uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStopped
+  commentId: T:EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStopped
+  parent: EventStore.Projections.Core.Messages
+  name: ProjectionSubsystemMessage.ComponentStopped
+  nameWithType: ProjectionSubsystemMessage.ComponentStopped
+  fullName: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStopped
 - uid: EventStore.Projections.Core.Messages.QuerySourcesDefinition
   commentId: T:EventStore.Projections.Core.Messages.QuerySourcesDefinition
   parent: EventStore.Projections.Core.Messages

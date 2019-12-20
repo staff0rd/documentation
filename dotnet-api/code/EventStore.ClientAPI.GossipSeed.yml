@@ -5,9 +5,10 @@ items:
   id: GossipSeed
   parent: EventStore.ClientAPI
   children:
-  - EventStore.ClientAPI.GossipSeed.#ctor(IPEndPoint,System.String)
+  - EventStore.ClientAPI.GossipSeed.#ctor(EndPoint,System.String,System.Boolean)
   - EventStore.ClientAPI.GossipSeed.EndPoint
   - EventStore.ClientAPI.GossipSeed.HostHeader
+  - EventStore.ClientAPI.GossipSeed.SeedOverTls
   langs:
   - csharp
   - vb
@@ -18,7 +19,7 @@ items:
   source:
     id: GossipSeed
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -51,17 +52,48 @@ items:
   source:
     id: EndPoint
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
-  summary: "\nThe <see cref=\"!:IPEndPoint\"></see> for the External HTTP endpoint of the gossip seed.\n\nThe HTTP endpoint is used rather than the TCP endpoint because it is required\nfor the client to exchange gossip with the server. The standard port which should be\nused here is 2113.\n"
+  summary: "\nThe <xref href=\"EventStore.ClientAPI.GossipSeed.EndPoint\" data-throw-if-not-resolved=\"false\"></xref> for the External HTTP endpoint of the gossip seed.\n\nThe HTTP endpoint is used rather than the TCP endpoint because it is required\nfor the client to exchange gossip with the server. The standard port which should be\nused here is 2113.\n"
   example: []
   syntax:
-    content: public readonly IPEndPoint EndPoint
+    content: public readonly EndPoint EndPoint
     return:
-      type: IPEndPoint
-    content.vb: Public ReadOnly EndPoint As IPEndPoint
+      type: EndPoint
+    content.vb: Public ReadOnly EndPoint As
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.ClientAPI.GossipSeed.SeedOverTls
+  commentId: F:EventStore.ClientAPI.GossipSeed.SeedOverTls
+  id: SeedOverTls
+  parent: EventStore.ClientAPI.GossipSeed
+  langs:
+  - csharp
+  - vb
+  name: SeedOverTls
+  nameWithType: GossipSeed.SeedOverTls
+  fullName: EventStore.ClientAPI.GossipSeed.SeedOverTls
+  type: Field
+  source:
+    id: SeedOverTls
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
+    startLine: 20
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nIf Gossip should be requested over Tls\n"
+  example: []
+  syntax:
+    content: public readonly bool SeedOverTls
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly SeedOverTls As Boolean
   modifiers.csharp:
   - public
   - readonly
@@ -82,7 +114,7 @@ items:
   source:
     id: HostHeader
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 19
+    startLine: 25
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
@@ -99,36 +131,39 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: EventStore.ClientAPI.GossipSeed.#ctor(IPEndPoint,System.String)
-  commentId: M:EventStore.ClientAPI.GossipSeed.#ctor(IPEndPoint,System.String)
-  id: '#ctor(IPEndPoint,System.String)'
+- uid: EventStore.ClientAPI.GossipSeed.#ctor(EndPoint,System.String,System.Boolean)
+  commentId: M:EventStore.ClientAPI.GossipSeed.#ctor(EndPoint,System.String,System.Boolean)
+  id: '#ctor(EndPoint,System.String,System.Boolean)'
   parent: EventStore.ClientAPI.GossipSeed
   langs:
   - csharp
   - vb
-  name: GossipSeed(IPEndPoint, String)
-  nameWithType: GossipSeed.GossipSeed(IPEndPoint, String)
-  fullName: EventStore.ClientAPI.GossipSeed.GossipSeed(IPEndPoint, System.String)
+  name: GossipSeed(EndPoint, String, Boolean)
+  nameWithType: GossipSeed.GossipSeed(EndPoint, String, Boolean)
+  fullName: EventStore.ClientAPI.GossipSeed.GossipSeed(EndPoint, System.String, System.Boolean)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/GossipSeed.cs
-    startLine: 26
+    startLine: 33
   assemblies:
   - EventStore.ClientAPI
   namespace: EventStore.ClientAPI
   summary: "\nCreates a new <xref href=\"EventStore.ClientAPI.GossipSeed\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
-    content: public GossipSeed(IPEndPoint endPoint, string hostHeader = "")
+    content: public GossipSeed(EndPoint endPoint, string hostHeader = "", bool seedOverTls = true)
     parameters:
     - id: endPoint
-      type: IPEndPoint
-      description: The <see cref="!:IPEndPoint"></see> for the External HTTP endpoint of the gossip seed. The standard port is 2113.
+      type: EndPoint
+      description: The <xref href="EventStore.ClientAPI.GossipSeed.EndPoint" data-throw-if-not-resolved="false"></xref> for the External HTTP endpoint of the gossip seed. The standard port is 2113.
     - id: hostHeader
       type: System.String
       description: The host header to be sent when requesting gossip. Defaults to String.Empty
-    content.vb: Public Sub New(endPoint As IPEndPoint, hostHeader As String = "")
+    - id: seedOverTls
+      type: System.Boolean
+      description: Specifies that eventstore should use https when connecting to gossip
+    content.vb: Public Sub New(endPoint As EndPoint, hostHeader As String = "", seedOverTls As Boolean = True)
   overload: EventStore.ClientAPI.GossipSeed.#ctor*
   modifiers.csharp:
   - public
@@ -145,11 +180,19 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: IPEndPoint
+- uid: EventStore.ClientAPI.GossipSeed.EndPoint
+  commentId: F:EventStore.ClientAPI.GossipSeed.EndPoint
   isExternal: true
-  name: IPEndPoint
-  nameWithType: IPEndPoint
-  fullName: IPEndPoint
+- uid: EndPoint
+  isExternal: true
+  name: EndPoint
+  nameWithType: EndPoint
+  fullName: EndPoint
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: System.String
   isExternal: true
   name: String

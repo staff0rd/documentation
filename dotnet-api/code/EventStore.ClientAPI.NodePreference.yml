@@ -7,6 +7,7 @@ items:
   children:
   - EventStore.ClientAPI.NodePreference.Master
   - EventStore.ClientAPI.NodePreference.Random
+  - EventStore.ClientAPI.NodePreference.ReadOnlyReplica
   - EventStore.ClientAPI.NodePreference.Slave
   langs:
   - csharp
@@ -117,6 +118,36 @@ items:
   example: []
   syntax:
     content: Random = 2
+    return:
+      type: EventStore.ClientAPI.NodePreference
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: EventStore.ClientAPI.NodePreference.ReadOnlyReplica
+  commentId: F:EventStore.ClientAPI.NodePreference.ReadOnlyReplica
+  id: ReadOnlyReplica
+  parent: EventStore.ClientAPI.NodePreference
+  langs:
+  - csharp
+  - vb
+  name: ReadOnlyReplica
+  nameWithType: NodePreference.ReadOnlyReplica
+  fullName: EventStore.ClientAPI.NodePreference.ReadOnlyReplica
+  type: Field
+  source:
+    id: ReadOnlyReplica
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.ClientAPI/NodePreference.cs
+    startLine: 29
+  assemblies:
+  - EventStore.ClientAPI
+  namespace: EventStore.ClientAPI
+  summary: "\nWhen attempting connection, prefers read only replicas.\n"
+  example: []
+  syntax:
+    content: ReadOnlyReplica = 3
     return:
       type: EventStore.ClientAPI.NodePreference
   modifiers.csharp:

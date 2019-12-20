@@ -6,6 +6,7 @@ items:
   children:
   - EventStore.ClientAPI.AllCheckpoint
   - EventStore.ClientAPI.AllEventsSlice
+  - EventStore.ClientAPI.CatchUpSubscriptionFilteredSettings
   - EventStore.ClientAPI.CatchUpSubscriptionSettings
   - EventStore.ClientAPI.ClientApiConstants
   - EventStore.ClientAPI.ClientAuthenticationFailedEventArgs
@@ -26,6 +27,7 @@ items:
   - EventStore.ClientAPI.EventReadResult
   - EventStore.ClientAPI.EventReadStatus
   - EventStore.ClientAPI.EventStoreAllCatchUpSubscription
+  - EventStore.ClientAPI.EventStoreAllFilteredCatchUpSubscription
   - EventStore.ClientAPI.EventStoreCatchUpSubscription
   - EventStore.ClientAPI.EventStoreConnection
   - EventStore.ClientAPI.EventStorePersistentSubscription
@@ -34,6 +36,8 @@ items:
   - EventStore.ClientAPI.EventStoreSubscription
   - EventStore.ClientAPI.EventStoreTransaction
   - EventStore.ClientAPI.ExpectedVersion
+  - EventStore.ClientAPI.Filter
+  - EventStore.ClientAPI.FilterContext
   - EventStore.ClientAPI.GossipSeed
   - EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
   - EventStore.ClientAPI.IEndPointDiscoverer
@@ -81,6 +85,12 @@ references:
   name: AllEventsSlice
   nameWithType: AllEventsSlice
   fullName: EventStore.ClientAPI.AllEventsSlice
+- uid: EventStore.ClientAPI.CatchUpSubscriptionFilteredSettings
+  commentId: T:EventStore.ClientAPI.CatchUpSubscriptionFilteredSettings
+  parent: EventStore.ClientAPI
+  name: CatchUpSubscriptionFilteredSettings
+  nameWithType: CatchUpSubscriptionFilteredSettings
+  fullName: EventStore.ClientAPI.CatchUpSubscriptionFilteredSettings
 - uid: EventStore.ClientAPI.CatchUpSubscriptionSettings
   commentId: T:EventStore.ClientAPI.CatchUpSubscriptionSettings
   parent: EventStore.ClientAPI
@@ -184,24 +194,24 @@ references:
   name: EventReadStatus
   nameWithType: EventReadStatus
   fullName: EventStore.ClientAPI.EventReadStatus
-- uid: EventStore.ClientAPI.EventStoreCatchUpSubscription
-  commentId: T:EventStore.ClientAPI.EventStoreCatchUpSubscription
-  parent: EventStore.ClientAPI
-  name: EventStoreCatchUpSubscription
-  nameWithType: EventStoreCatchUpSubscription
-  fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription
 - uid: EventStore.ClientAPI.EventStoreAllCatchUpSubscription
   commentId: T:EventStore.ClientAPI.EventStoreAllCatchUpSubscription
   parent: EventStore.ClientAPI
   name: EventStoreAllCatchUpSubscription
   nameWithType: EventStoreAllCatchUpSubscription
   fullName: EventStore.ClientAPI.EventStoreAllCatchUpSubscription
-- uid: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
-  commentId: T:EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
+- uid: EventStore.ClientAPI.EventStoreAllFilteredCatchUpSubscription
+  commentId: T:EventStore.ClientAPI.EventStoreAllFilteredCatchUpSubscription
   parent: EventStore.ClientAPI
-  name: EventStoreStreamCatchUpSubscription
-  nameWithType: EventStoreStreamCatchUpSubscription
-  fullName: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
+  name: EventStoreAllFilteredCatchUpSubscription
+  nameWithType: EventStoreAllFilteredCatchUpSubscription
+  fullName: EventStore.ClientAPI.EventStoreAllFilteredCatchUpSubscription
+- uid: EventStore.ClientAPI.EventStoreCatchUpSubscription
+  commentId: T:EventStore.ClientAPI.EventStoreCatchUpSubscription
+  parent: EventStore.ClientAPI
+  name: EventStoreCatchUpSubscription
+  nameWithType: EventStoreCatchUpSubscription
+  fullName: EventStore.ClientAPI.EventStoreCatchUpSubscription
 - uid: EventStore.ClientAPI.EventStoreConnection
   commentId: T:EventStore.ClientAPI.EventStoreConnection
   name: EventStoreConnection
@@ -218,8 +228,15 @@ references:
   name: EventStorePersistentSubscriptionBase
   nameWithType: EventStorePersistentSubscriptionBase
   fullName: EventStore.ClientAPI.EventStorePersistentSubscriptionBase
+- uid: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
+  commentId: T:EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
+  parent: EventStore.ClientAPI
+  name: EventStoreStreamCatchUpSubscription
+  nameWithType: EventStoreStreamCatchUpSubscription
+  fullName: EventStore.ClientAPI.EventStoreStreamCatchUpSubscription
 - uid: EventStore.ClientAPI.EventStoreSubscription
   commentId: T:EventStore.ClientAPI.EventStoreSubscription
+  parent: EventStore.ClientAPI
   name: EventStoreSubscription
   nameWithType: EventStoreSubscription
   fullName: EventStore.ClientAPI.EventStoreSubscription
@@ -234,6 +251,18 @@ references:
   name: ExpectedVersion
   nameWithType: ExpectedVersion
   fullName: EventStore.ClientAPI.ExpectedVersion
+- uid: EventStore.ClientAPI.Filter
+  commentId: T:EventStore.ClientAPI.Filter
+  parent: EventStore.ClientAPI
+  name: Filter
+  nameWithType: Filter
+  fullName: EventStore.ClientAPI.Filter
+- uid: EventStore.ClientAPI.FilterContext
+  commentId: T:EventStore.ClientAPI.FilterContext
+  parent: EventStore.ClientAPI
+  name: FilterContext
+  nameWithType: FilterContext
+  fullName: EventStore.ClientAPI.FilterContext
 - uid: EventStore.ClientAPI.GossipSeed
   commentId: T:EventStore.ClientAPI.GossipSeed
   name: GossipSeed

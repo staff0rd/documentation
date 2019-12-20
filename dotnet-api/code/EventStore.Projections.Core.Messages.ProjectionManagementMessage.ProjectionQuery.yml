@@ -5,13 +5,16 @@ items:
   id: ProjectionManagementMessage.ProjectionQuery
   parent: EventStore.Projections.Core.Messages
   children:
-  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Definition
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.EmitEnabled
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.MsgTypeId
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Name
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.OutputConfig
   - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Query
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  - EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
   langs:
   - csharp
   - vb
@@ -22,7 +25,7 @@ items:
   source:
     id: ProjectionQuery
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 794
+    startLine: 841
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -56,7 +59,7 @@ items:
   source:
     id: MsgTypeId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 797
+    startLine: 844
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -76,26 +79,26 @@ items:
   - Public
   - Overrides
   - ReadOnly
-- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
-  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
-  id: '#ctor(System.String,System.String,System.Boolean,EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)'
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor(System.String,System.String,System.Boolean,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  id: '#ctor(System.String,System.String,System.Boolean,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition,EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)'
   parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery
   langs:
   - csharp
   - vb
-  name: ProjectionQuery(String, String, Boolean, ProjectionSourceDefinition, ProjectionOutputConfig)
-  nameWithType: ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(String, String, Boolean, ProjectionSourceDefinition, ProjectionOutputConfig)
-  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(System.String, System.String, System.Boolean, EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition, EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  name: ProjectionQuery(String, String, Boolean, String, Nullable<Boolean>, Nullable<Boolean>, ProjectionSourceDefinition, ProjectionOutputConfig)
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(String, String, Boolean, String, Nullable<Boolean>, Nullable<Boolean>, ProjectionSourceDefinition, ProjectionOutputConfig)
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(System.String, System.String, System.Boolean, System.String, System.Nullable<System.Boolean>, System.Nullable<System.Boolean>, EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition, EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
   type: Constructor
   source:
     id: .ctor
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 807
+    startLine: 857
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
   syntax:
-    content: public ProjectionQuery(string name, string query, bool emitEnabled, ProjectionSourceDefinition definition, ProjectionOutputConfig outputConfig)
+    content: public ProjectionQuery(string name, string query, bool emitEnabled, string projectionType, bool? trackEmittedStreams, bool? checkpointsEnabled, ProjectionSourceDefinition definition, ProjectionOutputConfig outputConfig)
     parameters:
     - id: name
       type: System.String
@@ -103,16 +106,25 @@ items:
       type: System.String
     - id: emitEnabled
       type: System.Boolean
+    - id: projectionType
+      type: System.String
+    - id: trackEmittedStreams
+      type: System.Nullable{System.Boolean}
+    - id: checkpointsEnabled
+      type: System.Nullable{System.Boolean}
     - id: definition
       type: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition
     - id: outputConfig
       type: EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig
-    content.vb: Public Sub New(name As String, query As String, emitEnabled As Boolean, definition As ProjectionSourceDefinition, outputConfig As ProjectionOutputConfig)
+    content.vb: Public Sub New(name As String, query As String, emitEnabled As Boolean, projectionType As String, trackEmittedStreams As Boolean?, checkpointsEnabled As Boolean?, definition As ProjectionSourceDefinition, outputConfig As ProjectionOutputConfig)
   overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.#ctor*
+  nameWithType.vb: ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(String, String, Boolean, String, Nullable(Of Boolean), Nullable(Of Boolean), ProjectionSourceDefinition, ProjectionOutputConfig)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
+  fullName.vb: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.ProjectionQuery(System.String, System.String, System.Boolean, System.String, System.Nullable(Of System.Boolean), System.Nullable(Of System.Boolean), EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition, EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig)
+  name.vb: ProjectionQuery(String, String, Boolean, String, Nullable(Of Boolean), Nullable(Of Boolean), ProjectionSourceDefinition, ProjectionOutputConfig)
 - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Name
   commentId: P:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Name
   id: Name
@@ -127,7 +139,7 @@ items:
   source:
     id: Name
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 816
+    startLine: 876
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -158,7 +170,7 @@ items:
   source:
     id: Query
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 820
+    startLine: 880
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -189,7 +201,7 @@ items:
   source:
     id: EmitEnabled
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 824
+    startLine: 884
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -200,6 +212,99 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property EmitEnabled As Boolean
   overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.EmitEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  id: TrackEmittedStreams
+  parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery
+  langs:
+  - csharp
+  - vb
+  name: TrackEmittedStreams
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  type: Property
+  source:
+    id: TrackEmittedStreams
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    startLine: 888
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool? TrackEmittedStreams { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public ReadOnly Property TrackEmittedStreams As Boolean?
+  overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  id: CheckpointsEnabled
+  parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery
+  langs:
+  - csharp
+  - vb
+  name: CheckpointsEnabled
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  type: Property
+  source:
+    id: CheckpointsEnabled
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    startLine: 892
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public bool? CheckpointsEnabled { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public ReadOnly Property CheckpointsEnabled As Boolean?
+  overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
+  id: Type
+  parent: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.Type
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
+  type: Property
+  source:
+    id: Type
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
+    startLine: 896
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public string Type { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Type As String
+  overload: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type*
   modifiers.csharp:
   - public
   - get
@@ -220,7 +325,7 @@ items:
   source:
     id: Definition
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 828
+    startLine: 900
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -251,7 +356,7 @@ items:
   source:
     id: OutputConfig
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionManagementMessage.cs
-    startLine: 832
+    startLine: 904
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -327,6 +432,49 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.Nullable{System.Boolean}
+  commentId: '!:System.Nullable{System.Boolean}'
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition
   commentId: T:EventStore.Projections.Core.Services.Processing.ProjectionSourceDefinition
   parent: EventStore.Projections.Core.Services.Processing
@@ -339,6 +487,44 @@ references:
   name: ProjectionOutputConfig
   nameWithType: ProjectionOutputConfig
   fullName: EventStore.Projections.Core.Services.Processing.ProjectionOutputConfig
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: EventStore.Projections.Core.Services.Processing
   commentId: N:EventStore.Projections.Core.Services.Processing
   name: EventStore.Projections.Core.Services.Processing
@@ -359,6 +545,21 @@ references:
   name: EmitEnabled
   nameWithType: ProjectionManagementMessage.ProjectionQuery.EmitEnabled
   fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.EmitEnabled
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  name: TrackEmittedStreams
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.TrackEmittedStreams
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  name: CheckpointsEnabled
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.CheckpointsEnabled
+- uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
+  name: Type
+  nameWithType: ProjectionManagementMessage.ProjectionQuery.Type
+  fullName: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Type
 - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Definition*
   commentId: Overload:EventStore.Projections.Core.Messages.ProjectionManagementMessage.ProjectionQuery.Definition
   name: Definition

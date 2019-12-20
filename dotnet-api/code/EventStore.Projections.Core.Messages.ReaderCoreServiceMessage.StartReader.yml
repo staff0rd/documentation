@@ -5,6 +5,8 @@ items:
   id: ReaderCoreServiceMessage.StartReader
   parent: EventStore.Projections.Core.Messages
   children:
+  - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor(Guid)
+  - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
   - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.MsgTypeId
   langs:
   - csharp
@@ -70,6 +72,66 @@ items:
   - Public
   - Overrides
   - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  id: InstanceCorrelationId
+  parent: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader
+  langs:
+  - csharp
+  - vb
+  name: InstanceCorrelationId
+  nameWithType: ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  type: Property
+  source:
+    id: InstanceCorrelationId
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
+    startLine: 12
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public Guid InstanceCorrelationId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property InstanceCorrelationId As Guid
+  overload: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor(Guid)
+  commentId: M:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor(Guid)
+  id: '#ctor(Guid)'
+  parent: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader
+  langs:
+  - csharp
+  - vb
+  name: StartReader(Guid)
+  nameWithType: ReaderCoreServiceMessage.StartReader.StartReader(Guid)
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.StartReader(Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
+    startLine: 14
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public StartReader(Guid instanceCorrelationId)
+    parameters:
+    - id: instanceCorrelationId
+      type: Guid
+    content.vb: Public Sub New(instanceCorrelationId As Guid)
+  overload: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Projections.Core.Messages
   commentId: N:EventStore.Projections.Core.Messages
@@ -114,3 +176,18 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  name: InstanceCorrelationId
+  nameWithType: ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.InstanceCorrelationId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.#ctor
+  name: StartReader
+  nameWithType: ReaderCoreServiceMessage.StartReader.StartReader
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StartReader.StartReader

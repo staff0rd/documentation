@@ -6,6 +6,8 @@
     name: AllCheckpoint
   - uid: EventStore.ClientAPI.AllEventsSlice
     name: AllEventsSlice
+  - uid: EventStore.ClientAPI.CatchUpSubscriptionFilteredSettings
+    name: CatchUpSubscriptionFilteredSettings
   - uid: EventStore.ClientAPI.CatchUpSubscriptionSettings
     name: CatchUpSubscriptionSettings
   - uid: EventStore.ClientAPI.ClientApiConstants
@@ -46,6 +48,8 @@
     name: EventReadStatus
   - uid: EventStore.ClientAPI.EventStoreAllCatchUpSubscription
     name: EventStoreAllCatchUpSubscription
+  - uid: EventStore.ClientAPI.EventStoreAllFilteredCatchUpSubscription
+    name: EventStoreAllFilteredCatchUpSubscription
   - uid: EventStore.ClientAPI.EventStoreCatchUpSubscription
     name: EventStoreCatchUpSubscription
   - uid: EventStore.ClientAPI.EventStoreConnection
@@ -62,6 +66,10 @@
     name: EventStoreTransaction
   - uid: EventStore.ClientAPI.ExpectedVersion
     name: ExpectedVersion
+  - uid: EventStore.ClientAPI.Filter
+    name: Filter
+  - uid: EventStore.ClientAPI.FilterContext
+    name: FilterContext
   - uid: EventStore.ClientAPI.GossipSeed
     name: GossipSeed
   - uid: EventStore.ClientAPI.GossipSeedClusterSettingsBuilder
@@ -160,6 +168,8 @@
     name: NotAuthenticatedException
   - uid: EventStore.ClientAPI.Exceptions.OperationExpiredException
     name: OperationExpiredException
+  - uid: EventStore.ClientAPI.Exceptions.OperationNotSupportedException
+    name: OperationNotSupportedException
   - uid: EventStore.ClientAPI.Exceptions.OperationTimedOutException
     name: OperationTimedOutException
   - uid: EventStore.ClientAPI.Exceptions.PersistentSubscriptionCommandFailedException
@@ -214,6 +224,15 @@
   items:
   - uid: EventStore.ClientAPI.SystemData.UserCredentials
     name: UserCredentials
+- uid: EventStore.ClientAPI.Transport.Http
+  name: EventStore.ClientAPI.Transport.Http
+  items:
+  - uid: EventStore.ClientAPI.Transport.Http.HttpAsyncClient
+    name: HttpAsyncClient
+  - uid: EventStore.ClientAPI.Transport.Http.HttpResponse
+    name: HttpResponse
+  - uid: EventStore.ClientAPI.Transport.Http.IHttpClient
+    name: IHttpClient
 - uid: EventStore.ClientAPI.UserManagement
   name: EventStore.ClientAPI.UserManagement
   items:
@@ -309,6 +328,8 @@
     name: CoreProjectionStatusMessage.StatisticsReport
   - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Stopped
     name: CoreProjectionStatusMessage.Stopped
+  - uid: EventStore.Projections.Core.Messages.CoreProjectionStatusMessage.Suspended
+    name: CoreProjectionStatusMessage.Suspended
   - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage
     name: EventReaderSubscriptionMessage
   - uid: EventStore.Projections.Core.Messages.EventReaderSubscriptionMessage.CheckpointSuggested
@@ -345,14 +366,14 @@
     name: IQuerySources
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage
     name: ProjectionCoreServiceMessage
-  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.Connected
-    name: ProjectionCoreServiceMessage.Connected
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.CoreTick
     name: ProjectionCoreServiceMessage.CoreTick
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StartCore
     name: ProjectionCoreServiceMessage.StartCore
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
     name: ProjectionCoreServiceMessage.StopCore
+  - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCoreTimeout
+    name: ProjectionCoreServiceMessage.StopCoreTimeout
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStarted
     name: ProjectionCoreServiceMessage.SubComponentStarted
   - uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.SubComponentStopped
@@ -383,6 +404,10 @@
     name: ProjectionManagementMessage.Command.GetStatistics
   - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Post
     name: ProjectionManagementMessage.Command.Post
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch
+    name: ProjectionManagementMessage.Command.PostBatch
+  - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.PostBatch.ProjectionPost
+    name: ProjectionManagementMessage.Command.PostBatch.ProjectionPost
   - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.Reset
     name: ProjectionManagementMessage.Command.Reset
   - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Command.SetRunAs
@@ -439,6 +464,22 @@
     name: ProjectionManagementMessage.Statistics
   - uid: EventStore.Projections.Core.Messages.ProjectionManagementMessage.Updated
     name: ProjectionManagementMessage.Updated
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage
+    name: ProjectionSubsystemMessage
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStarted
+    name: ProjectionSubsystemMessage.ComponentStarted
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.ComponentStopped
+    name: ProjectionSubsystemMessage.ComponentStopped
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.InvalidSubsystemRestart
+    name: ProjectionSubsystemMessage.InvalidSubsystemRestart
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.RestartSubsystem
+    name: ProjectionSubsystemMessage.RestartSubsystem
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StartComponents
+    name: ProjectionSubsystemMessage.StartComponents
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.StopComponents
+    name: ProjectionSubsystemMessage.StopComponents
+  - uid: EventStore.Projections.Core.Messages.ProjectionSubsystemMessage.SubsystemRestarting
+    name: ProjectionSubsystemMessage.SubsystemRestarting
   - uid: EventStore.Projections.Core.Messages.QuerySourcesDefinition
     name: QuerySourcesDefinition
   - uid: EventStore.Projections.Core.Messages.QuerySourcesDefinitionOptions
@@ -587,6 +628,10 @@
     name: GetStateCommand
   - uid: EventStore.Projections.Core.Messages.Persisted.Responses.GetStatisticsCommand
     name: GetStatisticsCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.PostBatchCommand
+    name: PostBatchCommand
+  - uid: EventStore.Projections.Core.Messages.Persisted.Responses.PostBatchCommand.ProjectionPost
+    name: PostBatchCommand.ProjectionPost
   - uid: EventStore.Projections.Core.Messages.Persisted.Responses.PostCommand
     name: PostCommand
   - uid: EventStore.Projections.Core.Messages.Persisted.Responses.Prepared
@@ -659,6 +704,11 @@
     name: ReadWrite
   - uid: EventStore.Projections.Core.Services.SpooledStreamReadingDispatcher
     name: SpooledStreamReadingDispatcher
+- uid: EventStore.Projections.Core.Services.Grpc
+  name: EventStore.Projections.Core.Services.Grpc
+  items:
+  - uid: EventStore.Projections.Core.Services.Grpc.ProjectionManagement
+    name: ProjectionManagement
 - uid: EventStore.Projections.Core.Services.Http
   name: EventStore.Projections.Core.Services.Http
   items:
@@ -697,6 +747,8 @@
     name: ProjectionManager
   - uid: EventStore.Projections.Core.Services.Management.ProjectionManager.NewProjectionInitializer
     name: ProjectionManager.NewProjectionInitializer
+  - uid: EventStore.Projections.Core.Services.Management.ProjectionManager.PendingProjection
+    name: ProjectionManager.PendingProjection
   - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerCommandWriter
     name: ProjectionManagerCommandWriter
   - uid: EventStore.Projections.Core.Services.Management.ProjectionManagerMessageDispatcher

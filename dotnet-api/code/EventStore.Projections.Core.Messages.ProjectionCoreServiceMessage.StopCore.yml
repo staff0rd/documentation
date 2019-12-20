@@ -5,7 +5,9 @@ items:
   id: ProjectionCoreServiceMessage.StopCore
   parent: EventStore.Projections.Core.Messages
   children:
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor(Guid)
   - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.MsgTypeId
+  - EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
   langs:
   - csharp
   - vb
@@ -70,6 +72,66 @@ items:
   - Public
   - Overrides
   - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
+  commentId: P:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
+  id: QueueId
+  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
+  langs:
+  - csharp
+  - vb
+  name: QueueId
+  nameWithType: ProjectionCoreServiceMessage.StopCore.QueueId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
+  type: Property
+  source:
+    id: QueueId
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
+    startLine: 27
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public Guid QueueId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property QueueId As Guid
+  overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor(Guid)
+  commentId: M:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor(Guid)
+  id: '#ctor(Guid)'
+  parent: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore
+  langs:
+  - csharp
+  - vb
+  name: StopCore(Guid)
+  nameWithType: ProjectionCoreServiceMessage.StopCore.StopCore(Guid)
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.StopCore(Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ProjectionCoreServiceMessage.cs
+    startLine: 29
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public StopCore(Guid queueId)
+    parameters:
+    - id: queueId
+      type: Guid
+    content.vb: Public Sub New(queueId As Guid)
+  overload: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Projections.Core.Messages
   commentId: N:EventStore.Projections.Core.Messages
@@ -114,3 +176,18 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
+  name: QueueId
+  nameWithType: ProjectionCoreServiceMessage.StopCore.QueueId
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.QueueId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.#ctor
+  name: StopCore
+  nameWithType: ProjectionCoreServiceMessage.StopCore.StopCore
+  fullName: EventStore.Projections.Core.Messages.ProjectionCoreServiceMessage.StopCore.StopCore

@@ -5,7 +5,9 @@ items:
   id: ReaderCoreServiceMessage.StopReader
   parent: EventStore.Projections.Core.Messages
   children:
+  - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor(Guid)
   - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.MsgTypeId
+  - EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
   langs:
   - csharp
   - vb
@@ -16,7 +18,7 @@ items:
   source:
     id: StopReader
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
-    startLine: 13
+    startLine: 19
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -50,7 +52,7 @@ items:
   source:
     id: MsgTypeId
     path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
-    startLine: 16
+    startLine: 22
   assemblies:
   - EventStore.Projections.Core
   namespace: EventStore.Projections.Core.Messages
@@ -70,6 +72,66 @@ items:
   - Public
   - Overrides
   - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
+  commentId: P:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
+  id: QueueId
+  parent: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader
+  langs:
+  - csharp
+  - vb
+  name: QueueId
+  nameWithType: ReaderCoreServiceMessage.StopReader.QueueId
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
+  type: Property
+  source:
+    id: QueueId
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
+    startLine: 26
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public Guid QueueId { get; }
+    parameters: []
+    return:
+      type: Guid
+    content.vb: Public ReadOnly Property QueueId As Guid
+  overload: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor(Guid)
+  commentId: M:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor(Guid)
+  id: '#ctor(Guid)'
+  parent: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader
+  langs:
+  - csharp
+  - vb
+  name: StopReader(Guid)
+  nameWithType: ReaderCoreServiceMessage.StopReader.StopReader(Guid)
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.StopReader(Guid)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/chrisward/Workspace/EventStore/EventStore/src/EventStore.Projections.Core/Messages/ReaderCoreServiceMessage.cs
+    startLine: 28
+  assemblies:
+  - EventStore.Projections.Core
+  namespace: EventStore.Projections.Core.Messages
+  syntax:
+    content: public StopReader(Guid queueId)
+    parameters:
+    - id: queueId
+      type: Guid
+    content.vb: Public Sub New(queueId As Guid)
+  overload: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: EventStore.Projections.Core.Messages
   commentId: N:EventStore.Projections.Core.Messages
@@ -114,3 +176,18 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
+  name: QueueId
+  nameWithType: ReaderCoreServiceMessage.StopReader.QueueId
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.QueueId
+- uid: Guid
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: Guid
+- uid: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor*
+  commentId: Overload:EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.#ctor
+  name: StopReader
+  nameWithType: ReaderCoreServiceMessage.StopReader.StopReader
+  fullName: EventStore.Projections.Core.Messages.ReaderCoreServiceMessage.StopReader.StopReader
